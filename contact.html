@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>聯絡我們 - 股利計算器</title>
   <meta name="description" content="有任何問題或建議？歡迎透過表單聯絡股利計算器團隊。">
+  <meta property="og:image" content="https://dividend-calculator-eym.pages.dev/images/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://dividend-calculator-eym.pages.dev/contact.html">
   <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav-container">
-      <a href="index.html" class="nav-logo">$<span>股利計算器</span></a>
+      <a href="index.html" class="nav-logo"><img src="images/logo-nav.png" alt="股利計算器"> 股利計算器</a>
       <button class="nav-toggle" aria-label="選單">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html">首頁</a></li>
+        <li><a href="articles.html">文章</a></li>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="contact.html" class="active">聯絡我們</a></li>
       </ul>
@@ -25,18 +31,18 @@
       <h1>聯絡我們</h1>
       <p>有任何問題、建議或合作提案，歡迎填寫以下表單，我們會盡快回覆。</p>
 
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('感謝您的訊息！我們會盡快回覆。'); this.reset();">
+      <form class="contact-form" action="https://formspree.io/f/mzdkwoaa" method="POST">
         <div class="form-group">
           <label for="contactName">姓名</label>
-          <input type="text" id="contactName" placeholder="您的姓名" required>
+          <input type="text" id="contactName" name="name" placeholder="您的姓名" required>
         </div>
         <div class="form-group">
           <label for="contactEmail">電子郵件</label>
-          <input type="email" id="contactEmail" placeholder="you@example.com" required>
+          <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required>
         </div>
         <div class="form-group">
           <label for="contactMessage">訊息內容</label>
-          <textarea id="contactMessage" placeholder="請輸入您的訊息..." required></textarea>
+          <textarea id="contactMessage" name="message" placeholder="請輸入您的訊息..." required></textarea>
         </div>
         <button type="submit" class="btn-primary">送出訊息</button>
       </form>

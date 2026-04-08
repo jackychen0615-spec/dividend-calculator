@@ -8,15 +8,75 @@
   <meta property="og:title" content="股利計算器 - 快速試算股利與殖利率">
   <meta property="og:description" content="免費線上股利計算器，輸入股價、張數與每股股利，立即算出總股利、殖利率。">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dividend-calculator-eym.pages.dev/images/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://dividend-calculator-eym.pages.dev/">
   <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "股利計算器",
+    "url": "https://dividend-calculator-eym.pages.dev",
+    "description": "免費線上股利計算器，輸入股價、股數與每股股利，立即算出投入成本、總股利與殖利率。台股存股族必備工具。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TWD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "股利怎麼算？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "總股利 = 持有股數 x 每股股利。例如持有 1,000 股，每股配 2 元股利，總股利為 2,000 元。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "殖利率是什麼？怎麼計算？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "殖利率 = 每股股利 / 股價 x 100%。例如股價 50 元、每股配 2 元，殖利率為 4%。超過 5% 通常算高殖利率。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "一張股票可以拿到多少股利？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "一張股票 = 1,000 股。一張的股利 = 1,000 x 每股股利。例如每股配 3 元，一張可拿 3,000 元。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "現金股利和股票股利有什麼差別？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現金股利是直接發現金到帳戶；股票股利是發放額外股票。多數存股族偏好現金股利作為被動收入。"
+        }
+      }
+    ]
+  }]
+  </script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav-container">
-      <a href="index.html" class="nav-logo">$<span>股利計算器</span></a>
+      <a href="index.html" class="nav-logo"><img src="images/logo-nav.png" alt="股利計算器"> 股利計算器</a>
       <button class="nav-toggle" aria-label="選單">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html" class="active">首頁</a></li>
+        <li><a href="articles.html">文章</a></li>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="contact.html">聯絡我們</a></li>
       </ul>
@@ -36,22 +96,22 @@
         <div class="input-hint">輸入目前股價或你的買入價格</div>
       </div>
       <div class="form-group">
-        <label for="shares">持有張數</label>
-        <input type="number" id="shares" placeholder="例如：1" min="0" step="0.001">
+        <label for="shares">持有股數</label>
+        <input type="number" id="shares" placeholder="例如：1000" min="0" step="1">
         <div class="input-hint">1 張 = 1,000 股</div>
       </div>
       <div class="form-group">
         <label for="dividend">每股股利（元）</label>
         <input type="number" id="dividend" placeholder="例如：2" min="0" step="0.01">
-        <div class="input-hint">可查詢個股歷年配息資料</div>
+        <div class="input-hint"><a href="articles/taiwan-stock-dividend-guide.html">查詢個股歷年配息資料</a></div>
       </div>
     </div>
 
     <div class="results-grid">
       <div class="result-card">
-        <div class="result-label">持股股數</div>
-        <div class="result-value" id="totalShares">0</div>
-        <div class="result-unit">股</div>
+        <div class="result-label">投入成本</div>
+        <div class="result-value" id="totalCost">0</div>
+        <div class="result-unit">元</div>
       </div>
       <div class="result-card">
         <div class="result-label">總股利</div>
@@ -64,6 +124,70 @@
         <div class="result-unit">%</div>
       </div>
     </div>
+
+    <div class="feedback-wrapper">
+      <button class="feedback-btn">&#9733; 給我們回饋</button>
+    </div>
+
+    <div class="feedback-overlay">
+      <div class="feedback-modal">
+        <h3>你覺得這個工具如何？</h3>
+        <div class="feedback-stars">
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+        </div>
+        <textarea placeholder="有什麼建議嗎？（選填）"></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-cancel">取消</button>
+          <button class="feedback-submit">送出</button>
+        </div>
+        <div class="feedback-thanks">感謝你的回饋！<br><button class="feedback-close btn-primary" style="margin-top:1rem;">關閉</button></div>
+      </div>
+    </div>
+
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多投資工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1.5rem auto 0;">
+        <div class="article-card">
+          <h3><a href="compound-calculator.html">存股複利計算器</a></h3>
+          <p>計算長期存股的複利成長效果，看見時間的力量。</p>
+          <span class="article-tag">複利試算</span>
+        </div>
+        <div class="article-card">
+          <h3><a href="payback-calculator.html">存股回本計算器</a></h3>
+          <p>算出靠股利回本需要幾年，評估投資標的。</p>
+          <span class="article-tag">回本試算</span>
+        </div>
+        <div class="article-card">
+          <h3><a href="dca-calculator.html">定期定額試算器</a></h3>
+          <p>每月定期投入，看看長期投資的成果。</p>
+          <span class="article-tag">定期定額</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">股利怎麼算？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">股利的計算方式很簡單：<strong>總股利 = 持有股數 x 每股股利</strong>。例如你持有 1,000 股（1 張）某檔股票，該股票每股配發 2 元股利，那麼你可以領到 1,000 x 2 = 2,000 元的股利。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">殖利率是什麼？怎麼計算？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">殖利率（Dividend Yield）是衡量股票配息報酬率的指標，公式為：<strong>殖利率 = 每股股利 / 股價 x 100%</strong>。例如股價 50 元、每股配 2 元股利，殖利率就是 2 / 50 x 100% = 4%。一般來說，殖利率超過 5% 就算高殖利率股票。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">一張股票可以拿到多少股利？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">一張股票等於 1,000 股。所以一張股票的股利 = 1,000 x 每股股利。例如某檔股票每股配 3 元現金股利，持有一張就能拿到 3,000 元。你可以使用上方的計算器輸入股數與每股股利，立即算出結果。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">現金股利和股票股利有什麼差別？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">現金股利是公司直接發放現金到你的帳戶；股票股利則是公司發放額外的股票給你。例如配發 0.5 元股票股利，代表每持有 1,000 股可以多拿 50 股。多數存股族偏好穩定的現金股利，因為可以直接當作被動收入使用。</div></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -75,5 +199,6 @@
   </footer>
 
   <script src="js/calculator.js"></script>
+  <script src="js/feedback.js"></script>
 </body>
 </html>

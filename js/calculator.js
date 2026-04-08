@@ -3,20 +3,23 @@
   const stockPrice = $("#stockPrice");
   const shares = $("#shares");
   const dividend = $("#dividend");
-  const totalSharesEl = $("#totalShares");
+  const totalCostEl = $("#totalCost");
   const totalDividendEl = $("#totalDividend");
   const yieldRateEl = $("#yieldRate");
 
   function calculate() {
     const price = parseFloat(stockPrice.value) || 0;
-    const lots = parseFloat(shares.value) || 0;
+    const shareCount = parseFloat(shares.value) || 0;
     const div = parseFloat(dividend.value) || 0;
 
-    const totalShares = lots * 1000;
-    const totalDividend = totalShares * div;
+    const totalCost = shareCount * price;
+    const totalDividend = shareCount * div;
     const yieldRate = price > 0 ? (div / price) * 100 : 0;
 
-    totalSharesEl.textContent = totalShares.toLocaleString("zh-TW");
+    totalCostEl.textContent = totalCost.toLocaleString("zh-TW", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    });
     totalDividendEl.textContent = totalDividend.toLocaleString("zh-TW", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 2,
@@ -26,6 +29,14 @@
 
   [stockPrice, shares, dividend].forEach((input) => {
     input.addEventListener("input", calculate);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+      item.classList.toggle("open");
+    });
   });
 
   // Mobile nav toggle
