@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>股利計算器 - 快速試算股利與殖利率</title>
+  <meta name="description" content="免費線上股利計算器，輸入股價、張數與每股股利，立即算出總股利、殖利率。台股存股族必備工具。">
+  <meta property="og:title" content="股利計算器 - 快速試算股利與殖利率">
+  <meta property="og:description" content="免費線上股利計算器，輸入股價、張數與每股股利，立即算出總股利、殖利率。">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">$<span>股利計算器</span></a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="calculator-hero">
+      <h1>股利計算器</h1>
+      <p>輸入股價、張數與每股股利，立即算出你的投資報酬</p>
+    </section>
+
+    <div class="calculator-card">
+      <div class="form-group">
+        <label for="stockPrice">股價（元）</label>
+        <input type="number" id="stockPrice" placeholder="例如：50" min="0" step="0.01">
+        <div class="input-hint">輸入目前股價或你的買入價格</div>
+      </div>
+      <div class="form-group">
+        <label for="shares">持有張數</label>
+        <input type="number" id="shares" placeholder="例如：1" min="0" step="0.001">
+        <div class="input-hint">1 張 = 1,000 股</div>
+      </div>
+      <div class="form-group">
+        <label for="dividend">每股股利（元）</label>
+        <input type="number" id="dividend" placeholder="例如：2" min="0" step="0.01">
+        <div class="input-hint">可查詢個股歷年配息資料</div>
+      </div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">持股股數</div>
+        <div class="result-value" id="totalShares">0</div>
+        <div class="result-unit">股</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">總股利</div>
+        <div class="result-value" id="totalDividend">0</div>
+        <div class="result-unit">元</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">殖利率</div>
+        <div class="result-value" id="yieldRate">0</div>
+        <div class="result-unit">%</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="privacy.html">隱私權政策</a></li>
+      <li><a href="terms.html">使用條款</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>
