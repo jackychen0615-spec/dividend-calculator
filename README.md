@@ -2,7 +2,7 @@
 
 免費線上投資計算工具平台，提供多種台股投資試算工具。
 
-🔗 **網站：** https://dividend-calculator-eym.pages.dev
+🔗 **網站：** https://dividend-calculator1.pages.dev/
 
 ## 功能
 
