@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dividend-calculator-eym.pages.dev/sitemap.xml
+Sitemap: https://dividend-calculator1.pages.dev/sitemap.xml
