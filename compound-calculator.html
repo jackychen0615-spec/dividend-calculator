@@ -8,7 +8,17 @@
   <meta property="og:title" content="存股複利計算器 - 股利計算器">
   <meta property="og:description" content="免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dividend-calculator1.pages.dev/compound-calculator.html">
   <meta property="og:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="股利計算器">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="存股複利計算器 - 股利計算器">
+  <meta name="twitter:description" content="免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。">
+  <meta name="twitter:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="canonical" href="https://dividend-calculator1.pages.dev/compound-calculator.html">
@@ -112,6 +122,101 @@
     </div>
 
     <section class="faq-section" style="margin-top:2rem;">
+      <h2>什麼是存股複利？</h2>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        複利（Compound Interest）是指「利滾利」的概念：每年領到的股利再投入買進更多股票，下一年又能領到更多股利，如此循環往復。愛因斯坦曾稱複利為「世界第八大奇蹟」，長期存股正是利用複利效應讓資產加速成長的核心策略。
+      </p>
+
+      <h2>複利計算公式說明</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        本計算器採用月複利模型，完整公式如下：
+      </p>
+      <div style="background:#1a1a2e;border:1px solid #333;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#f0c040;line-height:2;">
+        月利率 r = 年殖利率 ÷ 12<br>
+        初始資金終值 = 初始投資 × (1 + r)^(年數×12)<br>
+        每月定投終值 = 每月投入 × [(1 + r)^(年數×12) − 1] ÷ r<br>
+        總資產 = 初始資金終值 + 每月定投終值<br>
+        累計股利 = 總資產 − 總投入成本
+      </div>
+
+      <h2>實際試算範例</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        假設小明 35 歲開始存股，條件如下：
+      </p>
+      <div style="max-width:760px;margin:0 auto 1.5rem;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;color:#ccc;font-size:.95rem;">
+          <thead>
+            <tr style="background:#1a1a2e;">
+              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #333;">參數</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">數值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">初始投資</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">100,000 元</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">每月定期投入</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">5,000 元</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">預期年殖利率</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">6%</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">投資年數</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">20 年</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        計算結果：總投入 <strong style="color:#f0c040;">1,300,000 元</strong>（100,000 + 5,000×12×20），預估總資產約 <strong style="color:#f0c040;">2,420,000 元</strong>，複利帶來的額外獲利超過 110 萬元，相當於本金的 85%。這就是長期複利的驚人威力。
+      </p>
+
+      <h2>存股複利 5 大關鍵策略</h2>
+      <div style="max-width:760px;margin:0 auto 1.5rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">📅 越早開始越好</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">從 25 歲開始存股，20 年的複利效果遠超過 45 歲才起步、存 30 年的結果。時間是最好的複利加速器。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">🔄 股利再投入</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">將每次領到的股利立即買回同一檔股票，讓持股數不斷增加，下一期能領更多股利。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">📈 選擇穩定配息股</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">複利效果需要穩定的殖利率。優先選擇連續 10 年以上配息且殖利率在 4%~8% 的優質股票或 ETF。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">💰 定期定額投入</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">每月固定投入一筆資金，不論股市漲跌都持續買進，可平均成本並放大複利效果。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">⏳ 不輕易停損出場</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">複利需要時間發酵，頻繁進出會中斷複利週期。長期持有才能讓複利效果充分顯現。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">殖利率 5% 和 8% 的差別有多大？</button>
+        <div class="faq-answer">
+          <p>以 100 萬本金投資 20 年計算：年殖利率 5% 複利後約 265 萬，年殖利率 8% 約 466 萬。短短 3% 的殖利率差距，20 年後資產差距超過 200 萬元，可見殖利率對複利的影響極為顯著。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">計算結果包含股利稅嗎？</button>
+        <div class="faq-answer">
+          <p>本計算器採稅前數字，實際到手股利須扣除二代健保（配息超過 2 萬元部分扣 2.11%）及所得稅（依個人綜合所得稅率而異）。建議將輸入的殖利率乘以 0.85～0.9 作為稅後估算。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">台灣存股常見的殖利率範圍是多少？</button>
+        <div class="faq-answer">
+          <p>台灣高股息 ETF（如 0056、00878）近年殖利率約 5%~8%，金融股約 4%~6%，電信股約 4%~5%。殖利率超過 8% 的個股須特別注意是否為一次性高配息或本業獲利是否穩定。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">這個計算器假設殖利率每年固定，實際上如何？</button>
+        <div class="faq-answer">
+          <p>實際殖利率會隨公司獲利與股價波動而每年不同。本計算器使用固定殖利率作為長期平均估算，適合做大方向的財務規劃參考，不代表保證獲利。投資前請充分了解標的基本面。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" style="margin-top:2rem;">
       <h2>更多投資工具</h2>
       <div class="articles-grid" style="max-width:600px;margin:1.5rem auto 0;">
         <div class="article-card">
@@ -143,5 +248,6 @@
 
   <script src="js/compound-calculator.js"></script>
   <script src="js/feedback.js"></script>
+  <script src="js/cookie-consent.js"></script>
 </body>
 </html>

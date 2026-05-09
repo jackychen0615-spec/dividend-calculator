@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>股利計算器 - 快速試算股利與殖利率</title>
-  <meta name="description" content="免費線上股利計算器，輸入股價、張數與每股股利，立即算出總股利、殖利率。台股存股族必備工具。">
-  <meta property="og:title" content="股利計算器 - 快速試算股利與殖利率">
-  <meta property="og:description" content="免費線上股利計算器，輸入股價、張數與每股股利，立即算出總股利、殖利率。">
+  <title>股利計算器｜殖利率計算器 - 免費線上股利試算工具</title>
+  <meta name="description" content="免費線上股利計算器與殖利率計算器，輸入股價、張數與每股股利，立即試算總股利、殖利率。台股存股族必備線上工具，支援股利試算、殖利率計算機功能。">
+  <meta property="og:title" content="股利計算器｜殖利率計算器 - 免費線上股利試算工具">
+  <meta property="og:description" content="免費線上股利計算器與殖利率計算器，輸入股價、張數與每股股利，立即試算總股利、殖利率。台股存股族必備線上工具。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dividend-calculator1.pages.dev/">
   <meta property="og:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="股利計算器">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="股利計算器｜殖利率計算器 - 免費線上股利試算工具">
+  <meta name="twitter:description" content="免費線上股利計算器與殖利率計算器，輸入股價、張數與每股股利，立即試算總股利、殖利率。台股存股族必備線上工具。">
+  <meta name="twitter:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="canonical" href="https://dividend-calculator1.pages.dev/">
@@ -18,9 +28,9 @@
   [{
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "股利計算器",
+    "name": "股利計算器｜殖利率計算器",
     "url": "https://dividend-calculator1.pages.dev",
-    "description": "免費線上股利計算器，輸入股價、股數與每股股利，立即算出投入成本、總股利與殖利率。台股存股族必備工具。",
+    "description": "免費線上股利計算器與殖利率計算器，輸入股價、股數與每股股利，立即算出投入成本、總股利與殖利率。台股存股族必備工具。",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -38,7 +48,7 @@
         "name": "股利怎麼算？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "總股利 = 持有股數 x 每股股利。例如持有 1,000 股，每股配 2 元股利，總股利為 2,000 元。"
+          "text": "總股利 = 持有股數 × 每股股利。例如持有 1,000 股，每股配 2 元股利，總股利為 2,000 元。計算公式非常簡單，只需將持有股數乘以每股股利金額即可。"
         }
       },
       {
@@ -46,7 +56,23 @@
         "name": "殖利率是什麼？怎麼計算？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "殖利率 = 每股股利 / 股價 x 100%。例如股價 50 元、每股配 2 元，殖利率為 4%。超過 5% 通常算高殖利率。"
+          "text": "殖利率（Dividend Yield）= 每股股利 ÷ 股價 × 100%。例如股價 50 元、每股配 2 元，殖利率為 4%。超過 5% 通常算高殖利率股票。殖利率越高，代表每投入的資金能獲得越多股利回報。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "殖利率計算器怎麼用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用殖利率計算器只需三步：1. 輸入股價（元）；2. 輸入持有股數（張數 × 1000）；3. 輸入每股股利（元）。計算器會自動算出殖利率（每股股利 ÷ 股價 × 100%）、總股利以及投入成本。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "殖利率多少算高？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在台灣股市，殖利率超過 5% 通常被視為高殖利率股票。3%-5% 為中等，低於 3% 屬於低殖利率。不過殖利率越高不一定越好，還需評估公司配息穩定性與填息能力。"
         }
       },
       {
@@ -54,7 +80,7 @@
         "name": "一張股票可以拿到多少股利？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "一張股票 = 1,000 股。一張的股利 = 1,000 x 每股股利。例如每股配 3 元，一張可拿 3,000 元。"
+          "text": "一張股票等於 1,000 股，一張的股利 = 1,000 × 每股股利。例如每股配 3 元，一張可拿 3,000 元。持有 5 張就能領 15,000 元股利。"
         }
       },
       {
@@ -62,10 +88,63 @@
         "name": "現金股利和股票股利有什麼差別？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "現金股利是直接發現金到帳戶；股票股利是發放額外股票。多數存股族偏好現金股利作為被動收入。"
+          "text": "現金股利是公司直接發現金到你的帳戶，可做為被動收入使用；股票股利是發放額外股票，增加持股數量。多數存股族偏好穩定的現金股利，因為可直接提領使用。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "股利試算要輸入什麼資料？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "股利試算需要三項資料：1. 股價（元）—輸入買入價或目前市價；2. 持有股數—以股為單位（1張=1000股）；3. 每股股利（元）—查詢公司當年配息資料。輸入後即可自動試算總股利與殖利率。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "如何用股票殖利率計算機評估投資價值？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用股票殖利率計算機，輸入不同股價觀察殖利率變化：股價越低殖利率越高，可幫助判斷目前買入是否划算。一般建議殖利率達 5% 以上才考慮買入，並搭配公司配息歷史穩定性綜合評估。"
         }
       }
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "如何計算股票殖利率",
+    "description": "使用股利計算器計算殖利率的步驟說明",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "輸入股價",
+        "text": "在股價欄位輸入該股票的目前市價或你的買入價格（單位：元）。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "輸入持有股數",
+        "text": "輸入你持有的股數。台股 1 張 = 1,000 股，例如持有 3 張就輸入 3000。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "輸入每股股利",
+        "text": "輸入該公司今年（或預估）每股配發的現金股利金額（單位：元）。可至公開資訊觀測站查詢。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "查看殖利率結果",
+        "text": "計算器自動顯示殖利率（%）、總股利（元）與投入成本（元）。殖利率 = 每股股利 ÷ 股價 × 100%。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".calculator-hero p", ".faq-answer-inner"]
   }]
   </script>
 </head>
@@ -187,6 +266,18 @@
         <button class="faq-question">現金股利和股票股利有什麼差別？</button>
         <div class="faq-answer"><div class="faq-answer-inner">現金股利是公司直接發放現金到你的帳戶；股票股利則是公司發放額外的股票給你。例如配發 0.5 元股票股利，代表每持有 1,000 股可以多拿 50 股。多數存股族偏好穩定的現金股利，因為可以直接當作被動收入使用。</div></div>
       </div>
+      <div class="faq-item">
+        <button class="faq-question">殖利率計算器怎麼用？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">使用本頁殖利率計算器非常簡單：1. 輸入股價（元）；2. 輸入持有股數；3. 輸入每股股利（元）。系統會自動計算出<strong>殖利率 = 每股股利 ÷ 股價 × 100%</strong>，以及總股利與投入成本。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">殖利率多少算高？台股標準是什麼？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">台灣股市的殖利率參考標準：<strong>5% 以上</strong>算高殖利率，常見於金融股、電信股；<strong>3%-5%</strong> 為中等，多為績優股；<strong>3% 以下</strong>屬低殖利率，多為成長型股票。建議同時評估公司歷年配息穩定度，殖利率並非越高越好。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">股利試算要準備哪些資料？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">進行股利試算需要三項資料：<strong>① 股價</strong>（買入價或目前市價）、<strong>② 持有股數</strong>（1 張 = 1,000 股）、<strong>③ 每股股利</strong>（可至公開資訊觀測站或券商 App 查詢當年配息資料）。輸入後即可立即試算。</div></div>
+      </div>
     </section>
   </main>
 
@@ -200,5 +291,6 @@
 
   <script src="js/calculator.js"></script>
   <script src="js/feedback.js"></script>
+  <script src="js/cookie-consent.js"></script>
 </body>
 </html>

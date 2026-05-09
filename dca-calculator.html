@@ -8,7 +8,17 @@
   <meta property="og:title" content="定期定額試算器 - 股利計算器">
   <meta property="og:description" content="免費定期定額試算器，輸入每月投入金額、預期年報酬率與投資年數，立即算出定期定額的投資成果。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dividend-calculator1.pages.dev/dca-calculator.html">
   <meta property="og:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="股利計算器">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="定期定額試算器 - 股利計算器">
+  <meta name="twitter:description" content="免費定期定額試算器，輸入每月投入金額、預期年報酬率與投資年數，立即算出定期定額的投資成果。">
+  <meta name="twitter:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="canonical" href="https://dividend-calculator1.pages.dev/dca-calculator.html">
@@ -108,6 +118,123 @@
     </div>
 
     <section class="faq-section" style="margin-top:2rem;">
+      <h2>什麼是定期定額（DCA）？</h2>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        定期定額（Dollar Cost Averaging，簡稱 DCA）是一種紀律性投資策略：不論市場漲跌，每隔固定時間（通常每月）投入固定金額購買同一標的。這個方法的優點在於「高點少買、低點多買」，自動達到分散買入成本的效果，特別適合沒有時間盯盤的上班族與長期存股族。
+      </p>
+
+      <h2>定期定額計算公式</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        本計算器使用月複利公式，模擬每月定期投入的終值：
+      </p>
+      <div style="background:#1a1a2e;border:1px solid #333;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#f0c040;line-height:2;">
+        月利率 r = 年報酬率 ÷ 12<br>
+        總投入 = 每月金額 × 12 × 年數<br>
+        預估總資產 = 每月金額 × [(1 + r)^(年數×12) − 1] ÷ r × (1 + r)<br>
+        投資報酬 = 預估總資產 − 總投入
+      </div>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        公式中乘以 (1 + r) 是因為假設每月月初投入（期初年金），若改為月底投入則去掉此項。兩者差異不大，長期誤差在 1% 以內。
+      </p>
+
+      <h2>不同年報酬率的 20 年試算比較</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        假設每月定期投入 <strong style="color:#f0c040;">5,000 元</strong>，投資 20 年（總投入 120 萬元）：
+      </p>
+      <div style="max-width:760px;margin:0 auto 1.5rem;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;color:#ccc;font-size:.95rem;">
+          <thead>
+            <tr style="background:#1a1a2e;">
+              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #333;">年報酬率</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">預估總資產</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">投資報酬</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">報酬倍數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">3%（定存）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,641,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">441,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1.37 倍</td>
+            </tr>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">6%（高股息 ETF）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,310,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,110,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#f0c040;">1.93 倍</td>
+            </tr>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">8%（台股大盤長期）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,936,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,736,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#4caf50;">2.45 倍</td>
+            </tr>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">10%（美股 S&P 500 歷史均值）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">3,795,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,595,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#4caf50;">3.16 倍</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;font-size:.88rem;">
+        ※ 以上試算為示例，歷史報酬不代表未來績效保證。
+      </p>
+
+      <h2>定期定額的 5 大優勢</h2>
+      <div style="max-width:760px;margin:0 auto 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">📉 降低買在高點風險</div>
+          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">分批買進可平滑市場波動，避免單筆投入押在最高點。</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">🤖 自動化不費心</div>
+          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">設定每月自動扣款，不需要盯盤或判斷市場時機，省時省力。</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">💪 培養儲蓄紀律</div>
+          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">強迫自己每月先存後花，長期下來積累可觀的投資本金。</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">📊 平均成本效應</div>
+          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">低點多買股、高點少買股，長期持有平均成本通常低於平均股價。</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">🌱 小資族友善</div>
+          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">每月只需數千元即可開始，不需要大筆資金，降低投資門檻。</p>
+        </div>
+      </div>
+
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">定期定額要選哪種標的？</button>
+        <div class="faq-answer">
+          <p>定期定額最適合指數型 ETF 或高股息 ETF，例如台灣的 0050（元大台灣50）、0056（元大高股息）、00878（國泰永續高股息）。這類標的分散風險、流動性佳，適合長期持有。個股波動較大，定期定額效果不如 ETF 穩定。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">定期定額每月投多少錢合適？</button>
+        <div class="faq-answer">
+          <p>建議每月可支配收入的 10%~30%，在不影響日常生活與緊急備用金（建議保留 3~6 個月支出）的前提下盡量提高。以月收入 40,000 元為例，每月投入 5,000~10,000 元是合理範圍。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">股市大跌時要停止定期定額嗎？</button>
+        <div class="faq-answer">
+          <p>不建議停止，反而是定期定額最有效的時候。股市下跌代表同樣的錢可以買到更多股數，等市場回升後這些低成本持股的獲利更豐厚。歷史上，在市場恐慌時仍持續定期定額的投資人，長期績效往往優於中途停止者。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">定期定額和單筆投入哪個好？</button>
+        <div class="faq-answer">
+          <p>學術研究顯示，若能在市場低點單筆投入，長期績效通常優於定期定額；但由於沒有人能精準預測最低點，對一般投資人而言定期定額更為實際。兩者可以結合：平時定期定額，等到市場大幅回調（跌 20% 以上）時加碼單筆買入。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" style="margin-top:2rem;">
       <h2>更多投資工具</h2>
       <div class="articles-grid" style="max-width:600px;margin:1.5rem auto 0;">
         <div class="article-card">
@@ -139,5 +266,6 @@
 
   <script src="js/dca-calculator.js"></script>
   <script src="js/feedback.js"></script>
+  <script src="js/cookie-consent.js"></script>
 </body>
 </html>

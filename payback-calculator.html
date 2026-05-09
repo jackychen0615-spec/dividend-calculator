@@ -11,6 +11,15 @@
   <meta property="og:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
   <meta property="og:url" content="https://dividend-calculator1.pages.dev/payback-calculator.html">
   <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="股利計算器">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="存股回本計算器 - 股利計算器">
+  <meta name="twitter:description" content="免費存股回本計算器，輸入買入股價、持有股數與每股股利，立即算出幾年可以靠股利回本。">
+  <meta name="twitter:image" content="https://dividend-calculator1.pages.dev/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
@@ -112,6 +121,85 @@
     </div>
 
     <section class="faq-section">
+      <h2>什麼是存股回本？</h2>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        存股回本是指投資人透過每年領取的現金股利，累積至與當初買入股票的總成本相同金額，即為「回本」。回本後仍繼續持有的股票等於零成本入場，往後每年收到的股利都可視為純獲利。這個概念是台灣存股族評估投資標的時最常用的指標之一。
+      </p>
+
+      <h2>回本年數計算公式</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        計算回本年數只需三個數據：買入股價、持有股數、每股年股利。
+      </p>
+      <div style="background:#1a1a2e;border:1px solid #333;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#f0c040;line-height:2;">
+        投入成本 = 買入股價 × 持有股數<br>
+        每年股利 = 每股年股利 × 持有股數<br>
+        殖利率 = 每股年股利 ÷ 買入股價 × 100%<br>
+        回本年數 = 投入成本 ÷ 每年股利 = 1 ÷ 殖利率
+      </div>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        由公式可知，回本年數與殖利率呈反比關係：殖利率越高，回本越快。例如殖利率 5% → 20 年回本；殖利率 7% → 約 14.3 年回本；殖利率 10% → 10 年回本。
+      </p>
+
+      <h2>實際試算範例</h2>
+      <div style="max-width:760px;margin:0 auto 1.5rem;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;color:#ccc;font-size:.95rem;">
+          <thead>
+            <tr style="background:#1a1a2e;">
+              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #333;">情境</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">買入股價</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">每股年股利</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">殖利率</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">回本年數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">高股息 ETF（00878）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">20 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1.2 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">6%</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#f0c040;">約 16.7 年</td>
+            </tr>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">金融股（兆豐金）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">38 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2.2 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">5.8%</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#f0c040;">約 17.3 年</td>
+            </tr>
+            <tr>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">電信股（中華電）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">125 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">5.5 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">4.4%</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#f0c040;">約 22.7 年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;font-size:.88rem;">
+        ※ 以上數字為示例，非投資建議。實際股利依公司年度盈利公告為準。
+      </p>
+
+      <h2>回本年數怎麼看才合理？</h2>
+      <div style="max-width:760px;margin:0 auto 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;text-align:center;">
+          <div style="font-size:1.5rem;font-weight:700;color:#4caf50;">10～15 年</div>
+          <div style="color:#f0c040;font-weight:700;margin:.4rem 0;">優</div>
+          <p style="margin:0;font-size:.88rem;color:#bbb;">殖利率約 6.7%~10%，高配息股，需確認股利持續性</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;text-align:center;">
+          <div style="font-size:1.5rem;font-weight:700;color:#f0c040;">15～22 年</div>
+          <div style="color:#f0c040;font-weight:700;margin:.4rem 0;">合理</div>
+          <p style="margin:0;font-size:.88rem;color:#bbb;">殖利率約 4.5%~6.7%，台灣多數優質存股標的</p>
+        </div>
+        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;text-align:center;">
+          <div style="font-size:1.5rem;font-weight:700;color:#e57373;">22 年以上</div>
+          <div style="color:#e57373;font-weight:700;margin:.4rem 0;">偏長</div>
+          <p style="margin:0;font-size:.88rem;color:#bbb;">殖利率低於 4.5%，可考慮等待更好買點或換標的</p>
+        </div>
+      </div>
+
       <h2>常見問題</h2>
       <div class="faq-item">
         <button class="faq-question">什麼是存股回本？</button>
@@ -171,5 +259,6 @@
 
   <script src="js/payback-calculator.js"></script>
   <script src="js/feedback.js"></script>
+  <script src="js/cookie-consent.js"></script>
 </body>
 </html>
