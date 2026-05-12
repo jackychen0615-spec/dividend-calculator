@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SEO 大師之路 — 艾澤拉斯搜尋之戰</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ======================================================
+   DESIGN SYSTEM — hand-tuned, not template
+   ====================================================== */
+:root{
+  --bg:#06060c;--bg2:#0c0d16;--bg3:#13141f;--card:#0f1018;--card2:#14151f;
+  --surface:rgba(255,255,255,.025);--surface-h:rgba(255,255,255,.045);
+  --gold:#c9a84c;--gold2:#dfc06a;--gold-dim:rgba(201,168,76,.08);--gold-line:rgba(201,168,76,.15);
+  --text:#b0b3bc;--text2:#5c5f6a;--text-h:#dddee3;
+  --blue:#4a7fd9;--blue2:#7ba8f0;--blue-bg:rgba(74,127,217,.07);
+  --red:#b83a2e;--red2:#e05a4e;--red-bg:rgba(184,58,46,.07);
+  --purple:#7856b8;--purple2:#a889e0;--purple-bg:rgba(120,86,184,.07);
+  --green:#2d9d5e;--green2:#6bc992;
+  --teal:#3aa89a;
+  --border:rgba(255,255,255,.05);--border-h:rgba(201,168,76,.18);
+  --r:8px;--r-lg:14px;--tr:.22s ease;
+  --shadow-sm:0 1px 8px rgba(0,0,0,.3);--shadow:0 4px 24px rgba(0,0,0,.45);
+  --mono:'JetBrains Mono',monospace;
+  --body:'Noto Sans TC',system-ui,-apple-system,sans-serif;
+  --head:'Cinzel','Noto Sans TC',serif;
+  --head-d:'Cinzel Decorative','Cinzel',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.82;font-size:14.5px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(201,168,76,.03),transparent);pointer-events:none;z-index:0}
+
+/* Typography */
+h1,h2,h3{font-family:var(--head);color:var(--gold);font-weight:700;letter-spacing:.03em}
+h4{color:var(--text-h);font-weight:600;font-size:.95rem;margin:1rem 0 .35rem;letter-spacing:.01em}
+h1{font-size:clamp(1.5rem,3.5vw,2.4rem);text-align:center;margin-bottom:.6rem}
+h2{font-size:clamp(1.05rem,2.2vw,1.5rem);margin:2.8rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem}
+h2::before{content:'';width:3px;height:1.2em;background:var(--gold);border-radius:2px;flex-shrink:0}
+h3{font-size:clamp(.92rem,1.8vw,1.15rem);margin:1.2rem 0 .5rem;color:var(--gold2)}
+a{color:var(--gold);text-decoration:none;transition:var(--tr)}
+a:hover{color:var(--gold2);text-decoration:underline}
+p{margin:.4rem 0}
+ul,ol{padding-left:1.15rem;margin:.3rem 0}
+li{margin:.2rem 0;font-size:.9rem}
+small{color:var(--text2);font-size:.78rem}
+code{font-family:var(--mono);font-size:.82rem;background:var(--surface);padding:.1rem .4rem;border-radius:3px}
+::selection{background:rgba(201,168,76,.25);color:#fff}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.15)}
+
+/* ========== PROGRESS ========== */
+#pbar-wrap{position:fixed;top:0;left:0;right:0;height:2px;z-index:1001;background:transparent}
+#pbar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold),var(--red2));transition:width .25s}
+
+/* ========== NAV ========== */
+.nav{position:fixed;top:2px;left:0;right:0;z-index:1000;padding:.5rem .6rem;display:flex;justify-content:center;gap:.4rem;flex-wrap:wrap}
+.nav::before{content:'';position:absolute;inset:0;background:rgba(6,6,12,.88);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border);z-index:-1}
+.nav-btn{padding:.38rem .9rem;border:1px solid rgba(255,255,255,.06);border-radius:5px;background:transparent;color:var(--text2);cursor:pointer;font-family:var(--body);font-size:.78rem;font-weight:500;transition:var(--tr);letter-spacing:.04em}
+.nav-btn:hover{color:var(--text-h);border-color:rgba(255,255,255,.12);background:var(--surface)}
+.nav-btn.on{color:var(--gold);border-color:var(--gold-line);background:var(--gold-dim)}
+
+/* ========== LAYOUT ========== */
+main{max-width:800px;margin:0 auto;padding:4rem 1.2rem 3rem;position:relative;z-index:1}
+.day{display:none;animation:up .4s ease both}
+.day.on{display:block}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ========== HERO ========== */
+.hero{text-align:center;padding:4rem 1.5rem 3.5rem;margin-bottom:2.5rem;border-radius:var(--r-lg);position:relative;overflow:hidden;border:1px solid var(--border)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1}
+.hero.h-home{background:#090a12}
+.hero.h-home::before{background:radial-gradient(circle at 30% 40%,rgba(74,127,217,.06),transparent 50%),radial-gradient(circle at 70% 60%,rgba(201,168,76,.05),transparent 50%)}
+.hero.h-algo::before{background:linear-gradient(180deg,rgba(74,127,217,.06),transparent)}
+.hero.h-algo{background:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=70') center/cover}
+.hero.h-algo::before{background:rgba(6,6,12,.82)}
+.hero.h-fac{background:url('https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=1200&q=70') center/cover}
+.hero.h-fac::before{background:rgba(6,6,12,.82)}
+.hero.h-ai{background:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=70') center/cover}
+.hero.h-ai::before{background:rgba(6,6,12,.82)}
+.hero.h-adv{background:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=70') center/cover}
+.hero.h-adv::before{background:rgba(6,6,12,.85)}
+.hero *{position:relative;z-index:2}
+.hero p{color:var(--text2);font-size:.9rem;max-width:480px;margin:.3rem auto 0}
+.hero .sub{color:var(--gold);font-style:italic;font-size:.92rem;letter-spacing:.05em;margin-bottom:.3rem;font-family:var(--head)}
+.hero h1{text-shadow:0 2px 20px rgba(201,168,76,.15)}
+
+/* ========== FLOW ========== */
+.flow{display:flex;align-items:stretch;justify-content:center;gap:0;margin:2rem 0;flex-wrap:wrap}
+.flow-s{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem .8rem;text-align:center;flex:1;min-width:110px;max-width:170px;transition:var(--tr)}
+.flow-s:hover{border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.flow-s .fi{width:32px;height:32px;border-radius:50%;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;font-family:var(--mono);background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line)}
+.flow-s b{display:block;font-size:.84rem;color:var(--text-h)}
+.flow-s span{display:block;font-size:.75rem;color:var(--text2);margin-top:.2rem;line-height:1.4}
+.flow-a{display:flex;align-items:center;padding:0 .1rem;color:var(--text2);font-size:.9rem;flex-shrink:0}
+
+/* ========== GRID CARDS (factions, compare, etc.) ========== */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.5rem 0}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin:1.5rem 0}
+.grid-auto-sm{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin:1.5rem 0}
+
+/* Faction cards */
+.fc{border-radius:var(--r-lg);padding:1.4rem 1rem;text-align:center;transition:var(--tr);border:1px solid var(--border)}
+.fc:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fc-a{background:linear-gradient(170deg,rgba(74,127,217,.06),var(--card) 60%);border-color:rgba(74,127,217,.12)}
+.fc-h{background:linear-gradient(170deg,rgba(184,58,46,.06),var(--card) 60%);border-color:rgba(184,58,46,.12)}
+.fc-n{background:linear-gradient(170deg,rgba(120,86,184,.06),var(--card) 60%);border-color:rgba(120,86,184,.12)}
+.fc .fc-i{width:44px;height:44px;border-radius:50%;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;font-family:var(--head)}
+.fc-a .fc-i{background:rgba(74,127,217,.12);color:var(--blue2);border:1.5px solid rgba(74,127,217,.2)}
+.fc-h .fc-i{background:rgba(184,58,46,.12);color:var(--red2);border:1.5px solid rgba(184,58,46,.2)}
+.fc-n .fc-i{background:rgba(120,86,184,.12);color:var(--purple2);border:1.5px solid rgba(120,86,184,.2)}
+.fc h3{margin:.2rem 0 .4rem;font-size:.95rem}
+.fc-a h3{color:var(--blue2)}.fc-h h3{color:var(--red2)}.fc-n h3{color:var(--purple2)}
+.fc p{font-size:.8rem;color:var(--text2);line-height:1.5}
+
+/* Gauge */
+.ga{display:flex;align-items:center;gap:.45rem;margin:.35rem auto;justify-content:center}
+.ga-d{display:flex;gap:2px}
+.ga-d i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.06);display:block}
+.ga-d i.g{background:var(--green)}.ga-d i.y{background:var(--gold)}.ga-d i.r{background:var(--red2)}
+.ga small{font-size:.68rem;color:var(--text2);min-width:35px}
+
+/* ========== STATS ========== */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.6rem;margin:1.5rem 0}
+.st{text-align:center;padding:1rem .5rem;background:var(--card);border-radius:var(--r);border:1px solid var(--border);transition:var(--tr)}
+.st:hover{border-color:var(--border-h)}
+.st .n{font-size:1.5rem;font-weight:800;color:var(--gold);font-family:var(--head);line-height:1.1}
+.st .l{font-size:.68rem;color:var(--text2);margin-top:.25rem;line-height:1.25}
+
+/* ========== COMPARE ========== */
+.cmp{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;text-align:center;transition:var(--tr)}
+.cmp:hover{border-color:var(--border-h)}
+.cmp .ci{width:36px;height:36px;border-radius:50%;margin:0 auto .4rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;font-family:var(--mono);background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line)}
+.cmp h4{margin:.15rem 0;font-size:.85rem}
+.cmp p{font-size:.76rem;color:var(--text2)}
+
+/* ========== ACCORDION ========== */
+.acc{margin:.8rem 0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--card);transition:border-color var(--tr)}
+.acc:hover,.acc.o{border-color:rgba(255,255,255,.08)}
+.acc-h{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;cursor:pointer;transition:var(--tr);gap:.5rem;user-select:none}
+.acc-h:hover{background:var(--surface)}
+.acc-h h3{margin:0;font-size:.92rem;flex:1}
+.acc-t{width:24px;height:24px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--tr);background:transparent}
+.acc-t svg{width:12px;height:12px;stroke:var(--gold);stroke-width:2;fill:none;transition:transform .3s}
+.acc.o .acc-t{background:var(--gold-dim);border-color:var(--gold-line)}
+.acc.o .acc-t svg{transform:rotate(45deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.acc.o .acc-b{max-height:12000px}
+.acc-c{padding:.3rem 1.1rem 1.3rem}
+
+/* ========== SKILL TREE ========== */
+.sk{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem;text-align:center;transition:var(--tr)}
+.sk:hover{border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.sk .si{width:38px;height:38px;border-radius:8px;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;font-family:var(--mono);background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line)}
+.sk.sk-a .si{background:var(--blue-bg);color:var(--blue2);border-color:rgba(74,127,217,.15)}
+.sk.sk-h .si{background:var(--red-bg);color:var(--red2);border-color:rgba(184,58,46,.15)}
+.sk h4{color:var(--gold);margin:0 0 .3rem;font-size:.85rem;line-height:1.25}
+.sk p{font-size:.78rem;color:var(--text2);margin:0;line-height:1.45}
+
+/* ========== METER ========== */
+.mt{margin:.6rem 0}
+.mt-top{display:flex;justify-content:space-between;margin-bottom:.2rem;font-size:.8rem}
+.mt-top span:last-child{color:var(--text2)}
+.mt-bar{height:6px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.mt-f{height:100%;border-radius:3px;transition:width 1s ease}
+.mt-f.b{background:linear-gradient(90deg,var(--blue),var(--blue2))}
+.mt-f.r{background:linear-gradient(90deg,var(--red),var(--red2))}
+.mt-f.p{background:linear-gradient(90deg,var(--purple),var(--purple2))}
+.mt-f.go{background:linear-gradient(90deg,#7a5c20,var(--gold))}
+.mt-f.gr{background:linear-gradient(90deg,#1a6b3c,var(--green2))}
+
+/* ========== TIMELINE ========== */
+.tl{position:relative;margin:2rem 0 2rem 16px;padding-left:24px}
+.tl::before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:1.5px;background:linear-gradient(180deg,var(--gold),var(--blue),var(--red));border-radius:1px;opacity:.5}
+.tl-i{position:relative;margin-bottom:1.1rem}
+.tl-i::before{content:'';position:absolute;left:-29px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.tl-i.maj::before{width:10px;height:10px;left:-30px;background:var(--red2)}
+.tl-i h4{margin:0 0 .1rem;font-size:.84rem}
+.tl-i.maj h4{color:var(--red2)}
+.tl-i p{font-size:.78rem;color:var(--text2);margin:0}
+
+/* ========== LAYER STACK ========== */
+.layers{display:flex;flex-direction:column;margin:1.8rem auto;max-width:440px}
+.ly{padding:.75rem .8rem;text-align:center;font-weight:600;font-size:.85rem}
+.ly:first-child{border-radius:var(--r) var(--r) 0 0}
+.ly:last-child{border-radius:0 0 var(--r) var(--r)}
+.ly small{display:block;font-weight:400;font-size:.72rem;opacity:.65;margin-top:.1rem}
+.ly.l3{background:rgba(0,170,120,.07);border:1px solid rgba(0,170,120,.15);color:#5ee0b5}
+.ly.l2{background:var(--purple-bg);border:1px solid rgba(120,86,184,.15);color:var(--purple2)}
+.ly.l1{background:var(--blue-bg);border:1px solid rgba(74,127,217,.15);color:var(--blue2)}
+
+/* ========== PHASE CARDS ========== */
+.ph-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem;margin:1.5rem 0}
+.ph{background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--border);transition:var(--tr)}
+.ph:hover{border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.ph img{width:100%;height:120px;object-fit:cover;display:block;filter:brightness(.55) saturate(.7)}
+.ph .pb{padding:.9rem}
+.ph h4{margin:0 0 .4rem;color:var(--gold);font-size:.82rem}
+.ph ul{margin:0;padding-left:.9rem;font-size:.76rem;color:var(--text2)}
+
+/* ========== IMAGE CARD ========== */
+.ic{border-radius:var(--r);overflow:hidden;margin:1.3rem 0;border:1px solid var(--border);background:var(--card)}
+.ic img{width:100%;height:160px;object-fit:cover;display:block;filter:brightness(.55) saturate(.7)}
+.ic .ib{padding:1rem}
+
+/* ========== BADGES ========== */
+.bg{display:inline-block;padding:.12rem .5rem;border-radius:3px;font-size:.7rem;font-weight:600;letter-spacing:.02em;font-family:var(--mono)}
+.bg-w{background:var(--blue-bg);color:var(--blue2);border:1px solid rgba(74,127,217,.15)}
+.bg-b{background:var(--red-bg);color:var(--red2);border:1px solid rgba(184,58,46,.15)}
+.bg-g{background:var(--purple-bg);color:var(--purple2);border:1px solid rgba(120,86,184,.15)}
+.bg-go{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line)}
+.bg-t{background:rgba(58,168,154,.08);color:var(--teal);border:1px solid rgba(58,168,154,.15)}
+
+/* ========== TABLE ========== */
+.tw{overflow-x:auto;margin:1rem 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.8rem;min-width:480px}
+th,td{padding:.5rem .65rem;border:1px solid var(--border);text-align:left}
+th{background:var(--gold-dim);color:var(--gold);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}
+tr:nth-child(even){background:var(--surface)}
+
+/* ========== QUIZ ========== */
+.qz{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.3rem;margin:2.5rem 0}
+.qz h3{margin-top:0;font-size:1rem}
+.q{margin:1.1rem 0;padding-top:.9rem;border-top:1px solid var(--border)}
+.q:first-of-type{border-top:none;padding-top:0}
+.q>p{font-weight:600;margin-bottom:.4rem;color:var(--text-h);font-size:.88rem}
+.opt{display:block;padding:.5rem .9rem;margin:.3rem 0;border:1px solid var(--border);border-radius:5px;cursor:pointer;transition:var(--tr);background:transparent;font-size:.84rem}
+.opt:hover{border-color:var(--border-h);background:var(--surface)}
+.opt.ok{border-color:var(--green);background:rgba(45,157,94,.06);color:var(--green2)}
+.opt.no{border-color:var(--red2);background:rgba(184,58,46,.06);color:#f0a0a0}
+.opt.off{pointer-events:none;opacity:.6}
+.exp{display:none;padding:.6rem .9rem;margin-top:.4rem;background:var(--gold-dim);border-radius:5px;font-size:.8rem;border-left:2px solid var(--gold)}
+
+/* ========== INFO BOXES ========== */
+.bx{border-radius:var(--r);padding:.9rem 1.1rem;margin:1rem 0;font-size:.87rem}
+.bx-w{background:var(--red-bg);border:1px solid rgba(184,58,46,.15)}.bx-w strong{color:var(--red2)}
+.bx-t{background:var(--blue-bg);border:1px solid rgba(74,127,217,.15)}.bx-t strong{color:var(--blue2)}
+.bx-g{background:var(--gold-dim);border:1px solid var(--gold-line)}.bx-g strong{color:var(--gold)}
+
+/* ========== CHECKLIST ========== */
+.cl label{display:flex;align-items:flex-start;gap:.55rem;padding:.4rem 0;cursor:pointer;font-size:.85rem;transition:var(--tr)}
+.cl label:hover{color:var(--text-h)}
+.cl input[type=checkbox]{accent-color:var(--gold);margin-top:.28rem;width:15px;height:15px;flex-shrink:0}
+
+/* ========== ACHIEVEMENT ========== */
+.ach{display:none;position:fixed;top:50px;left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid var(--gold-line);border-radius:6px;padding:.65rem 1.5rem;z-index:2000;text-align:center;box-shadow:0 4px 24px rgba(201,168,76,.1);animation:ai .35s}
+.ach.show{display:block}
+.ach h4{color:var(--gold);margin:0 0 .1rem;font-size:.82rem;font-family:var(--head)}
+.ach p{color:var(--text2);font-size:.74rem;margin:0}
+@keyframes ai{from{opacity:0;transform:translateX(-50%) translateY(-10px)}to{opacity:1;transform:translateX(-50%)}}
+
+/* ========== SECTION DIVIDER ========== */
+.divider{text-align:center;margin:3rem 0 2rem;position:relative}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border)}
+.divider span{position:relative;background:var(--bg);padding:0 1rem;font-family:var(--head);color:var(--text2);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ========== FOOTER ========== */
+footer{text-align:center;padding:2.5rem 1rem;color:var(--text2);font-size:.76rem;border-top:1px solid var(--border);margin-top:2rem}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+  main{padding:3.8rem .9rem 2.5rem}
+  .grid-3{grid-template-columns:1fr}
+  .grid-auto{grid-template-columns:repeat(2,1fr)}
+  .grid-auto-sm{grid-template-columns:repeat(2,1fr)}
+  .ph-grid{grid-template-columns:1fr}
+  .hero{padding:2.8rem 1rem 2.2rem}
+  .flow-s{min-width:95px;max-width:130px;padding:.7rem .5rem}
+}
+@media(max-width:480px){
+  .nav{gap:.25rem;padding:.35rem .3rem}
+  .nav-btn{padding:.3rem .55rem;font-size:.7rem}
+  .flow{flex-direction:column;align-items:center}
+  .flow-s{max-width:100%;width:100%}
+  .flow-a{transform:rotate(90deg);padding:.15rem 0}
+  .grid-auto,.grid-auto-sm,.stats,.grid-2{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr}
+  .acc-c{padding:.2rem .75rem 1rem}
+  .layers{max-width:100%}
+  table{min-width:400px}
+}
+</style>
+</head>
+<body>
+
+<div id="pbar-wrap"><div id="pbar"></div></div>
+
+<nav class="nav">
+  <button class="nav-btn on" onclick="go(0)">Prologue</button>
+  <button class="nav-btn" onclick="go(1)">Day 1</button>
+  <button class="nav-btn" onclick="go(2)">Day 2</button>
+  <button class="nav-btn" onclick="go(3)">Day 3</button>
+  <button class="nav-btn" onclick="go(4)">Day 4</button>
+</nav>
+
+<main>
+
+<!-- ====== PROLOGUE ====== -->
+<section class="day on" id="d0">
+<div class="hero h-home">
+  <h1>SEO Masterclass</h1>
+  <p class="sub">艾澤拉斯搜尋之戰</p>
+  <p>四天旅程 — 演算法底層、三大陣營、AI 新紀元、進階實戰</p>
+</div>
+
+<h2>World Map</h2>
+<div class="grid-3">
+  <div class="fc fc-a"><div class="fc-i">A</div><h3>聯盟 / 白帽</h3><p>聖光之路 — 穩定成長、長期稱霸</p>
+    <div class="ga"><div class="ga-d"><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i></div><small>安全</small></div>
+    <div class="ga"><div class="ga-d"><i class="y"></i><i class="y"></i><i></i><i></i><i></i></div><small>速度</small></div>
+  </div>
+  <div class="fc fc-n"><div class="fc-i">N</div><h3>中立 / 灰帽</h3><p>光暗之間 — 傭兵式風險管理</p>
+    <div class="ga"><div class="ga-d"><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i></div><small>安全</small></div>
+    <div class="ga"><div class="ga-d"><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i></div><small>速度</small></div>
+  </div>
+  <div class="fc fc-h"><div class="fc-i">H</div><h3>部落 / 黑帽</h3><p>暗影力量 — 天譴隨時降臨</p>
+    <div class="ga"><div class="ga-d"><i class="r"></i><i></i><i></i><i></i><i></i></div><small>安全</small></div>
+    <div class="ga"><div class="ga-d"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i></div><small>速度</small></div>
+  </div>
+</div>
+
+<div class="grid-auto-sm">
+  <div class="cmp"><div class="ci">G</div><h4>Google</h4><p>= 艾澤拉斯</p></div>
+  <div class="cmp"><div class="ci">W</div><h4>你的網站</h4><p>= 你的要塞</p></div>
+  <div class="cmp"><div class="ci">AI</div><h4>AI 搜尋</h4><p>= 新大陸</p></div>
+  <div class="cmp"><div class="ci">SB</div><h4>SpamBrain</h4><p>= 天譴軍團</p></div>
+</div>
+
+<div class="stats">
+  <div class="st"><div class="n">4</div><div class="l">天學習旅程</div></div>
+  <div class="st"><div class="n">24</div><div class="l">核心章節</div></div>
+  <div class="st"><div class="n">70+</div><div class="l">實戰技術</div></div>
+  <div class="st"><div class="n">&infin;</div><div class="l">應用場景</div></div>
+</div>
+
+<p style="text-align:center;margin-top:2rem"><button class="nav-btn" onclick="go(1)" style="font-size:.88rem;padding:.6rem 1.8rem">Enter Day 1 &rarr;</button></p>
+</section>
+
+<!-- ====== DAY 1 ====== -->
+<section class="day" id="d1">
+<div class="hero h-algo"><h1>Day 1 : Algorithm</h1><p>Google 演算法底層邏輯</p></div>
+
+<div class="acc o"><div class="acc-h" onclick="tog(this)"><h3>1.1 搜尋引擎運作原理</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<div class="flow">
+  <div class="flow-s"><div class="fi">C</div><b>Crawl</b><span>偵查兵巡邏<br>透過連結發現頁面</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">I</div><b>Index</b><span>圖書館收錄<br>語意理解分類歸檔</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">R</div><b>Rank</b><span>競技場排位<br>數百因子決定名次</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">D</div><b>Display</b><span>搜尋結果呈現<br>使用者看到你</span></div>
+</div>
+
+<div class="ic"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=70" alt="Ranking"><div class="ib">
+  <h4>四大核心排名因子</h4>
+  <div style="margin-top:.5rem">
+    <div class="mt"><div class="mt-top"><span>內容相關性</span><span>最高</span></div><div class="mt-bar"><div class="mt-f go" style="width:95%"></div></div></div>
+    <div class="mt"><div class="mt-top"><span>外部連結 / 權威性</span></div><div class="mt-bar"><div class="mt-f b" style="width:80%"></div></div></div>
+    <div class="mt"><div class="mt-top"><span>E-E-A-T 信號</span></div><div class="mt-bar"><div class="mt-f p" style="width:70%"></div></div></div>
+    <div class="mt"><div class="mt-top"><span>使用者體驗 / 速度</span></div><div class="mt-bar"><div class="mt-f gr" style="width:65%"></div></div></div>
+  </div>
+</div></div>
+
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>1.2 五大核心系統</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<div class="grid-auto">
+  <div class="sk"><div class="si">PR</div><h4>PageRank</h4><p>霜之哀傷 — 連結權重傳遞。高品質外連 = 強大武器</p></div>
+  <div class="sk"><div class="si">HC</div><h4>Helpful Content</h4><p>聖光 — 為使用者而寫？還是為排名？Site-wide signal</p></div>
+  <div class="sk"><div class="si">SB</div><h4>SpamBrain</h4><p>天譴軍團 — AI 反垃圾。2026 近乎即時懲罰</p></div>
+  <div class="sk"><div class="si">EAT</div><h4>E-E-A-T</h4><p>四大護甲 — Trust 是核心中的核心</p></div>
+  <div class="sk"><div class="si">MUM</div><h4>RankBrain + MUM</h4><p>AI 語意理解 — 跨語言、跨模態、理解意圖</p></div>
+</div>
+
+<div class="grid-auto-sm" style="margin-top:1.5rem">
+  <div class="cmp" style="border-top:2px solid var(--green)"><div class="ci">E1</div><h4>Experience</h4><p>你自己做過嗎？</p></div>
+  <div class="cmp" style="border-top:2px solid var(--blue)"><div class="ci">E2</div><h4>Expertise</h4><p>你有專業知識？</p></div>
+  <div class="cmp" style="border-top:2px solid var(--purple)"><div class="ci">A</div><h4>Authority</h4><p>業界認可你？</p></div>
+  <div class="cmp" style="border-top:2px solid var(--gold)"><div class="ci">T</div><h4>Trust</h4><p>最重要的屬性</p></div>
+</div>
+
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>1.3 2025-2026 演算法震動</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<div class="stats">
+  <div class="st"><div class="n">80%</div><div class="l">Top-3 洗牌</div></div>
+  <div class="st"><div class="n">55%</div><div class="l">搜尋含 AI Overview</div></div>
+  <div class="st"><div class="n">-58%</div><div class="l">AI Overview CTR</div></div>
+  <div class="st"><div class="n">-25%</div><div class="l">傳統搜尋量下降</div></div>
+</div>
+
+<div class="tl">
+  <div class="tl-i"><h4>2025 Mar Core</h4><p>語意意圖強化、弱化純關鍵字</p></div>
+  <div class="tl-i"><h4>2025 Jun Core</h4><p>E-E-A-T 權重提升、UGC 下滑</p></div>
+  <div class="tl-i"><h4>2025 Dec Core</h4><p>E-E-A-T 擴展至所有內容類型</p></div>
+  <div class="tl-i maj"><h4>2026 Mar Core — 史上最大震動</h4><p>80% top-3 變動 / 品牌權重大增 / Entity 排名核心化</p></div>
+</div>
+
+</div></div></div>
+
+<div class="qz"><h3>Day 1 Quiz</h3>
+  <div class="q"><p>Google 爬蟲如何發現新頁面？</p><div class="opt" onclick="ans(this,0)">A. 手動提交</div><div class="opt" onclick="ans(this,1)">B. 跟著連結跳轉</div><div class="opt" onclick="ans(this,0)">C. 隨機掃描 IP</div><div class="exp">透過連結發現。Sitemap + 內部連結 = 給偵查兵開路。</div></div>
+  <div class="q"><p>E-E-A-T 中哪個最核心？</p><div class="opt" onclick="ans(this,1)">A. Trust</div><div class="opt" onclick="ans(this,0)">B. Experience</div><div class="opt" onclick="ans(this,0)">C. Expertise</div><div class="exp">Google 明確表示 Trust 是核心，其他三個都是建立 Trust 的方式。</div></div>
+</div>
+
+<p style="text-align:center;margin-top:2rem"><button class="nav-btn" onclick="go(2)" style="padding:.6rem 1.8rem">Day 2 &rarr;</button></p>
+</section>
+
+<!-- ====== DAY 2 ====== -->
+<section class="day" id="d2">
+<div class="hero h-fac"><h1>Day 2 : Factions</h1><p>白帽 / 灰帽 / 黑帽 — 技術全解與戰場判斷</p></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>2.1 聯盟 / 白帽 — 六大技能</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="grid-auto">
+  <div class="sk sk-a"><div class="si">T</div><h4>技術 SEO</h4><p>robots / sitemap / canonical / HTTPS / CWV / Schema</p></div>
+  <div class="sk sk-a"><div class="si">C</div><h4>內容策略</h4><p>Topic Cluster / 意圖匹配 / E-E-A-T / 更新頻率</p></div>
+  <div class="sk sk-a"><div class="si">IL</div><h4>內部連結</h4><p>Hub & Spoke / 上下文連結 / Anchor 優化</p></div>
+  <div class="sk sk-a"><div class="si">BL</div><h4>自然外連</h4><p>社群參與 / Guest Post / Linkable Asset / Digital PR</p></div>
+  <div class="sk sk-a"><div class="si">SD</div><h4>Schema</h4><p>JSON-LD / FAQ / HowTo / Product / Article / Speakable</p></div>
+  <div class="sk sk-a"><div class="si">UX</div><h4>使用者體驗</h4><p>LCP / INP / CLS / Mobile-first / 可及性</p></div>
+</div>
+<h4 style="margin-top:1.5rem">你的股利計算器成績單</h4>
+<div class="mt"><div class="mt-top"><span>技術 SEO</span><span>95%</span></div><div class="mt-bar"><div class="mt-f gr" style="width:95%"></div></div></div>
+<div class="mt"><div class="mt-top"><span>內容策略</span><span>80%</span></div><div class="mt-bar"><div class="mt-f gr" style="width:80%"></div></div></div>
+<div class="mt"><div class="mt-top"><span>內部連結</span><span>85%</span></div><div class="mt-bar"><div class="mt-f gr" style="width:85%"></div></div></div>
+<div class="mt"><div class="mt-top"><span style="color:var(--red2)">外部連結</span><span style="color:var(--red2)">0%</span></div><div class="mt-bar"><div class="mt-f r" style="width:2%"></div></div></div>
+<div class="mt"><div class="mt-top"><span>Schema</span><span>90%</span></div><div class="mt-bar"><div class="mt-f gr" style="width:90%"></div></div></div>
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>2.2 部落 / 黑帽 — 暗影禁術</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="bx bx-w"><strong>Warning</strong> — 了解黑帽是為了防禦，不是使用。2026 年幾乎都會被快速偵測。</div>
+<div class="grid-auto">
+  <div class="sk sk-h"><div class="si">PBN</div><h4>PBN 網路</h4><p>假獨立網站互連灌權重</p><div class="ga"><div class="ga-d"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i></div><small>風險</small></div></div>
+  <div class="sk sk-h"><div class="si">CL</div><h4>Cloaking</h4><p>給 Bot 看 A、使用者看 B</p><div class="ga"><div class="ga-d"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i></div><small>風險</small></div></div>
+  <div class="sk sk-h"><div class="si">LF</div><h4>連結農場</h4><p>低品質站互連、留言灌連結</p><div class="ga"><div class="ga-d"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i></i></div><small>風險</small></div></div>
+  <div class="sk sk-h"><div class="si">SP</div><h4>AI 垃圾大軍</h4><p>無審核 AI 內容觸發整站降級</p><div class="ga"><div class="ga-d"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i></i></div><small>風險</small></div></div>
+</div>
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>2.3 中立 / 灰帽</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="grid-auto">
+  <div class="sk"><div class="si">NE</div><h4>Niche Edit</h4><p>真實文章中買連結位<br><span class="bg bg-g">風險 中</span></p></div>
+  <div class="sk"><div class="si">AI+</div><h4>AI + 人審</h4><p>AI 初稿 + 人工精修增值<br><span class="bg bg-g">風險 低-中</span></p></div>
+  <div class="sk"><div class="si">SM</div><h4>社群操控</h4><p>多帳號推文放大曝光<br><span class="bg bg-g">風險 低</span></p></div>
+</div>
+<div class="bx bx-w"><strong>灰帽核心風險：</strong>被懲罰網站只有 30% 一年內恢復。界線隨時移動。</div>
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>2.4 Decision Matrix</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="tw"><table>
+  <tr><th>情境</th><th>策略</th><th>風險</th><th>見效</th></tr>
+  <tr><td>長期品牌站</td><td><span class="bg bg-w">白帽</span></td><td>極低</td><td>3-12 月</td></tr>
+  <tr><td>高競爭利基</td><td><span class="bg bg-w">白帽</span>+<span class="bg bg-g">灰帽</span></td><td>低-中</td><td>2-6 月</td></tr>
+  <tr><td>短期活動頁</td><td><span class="bg bg-w">白帽</span>+<span class="bg bg-g">輕灰帽</span></td><td>低</td><td>1-3 月</td></tr>
+  <tr style="background:var(--red-bg)"><td>永遠不要</td><td><span class="bg bg-b">純黑帽</span>在你在乎的站</td><td>極高</td><td>--</td></tr>
+</table></div>
+</div></div></div>
+
+<p style="text-align:center;margin-top:2rem"><button class="nav-btn" onclick="go(3)" style="padding:.6rem 1.8rem">Day 3 &rarr;</button></p>
+</section>
+
+<!-- ====== DAY 3 ====== -->
+<section class="day" id="d3">
+<div class="hero h-ai"><h1>Day 3 : AI Era</h1><p>AEO / GEO / AI SEO — 征服新大陸</p></div>
+
+<div class="acc o"><div class="acc-h" onclick="tog(this)"><h3>3.1 AI 搜尋新戰場</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="stats">
+  <div class="st"><div class="n">883M</div><div class="l">ChatGPT 月活</div></div>
+  <div class="st"><div class="n">55%</div><div class="l">搜尋含 AIO</div></div>
+  <div class="st"><div class="n">-58%</div><div class="l">AIO CTR 降</div></div>
+  <div class="st"><div class="n">-25%</div><div class="l">搜尋量下降</div></div>
+</div>
+<div class="layers">
+  <div class="ly l3">GEO — 生成引擎優化<small>ChatGPT / Perplexity / Claude 引用你</small></div>
+  <div class="ly l2">AEO — 答案引擎優化<small>Google AI Overview 選你當來源</small></div>
+  <div class="ly l1">SEO — 傳統搜尋（基礎層）<small>沒有 SEO，AI 也找不到你</small></div>
+</div>
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>3.2 AEO — RAG Pipeline</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="flow">
+  <div class="flow-s"><div class="fi">R</div><b>Retrieval</b><span>找到相關頁面</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">A</div><b>Augment</b><span>提取關鍵段落</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">G</div><b>Generate</b><span>生成回答標來源</span></div>
+</div>
+<div class="grid-auto">
+  <div class="sk"><div class="si">Q&A</div><h4>結構化問答</h4><p>問題 &rarr; 答案 &rarr; 解釋<br>AI 最容易提取</p></div>
+  <div class="sk"><div class="si">DEF</div><h4>清晰定義段</h4><p>文章開頭簡潔定義<br>「X 是什麼？X 是...」</p></div>
+  <div class="sk"><div class="si">SD</div><h4>Schema 標記</h4><p>82.5% 被引用頁有 Schema<br>引用機率 2.5-3x</p></div>
+  <div class="sk"><div class="si">DATA</div><h4>具體數據</h4><p>「配息 22 元」> 「配息很多」<br>精確數據更易被引用</p></div>
+</div>
+</div></div></div>
+
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>3.3 GEO + 通用 6 Phase 攻略</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+<div class="ph-grid">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=70"><div class="pb"><h4>Phase 1 / 偵查</h4><ul><li>分析前 10 名競爭者</li><li>找出內容缺口</li><li>Google Trends 看趨勢</li></ul></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&q=70"><div class="pb"><h4>Phase 2 / 地基</h4><ul><li>技術 SEO 全到位</li><li>結構清晰</li><li>唯一 title + canonical</li></ul></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=70"><div class="pb"><h4>Phase 3 / 內容攻城</h4><ul><li>Pillar + Cluster</li><li>每篇對應一個意圖</li><li>內部連結串起來</li></ul></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=70"><div class="pb"><h4>Phase 4 / 連結外交</h4><ul><li>社群自然參與</li><li>可連結資產</li><li>Guest posting</li></ul></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=70"><div class="pb"><h4>Phase 5 / AI 適配</h4><ul><li>完整 Schema</li><li>FAQ 問答格式</li><li>開頭清晰定義</li></ul></div></div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70"><div class="pb"><h4>Phase 6 / 戰報</h4><ul><li>每週 GSC</li><li>追蹤排名</li><li>迭代最佳/最差頁</li></ul></div></div>
+</div>
+</div></div></div>
+
+<p style="text-align:center;margin-top:2rem"><button class="nav-btn" onclick="go(4)" style="padding:.6rem 1.8rem">Day 4 &rarr;</button></p>
+</section>
+
+<!-- ====== DAY 4 — ADVANCED ====== -->
+<section class="day" id="d4">
+<div class="hero h-adv"><h1>Day 4 : Advanced</h1><p>進階實戰 — 灰色產業 SEO / 季節性攻勢 / UI/UX 與排名 / AI 自動化</p></div>
+
+<!-- 4.1 Grey Industry SEO -->
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>4.1 灰色產業 SEO — 娛樂城實戰</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<div class="bx bx-g"><strong>為什麼這是進階課題：</strong>娛樂城、博弈、成人產業的 SEO 難度是一般產業的 5-10 倍。Google 對這類站有更嚴格的審查（YMYL + 政策限制），廣告管道受限，主要流量只能靠 Organic。這些實戰經驗反過來可以強化你做任何產業的能力。</div>
+
+<h4>灰色產業的核心挑戰</h4>
+<div class="grid-auto">
+  <div class="sk"><div class="si">BAN</div><h4>廣告封鎖</h4><p>Google Ads / Facebook 不允許投放。SEO = 唯一穩定流量管道</p></div>
+  <div class="sk"><div class="si">EAT</div><h4>E-E-A-T 懷疑</h4><p>Google 對博弈類內容信任度極低。需要更強的權威信號</p></div>
+  <div class="sk"><div class="si">DOM</div><h4>網域消耗</h4><p>網域被標記風險高。多網域策略 + 品牌隔離是常態</p></div>
+  <div class="sk"><div class="si">COMP</div><h4>極端競爭</h4><p>高利潤吸引大量玩家。SEO 預算動輒百萬級</p></div>
+</div>
+
+<h4>娛樂城 SEO 常見打法分析</h4>
+<div class="tw"><table>
+  <tr><th>技術</th><th>說明</th><th>帽色</th><th>風險</th><th>內行人怎麼看</th></tr>
+  <tr><td>Parasite SEO</td><td>在高權重網站（Medium、GitHub Pages）發佈含連結的內容，借平台權重排名</td><td><span class="bg bg-g">灰</span></td><td>中-高</td><td>2025 後 Google 大幅打擊。短期有效但壽命越來越短。用完即丟型</td></tr>
+  <tr><td>301 Redirect Stack</td><td>買過期高 DA 網域，301 redirect 到主站傳遞權重</td><td><span class="bg bg-g">灰</span></td><td>中</td><td>仍然有效但 Google 越來越會折扣不相關的 redirect。主題相關度是關鍵</td></tr>
+  <tr><td>Content Fortress</td><td>建立正規的評測/教學內容站，靠長尾詞+資訊意圖引流，再用 CTA 導入主站</td><td><span class="bg bg-w">白</span></td><td>低</td><td>最可持續的打法。需要高品質內容投資，但一旦建立流量非常穩定</td></tr>
+  <tr><td>PBN Matrix</td><td>多層 PBN 架構，外層 PBN 連到內層，內層連主站</td><td><span class="bg bg-b">黑</span></td><td>極高</td><td>傳統娛樂城最常用但 SpamBrain 2026 偵測率大幅提升。老手都在轉型</td></tr>
+  <tr><td>Programmatic SEO</td><td>用資料庫自動生成大量「XX 娛樂城評價」「XX 優惠碼」頁面</td><td><span class="bg bg-g">灰</span></td><td>中</td><td>量大但要確保每頁有獨特價值。純模板頁面會被 Helpful Content 打擊</td></tr>
+</table></div>
+
+<div class="bx bx-t"><strong>內行人建議：</strong>如果你同時做灰色和正規產業，永遠品牌隔離。不同網域、不同主機、不同 Google 帳號。交叉汙染是最常見的致命錯誤 — 一個灰色站被懲罰連帶影響你的正規站。</div>
+
+</div></div></div>
+
+<!-- 4.2 Seasonal SEO -->
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>4.2 季節性 SEO — 世界盃攻勢實例</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<p>季節性事件（世界盃、歐冠、NBA 季後賽、選舉）是短時間內衝爆流量的最佳機會，但需要<strong>提前佈局</strong>。</p>
+
+<h4>世界盃 SEO 攻勢時間表</h4>
+<div class="tl">
+  <div class="tl-i"><h4>T-6 個月：偵查 + 佈局</h4><p>建立 Evergreen 頁面（「世界盃賽程」「世界盃投注指南」）。搶先佔位，讓 Google 提前索引</p></div>
+  <div class="tl-i"><h4>T-3 個月：內容擴展</h4><p>產出球隊分析、歷史數據、預測文章。建立 Topic Cluster。開始社群預熱</p></div>
+  <div class="tl-i"><h4>T-1 個月：外連衝刺</h4><p>密集社群推廣、合作夥伴交叉連結、新聞稿。這是灰帽可以策略性使用的窗口</p></div>
+  <div class="tl-i maj"><h4>賽事期間：即時內容</h4><p>每日賽果更新、即時比分、賠率變動。高頻更新 = 高爬取頻率 = 更好的即時排名</p></div>
+  <div class="tl-i"><h4>賽後：收割長尾</h4><p>更新頁面為「2026 世界盃回顧」，保留 URL 權重。等下次賽事直接復用</p></div>
+</div>
+
+<h4>季節性 SEO 的核心技巧</h4>
+<div class="grid-auto">
+  <div class="sk"><div class="si">URL</div><h4>URL 不加年份</h4><p>用 /world-cup-schedule/ 不用 /2026-world-cup/<br>每年更新內容即可，保留累積的權重</p></div>
+  <div class="sk"><div class="si">PRE</div><h4>提前 6 個月</h4><p>Google 索引 + 權重累積需要時間<br>等賽事開始才做 = 來不及</p></div>
+  <div class="sk"><div class="si">UPD</div><h4>高頻更新</h4><p>賽事期間每天更新觸發 Google 高頻爬取<br>新鮮度信號 = 即時排名加分</p></div>
+  <div class="sk"><div class="si">EVG</div><h4>Evergreen 底層</h4><p>賽後把頁面轉成回顧型內容<br>長尾流量可以持續好幾年</p></div>
+</div>
+
+<div class="bx bx-g"><strong>AI 輔助策略：</strong>用 AI 批量生成每場比賽的預測框架 + 即時賽果摘要，人工審核後快速發佈。賽事期間的內容量需求巨大，純人工根本來不及。這就是 Day 2 提到的「AI + 人審」灰帽策略最正當的應用場景。</div>
+
+</div></div></div>
+
+<!-- 4.3 UI/UX & SEO -->
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>4.3 UI/UX 如何影響 SEO 排名</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<p>很多人以為 UI/UX 和 SEO 是兩件事。錯。Google 在 2021 年把 Core Web Vitals 正式納入排名因子後，<strong>UI/UX 就是 SEO 的一部分</strong>。</p>
+
+<h4>Core Web Vitals — 三大指標</h4>
+<div class="grid-auto">
+  <div class="cmp" style="border-top:2px solid var(--green)"><div class="ci">LCP</div><h4>Largest Contentful Paint</h4><p>最大內容繪製<br>目標 < 2.5 秒<br>影響：首屏載入速度</p></div>
+  <div class="cmp" style="border-top:2px solid var(--blue)"><div class="ci">INP</div><h4>Interaction to Next Paint</h4><p>互動延遲<br>目標 < 200ms<br>影響：按鈕/表單反應速度</p></div>
+  <div class="cmp" style="border-top:2px solid var(--purple)"><div class="ci">CLS</div><h4>Cumulative Layout Shift</h4><p>版面偏移<br>目標 < 0.1<br>影響：廣告載入時頁面跳動</p></div>
+</div>
+
+<h4>UI/UX 影響排名的隱藏機制</h4>
+<div class="tw"><table>
+  <tr><th>UI/UX 因素</th><th>對 SEO 的影響</th><th>Google 怎麼偵測</th></tr>
+  <tr><td>頁面載入慢</td><td>跳出率升高 &rarr; 排名下降</td><td>CrUX 真實用戶數據 + Lighthouse</td></tr>
+  <tr><td>Mobile 體驗差</td><td>Mobile-first indexing = 手機版決定排名</td><td>Mobile Usability Report in GSC</td></tr>
+  <tr><td>彈窗廣告遮蔽內容</td><td>Intrusive Interstitial 懲罰</td><td>Page Experience signal</td></tr>
+  <tr><td>導航混亂 / 找不到內容</td><td>爬蟲無法有效索引 + 使用者快速離開</td><td>Crawl depth + engagement signals</td></tr>
+  <tr><td>文字太小 / 按鈕太近</td><td>Mobile Usability 問題</td><td>GSC Mobile Usability report</td></tr>
+  <tr><td>色彩對比不足</td><td>可及性差 &rarr; 間接影響 engagement</td><td>Lighthouse Accessibility audit</td></tr>
+  <tr><td>設計看起來不專業</td><td>使用者不信任 &rarr; 不停留、不連結</td><td>間接：bounce rate + 缺少外部引用</td></tr>
+</table></div>
+
+<h4>Dwell Time 和 Pogo-sticking</h4>
+<p>Google 雖然官方否認直接用 Dwell Time（使用者停留時間）當排名因子，但 Pogo-sticking（使用者點進你的頁面後立刻返回搜尋結果點下一個）是一個強烈的負面信號。</p>
+<div class="grid-2" style="margin:1rem 0">
+  <div class="cmp" style="border-top:2px solid var(--green)"><div class="ci">+</div><h4>好的信號</h4><p>使用者停留、往下滾、點內部連結、完成操作（例如用你的計算器）</p></div>
+  <div class="cmp" style="border-top:2px solid var(--red)"><div class="ci">-</div><h4>壞的信號</h4><p>使用者秒退、Pogo-stick 回搜尋結果、不滾動、不互動</p></div>
+</div>
+
+<h4>實戰 UI/UX 優化清單</h4>
+<div class="grid-auto">
+  <div class="sk"><div class="si">F</div><h4>First Impression</h4><p>首屏 3 秒內讓使用者知道「這頁能解決我的問題」。CTA 明確、標題清晰</p></div>
+  <div class="sk"><div class="si">V</div><h4>Visual Hierarchy</h4><p>用字級大小、顏色、間距引導閱讀順序。重要資訊放最顯眼位置</p></div>
+  <div class="sk"><div class="si">W</div><h4>White Space</h4><p>留白不是浪費空間。適當留白 = 降低認知負擔 = 使用者讀更久</p></div>
+  <div class="sk"><div class="si">S</div><h4>Speed</h4><p>壓縮圖片 / Lazy load / 減少 JS / 用 CDN。每慢 1 秒 = 跳出率 +12%</p></div>
+  <div class="sk"><div class="si">M</div><h4>Mobile First</h4><p>從手機開始設計，再往上擴展。不是「桌面版縮小」</p></div>
+  <div class="sk"><div class="si">A</div><h4>Accessibility</h4><p>Alt text / 色彩對比 / 鍵盤導航 / ARIA labels。好的可及性 = 好的 SEO</p></div>
+</div>
+
+<div class="bx bx-t"><strong>對你的股利計算器：</strong>你的工具頁 UI 讓使用者「馬上就能用」= 低跳出率 + 高 engagement。這是工具型網站天生的 UX 優勢。可以考慮加入結果分享功能（讓使用者截圖分享計算結果到社群 = 免費的外部曝光）。</div>
+
+</div></div></div>
+
+<!-- 4.4 AI-Assisted SEO -->
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>4.4 AI 輔助 SEO 工作流</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<p>AI 不是取代你做 SEO，而是讓你一個人做到過去需要一個團隊的事。</p>
+
+<h4>AI 可以幫你的 SEO 工作</h4>
+<div class="tw"><table>
+  <tr><th>工作</th><th>AI 怎麼幫</th><th>人類必須做的部分</th></tr>
+  <tr><td>關鍵字研究</td><td>批量生成語意相關詞、分群</td><td>判斷搜尋意圖、選擇優先順序</td></tr>
+  <tr><td>內容初稿</td><td>根據大綱快速產出 80% 初稿</td><td>加入真實經驗、獨特觀點、數據驗證</td></tr>
+  <tr><td>Meta 標籤</td><td>批量生成 title + description</td><td>A/B 測試效果、確認準確性</td></tr>
+  <tr><td>Schema 生成</td><td>自動生成 JSON-LD</td><td>用 Rich Results Test 驗證</td></tr>
+  <tr><td>競品分析</td><td>爬取 + 結構化分析競爭者內容</td><td>判斷策略差異化方向</td></tr>
+  <tr><td>內容更新</td><td>偵測過期數據、建議更新</td><td>驗證新數據準確性</td></tr>
+  <tr><td>技術 SEO audit</td><td>自動掃描常見問題</td><td>判斷優先順序、制定修復計畫</td></tr>
+</table></div>
+
+<h4>用 Claude Code 做 SEO 的實戰流程</h4>
+<p>你用 Claude Code 建站，也可以用它做 SEO 優化。實際的工作流：</p>
+<div class="flow" style="flex-wrap:wrap;gap:.4rem">
+  <div class="flow-s"><div class="fi">1</div><b>分析</b><span>讓 AI 讀你的 HTML<br>找出 SEO 缺漏</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">2</div><b>規劃</b><span>AI 產出優化建議<br>你決定優先順序</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">3</div><b>執行</b><span>AI 直接修改程式碼<br>你審核確認</span></div>
+  <span class="flow-a">&rarr;</span>
+  <div class="flow-s"><div class="fi">4</div><b>驗證</b><span>AI 檢查結果<br>部署上線</span></div>
+</div>
+
+<div class="bx bx-g"><strong>這正是我們今天做的事：</strong>我幫你分析了網站、加了 40+ 內部連結、檢查計算器邏輯、做了 SEO audit。這整個流程就是「AI 輔助 SEO」的完整示範。</div>
+
+</div></div></div>
+
+<!-- 4.5 Advanced Techniques -->
+<div class="acc"><div class="acc-h" onclick="tog(this)"><h3>4.5 內行人才知道的進階技術</h3><span class="acc-t"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="acc-b"><div class="acc-c">
+
+<div class="grid-auto">
+  <div class="sk"><div class="si">LOG</div><h4>Log File Analysis</h4><p>分析伺服器 log，看 Googlebot 實際爬了哪些頁面、多久爬一次。比 GSC 數據更真實。可以發現 crawl budget 浪費在哪</p></div>
+  <div class="sk"><div class="si">ENT</div><h4>Entity SEO</h4><p>不只是「寫關於 X 的文章」，而是讓 Google 知識圖譜把你的品牌建立為一個 Entity。方法：維基百科、Wikidata、Google Business Profile、一致的 Schema</p></div>
+  <div class="sk"><div class="si">TF</div><h4>Topical Map</h4><p>在寫任何內容前，先畫出整個主題的地圖：核心概念、子概念、相關概念、問題。確保你的內容覆蓋整張地圖，不留缺口</p></div>
+  <div class="sk"><div class="si">CR</div><h4>Crawl Budget</h4><p>大站（1000+ 頁）必須管理爬取預算。用 robots.txt 和 noindex 排除低價值頁面（搜尋結果頁、標籤頁、分頁），讓 Googlebot 把時間花在重要頁面</p></div>
+  <div class="sk"><div class="si">RE</div><h4>Content Pruning</h4><p>刪除或合併表現差的頁面。100 頁品質好 > 500 頁平庸。減少低品質頁面提升整站 Helpful Content 信號</p></div>
+  <div class="sk"><div class="si">SP</div><h4>Speakable Schema</h4><p>告訴 Google 哪些段落適合語音助理朗讀。提前佈局 Voice Search。你的 FAQ 段落是完美候選</p></div>
+  <div class="sk"><div class="si">IA</div><h4>Information Architecture</h4><p>URL 結構決定 Google 如何理解你的網站層級。扁平化（3 層以內可到達任何頁面）+ 語意化 URL（/articles/tsmc-dividend 而不是 /p?id=42）</p></div>
+  <div class="sk"><div class="si">AB</div><h4>SEO A/B Testing</h4><p>改 title tag 後，追蹤 CTR 變化。不是猜哪個好，而是用數據驗證。Google Search Console 的成效報告就是你的 A/B 測試工具</p></div>
+</div>
+
+<h4>Render Budget 與 JavaScript SEO</h4>
+<p>Google 爬蟲分兩波：第一波爬 HTML，第二波才執行 JavaScript。如果你的重要內容是 JS 渲染的（React SPA），Google 可能延遲索引甚至看不到。</p>
+<div class="grid-2">
+  <div class="cmp" style="border-top:2px solid var(--green)"><div class="ci">SSR</div><h4>Server-Side Render</h4><p>HTML 直出，Googlebot 第一波就能讀到所有內容。最安全</p></div>
+  <div class="cmp" style="border-top:2px solid var(--red)"><div class="ci">CSR</div><h4>Client-Side Render</h4><p>需要 JS 才能顯示內容。Googlebot 需要二次爬取。風險高</p></div>
+</div>
+<div class="bx bx-t"><strong>你的股利計算器是純 HTML + vanilla JS：</strong>計算結果是前端即時運算，但所有靜態內容（文字、FAQ）都在 HTML 裡。這是 SEO 最理想的架構。</div>
+
+</div></div></div>
+
+<!-- Day 4 Quiz -->
+<div class="qz"><h3>Day 4 Quiz</h3>
+  <div class="q"><p>娛樂城 SEO 中最可持續的打法是？</p><div class="opt" onclick="ans(this,0)">A. 多層 PBN Matrix</div><div class="opt" onclick="ans(this,1)">B. Content Fortress — 正規評測內容站引流</div><div class="opt" onclick="ans(this,0)">C. Parasite SEO 寄生在高 DA 平台</div><div class="exp">Content Fortress 是唯一長期可持續的打法。PBN 和 Parasite 都面臨越來越短的壽命。</div></div>
+  <div class="q"><p>季節性 SEO（如世界盃）最關鍵的策略是？</p><div class="opt" onclick="ans(this,0)">A. 賽事開始後密集發文</div><div class="opt" onclick="ans(this,1)">B. 提前 6 個月建立頁面讓 Google 索引</div><div class="opt" onclick="ans(this,0)">C. 買大量外連衝排名</div><div class="exp">Google 索引和權重累積需要時間。等賽事開始才做 = 來不及。提前佈局是唯一解。</div></div>
+  <div class="q"><p>UI/UX 如何直接影響 SEO？</p><div class="opt" onclick="ans(this,0)">A. 設計好看 Google 會給額外加分</div><div class="opt" onclick="ans(this,0)">B. 完全不影響，只是使用者體驗</div><div class="opt" onclick="ans(this,1)">C. Core Web Vitals 是排名因子，差的 UX 導致 pogo-sticking 負面信號</div><div class="exp">CWV 是正式排名因子。差的 UX 導致使用者秒退 = pogo-sticking = Google 降你的排名。</div></div>
+</div>
+
+<!-- Final Checklist -->
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.3rem;margin-top:2rem">
+  <h3 style="margin-top:0;font-size:1rem">Action Checklist</h3>
+  <p style="font-size:.82rem;color:var(--text2)">四天學完，你的下一步：</p>
+  <div class="cl">
+    <label><input type="checkbox" onchange="saveCl()"><span>PageSpeed Insights 測試速度</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>Dcard 投資理財版註冊觀察 3 天</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>找 3 篇股利討論留有價值回覆</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>檢查配息數據是否最新</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>每篇文章加清晰定義段落（AEO）</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>每週日看 Search Console</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>Rich Results Test 驗證 Schema</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>列 5 個待寫主題</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>閱讀 <a href="https://akseolabs.com/blog" target="_blank">AK SEO Labs Blog</a></span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>買自訂網域</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>計算器加入結果分享功能</span></label>
+    <label><input type="checkbox" onchange="saveCl()"><span>畫出「台股股利」Topical Map</span></label>
+  </div>
+</div>
+
+</section>
+</main>
+
+<footer>
+  <p>SEO Masterclass — Built for Jack</p>
+  <p><a href="https://akseolabs.com" target="_blank">AK SEO Labs</a> / <a href="https://akseolabs.com/blog" target="_blank">Blog</a></p>
+</footer>
+
+<div class="ach" id="ach"><h4>Achievement Unlocked</h4><p id="at"></p></div>
+
+<script>
+function go(n){document.querySelectorAll('.day').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.nav-btn').forEach(t=>t.classList.remove('on'));document.getElementById('d'+n).classList.add('on');document.querySelectorAll('.nav-btn')[n].classList.add('on');scrollTo({top:0,behavior:'smooth'});localStorage.setItem('sd',n)}
+function tog(el){el.parentElement.classList.toggle('o')}
+function ans(el,ok){const q=el.closest('.q');if(q.dataset.done)return;q.dataset.done=1;q.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));el.classList.add(ok?'ok':'no');q.querySelector('.exp').style.display='block';show(ok?'Correct — Knowledge +1':'Check explanation')}
+function show(t){const a=document.getElementById('ach');document.getElementById('at').textContent=t;a.classList.add('show');setTimeout(()=>a.classList.remove('show'),2e3)}
+function saveCl(){const c=[...document.querySelectorAll('.cl input')];localStorage.setItem('sc',JSON.stringify(c.map(x=>x.checked)));if(c.every(x=>x.checked))show('All quests complete')}
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.getElementById('pbar').style.width=h>0?(scrollY/h*100)+'%':'0%'});
+(()=>{try{const s=localStorage.getItem('sc');if(s){const d=JSON.parse(s);document.querySelectorAll('.cl input').forEach((c,i)=>{if(d[i])c.checked=!0})}const day=localStorage.getItem('sd');if(day)go(+day)}catch(e){}})()
+</script>
+</body>
+</html>
