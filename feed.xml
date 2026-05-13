@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>股利計算器 - 投資教學文章</title>
+  <link>https://dividend-calculator1.pages.dev/</link>
+  <description>台股股利計算、殖利率分析、存股策略教學文章</description>
+  <language>zh-TW</language>
+  <lastBuildDate>Mon, 12 May 2026 00:00:00 +0800</lastBuildDate>
+  <atom:link href="https://dividend-calculator1.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>台積電股利怎麼算？歷年季配息紀錄與殖利率試算</title>
+    <link>https://dividend-calculator1.pages.dev/articles/tsmc-dividend-calculator.html</link>
+    <description>台積電（2330）股利計算完整教學，含歷年季配息紀錄與殖利率試算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>0056（元大高股息）配息計算完整攻略</title>
+    <link>https://dividend-calculator1.pages.dev/articles/0056-dividend-calculator.html</link>
+    <description>0056 元大高股息 ETF 配息計算教學，含歷年配息紀錄、殖利率與存股試算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00878（國泰永續高股息）配息計算完整攻略</title>
+    <link>https://dividend-calculator1.pages.dev/articles/00878-dividend-calculator.html</link>
+    <description>00878 國泰永續高股息 ETF 配息計算教學與殖利率分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利怎麼算？完整教學與實例</title>
+    <link>https://dividend-calculator1.pages.dev/articles/how-to-calculate-dividend.html</link>
+    <description>股利計算公式完整教學，附實例說明總股利與殖利率算法。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>殖利率是什麼？公式與實例解析</title>
+    <link>https://dividend-calculator1.pages.dev/articles/dividend-yield-explained.html</link>
+    <description>殖利率定義、計算公式、高殖利率的判斷標準完整解析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>存股是什麼？新手入門攻略</title>
+    <link>https://dividend-calculator1.pages.dev/articles/stock-saving-strategy.html</link>
+    <description>存股策略入門教學，含選股標準、定期定額方法與風險管理。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利稅後怎麼算？二代健保與所得稅完整試算</title>
+    <link>https://dividend-calculator1.pages.dev/articles/dividend-tax-calculator.html</link>
+    <description>股利所得稅合併計稅 vs 分離課稅比較，含二代健保補充保費計算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>除息日、填息是什麼？完整攻略</title>
+    <link>https://dividend-calculator1.pages.dev/articles/ex-dividend-date-guide.html</link>
+    <description>除息日、除權日、填息完整說明，附配息時程與注意事項。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>0056 vs 00878 哪個好？完整比較分析</title>
+    <link>https://dividend-calculator1.pages.dev/articles/0056-vs-00878.html</link>
+    <description>0056 元大高股息與 00878 國泰永續高股息的配息、殖利率、成分股完整比較。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>高股息 ETF 股息再投市值型 ETF 策略教學</title>
+    <link>https://dividend-calculator1.pages.dev/articles/dividend-reinvest-strategy.html</link>
+    <description>雙核心存股策略：高股息 ETF 領息再投入市值型 ETF，兼顧現金流與成長。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+</channel>
+</rss>
