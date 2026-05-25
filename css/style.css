@@ -314,7 +314,7 @@ main {
 
 .faq-answer-inner {
   padding: 0 1.25rem 1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -904,4 +904,103 @@ main {
   .nav-toggle {
     display: none !important;
   }
+}
+
+/* ===== Tool Selector Modal (Mobile) ===== */
+.tool-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1001;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.tool-modal-overlay.open {
+  display: flex;
+}
+
+.tool-modal {
+  background: var(--bg-white);
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  max-width: 480px;
+  padding: 1.2rem 1rem calc(1.2rem + env(safe-area-inset-bottom));
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.tool-modal h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.tool-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background 0.2s;
+  margin-bottom: 0.3rem;
+}
+
+.tool-modal-item:hover,
+.tool-modal-item:active {
+  background: var(--accent-light);
+}
+
+.tool-modal-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.tool-modal-icon.tmi-dividend { background: #ecfeff; color: #0891b2; }
+.tool-modal-icon.tmi-compound { background: #ecfdf5; color: #10b981; }
+.tool-modal-icon.tmi-payback { background: #fef3c7; color: #d97706; }
+.tool-modal-icon.tmi-dca { background: #ede9fe; color: #7c3aed; }
+
+.tool-modal-info {
+  flex: 1;
+}
+
+.tool-modal-info strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.tool-modal-info span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.tool-modal-close {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: inherit;
 }

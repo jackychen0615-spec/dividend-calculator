@@ -253,7 +253,7 @@
     <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
     <span>文章</span>
   </a>
-  <a href="../compound-calculator.html">
+  <a href="#" onclick="openTools(event)">
     <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
     <span>工具</span>
   </a>
@@ -262,6 +262,35 @@
     <span>關於</span>
   </a>
 </nav>
+
+
+<!-- Tool Selector Modal -->
+<div class="tool-modal-overlay" id="toolModal" onclick="if(event.target===this)closeTools()">
+  <div class="tool-modal">
+    <h3>選擇工具</h3>
+    <a class="tool-modal-item" href="../index.html">
+      <div class="tool-modal-icon tmi-dividend">&#128200;</div>
+      <div class="tool-modal-info"><strong>股利計算器</strong><span>算殖利率和總股利</span></div>
+    </a>
+    <a class="tool-modal-item" href="../compound-calculator.html">
+      <div class="tool-modal-icon tmi-compound">&#128201;</div>
+      <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
+    </a>
+    <a class="tool-modal-item" href="../payback-calculator.html">
+      <div class="tool-modal-icon tmi-payback">&#9203;</div>
+      <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
+    </a>
+    <a class="tool-modal-item" href="../dca-calculator.html">
+      <div class="tool-modal-icon tmi-dca">&#128197;</div>
+      <div class="tool-modal-info"><strong>定期定額試算器</strong><span>每月定投長期成果</span></div>
+    </a>
+    <button class="tool-modal-close" onclick="closeTools()">關閉</button>
+  </div>
+</div>
+<script>
+function openTools(e){e.preventDefault();document.getElementById('toolModal').classList.add('open')}
+function closeTools(){document.getElementById('toolModal').classList.remove('open')}
+</script>
 
 </body>
 </html>
