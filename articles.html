@@ -60,21 +60,23 @@
       <p>從股利計算到存股策略，共 25 篇文章幫助你做出更聰明的投資決策。</p>
     </div>
 
-    <!-- 快速分類導覽 -->
-    <nav style="max-width:700px;margin:1.25rem auto 0;padding:0 1rem;">
-      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
-        <a href="#basics" style="display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border-radius:20px;background:#e8f5e9;color:#2e7d32;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid #a5d6a7;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h13a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 18H6a1 1 0 0 1 0-2h12v2zm0-4H6V4h12v12z"/></svg> 入門基礎 <span style="background:#2e7d32;color:#fff;border-radius:10px;padding:0 .45rem;font-size:.75rem;">7</span></a>
-        <a href="#etf" style="display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border-radius:20px;background:#e3f2fd;color:#1565c0;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid #90caf9;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3v18h18v-2H5V3H3zm4 12h2V9H7v6zm4 2h2V6h-2v11zm4 0h2v-7h-2v7z"/></svg> ETF 配息 <span style="background:#1565c0;color:#fff;border-radius:10px;padding:0 .45rem;font-size:.75rem;">9</span></a>
-        <a href="#stocks" style="display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border-radius:20px;background:#f3e5f5;color:#6a1b9a;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid #ce93d8;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 11h2v7H2v-7zm18 0h2v7h-2v-7zm-6 0h2v7h-2v-7zm-6 0h2v7H8v-7zM1 19h22v2H1v-2zm11-17L1 9h22L12 2z"/></svg> 個股配息 <span style="background:#6a1b9a;color:#fff;border-radius:10px;padding:0 .45rem;font-size:.75rem;">6</span></a>
-        <a href="#strategy" style="display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border-radius:20px;background:#fff3e0;color:#e65100;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid #ffcc80;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 21h6v-2H9v2zm3-20C8.13 1 5 4.13 5 8c0 2.38 1.19 4.47 3 5.74V16a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A6.996 6.996 0 0 0 19 8c0-3.87-3.13-7-7-7z"/></svg> 策略與稅務 <span style="background:#e65100;color:#fff;border-radius:10px;padding:0 .45rem;font-size:.75rem;">3</span></a>
+    <!-- 橫向滑動分類 Tab -->
+    <nav style="max-width:700px;margin:1rem auto 0;padding:0;">
+      <div class="cat-tabs" style="display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #e5e7eb;padding:0 1rem;">
+        <button class="cat-tab active" onclick="showCat('all',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#0891b2;cursor:pointer;border-bottom:2px solid #0891b2;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">全部</button>
+        <button class="cat-tab" onclick="showCat('basics',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">入門基礎</button>
+        <button class="cat-tab" onclick="showCat('etf',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">ETF 配息</button>
+        <button class="cat-tab" onclick="showCat('stocks',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">個股配息</button>
+        <button class="cat-tab" onclick="showCat('strategy',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">策略與稅務</button>
       </div>
+      <style>.cat-tabs::-webkit-scrollbar{display:none}</style>
     </nav>
 
     <!-- 分類一：入門基礎 -->
-    <div id="basics" style="max-width:700px;margin:2rem auto 0;padding:0 1rem;">
+    <div id="basics" data-cat="basics" style="max-width:700px;margin:2rem auto 0;padding:0 1rem;">
       <h2 style="font-size:1.1rem;font-weight:700;color:#2e7d32;border-left:4px solid #2e7d32;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h13a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 18H6a1 1 0 0 1 0-2h12v2zm0-4H6V4h12v12z"/></svg> 入門基礎</h2>
     </div>
-    <div class="articles-grid" style="max-width:700px;margin:.5rem auto 0;">
+    <div class="articles-grid" data-cat="basics" style="max-width:700px;margin:.5rem auto 0;">
       <div class="article-card">
         <h3><a href="articles/how-to-calculate-dividend.html">股利怎麼算？完整教學與實例</a></h3>
         <p>一次搞懂現金股利的計算方式，搭配實際案例讓你輕鬆理解。</p>
@@ -113,10 +115,10 @@
     </div>
 
     <!-- 分類二：ETF 配息專區 -->
-    <div id="etf" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
+    <div id="etf" data-cat="etf" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
       <h2 style="font-size:1.1rem;font-weight:700;color:#1565c0;border-left:4px solid #1565c0;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3v18h18v-2H5V3H3zm4 12h2V9H7v6zm4 2h2V6h-2v11zm4 0h2v-7h-2v7z"/></svg> ETF 配息專區</h2>
     </div>
-    <div class="articles-grid" style="max-width:700px;margin:.5rem auto 0;">
+    <div class="articles-grid" data-cat="etf" style="max-width:700px;margin:.5rem auto 0;">
       <div class="article-card">
         <h3><a href="articles/0056-dividend-calculator.html">0056（元大高股息）配息計算完整攻略</a></h3>
         <p>0056 歷年配息紀錄（2023-2025 各季實際金額）、殖利率試算、季配息時間表。</p>
@@ -165,10 +167,10 @@
     </div>
 
     <!-- 分類三：個股配息 -->
-    <div id="stocks" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
+    <div id="stocks" data-cat="stocks" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
       <h2 style="font-size:1.1rem;font-weight:700;color:#6a1b9a;border-left:4px solid #6a1b9a;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 11h2v7H2v-7zm18 0h2v7h-2v-7zm-6 0h2v7h-2v-7zm-6 0h2v7H8v-7zM1 19h22v2H1v-2zm11-17L1 9h22L12 2z"/></svg> 個股配息</h2>
     </div>
-    <div class="articles-grid" style="max-width:700px;margin:.5rem auto 0;">
+    <div class="articles-grid" data-cat="stocks" style="max-width:700px;margin:.5rem auto 0;">
       <div class="article-card">
         <h3><a href="articles/mega-financial-dividend.html">兆豐金（2886）股利歷年紀錄與殖利率計算</a></h3>
         <p>兆豐金 2020-2025 真實配息紀錄（2025 年達歷年最高 1.75 元），持有幾張領多少完整試算。</p>
@@ -202,10 +204,10 @@
     </div>
 
     <!-- 分類四：策略與稅務 -->
-    <div id="strategy" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
+    <div id="strategy" data-cat="strategy" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
       <h2 style="font-size:1.1rem;font-weight:700;color:#e65100;border-left:4px solid #e65100;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 21h6v-2H9v2zm3-20C8.13 1 5 4.13 5 8c0 2.38 1.19 4.47 3 5.74V16a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26A6.996 6.996 0 0 0 19 8c0-3.87-3.13-7-7-7z"/></svg> 策略與稅務</h2>
     </div>
-    <div class="articles-grid" style="max-width:700px;margin:.5rem auto 2rem;">
+    <div class="articles-grid" data-cat="strategy" style="max-width:700px;margin:.5rem auto 2rem;">
       <div class="article-card">
         <h3><a href="articles/stock-saving-strategy.html">存股是什麼？新手入門攻略</a></h3>
         <p>存股策略完整解析，適合想靠股利打造被動收入的投資新手。</p>
@@ -300,5 +302,28 @@ function openTools(e){e.preventDefault();document.getElementById('toolModal').cl
 function closeTools(){document.getElementById('toolModal').classList.remove('open')}
 </script>
 
+
+<script>
+function showCat(cat, btn) {
+  // Update tab styles
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.style.color = '#6b7280';
+    t.style.borderBottomColor = 'transparent';
+    t.classList.remove('active');
+  });
+  btn.style.color = '#0891b2';
+  btn.style.borderBottomColor = '#0891b2';
+  btn.classList.add('active');
+
+  // Show/hide sections
+  document.querySelectorAll('[data-cat]').forEach(el => {
+    if (cat === 'all') {
+      el.style.display = '';
+    } else {
+      el.style.display = el.dataset.cat === cat ? '' : 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
