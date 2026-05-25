@@ -856,11 +856,11 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--bg-white);
-    border-top: 1px solid var(--border-color);
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+    background: #ffffff;
+    border-top: 2px solid #e5e7eb;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
     z-index: 1000;
-    padding: 0.4rem 0 calc(0.4rem + env(safe-area-inset-bottom));
+    padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
     justify-content: space-around;
     align-items: center;
   }
@@ -869,25 +869,27 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.15rem;
+    gap: 0.2rem;
     text-decoration: none;
-    color: var(--text-muted);
-    font-size: 0.65rem;
-    font-weight: 500;
-    padding: 0.2rem 0.5rem;
-    transition: color 0.2s;
+    color: #6b7280;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    transition: all 0.2s;
+    border-radius: 8px;
   }
 
   .bottom-nav a.active,
   .bottom-nav a:hover {
-    color: var(--accent);
+    color: #0891b2;
+    background: #ecfeff;
   }
 
   .bottom-nav svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     stroke: currentColor;
-    stroke-width: 1.8;
+    stroke-width: 2;
     fill: none;
   }
 
