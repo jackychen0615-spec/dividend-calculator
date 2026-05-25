@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>薪資計算器｜實領薪水試算 - 勞健保、勞退、所得稅一次算清楚 - GULICALC</title>
+  <meta name="description" content="免費薪資計算器，輸入月薪立即算出實領薪水。自動計算勞保、健保、勞退自提扣除金額，2026年最新費率。上班族必備薪資試算工具。">
+  <meta property="og:title" content="薪資計算器｜實領薪水試算 - 勞健保扣除一次算清楚">
+  <meta property="og:description" content="輸入月薪，立即算出勞保、健保、勞退扣多少，實際到手多少。2026年最新費率。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/salary/">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="GULICALC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="薪資計算器｜實領薪水試算 - GULICALC">
+  <meta name="twitter:description" content="輸入月薪，立即算出勞保、健保、勞退扣多少，實際到手多少。">
+  <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="canonical" href="https://gulicalc.com/salary/">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "薪資計算器 - 實領薪水試算",
+    "url": "https://gulicalc.com/salary/",
+    "description": "免費薪資計算器，輸入月薪立即算出勞保、健保、勞退扣除金額與實領薪水。2026年最新費率。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"},
+    "author": {"@type": "Person", "name": "Jacky Chen", "url": "https://gulicalc.com/about.html"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "月薪3萬實領多少？", "acceptedAnswer": {"@type": "Answer", "text": "2026年月薪29,500元（基本工資），扣除勞保738元、健保457元後，實領約28,305元。若自提勞退6%再扣1,770元，實領約26,535元。"}},
+      {"@type": "Question", "name": "勞保費怎麼算？", "acceptedAnswer": {"@type": "Answer", "text": "勞保費 = 投保薪資 × 12.5% × 20%（勞工自付比例）。2026年勞保費率維持12.5%，勞工負擔2成、雇主7成、政府1成。"}},
+      {"@type": "Question", "name": "健保費怎麼算？", "acceptedAnswer": {"@type": "Answer", "text": "健保費 = 投保薪資 × 5.17% × 30%（勞工自付比例）× (1+眷屬人數)。2026年健保費率維持5.17%，勞工負擔3成。"}},
+      {"@type": "Question", "name": "勞退自提6%是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "勞退自提是勞工自願從薪資中額外提撥0-6%到個人退休帳戶。自提金額可從當年度個人綜合所得總額中全數扣除，有節稅效果。雇主必須提撥6%，勞工自提是額外的。"}}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://gulicalc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "薪資計算器"}
+    ]
+  }]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="../index.html" class="nav-logo"><img src="../images/logo-nav.png" alt="GULICALC"> 股利計算器</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">首頁</a></li>
+        <li><a href="../articles.html">文章</a></li>
+        <li><a href="../about.html">關於我們</a></li>
+        <li><a href="../contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div style="background:#fff3cd;color:#856404;padding:.5rem 1rem;font-size:.78rem;text-align:center;border-radius:6px;margin-bottom:1rem;border:1px solid #ffc107;">本站內容僅供參考，實際薪資以公司薪資單為準。</div>
+    <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="../index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>薪資計算器</span></nav>
+
+    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('../images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem;border-radius:12px;margin-bottom:1.5rem;">
+      <h1>薪資計算器</h1>
+      <p>輸入月薪，立即算出勞保、健保、勞退扣多少，實際到手多少</p>
+    </section>
+
+    <div style="background:#ecfeff;border:1px solid #cffafe;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto;">
+      <p style="margin:0;"><strong>薪資計算器</strong>根據 2026 年最新勞保費率 12.5%、健保費率 5.17%，自動計算你的月薪扣除勞保、健保、勞退自提後的實領金額。資料來源：勞動部、衛福部健保署。</p>
+    </div>
+
+    <div class="calculator-card">
+      <div class="form-group">
+        <label for="monthlySalary">月薪（元）</label>
+        <input type="number" id="monthlySalary" placeholder="例如：40000" min="0" step="100">
+        <div class="input-hint">輸入你的月薪總額（稅前）</div>
+      </div>
+      <div class="form-group">
+        <label for="dependents">健保眷屬人數</label>
+        <input type="number" id="dependents" placeholder="0" min="0" max="10" value="0">
+        <div class="input-hint">配偶或子女掛在你名下的人數（0 = 只有自己）</div>
+      </div>
+      <div class="form-group">
+        <label for="selfRetire">勞退自提比例（%）</label>
+        <input type="number" id="selfRetire" placeholder="0" min="0" max="6" value="0" step="0.5">
+        <div class="input-hint">自願提撥 0-6%，可節稅。不確定就填 0</div>
+      </div>
+    </div>
+
+    <div style="max-width:600px;margin:1.5rem auto;">
+      <!-- 結果區 -->
+      <div id="salaryResult" style="display:none;">
+
+        <div style="text-align:center;margin-bottom:1.5rem;">
+          <div style="font-size:.85rem;color:#6b7280;">每月實領</div>
+          <div id="takeHome" style="font-size:2.5rem;font-weight:800;color:#0891b2;">0</div>
+          <div style="font-size:.85rem;color:#6b7280;">元</div>
+        </div>
+
+        <div style="background:#f9fafb;border-radius:12px;padding:1rem;margin-bottom:1rem;">
+          <h3 style="font-size:.95rem;margin:0 0 .8rem;color:#1f2937;">扣除明細</h3>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span>月薪總額</span><strong id="grossSalary" style="color:#1f2937;">0</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 勞保費（自付）</span><span id="laborIns" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 健保費（自付）</span><span id="healthIns" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 勞退自提</span><span id="selfRetireAmt" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.5rem 0;font-size:.95rem;font-weight:700;">
+            <span style="color:#0891b2;">= 實領金額</span><span id="takeHome2" style="color:#0891b2;">0</span>
+          </div>
+        </div>
+
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1rem;margin-bottom:1rem;">
+          <h3 style="font-size:.95rem;margin:0 0 .8rem;color:#166534;">雇主幫你付的（你看不到但有）</h3>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;font-size:.85rem;">
+            <span>勞保費（雇主負擔 70%）</span><span id="laborInsEmployer">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;font-size:.85rem;">
+            <span>健保費（雇主負擔 60%）</span><span id="healthInsEmployer">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem 0;font-size:.85rem;">
+            <span>勞退提撥（雇主 6%）</span><span id="retireEmployer">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;font-size:.88rem;font-weight:600;border-top:1px solid #bbf7d0;margin-top:.3rem;">
+            <span>雇主每月總成本</span><span id="employerTotal">0</span>
+          </div>
+        </div>
+
+        <!-- 薪資結構長條圖 -->
+        <div style="margin:1.5rem 0;">
+          <canvas id="salaryChart" height="120"></canvas>
+        </div>
+
+        <div style="font-size:.7rem;color:#9ca3af;text-align:center;line-height:1.4;">
+          費率依據：2026 年勞保費率 12.5%（勞工自付 20%）、健保費率 5.17%（勞工自付 30%）、勞退雇主提撥 6%。<br>
+          資料來源：勞動部勞工保險局、衛福部中央健康保險署。投保薪資級距依勞保局 2026 年公告。<br>
+          本計算不含加班費、獎金、所得稅預扣。實際金額以公司薪資單為準。
+        </div>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">月薪 3 萬實領多少？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">2026 年月薪 29,500 元（基本工資），扣除勞保約 738 元、健保約 457 元後，實領約 28,305 元。若自提勞退 6% 再扣 1,770 元，實領約 26,535 元。實際金額會依投保級距略有差異。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">勞退自提 6% 值得嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">勞退自提的金額可以從當年度所得稅中扣除，等於延後繳稅。如果你的所得稅率是 12%，自提 6% 等於省了薪資 × 6% × 12% 的稅。適合所得稅率 12% 以上的人。退休後領回時才課稅，通常退休後稅率較低。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">健保眷屬人數怎麼算？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">掛在你名下的配偶、子女、父母等。每多一位眷屬，健保費就多一份（但最多 3 人，超過 3 人以 3 人計算）。如果配偶自己有工作，不算在你的眷屬裡。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">投保薪資跟實際月薪不一樣？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">對。勞保和健保是用「投保薪資級距」計算，不是用你的實際月薪。你的月薪會被對應到最接近的級距。例如月薪 32,000 元，可能對應到 33,300 元的級距。本計算器已自動幫你對應正確的級距。</div></div>
+      </div>
+    </section>
+
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1rem auto 0;">
+        <div class="article-card">
+          <h3><a href="../index.html">股利計算器</a></h3>
+          <p>算殖利率和總股利，存股族必備。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="../compound-calculator.html">複利計算器</a></h3>
+          <p>長期存股的複利成長效果試算。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="../articles/dividend-tax-calculator.html">股利稅務計算</a></h3>
+          <p>股利所得稅、二代健保補充保費試算。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="../privacy.html">隱私權政策</a></li>
+      <li><a href="../terms.html">使用條款</a></li>
+    </ul>
+    <div style="font-size:.78rem;color:#856404;margin-bottom:.5rem;">本站內容僅供參考，不構成任何投資建議。投資有風險，請自行評估。</div>
+    <div class="footer-copy">&copy; 2026 GULICALC. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script>
+  (function(){
+    // 2026 勞保投保薪資級距（11 級）
+    var laborGrades = [29500,30300,31800,33300,34800,36300,38200,40100,42000,43900,45800];
+    // 2026 健保投保薪資級距（簡化版，取常用級距）
+    var healthGrades = [29500,30300,31800,33300,34800,36300,38200,40100,42000,43900,45800,48200,50600,53000,55400,57800,60800,63800,66800,69800,72800,76500,80200,83900,87600,92100,96600,101100,105600,110100,115500,120900,126300,131700,137100,142500,147900,150000,156400,162800,169200,175600,182000,189500,197000,204500,212000,219500];
+
+    function findGrade(salary, grades) {
+      for (var i = grades.length - 1; i >= 0; i--) {
+        if (salary >= grades[i]) return grades[i];
+      }
+      return grades[0];
+    }
+
+    function fmt(n) { return Math.round(n).toLocaleString('zh-TW'); }
+
+    var salaryInput = document.getElementById('monthlySalary');
+    var depsInput = document.getElementById('dependents');
+    var retireInput = document.getElementById('selfRetire');
+
+    function calc() {
+      var salary = Math.max(0, parseFloat(salaryInput.value) || 0);
+      var deps = Math.max(0, Math.min(parseInt(depsInput.value) || 0, 3));
+      var selfPct = Math.max(0, Math.min(parseFloat(retireInput.value) || 0, 6));
+
+      if (salary <= 0) {
+        document.getElementById('salaryResult').style.display = 'none';
+        return;
+      }
+
+      var laborGrade = Math.min(findGrade(salary, laborGrades), 45800);
+      var healthGrade = findGrade(salary, healthGrades);
+
+      // 勞保：投保薪資 × 12.5% × 20%（勞工自付）
+      var laborSelf = Math.round(laborGrade * 0.125 * 0.2);
+      var laborEmployer = Math.round(laborGrade * 0.125 * 0.7);
+
+      // 健保：投保薪資 × 5.17% × 30% × (1 + 眷屬)
+      var healthSelf = Math.round(healthGrade * 0.0517 * 0.3 * (1 + deps));
+      var healthEmployer = Math.round(healthGrade * 0.0517 * 0.6 * (1 + deps));
+
+      // 勞退自提
+      var retireSelf = Math.round(salary * selfPct / 100);
+      var retireEmployer = Math.round(salary * 0.06);
+
+      var takeHome = salary - laborSelf - healthSelf - retireSelf;
+      var employerTotal = salary + laborEmployer + healthEmployer + retireEmployer;
+
+      document.getElementById('salaryResult').style.display = 'block';
+      document.getElementById('grossSalary').textContent = fmt(salary) + ' 元';
+      document.getElementById('laborIns').textContent = fmt(laborSelf) + ' 元';
+      document.getElementById('healthIns').textContent = fmt(healthSelf) + ' 元';
+      document.getElementById('selfRetireAmt').textContent = fmt(retireSelf) + ' 元';
+      document.getElementById('takeHome').textContent = fmt(takeHome);
+      document.getElementById('takeHome2').textContent = fmt(takeHome) + ' 元';
+      document.getElementById('laborInsEmployer').textContent = fmt(laborEmployer) + ' 元';
+      document.getElementById('healthInsEmployer').textContent = fmt(healthEmployer) + ' 元';
+      document.getElementById('retireEmployer').textContent = fmt(retireEmployer) + ' 元';
+      document.getElementById('employerTotal').textContent = fmt(employerTotal) + ' 元';
+
+      // Chart
+      if (typeof Chart !== 'undefined') {
+        if (window._salChart) window._salChart.destroy();
+        window._salChart = new Chart(document.getElementById('salaryChart'), {
+          type: 'bar',
+          data: {
+            labels: ['薪資結構'],
+            datasets: [
+              { label: '實領', data: [takeHome], backgroundColor: '#0891b2' },
+              { label: '勞保', data: [laborSelf], backgroundColor: '#f59e0b' },
+              { label: '健保', data: [healthSelf], backgroundColor: '#10b981' },
+              { label: '勞退自提', data: [retireSelf], backgroundColor: '#8b5cf6' }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            scales: {
+              x: { stacked: true, ticks: { callback: function(v) { return (v/1000).toFixed(0) + 'K'; } } },
+              y: { stacked: true, display: false }
+            },
+            plugins: {
+              legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 10 } }
+            }
+          }
+        });
+      }
+    }
+
+    [salaryInput, depsInput, retireInput].forEach(function(el) {
+      el.addEventListener('input', calc);
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+  })();
+  </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="../index.html">
+    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+    <span>首頁</span>
+  </a>
+  <a href="../articles.html">
+    <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+    <span>文章</span>
+  </a>
+  <a href="#">
+    <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+    <span>工具</span>
+  </a>
+  <a href="../about.html">
+    <svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+    <span>關於</span>
+  </a>
+</nav>
+
+</body>
+</html>
