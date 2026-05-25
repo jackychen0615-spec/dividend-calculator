@@ -421,7 +421,7 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 </script>
 
 <!-- Add to Home Screen Banner -->
-<div class="pwa-banner" id="pwaBanner">
+<div id="pwaBanner" style="display:none;position:fixed;bottom:70px;left:1rem;right:1rem;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:1rem;box-shadow:0 -4px 20px rgba(0,0,0,0.12);z-index:999;max-width:400px;margin:0 auto;">
   <div class="pwa-banner-header">
     <img class="pwa-banner-icon" src="images/favicon-32.png" alt="GULICALC">
     <div>
@@ -464,12 +464,12 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 
   // Show after 3 seconds
   setTimeout(function(){
-    document.getElementById('pwaBanner').classList.add('show');
+    document.getElementById('pwaBanner').style.display='block';
   }, 3000);
 })();
 
 function closePwa(ok){
-  document.getElementById('pwaBanner').classList.remove('show');
+  document.getElementById('pwaBanner').style.display='none';
   if (ok) localStorage.setItem('pwa_dismissed', Date.now().toString());
   else localStorage.setItem('pwa_dismissed', Date.now().toString());
 }
