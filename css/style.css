@@ -843,3 +843,65 @@ main {
     font-size: 0.88rem;
   }
 }
+
+/* ===== Mobile Bottom Navigation Bar ===== */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+    z-index: 1000;
+    padding: 0.4rem 0 calc(0.4rem + env(safe-area-inset-bottom));
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .bottom-nav a.active,
+  .bottom-nav a:hover {
+    color: var(--accent);
+  }
+
+  .bottom-nav svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+  }
+
+  /* Add padding to body so content doesn't hide behind bottom nav */
+  body {
+    padding-bottom: 70px;
+  }
+
+  /* Hide top nav hamburger menu on mobile since we have bottom nav */
+  .site-header .nav-links {
+    display: none !important;
+  }
+
+  .nav-toggle {
+    display: none !important;
+  }
+}
