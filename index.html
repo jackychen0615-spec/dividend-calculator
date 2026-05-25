@@ -477,7 +477,8 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
   var isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
 
   // Don't show if already installed or desktop or dismissed recently
-  if (isStandalone || (!isIOS && !isAndroid)) return;
+  var isWebView = /FBAN|FBAV|Instagram|Line\/|Threads/i.test(navigator.userAgent);
+  if (isStandalone || (!isIOS && !isAndroid) || isWebView) return;
   if (localStorage.getItem('pwa_dismissed')) {
     var dismissed = parseInt(localStorage.getItem('pwa_dismissed'));
     if (Date.now() - dismissed < 7 * 24 * 60 * 60 * 1000) return; // 7 days
@@ -580,9 +581,13 @@ function skipTour() {
   localStorage.setItem('tour_done', '1');
 }
 
-// Auto-start tour for first-time visitors after 2 seconds
+// Auto-start tour — only in real browsers, not in-app WebViews
 setTimeout(function() {
-  if (!localStorage.getItem('tour_done')) startTour();
+  if (localStorage.getItem('tour_done')) return;
+  // Detect WebView (Threads/IG/FB/LINE)
+  var ua = navigator.userAgent || '';
+  var isWebView = /FBAN|FBAV|Instagram|Line\/|Threads/i.test(ua);
+  if (!isWebView) startTour();
 }, 2000);
 
 function closePwa(ok){
