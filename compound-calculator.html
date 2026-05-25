@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>複利計算器｜存股複利試算工具，股利再投入成長計算 - GULICALC</title>
+  <meta name="description" content="免費複利計算器，輸入本金與殖利率，試算股利再投入的複利效果。存股複利計算、高殖利率ETF長期投資成長模擬。">
+  <meta property="og:title" content="存股複利計算器 - 股利計算器">
+  <meta property="og:description" content="免費複利計算器，輸入本金與殖利率，試算股利再投入的複利效果。存股複利計算、高殖利率ETF長期投資成長模擬。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/compound-calculator.html">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="股利計算器">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="存股複利計算器 - 股利計算器">
+  <meta name="twitter:description" content="免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。">
+  <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://gulicalc.com/compound-calculator.html">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "存股複利計算器",
+    "url": "https://gulicalc.com/compound-calculator.html",
+    "description": "免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TWD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "股利複利計算器",
+    "url": "https://gulicalc.com/compound-calculator.html",
+    "description": "免費複利試算工具，計算股利再投入的長期複利成長效果。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".calculator-hero p",".faq-answer"]}}
+  </script>
+  <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-nav.png" alt="股利計算器"> 股利計算器</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+            <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>存股複利計算器</span></nav>
+    <section class="calculator-hero">
+      <h1>存股複利計算器</h1>
+      <p>計算長期存股的複利成長效果</p>
+    </section>
+
+    <div class="calculator-card">
+      <div class="form-group">
+        <label for="initialInvestment">初始投資金額（元）</label>
+        <input type="number" id="initialInvestment" placeholder="例如：100000" min="0" step="1">
+      </div>
+      <div class="form-group">
+        <label for="monthlyInvestment">每月定期投入（元）</label>
+        <input type="number" id="monthlyInvestment" placeholder="例如：5000" min="0" step="1">
+      </div>
+      <div class="form-group">
+        <label for="annualYield">預期年殖利率（%）</label>
+        <input type="number" id="annualYield" placeholder="例如：5" min="0" step="0.01">
+      </div>
+      <div class="form-group">
+        <label for="years">投資年數</label>
+        <input type="number" id="years" placeholder="例如：10" min="0" step="1">
+      </div>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">總投入成本</div>
+        <div class="result-value" id="totalInvested">0</div>
+        <div class="result-unit">元</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">預估總資產</div>
+        <div class="result-value accent-green" id="totalAssets">0</div>
+        <div class="result-unit">元</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">累計股利收入</div>
+        <div class="result-value" id="totalDividendIncome">0</div>
+        <div class="result-unit">元</div>
+      </div>
+    </div>
+
+    <div class="feedback-wrapper">
+      <button class="feedback-btn">&#9733; 給我們回饋</button>
+    </div>
+
+    <div class="feedback-overlay">
+      <div class="feedback-modal">
+        <h3>你覺得這個工具如何？</h3>
+        <div class="feedback-stars">
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+          <button>&#9733;</button>
+        </div>
+        <textarea placeholder="有什麼建議嗎？（選填）"></textarea>
+        <div class="feedback-actions">
+          <button class="feedback-cancel">取消</button>
+          <button class="feedback-submit">送出</button>
+        </div>
+        <div class="feedback-thanks">感謝你的回饋！<br><button class="feedback-close btn-primary" style="margin-top:1rem;">關閉</button></div>
+      </div>
+    </div>
+
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>什麼是存股複利？</h2>
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+        複利（Compound Interest）是指「利滾利」的概念：每年領到的股利再投入買進更多股票，下一年又能領到更多股利，如此循環往復。愛因斯坦曾稱複利為「世界第八大奇蹟」，長期存股正是利用複利效應讓資產加速成長的核心策略。
+      </p>
+
+      <h2>複利計算公式說明</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        本計算器採用月複利模型，完整公式如下：
+      </p>
+      <div style="background:#1a1a2e;border:1px solid #333;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#f0c040;line-height:2;">
+        月利率 r = 年殖利率 ÷ 12<br>
+        初始資金終值 = 初始投資 × (1 + r)^(年數×12)<br>
+        每月定投終值 = 每月投入 × [(1 + r)^(年數×12) − 1] ÷ r<br>
+        總資產 = 初始資金終值 + 每月定投終值<br>
+        累計股利 = 總資產 − 總投入成本
+      </div>
+
+      <h2>實際試算範例</h2>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        假設小明 35 歲開始存股，條件如下：
+      </p>
+      <div style="max-width:760px;margin:0 auto 1.5rem;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;color:#ccc;font-size:.95rem;">
+          <thead>
+            <tr style="background:#1a1a2e;">
+              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #333;">參數</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">數值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">初始投資</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">100,000 元</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">每月定期投入</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">5,000 元</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">預期年殖利率</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">6%</td></tr>
+            <tr><td style="padding:.65rem 1rem;border-bottom:1px solid #222;">投資年數</td><td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">20 年</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+        計算結果：總投入 <strong style="color:#f0c040;">1,300,000 元</strong>（100,000 + 5,000×12×20），預估總資產約 <strong style="color:#f0c040;">2,420,000 元</strong>，複利帶來的額外獲利超過 110 萬元，相當於本金的 85%。這就是長期複利的驚人威力。
+      </p>
+
+      <h2>存股複利 5 大關鍵策略</h2>
+      <div style="max-width:760px;margin:0 auto 1.5rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3h-1V1h-2v2H7V1H5v2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 18H4V8h16v13z"/></svg> 越早開始越好</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">從 25 歲開始存股，20 年的複利效果遠超過 45 歲才起步、存 30 年的結果。時間是最好的複利加速器。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> 股利再投入</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">將每次領到的股利立即買回同一檔股票，讓持股數不斷增加，下一期能領更多股利。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg> 選擇穩定配息股</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">複利效果需要穩定的殖利率。優先選擇連續 10 年以上配息且殖利率在 4%~8% 的優質股票或 ETF。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.06A4.01 4.01 0 0 1 8 13h2c0 1.1.9 2 2 2s2-.9 2-2c0-1.1-.9-2-2-2a4 4 0 0 1-4-4c0-1.85 1.27-3.4 3-3.87V2h2v1.13A4.01 4.01 0 0 1 16 7h-2c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2a4 4 0 0 1 4 4c0 1.85-1.27 3.4-3 3.93z"/></svg> 定期定額投入</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">每月固定投入一筆資金，不論股市漲跌都持續買進，可平均成本並放大複利效果。</p>
+          </div>
+          <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
+            <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;">⏳ 不輕易停損出場</div>
+            <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">複利需要時間發酵，頻繁進出會中斷複利週期。長期持有才能讓複利效果充分顯現。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">殖利率 5% 和 8% 的差別有多大？</button>
+        <div class="faq-answer">
+          <p>以 100 萬本金投資 20 年計算：年殖利率 5% 複利後約 265 萬，年殖利率 8% 約 466 萬。短短 3% 的殖利率差距，20 年後資產差距超過 200 萬元，可見殖利率對複利的影響極為顯著。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">計算結果包含股利稅嗎？</button>
+        <div class="faq-answer">
+          <p>本計算器採稅前數字，實際到手股利須扣除二代健保（配息超過 2 萬元部分扣 2.11%）及所得稅（依個人綜合所得稅率而異）。建議將輸入的殖利率乘以 0.85～0.9 作為稅後估算。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">台灣存股常見的殖利率範圍是多少？</button>
+        <div class="faq-answer">
+          <p>台灣高股息 ETF（如 0056、00878）近年殖利率約 5%~8%，金融股約 4%~6%，電信股約 4%~5%。殖利率超過 8% 的個股須特別注意是否為一次性高配息或本業獲利是否穩定。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">這個計算器假設殖利率每年固定，實際上如何？</button>
+        <div class="faq-answer">
+          <p>實際殖利率會隨公司獲利與股價波動而每年不同。本計算器使用固定殖利率作為長期平均估算，適合做大方向的財務規劃參考，不代表保證獲利。投資前請充分了解標的基本面。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多投資工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1.5rem auto 0;">
+        <div class="article-card">
+          <h3><a href="index.html">股利計算器</a></h3>
+          <p>快速算出持股的總股利與殖利率。</p>
+          <span class="article-tag">股利試算</span>
+        </div>
+        <div class="article-card">
+          <h3><a href="payback-calculator.html">存股回本計算器</a></h3>
+          <p>算出靠股利回本需要幾年，評估投資標的。</p>
+          <span class="article-tag">回本試算</span>
+        </div>
+        <div class="article-card">
+          <h3><a href="dca-calculator.html">定期定額試算器</a></h3>
+          <p>每月定期投入，看看長期投資的成果。</p>
+          <span class="article-tag">定期定額</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="privacy.html">隱私權政策</a></li>
+      <li><a href="terms.html">使用條款</a></li>
+    </ul>
+    <div style="font-size:.78rem;color:#856404;margin-bottom:.5rem;">本站內容僅供參考，不構成任何投資建議。投資有風險，請自行評估。</div>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script src="js/compound-calculator.js"></script>
+  <script src="js/feedback.js"></script>
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html>
