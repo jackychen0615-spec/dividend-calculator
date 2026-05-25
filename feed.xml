@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>股利計算器 - 投資教學文章</title>
+  <link>https://gulicalc.com/</link>
+  <description>台股股利計算、殖利率分析、存股策略教學文章</description>
+  <language>zh-TW</language>
+  <lastBuildDate>Mon, 12 May 2026 00:00:00 +0800</lastBuildDate>
+  <atom:link href="https://gulicalc.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+  <item>
+    <title>台積電股利怎麼算？歷年季配息紀錄與殖利率試算</title>
+    <link>https://gulicalc.com/articles/tsmc-dividend-calculator.html</link>
+    <description>台積電（2330）股利計算完整教學，含歷年季配息紀錄與殖利率試算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>0056（元大高股息）配息計算完整攻略</title>
+    <link>https://gulicalc.com/articles/0056-dividend-calculator.html</link>
+    <description>0056 元大高股息 ETF 配息計算教學，含歷年配息紀錄、殖利率與存股試算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00878（國泰永續高股息）配息計算完整攻略</title>
+    <link>https://gulicalc.com/articles/00878-dividend-calculator.html</link>
+    <description>00878 國泰永續高股息 ETF 配息計算教學與殖利率分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利怎麼算？完整教學與實例</title>
+    <link>https://gulicalc.com/articles/how-to-calculate-dividend.html</link>
+    <description>股利計算公式完整教學，附實例說明總股利與殖利率算法。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>殖利率是什麼？公式與實例解析</title>
+    <link>https://gulicalc.com/articles/dividend-yield-explained.html</link>
+    <description>殖利率定義、計算公式、高殖利率的判斷標準完整解析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>存股是什麼？新手入門攻略</title>
+    <link>https://gulicalc.com/articles/stock-saving-strategy.html</link>
+    <description>存股策略入門教學，含選股標準、定期定額方法與風險管理。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利稅後怎麼算？二代健保與所得稅完整試算</title>
+    <link>https://gulicalc.com/articles/dividend-tax-calculator.html</link>
+    <description>股利所得稅合併計稅 vs 分離課稅比較，含二代健保補充保費計算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>除息日、填息是什麼？完整攻略</title>
+    <link>https://gulicalc.com/articles/ex-dividend-date-guide.html</link>
+    <description>除息日、除權日、填息完整說明，附配息時程與注意事項。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>0056 vs 00878 哪個好？完整比較分析</title>
+    <link>https://gulicalc.com/articles/0056-vs-00878.html</link>
+    <description>0056 元大高股息與 00878 國泰永續高股息的配息、殖利率、成分股完整比較。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>高股息 ETF 股息再投市值型 ETF 策略教學</title>
+    <link>https://gulicalc.com/articles/dividend-reinvest-strategy.html</link>
+    <description>雙核心存股策略：高股息 ETF 領息再投入市值型 ETF，兼顧現金流與成長。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00919（群益台灣精選高息）配息計算完整攻略</title>
+    <link>https://gulicalc.com/articles/00919-dividend-calculator.html</link>
+    <description>00919 群益台灣精選高息 ETF 月配息計算、殖利率試算完整教學。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00929（復華台灣科技優息）月配息完整攻略</title>
+    <link>https://gulicalc.com/articles/00929-dividend-calculator.html</link>
+    <description>00929 復華台灣科技優息 ETF 月配息紀錄、殖利率計算與比較。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00713（元大台灣高息低波）配息計算完整攻略</title>
+    <link>https://gulicalc.com/articles/00713-dividend-calculator.html</link>
+    <description>00713 元大台灣高息低波 ETF 配息紀錄與殖利率試算。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00940配息完整攻略：元大台灣價值高息殖利率與月配息計算</title>
+    <link>https://gulicalc.com/articles/00940-dividend-calculator.html</link>
+    <description>00940 歷月配息紀錄、殖利率計算、與 00929 比較。</description>
+    <pubDate>Wed, 21 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>月配息 ETF 有哪些？00929、00934 完整比較</title>
+    <link>https://gulicalc.com/articles/monthly-dividend-etf.html</link>
+    <description>台股月配息 ETF 完整比較，含配息金額、殖利率與選擇建議。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>ETF 殖利率 vs 個股殖利率比較</title>
+    <link>https://gulicalc.com/articles/etf-dividend-yield-comparison.html</link>
+    <description>ETF 和個股殖利率差異比較與投資判斷。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>台股高殖利率股票怎麼選？5大挑選標準</title>
+    <link>https://gulicalc.com/articles/high-dividend-yield-stocks.html</link>
+    <description>高殖利率股票篩選標準與殖利率陷阱避免方法。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>兆豐金（2886）股利歷年紀錄與殖利率計算</title>
+    <link>https://gulicalc.com/articles/mega-financial-dividend.html</link>
+    <description>兆豐金歷年配息紀錄、殖利率試算與存股分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>中信金（2891）股利歷年紀錄與殖利率計算</title>
+    <link>https://gulicalc.com/articles/ctbc-financial-dividend.html</link>
+    <description>中信金歷年配息紀錄、殖利率試算與存股分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>玉山金（2884）股利歷年紀錄與殖利率計算</title>
+    <link>https://gulicalc.com/articles/e-sun-financial-dividend.html</link>
+    <description>玉山金歷年配息紀錄、殖利率試算與存股分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>富邦金（2881）股利歷年紀錄與殖利率計算</title>
+    <link>https://gulicalc.com/articles/fubon-financial-dividend.html</link>
+    <description>富邦金歷年配息紀錄、殖利率試算與存股分析。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>一張股票配多少股利？</title>
+    <link>https://gulicalc.com/articles/how-much-dividend-per-share.html</link>
+    <description>一張股票的股利計算方式與實例說明。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>台股配息查詢完整指南</title>
+    <link>https://gulicalc.com/articles/taiwan-stock-dividend-guide.html</link>
+    <description>台股配息查詢方法、配息時程與注意事項完整說明。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利什麼時候入帳？配息時間完整說明</title>
+    <link>https://gulicalc.com/articles/dividend-payment-schedule.html</link>
+    <description>股利入帳時間、除息到配息的完整流程說明。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>股利計算實例：0056、00878、台積電試算教學</title>
+    <link>https://gulicalc.com/articles/dividend-calculation-examples.html</link>
+    <description>多檔股票的股利計算實例與步驟教學。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>存股 ETF 推薦新手攻略（2026）</title>
+    <link>https://gulicalc.com/articles/etf-stock-saving-guide.html</link>
+    <description>2026 年適合新手的存股 ETF 推薦與選擇指南。</description>
+    <pubDate>Fri, 09 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>存股月領1萬要多少本金？三種路線實際算給你看</title>
+    <link>https://gulicalc.com/articles/passive-income-monthly-10k.html</link>
+    <description>高股息ETF、金融股、台積電三種路線實際試算月領1萬所需本金。</description>
+    <pubDate>Wed, 21 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>2026 台股殖利率排行榜：高殖利率股票與ETF怎麼選</title>
+    <link>https://gulicalc.com/articles/dividend-yield-ranking-2026.html</link>
+    <description>2026年高殖利率ETF與金融股排行，附五大判斷標準。</description>
+    <pubDate>Wed, 21 May 2026 00:00:00 +0800</pubDate>
+  </item>
+</channel>
+</rss>
