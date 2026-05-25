@@ -73,7 +73,7 @@
 
   <main>
             <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>定期定額試算器</span></nav>
-    <section class="calculator-hero">
+    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem;border-radius:12px;margin-bottom:1.5rem;">
       <h1>定期定額試算器</h1>
       <p>計算每月定期定額投資的長期成果</p>
     </section>
@@ -136,91 +136,91 @@
 
     <section class="faq-section" style="margin-top:2rem;">
       <h2>什麼是定期定額（DCA）？</h2>
-      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#1f2937;">
         定期定額（Dollar Cost Averaging，簡稱 DCA）是一種紀律性投資策略：不論市場漲跌，每隔固定時間（通常每月）投入固定金額購買同一標的。這個方法的優點在於「高點少買、低點多買」，自動達到分散買入成本的效果，特別適合沒有時間盯盤的上班族與長期存股族。
       </p>
 
       <h2>定期定額計算公式</h2>
-      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#1f2937;">
         本計算器使用月複利公式，模擬每月定期投入的終值：
       </p>
-      <div style="background:#1a1a2e;border:1px solid #333;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#f0c040;line-height:2;">
+      <div style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:1.25rem 1.5rem;max-width:760px;margin:0 auto 1.5rem;font-family:monospace;color:#0891b2;line-height:2;">
         月利率 r = 年報酬率 ÷ 12<br>
         總投入 = 每月金額 × 12 × 年數<br>
         預估總資產 = 每月金額 × [(1 + r)^(年數×12) − 1] ÷ r × (1 + r)<br>
         投資報酬 = 預估總資產 − 總投入
       </div>
-      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#ccc;">
+      <p style="max-width:760px;margin:0 auto 1.5rem;line-height:1.8;color:#1f2937;">
         公式中乘以 (1 + r) 是因為假設每月月初投入（期初年金），若改為月底投入則去掉此項。兩者差異不大，長期誤差在 1% 以內。
       </p>
 
       <h2>不同年報酬率的 20 年試算比較</h2>
-      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;">
-        假設每月定期投入 <strong style="color:#f0c040;">5,000 元</strong>，投資 20 年（總投入 120 萬元）：
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#1f2937;">
+        假設每月定期投入 <strong style="color:#0891b2;">5,000 元</strong>，投資 20 年（總投入 120 萬元）：
       </p>
       <div style="max-width:760px;margin:0 auto 1.5rem;overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;color:#ccc;font-size:.95rem;">
+        <table style="width:100%;border-collapse:collapse;color:#1f2937;font-size:.95rem;">
           <thead>
-            <tr style="background:#1a1a2e;">
-              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #333;">年報酬率</th>
-              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">預估總資產</th>
-              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">投資報酬</th>
-              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #333;">報酬倍數</th>
+            <tr style="background:#f3f4f6;">
+              <th style="padding:.75rem 1rem;text-align:left;border-bottom:1px solid #e5e7eb;">年報酬率</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">預估總資產</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">投資報酬</th>
+              <th style="padding:.75rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">報酬倍數</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">3%（定存）</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,641,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">441,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1.37 倍</td>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #e5e7eb;">3%（定存）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">1,641,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">441,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">1.37 倍</td>
             </tr>
             <tr>
-              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">6%（高股息 ETF）</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,310,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,110,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#f0c040;">1.93 倍</td>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #e5e7eb;">6%（高股息 ETF）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">2,310,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">1,110,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;color:#0891b2;">1.93 倍</td>
             </tr>
             <tr>
-              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">8%（台股大盤長期）</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,936,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">1,736,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#4caf50;">2.45 倍</td>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #e5e7eb;">8%（台股大盤長期）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">2,936,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">1,736,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;color:#4caf50;">2.45 倍</td>
             </tr>
             <tr>
-              <td style="padding:.65rem 1rem;border-bottom:1px solid #222;">10%（美股 S&P 500 歷史均值）</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">3,795,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;">2,595,000 元</td>
-              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #222;color:#4caf50;">3.16 倍</td>
+              <td style="padding:.65rem 1rem;border-bottom:1px solid #e5e7eb;">10%（美股 S&P 500 歷史均值）</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">3,795,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;">2,595,000 元</td>
+              <td style="padding:.65rem 1rem;text-align:right;border-bottom:1px solid #e5e7eb;color:#4caf50;">3.16 倍</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#ccc;font-size:.88rem;">
+      <p style="max-width:760px;margin:0 auto 1rem;line-height:1.8;color:#1f2937;font-size:.88rem;">
         ※ 以上試算為示例，歷史報酬不代表未來績效保證。
       </p>
 
       <h2>定期定額的 5 大優勢</h2>
       <div style="max-width:760px;margin:0 auto 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
-        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
-          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg> 降低買在高點風險</div>
-          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">分批買進可平滑市場波動，避免單筆投入押在最高點。</p>
+        <div style="background:#f3f4f6;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#0891b2;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg> 降低買在高點風險</div>
+          <p style="margin:0;font-size:.9rem;color:#1f2937;line-height:1.6;">分批買進可平滑市場波動，避免單筆投入押在最高點。</p>
         </div>
-        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
-          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.38-1 1.73V7h1a7 7 0 0 1 7 7H3a7 7 0 0 1 7-7h1V5.73c-.6-.35-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3 17h18v2H3v-2z"/></svg> 自動化不費心</div>
-          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">設定每月自動扣款，不需要盯盤或判斷市場時機，省時省力。</p>
+        <div style="background:#f3f4f6;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#0891b2;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.38-1 1.73V7h1a7 7 0 0 1 7 7H3a7 7 0 0 1 7-7h1V5.73c-.6-.35-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3 17h18v2H3v-2z"/></svg> 自動化不費心</div>
+          <p style="margin:0;font-size:.9rem;color:#1f2937;line-height:1.6;">設定每月自動扣款，不需要盯盤或判斷市場時機，省時省力。</p>
         </div>
-        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
-          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg> 培養儲蓄紀律</div>
-          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">強迫自己每月先存後花，長期下來積累可觀的投資本金。</p>
+        <div style="background:#f3f4f6;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#0891b2;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg> 培養儲蓄紀律</div>
+          <p style="margin:0;font-size:.9rem;color:#1f2937;line-height:1.6;">強迫自己每月先存後花，長期下來積累可觀的投資本金。</p>
         </div>
-        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
-          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3v18h18v-2H5V3H3zm4 12h2V9H7v6zm4 2h2V6h-2v11zm4 0h2v-7h-2v7z"/></svg> 平均成本效應</div>
-          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">低點多買股、高點少買股，長期持有平均成本通常低於平均股價。</p>
+        <div style="background:#f3f4f6;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#0891b2;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3v18h18v-2H5V3H3zm4 12h2V9H7v6zm4 2h2V6h-2v11zm4 0h2v-7h-2v7z"/></svg> 平均成本效應</div>
+          <p style="margin:0;font-size:.9rem;color:#1f2937;line-height:1.6;">低點多買股、高點少買股，長期持有平均成本通常低於平均股價。</p>
         </div>
-        <div style="background:#1a1a2e;border-radius:8px;padding:1rem 1.25rem;">
-          <div style="color:#f0c040;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s2 2 2 6-6.5 8-10.88 2.51C4.5 10.5 5 3 5 3 1.5 10.5 2 17 8 17s6-7 9-9z"/></svg> 小資族友善</div>
-          <p style="margin:0;font-size:.9rem;color:#bbb;line-height:1.6;">每月只需數千元即可開始，不需要大筆資金，降低投資門檻。</p>
+        <div style="background:#f3f4f6;border-radius:8px;padding:1rem 1.25rem;">
+          <div style="color:#0891b2;font-weight:700;margin-bottom:.5rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2s2 2 2 6-6.5 8-10.88 2.51C4.5 10.5 5 3 5 3 1.5 10.5 2 17 8 17s6-7 9-9z"/></svg> 小資族友善</div>
+          <p style="margin:0;font-size:.9rem;color:#1f2937;line-height:1.6;">每月只需數千元即可開始，不需要大筆資金，降低投資門檻。</p>
         </div>
       </div>
 
@@ -312,19 +312,19 @@
   <div class="tool-modal">
     <h3>選擇工具</h3>
     <a class="tool-modal-item" href="index.html">
-      <div class="tool-modal-icon tmi-dividend">&#128200;</div>
+      <div class="tool-modal-icon tmi-dividend"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg></div>
       <div class="tool-modal-info"><strong>股利計算器</strong><span>算殖利率和總股利</span></div>
     </a>
     <a class="tool-modal-item" href="compound-calculator.html">
-      <div class="tool-modal-icon tmi-compound">&#128201;</div>
+      <div class="tool-modal-icon tmi-compound"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
       <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
     </a>
     <a class="tool-modal-item" href="payback-calculator.html">
-      <div class="tool-modal-icon tmi-payback">&#9203;</div>
+      <div class="tool-modal-icon tmi-payback"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
       <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
     </a>
     <a class="tool-modal-item" href="dca-calculator.html">
-      <div class="tool-modal-icon tmi-dca">&#128197;</div>
+      <div class="tool-modal-icon tmi-dca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
       <div class="tool-modal-info"><strong>定期定額試算器</strong><span>每月定投長期成果</span></div>
     </a>
     <button class="tool-modal-close" onclick="closeTools()">關閉</button>
