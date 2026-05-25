@@ -1,0 +1,14 @@
+{
+  "name": "GULICALC 股利計算器",
+  "short_name": "GULICALC",
+  "description": "免費台股股利計算器，算殖利率、複利、回本、定期定額",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0891b2",
+  "icons": [
+    { "src": "/images/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/logo-square.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

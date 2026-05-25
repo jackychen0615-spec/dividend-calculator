@@ -1092,3 +1092,114 @@ main {
   cursor: pointer;
   font-family: inherit;
 }
+
+/* ===== Add to Home Screen Banner ===== */
+.pwa-banner {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  left: 1rem;
+  right: 1rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+  z-index: 999;
+  animation: slideUp 0.3s ease;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pwa-banner.show {
+  display: block;
+}
+
+.pwa-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.pwa-banner-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #0a0e1a;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.pwa-banner-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.pwa-banner-subtitle {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.pwa-banner-steps {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.pwa-banner-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.82rem;
+  color: #374151;
+}
+
+.pwa-banner-step-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0891b2;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pwa-banner-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pwa-banner-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+}
+
+.pwa-btn-later {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.pwa-btn-ok {
+  background: #0891b2;
+  color: #fff;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

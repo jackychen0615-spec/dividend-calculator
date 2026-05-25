@@ -29,6 +29,9 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="canonical" href="https://gulicalc.com/">
   <link rel="alternate" type="application/rss+xml" title="股利計算器 RSS" href="https://gulicalc.com/feed.xml">
   <link rel="preload" href="css/style.css" as="style">
@@ -415,6 +418,61 @@
 <script>
 function openTools(e){e.preventDefault();document.getElementById('toolModal').classList.add('open')}
 function closeTools(){document.getElementById('toolModal').classList.remove('open')}
+</script>
+
+<!-- Add to Home Screen Banner -->
+<div class="pwa-banner" id="pwaBanner">
+  <div class="pwa-banner-header">
+    <img class="pwa-banner-icon" src="images/favicon-32.png" alt="GULICALC">
+    <div>
+      <div class="pwa-banner-title">加到主畫面，變成你的小工具</div>
+      <div class="pwa-banner-subtitle">像 App 一樣一鍵開啟，不用打開瀏覽器</div>
+    </div>
+  </div>
+  <div class="pwa-banner-steps" id="pwaSteps">
+  </div>
+  <div class="pwa-banner-actions">
+    <button class="pwa-btn-later" onclick="closePwa()">之後再說</button>
+    <button class="pwa-btn-ok" onclick="closePwa(true)">我知道了</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Detect platform
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  var isAndroid = /Android/.test(navigator.userAgent);
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+  // Don't show if already installed or desktop or dismissed recently
+  if (isStandalone || (!isIOS && !isAndroid)) return;
+  if (localStorage.getItem('pwa_dismissed')) {
+    var dismissed = parseInt(localStorage.getItem('pwa_dismissed'));
+    if (Date.now() - dismissed < 7 * 24 * 60 * 60 * 1000) return; // 7 days
+  }
+
+  var steps = document.getElementById('pwaSteps');
+  if (isIOS) {
+    steps.innerHTML = '<div class="pwa-banner-step"><span class="pwa-banner-step-num">1</span><span>點底部的 <strong>分享按鈕</strong>（方框 + 向上箭頭）</span></div>' +
+      '<div class="pwa-banner-step"><span class="pwa-banner-step-num">2</span><span>往下滑找到 <strong>「加入主畫面」</strong></span></div>' +
+      '<div class="pwa-banner-step"><span class="pwa-banner-step-num">3</span><span>點 <strong>「新增」</strong>，主畫面就會出現 GULICALC 圖示</span></div>';
+  } else {
+    steps.innerHTML = '<div class="pwa-banner-step"><span class="pwa-banner-step-num">1</span><span>點右上角 <strong>三個點 ⋮</strong>（Chrome 選單）</span></div>' +
+      '<div class="pwa-banner-step"><span class="pwa-banner-step-num">2</span><span>選 <strong>「加到主畫面」</strong> 或 <strong>「安裝應用程式」</strong></span></div>' +
+      '<div class="pwa-banner-step"><span class="pwa-banner-step-num">3</span><span>點 <strong>「安裝」</strong>，桌面就會出現 GULICALC 圖示</span></div>';
+  }
+
+  // Show after 3 seconds
+  setTimeout(function(){
+    document.getElementById('pwaBanner').classList.add('show');
+  }, 3000);
+})();
+
+function closePwa(ok){
+  document.getElementById('pwaBanner').classList.remove('show');
+  if (ok) localStorage.setItem('pwa_dismissed', Date.now().toString());
+  else localStorage.setItem('pwa_dismissed', Date.now().toString());
+}
 </script>
 
 </body>
