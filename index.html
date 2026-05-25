@@ -421,6 +421,27 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 </script>
 
 <!-- Add to Home Screen Banner -->
+<!-- Onboarding Tour -->
+<div class="tour-overlay" id="tourOverlay" onclick="skipTour()"></div>
+<div class="tour-tooltip" id="tourTooltip" style="display:none;" onclick="event.stopPropagation()">
+  <span class="tour-step-badge">1 / 5</span>
+  <h3></h3>
+  <p></p>
+  <div class="tour-actions">
+    <div class="tour-dots">
+      <div class="tour-dot active"></div>
+      <div class="tour-dot"></div>
+      <div class="tour-dot"></div>
+      <div class="tour-dot"></div>
+      <div class="tour-dot"></div>
+    </div>
+    <div class="tour-btns">
+      <button class="tour-btn-skip" onclick="skipTour()">跳過</button>
+      <button class="tour-btn-next" onclick="nextTourStep()">下一步</button>
+    </div>
+  </div>
+</div>
+
 <div id="pwaBanner" style="display:none;position:fixed;bottom:70px;left:1rem;right:1rem;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:1rem;box-shadow:0 -4px 20px rgba(0,0,0,0.12);z-index:999;max-width:400px;margin:0 auto;">
   <div class="pwa-banner-header">
     <img class="pwa-banner-icon" src="images/favicon-32.png" alt="GULICALC">
@@ -467,6 +488,91 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
     document.getElementById('pwaBanner').style.display='block';
   }, 3000);
 })();
+
+/* ===== Onboarding Tour ===== */
+var tourSteps = [
+  { title: '歡迎使用 GULICALC', text: '免費的台股投資計算工具。讓我快速帶你認識主要功能。', target: null },
+  { title: '股利殖利率試算', text: '輸入股價、股數、每股股利，一秒算出殖利率和總股利。這是最多人用的功能。', target: '#calc' },
+  { title: '更多投資工具', text: '除了股利計算器，還有複利計算器、回本計算器和定期定額試算器。', target: '.articles-grid' },
+  { title: '投資教學文章', text: '33 篇存股、ETF、殖利率教學文章，從入門到進階都有。', target: 'a[href="articles.html"]' },
+  { title: '加到主畫面', text: '手機用戶可以加到主畫面，像 App 一樣一鍵開啟。點下方的分享按鈕就能加入。', target: null }
+];
+var tourIdx = 0;
+
+function startTour() {
+  if (localStorage.getItem('tour_done')) return;
+  tourIdx = 0;
+  showTourStep();
+}
+
+function showTourStep() {
+  var overlay = document.getElementById('tourOverlay');
+  var tooltip = document.getElementById('tourTooltip');
+  if (!overlay || !tooltip) return;
+
+  // Remove previous highlight
+  document.querySelectorAll('.tour-highlight').forEach(function(el) { el.classList.remove('tour-highlight'); });
+
+  if (tourIdx >= tourSteps.length) {
+    overlay.classList.remove('show');
+    tooltip.style.display = 'none';
+    localStorage.setItem('tour_done', '1');
+    return;
+  }
+
+  var step = tourSteps[tourIdx];
+  overlay.classList.add('show');
+  tooltip.style.display = 'block';
+
+  // Update content
+  tooltip.querySelector('.tour-step-badge').textContent = (tourIdx + 1) + ' / ' + tourSteps.length;
+  tooltip.querySelector('h3').textContent = step.title;
+  tooltip.querySelector('p').textContent = step.text;
+
+  // Update dots
+  var dots = tooltip.querySelectorAll('.tour-dot');
+  dots.forEach(function(d, i) { d.className = 'tour-dot' + (i === tourIdx ? ' active' : ''); });
+
+  // Update button text
+  var nextBtn = tooltip.querySelector('.tour-btn-next');
+  nextBtn.textContent = tourIdx === tourSteps.length - 1 ? '開始使用' : '下一步';
+
+  // Position tooltip
+  if (step.target) {
+    var el = document.querySelector(step.target);
+    if (el) {
+      el.classList.add('tour-highlight');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function() {
+        var rect = el.getBoundingClientRect();
+        tooltip.style.top = Math.min(rect.bottom + 12, window.innerHeight - 200) + 'px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+      }, 300);
+    }
+  } else {
+    tooltip.style.top = '50%';
+    tooltip.style.left = '50%';
+    tooltip.style.transform = 'translate(-50%, -50%)';
+  }
+}
+
+function nextTourStep() {
+  tourIdx++;
+  showTourStep();
+}
+
+function skipTour() {
+  document.getElementById('tourOverlay').classList.remove('show');
+  document.getElementById('tourTooltip').style.display = 'none';
+  document.querySelectorAll('.tour-highlight').forEach(function(el) { el.classList.remove('tour-highlight'); });
+  localStorage.setItem('tour_done', '1');
+}
+
+// Auto-start tour for first-time visitors after 2 seconds
+setTimeout(function() {
+  if (!localStorage.getItem('tour_done')) startTour();
+}, 2000);
 
 function closePwa(ok){
   document.getElementById('pwaBanner').style.display='none';

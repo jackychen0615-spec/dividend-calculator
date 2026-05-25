@@ -1203,3 +1203,116 @@ main {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* ===== Onboarding Tour ===== */
+.tour-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+}
+
+.tour-overlay.show {
+  display: block;
+}
+
+.tour-tooltip {
+  position: fixed;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  max-width: 340px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  z-index: 2001;
+  animation: tourPop 0.3s ease;
+}
+
+@keyframes tourPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.tour-step-badge {
+  display: inline-block;
+  background: #0891b2;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.tour-tooltip h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.4rem;
+}
+
+.tour-tooltip p {
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+}
+
+.tour-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.tour-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+
+.tour-dot.active {
+  background: #0891b2;
+  width: 18px;
+  border-radius: 4px;
+}
+
+.tour-btns {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tour-btn-skip {
+  padding: 0.4rem 0.8rem;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tour-btn-next {
+  padding: 0.4rem 1rem;
+  background: #0891b2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tour-highlight {
+  position: relative;
+  z-index: 2001;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4000px rgba(0,0,0,0.55), 0 0 0 4px #0891b2;
+}
