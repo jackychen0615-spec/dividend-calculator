@@ -11,9 +11,9 @@
   var paybackYearsEl = document.getElementById("paybackYears");
 
   function calculate() {
-    var buyPrice = parseFloat(buyPriceInput.value) || 0;
-    var holdShares = parseFloat(holdSharesInput.value) || 0;
-    var annualDividend = parseFloat(annualDividendInput.value) || 0;
+    var buyPrice = Math.max(0, parseFloat(buyPriceInput.value) || 0);
+    var holdShares = Math.max(0, Math.min(parseFloat(holdSharesInput.value) || 0, 99999999));
+    var annualDividend = Math.max(0, parseFloat(annualDividendInput.value) || 0);
 
     var investCost = buyPrice * holdShares;
     var yearlyDividend = annualDividend * holdShares;

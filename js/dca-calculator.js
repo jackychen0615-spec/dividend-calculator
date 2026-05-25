@@ -8,9 +8,9 @@
   const totalReturnEl = $("#totalReturn");
 
   function calculate() {
-    const monthly = parseFloat(monthlyAmount.value) || 0;
-    const rate = parseFloat(annualReturn.value) || 0;
-    const years = parseFloat(investYears.value) || 0;
+    const monthly = Math.max(0, parseFloat(monthlyAmount.value) || 0);
+    const rate = Math.max(0, Math.min(parseFloat(annualReturn.value) || 0, 50));
+    const years = Math.max(0, Math.min(parseFloat(investYears.value) || 0, 100));
 
     const totalInput = monthly * 12 * years;
     const monthlyRate = rate / 100 / 12;

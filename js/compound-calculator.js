@@ -9,10 +9,10 @@
   const totalDividendIncomeEl = $("#totalDividendIncome");
 
   function calculate() {
-    const initial = parseFloat(initialInvestment.value) || 0;
-    const monthly = parseFloat(monthlyInvestment.value) || 0;
-    const rate = parseFloat(annualYield.value) || 0;
-    const numYears = parseFloat(years.value) || 0;
+    const initial = Math.max(0, parseFloat(initialInvestment.value) || 0);
+    const monthly = Math.max(0, parseFloat(monthlyInvestment.value) || 0);
+    const rate = Math.max(0, Math.min(parseFloat(annualYield.value) || 0, 50));
+    const numYears = Math.max(0, Math.min(parseFloat(years.value) || 0, 100));
 
     const totalInvested = initial + monthly * 12 * numYears;
 

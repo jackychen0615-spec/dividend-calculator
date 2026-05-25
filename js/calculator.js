@@ -8,9 +8,9 @@
   const yieldRateEl = $("#yieldRate");
 
   function calculate() {
-    const price = parseFloat(stockPrice.value) || 0;
-    const shareCount = parseFloat(shares.value) || 0;
-    const div = parseFloat(dividend.value) || 0;
+    const price = Math.max(0, parseFloat(stockPrice.value) || 0);
+    const shareCount = Math.max(0, Math.min(parseFloat(shares.value) || 0, 99999999));
+    const div = Math.max(0, parseFloat(dividend.value) || 0);
 
     const totalCost = shareCount * price;
     const totalDividend = shareCount * div;

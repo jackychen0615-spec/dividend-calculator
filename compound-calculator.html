@@ -16,7 +16,7 @@
   <meta property="og:site_name" content="股利計算器">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="存股複利計算器 - 股利計算器">
-  <meta name="twitter:description" content="免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。">
+  <meta name="twitter:description" content="免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與複利獲利。">
   <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -30,7 +30,7 @@
     "@type": "WebApplication",
     "name": "存股複利計算器",
     "url": "https://gulicalc.com/compound-calculator.html",
-    "description": "免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與累計股利。",
+    "description": "免費存股複利計算器，輸入初始投資、每月投入、預期殖利率與年數，立即算出複利成長後的總資產與複利獲利。",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -109,7 +109,7 @@
         <div class="result-unit">元</div>
       </div>
       <div class="result-card">
-        <div class="result-label">累計股利收入</div>
+        <div class="result-label">複利獲利</div>
         <div class="result-value" id="totalDividendIncome">0</div>
         <div class="result-unit">元</div>
       </div>
@@ -153,7 +153,7 @@
         初始資金終值 = 初始投資 × (1 + r)^(年數×12)<br>
         每月定投終值 = 每月投入 × [(1 + r)^(年數×12) − 1] ÷ r<br>
         總資產 = 初始資金終值 + 每月定投終值<br>
-        累計股利 = 總資產 − 總投入成本
+        複利獲利 = 總資產 − 總投入成本
       </div>
 
       <h2>實際試算範例</h2>
