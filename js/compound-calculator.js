@@ -30,6 +30,40 @@
     totalInvestedEl.textContent = Math.round(totalInvested).toLocaleString("zh-TW");
     totalAssetsEl.textContent = Math.round(assets).toLocaleString("zh-TW");
     totalDividendIncomeEl.textContent = Math.round(totalDividendIncome).toLocaleString("zh-TW");
+
+    // Draw growth chart
+    const wrap = document.getElementById('compoundChartWrap');
+    if (numYears > 0 && (initial > 0 || monthly > 0) && typeof Chart !== 'undefined') {
+      wrap.style.display = 'block';
+      const labels = [];
+      const investedData = [];
+      const assetsData = [];
+      let a = initial;
+      for (let y = 0; y <= numYears; y++) {
+        labels.push(y + '年');
+        investedData.push(Math.round(initial + monthly * 12 * y));
+        assetsData.push(Math.round(a));
+        for (let m = 0; m < 12; m++) { a = a * (1 + monthlyRate) + monthly; }
+      }
+      if (window._compChart) window._compChart.destroy();
+      window._compChart = new Chart(document.getElementById('compoundChart'), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            { label: '總投入', data: investedData, borderColor: '#9ca3af', backgroundColor: 'rgba(156,163,175,0.1)', fill: true, tension: 0.3, pointRadius: 0 },
+            { label: '預估總資產', data: assetsData, borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.15)', fill: true, tension: 0.3, pointRadius: 0 }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'bottom', labels: { font: { size: 12 }, padding: 12 } } },
+          scales: {
+            y: { ticks: { callback: v => (v >= 10000 ? (v/10000).toFixed(0) + '萬' : v) } }
+          }
+        }
+      });
+    } else if (wrap) { wrap.style.display = 'none'; }
   }
 
   [initialInvestment, monthlyInvestment, annualYield, years].forEach((input) => {

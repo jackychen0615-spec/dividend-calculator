@@ -22,6 +22,22 @@
     investCostEl.textContent = investCost.toLocaleString("zh-TW");
     yearlyDividendEl.textContent = yearlyDividend.toLocaleString("zh-TW");
     paybackYearsEl.textContent = Number(paybackYears).toLocaleString("zh-TW");
+
+    // Draw payback progress bar
+    var wrap = document.getElementById('paybackBarWrap');
+    if (yearlyDividend > 0 && investCost > 0) {
+      wrap.style.display = 'block';
+      var yrs = parseFloat(paybackYears);
+      var maxYrs = Math.max(yrs, 30);
+      var pct = Math.min((1 / yrs) * 100, 100);
+      var barPct = Math.min((yrs / maxYrs) * 100, 100);
+      document.getElementById('paybackBar').style.width = barPct + '%';
+      document.getElementById('paybackPct').textContent = yrs + '年';
+      document.getElementById('paybackEnd').textContent = Math.ceil(maxYrs) + ' 年';
+      document.getElementById('paybackLabel').textContent = '每年靠股利回收 ' + (100/yrs).toFixed(1) + '% 的投入成本';
+    } else if (wrap) {
+      wrap.style.display = 'none';
+    }
   }
 
   buyPriceInput.addEventListener("input", calculate);

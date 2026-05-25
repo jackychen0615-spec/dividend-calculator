@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://gulicalc.com/sitemap.xml
-Sitemap: https://gulicalc.com/sitemap-gulicalc.xml
