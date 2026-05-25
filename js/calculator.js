@@ -32,12 +32,12 @@
       gauge.style.display = 'block';
       const pct = Math.min(yieldRate / 12 * 100, 100);
       document.getElementById('yieldPointer').style.left = 'calc(' + pct + '% - 2px)';
-      let level = '偏低';
+      let level = '偏低（成長型股票常見）';
       let color = '#9ca3af';
-      if (yieldRate >= 7) { level = '高殖利率'; color = '#dc2626'; }
-      else if (yieldRate >= 5) { level = '中高殖利率'; color = '#0891b2'; }
-      else if (yieldRate >= 3) { level = '中等殖利率'; color = '#10b981'; }
-      document.getElementById('yieldLabel').innerHTML = '你的殖利率 <strong style="color:' + color + ';font-size:1.1rem;">' + yieldRate.toFixed(2) + '%</strong> — ' + level;
+      if (yieldRate >= 8) { level = '極高 — 留意殖利率陷阱，確認是否因股價下跌所致'; color = '#dc2626'; }
+      else if (yieldRate >= 5) { level = '高殖利率（存股族目標區間）'; color = '#0891b2'; }
+      else if (yieldRate >= 3) { level = '中等（接近台股平均 3.8%）'; color = '#10b981'; }
+      document.getElementById('yieldLabel').innerHTML = '你的殖利率 <strong style="color:' + color + ';font-size:1.1rem;">' + yieldRate.toFixed(2) + '%</strong><br><span style="font-size:.8rem;color:#6b7280;">' + level + '</span>';
     } else if (gauge) {
       gauge.style.display = 'none';
     }
