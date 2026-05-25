@@ -2,3 +2,4 @@ server.py
 vercel.json
 .claude/
 .wrangler/
+*.webp
