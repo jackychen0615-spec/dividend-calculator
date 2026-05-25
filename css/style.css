@@ -550,7 +550,7 @@ main {
 
 .page-content p,
 .page-content li {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
