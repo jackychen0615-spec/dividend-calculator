@@ -26,31 +26,20 @@
     });
     yieldRateEl.textContent = yieldRate.toFixed(2);
 
-    // Draw donut chart
-    const wrap = document.getElementById('chartWrap');
-    if (totalCost > 0 && totalDividend > 0 && typeof Chart !== 'undefined') {
-      wrap.style.display = 'block';
-      if (window._divChart) window._divChart.destroy();
-      window._divChart = new Chart(document.getElementById('dividendChart'), {
-        type: 'doughnut',
-        data: {
-          labels: ['投入成本', '年股利'],
-          datasets: [{
-            data: [totalCost, totalDividend],
-            backgroundColor: ['#e5e7eb', '#0891b2'],
-            borderWidth: 0
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: { position: 'bottom', labels: { font: { size: 13 }, padding: 16 } }
-          },
-          cutout: '60%'
-        }
-      });
-    } else if (wrap) {
-      wrap.style.display = 'none';
+    // Yield rate gauge
+    const gauge = document.getElementById('yieldGauge');
+    if (yieldRate > 0 && gauge) {
+      gauge.style.display = 'block';
+      const pct = Math.min(yieldRate / 12 * 100, 100);
+      document.getElementById('yieldPointer').style.left = 'calc(' + pct + '% - 2px)';
+      let level = '偏低';
+      let color = '#9ca3af';
+      if (yieldRate >= 7) { level = '高殖利率'; color = '#dc2626'; }
+      else if (yieldRate >= 5) { level = '中高殖利率'; color = '#0891b2'; }
+      else if (yieldRate >= 3) { level = '中等殖利率'; color = '#10b981'; }
+      document.getElementById('yieldLabel').innerHTML = '你的殖利率 <strong style="color:' + color + ';font-size:1.1rem;">' + yieldRate.toFixed(2) + '%</strong> — ' + level;
+    } else if (gauge) {
+      gauge.style.display = 'none';
     }
   }
 
