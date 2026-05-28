@@ -72,12 +72,20 @@
   <main>
     <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="../index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>薪資計算器</span></nav>
 
-    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('../images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem;border-radius:12px;margin-bottom:1.5rem;">
-      <h1>薪資計算器</h1>
-      <p>輸入月薪，立即算出勞保、健保、勞退扣多少，實際到手多少</p>
+        <!-- 工具列 -->
+    <section style="max-width:100%;margin:0 auto 1rem;overflow:hidden;">
+      <div style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .5rem;scrollbar-width:none;justify-content:center;" class="tool-carousel-sub">
+        <a href="../index.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">股利計算</a>
+        <a href="../compound-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">複利試算</a>
+        <a href="../payback-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">還本試算</a>
+        <a href="../dca-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">定期定額</a>
+        <a href="../salary/" class="tool-chip active" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#0891b2;color:#fff;border:1px solid #0891b2;">薪資實領</a>
+        <a href="../tax-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">所得稅</a>
+        <a href="../mortgage-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">房貸計算</a>
+      </div>
+      <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
     </section>
-
-    <section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+<section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
       <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
         <div style="background:linear-gradient(135deg,#be123c,#9f1239);padding:1.2rem 1.5rem;">
           <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">薪資實領試算</h2>
