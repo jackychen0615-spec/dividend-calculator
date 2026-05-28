@@ -72,16 +72,52 @@
   <main>
     <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="../index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>薪資計算器</span></nav>
 
-        <!-- 工具列 -->
+        <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('../images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
+      <h1>股利計算器 — 存股族的試算工具</h1>
+      <p style="max-width:500px;margin:0 auto .8rem;">買了幾張、每股配多少、殖利率多少 — 三個數字就算完。不用註冊，不收資料。</p>
+      <p style="margin:0;"><a href="../index.html#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始算</a></p>
+    </section>
+
+    <!-- 工具列 -->
     <section style="max-width:100%;margin:0 auto 1rem;overflow:hidden;">
-      <div style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .5rem;scrollbar-width:none;justify-content:center;" class="tool-carousel-sub">
-        <a href="../index.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">股利計算</a>
-        <a href="../compound-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">複利試算</a>
-        <a href="../payback-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">還本試算</a>
-        <a href="../dca-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">定期定額</a>
-        <a href="../salary/" class="tool-chip active" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#0891b2;color:#fff;border:1px solid #0891b2;">薪資實領</a>
-        <a href="../tax-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">所得稅</a>
-        <a href="../mortgage-calculator.html" class="tool-chip" style="scroll-snap-align:start;flex:0 0 auto;text-decoration:none;padding:.45rem .9rem;border-radius:100px;font-size:.8rem;font-weight:600;transition:all .15s;background:#f3f4f6;color:#6b7280;border:1px solid #e5e7eb;">房貸計算</a>
+      <h2 style="font-size:1.05rem;text-align:center;margin-bottom:.3rem;color:#1f2937;font-weight:700;padding:0 1rem;">免費試算工具</h2>
+      <p style="text-align:center;font-size:.75rem;color:#9ca3af;margin-bottom:1rem;padding:0 1rem;">所有計算在瀏覽器完成，不收集任何資料</p>
+      <div style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;justify-content:center;" class="tool-carousel-sub">
+        <a href="../index.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="../images/favicon-32.png" alt="股利計算器" style="width:44px;height:44px;border-radius:10px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">股利計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">殖利率 / 總股利</span>
+        </a>
+        <a href="../compound-calculator.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="../images/icon-compound.png" alt="複利計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">複利試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">長期複利成長</span>
+        </a>
+        <a href="../payback-calculator.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="../images/icon-payback.png" alt="還本計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">還本試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">幾年靠股利回本</span>
+        </a>
+        <a href="../dca-calculator.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="../images/icon-dca.png" alt="定期定額計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">定期定額</strong>
+          <span style="font-size:.7rem;color:#6b7280;">每月定投成果</span>
+        </a>
+        <a href="../salary/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="../images/icon-salary.png" alt="薪資計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">薪資實領</strong>
+          <span style="font-size:.7rem;color:#6b7280;">勞保 / 健保 / 勞退</span>
+        </a>
+        <a href="../tax-calculator.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#eff6ff;margin:0 auto .6rem;font-size:1.1rem;color:#1d4ed8;font-weight:700;">TAX</span>
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">所得稅試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">報稅 / 股利節稅</span>
+        </a>
+        <a href="../mortgage-calculator.html" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#f0fdfa;margin:0 auto .6rem;font-size:1.3rem;color:#0d9488;font-weight:700;">&#8962;</span>
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">房貸計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">新青安 / 月付金</span>
+        </a>
       </div>
       <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
     </section>
