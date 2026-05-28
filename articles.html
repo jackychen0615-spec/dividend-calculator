@@ -67,7 +67,7 @@
 
     <!-- 橫向滑動分類 Tab -->
     <nav style="position:sticky;top:0;z-index:50;background:#fff;margin:.8rem auto 0;padding:.3rem 0 0;box-shadow:0 1px 3px rgba(0,0,0,.04);">
-      <div class="cat-tabs" style="display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #e5e7eb;padding:0 1rem;max-width:700px;margin:0 auto;">
+      <div class="cat-tabs" style="display:flex;gap:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #e5e7eb;padding:0 1rem;max-width:700px;margin:0 auto;touch-action:pan-x;overscroll-behavior-y:contain;">
         <button class="cat-tab active" onclick="showCat('all',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#0891b2;cursor:pointer;border-bottom:2px solid #0891b2;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">全部</button>
         <button class="cat-tab" onclick="showCat('basics',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">入門基礎</button>
         <button class="cat-tab" onclick="showCat('etf',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">ETF 配息</button>
