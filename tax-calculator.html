@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>所得稅試算器｜2026 綜合所得稅計算機 - 股利合併分離比較 - GULICALC</title>
+  <meta name="description" content="2026 年最新所得稅試算器，輸入年收入與股利所得，自動計算應繳稅額、有效稅率，並比較股利合併申報與分離課稅哪個划算。免稅額、標準扣除額、薪資特別扣除額全自動帶入。">
+  <meta property="og:title" content="所得稅試算器｜2026 綜合所得稅計算機 - GULICALC">
+  <meta property="og:description" content="輸入年收入與股利所得，自動算出應繳稅額與有效稅率。股利合併 vs 分離課稅自動比較推薦。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/tax-calculator">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="GULICALC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="所得稅試算器｜2026 綜合所得稅計算機 - GULICALC">
+  <meta name="twitter:description" content="輸入年收入與股利所得，自動算出應繳稅額與有效稅率。股利合併 vs 分離課稅自動比較。">
+  <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://gulicalc.com/tax-calculator">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "所得稅試算器 - 2026 綜合所得稅計算機",
+    "url": "https://gulicalc.com/tax-calculator",
+    "description": "2026 年最新所得稅試算器，輸入年收入與股利所得，自動計算應繳稅額、有效稅率，並比較股利合併申報與分離課稅哪個划算。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "zh-TW",
+    "isAccessibleForFree": true,
+    "featureList": ["綜合所得稅試算", "股利合併vs分離比較", "稅率級距表", "免稅額扣除額計算"],
+    "screenshot": "https://gulicalc.com/images/og-image.png",
+    "author": {"@type": "Person", "name": "Jacky Chen", "url": "https://gulicalc.com/about.html"},
+    "publisher": {"@type": "Organization", "name": "股利計算器", "url": "https://gulicalc.com", "logo": {"@type": "ImageObject", "url": "https://gulicalc.com/images/logo-nav.png"}},
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "股利所得要怎麼報稅？", "acceptedAnswer": {"@type": "Answer", "text": "股利所得有兩種報稅方式：一、合併計稅，將股利併入綜合所得總額，按累進稅率課稅，但可享 8.5% 的可抵減稅額（每戶上限 8 萬元）；二、分離課稅，股利所得單獨按 28% 稅率計算，不併入綜合所得。兩種方式擇優申報。"}},
+      {"@type": "Question", "name": "報稅用合併還是分離比較划算？", "acceptedAnswer": {"@type": "Answer", "text": "一般來說，綜合所得淨額適用稅率在 30% 以下的人，合併計稅通常比較划算，因為 8.5% 的可抵減稅額能有效降低稅負。當適用稅率達到 30% 或 40% 時，分離課稅（固定 28%）通常比較有利。建議用本計算器實際試算比較。"}},
+      {"@type": "Question", "name": "2026 年免稅額和扣除額是多少？", "acceptedAnswer": {"@type": "Answer", "text": "2026 年（報 2025 年度所得）免稅額為每人 97,000 元（70 歲以上 145,500 元）。標準扣除額單身 131,000 元、夫妻合併 262,000 元。薪資所得特別扣除額為 218,000 元。"}},
+      {"@type": "Question", "name": "股利超過多少要繳二代健保？", "acceptedAnswer": {"@type": "Answer", "text": "單次股利所得超過 20,000 元（含）就要繳二代健保補充保費，費率為 2.18%。例如領到 50,000 元股利，補充保費為 50,000 x 2.18% = 1,090 元。詳細說明請參考本站的二代健保補充保費專文。"}}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://gulicalc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "所得稅試算器"}
+    ]
+  }]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-nav.png" alt="GULICALC"> 股利計算器</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="index.html" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>所得稅試算器</span></nav>
+
+    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem;border-radius:12px;margin-bottom:1.5rem;">
+      <h1>所得稅試算器</h1>
+      <p>輸入年收入與股利所得，自動計算應繳稅額，比較合併 vs 分離哪個划算</p>
+    </section>
+
+    <!-- Calculator Card -->
+    <section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#1d4ed8,#1e40af);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">綜合所得稅試算</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">2026 年最新免稅額 / 扣除額 / 稅率級距</p>
+        </div>
+        <div style="padding:1.2rem 1.5rem 1rem;">
+          <!-- 年收入 -->
+          <div>
+            <label for="annualIncome" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">年收入總額（元）</label>
+            <input type="number" id="annualIncome" placeholder="800000" min="0" step="10000" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;margin-bottom:.8rem;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+          </div>
+          <!-- 股利 + 免稅額人數 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
+            <div>
+              <label for="dividendIncome" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">股利所得（元）</label>
+              <input type="number" id="dividendIncome" placeholder="100000" min="0" step="1000" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">已含在年收入中</span>
+            </div>
+            <div>
+              <label for="exemptionCount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">免稅額人數</label>
+              <input type="number" id="exemptionCount" placeholder="1" min="1" max="10" value="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">本人 + 配偶 + 扶養</span>
+            </div>
+          </div>
+          <!-- 扣除額選擇 -->
+          <div style="margin-bottom:.8rem;">
+            <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.5rem;">扣除額選擇</label>
+            <div style="display:flex;gap:.6rem;">
+              <label style="flex:1;display:flex;align-items:center;justify-content:center;padding:.55rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;font-size:.92rem;color:#374151;" id="lblStandard">
+                <input type="radio" name="deductionType" value="standard" checked style="margin-right:.4rem;accent-color:#1d4ed8;"> 標準扣除額
+              </label>
+              <label style="flex:1;display:flex;align-items:center;justify-content:center;padding:.55rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;font-size:.92rem;color:#374151;" id="lblItemized">
+                <input type="radio" name="deductionType" value="itemized" style="margin-right:.4rem;accent-color:#1d4ed8;"> 列舉扣除額
+              </label>
+            </div>
+          </div>
+          <!-- 列舉扣除額 -->
+          <div id="itemizedRow" style="display:none;margin-bottom:.8rem;">
+            <label for="itemizedAmount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">列舉扣除額（元）</label>
+            <input type="number" id="itemizedAmount" placeholder="200000" min="0" step="1000" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">捐贈 + 保險 + 醫療 + 房貸利息等</span>
+          </div>
+          <!-- 申報方式 -->
+          <div>
+            <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.5rem;">申報身份</label>
+            <div style="display:flex;gap:.6rem;">
+              <label style="flex:1;display:flex;align-items:center;justify-content:center;padding:.55rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;font-size:.92rem;color:#374151;" id="lblSingle">
+                <input type="radio" name="filingStatus" value="single" checked style="margin-right:.4rem;accent-color:#1d4ed8;"> 單身
+              </label>
+              <label style="flex:1;display:flex;align-items:center;justify-content:center;padding:.55rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all .2s;font-size:.92rem;color:#374151;" id="lblMarried">
+                <input type="radio" name="filingStatus" value="married" style="margin-right:.4rem;accent-color:#1d4ed8;"> 夫妻合併
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <div style="max-width:600px;margin:1.5rem auto;padding:0 1rem;">
+      <div id="taxResult" style="display:none;">
+
+        <!-- Primary Result -->
+        <div style="text-align:center;margin-bottom:1.5rem;">
+          <div style="font-size:.85rem;color:#6b7280;">應繳稅額</div>
+          <div id="totalTax" style="font-size:2.5rem;font-weight:800;color:#1d4ed8;">0</div>
+          <div style="font-size:.85rem;color:#6b7280;">元</div>
+        </div>
+
+        <!-- Sub Results -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+          <div style="text-align:center;background:#f0f9ff;border-radius:12px;padding:.8rem;">
+            <div style="font-size:.78rem;color:#6b7280;">有效稅率</div>
+            <div id="effectiveRate" style="font-size:1.5rem;font-weight:700;color:#1d4ed8;">0%</div>
+          </div>
+          <div style="text-align:center;background:#f0f9ff;border-radius:12px;padding:.8rem;">
+            <div style="font-size:.78rem;color:#6b7280;">股利抵減稅額</div>
+            <div id="dividendCredit" style="font-size:1.5rem;font-weight:700;color:#1d4ed8;">0</div>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown -->
+        <div style="background:#f9fafb;border-radius:12px;padding:1rem;margin-bottom:1rem;">
+          <h3 style="font-size:.95rem;margin:0 0 .8rem;color:#1f2937;">計算明細</h3>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span>年收入總額</span><strong id="detailIncome" style="color:#1f2937;">0</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 免稅額</span><span id="detailExemption" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 扣除額</span><span id="detailDeduction" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#dc2626;">- 薪資特別扣除額</span><span id="detailSalaryDeduction" style="color:#dc2626;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.5rem 0;font-size:.95rem;font-weight:700;border-bottom:1px solid #e5e7eb;">
+            <span style="color:#1d4ed8;">= 所得淨額</span><span id="detailNetIncome" style="color:#1d4ed8;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span>應納稅額（累進稅率）</span><span id="detailGrossTax">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #e5e7eb;font-size:.88rem;">
+            <span style="color:#16a34a;">- 股利可抵減稅額</span><span id="detailDividendCredit" style="color:#16a34a;">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.5rem 0;font-size:.95rem;font-weight:700;">
+            <span style="color:#1d4ed8;">= 合併計稅應繳</span><span id="detailFinalTax" style="color:#1d4ed8;">0</span>
+          </div>
+        </div>
+
+        <!-- Tax Bracket Table -->
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;margin-bottom:1rem;">
+          <h3 style="font-size:.95rem;margin:0 0 .8rem;color:#1f2937;">適用稅率級距</h3>
+          <table style="width:100%;border-collapse:collapse;font-size:.82rem;">
+            <thead>
+              <tr style="border-bottom:2px solid #e5e7eb;">
+                <th style="text-align:left;padding:.4rem .3rem;color:#6b7280;font-weight:600;">所得淨額</th>
+                <th style="text-align:center;padding:.4rem .3rem;color:#6b7280;font-weight:600;">稅率</th>
+                <th style="text-align:right;padding:.4rem .3rem;color:#6b7280;font-weight:600;">累進差額</th>
+              </tr>
+            </thead>
+            <tbody id="bracketTable">
+              <tr data-bracket="0"><td style="padding:.4rem .3rem;">0 ~ 590,000</td><td style="text-align:center;padding:.4rem .3rem;">5%</td><td style="text-align:right;padding:.4rem .3rem;">0</td></tr>
+              <tr data-bracket="1"><td style="padding:.4rem .3rem;">590,001 ~ 1,330,000</td><td style="text-align:center;padding:.4rem .3rem;">12%</td><td style="text-align:right;padding:.4rem .3rem;">41,300</td></tr>
+              <tr data-bracket="2"><td style="padding:.4rem .3rem;">1,330,001 ~ 2,660,000</td><td style="text-align:center;padding:.4rem .3rem;">20%</td><td style="text-align:right;padding:.4rem .3rem;">147,700</td></tr>
+              <tr data-bracket="3"><td style="padding:.4rem .3rem;">2,660,001 ~ 4,980,000</td><td style="text-align:center;padding:.4rem .3rem;">30%</td><td style="text-align:right;padding:.4rem .3rem;">413,700</td></tr>
+              <tr data-bracket="4"><td style="padding:.4rem .3rem;">4,980,001 以上</td><td style="text-align:center;padding:.4rem .3rem;">40%</td><td style="text-align:right;padding:.4rem .3rem;">911,700</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dividend Comparison -->
+        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;margin-bottom:1rem;" id="dividendCompare">
+          <h3 style="font-size:.95rem;margin:0 0 .8rem;color:#1f2937;">股利課稅方式比較</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;">
+            <div id="mergeBox" style="border:2px solid #e5e7eb;border-radius:10px;padding:.8rem;text-align:center;transition:all .2s;">
+              <div style="font-size:.78rem;color:#6b7280;margin-bottom:.3rem;">合併計稅</div>
+              <div id="mergeTax" style="font-size:1.2rem;font-weight:700;color:#1f2937;">0</div>
+              <div style="font-size:.7rem;color:#6b7280;">含 8.5% 可抵減</div>
+            </div>
+            <div id="separateBox" style="border:2px solid #e5e7eb;border-radius:10px;padding:.8rem;text-align:center;transition:all .2s;">
+              <div style="font-size:.78rem;color:#6b7280;margin-bottom:.3rem;">分離課稅 28%</div>
+              <div id="separateTax" style="font-size:1.2rem;font-weight:700;color:#1f2937;">0</div>
+              <div style="font-size:.7rem;color:#6b7280;">股利單獨課 28%</div>
+            </div>
+          </div>
+          <div id="recommendation" style="margin-top:.8rem;padding:.6rem;border-radius:8px;font-size:.85rem;font-weight:600;text-align:center;"></div>
+        </div>
+
+        <div style="font-size:.7rem;color:#9ca3af;text-align:center;line-height:1.4;">
+          稅率依據：2026 年度綜合所得稅，免稅額 97,000 元/人，標準扣除額單身 131,000 元 / 合併 262,000 元，薪資特別扣除額 218,000 元。<br>
+          股利合併計稅可抵減稅額比率 8.5%，每一申報戶上限 80,000 元。分離課稅稅率 28%。<br>
+          本計算不含其他特別扣除額（身心障礙、教育學費等）。實際稅額請以國稅局核定為準。
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">股利所得要怎麼報稅？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">股利所得有兩種報稅方式可以擇優適用。第一種是「合併計稅」，將股利併入綜合所得總額，按 5%~40% 累進稅率課稅，但可享股利金額 8.5% 的可抵減稅額（每一申報戶上限 8 萬元）。第二種是「分離課稅」，股利所得不併入綜合所得，單獨按 28% 的稅率計算稅額。報稅時兩種方式都可以試算，選擇稅額較低的方式申報即可。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">報稅用合併還是分離比較划算？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">關鍵在於你的綜合所得淨額落在哪個稅率級距。如果適用稅率在 20% 以下（所得淨額 266 萬以下），合併計稅通常比較划算，因為 8.5% 的可抵減稅額能有效降低稅負。當適用稅率達到 30% 或 40%（所得淨額超過 266 萬），分離課稅以固定 28% 計算通常比較有利。不過每個人狀況不同，建議直接用上方計算器輸入你的數字，系統會自動比較並推薦最划算的方式。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">2026 年免稅額和扣除額是多少？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">2026 年度（報 2025 年度所得）的免稅額為每人 97,000 元，70 歲以上的納稅義務人、配偶及受扶養直系尊親屬為 145,500 元。標準扣除額單身者為 131,000 元，夫妻合併申報為 262,000 元。薪資所得特別扣除額上限為 218,000 元。如果選擇列舉扣除額，可列舉的項目包含捐贈、保險費、醫療費用、自用住宅房貸利息、房屋租金支出等，合計超過標準扣除額時選列舉較有利。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">股利超過多少要繳二代健保？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">單次股利給付金額達 20,000 元（含）以上，就要被扣繳二代健保補充保費，費率為 2.18%。例如某檔股票一次配發 50,000 元股利，補充保費 = 50,000 x 2.18% = 1,090 元，會由發放股利的公司直接代扣。如果想了解更完整的二代健保計算方式，可以參考<a href="articles/health-insurance-dividend.html" style="color:#1d4ed8;">股利與二代健保補充保費完整說明</a>。</div></div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>2026 所得稅怎麼算？</h2>
+      <div style="max-width:680px;margin:0 auto;font-size:.92rem;line-height:1.8;color:#374151;padding:0 1rem;">
+        <p>每年 5 月報稅季到，最多人問的就是「我到底要繳多少稅？」。其實所得稅的計算邏輯並不複雜：年收入減掉免稅額、扣除額、特別扣除額後，就是「所得淨額」，再對照稅率級距算出應納稅額。</p>
+        <p>2026 年的免稅額是每人 97,000 元，標準扣除額單身 131,000 元。如果你是一般上班族，還有 218,000 元的薪資特別扣除額可以扣。這些加一加，大約要年收入超過 44.6 萬元才會開始繳稅。</p>
+        <p>對存股族來說，最重要的是股利所得的課稅方式。合併計稅可以享 8.5% 的可抵減稅額（上限 8 萬），適用稅率低的人很划算；但如果你的所得已經到 30% 以上的級距，分離課稅用固定 28% 反而比較省。上面的計算器會自動幫你比較，省去手算的麻煩。</p>
+        <p>想了解更多？可以看看我們的<a href="articles/dividend-tax-calculator.html" style="color:#1d4ed8;">股利稅務計算完整教學</a>，或是用<a href="salary/" style="color:#1d4ed8;">薪資計算器</a>算出你的實領薪水。領股利的朋友也別忘了<a href="articles/health-insurance-dividend.html" style="color:#1d4ed8;">二代健保補充保費</a>的影響。</p>
+      </div>
+    </section>
+
+    <!-- More Tools -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1rem auto 0;">
+        <div class="article-card">
+          <h3><a href="index.html">股利計算器</a></h3>
+          <p>算殖利率和總股利，存股族必備。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="salary/">薪資計算器</a></h3>
+          <p>勞保、健保、勞退扣除，算實領薪水。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="compound-calculator.html">複利計算器</a></h3>
+          <p>長期存股的複利成長效果試算。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="privacy.html">隱私權政策</a></li>
+      <li><a href="terms.html">使用條款</a></li>
+    </ul>
+    <div style="font-size:.78rem;color:#856404;margin-bottom:.5rem;">本站內容僅供參考，不構成任何稅務建議。實際稅額請以國稅局核定為準。</div>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script>
+  (function(){
+    // 2026 Tax Brackets
+    var brackets = [
+      { min: 0, max: 590000, rate: 0.05, diff: 0 },
+      { min: 590001, max: 1330000, rate: 0.12, diff: 41300 },
+      { min: 1330001, max: 2660000, rate: 0.20, diff: 147700 },
+      { min: 2660001, max: 4980000, rate: 0.30, diff: 413700 },
+      { min: 4980001, max: Infinity, rate: 0.40, diff: 911700 }
+    ];
+
+    var EXEMPTION = 97000;
+    var STD_SINGLE = 131000;
+    var STD_MARRIED = 262000;
+    var SALARY_DEDUCTION = 218000;
+    var DIVIDEND_CREDIT_RATE = 0.085;
+    var DIVIDEND_CREDIT_MAX = 80000;
+    var SEPARATE_RATE = 0.28;
+
+    var elIncome = document.getElementById('annualIncome');
+    var elDividend = document.getElementById('dividendIncome');
+    var elExemptCount = document.getElementById('exemptionCount');
+    var elItemizedAmt = document.getElementById('itemizedAmount');
+    var elItemizedRow = document.getElementById('itemizedRow');
+    var elResult = document.getElementById('taxResult');
+
+    function fmt(n) { return Math.round(n).toLocaleString('zh-TW'); }
+
+    // Radio button styling
+    var radios = document.querySelectorAll('input[type=radio]');
+    radios.forEach(function(r) {
+      r.addEventListener('change', function() {
+        updateRadioStyles();
+        calc();
+      });
+    });
+
+    function updateRadioStyles() {
+      // Deduction type
+      var dt = document.querySelector('input[name=deductionType]:checked').value;
+      var lblS = document.getElementById('lblStandard');
+      var lblI = document.getElementById('lblItemized');
+      lblS.style.borderColor = dt === 'standard' ? '#1d4ed8' : '#e5e7eb';
+      lblS.style.background = dt === 'standard' ? '#eff6ff' : '#f9fafb';
+      lblI.style.borderColor = dt === 'itemized' ? '#1d4ed8' : '#e5e7eb';
+      lblI.style.background = dt === 'itemized' ? '#eff6ff' : '#f9fafb';
+      elItemizedRow.style.display = dt === 'itemized' ? 'block' : 'none';
+
+      // Filing status
+      var fs = document.querySelector('input[name=filingStatus]:checked').value;
+      var lblSi = document.getElementById('lblSingle');
+      var lblM = document.getElementById('lblMarried');
+      lblSi.style.borderColor = fs === 'single' ? '#1d4ed8' : '#e5e7eb';
+      lblSi.style.background = fs === 'single' ? '#eff6ff' : '#f9fafb';
+      lblM.style.borderColor = fs === 'married' ? '#1d4ed8' : '#e5e7eb';
+      lblM.style.background = fs === 'married' ? '#eff6ff' : '#f9fafb';
+    }
+
+    function calcProgressiveTax(netIncome) {
+      if (netIncome <= 0) return { tax: 0, bracketIdx: -1 };
+      var bracketIdx = 0;
+      for (var i = brackets.length - 1; i >= 0; i--) {
+        if (netIncome >= brackets[i].min) { bracketIdx = i; break; }
+      }
+      var tax = netIncome * brackets[bracketIdx].rate - brackets[bracketIdx].diff;
+      return { tax: Math.max(0, tax), bracketIdx: bracketIdx };
+    }
+
+    function calc() {
+      var income = Math.max(0, parseFloat(elIncome.value) || 0);
+      var dividend = Math.max(0, parseFloat(elDividend.value) || 0);
+      var exemptCount = Math.max(1, parseInt(elExemptCount.value) || 1);
+      var deductionType = document.querySelector('input[name=deductionType]:checked').value;
+      var filingStatus = document.querySelector('input[name=filingStatus]:checked').value;
+      var itemizedAmt = Math.max(0, parseFloat(elItemizedAmt.value) || 0);
+
+      if (income <= 0) {
+        elResult.style.display = 'none';
+        return;
+      }
+
+      // Exemption
+      var exemption = EXEMPTION * exemptCount;
+
+      // Deduction
+      var standardDed = filingStatus === 'married' ? STD_MARRIED : STD_SINGLE;
+      var deduction = deductionType === 'itemized' ? itemizedAmt : standardDed;
+
+      // Salary deduction (cap at actual salary = income - dividend)
+      var salaryPart = income - dividend;
+      var salaryDed = Math.min(SALARY_DEDUCTION, Math.max(0, salaryPart));
+
+      // Net income (合併計稅 - 股利併入)
+      var netIncome = Math.max(0, income - exemption - deduction - salaryDed);
+
+      // Progressive tax on net income
+      var result = calcProgressiveTax(netIncome);
+      var grossTax = result.tax;
+      var bracketIdx = result.bracketIdx;
+
+      // 合併計稅：股利可抵減稅額
+      var divCredit = Math.min(dividend * DIVIDEND_CREDIT_RATE, DIVIDEND_CREDIT_MAX);
+      var mergeFinalTax = Math.max(0, grossTax - divCredit);
+
+      // 分離課稅：股利不併入綜所，另計 28%
+      var incomeNoDividend = Math.max(0, income - dividend - exemption - deduction - salaryDed);
+      var separateResult = calcProgressiveTax(incomeNoDividend);
+      var separateProgressiveTax = separateResult.tax;
+      var separateDivTax = dividend * SEPARATE_RATE;
+      var separateFinalTax = separateProgressiveTax + separateDivTax;
+
+      // Determine best
+      var bestIsMerge = mergeFinalTax <= separateFinalTax;
+      var finalTax = bestIsMerge ? mergeFinalTax : separateFinalTax;
+      var effectiveRate = income > 0 ? (finalTax / income * 100) : 0;
+
+      // Show results
+      elResult.style.display = 'block';
+
+      document.getElementById('totalTax').textContent = fmt(finalTax);
+      document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(2) + '%';
+      document.getElementById('dividendCredit').textContent = bestIsMerge ? fmt(divCredit) : '0';
+
+      // Details
+      document.getElementById('detailIncome').textContent = fmt(income) + ' 元';
+      document.getElementById('detailExemption').textContent = fmt(exemption) + ' 元';
+      document.getElementById('detailDeduction').textContent = fmt(deduction) + ' 元';
+      document.getElementById('detailSalaryDeduction').textContent = fmt(salaryDed) + ' 元';
+      document.getElementById('detailNetIncome').textContent = fmt(netIncome) + ' 元';
+      document.getElementById('detailGrossTax').textContent = fmt(grossTax) + ' 元';
+      document.getElementById('detailDividendCredit').textContent = fmt(divCredit) + ' 元';
+      document.getElementById('detailFinalTax').textContent = fmt(mergeFinalTax) + ' 元';
+
+      // Highlight bracket
+      var rows = document.querySelectorAll('#bracketTable tr');
+      rows.forEach(function(row, i) {
+        if (i === bracketIdx) {
+          row.style.background = '#eff6ff';
+          row.style.fontWeight = '700';
+          row.style.color = '#1d4ed8';
+        } else {
+          row.style.background = '';
+          row.style.fontWeight = '';
+          row.style.color = '';
+        }
+      });
+
+      // Dividend comparison
+      var divCompare = document.getElementById('dividendCompare');
+      if (dividend > 0) {
+        divCompare.style.display = 'block';
+        document.getElementById('mergeTax').textContent = fmt(mergeFinalTax) + ' 元';
+        document.getElementById('separateTax').textContent = fmt(separateFinalTax) + ' 元';
+
+        var mergeBox = document.getElementById('mergeBox');
+        var separateBox = document.getElementById('separateBox');
+        var rec = document.getElementById('recommendation');
+
+        if (bestIsMerge) {
+          mergeBox.style.borderColor = '#16a34a';
+          mergeBox.style.background = '#f0fdf4';
+          separateBox.style.borderColor = '#e5e7eb';
+          separateBox.style.background = '#fff';
+          var saving = separateFinalTax - mergeFinalTax;
+          rec.style.background = '#f0fdf4';
+          rec.style.color = '#166534';
+          rec.textContent = '建議選擇「合併計稅」，可省下 ' + fmt(saving) + ' 元';
+        } else {
+          separateBox.style.borderColor = '#16a34a';
+          separateBox.style.background = '#f0fdf4';
+          mergeBox.style.borderColor = '#e5e7eb';
+          mergeBox.style.background = '#fff';
+          var saving = mergeFinalTax - separateFinalTax;
+          rec.style.background = '#f0fdf4';
+          rec.style.color = '#166534';
+          rec.textContent = '建議選擇「分離課稅」，可省下 ' + fmt(saving) + ' 元';
+        }
+      } else {
+        divCompare.style.display = 'none';
+      }
+
+      // Smooth scroll to results on first calculation
+      if (!window._scrolled) {
+        window._scrolled = true;
+        elResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Bind inputs
+    [elIncome, elDividend, elExemptCount, elItemizedAmt].forEach(function(el) {
+      el.addEventListener('input', calc);
+    });
+
+    // Init radio styles
+    updateRadioStyles();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+
+    // Nav toggle
+    var navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('open');
+      });
+    }
+  })();
+  </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+    <span>首頁</span>
+  </a>
+  <a href="compound-calculator.html">
+    <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+    <span>複利</span>
+  </a>
+  <a href="#" onclick="openTools(event)">
+    <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+    <span>工具</span>
+  </a>
+  <a href="articles.html">
+    <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+    <span>文章</span>
+  </a>
+</nav>
+
+<!-- Tool Selector Modal -->
+<div class="tool-modal-overlay" id="toolModal" onclick="if(event.target===this)closeTools()">
+  <div class="tool-modal">
+    <h3>選擇工具</h3>
+    <a class="tool-modal-item" href="index.html">
+      <div class="tool-modal-icon tmi-dividend"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="tool-modal-info"><strong>股利計算器</strong><span>算殖利率和總股利</span></div>
+    </a>
+    <a class="tool-modal-item" href="compound-calculator.html">
+      <div class="tool-modal-icon tmi-compound"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+      <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
+    </a>
+    <a class="tool-modal-item" href="payback-calculator.html">
+      <div class="tool-modal-icon tmi-payback"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
+    </a>
+    <a class="tool-modal-item" href="dca-calculator.html">
+      <div class="tool-modal-icon tmi-dca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div class="tool-modal-info"><strong>定期定額試算器</strong><span>每月定投長期成果</span></div>
+    </a>
+    <a class="tool-modal-item" href="salary/">
+      <div class="tool-modal-icon" style="background:#fef2f2;color:#e11d48;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/><circle cx="12" cy="14" r="2"/></svg></div>
+      <div class="tool-modal-info"><strong>薪資計算器</strong><span>勞保 / 健保 / 勞退 / 實領</span></div>
+    </a>
+    <a class="tool-modal-item" href="tax-calculator.html">
+      <div class="tool-modal-icon" style="background:#eff6ff;color:#1d4ed8;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14l6-6"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+      <div class="tool-modal-info"><strong>所得稅試算器</strong><span>綜所稅 / 股利合併vs分離</span></div>
+    </a>
+    <button class="tool-modal-close" onclick="closeTools()">關閉</button>
+  </div>
+</div>
+<script>
+function openTools(e){e.preventDefault();document.getElementById('toolModal').classList.add('open')}
+function closeTools(){document.getElementById('toolModal').classList.remove('open')}
+</script>
+
+</body>
+</html>
