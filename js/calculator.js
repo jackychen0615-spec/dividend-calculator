@@ -7,6 +7,8 @@
   const totalDividendEl = $("#totalDividend");
   const yieldRateEl = $("#yieldRate");
 
+  let resultsShown = false;
+
   function calculate() {
     const price = Math.max(0, parseFloat(stockPrice.value) || 0);
     const shareCount = Math.max(0, Math.min(parseFloat(shares.value) || 0, 99999999));
@@ -15,6 +17,23 @@
     const totalCost = shareCount * price;
     const totalDividend = shareCount * div;
     const yieldRate = price > 0 ? (div / price) * 100 : 0;
+
+    // 三個都有值才顯示結果
+    const resultsEl = document.getElementById('calcResults');
+    const hintEl = document.getElementById('calcHint');
+    if (price > 0 && shareCount > 0 && div > 0) {
+      if (!resultsShown && resultsEl) {
+        resultsEl.style.maxHeight = '200px';
+        resultsEl.style.opacity = '1';
+        if (hintEl) hintEl.style.display = 'none';
+        resultsShown = true;
+      }
+    } else if (resultsEl) {
+      resultsEl.style.maxHeight = '0';
+      resultsEl.style.opacity = '0';
+      if (hintEl) hintEl.style.display = 'block';
+      resultsShown = false;
+    }
 
     totalCostEl.textContent = totalCost.toLocaleString("zh-TW", {
       minimumFractionDigits: 0,

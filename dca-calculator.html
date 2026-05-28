@@ -78,38 +78,49 @@
       <p>計算每月定期定額投資的長期成果</p>
     </section>
 
-    <div class="calculator-card">
-      <div class="form-group">
-        <label for="monthlyAmount">每月投入金額（元）</label>
-        <input type="number" id="monthlyAmount" placeholder="例如：5000" min="0" step="1">
+    <section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#7c3aed,#6d28d9);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">定期定額試算</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">每月固定投入，看長期成果</p>
+        </div>
+        <div style="padding:1.2rem 1.5rem 1rem;">
+          <div>
+            <label for="monthlyAmount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">每月投入（元）</label>
+            <input type="number" id="monthlyAmount" placeholder="5000" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;margin-bottom:.8rem;" onfocus="this.style.borderColor='#7c3aed';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;">
+            <div>
+              <label for="annualReturn" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">年報酬率（%）</label>
+              <input type="number" id="annualReturn" placeholder="8" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#7c3aed';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+            <div>
+              <label for="investYears" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">投資年數</label>
+              <input type="number" id="investYears" placeholder="10" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#7c3aed';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+          </div>
+        </div>
+        <div style="height:1px;background:#f3f4f6;margin:0 1.5rem;"></div>
+        <div style="padding:1.2rem 1.5rem .3rem;text-align:center;">
+          <div style="font-size:.72rem;color:#9ca3af;font-weight:600;letter-spacing:.05em;">預估總資產</div>
+          <div style="font-size:2.2rem;font-weight:800;color:#7c3aed;font-variant-numeric:tabular-nums;line-height:1.2;" id="totalValue">0</div>
+          <div style="font-size:.75rem;color:#9ca3af;">元</div>
+        </div>
+        <div style="padding:.6rem 1.5rem 1.2rem;display:flex;justify-content:center;gap:2rem;">
+          <div style="text-align:center;">
+            <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">總投入金額</div>
+            <div style="font-size:1.1rem;font-weight:700;color:#374151;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalInput">0</div>
+            <div style="font-size:.65rem;color:#9ca3af;">元</div>
+          </div>
+          <div style="width:1px;background:#e5e7eb;"></div>
+          <div style="text-align:center;">
+            <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">投資報酬</div>
+            <div style="font-size:1.1rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalReturn">0</div>
+            <div style="font-size:.65rem;color:#9ca3af;">元</div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="annualReturn">預期年報酬率（%）</label>
-        <input type="number" id="annualReturn" placeholder="例如：8" min="0" step="0.01">
-      </div>
-      <div class="form-group">
-        <label for="investYears">投資年數</label>
-        <input type="number" id="investYears" placeholder="例如：10" min="0" step="1">
-      </div>
-    </div>
-
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-label">總投入金額</div>
-        <div class="result-value" id="totalInput">0</div>
-        <div class="result-unit">元</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">預估總資產</div>
-        <div class="result-value accent-green" id="totalValue">0</div>
-        <div class="result-unit">元</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">投資報酬</div>
-        <div class="result-value" id="totalReturn">0</div>
-        <div class="result-unit">元</div>
-      </div>
-    </div>
+    </section>
 
     <!-- 成長曲線圖 -->
     <div id="dcaChartWrap" style="max-width:600px;margin:1.5rem auto;display:none;">

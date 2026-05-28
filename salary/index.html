@@ -77,27 +77,32 @@
       <p>輸入月薪，立即算出勞保、健保、勞退扣多少，實際到手多少</p>
     </section>
 
-    <div style="background:#ecfeff;border:1px solid #cffafe;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto;">
-      <p style="margin:0;"><strong>薪資計算器</strong>根據 2026 年最新勞保費率 12.5%、健保費率 5.17%，自動計算你的月薪扣除勞保、健保、勞退自提後的實領金額。資料來源：勞動部、衛福部健保署。</p>
-    </div>
-
-    <div class="calculator-card">
-      <div class="form-group">
-        <label for="monthlySalary">月薪（元）</label>
-        <input type="number" id="monthlySalary" placeholder="例如：40000" min="0" step="100">
-        <div class="input-hint">輸入你的月薪總額（稅前）</div>
+    <section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#be123c,#9f1239);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">薪資實領試算</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">2026 最新勞保 12.5% / 健保 5.17% 費率</p>
+        </div>
+        <div style="padding:1.2rem 1.5rem 1rem;">
+          <div>
+            <label for="monthlySalary" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">月薪（元）</label>
+            <input type="number" id="monthlySalary" placeholder="40000" min="0" step="100" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;margin-bottom:.8rem;" onfocus="this.style.borderColor='#be123c';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;">
+            <div>
+              <label for="dependents" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">健保眷屬人數</label>
+              <input type="number" id="dependents" placeholder="0" min="0" max="10" value="0" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#be123c';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">0 = 只有自己</span>
+            </div>
+            <div>
+              <label for="selfRetire" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">勞退自提（%）</label>
+              <input type="number" id="selfRetire" placeholder="0" min="0" max="6" value="0" step="0.5" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#be123c';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">0-6%，可節稅</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="dependents">健保眷屬人數</label>
-        <input type="number" id="dependents" placeholder="0" min="0" max="10" value="0">
-        <div class="input-hint">配偶或子女掛在你名下的人數（0 = 只有自己）</div>
-      </div>
-      <div class="form-group">
-        <label for="selfRetire">勞退自提比例（%）</label>
-        <input type="number" id="selfRetire" placeholder="0" min="0" max="6" value="0" step="0.5">
-        <div class="input-hint">自願提撥 0-6%，可節稅。不確定就填 0</div>
-      </div>
-    </div>
+    </section>
 
     <div style="max-width:600px;margin:1.5rem auto;">
       <!-- 結果區 -->

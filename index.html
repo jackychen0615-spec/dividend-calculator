@@ -226,7 +226,7 @@
     <section style="max-width:100%;margin:0 auto 2rem;overflow:hidden;">
       <h2 style="font-size:1.05rem;text-align:center;margin-bottom:.3rem;color:#1f2937;font-weight:700;padding:0 1rem;">免費試算工具</h2>
       <p style="text-align:center;font-size:.75rem;color:#9ca3af;margin-bottom:1rem;padding:0 1rem;">所有計算在瀏覽器完成，不收集任何資料</p>
-      <div id="toolCarousel" style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;">
+      <div id="toolCarousel" style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;justify-content:center;">
         <a href="#calc" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
           <img src="images/favicon-32.png" alt="股利計算器" style="width:44px;height:44px;border-radius:10px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
           <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">股利計算</strong>
@@ -253,50 +253,66 @@
           <span style="font-size:.7rem;color:#6b7280;">勞保 / 健保 / 勞退</span>
         </a>
       </div>
-      <style>#toolCarousel::-webkit-scrollbar{display:none}.tool-slide:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}</style>
+      <style>#toolCarousel::-webkit-scrollbar{display:none}.tool-slide:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}@media(max-width:640px){#toolCarousel{justify-content:flex-start;}}</style>
     </section>
 
-    <!-- 股利計算器（保留 SEO） -->
-    <section id="calc" style="max-width:600px;margin:0 auto 2rem;padding:0 1rem;">
-      <h2 style="font-size:1.3rem;text-align:center;margin-bottom:1rem;">股利殖利率試算</h2>
+    <!-- 股利計算器 -->
+    <section id="calc" style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <!-- 標題列 -->
+        <div style="background:linear-gradient(135deg,#0891b2,#0e7490);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">股利殖利率試算</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">輸入三個數字，自動幫你算</p>
+        </div>
+        <!-- 輸入區 -->
+        <div style="padding:1.2rem 1.5rem 1rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
+            <div>
+              <label for="stockPrice" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">股價（元）</label>
+              <input type="number" id="stockPrice" placeholder="50" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+            <div>
+              <label for="shares" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">持有股數</label>
+              <input type="number" id="shares" placeholder="1000" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">1 張 = 1,000 股</span>
+            </div>
+          </div>
+          <div>
+            <label for="dividend" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">每股股利（元）</label>
+            <input type="number" id="dividend" placeholder="2" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            <span style="font-size:.68rem;margin-top:.15rem;display:block;"><a href="articles/taiwan-stock-dividend-guide.html" style="color:#0891b2;text-decoration:none;">去哪查配息資料？</a></span>
+          </div>
+        </div>
+        <!-- 結果區：預設隱藏，輸入後滑出 -->
+        <div id="calcResults" style="max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;opacity:0;">
+          <div style="height:1px;background:#f3f4f6;margin:0 1.5rem;"></div>
+          <!-- 殖利率大字突出 -->
+          <div style="padding:1.2rem 1.5rem .3rem;text-align:center;">
+            <div style="font-size:.72rem;color:#9ca3af;font-weight:600;letter-spacing:.05em;">殖利率</div>
+            <div style="font-size:2.2rem;font-weight:800;color:#0891b2;font-variant-numeric:tabular-nums;line-height:1.2;" id="yieldRate">0</div>
+            <div style="font-size:.75rem;color:#9ca3af;">%</div>
+          </div>
+          <!-- 投入成本 + 總股利 並排 -->
+          <div style="padding:.6rem 1.5rem 1.2rem;display:flex;justify-content:center;gap:2rem;">
+            <div style="text-align:center;">
+              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">投入成本</div>
+              <div style="font-size:1.1rem;font-weight:700;color:#374151;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalCost">0</div>
+              <div style="font-size:.65rem;color:#9ca3af;">元</div>
+            </div>
+            <div style="width:1px;background:#e5e7eb;"></div>
+            <div style="text-align:center;">
+              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">你能領到的股利</div>
+              <div style="font-size:1.1rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalDividend">0</div>
+              <div style="font-size:.65rem;color:#9ca3af;">元</div>
+            </div>
+          </div>
+        </div>
+        <!-- 輸入提示 -->
+        <div id="calcHint" style="padding:1rem 1.5rem 1.2rem;text-align:center;">
+          <p style="font-size:.82rem;color:#b0b8c4;margin:0;">填完三個欄位，結果馬上出來</p>
+        </div>
+      </div>
     </section>
-
-    <div style="background:#ecfeff;border:1px solid #cffafe;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto;"><p style="margin:0;">輸入<strong>股價、股數、每股股利</strong>三個數字，下面會自動算出你的投入成本、總共能領多少股利、殖利率是多少。想知道公式的話：殖利率 = 每股股利 / 股價 x 100%。</p></div>
-    <div class="calculator-card">
-      <div class="form-group">
-        <label for="stockPrice">股價（元）</label>
-        <input type="number" id="stockPrice" placeholder="例如：50" min="0" step="0.01">
-        <div class="input-hint">輸入目前股價或你的買入價格</div>
-      </div>
-      <div class="form-group">
-        <label for="shares">持有股數</label>
-        <input type="number" id="shares" placeholder="例如：1000" min="0" step="1">
-        <div class="input-hint">1 張 = 1,000 股</div>
-      </div>
-      <div class="form-group">
-        <label for="dividend">每股股利（元）</label>
-        <input type="number" id="dividend" placeholder="例如：2" min="0" step="0.01">
-        <div class="input-hint"><a href="articles/taiwan-stock-dividend-guide.html">查詢個股歷年配息資料</a></div>
-      </div>
-    </div>
-
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-label">投入成本</div>
-        <div class="result-value" id="totalCost">0</div>
-        <div class="result-unit">元</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">總股利</div>
-        <div class="result-value" id="totalDividend">0</div>
-        <div class="result-unit">元</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">殖利率</div>
-        <div class="result-value" id="yieldRate">0</div>
-        <div class="result-unit">%</div>
-      </div>
-    </div>
 
     <!-- 殖利率標尺 -->
     <div id="yieldGauge" style="display:none;max-width:600px;margin:1.5rem auto;padding:0 1rem;">
