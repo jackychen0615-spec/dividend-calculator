@@ -217,9 +217,9 @@
   <main>
     <!-- Hero 介紹區 -->
     <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
-      <h1>股利計算器 — 免費殖利率試算工具</h1>
-      <p style="max-width:500px;margin:0 auto .8rem;">台股存股族的免費試算工具。算殖利率、算複利、算回本、算定期定額、算薪資實領。</p>
-      <p style="margin:0;"><a href="#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">立即試算</a></p>
+      <h1>股利計算器 — 存股族的試算工具</h1>
+      <p style="max-width:500px;margin:0 auto .8rem;">買了幾張、每股配多少、殖利率多少 — 三個數字就算完。不用註冊，不收資料。</p>
+      <p style="margin:0;"><a href="#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始算</a></p>
     </section>
 
     <!-- 工具卡片 -->
@@ -255,7 +255,7 @@
       <h2 style="font-size:1.3rem;text-align:center;margin-bottom:1rem;">股利殖利率試算</h2>
     </section>
 
-    <div style="background:#ecfeff;border:1px solid #cffafe;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto;"><p style="margin:0;"><strong>股利計算器</strong>是一個免費的線上工具，讓台股投資人輸入股價、持有股數與每股股利，立即算出投入成本、總股利金額與殖利率。殖利率公式：殖利率（%）= 每股股利 ÷ 股價 × 100%。</p></div>
+    <div style="background:#ecfeff;border:1px solid #cffafe;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.88rem;max-width:600px;margin-left:auto;margin-right:auto;"><p style="margin:0;">輸入<strong>股價、股數、每股股利</strong>三個數字，下面會自動算出你的投入成本、總共能領多少股利、殖利率是多少。想知道公式的話：殖利率 = 每股股利 / 股價 x 100%。</p></div>
     <div class="calculator-card">
       <div class="form-group">
         <label for="stockPrice">股價（元）</label>
@@ -334,73 +334,73 @@
     <section class="faq-section" style="margin-top:2rem;">
       <h2>股利怎麼算？</h2>
       <img src="images/dividend-guide.png" alt="股利計算公式圖解" style="width:100%;max-width:600px;display:block;margin:1rem auto;border-radius:8px;">
-      <p>股利計算公式很簡單：<strong>總股利 = 持有股數 × 每股股利</strong>。例如持有 1,000 股（1 張），每股配 2 元股利，總股利就是 2,000 元。殖利率 = 每股股利 ÷ 股價 × 100%，代表你投入的錢每年能靠股利拿回多少比例。殖利率越高不一定越好，還要看公司的獲利穩定度和股價趨勢。使用上方的計算器，輸入股價、股數和每股股利，就能立即算出結果。</p>
+      <p>其實就是一個乘法：<strong>你持有多少股 x 每股配多少</strong>，就是你能拿到的股利。比方說你買了一張兆豐金（1,000 股），今年每股配 1.75 元，你就能領到 1,750 元。殖利率就是拿股利除以你的買入價，算出這筆錢的「年報酬率」。不過殖利率高不代表一定賺錢，股價如果跌更多就白搭了。上面的計算器可以幫你快速算出來。</p>
 
-      <h2>最新文章</h2>
-      <div class="articles-grid" style="max-width:600px;margin:1rem auto 0;">
-        <div class="article-card">
-          <h3><a href="articles/passive-income-monthly-10k.html">存股月領1萬要多少本金？</a></h3>
-          <p>三種路線實際試算，高股息 ETF / 金融股 / 台積電各需要多少？</p>
-          <span class="article-tag">被動收入</span>
+      <h2 style="margin-top:2rem;">我最近在研究的</h2>
+      <!-- 精選文章（放大） -->
+      <div style="max-width:600px;margin:1rem auto 0;">
+        <a href="articles/stock-saving-monthly-simulation.html" style="display:block;text-decoration:none;background:linear-gradient(135deg,#f0fdfa,#ecfeff);border:1px solid #ccfbf1;border-radius:12px;padding:1.2rem;margin-bottom:1rem;transition:box-shadow .2s;">
+          <span style="font-size:.7rem;color:#0891b2;font-weight:600;letter-spacing:.05em;">PICK</span>
+          <h3 style="font-size:1.05rem;color:#1f2937;margin:.3rem 0 .4rem;line-height:1.4;">我算了一下，每月存 5000 元買 ETF，10 年後股利能月領多少</h3>
+          <p style="font-size:.82rem;color:#6b7280;margin:0;line-height:1.5;">用實際數據跑了一遍，結果比我想像的樂觀。不過前提是你要撐過前三年。</p>
+        </a>
+
+        <!-- 其他文章（列表式，打破整齊感） -->
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <a href="articles/high-yield-stock-trap.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid #f3f4f6;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">殖利率 10% 的股票我為什麼不敢買</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">殖利率陷阱</span>
+          </a>
+          <a href="articles/top-etf-dividend-yield-2026.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid #f3f4f6;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">0056、00878、00919 到底該買哪一檔？</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">ETF 比較</span>
+          </a>
+          <a href="articles/salary-take-home-calculator.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid #f3f4f6;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">第一份薪水怎麼比想像中少這麼多</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">薪資</span>
+          </a>
+          <a href="articles/passive-income-monthly-10k.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid #f3f4f6;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">存股月領 1 萬要多少本金？我算給你看</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">被動收入</span>
+          </a>
+          <a href="articles/labor-pension-self-contribution.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid #f3f4f6;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">勞退自提 6% 到底划不划算？我自己的結論</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">勞退</span>
+          </a>
+          <a href="articles/dca-etf-comparison.html" style="text-decoration:none;display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;">
+            <span style="font-size:.88rem;color:#1f2937;font-weight:500;">定期定額 0050 vs 0056，我選了這個</span>
+            <span style="font-size:.7rem;color:#9ca3af;white-space:nowrap;margin-left:.5rem;">定期定額</span>
+          </a>
         </div>
-        <div class="article-card">
-          <h3><a href="articles/dca-etf-comparison.html">定期定額 ETF 怎麼選？0050 vs 0056 vs 00878</a></h3>
-          <p>報酬率、配息、風險完整比較，幫你找到最適合的 ETF。</p>
-          <span class="article-tag">ETF 比較</span>
-        </div>
-        <div class="article-card">
-          <h3><a href="articles/dividend-yield-ranking-2026.html">2026 台股殖利率排行榜</a></h3>
-          <p>高殖利率 ETF 與金融股排行，附五大判斷標準。</p>
-          <span class="article-tag">殖利率排行</span>
-        </div>
-        <div class="article-card">
-          <h3><a href="articles/salary-take-home-calculator.html">月薪3萬實領多少？薪資實領完整教學</a></h3>
-          <p>勞保、健保、勞退扣多少？28K-50K 實領對照表一次看。</p>
-          <span class="article-tag">薪資計算</span>
-        </div>
-        <div class="article-card">
-          <h3><a href="articles/top-etf-dividend-yield-2026.html">2026 高殖利率 ETF 排名比較</a></h3>
-          <p>0056、00878、00919、00929、00940 五大 ETF 完整評比。</p>
-          <span class="article-tag">ETF 比較</span>
-        </div>
-        <div class="article-card">
-          <h3><a href="articles/stock-saving-monthly-simulation.html">存股試算：每月存5000元 10年模擬</a></h3>
-          <p>實際數據模擬存股成果，看複利如何讓你的股利越領越多。</p>
-          <span class="article-tag">存股試算</span>
-        </div>
+        <p style="text-align:center;margin-top:1.2rem;"><a href="articles.html" style="color:#6b7280;font-size:.82rem;text-decoration:none;border-bottom:1px dashed #d1d5db;">還有 33 篇 &rarr;</a></p>
       </div>
-      <p style="text-align:center;margin-top:1rem;"><a href="articles.html" style="color:#0891b2;font-weight:600;font-size:.9rem;">查看全部 39 篇文章 &rarr;</a></p>
     </section>
 
     <section class="faq-section">
       <h2>常見問題</h2>
       <div class="faq-item">
         <button class="faq-question">股利怎麼算？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">股利的計算方式很簡單：<strong>總股利 = 持有股數 x 每股股利</strong>。例如你持有 1,000 股（1 張）某檔股票，該股票每股配發 2 元股利，那麼你可以領到 1,000 x 2 = 2,000 元的股利。</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">就是「你有幾股 x 每股配多少錢」。比方說你有一張兆豐金（1,000 股），每股配 1.75 元，你就領 1,750 元。上面的計算器輸入三個數字就幫你算好了。</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">殖利率是什麼？怎麼計算？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">殖利率（Dividend Yield）是衡量股票配息報酬率的指標，公式為：<strong>殖利率 = 每股股利 / 股價 x 100%</strong>。例如股價 50 元、每股配 2 元股利，殖利率就是 2 / 50 x 100% = 4%。一般來說，殖利率超過 5% 就算高殖利率股票。</div></div>
+        <button class="faq-question">殖利率是什麼？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">簡單講就是「你花的錢，每年靠股利拿回幾%」。公式：每股股利 / 你的買入價 x 100%。買在 50 元、配 2 元，殖利率就是 4%。跟銀行定存利率的概念一樣，只是股價會漲跌。</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">一張股票可以拿到多少股利？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">一張股票等於 1,000 股。所以一張股票的股利 = 1,000 x 每股股利。例如某檔股票每股配 3 元現金股利，持有一張就能拿到 3,000 元。你可以使用上方的計算器輸入股數與每股股利，立即算出結果。</div></div>
+        <button class="faq-question">一張股票可以領多少股利？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">一張 = 1,000 股，所以直接乘就好。每股配 3 元的話，一張就是 3,000 元。持有五張就 15,000 元，入帳日直接匯到你的交割帳戶。</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">現金股利和股票股利有什麼差別？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">現金股利是公司直接發放現金到你的帳戶；股票股利則是公司發放額外的股票給你。例如配發 0.5 元股票股利，代表每持有 1,000 股可以多拿 50 股。多數存股族偏好穩定的現金股利，因為可以直接當作被動收入使用。</div></div>
+        <button class="faq-question">現金股利跟股票股利差在哪？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">現金股利就是直接發錢給你，股票股利是多給你股票。大部分存股族比較喜歡現金股利，因為錢直接入帳，想花就花、想再投就再投，比較有彈性。</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">殖利率計算器怎麼用？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">使用本頁殖利率計算器非常簡單：1. 輸入股價（元）；2. 輸入持有股數；3. 輸入每股股利（元）。系統會自動計算出<strong>殖利率 = 每股股利 ÷ 股價 × 100%</strong>，以及總股利與投入成本。</div></div>
+        <button class="faq-question">殖利率高就是好股票嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">不一定。有些股票殖利率 10% 看起來很香，但那可能是因為股價跌了一半才顯得高。重點是看公司有沒有穩定賺錢、連續配息夠不夠久、除息後股價有沒有漲回來（填息）。三個都 OK 才是真的好。</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">殖利率多少算高？台股標準是什麼？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">台灣股市的殖利率參考標準：<strong>5% 以上</strong>算高殖利率，常見於金融股、電信股；<strong>3%-5%</strong> 為中等，多為績優股；<strong>3% 以下</strong>屬低殖利率，多為成長型股票。建議同時評估公司歷年配息穩定度，殖利率並非越高越好。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">股利試算要準備哪些資料？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">進行股利試算需要三項資料：<strong>① 股價</strong>（買入價或目前市價）、<strong>② 持有股數</strong>（1 張 = 1,000 股）、<strong>③ 每股股利</strong>（可至公開資訊觀測站或券商 App 查詢當年配息資料）。輸入後即可立即試算。</div></div>
+        <button class="faq-question">配息會被扣稅嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">會。單次配息超過 2 萬要扣 2.11% 的二代健保補充保費，另外股利所得要併入綜所稅或選擇分離課稅（28%）。大部分小資族用合併申報比較划算，年領超過 94 萬股利的人才需要考慮分離課稅。<a href="articles/health-insurance-dividend.html" style="color:#0891b2;">我寫了一篇詳細算給你看</a>。</div></div>
       </div>
     </section>
   </main>
