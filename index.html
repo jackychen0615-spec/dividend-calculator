@@ -34,9 +34,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="canonical" href="https://gulicalc.com/">
   <link rel="alternate" type="application/rss+xml" title="股利計算器 RSS" href="https://gulicalc.com/feed.xml">
-  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="css/style.css?v=20260530" as="style">
   <link rel="preload" href="images/logo-nav.png" as="image">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260530">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
   <script type="application/ld+json">
   [
@@ -181,6 +181,7 @@
   }
   </script>
   <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+  <script>try{if(localStorage.getItem("gulicalc_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
 </head>
 <body>
   <header class="site-header">
@@ -831,30 +832,6 @@ function closePwa(ok){
 })();
 </script>
 
-<!-- Feature: Dark Mode Toggle -->
-<script>
-(function(){
-  var toggle = document.getElementById('themeToggle');
-  var html = document.documentElement;
-  var saved = localStorage.getItem('gulicalc_theme');
-  if (saved === 'dark') {
-    html.setAttribute('data-theme', 'dark');
-    toggle.innerHTML = '&#9788;';
-  }
-  toggle.addEventListener('click', function() {
-    var isDark = html.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      html.removeAttribute('data-theme');
-      toggle.innerHTML = '&#9790;';
-      localStorage.setItem('gulicalc_theme', 'light');
-    } else {
-      html.setAttribute('data-theme', 'dark');
-      toggle.innerHTML = '&#9788;';
-      localStorage.setItem('gulicalc_theme', 'dark');
-    }
-  });
-})();
-</script>
 
 <!-- Feature: Share Result Button -->
 <script>
@@ -1057,5 +1034,6 @@ function closePwa(ok){
 })();
 </script>
 
+<script src="js/theme.js"></script>
 </body>
 </html>

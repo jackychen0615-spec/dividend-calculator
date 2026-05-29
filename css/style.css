@@ -1682,3 +1682,13 @@ main {
 .sw-update-toast button:hover {
   background: #0e7490;
 }
+
+/* ===== Dark Mode：文章內 inline 樣式覆蓋 ===== */
+[data-theme="dark"] article table th,
+[data-theme="dark"] article table td { border-color: #334155 !important; }
+[data-theme="dark"] article table tr[style*="f5f5f5"] { background: #1e293b !important; }
+[data-theme="dark"] article table tr[style*="f5f5f5"] th { color: #f1f5f9 !important; }
+[data-theme="dark"] article table tr[style*="fafafa"] td { background: #172033 !important; }
+[data-theme="dark"] article table td[style*="green"] { color: #4ade80 !important; }
+[data-theme="dark"] article div[style*="f9f9f9"] { background: #172033 !important; }
+[data-theme="dark"] article div[style*="f9f9f9"] strong { color: #f1f5f9 !important; }
