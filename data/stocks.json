@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29",
+  "lastUpdated": "2026-05-30",
   "stocks": [
     {
       "code": "0050",
@@ -225,6 +225,51 @@
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 5.4 元"
+    },
+    {
+      "code": "00900",
+      "name": "富邦特選高股息30",
+      "price": 18.3,
+      "dividend": 1.18,
+      "dividendYear": "2025",
+      "frequency": "月配",
+      "note": "每月配息，全年合計約 1.18 元"
+    },
+    {
+      "code": "00915",
+      "name": "凱基優選高股息30",
+      "price": 28.67,
+      "dividend": 1.35,
+      "dividendYear": "2025",
+      "frequency": "季配",
+      "note": "每季配息，全年合計約 1.35 元"
+    },
+    {
+      "code": "00918",
+      "name": "大華優利高填息30",
+      "price": 28.36,
+      "dividend": 2.48,
+      "dividendYear": "2025",
+      "frequency": "季配",
+      "note": "每季配息，全年合計約 2.48 元"
+    },
+    {
+      "code": "00932",
+      "name": "兆豐永續高息等權",
+      "price": 16.62,
+      "dividend": 0.58,
+      "dividendYear": "2025",
+      "frequency": "季配",
+      "note": "每季配息，全年合計約 0.58 元"
+    },
+    {
+      "code": "00943",
+      "name": "兆豐電子高息等權",
+      "price": 21.69,
+      "dividend": 0.48,
+      "dividendYear": "2025",
+      "frequency": "月配",
+      "note": "電子成長型，每月配息，近一年約 0.48 元"
     }
   ]
 }
