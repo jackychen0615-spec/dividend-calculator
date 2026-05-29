@@ -139,7 +139,7 @@
               <input type="number" id="monthlyInvestment" placeholder="5000" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#10b981';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
             </div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;">
             <div>
               <label for="annualYield" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">年殖利率（%）</label>
               <input type="number" id="annualYield" placeholder="5" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#10b981';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
@@ -147,6 +147,11 @@
             <div>
               <label for="years" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">投資年數</label>
               <input type="number" id="years" placeholder="10" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#10b981';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+            <div>
+              <label for="inflationRate" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">通膨率（%）</label>
+              <input type="number" id="inflationRate" placeholder="2" min="0" max="20" step="0.1" value="2" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#10b981';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.65rem;color:#9ca3af;display:block;margin-top:.1rem;">台灣近年約 2%</span>
             </div>
           </div>
         </div>
@@ -156,7 +161,7 @@
           <div style="font-size:2.2rem;font-weight:800;color:#10b981;font-variant-numeric:tabular-nums;line-height:1.2;" id="totalAssets">0</div>
           <div style="font-size:.75rem;color:#9ca3af;">元</div>
         </div>
-        <div style="padding:.6rem 1.5rem 1.2rem;display:flex;justify-content:center;gap:2rem;">
+        <div style="padding:.6rem 1.5rem .8rem;display:flex;justify-content:center;gap:2rem;">
           <div style="text-align:center;">
             <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">總投入成本</div>
             <div style="font-size:1.1rem;font-weight:700;color:#374151;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalInvested">0</div>
@@ -167,6 +172,12 @@
             <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">複利獲利</div>
             <div style="font-size:1.1rem;font-weight:700;color:#0891b2;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalDividendIncome">0</div>
             <div style="font-size:.65rem;color:#9ca3af;">元</div>
+          </div>
+        </div>
+        <!-- 通膨調整後 -->
+        <div id="inflationNote" style="display:none;padding:0 1.5rem 1.2rem;text-align:center;">
+          <div style="background:#fef3c7;border-radius:8px;padding:.6rem .8rem;font-size:.78rem;color:#92400e;">
+            考慮通膨 <span id="inflationPct">2</span>% 後，<span id="realAssetsLabel">實際購買力約</span> <strong id="realAssets" style="color:#b45309;">0</strong> 元（今天的幣值）
           </div>
         </div>
       </div>

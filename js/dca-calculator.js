@@ -35,6 +35,19 @@
     totalValueEl.textContent = fmt(totalValue);
     totalReturnEl.textContent = fmt(totalReturn);
 
+    // Inflation adjustment
+    const dcaInflEl = document.getElementById('dcaInflation');
+    const dcaInflNote = document.getElementById('dcaInflationNote');
+    const inflation = Math.max(0, parseFloat(dcaInflEl?.value) || 0);
+    if (dcaInflNote && inflation > 0 && years > 0 && totalValue > 0) {
+      const realValue = totalValue / Math.pow(1 + inflation / 100, years);
+      document.getElementById('dcaInflPct').textContent = inflation;
+      document.getElementById('dcaRealAssets').textContent = fmt(realValue);
+      dcaInflNote.style.display = 'block';
+    } else if (dcaInflNote) {
+      dcaInflNote.style.display = 'none';
+    }
+
     // Draw growth chart
     const wrap = document.getElementById('dcaChartWrap');
     if (years > 0 && monthly > 0 && typeof Chart !== 'undefined') {
@@ -72,7 +85,8 @@
     } else if (wrap) { wrap.style.display = 'none'; }
   }
 
-  [monthlyAmount, annualReturn, investYears].forEach((input) => {
+  const dcaInflInput = document.getElementById('dcaInflation');
+  [monthlyAmount, annualReturn, investYears, dcaInflInput].filter(Boolean).forEach((input) => {
     input.addEventListener("input", calculate);
   });
 

@@ -7,12 +7,14 @@
   const totalInvestedEl = $("#totalInvested");
   const totalAssetsEl = $("#totalAssets");
   const totalDividendIncomeEl = $("#totalDividendIncome");
+  const inflationRateEl = $("#inflationRate");
 
   function calculate() {
     const initial = Math.max(0, parseFloat(initialInvestment.value) || 0);
     const monthly = Math.max(0, parseFloat(monthlyInvestment.value) || 0);
     const rate = Math.max(0, Math.min(parseFloat(annualYield.value) || 0, 50));
     const numYears = Math.max(0, Math.min(parseFloat(years.value) || 0, 100));
+    const inflation = Math.max(0, parseFloat(inflationRateEl?.value) || 0);
 
     const totalInvested = initial + monthly * 12 * numYears;
 
@@ -30,6 +32,17 @@
     totalInvestedEl.textContent = Math.round(totalInvested).toLocaleString("zh-TW");
     totalAssetsEl.textContent = Math.round(assets).toLocaleString("zh-TW");
     totalDividendIncomeEl.textContent = Math.round(totalDividendIncome).toLocaleString("zh-TW");
+
+    // Inflation adjustment
+    const inflationNote = document.getElementById('inflationNote');
+    if (inflationNote && inflation > 0 && numYears > 0 && assets > 0) {
+      const realAssets = assets / Math.pow(1 + inflation / 100, numYears);
+      document.getElementById('inflationPct').textContent = inflation;
+      document.getElementById('realAssets').textContent = Math.round(realAssets).toLocaleString("zh-TW");
+      inflationNote.style.display = 'block';
+    } else if (inflationNote) {
+      inflationNote.style.display = 'none';
+    }
 
     // Draw growth chart
     const wrap = document.getElementById('compoundChartWrap');
@@ -66,7 +79,7 @@
     } else if (wrap) { wrap.style.display = 'none'; }
   }
 
-  [initialInvestment, monthlyInvestment, annualYield, years].forEach((input) => {
+  [initialInvestment, monthlyInvestment, annualYield, years, inflationRateEl].filter(Boolean).forEach((input) => {
     input.addEventListener("input", calculate);
   });
 
