@@ -274,6 +274,13 @@
           <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">股利殖利率試算</h2>
           <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">輸入三個數字，自動幫你算</p>
         </div>
+        <!-- 股票搜尋 -->
+        <div style="padding:1rem 1.5rem .5rem;position:relative;" id="stockSearchWrap">
+          <label for="stockSearch" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">快速帶入股票資料</label>
+          <input type="text" id="stockSearch" autocomplete="off" placeholder="輸入股票代號或名稱，例如：0056、台積電" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.95rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="setTimeout(function(){document.getElementById('stockSearch').style.borderColor='#e5e7eb';document.getElementById('stockSearch').style.background='#f9fafb'},150)">
+          <ul id="stockDropdown" style="display:none;position:absolute;left:1.5rem;right:1.5rem;top:100%;background:#fff;border:1.5px solid #e5e7eb;border-top:none;border-radius:0 0 10px 10px;list-style:none;margin:0;padding:0;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.08);max-height:240px;overflow-y:auto;"></ul>
+          <div id="stockBadge" style="display:none;margin-top:.5rem;padding:.4rem .7rem;background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;font-size:.78rem;color:#0e7490;line-height:1.4;"></div>
+        </div>
         <!-- 輸入區 -->
         <div style="padding:1.2rem 1.5rem 1rem;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
@@ -676,6 +683,150 @@ function closePwa(ok){
   if (ok) localStorage.setItem('pwa_dismissed', Date.now().toString());
   else localStorage.setItem('pwa_dismissed', Date.now().toString());
 }
+</script>
+
+<script>
+(function(){
+  var stocksData = [];
+  var searchInput = document.getElementById('stockSearch');
+  var dropdown = document.getElementById('stockDropdown');
+  var badge = document.getElementById('stockBadge');
+  var debounceTimer = null;
+
+  // Fetch stock data: try live API first, fallback to static JSON
+  fetch('/api/stocks')
+    .then(function(r){ if(!r.ok) throw new Error(); return r.json(); })
+    .then(function(data){ stocksData = data.stocks || []; console.log('Live API:', data.count, 'stocks'); })
+    .catch(function(){
+      fetch('data/stocks.json')
+        .then(function(r){ return r.json(); })
+        .then(function(data){ stocksData = data.stocks || []; console.log('Fallback: static JSON'); })
+        .catch(function(){});
+    });
+
+  function fuzzyMatch(query, stock) {
+    var q = query.toLowerCase();
+    return stock.code.toLowerCase().indexOf(q) !== -1 || stock.name.toLowerCase().indexOf(q) !== -1;
+  }
+
+  function renderDropdown(results) {
+    if (!results.length) {
+      dropdown.style.display = 'none';
+      return;
+    }
+    var html = '';
+    results.forEach(function(s, i) {
+      var yieldPct = s.dividendYield || (s.price > 0 ? (s.dividend / s.price * 100).toFixed(2) : '0');
+      if (typeof yieldPct === 'number') yieldPct = yieldPct.toFixed(2);
+      var freq = s.frequency || '';
+      var extra = freq ? freq + ' | ' : '';
+      html += '<li data-idx="' + i + '" style="padding:.6rem .8rem;cursor:pointer;border-bottom:1px solid #f3f4f6;transition:background .15s;" onmouseenter="this.style.background=\'#f0fdfa\'" onmouseleave="this.style.background=\'#fff\'">'
+        + '<div style="display:flex;justify-content:space-between;align-items:center;">'
+        + '<div><strong style="color:#1f2937;font-size:.9rem;">' + s.code + '</strong> <span style="color:#6b7280;font-size:.82rem;">' + s.name + '</span></div>'
+        + '<span style="font-size:.75rem;color:#0891b2;font-weight:600;">殖利率 ' + yieldPct + '%</span>'
+        + '</div>'
+        + '<div style="font-size:.72rem;color:#9ca3af;margin-top:.15rem;">' + extra + '股價 ' + s.price + ' 元 | 配息 ' + s.dividend + ' 元</div>'
+        + '</li>';
+    });
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'block';
+
+    // Bind click events
+    var items = dropdown.querySelectorAll('li');
+    items.forEach(function(li) {
+      li.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-idx'));
+        selectStock(results[idx]);
+      });
+    });
+  }
+
+  function selectStock(stock) {
+    // Fill in calculator fields
+    var priceInput = document.getElementById('stockPrice');
+    var dividendInput = document.getElementById('dividend');
+    if (priceInput) {
+      priceInput.value = stock.price;
+      priceInput.style.borderColor = '#0891b2';
+      setTimeout(function(){ priceInput.style.borderColor = '#e5e7eb'; }, 800);
+    }
+    if (dividendInput) {
+      dividendInput.value = stock.dividend;
+      dividendInput.style.borderColor = '#0891b2';
+      setTimeout(function(){ dividendInput.style.borderColor = '#e5e7eb'; }, 800);
+    }
+
+    // Show badge
+    var yieldPct = stock.dividendYield || (stock.price > 0 ? (stock.dividend / stock.price * 100).toFixed(2) : '0');
+    if (typeof yieldPct === 'number') yieldPct = yieldPct.toFixed(2);
+    var freq = stock.frequency ? ' | ' + stock.frequency : '';
+    var year = stock.dividendYear ? stock.dividendYear + '年' : '';
+    badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong>' + freq + ' | ' + year + '配息 ' + stock.dividend + ' 元 | 殖利率 ' + yieldPct + '%'
+      + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">資料來源：台灣證券交易所。股價為收盤價，配息以殖利率反算。</span>';
+    badge.style.display = 'block';
+
+    // Clear search
+    searchInput.value = '';
+    dropdown.style.display = 'none';
+
+    // Trigger calculation
+    priceInput.dispatchEvent(new Event('input', { bubbles: true }));
+    dividendInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+    // Also try triggering the existing calculator logic
+    if (typeof calculate === 'function') calculate();
+    // Fallback: manually trigger input on shares if it has a value
+    var sharesInput = document.getElementById('shares');
+    if (sharesInput && sharesInput.value) {
+      sharesInput.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+
+  searchInput.addEventListener('input', function() {
+    var val = this.value.trim();
+    clearTimeout(debounceTimer);
+    if (!val) {
+      dropdown.style.display = 'none';
+      return;
+    }
+    debounceTimer = setTimeout(function() {
+      var results = stocksData.filter(function(s) { return fuzzyMatch(val, s); }).slice(0, 5);
+      renderDropdown(results);
+    }, 200);
+  });
+
+  // Hide dropdown on outside click
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('stockSearchWrap').contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // Keyboard navigation
+  searchInput.addEventListener('keydown', function(e) {
+    var items = dropdown.querySelectorAll('li');
+    if (!items.length) return;
+    var active = dropdown.querySelector('li[data-active]');
+    var idx = active ? parseInt(active.getAttribute('data-idx')) : -1;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (active) { active.removeAttribute('data-active'); active.style.background = '#fff'; }
+      idx = (idx + 1) % items.length;
+      items[idx].setAttribute('data-active', '1');
+      items[idx].style.background = '#f0fdfa';
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (active) { active.removeAttribute('data-active'); active.style.background = '#fff'; }
+      idx = idx <= 0 ? items.length - 1 : idx - 1;
+      items[idx].setAttribute('data-active', '1');
+      items[idx].style.background = '#f0fdfa';
+    } else if (e.key === 'Enter' && active) {
+      e.preventDefault();
+      active.click();
+    }
+  });
+})();
 </script>
 
 </body>
