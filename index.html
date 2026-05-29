@@ -205,6 +205,7 @@
     <nav class="nav-container">
       <a href="/" class="nav-logo"><img src="images/logo-nav.png" alt="股利計算器"> 股利計算器</a>
       <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換深色模式" title="切換深色模式">&#9790;</button>
       <ul class="nav-links">
         <li><a href="/" class="active">首頁</a></li>
         <li><a href="articles">文章</a></li>
@@ -323,6 +324,13 @@
               <div style="font-size:.65rem;color:#9ca3af;">元</div>
             </div>
           </div>
+          <!-- 分享結果 -->
+          <div style="text-align:center;padding:0 1.5rem 1rem;">
+            <button class="share-result-link" id="shareResultBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              分享這個結果
+            </button>
+          </div>
         </div>
         <!-- 輸入提示 -->
         <div id="calcHint" style="padding:1rem 1.5rem 1.2rem;text-align:center;">
@@ -330,6 +338,15 @@
         </div>
       </div>
     </section>
+
+    <!-- 最近計算 -->
+    <div class="calc-history" id="calcHistory" style="display:none;">
+      <div class="calc-history-title">
+        <span>最近計算</span>
+        <button id="clearHistory" type="button">清除</button>
+      </div>
+      <div class="calc-history-chips" id="historyChips"></div>
+    </div>
 
     <!-- 殖利率標尺 -->
     <div id="yieldGauge" style="display:none;max-width:600px;margin:1.5rem auto;padding:0 1rem;">
@@ -795,6 +812,9 @@ function closePwa(ok){
     }, 200);
   });
 
+  // Expose selectStock for history chip use
+  window._gulicalcSelectStock = selectStock;
+
   // Hide dropdown on outside click
   document.addEventListener('click', function(e) {
     if (!document.getElementById('stockSearchWrap').contains(e.target)) {
@@ -826,6 +846,232 @@ function closePwa(ok){
       active.click();
     }
   });
+})();
+</script>
+
+<!-- Feature: Dark Mode Toggle -->
+<script>
+(function(){
+  var toggle = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('gulicalc_theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.innerHTML = '&#9788;';
+  }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      toggle.innerHTML = '&#9790;';
+      localStorage.setItem('gulicalc_theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      toggle.innerHTML = '&#9788;';
+      localStorage.setItem('gulicalc_theme', 'dark');
+    }
+  });
+})();
+</script>
+
+<!-- Feature: Share Result Button -->
+<script>
+(function(){
+  var shareBtn = document.getElementById('shareResultBtn');
+  if (!shareBtn) return;
+  shareBtn.addEventListener('click', function() {
+    var price = document.getElementById('stockPrice').value;
+    var sharesVal = document.getElementById('shares').value;
+    var divVal = document.getElementById('dividend').value;
+    if (!price || !sharesVal || !divVal) return;
+    var totalCost = (parseFloat(price) * parseFloat(sharesVal));
+    var totalDiv = (parseFloat(sharesVal) * parseFloat(divVal));
+    var yieldPct = parseFloat(price) > 0 ? (parseFloat(divVal) / parseFloat(price) * 100).toFixed(2) : '0';
+    var text = '我用 GULICALC 算了一下：投入 ' + Math.round(totalCost).toLocaleString() + ' 元，年領股利 ' + Math.round(totalDiv).toLocaleString() + ' 元，殖利率 ' + yieldPct + '%。免費試算：https://gulicalc.com';
+
+    if (navigator.share) {
+      navigator.share({ title: 'GULICALC 股利計算結果', text: text }).catch(function(){});
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        shareBtn.textContent = '已複製！';
+        setTimeout(function() {
+          shareBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享這個結果';
+        }, 1500);
+      });
+    } else {
+      // Fallback: textarea copy
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      shareBtn.textContent = '已複製！';
+      setTimeout(function() {
+        shareBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> 分享這個結果';
+      }, 1500);
+    }
+  });
+})();
+</script>
+
+<!-- Feature: Calculation History -->
+<script>
+(function(){
+  var HISTORY_KEY = 'gulicalc_history';
+  var MAX_ITEMS = 5;
+  var historySection = document.getElementById('calcHistory');
+  var chipsContainer = document.getElementById('historyChips');
+  var clearBtn = document.getElementById('clearHistory');
+
+  function getHistory() {
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
+    catch(e) { return []; }
+  }
+
+  function saveHistory(arr) {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(arr));
+  }
+
+  function renderHistory() {
+    var history = getHistory();
+    if (!history.length) {
+      historySection.style.display = 'none';
+      return;
+    }
+    historySection.style.display = 'block';
+    var html = '';
+    history.forEach(function(item, i) {
+      var label = item.code ? (item.code + ' ' + (item.name || '')) : ('$' + item.price);
+      html += '<button class="calc-history-chip" data-idx="' + i + '" type="button">'
+        + '<strong>' + label + '</strong> '
+        + '殖利率 ' + item.yield + '%'
+        + '</button>';
+    });
+    chipsContainer.innerHTML = html;
+    chipsContainer.querySelectorAll('.calc-history-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var idx = parseInt(this.getAttribute('data-idx'));
+        var item = getHistory()[idx];
+        if (!item) return;
+        document.getElementById('stockPrice').value = item.price;
+        document.getElementById('shares').value = item.shares || 1000;
+        document.getElementById('dividend').value = item.dividend;
+        // Trigger calculation
+        document.getElementById('stockPrice').dispatchEvent(new Event('input', { bubbles: true }));
+        document.getElementById('shares').dispatchEvent(new Event('input', { bubbles: true }));
+        document.getElementById('dividend').dispatchEvent(new Event('input', { bubbles: true }));
+        // Update badge if stock data
+        if (item.code && item.name) {
+          var badge = document.getElementById('stockBadge');
+          if (badge) {
+            badge.innerHTML = '<strong>' + item.code + ' ' + item.name + '</strong> | 配息 ' + item.dividend + ' 元 | 殖利率 ' + item.yield + '%';
+            badge.style.display = 'block';
+          }
+        }
+      });
+    });
+  }
+
+  // Listen for calculation changes to save history
+  var priceEl = document.getElementById('stockPrice');
+  var sharesEl = document.getElementById('shares');
+  var divEl = document.getElementById('dividend');
+  var saveTimer = null;
+
+  function trySaveToHistory() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function() {
+      var price = parseFloat(priceEl.value);
+      var shares = parseFloat(sharesEl.value);
+      var div = parseFloat(divEl.value);
+      if (!price || !shares || !div || price <= 0 || shares <= 0 || div <= 0) return;
+
+      var yieldPct = (div / price * 100).toFixed(2);
+      var badge = document.getElementById('stockBadge');
+      var code = '';
+      var name = '';
+      if (badge && badge.style.display !== 'none' && badge.innerHTML) {
+        var m = badge.innerHTML.match(/<strong>(\S+)\s+(.+?)<\/strong>/);
+        if (m) { code = m[1]; name = m[2]; }
+      }
+
+      var entry = {
+        code: code,
+        name: name,
+        price: price,
+        shares: shares,
+        dividend: div,
+        yield: yieldPct,
+        date: new Date().toISOString().slice(0, 10)
+      };
+
+      var history = getHistory();
+      // Remove duplicate (same code+price+dividend or same price+dividend if no code)
+      history = history.filter(function(h) {
+        if (code && h.code === code && h.price === price && h.dividend === div) return false;
+        if (!code && !h.code && h.price === price && h.dividend === div) return false;
+        return true;
+      });
+      history.unshift(entry);
+      if (history.length > MAX_ITEMS) history = history.slice(0, MAX_ITEMS);
+      saveHistory(history);
+      renderHistory();
+    }, 800);
+  }
+
+  [priceEl, sharesEl, divEl].forEach(function(el) {
+    el.addEventListener('input', trySaveToHistory);
+  });
+
+  clearBtn.addEventListener('click', function() {
+    localStorage.removeItem(HISTORY_KEY);
+    renderHistory();
+  });
+
+  // Initial render
+  renderHistory();
+})();
+</script>
+
+<!-- Feature: Service Worker + Update Toast -->
+<script>
+(function(){
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+      // Check for updates periodically
+      setInterval(function() { reg.update(); }, 60 * 60 * 1000);
+    }).catch(function(){});
+
+    navigator.serviceWorker.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'SW_UPDATED') {
+        var newVersion = event.data.version;
+        var lastSeen = localStorage.getItem('gulicalc_update_v');
+        if (lastSeen === newVersion) return;
+
+        // Show toast
+        var toast = document.createElement('div');
+        toast.className = 'sw-update-toast';
+        toast.innerHTML = '<span>有新功能更新！重新整理看看</span><button type="button">重新整理</button>';
+        document.body.appendChild(toast);
+
+        toast.querySelector('button').addEventListener('click', function() {
+          localStorage.setItem('gulicalc_update_v', newVersion);
+          window.location.reload();
+        });
+
+        // Auto-dismiss after 10 seconds
+        setTimeout(function() {
+          if (toast.parentNode) {
+            localStorage.setItem('gulicalc_update_v', newVersion);
+            toast.parentNode.removeChild(toast);
+          }
+        }, 10000);
+      }
+    });
+  }
 })();
 </script>
 
