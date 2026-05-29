@@ -152,7 +152,21 @@
             <div>
               <label for="exemptionCount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">免稅額人數</label>
               <input type="number" id="exemptionCount" placeholder="1" min="1" max="10" value="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
-              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">本人 + 配偶 + 扶養</span>
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">本人 + 配偶</span>
+            </div>
+          </div>
+          <!-- 扶養親屬 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
+            <div>
+              <label for="dependentCount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">扶養親屬人數</label>
+              <input type="number" id="dependentCount" placeholder="0" min="0" max="10" value="0" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#1d4ed8';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">子女、父母等受扶養人</span>
+            </div>
+            <div style="display:flex;align-items:center;padding-top:1.2rem;">
+              <label style="display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.82rem;color:#374151;">
+                <input type="checkbox" id="seniorDependent" style="accent-color:#1d4ed8;width:16px;height:16px;">
+                有 70 歲以上扶養親屬
+              </label>
             </div>
           </div>
           <!-- 扣除額選擇 -->
@@ -368,9 +382,13 @@
     var DIVIDEND_CREDIT_MAX = 80000;
     var SEPARATE_RATE = 0.28;
 
+    var EXEMPTION_SENIOR = 145500;
+
     var elIncome = document.getElementById('annualIncome');
     var elDividend = document.getElementById('dividendIncome');
     var elExemptCount = document.getElementById('exemptionCount');
+    var elDependentCount = document.getElementById('dependentCount');
+    var elSeniorDependent = document.getElementById('seniorDependent');
     var elItemizedAmt = document.getElementById('itemizedAmount');
     var elItemizedRow = document.getElementById('itemizedRow');
     var elResult = document.getElementById('taxResult');
@@ -421,6 +439,8 @@
       var income = Math.max(0, parseFloat(elIncome.value) || 0);
       var dividend = Math.max(0, parseFloat(elDividend.value) || 0);
       var exemptCount = Math.max(1, parseInt(elExemptCount.value) || 1);
+      var dependentCount = Math.max(0, parseInt(elDependentCount.value) || 0);
+      var isSeniorDependent = elSeniorDependent.checked;
       var deductionType = document.querySelector('input[name=deductionType]:checked').value;
       var filingStatus = document.querySelector('input[name=filingStatus]:checked').value;
       var itemizedAmt = Math.max(0, parseFloat(elItemizedAmt.value) || 0);
@@ -430,8 +450,9 @@
         return;
       }
 
-      // Exemption
-      var exemption = EXEMPTION * exemptCount;
+      // Exemption: 本人+配偶 uses standard exemption, dependents use senior rate if checked
+      var dependentExemptionPer = isSeniorDependent ? EXEMPTION_SENIOR : EXEMPTION;
+      var exemption = EXEMPTION * exemptCount + dependentExemptionPer * dependentCount;
 
       // Deduction
       var standardDed = filingStatus === 'married' ? STD_MARRIED : STD_SINGLE;
@@ -538,9 +559,10 @@
     }
 
     // Bind inputs
-    [elIncome, elDividend, elExemptCount, elItemizedAmt].forEach(function(el) {
+    [elIncome, elDividend, elExemptCount, elDependentCount, elItemizedAmt].forEach(function(el) {
       el.addEventListener('input', calc);
     });
+    elSeniorDependent.addEventListener('change', calc);
 
     // Init radio styles
     updateRadioStyles();

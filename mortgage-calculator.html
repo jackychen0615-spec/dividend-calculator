@@ -289,6 +289,10 @@
       </div>
     </section>
 
+    <div id="mortgageChartWrap" style="max-width:600px;margin:1.5rem auto;display:none;">
+      <canvas id="mortgageChart"></canvas>
+    </div>
+
     <div class="feedback-wrapper">
       <button class="feedback-btn">&#9733; 給我們回饋</button>
     </div>
@@ -403,6 +407,7 @@
     <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="js/feedback.js"></script>
   <script src="js/cookie-consent.js"></script>
 
@@ -529,6 +534,7 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
       totalRepayEl.textContent = '0';
       graceNoteEl.style.display = 'none';
       detailSection.style.display = 'none';
+      document.getElementById('mortgageChartWrap').style.display = 'none';
       return;
     }
 
@@ -674,6 +680,9 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
     } else {
       detailSection.style.display = 'none';
     }
+
+    // Draw chart
+    drawChart(schedule, graceMonths);
   }
 
   function appendRow(row){
@@ -687,6 +696,133 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
       '<td style="padding:.5rem .8rem;text-align:right;border-bottom:1px solid #f3f4f6;color:#f59e0b;">' + fmt(row.interest) + '</td>' +
       '<td style="padding:.5rem .8rem;text-align:right;border-bottom:1px solid #f3f4f6;">' + fmt(row.balance) + '</td>';
     scheduleBody.appendChild(tr);
+  }
+
+  // Chart instance
+  var mortgageChartInstance = null;
+
+  function drawChart(schedule, graceMonths) {
+    var chartWrap = document.getElementById('mortgageChartWrap');
+    if (!schedule || schedule.length === 0 || typeof Chart === 'undefined') {
+      chartWrap.style.display = 'none';
+      return;
+    }
+    chartWrap.style.display = 'block';
+
+    // Group by year
+    var yearLabels = [];
+    var principalData = [];
+    var interestGraceData = [];
+    var interestNormalData = [];
+    var balanceData = [];
+    var totalYears = Math.ceil(schedule.length / 12);
+
+    for (var y = 0; y < totalYears; y++) {
+      yearLabels.push('第 ' + (y + 1) + ' 年');
+      var yearPrincipal = 0;
+      var yearInterestGrace = 0;
+      var yearInterestNormal = 0;
+      var yearEndBalance = 0;
+      for (var m = 0; m < 12; m++) {
+        var idx = y * 12 + m;
+        if (idx >= schedule.length) break;
+        var row = schedule[idx];
+        yearPrincipal += row.principal;
+        if (row.month <= graceMonths) {
+          yearInterestGrace += row.interest;
+        } else {
+          yearInterestNormal += row.interest;
+        }
+        yearEndBalance = row.balance;
+      }
+      principalData.push(Math.round(yearPrincipal));
+      interestGraceData.push(Math.round(yearInterestGrace));
+      interestNormalData.push(Math.round(yearInterestNormal));
+      balanceData.push(Math.round(yearEndBalance));
+    }
+
+    var ctx = document.getElementById('mortgageChart').getContext('2d');
+    if (mortgageChartInstance) {
+      mortgageChartInstance.destroy();
+    }
+
+    var datasets = [
+      {
+        label: '本金',
+        data: principalData,
+        backgroundColor: '#0d9488',
+        stack: 'payment',
+        order: 2
+      },
+      {
+        label: '利息',
+        data: interestNormalData,
+        backgroundColor: '#f59e0b',
+        stack: 'payment',
+        order: 2
+      }
+    ];
+
+    // Only add grace interest dataset if there is a grace period
+    if (graceMonths > 0) {
+      datasets.push({
+        label: '寬限期利息',
+        data: interestGraceData,
+        backgroundColor: '#fbbf24',
+        stack: 'payment',
+        order: 2
+      });
+    }
+
+    datasets.push({
+      label: '剩餘本金',
+      data: balanceData,
+      type: 'line',
+      borderColor: '#6366f1',
+      backgroundColor: 'rgba(99,102,241,0.1)',
+      borderWidth: 2,
+      pointRadius: 0,
+      fill: false,
+      yAxisID: 'yBalance',
+      order: 1
+    });
+
+    mortgageChartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: yearLabels,
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top', labels: { font: { size: 12 } } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ': ' + Math.round(context.parsed.y).toLocaleString('zh-TW') + ' 元';
+              }
+            }
+          }
+        },
+        scales: {
+          x: { stacked: true, ticks: { maxTicksLimit: 15, font: { size: 11 } } },
+          y: {
+            stacked: true,
+            position: 'left',
+            title: { display: true, text: '年度還款金額（元）', font: { size: 11 } },
+            ticks: { callback: function(v) { return (v / 10000).toFixed(0) + '萬'; } }
+          },
+          yBalance: {
+            position: 'right',
+            title: { display: true, text: '剩餘本金（元）', font: { size: 11 } },
+            ticks: { callback: function(v) { return (v / 10000).toFixed(0) + '萬'; } },
+            grid: { drawOnChartArea: false }
+          }
+        }
+      }
+    });
   }
 
   // 綁定事件
