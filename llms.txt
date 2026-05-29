@@ -1,0 +1,35 @@
+# 股利計算器 GULICALC
+
+> 台灣存股族專用的免費線上計算工具站。提供股利／殖利率、複利、定期定額、回本、房貸、薪資、所得稅等試算器，所有計算在瀏覽器完成、不收集個人資料。內容聚焦台股高股息 ETF（0050、0056、00878、00919、00929、00939、00940 等）與金融股、權值股的配息試算與存股策略。
+
+## 計算工具
+
+- [股利／殖利率計算器](https://gulicalc.com/): 輸入股價、張數、每股股利，立即算出總股利與殖利率
+- [存股複利計算器](https://gulicalc.com/compound-calculator): 模擬長期複利成長效果
+- [定期定額試算器](https://gulicalc.com/dca-calculator): 每月定投長期成果，含通膨調整
+- [存股回本計算器](https://gulicalc.com/payback-calculator): 幾年靠股利回本
+- [房貸計算機](https://gulicalc.com/mortgage-calculator): 月付金與年度本息對照
+- [薪資計算器](https://gulicalc.com/salary): 勞健保、勞退提撥後實領薪資
+- [所得稅試算](https://gulicalc.com/tax-calculator): 股利所得稅與扶養抵減試算
+
+## 熱門個股／ETF 配息教學
+
+- [0056 元大高股息配息計算](https://gulicalc.com/articles/0056-dividend-calculator)
+- [00878 國泰永續高股息配息計算](https://gulicalc.com/articles/00878-dividend-calculator)
+- [00919 群益台灣精選高息配息計算](https://gulicalc.com/articles/00919-dividend-calculator)
+- [00929 復華台灣科技優息配息計算](https://gulicalc.com/articles/00929-dividend-calculator)
+- [台積電 2330 配息計算](https://gulicalc.com/articles/tsmc-dividend-calculator)
+- [0056 vs 00878 完整比較](https://gulicalc.com/articles/0056-vs-00878)
+
+## 觀念與策略
+
+- [殖利率是什麼？怎麼算](https://gulicalc.com/articles/dividend-yield-explained)
+- [除息日完整攻略](https://gulicalc.com/articles/ex-dividend-date-guide)
+- [高殖利率股票的陷阱](https://gulicalc.com/articles/high-yield-stock-trap)
+- [存股策略完整指南](https://gulicalc.com/articles/stock-saving-strategy)
+- [全部文章列表](https://gulicalc.com/articles)
+
+## 注意事項
+
+- 本站內容僅供參考，不構成投資建議。配息數字以各投信／公司官方公告為準。
+- 個股即時報價透過台灣證券交易所（TWSE）公開 API 取得，快取一小時更新。
