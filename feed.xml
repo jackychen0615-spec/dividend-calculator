@@ -9,6 +9,91 @@
   <atom:link href="https://gulicalc.com/feed.xml" rel="self" type="application/rss+xml"/>
 
   <item>
+    <title>006208（富邦台50）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/006208-dividend-calculator</link>
+    <description>006208 富邦台50 市值型 ETF 配息計算與殖利率試算，與 0050 比較。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00934（中信成長高股息）月配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/00934-dividend-calculator</link>
+    <description>00934 中信成長高股息 ETF 月配息計算、殖利率試算與月月領息。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00936（台新永續高息中小）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/00936-dividend-calculator</link>
+    <description>00936 台新台灣永續高息中小 ETF 季配息計算與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>鴻海（2317）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/hon-hai-dividend</link>
+    <description>鴻海 2317 電子代工龍頭配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>聯發科（2454）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/mediatek-dividend</link>
+    <description>聯發科 2454 IC 設計龍頭配息計算，年配 76 元與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>第一金（2892）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/first-financial-dividend</link>
+    <description>第一金 2892 官股金控配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>合庫金（5880）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/taiwan-coop-dividend</link>
+    <description>合庫金 5880 官股金控配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>廣達（2382）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/quanta-dividend</link>
+    <description>廣達 2382 AI 伺服器受惠股配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>統一（1216）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/uni-president-dividend</link>
+    <description>統一 1216 食品內需定存股配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>台塑（1301）配息計算與殖利率試算</title>
+    <link>https://gulicalc.com/articles/formosa-plastics-dividend</link>
+    <description>台塑 1301 石化傳產股配息計算，年配息與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>0056 vs 0050 哪個好？高股息與市值型完整比較</title>
+    <link>https://gulicalc.com/articles/0056-vs-0050</link>
+    <description>0056 高股息 vs 0050 市值型 ETF 完整比較與殖利率試算。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00878 vs 00919 哪個好？高股息 ETF 完整比較</title>
+    <link>https://gulicalc.com/articles/00878-vs-00919</link>
+    <description>00878 vs 00919 兩檔人氣高股息 ETF 殖利率與選股比較。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00919 vs 00929 哪個好？季配 vs 月配高股息比較</title>
+    <link>https://gulicalc.com/articles/00919-vs-00929</link>
+    <description>00919 季配 vs 00929 月配高股息 ETF 完整比較。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+  <item>
+    <title>00939 vs 00940 哪個好？2024 低價高股息 ETF 比較</title>
+    <link>https://gulicalc.com/articles/00939-vs-00940</link>
+    <description>00939 vs 00940 兩檔 2024 低價高股息 ETF 完整比較。</description>
+    <pubDate>Fri, 30 May 2026 00:00:00 +0800</pubDate>
+  </item>
+
+  <item>
     <title>0050（元大台灣50）配息計算與殖利率試算</title>
     <link>https://gulicalc.com/articles/0050-dividend-calculator</link>
     <description>0050 元大台灣50 市值型 ETF 配息計算，殖利率試算與 0056 高股息定位比較。</description>
