@@ -270,6 +270,15 @@
       "dividendYear": "2025",
       "frequency": "月配",
       "note": "電子成長型，每月配息，近一年約 0.48 元"
+    },
+    {
+      "code": "00927",
+      "name": "群益半導體收益",
+      "price": 41,
+      "dividend": 2.29,
+      "dividendYear": "2025",
+      "frequency": "季配",
+      "note": "半導體主題，配息含資本利得、波動大，近一年約 2.29 元"
     }
   ]
 }
