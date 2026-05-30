@@ -693,16 +693,34 @@ function closePwa(ok){
   var badge = document.getElementById('stockBadge');
   var debounceTimer = null;
 
-  // Fetch stock data: try live API first, fallback to static JSON
-  fetch('/api/stocks')
-    .then(function(r){ if(!r.ok) throw new Error(); return r.json(); })
-    .then(function(data){ stocksData = data.stocks || []; console.log('Live API:', data.count, 'stocks'); })
-    .catch(function(){
-      fetch('data/stocks.json')
-        .then(function(r){ return r.json(); })
-        .then(function(data){ stocksData = data.stocks || []; console.log('Fallback: static JSON'); })
-        .catch(function(){});
+  // 同時載入「即時 TWSE API」與「精選靜態清單」並合併。
+  // 原因：/api/stocks 取自 TWSE 個股殖利率資料，不含 ETF；
+  //       若只用 API 會搜不到 0056 等 ETF，故與 stocks.json（含 ETF）合併。
+  function mergeStocks(live, stat) {
+    var map = {};
+    stat.forEach(function(s){ map[s.code] = s; });
+    live.forEach(function(s){
+      var ex = map[s.code];
+      if (ex) {
+        // 個股同時存在：用 API 的即時股價/殖利率，保留靜態的配息頻率
+        if (s.price) ex.price = s.price;
+        if (s.dividend != null) ex.dividend = s.dividend;
+        if (s.dividendYield != null) ex.dividendYield = s.dividendYield;
+      } else {
+        map[s.code] = s;
+      }
     });
+    return Object.keys(map).map(function(k){ return map[k]; });
+  }
+  Promise.all([
+    fetch('/api/stocks').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('data/stocks.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+  ]).then(function(res){
+    var live = (res[0] && res[0].stocks) ? res[0].stocks : [];
+    var stat = (res[1] && res[1].stocks) ? res[1].stocks : [];
+    stocksData = mergeStocks(live, stat);
+    console.log('Stocks loaded:', stocksData.length, '(live ' + live.length + ' + static ' + stat.length + ')');
+  });
 
   function fuzzyMatch(query, stock) {
     var q = query.toLowerCase();
@@ -790,7 +808,7 @@ function closePwa(ok){
       return;
     }
     debounceTimer = setTimeout(function() {
-      var results = stocksData.filter(function(s) { return fuzzyMatch(val, s); }).slice(0, 5);
+      var results = stocksData.filter(function(s) { return fuzzyMatch(val, s); }).slice(0, 8);
       renderDropdown(results);
     }, 200);
   });
