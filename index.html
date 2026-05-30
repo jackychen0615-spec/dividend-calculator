@@ -357,6 +357,21 @@
       <p style="font-size:.68rem;color:#9ca3af;text-align:center;margin-top:.5rem;line-height:1.4;">假設每年配息金額不變、且股利未再投入。若將股利再投入買股（複利），實際累積會更多，可用<a href="compound-calculator" style="color:#0891b2;">複利計算器</a>試算。</p>
     </div>
 
+    <!-- 嵌入此工具 -->
+    <div id="embedShare" style="max-width:600px;margin:1.5rem auto 0;padding:0 1rem;text-align:center;">
+      <button type="button" onclick="toggleEmbed()" style="background:none;border:1px solid #e5e7eb;color:#6b7280;border-radius:8px;padding:.5rem 1.1rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;">&lt;/&gt; 把這個計算器嵌入你的網站</button>
+      <div id="embedBox" style="display:none;margin-top:.8rem;text-align:left;background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;">
+        <p style="font-size:.8rem;color:#6b7280;margin-bottom:.5rem;">免費自由使用，複製下方程式碼貼到你的網站文章即可：</p>
+        <textarea id="embedCode" readonly onclick="this.select()" style="width:100%;height:88px;font-size:.72rem;font-family:monospace;color:#1f2937;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:.6rem;resize:vertical;outline:none;">&lt;iframe src="https://gulicalc.com/embed/" width="100%" height="460" style="border:0;max-width:440px;display:block;margin:0 auto;" title="股利殖利率計算器" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;text-align:center;color:#666;"&gt;免費&lt;a href="https://gulicalc.com/" target="_blank" rel="noopener"&gt;股利計算器&lt;/a&gt;由 GULICALC 提供&lt;/p&gt;</textarea>
+        <button type="button" id="embedCopyBtn" onclick="copyEmbed()" style="margin-top:.6rem;background:#0891b2;color:#fff;border:none;border-radius:8px;padding:.5rem 1.2rem;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;">複製程式碼</button>
+      </div>
+    </div>
+    <script>
+      function toggleEmbed(){var b=document.getElementById('embedBox');b.style.display=b.style.display==='none'?'block':'none';}
+      function copyEmbed(){var t=document.getElementById('embedCode'),btn=document.getElementById('embedCopyBtn');var done=function(){btn.textContent='已複製！';setTimeout(function(){btn.textContent='複製程式碼';},1800);};try{if(navigator.clipboard){navigator.clipboard.writeText(t.value).then(done,function(){t.select();document.execCommand('copy');done();});}else{t.select();document.execCommand('copy');done();}}catch(e){t.select();document.execCommand('copy');done();}}
+    </script>
+
     <div class="feedback-wrapper">
       <button class="feedback-btn">&#9733; 給我們回饋</button>
     </div>
