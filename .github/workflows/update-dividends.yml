@@ -1,0 +1,40 @@
+name: 自動更新 ETF 股價與配息
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 每天 01:00 UTC（台灣 09:00）
+  workflow_dispatch: {}    # 也可手動於 Actions 頁面按下執行
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-dividends
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 更新股價與配息
+        run: python scripts/update_etf_dividends.py
+
+      - name: Commit 變更（若有）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stocks.json data/etf-div-history.json
+          if git diff --staged --quiet; then
+            echo "無變更，略過 commit。"
+          else
+            git commit -m "chore: 自動更新 ETF 股價與配息 [skip ci]"
+            git push
+          fi
