@@ -74,9 +74,9 @@
     <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="/" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>薪資計算器</span></nav>
 
         <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('../images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
-      <h1>股利計算器 — 存股族的試算工具</h1>
-      <p style="max-width:500px;margin:0 auto .8rem;">買了幾張、每股配多少、殖利率多少 — 三個數字就算完。不用註冊，不收資料。</p>
-      <p style="margin:0;"><a href="../index.html#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始算</a></p>
+      <h1>薪資計算器 — 實領薪水試算</h1>
+      <p style="max-width:500px;margin:0 auto .8rem;">輸入月薪，立即算出勞保、健保、勞退自提後的實際入帳金額。2026 最新費率，不用註冊、不收資料。</p>
+      <p style="margin:0;"><a href="#salaryCalc" style="display:inline-block;padding:.5rem 1.5rem;background:#be123c;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始試算</a></p>
     </section>
 
     <!-- 工具列 -->
@@ -122,7 +122,7 @@
       </div>
       <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
     </section>
-<section style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
+<section id="salaryCalc" style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
       <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
         <div style="background:linear-gradient(135deg,#be123c,#9f1239);padding:1.2rem 1.5rem;">
           <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">薪資實領試算</h2>
@@ -206,6 +206,23 @@
         </div>
       </div>
     </div>
+
+    <section style="max-width:680px;margin:2rem auto 0;padding:0 1.1rem;line-height:1.7;">
+      <h2 style="font-size:1.25rem;color:#1f2937;margin-bottom:.6rem;">實領薪水怎麼算？</h2>
+      <p style="color:#374151;"><strong>實領薪水 = 月薪總額 − 勞保費（自付）− 健保費（自付）− 勞退自提（選填）。</strong>台灣上班族每月薪水並非全額入帳，會先扣掉勞保、健保的個人負擔，若有選擇勞退自提，也會一併扣除。以下用 2026 年最新費率說明每一項怎麼算。</p>
+
+      <h2 style="font-size:1.1rem;color:#1f2937;margin:1.4rem 0 .5rem;">勞保費（個人自付）</h2>
+      <p style="color:#374151;">2026 年勞工保險普通事故費率為 <strong>12.5%</strong>，其中勞工個人負擔 <strong>20%</strong>、雇主負擔 70%、政府負擔 10%。計算基礎是「投保薪資級距」而非實際月薪——你的月薪會被對應到最接近的級距金額。個人每月勞保費約等於：投保薪資 × 12.5% × 20%。</p>
+
+      <h2 style="font-size:1.1rem;color:#1f2937;margin:1.4rem 0 .5rem;">健保費（個人自付）</h2>
+      <p style="color:#374151;">2026 年健保費率為 <strong>5.17%</strong>，勞工個人負擔 <strong>30%</strong>、雇主負擔 60%、政府負擔 10%。個人每月健保費約等於：投保金額 × 5.17% × 30%。若有扶養眷屬（無工作收入的配偶、子女等），眷屬健保費也由你一併負擔，最多計收 3 口。</p>
+
+      <h2 style="font-size:1.1rem;color:#1f2937;margin:1.4rem 0 .5rem;">勞退自提（可節稅）</h2>
+      <p style="color:#374151;">除了雇主依法提撥的 6% 勞工退休金，勞工還可<strong>自願再提撥 0～6%</strong>到個人退休金專戶。自提金額可從當年度個人綜合所得總額中全額扣除，等於延後課稅——所得稅率越高的人，節稅效果越明顯。退休後領回時才課稅，通常稅率較低。想試算節稅效果，可搭配<a href="../tax-calculator" style="color:#0891b2;">所得稅試算器</a>。</p>
+
+      <h2 style="font-size:1.1rem;color:#1f2937;margin:1.4rem 0 .5rem;">為什麼用「投保級距」而不是實際月薪？</h2>
+      <p style="color:#374151;">勞保與健保都以「投保薪資級距」計算，不是用你的實際月薪。你的月薪會被對應到最接近的級距金額。例如月薪 32,000 元可能對應到 33,300 元的級距。上方計算器已自動幫你對應正確級距，輸入月薪即可得到貼近實際的扣除金額。實際數字仍以公司薪資單與勞保局核定為準。</p>
+    </section>
 
     <section class="faq-section">
       <h2>常見問題</h2>
