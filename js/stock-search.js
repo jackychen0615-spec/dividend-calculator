@@ -21,7 +21,7 @@
         if (s.price) ex.price = s.price;
         if (s.dividend != null) ex.dividend = s.dividend;
         if (s.dividendYield != null) ex.dividendYield = s.dividendYield;
-      } else {
+      } else if (s.dividend != null) {
         map[s.code] = s;
       }
     });

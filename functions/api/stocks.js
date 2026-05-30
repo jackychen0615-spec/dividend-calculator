@@ -78,6 +78,28 @@ export async function onRequest(context) {
       });
     }
 
+    // 加入 ETF 即時價：BWIBBU 殖利率資料不含 ETF，但 STOCK_DAY_ALL 有即時收盤價。
+    // ETF 配息資料 TWSE 不提供，留 null，由前端的 stocks.json 補配息、用此即時價算殖利率。
+    const added = new Set(stocks.map(s => s.code));
+    for (const item of priceData) {
+      const code = item.Code;
+      if (!code || added.has(code)) continue;
+      if (!/^00\d{3,4}$/.test(code)) continue; // ETF 代號 00 開頭
+      const price = parseFloat(item.ClosingPrice) || 0;
+      if (price <= 0) continue;
+      stocks.push({
+        code: code,
+        name: (item.Name || '').trim(),
+        price: price,
+        dividendYield: null,
+        dividend: null,
+        pe: null,
+        pb: null,
+        volume: parseInt(item.TradeVolume) || 0,
+        change: parseFloat(item.Change) || 0
+      });
+    }
+
     const result = {
       lastUpdated: new Date().toISOString().slice(0, 10),
       count: stocks.length,

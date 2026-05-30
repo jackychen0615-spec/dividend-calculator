@@ -480,9 +480,9 @@
   </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <script src="js/calculator.js?v=20260530d"></script>
-  <script src="js/feedback.js?v=20260530d"></script>
-  <script src="js/cookie-consent.js?v=20260530d"></script>
+  <script src="js/calculator.js?v=20260530f"></script>
+  <script src="js/feedback.js?v=20260530f"></script>
+  <script src="js/cookie-consent.js?v=20260530f"></script>
 
 <!-- Mobile Bottom Navigation -->
 <nav class="bottom-nav">
@@ -732,7 +732,7 @@ function closePwa(ok){
         if (s.price) ex.price = s.price;
         if (s.dividend != null) ex.dividend = s.dividend;
         if (s.dividendYield != null) ex.dividendYield = s.dividendYield;
-      } else {
+      } else if (s.dividend != null) {
         map[s.code] = s;
       }
     });
@@ -1078,6 +1078,6 @@ function closePwa(ok){
 })();
 </script>
 
-<script src="js/theme.js?v=20260530d"></script>
+<script src="js/theme.js?v=20260530f"></script>
 </body>
 </html>
