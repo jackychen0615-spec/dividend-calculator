@@ -129,6 +129,11 @@
           <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">還本試算</h2>
           <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">靠股利幾年能把成本賺回來</p>
         </div>
+        <div style="padding:1rem 1.5rem .5rem;position:relative;" id="stockSearchWrap">
+          <label for="stockSearch" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">快速帶入股票資料</label>
+          <input type="text" id="stockSearch" autocomplete="off" data-target-price="#buyPrice" data-target-dividend="#annualDividend" placeholder="輸入股票代號或名稱，例如：0056、台積電" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.95rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#d97706';this.style.background='#fff'" onblur="var el=this;setTimeout(function(){el.style.borderColor='#e5e7eb';el.style.background='#f9fafb'},150)">
+          <ul id="stockDropdown" style="display:none;position:absolute;left:1.5rem;right:1.5rem;top:100%;background:#fff;border:1.5px solid #e5e7eb;border-top:none;border-radius:0 0 10px 10px;list-style:none;margin:0;padding:0;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.08);max-height:240px;overflow-y:auto;"></ul>
+        </div>
         <div style="padding:1.2rem 1.5rem 1rem;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
             <div>
@@ -345,6 +350,7 @@
   </footer>
 
   <script src="js/payback-calculator.js?v=20260530d"></script>
+  <script src="js/stock-search.js?v=20260530d"></script>
   <script src="js/feedback.js?v=20260530d"></script>
   <script src="js/cookie-consent.js?v=20260530d"></script>
 

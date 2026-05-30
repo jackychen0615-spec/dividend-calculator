@@ -12,14 +12,28 @@
 - [薪資計算器](https://gulicalc.com/salary): 勞健保、勞退提撥後實領薪資
 - [所得稅試算](https://gulicalc.com/tax-calculator): 股利所得稅與扶養抵減試算
 
-## 熱門個股／ETF 配息教學
+## 熱門 ETF 配息計算
 
-- [0056 元大高股息配息計算](https://gulicalc.com/articles/0056-dividend-calculator)
-- [00878 國泰永續高股息配息計算](https://gulicalc.com/articles/00878-dividend-calculator)
-- [00919 群益台灣精選高息配息計算](https://gulicalc.com/articles/00919-dividend-calculator)
-- [00929 復華台灣科技優息配息計算](https://gulicalc.com/articles/00929-dividend-calculator)
-- [台積電 2330 配息計算](https://gulicalc.com/articles/tsmc-dividend-calculator)
-- [0056 vs 00878 完整比較](https://gulicalc.com/articles/0056-vs-00878)
+- [0050 元大台灣50](https://gulicalc.com/articles/0050-dividend-calculator)、[0056 元大高股息](https://gulicalc.com/articles/0056-dividend-calculator)、[006208 富邦台50](https://gulicalc.com/articles/006208-dividend-calculator)
+- [00878 國泰永續高股息](https://gulicalc.com/articles/00878-dividend-calculator)、[00919 群益台灣精選高息](https://gulicalc.com/articles/00919-dividend-calculator)、[00929 復華台灣科技優息](https://gulicalc.com/articles/00929-dividend-calculator)
+- [00939 統一台灣高息動能](https://gulicalc.com/articles/00939-dividend-calculator)、[00940 元大台灣價值高息](https://gulicalc.com/articles/00940-dividend-calculator)
+- [00900 富邦特選高股息30](https://gulicalc.com/articles/00900-dividend-calculator)、[00915 凱基優選高股息30](https://gulicalc.com/articles/00915-dividend-calculator)、[00918 大華優利高填息30](https://gulicalc.com/articles/00918-dividend-calculator)
+
+## 個股配息計算（金融股／權值股）
+
+- [台積電 2330](https://gulicalc.com/articles/tsmc-dividend-calculator)、[鴻海 2317](https://gulicalc.com/articles/hon-hai-dividend)、[聯發科 2454](https://gulicalc.com/articles/mediatek-dividend)、[中華電 2412](https://gulicalc.com/articles/chunghwa-telecom-dividend)
+- [國泰金 2882](https://gulicalc.com/articles/cathay-financial-dividend)、[富邦金 2881](https://gulicalc.com/articles/fubon-financial-dividend)、[中信金 2891](https://gulicalc.com/articles/ctbc-financial-dividend)、[第一金 2892](https://gulicalc.com/articles/first-financial-dividend)
+
+## ETF 比較（哪個好）
+
+- [0056 vs 0050（高股息 vs 市值型）](https://gulicalc.com/articles/0056-vs-0050)
+- [0056 vs 00878](https://gulicalc.com/articles/0056-vs-00878)、[00878 vs 00919](https://gulicalc.com/articles/00878-vs-00919)、[00919 vs 00929](https://gulicalc.com/articles/00919-vs-00929)、[00939 vs 00940](https://gulicalc.com/articles/00939-vs-00940)
+
+## 稅務與薪資
+
+- [年收入多少要繳多少稅？2026 各收入所得稅完整試算](https://gulicalc.com/articles/annual-income-tax-guide): 年收入 100 萬到 2000 萬各繳多少稅、所得稅回推
+- [股利稅後計算（合併 vs 分離課稅）](https://gulicalc.com/articles/dividend-tax-calculator)
+- [二代健保補充保費試算](https://gulicalc.com/articles/health-insurance-dividend)
 
 ## 觀念與策略
 
