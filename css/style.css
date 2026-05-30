@@ -1705,3 +1705,8 @@ main {
 [data-theme="dark"] .tour-tooltip h3 { color: #f1f5f9 !important; }
 [data-theme="dark"] .tour-tooltip p { color: #cbd5e1 !important; }
 [data-theme="dark"] .article-tag { color: #7dd3fc !important; }
+
+/* ===== Nav 品牌組合（股利計算器 / GULICALC）===== */
+.nav-brand { display: inline-flex; flex-direction: column; line-height: 1.02; }
+.nav-brand-en { font-size: .58rem; font-weight: 700; letter-spacing: .14em; color: var(--accent); margin-top: 1px; }
+[data-theme="dark"] .nav-brand-en { color: #38bdf8; }
