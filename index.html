@@ -347,6 +347,13 @@
       <p style="font-size:.68rem;color:#9ca3af;text-align:center;margin-top:.5rem;line-height:1.4;">分級標準參考台股近五年（2021-2025）上市公司平均殖利率約 3.8%。資料來源：台灣證券交易所、財報狗。<br>殖利率會隨股價變動，建議以五年平均殖利率評估較為準確。單一年度殖利率可能因特殊配息或股價波動而失真。</p>
     </div>
 
+    <!-- 累積領息長條圖 -->
+    <div id="dividendChartWrap" style="display:none;max-width:600px;margin:1.5rem auto;padding:0 1rem;">
+      <div style="font-size:.85rem;color:#4b5563;text-align:center;margin-bottom:.6rem;font-weight:600;">持有不同年數，累積可領股利</div>
+      <canvas id="dividendChart" height="170"></canvas>
+      <p style="font-size:.68rem;color:#9ca3af;text-align:center;margin-top:.5rem;line-height:1.4;">假設每年配息金額不變、且股利未再投入。若將股利再投入買股（複利），實際累積會更多，可用<a href="compound-calculator" style="color:#0891b2;">複利計算器</a>試算。</p>
+    </div>
+
     <div class="feedback-wrapper">
       <button class="feedback-btn">&#9733; 給我們回饋</button>
     </div>
@@ -454,9 +461,9 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <script src="js/calculator.js"></script>
-  <script src="js/feedback.js"></script>
-  <script src="js/cookie-consent.js"></script>
+  <script src="js/calculator.js?v=20260530d"></script>
+  <script src="js/feedback.js?v=20260530d"></script>
+  <script src="js/cookie-consent.js?v=20260530d"></script>
 
 <!-- Mobile Bottom Navigation -->
 <nav class="bottom-nav">
@@ -1052,6 +1059,6 @@ function closePwa(ok){
 })();
 </script>
 
-<script src="js/theme.js"></script>
+<script src="js/theme.js?v=20260530d"></script>
 </body>
 </html>

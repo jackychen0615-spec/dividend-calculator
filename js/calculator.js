@@ -8,6 +8,51 @@
   const yieldRateEl = $("#yieldRate");
 
   let resultsShown = false;
+  let divChart = null;
+
+  // 持有 N 年累積領息長條圖（annual = 每年可領股利）
+  function renderDividendChart(annual) {
+    const wrap = document.getElementById("dividendChartWrap");
+    const canvas = document.getElementById("dividendChart");
+    if (!wrap || !canvas || typeof Chart === "undefined") return;
+    if (!(annual > 0)) {
+      wrap.style.display = "none";
+      if (divChart) { divChart.destroy(); divChart = null; }
+      return;
+    }
+    wrap.style.display = "block";
+    const years = [1, 3, 5, 10, 20];
+    const data = years.map((y) => Math.round(annual * y));
+    if (divChart) {
+      divChart.data.datasets[0].data = data;
+      divChart.update();
+      return;
+    }
+    divChart = new Chart(canvas.getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: years.map((y) => y + " 年"),
+        datasets: [{
+          label: "累積領息",
+          data: data,
+          backgroundColor: "#10b981",
+          borderRadius: 6,
+          maxBarThickness: 48,
+        }],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (c) => c.parsed.y.toLocaleString("zh-TW") + " 元" } },
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { callback: (v) => v.toLocaleString("zh-TW") } },
+          x: { grid: { display: false } },
+        },
+      },
+    });
+  }
 
   function calculate() {
     const price = Math.max(0, parseFloat(stockPrice.value) || 0);
@@ -60,6 +105,8 @@
     } else if (gauge) {
       gauge.style.display = 'none';
     }
+
+    renderDividendChart(price > 0 && shareCount > 0 && div > 0 ? totalDividend : 0);
   }
 
   [stockPrice, shares, dividend].forEach((input) => {
