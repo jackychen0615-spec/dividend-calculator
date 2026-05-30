@@ -1710,3 +1710,9 @@ main {
 .nav-brand { display: inline-flex; flex-direction: column; line-height: 1.02; }
 .nav-brand-en { font-size: .58rem; font-weight: 700; letter-spacing: .14em; color: var(--accent); margin-top: 1px; }
 [data-theme="dark"] .nav-brand-en { color: #38bdf8; }
+
+/* ===== 手動廣告版位（空的不顯示，填入 AdSense 碼後才佔位）===== */
+.ad-slot { max-width: 600px; margin: 1.6rem auto; padding: 0 1rem; text-align: center; }
+.ad-slot:empty { display: none; }
+.ad-slot ins { display: block; }
+.ad-slot-demo { min-height: 100px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border-color); border-radius: 10px; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.02) 10px, rgba(0,0,0,.02) 20px); color: #b0b8c4; font-size: .72rem; letter-spacing: .05em; }
