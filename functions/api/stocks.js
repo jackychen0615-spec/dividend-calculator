@@ -10,7 +10,7 @@
 
 export async function onRequest(context) {
   const cache = caches.default;
-  const cacheKey = new Request('https://gulicalc.com/api/stocks', context.request);
+  const cacheKey = new Request('https://gulicalc.com/api/stocks?v=2', context.request);
 
   // 先查快取
   let cached = await cache.match(cacheKey);
@@ -84,7 +84,7 @@ export async function onRequest(context) {
     for (const item of priceData) {
       const code = item.Code;
       if (!code || added.has(code)) continue;
-      if (!/^00\d{3,4}$/.test(code)) continue; // ETF 代號 00 開頭
+      if (!/^00\d{2,4}$/.test(code)) continue; // ETF 代號 00 開頭（含 0050/0056 等 4 碼）
       const price = parseFloat(item.ClosingPrice) || 0;
       if (price <= 0) continue;
       stocks.push({
