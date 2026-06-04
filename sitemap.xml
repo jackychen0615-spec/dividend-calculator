@@ -500,4 +500,19 @@
     <lastmod>2026-06-04</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://gulicalc.com/etf-guide</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gulicalc.com/stock-dividend-guide</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gulicalc.com/financial-tools-guide</loc>
+    <lastmod>2026-06-05</lastmod>
+    <priority>0.9</priority>
+  </url>
 </urlset>
