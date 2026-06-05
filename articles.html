@@ -89,7 +89,16 @@
         <button class="cat-tab" onclick="showCat('diary',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">存股日記</button>
         <button class="cat-tab" onclick="showCat('news',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">時事與房貸</button>
       </div>
-      <style>.cat-tabs::-webkit-scrollbar{display:none}</style>
+      <style>.cat-tabs::-webkit-scrollbar{display:none}.cat-tabs{cursor:grab}.cat-tabs.dragging{cursor:grabbing;user-select:none}</style>
+      <script>
+      (function(){
+        var el=document.querySelector('.cat-tabs'),down=false,startX,scrollL;
+        el.addEventListener('mousedown',function(e){down=true;el.classList.add('dragging');startX=e.pageX-el.offsetLeft;scrollL=el.scrollLeft});
+        el.addEventListener('mouseleave',function(){down=false;el.classList.remove('dragging')});
+        el.addEventListener('mouseup',function(){down=false;el.classList.remove('dragging')});
+        el.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();var x=e.pageX-el.offsetLeft;el.scrollLeft=scrollL-(x-startX)});
+      })();
+      </script>
     </nav>
 
     <!-- 分類一：入門基礎 -->
