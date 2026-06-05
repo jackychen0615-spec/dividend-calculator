@@ -86,6 +86,7 @@
         <button class="cat-tab" onclick="showCat('stocks',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">個股配息</button>
         <button class="cat-tab" onclick="showCat('strategy',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">策略與稅務</button>
         <button class="cat-tab" onclick="showCat('salary',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">薪資與勞健保</button>
+        <button class="cat-tab" onclick="showCat('diary',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">存股日記</button>
         <button class="cat-tab" onclick="showCat('news',this)" style="flex-shrink:0;padding:.6rem 1rem;border:none;background:none;font-size:.88rem;font-weight:600;color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:inherit;white-space:nowrap;">時事與房貸</button>
       </div>
       <style>.cat-tabs::-webkit-scrollbar{display:none}</style>
@@ -536,7 +537,45 @@
       </div>
     </div>
 
-    <!-- 分類六：時事與房貸 -->
+    <!-- 分類六：存股日記 -->
+    <div id="diary" data-cat="diary" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
+      <h2 style="font-size:1.1rem;font-weight:700;color:#7c3aed;border-left:4px solid #7c3aed;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> 我的存股日記</h2>
+      <p style="font-size:.85rem;color:var(--text-muted,#888);margin-bottom:1rem;">真實持倉分享、每月操作心得、個人觀點。不是投資建議，是一個存股族的真實紀錄。</p>
+    </div>
+    <div class="articles-grid" data-cat="diary" style="max-width:700px;margin:.5rem auto 2rem;">
+      <div class="article-card">
+        <h3><a href="articles/taiwan-stock-market-june-2026">2026 年 6 月：台股衝上 46,000 點，我繼續定期定額</a></h3>
+        <p>大盤創新高但我沒加碼也沒減碼，附我的真實持倉截圖和操作邏輯。</p>
+        <span class="article-tag">2026.06</span> <span class="article-tag">NEW</span>
+      </div>
+      <div class="article-card">
+        <h3><a href="articles/stock-saving-recommendations-2026">我自己在存的 5 檔標的：為什麼選這些</a></h3>
+        <p>0056、00878、00919、兆豐金、中華電，每檔的選股邏輯和優缺點。</p>
+        <span class="article-tag">持股分享</span>
+      </div>
+      <div class="article-card">
+        <h3><a href="articles/deposit-vs-etf-comparison">我把 100 萬分兩邊放了一年：定存 vs ETF 結果</a></h3>
+        <p>實際數字比較定存 1.5% 和 0056 殖利率 6%，含風險分析。</p>
+        <span class="article-tag">實驗紀錄</span>
+      </div>
+      <div class="article-card">
+        <h3><a href="articles/stock-saving-monthly-simulation">每月存 5000 元，10 年後我算了一下結果</a></h3>
+        <p>用複利計算器跑了不同金額和殖利率的模擬，前 3 年真的很無感。</p>
+        <span class="article-tag">試算紀錄</span>
+      </div>
+      <div class="article-card">
+        <h3><a href="articles/passive-income-monthly-10k">存股月領 1 萬要多少本金？我算給你看</a></h3>
+        <p>高股息 ETF、金融股、台積電三條路線，各需要多少本金。</p>
+        <span class="article-tag">目標試算</span>
+      </div>
+      <div class="article-card">
+        <h3><a href="articles/china-ai-token-futures-impact">中國推 AI 期貨，我的存股策略要不要改？</a></h3>
+        <p>AI Token 期貨對台積電、廣達的影響分析，結論：不改。</p>
+        <span class="article-tag">觀點</span> <span class="article-tag">NEW</span>
+      </div>
+    </div>
+
+    <!-- 分類七：時事與房貸 -->
     <div id="news" data-cat="news" style="max-width:700px;margin:2.5rem auto 0;padding:0 1rem;">
       <h2 style="font-size:1.1rem;font-weight:700;color:#0d9488;border-left:4px solid #0d9488;padding-left:.75rem;margin-bottom:1rem;"><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 5v14H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> 時事分析與房貸</h2>
     </div>
