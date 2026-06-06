@@ -1,16 +1,36 @@
 /**
  * Cloudflare Pages Function — /api/stocks
  *
- * 合併 TWSE 兩個 API：
- * 1. BWIBBU_ALL — 殖利率、本益比
- * 2. STOCK_DAY_ALL — 收盤價、成交量
- *
- * 快取 1 小時，避免每次都打 TWSE
+ * 盤中（週一到五 9:00-14:00 台灣時間）：
+ *   用 mis.twse.com.tw 即時報價 + BWIBBU 殖利率，快取 5 分鐘
+ * 盤後 / 週末：
+ *   用 STOCK_DAY_ALL 收盤價 + BWIBBU 殖利率，快取 1-6 小時
  */
 
 export async function onRequest(context) {
+  // 判斷台灣時間
+  const now = new Date();
+  const twHour = (now.getUTCHours() + 8) % 24;
+  const twDay = new Date(now.getTime() + 8 * 3600 * 1000).getUTCDay(); // 0=Sun, 6=Sat
+  const isWeekday = twDay >= 1 && twDay <= 5;
+  const isMarketHours = isWeekday && twHour >= 9 && twHour < 14;
+  const isAfterClose = isWeekday && twHour >= 14 && twHour < 15;
+
+  // 快取策略
+  let cacheTTL;
+  if (isMarketHours) {
+    cacheTTL = 300; // 盤中：5 分鐘
+  } else if (isAfterClose) {
+    cacheTTL = 3600; // 剛收盤：1 小時
+  } else if (!isWeekday) {
+    cacheTTL = 21600; // 週末：6 小時
+  } else {
+    cacheTTL = 3600; // 盤前/盤後：1 小時
+  }
+
+  const cacheVersion = isMarketHours ? 'realtime' : 'close';
   const cache = caches.default;
-  const cacheKey = new Request('https://gulicalc.com/api/stocks?v=2', context.request);
+  const cacheKey = new Request(`https://gulicalc.com/api/stocks?v=3&m=${cacheVersion}`, context.request);
 
   // 先查快取
   let cached = await cache.match(cacheKey);
@@ -19,89 +39,186 @@ export async function onRequest(context) {
   }
 
   try {
-    // 同時打兩個 API
-    const [yieldRes, priceRes] = await Promise.all([
-      fetch('https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL', {
-        headers: { 'Accept': 'application/json' }
-      }),
-      fetch('https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL', {
-        headers: { 'Accept': 'application/json' }
-      })
-    ]);
+    let stocks = [];
+    const headers = { 'Accept': 'application/json', 'User-Agent': 'GULICALC/1.0' };
 
-    if (!yieldRes.ok || !priceRes.ok) {
-      return new Response(JSON.stringify({ error: 'TWSE API error' }), {
-        status: 502,
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
-      });
-    }
+    // 永遠抓殖利率資料
+    let yieldMap = {};
+    try {
+      const yieldRes = await fetch('https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL', { headers });
+      if (yieldRes.ok) {
+        const yieldData = await yieldRes.json();
+        for (const item of yieldData) {
+          if (item.Code) {
+            yieldMap[item.Code] = {
+              dividendYield: parseFloat(item.DividendYield) || 0,
+              pe: parseFloat(item.PEratio) || null,
+              pb: parseFloat(item.PBratio) || null
+            };
+          }
+        }
+      }
+    } catch (e) { /* continue without yield data */ }
 
-    const yieldData = await yieldRes.json();
-    const priceData = await priceRes.json();
+    if (isMarketHours) {
+      // === 盤中：用即時報價 API ===
+      // mis.twse.com.tw 一次最多查 20 檔，我們查熱門標的
+      const hotCodes = [
+        '0050','0056','00713','00878','00919','00929','00940','006208',
+        '00882','00900','00915','00918','00927','00932','00934','00936','00939','00943',
+        '2330','2317','2382','2454',
+        '2881','2882','2884','2886','2891','2892','5880',
+        '1216','1301','2412','2603','2308','2883','2880'
+      ];
 
-    // 建立收盤價 map
-    const priceMap = {};
-    for (const item of priceData) {
-      if (item.Code && item.ClosingPrice) {
-        priceMap[item.Code] = {
-          price: parseFloat(item.ClosingPrice) || 0,
+      // 分批查（每批 20 檔）
+      const batches = [];
+      for (let i = 0; i < hotCodes.length; i += 20) {
+        batches.push(hotCodes.slice(i, i + 20));
+      }
+
+      for (const batch of batches) {
+        const exCh = batch.map(c => `tse_${c}.tw`).join('|');
+        try {
+          const rtRes = await fetch(`https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=${exCh}`, { headers });
+          if (rtRes.ok) {
+            const rtData = await rtRes.json();
+            if (rtData.msgArray) {
+              for (const item of rtData.msgArray) {
+                const code = item.c;
+                const price = parseFloat(item.z) || parseFloat(item.y) || 0; // z=成交價, y=昨收
+                const prevClose = parseFloat(item.y) || 0;
+                const change = price > 0 && prevClose > 0 ? Math.round((price - prevClose) * 100) / 100 : 0;
+                const volume = parseInt(item.v) || 0;
+
+                const yi = yieldMap[code] || {};
+                const dividendYield = yi.dividendYield || 0;
+                const dividend = price > 0 && dividendYield > 0
+                  ? Math.round(price * dividendYield / 100 * 100) / 100 : 0;
+
+                stocks.push({
+                  code: code,
+                  name: (item.n || '').trim(),
+                  price: price,
+                  dividendYield: dividendYield || null,
+                  dividend: dividend || null,
+                  pe: yi.pe || null,
+                  pb: yi.pb || null,
+                  volume: volume,
+                  change: change,
+                  realtime: true
+                });
+              }
+            }
+          }
+        } catch (e) { /* skip batch */ }
+      }
+
+      // 補充：抓 STOCK_DAY_ALL 填補即時 API 沒有的股票
+      try {
+        const priceRes = await fetch('https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL', { headers });
+        if (priceRes.ok) {
+          const priceData = await priceRes.json();
+          const existCodes = new Set(stocks.map(s => s.code));
+          for (const item of priceData) {
+            if (!item.Code || existCodes.has(item.Code)) continue;
+            const price = parseFloat(item.ClosingPrice) || 0;
+            if (price <= 0) continue;
+            const yi = yieldMap[item.Code] || {};
+            const dividendYield = yi.dividendYield || 0;
+            const dividend = price > 0 && dividendYield > 0
+              ? Math.round(price * dividendYield / 100 * 100) / 100 : 0;
+
+            stocks.push({
+              code: item.Code,
+              name: (item.Name || '').trim(),
+              price: price,
+              dividendYield: dividendYield || null,
+              dividend: dividend || null,
+              pe: yi.pe || null,
+              pb: yi.pb || null,
+              volume: parseInt(item.TradeVolume) || 0,
+              change: parseFloat(item.Change) || 0,
+              realtime: false
+            });
+          }
+        }
+      } catch (e) { /* continue */ }
+
+    } else {
+      // === 盤後 / 週末：用收盤價 API ===
+      const priceRes = await fetch('https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL', { headers });
+      if (!priceRes.ok) {
+        return new Response(JSON.stringify({ error: 'TWSE API error' }), {
+          status: 502,
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+        });
+      }
+
+      const priceData = await priceRes.json();
+      const priceMap = {};
+      for (const item of priceData) {
+        if (item.Code && item.ClosingPrice) {
+          priceMap[item.Code] = {
+            name: (item.Name || '').trim(),
+            price: parseFloat(item.ClosingPrice) || 0,
+            volume: parseInt(item.TradeVolume) || 0,
+            change: parseFloat(item.Change) || 0
+          };
+        }
+      }
+
+      // 合併殖利率 + 收盤價
+      const addedCodes = new Set();
+      for (const code in yieldMap) {
+        const yi = yieldMap[code];
+        const pi = priceMap[code] || {};
+        const price = pi.price || 0;
+        const dividendYield = yi.dividendYield || 0;
+        const dividend = price > 0 && dividendYield > 0
+          ? Math.round(price * dividendYield / 100 * 100) / 100 : 0;
+
+        stocks.push({
+          code: code,
+          name: pi.name || code,
+          price: price,
+          dividendYield: dividendYield,
+          dividend: dividend,
+          pe: yi.pe,
+          pb: yi.pb,
+          volume: pi.volume || 0,
+          change: pi.change || 0,
+          realtime: false
+        });
+        addedCodes.add(code);
+      }
+
+      // 補 ETF（BWIBBU 不含 ETF）
+      for (const item of priceData) {
+        const code = item.Code;
+        if (!code || addedCodes.has(code)) continue;
+        if (!/^00\d{2,4}$/.test(code)) continue;
+        const price = parseFloat(item.ClosingPrice) || 0;
+        if (price <= 0) continue;
+        stocks.push({
+          code: code,
+          name: (item.Name || '').trim(),
+          price: price,
+          dividendYield: null,
+          dividend: null,
+          pe: null,
+          pb: null,
           volume: parseInt(item.TradeVolume) || 0,
-          change: parseFloat(item.Change) || 0
-        };
+          change: parseFloat(item.Change) || 0,
+          realtime: false
+        });
       }
     }
 
-    // 合併資料
-    const stocks = [];
-    for (const item of yieldData) {
-      if (!item.Code || !item.Name) continue;
-
-      const priceInfo = priceMap[item.Code] || {};
-      const dividendYield = parseFloat(item.DividendYield) || 0;
-      const price = priceInfo.price || 0;
-
-      // 從殖利率反算每股股利：dividend = price * yield / 100
-      const dividend = price > 0 && dividendYield > 0
-        ? Math.round(price * dividendYield / 100 * 100) / 100
-        : 0;
-
-      stocks.push({
-        code: item.Code,
-        name: item.Name.trim(),
-        price: price,
-        dividendYield: dividendYield,
-        dividend: dividend,
-        pe: parseFloat(item.PEratio) || null,
-        pb: parseFloat(item.PBratio) || null,
-        volume: priceInfo.volume || 0,
-        change: priceInfo.change || 0
-      });
-    }
-
-    // 加入 ETF 即時價：BWIBBU 殖利率資料不含 ETF，但 STOCK_DAY_ALL 有即時收盤價。
-    // ETF 配息資料 TWSE 不提供，留 null，由前端的 stocks.json 補配息、用此即時價算殖利率。
-    const added = new Set(stocks.map(s => s.code));
-    for (const item of priceData) {
-      const code = item.Code;
-      if (!code || added.has(code)) continue;
-      if (!/^00\d{2,4}$/.test(code)) continue; // ETF 代號 00 開頭（含 0050/0056 等 4 碼）
-      const price = parseFloat(item.ClosingPrice) || 0;
-      if (price <= 0) continue;
-      stocks.push({
-        code: code,
-        name: (item.Name || '').trim(),
-        price: price,
-        dividendYield: null,
-        dividend: null,
-        pe: null,
-        pb: null,
-        volume: parseInt(item.TradeVolume) || 0,
-        change: parseFloat(item.Change) || 0
-      });
-    }
-
     const result = {
-      lastUpdated: new Date().toISOString().slice(0, 10),
+      lastUpdated: new Date().toISOString(),
+      mode: isMarketHours ? 'realtime' : 'closing',
+      cacheTTL: cacheTTL,
       count: stocks.length,
       stocks: stocks
     };
@@ -110,13 +227,11 @@ export async function onRequest(context) {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'public, max-age=3600' // 1 小時
+        'Cache-Control': `public, max-age=${cacheTTL}`
       }
     });
 
-    // 存入快取
     context.waitUntil(cache.put(cacheKey, response.clone()));
-
     return response;
 
   } catch (err) {
