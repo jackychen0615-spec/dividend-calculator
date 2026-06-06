@@ -1,0 +1,37 @@
+name: 每月自動生成台股月報
+
+on:
+  schedule:
+    - cron: '0 2 1 * *'   # 每月 1 號 02:00 UTC（台灣 10:00）
+  workflow_dispatch: {}    # 也可手動執行
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-report
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 生成月報文章
+        run: python scripts/generate_monthly_report.py
+
+      - name: Commit 變更（若有）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "auto: $(date +%Y年%-m月)台股月報自動生成"
+          git push
