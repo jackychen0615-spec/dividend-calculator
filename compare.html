@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WQV8QQDBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5WQV8QQDBJ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>個股比較器 — 兩檔股票殖利率完整比較 - GULICALC</title>
+  <meta name="description" content="個股比較器：同時比較兩檔台股的殖利率、配息、本益比、股價、成交量，一眼看出哪檔存股更划算。免費、免註冊，所有計算在瀏覽器完成。">
+  <meta property="og:title" content="個股比較器 — 兩檔股票殖利率完整比較 - GULICALC">
+  <meta property="og:description" content="同時比較兩檔台股的殖利率、配息、本益比、股價與成交量，快速找出更划算的存股標的。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/compare">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="GULICALC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="個股比較器 — 兩檔股票殖利率完整比較 - GULICALC">
+  <meta name="twitter:description" content="同時比較兩檔台股的殖利率、配息、本益比、股價與成交量，快速找出更划算的存股標的。">
+  <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://gulicalc.com/compare">
+  <link rel="stylesheet" href="css/style.css?v=20260530e">
+  <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "個股比較器 - 兩檔股票殖利率完整比較",
+    "url": "https://gulicalc.com/compare",
+    "description": "同時比較兩檔台股的殖利率、配息、本益比、股價與成交量，快速找出更划算的存股標的。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "zh-TW",
+    "isAccessibleForFree": true,
+    "datePublished": "2026-06-11",
+    "featureList": ["殖利率比較", "配息金額比較", "本益比比較", "股價漲跌比較", "成交量比較"],
+    "screenshot": "https://gulicalc.com/images/og-image.png",
+    "author": {"@type": "Person", "name": "Jacky Chen", "url": "https://gulicalc.com/about"},
+    "publisher": {"@type": "Organization", "name": "股利計算器", "url": "https://gulicalc.com", "logo": {"@type": "ImageObject", "url": "https://gulicalc.com/images/logo-nav.png"}},
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "殖利率越高越好嗎？", "acceptedAnswer": {"@type": "Answer", "text": "殖利率高不代表一定好。高殖利率可能來自股價大幅下跌，需同時評估公司獲利能力、配息穩定性與本益比。建議搭配本益比、EPS 成長等指標一起比較，才能做出更好的存股決策。"}},
+      {"@type": "Question", "name": "本益比多少才算合理？", "acceptedAnswer": {"@type": "Answer", "text": "台股一般以本益比 15 倍以下視為相對合理，但不同產業差異很大。科技成長股本益比通常較高，金融股、傳產股則較低。比較同類型股票的本益比，比跨產業比較更有意義。"}},
+      {"@type": "Question", "name": "如何用這個工具比較兩檔股票？", "acceptedAnswer": {"@type": "Answer", "text": "在左右兩個搜尋框分別輸入股票代號或名稱，從下拉選單選取目標股票，系統會自動顯示比較表格，包含股價、殖利率、配息金額、本益比、成交量與漲跌幅，並以綠色標示各項目的較優數值。"}},
+      {"@type": "Question", "name": "比較器的資料是即時的嗎？", "acceptedAnswer": {"@type": "Answer", "text": "本比較器的資料由 GULICALC 資料庫提供，每日更新一次。資料包含最新收盤價、近一年配息、殖利率與本益比等資訊，適合做中長期存股決策參考，不適合當日交易使用。"}}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://gulicalc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "個股比較器"}
+    ]
+  }]
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["main h1",".faq-question",".faq-answer-inner"]}}
+  </script>
+  <script>try{if(localStorage.getItem("gulicalc_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <style>
+    .compare-search-wrap { position: relative; }
+    .compare-dropdown {
+      position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+      background: #fff; border: 1.5px solid #6366f1; border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(99,102,241,.15); z-index: 100;
+      max-height: 220px; overflow-y: auto; display: none;
+    }
+    .compare-dropdown.open { display: block; }
+    .compare-dropdown-item {
+      padding: .55rem .8rem; cursor: pointer; font-size: .9rem; color: #1f2937;
+      border-bottom: 1px solid #f3f4f6; transition: background .1s;
+    }
+    .compare-dropdown-item:last-child { border-bottom: none; }
+    .compare-dropdown-item:hover { background: #eef2ff; }
+    .compare-dropdown-item .di-code { font-weight: 700; color: #4f46e5; margin-right: .4rem; }
+    .compare-dropdown-item .di-name { color: #6b7280; font-size: .82rem; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .compare-table th { font-size: .78rem; color: #6b7280; font-weight: 600; padding: .5rem .6rem; background: #f9fafb; text-align: left; border-bottom: 2px solid #e5e7eb; }
+    .compare-table th:not(:first-child) { text-align: center; }
+    .compare-table td { padding: .55rem .6rem; border-bottom: 1px solid #f3f4f6; color: #1f2937; vertical-align: middle; }
+    .compare-table td:not(:first-child) { text-align: center; font-weight: 600; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-win { background: #f0fdf4; color: #16a34a; border-radius: 6px; }
+    .compare-label { font-size: .72rem; color: #9ca3af; display: block; margin-top: .1rem; font-weight: 400; }
+    .compare-tag-win { display: inline-block; background: #dcfce7; color: #16a34a; font-size: .68rem; font-weight: 700; padding: .1rem .4rem; border-radius: 999px; margin-left: .3rem; }
+    .compare-row-label { font-size: .85rem; color: #374151; font-weight: 600; }
+    .compare-up { color: #dc2626; }
+    .compare-down { color: #16a34a; }
+    .compare-auto-text { background: #eef2ff; border-radius: 10px; padding: .9rem 1rem; font-size: .88rem; color: #3730a3; line-height: 1.6; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="https://gulicalc.com/" class="nav-logo"><img src="images/logo-nav.png" alt="GULICALC"> <span class="nav-brand">股利計算器<span class="nav-brand-en">GULICALC</span></span></a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="https://gulicalc.com/">首頁</a></li>
+        <li><a href="https://gulicalc.com/articles">文章</a></li>
+        <li><a href="https://gulicalc.com/about">關於我們</a></li>
+        <li><a href="https://gulicalc.com/contact">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="https://gulicalc.com/" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>個股比較器</span></nav>
+
+    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
+      <h1>個股比較器 — 兩檔股票殖利率完整比較</h1>
+      <p style="max-width:500px;margin:0 auto .8rem;">輸入兩個股票代號，一次比較殖利率、配息、本益比、股價、成交量。找出更值得存的那一檔。</p>
+      <p style="margin:0;"><a href="#compare-tool" style="display:inline-block;padding:.5rem 1.5rem;background:#4f46e5;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始比較</a></p>
+    </section>
+
+    <!-- 工具列 -->
+    <section style="max-width:100%;margin:0 auto 1rem;overflow:hidden;">
+      <h2 style="font-size:1.05rem;text-align:center;margin-bottom:.3rem;color:#1f2937;font-weight:700;padding:0 1rem;">免費試算工具</h2>
+      <p style="text-align:center;font-size:.75rem;color:#9ca3af;margin-bottom:1rem;padding:0 1rem;">所有計算在瀏覽器完成，不收集任何資料</p>
+      <div style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;justify-content:center;" class="tool-carousel-sub">
+        <a href="https://gulicalc.com/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/favicon-32.png" alt="股利計算器" style="width:44px;height:44px;border-radius:10px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">股利計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">殖利率 / 總股利</span>
+        </a>
+        <a href="https://gulicalc.com/compound-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-compound.png" alt="複利計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">複利試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">長期複利成長</span>
+        </a>
+        <a href="https://gulicalc.com/payback-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-payback.png" alt="還本計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">還本試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">幾年靠股利回本</span>
+        </a>
+        <a href="https://gulicalc.com/dca-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-dca.png" alt="定期定額計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">定期定額</strong>
+          <span style="font-size:.7rem;color:#6b7280;">每月定投成果</span>
+        </a>
+        <a href="https://gulicalc.com/salary/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-salary.png" alt="薪資計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">薪資實領</strong>
+          <span style="font-size:.7rem;color:#6b7280;">勞保 / 健保 / 勞退</span>
+        </a>
+        <a href="https://gulicalc.com/tax-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-tax.png" alt="所得稅試算" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">所得稅試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">報稅 / 股利節稅</span>
+        </a>
+        <a href="https://gulicalc.com/mortgage-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-mortgage.png" alt="房貸計算機" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">房貸計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">新青安 / 月付金</span>
+        </a>
+      </div>
+      <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
+    </section>
+
+    <!-- Compare Tool Card -->
+    <section id="compare-tool" style="max-width:560px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#4f46e5,#4338ca);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">個股比較器</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">搜尋兩檔股票，自動比較所有關鍵指標</p>
+        </div>
+        <div style="padding:1.2rem 1.5rem 1.4rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <!-- Stock A -->
+            <div>
+              <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">股票 A</label>
+              <div class="compare-search-wrap">
+                <input type="text" id="searchA" placeholder="代號或名稱" autocomplete="off" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.95rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#4f46e5';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+                <div class="compare-dropdown" id="dropdownA"></div>
+              </div>
+              <div id="selectedA" style="margin-top:.4rem;min-height:1.3rem;font-size:.78rem;color:#4f46e5;font-weight:600;"></div>
+            </div>
+            <!-- Stock B -->
+            <div>
+              <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">股票 B</label>
+              <div class="compare-search-wrap">
+                <input type="text" id="searchB" placeholder="代號或名稱" autocomplete="off" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.95rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;" onfocus="this.style.borderColor='#4f46e5';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+                <div class="compare-dropdown" id="dropdownB"></div>
+              </div>
+              <div id="selectedB" style="margin-top:.4rem;min-height:1.3rem;font-size:.78rem;color:#4338ca;font-weight:600;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare Results -->
+    <div id="compareResult" style="display:none;max-width:600px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="padding:1rem 1.2rem .8rem;border-bottom:1px solid #f3f4f6;">
+          <h3 style="font-size:1rem;margin:0;color:#1f2937;font-weight:700;">比較結果</h3>
+          <p style="font-size:.72rem;color:#9ca3af;margin:.2rem 0 0;">綠色底色為該指標較優的一方</p>
+        </div>
+        <div style="overflow-x:auto;padding:.2rem 0;">
+          <table class="compare-table" style="min-width:320px;">
+            <thead>
+              <tr>
+                <th style="width:34%;">指標</th>
+                <th id="thA" style="width:33%;">股票 A</th>
+                <th id="thB" style="width:33%;">股票 B</th>
+              </tr>
+            </thead>
+            <tbody id="compareTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="compareAutoText" class="compare-auto-text" style="display:none;"></div>
+      <div style="font-size:.68rem;color:#9ca3af;text-align:center;margin-top:.6rem;line-height:1.5;">資料每日更新，僅供參考，不構成任何投資建議。投資前請自行研究評估。</div>
+    </div>
+
+    <div class="ad-slot" data-ad-pos="tool-below-calc"></div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">殖利率越高越好嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">殖利率高並不代表一定是好的存股標的。高殖利率有時來自股價大幅下跌，代表市場對公司前景悲觀，未來配息可能縮水甚至取消。建議搭配本益比、近年配息歷史、EPS 成長趨勢一起評估。穩定連續配息、殖利率維持在合理水準（台股一般 4%~8%）的公司，通常比追求超高殖利率更安全。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">本益比多少才算合理？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">台股整體本益比長期平均約 15~18 倍。一般而言，本益比低於 15 倍相對便宜，高於 20 倍則需評估成長性是否支撐。不同產業差距很大：金融股本益比通常 10~15 倍，科技成長股可能達 30 倍以上，傳統產業則多在 10~15 倍之間。跨產業比較本益比意義有限，同產業比較才更有參考價值。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">如何用這個工具比較兩檔股票？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">在左右兩個搜尋框分別輸入股票代號（如 0056）或公司名稱（如元大高股息），從下拉選單選取對應股票。兩檔都選定後，系統會自動顯示完整比較表格，包含股價、殖利率、年配息、本益比、成交量與漲跌幅，綠色底色代表該欄位數值較優的一方，下方也會自動生成整體比較摘要。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">比較器的資料是即時的嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">本比較器資料由 GULICALC 資料庫提供，每日收盤後更新一次，包含最新收盤價、近一年配息總額、殖利率與本益比等資訊。資料適合做中長期存股決策參考，不適合當日沖銷或短線交易。若需即時報價，請搭配台灣證券交易所或各大券商的即時行情系統。</div></div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>如何挑選更好的存股標的？</h2>
+      <div style="max-width:680px;margin:0 auto;font-size:.92rem;line-height:1.8;color:#374151;padding:0 1rem;">
+        <p>存股族在挑選標的時，通常會在幾檔候選股之間猶豫。光看殖利率數字容易被誤導，因為高殖利率背後可能是股價重挫，而不是配息特別豐厚。同時比較多個指標，才能做出更有依據的決定。</p>
+        <p>最核心的比較維度有三個：第一是殖利率與配息穩定性，代表每年能收回多少現金；第二是本益比，反映現在的價格相對獲利是否合理；第三是成交量，流動性越高，未來要買進或賣出越方便。這三個指標組合在一起，可以篩掉大部分不合適的標的。</p>
+        <p>想了解更多存股策略，可以參考<a href="https://gulicalc.com/articles/dividend-tax-calculator" style="color:#4f46e5;">股利稅務計算完整教學</a>，或是用<a href="https://gulicalc.com/" style="color:#4f46e5;">股利計算器</a>試算持有特定股票的預期年收益。長期持股的朋友也可以用<a href="https://gulicalc.com/compound-calculator" style="color:#4f46e5;">複利計算器</a>看看再投入配息的複利效果。</p>
+      </div>
+    </section>
+
+    <!-- More Tools -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1rem auto 0;">
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/">股利計算器</a></h3>
+          <p>算殖利率和總股利，存股族必備。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/goal">存股目標追蹤器</a></h3>
+          <p>設定月領目標，追蹤距離目標還差多少。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/compound-calculator">複利計算器</a></h3>
+          <p>長期存股的複利成長效果試算。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="https://gulicalc.com/privacy">隱私權政策</a></li>
+      <li><a href="https://gulicalc.com/terms">使用條款</a></li>
+    </ul>
+    <div style="font-size:.78rem;color:#856404;margin-bottom:.5rem;">本站內容僅供參考，不構成任何投資建議。投資決策請自行評估風險。</div>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script>
+  (function(){
+    var allStocks = [];
+    var selectedStockA = null;
+    var selectedStockB = null;
+    var timerA = null;
+    var timerB = null;
+
+    // Load stock list
+    fetch('/api/stocks')
+      .then(function(r){ return r.json(); })
+      .then(function(data){ allStocks = data; })
+      .catch(function(){ allStocks = []; });
+
+    function fuzzyFilter(query, stocks) {
+      if (!query) return [];
+      var q = query.toLowerCase().trim();
+      var results = stocks.filter(function(s){
+        return s.code.toLowerCase().indexOf(q) === 0 ||
+               s.name.toLowerCase().indexOf(q) >= 0 ||
+               s.code.toLowerCase().indexOf(q) >= 0;
+      });
+      // Sort: code starts-with first
+      results.sort(function(a, b){
+        var aCode = a.code.toLowerCase().indexOf(q) === 0 ? 0 : 1;
+        var bCode = b.code.toLowerCase().indexOf(q) === 0 ? 0 : 1;
+        return aCode - bCode;
+      });
+      return results.slice(0, 5);
+    }
+
+    function renderDropdown(ddEl, results, side) {
+      ddEl.innerHTML = '';
+      if (!results.length) { ddEl.classList.remove('open'); return; }
+      results.forEach(function(s){
+        var item = document.createElement('div');
+        item.className = 'compare-dropdown-item';
+        item.innerHTML = '<span class="di-code">' + s.code + '</span><span class="di-name">' + s.name + '</span>';
+        item.addEventListener('mousedown', function(e){
+          e.preventDefault();
+          selectStock(side, s);
+        });
+        ddEl.appendChild(item);
+      });
+      ddEl.classList.add('open');
+    }
+
+    function selectStock(side, stock) {
+      var inputEl = document.getElementById('search' + side);
+      var ddEl = document.getElementById('dropdown' + side);
+      var labelEl = document.getElementById('selected' + side);
+      inputEl.value = stock.code + ' ' + stock.name;
+      ddEl.classList.remove('open');
+      labelEl.textContent = stock.code + ' ' + stock.name + ' 已選取';
+      if (side === 'A') selectedStockA = stock;
+      else selectedStockB = stock;
+      tryRenderCompare();
+    }
+
+    function bindSearch(side) {
+      var inputEl = document.getElementById('search' + side);
+      var ddEl = document.getElementById('dropdown' + side);
+      var timer = null;
+      inputEl.addEventListener('input', function(){
+        clearTimeout(timer);
+        var q = this.value;
+        timer = setTimeout(function(){
+          var results = fuzzyFilter(q, allStocks);
+          renderDropdown(ddEl, results, side);
+        }, 200);
+        // Reset selection if user types
+        if (side === 'A') selectedStockA = null;
+        else selectedStockB = null;
+        document.getElementById('selected' + side).textContent = '';
+      });
+      inputEl.addEventListener('blur', function(){
+        setTimeout(function(){ ddEl.classList.remove('open'); }, 150);
+      });
+      inputEl.addEventListener('focus', function(){
+        var q = inputEl.value;
+        if (q) {
+          var results = fuzzyFilter(q, allStocks);
+          renderDropdown(ddEl, results, side);
+        }
+      });
+    }
+
+    bindSearch('A');
+    bindSearch('B');
+
+    function fmt(n, decimals) {
+      if (n == null || isNaN(n)) return '—';
+      if (decimals != null) return Number(n).toLocaleString('zh-TW', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+      return Number(n).toLocaleString('zh-TW');
+    }
+
+    function tryRenderCompare() {
+      if (!selectedStockA || !selectedStockB) return;
+      var a = selectedStockA;
+      var b = selectedStockB;
+
+      document.getElementById('thA').textContent = a.code + ' ' + a.name;
+      document.getElementById('thB').textContent = b.code + ' ' + b.name;
+
+      // Define rows: [label, keyA, keyB, unit, lowerIsBetter, formatFn]
+      var rows = [
+        { label: '股價', unitLabel: '元', keyA: 'price', keyB: 'price', lowerIsBetter: true, fmt: function(v){ return fmt(v, 2); } },
+        { label: '殖利率', unitLabel: '%', keyA: 'yield', keyB: 'yield', lowerIsBetter: false, fmt: function(v){ return fmt(v, 2); } },
+        { label: '年配息', unitLabel: '元/股', keyA: 'dividend', keyB: 'dividend', lowerIsBetter: false, fmt: function(v){ return fmt(v, 2); } },
+        { label: '本益比', unitLabel: '倍', keyA: 'pe', keyB: 'pe', lowerIsBetter: true, fmt: function(v){ return v ? fmt(v, 1) : '—'; } },
+        { label: '成交量', unitLabel: '千股', keyA: 'volume', keyB: 'volume', lowerIsBetter: false, fmt: function(v){ return v ? fmt(Math.round(v/1000)) : '—'; } },
+        { label: '漲跌幅', unitLabel: '%', keyA: 'change', keyB: 'change', lowerIsBetter: false, fmt: function(v){
+            if (v == null || isNaN(v)) return '—';
+            var prefix = v > 0 ? '+' : '';
+            return prefix + fmt(v, 2);
+          },
+          colorFn: function(v) {
+            if (v == null || isNaN(v)) return '';
+            return v > 0 ? 'compare-up' : (v < 0 ? 'compare-down' : '');
+          }
+        }
+      ];
+
+      var tbody = document.getElementById('compareTableBody');
+      tbody.innerHTML = '';
+      rows.forEach(function(row){
+        var valA = a[row.keyA];
+        var valB = b[row.keyB];
+        var fmtA = row.fmt(valA);
+        var fmtB = row.fmt(valB);
+        var colorA = row.colorFn ? row.colorFn(valA) : '';
+        var colorB = row.colorFn ? row.colorFn(valB) : '';
+
+        var winA = false, winB = false;
+        if (valA != null && valB != null && !isNaN(valA) && !isNaN(valB) && valA !== valB) {
+          if (row.lowerIsBetter) {
+            winA = valA < valB;
+            winB = valB < valA;
+          } else {
+            winA = valA > valB;
+            winB = valB > valA;
+          }
+        }
+
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><span class="compare-row-label">' + row.label + '</span><span class="compare-label">' + row.unitLabel + '</span></td>' +
+          '<td class="' + (winA ? 'compare-win' : '') + '">' +
+            '<span class="' + colorA + '">' + fmtA + '</span>' +
+            (winA ? '<span class="compare-tag-win">優</span>' : '') +
+          '</td>' +
+          '<td class="' + (winB ? 'compare-win' : '') + '">' +
+            '<span class="' + colorB + '">' + fmtB + '</span>' +
+            (winB ? '<span class="compare-tag-win">優</span>' : '') +
+          '</td>';
+        tbody.appendChild(tr);
+      });
+
+      // Auto comparison text
+      var yA = a.yield || 0, yB = b.yield || 0;
+      var peA = a.pe, peB = b.pe;
+      var autoTextEl = document.getElementById('compareAutoText');
+      var lines = [];
+      if (yA && yB) {
+        var yHigh = yA >= yB ? a : b;
+        var yDiff = Math.abs(yA - yB).toFixed(2);
+        lines.push(yHigh.code + ' ' + yHigh.name + ' 的殖利率較高（' + fmt(yHigh.yield, 2) + '%），高出另一檔 ' + yDiff + ' 個百分點。');
+      }
+      if (peA && peB) {
+        var peLow = peA <= peB ? a : b;
+        lines.push(peLow.code + ' ' + peLow.name + ' 的本益比較低（' + fmt(peLow.pe, 1) + ' 倍），代表目前價格相對獲利更具吸引力。');
+      }
+      if (lines.length) {
+        autoTextEl.innerHTML = lines.join('<br>') + '<br><span style="font-size:.78rem;color:#6366f1;">以上為指標比較，不構成投資建議，請依個人風險承受度自行判斷。</span>';
+        autoTextEl.style.display = 'block';
+      } else {
+        autoTextEl.style.display = 'none';
+      }
+
+      document.getElementById('compareResult').style.display = 'block';
+      document.getElementById('compareResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+      btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+    });
+
+    // Nav toggle
+    var navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', function(){
+        document.querySelector('.nav-links').classList.toggle('open');
+      });
+    }
+  })();
+  </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="https://gulicalc.com/">
+    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+    <span>首頁</span>
+  </a>
+  <a href="https://gulicalc.com/compound-calculator">
+    <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+    <span>複利</span>
+  </a>
+  <a href="#" onclick="openTools(event)">
+    <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+    <span>工具</span>
+  </a>
+  <a href="https://gulicalc.com/articles">
+    <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+    <span>文章</span>
+  </a>
+</nav>
+
+<!-- Tool Selector Modal -->
+<div class="tool-modal-overlay" id="toolModal" onclick="if(event.target===this)closeTools()">
+  <div class="tool-modal">
+    <h3>選擇工具</h3>
+    <a class="tool-modal-item" href="https://gulicalc.com/">
+      <div class="tool-modal-icon tmi-dividend"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="tool-modal-info"><strong>股利計算器</strong><span>算殖利率和總股利</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/compound-calculator">
+      <div class="tool-modal-icon tmi-compound"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+      <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/payback-calculator">
+      <div class="tool-modal-icon tmi-payback"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/dca-calculator">
+      <div class="tool-modal-icon tmi-dca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div class="tool-modal-info"><strong>定期定額試算器</strong><span>每月定投長期成果</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/salary/">
+      <div class="tool-modal-icon" style="background:#fef2f2;color:#e11d48;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/><circle cx="12" cy="14" r="2"/></svg></div>
+      <div class="tool-modal-info"><strong>薪資計算器</strong><span>勞保 / 健保 / 勞退 / 實領</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/tax-calculator">
+      <div class="tool-modal-icon" style="background:#eff6ff;color:#1d4ed8;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14l6-6"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+      <div class="tool-modal-info"><strong>所得稅試算器</strong><span>綜所稅 / 股利合併vs分離</span></div>
+    </a>
+    <button class="tool-modal-close" onclick="closeTools()">關閉</button>
+  </div>
+</div>
+<script>
+function openTools(e){e.preventDefault();document.getElementById('toolModal').classList.add('open')}
+function closeTools(){document.getElementById('toolModal').classList.remove('open')}
+</script>
+
+<script src="js/theme.js?v=20260530f"></script>
+</body>
+</html>

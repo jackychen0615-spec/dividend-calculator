@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WQV8QQDBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5WQV8QQDBJ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>存股目標追蹤器 — 設定月領目標追蹤進度 - GULICALC</title>
+  <meta name="description" content="設定每月被動收入目標，輸入持股明細與每月定期定額，自動計算當前月領股利、距離目標的差距，以及預估達標時間。免費、免註冊，進度自動存入瀏覽器。">
+  <meta property="og:title" content="存股目標追蹤器 — 設定月領目標追蹤進度 - GULICALC">
+  <meta property="og:description" content="設定每月被動收入目標，輸入持股明細，自動計算月領股利與達標進度，還能估算距離目標還要多久。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/goal">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="GULICALC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="存股目標追蹤器 — 設定月領目標追蹤進度 - GULICALC">
+  <meta name="twitter:description" content="設定每月被動收入目標，輸入持股明細，自動計算月領股利與達標進度，還能估算距離目標還要多久。">
+  <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="canonical" href="https://gulicalc.com/goal">
+  <link rel="stylesheet" href="css/style.css?v=20260530e">
+  <meta name="google-adsense-account" content="ca-pub-8090613843493309">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8090613843493309" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "存股目標追蹤器 - 設定月領目標追蹤進度",
+    "url": "https://gulicalc.com/goal",
+    "description": "設定每月被動收入目標，輸入持股明細與每月定期定額，自動計算當前月領股利、距離目標差距，以及預估達標時間。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "zh-TW",
+    "isAccessibleForFree": true,
+    "datePublished": "2026-06-11",
+    "featureList": ["月領股利試算", "達標進度追蹤", "預估達標時間", "定期定額複利試算", "LocalStorage 自動儲存"],
+    "screenshot": "https://gulicalc.com/images/og-image.png",
+    "author": {"@type": "Person", "name": "Jacky Chen", "url": "https://gulicalc.com/about"},
+    "publisher": {"@type": "Organization", "name": "股利計算器", "url": "https://gulicalc.com", "logo": {"@type": "ImageObject", "url": "https://gulicalc.com/images/logo-nav.png"}},
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "月領 3 萬元股利需要多少本金？", "acceptedAnswer": {"@type": "Answer", "text": "以殖利率 5% 計算，每月領 3 萬元（年領 36 萬元）需要本金約 720 萬元。殖利率 6% 則需約 600 萬元。實際金額依持股殖利率而定，可用本工具輸入持股明細精確試算。"}},
+      {"@type": "Question", "name": "定期定額多久能達到存股目標？", "acceptedAnswer": {"@type": "Answer", "text": "達標時間取決於目前資產、每月投入金額與預期殖利率。假設目前月領 5,000 元、目標月領 30,000 元、每月投入 20,000 元、殖利率 5%，大約需要 15~20 年。本工具會考慮每月定投的複利效果，自動計算預估達標月份。"}},
+      {"@type": "Question", "name": "我的資料會被儲存嗎？", "acceptedAnswer": {"@type": "Answer", "text": "所有輸入資料（持股明細、目標金額等）只存在您瀏覽器的 localStorage（索引鍵：gulicalc_goal），不會傳送至任何伺服器。清除瀏覽器資料或使用私密瀏覽視窗時，資料不會保留。"}},
+      {"@type": "Question", "name": "殖利率怎麼填才準確？", "acceptedAnswer": {"@type": "Answer", "text": "建議填入各持股近一年的實際殖利率，可用本站的股利計算器查詢。如果不確定，可以用整體資產組合的平均殖利率作為「預期年殖利率」的輸入值。保守估計可填 4~5%，積極型配息股可填 6~8%。"}}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://gulicalc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "存股目標追蹤器"}
+    ]
+  }]
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["main h1",".faq-question",".faq-answer-inner"]}}
+  </script>
+  <script>try{if(localStorage.getItem("gulicalc_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <style>
+    .goal-stock-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 36px;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+    .goal-stock-search-wrap { position: relative; }
+    .goal-stock-dropdown {
+      position: absolute; top: calc(100% + 3px); left: 0; right: 0;
+      background: #fff; border: 1.5px solid #059669; border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(5,150,105,.15); z-index: 100;
+      max-height: 200px; overflow-y: auto; display: none;
+    }
+    .goal-stock-dropdown.open { display: block; }
+    .goal-dropdown-item {
+      padding: .5rem .75rem; cursor: pointer; font-size: .88rem; color: #1f2937;
+      border-bottom: 1px solid #f3f4f6; transition: background .1s;
+    }
+    .goal-dropdown-item:last-child { border-bottom: none; }
+    .goal-dropdown-item:hover { background: #ecfdf5; }
+    .goal-dropdown-item .gdi-code { font-weight: 700; color: #059669; margin-right: .3rem; }
+    .goal-dropdown-item .gdi-name { color: #6b7280; font-size: .78rem; }
+    .goal-del-btn {
+      width: 36px; height: 36px; background: #fef2f2; border: none; border-radius: 8px;
+      color: #ef4444; font-size: 1.1rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; transition: background .15s; flex-shrink: 0;
+    }
+    .goal-del-btn:hover { background: #fee2e2; }
+    .goal-add-btn {
+      width: 100%; padding: .55rem; background: #ecfdf5; border: 1.5px dashed #6ee7b7;
+      border-radius: 10px; color: #059669; font-size: .9rem; font-weight: 600;
+      cursor: pointer; transition: background .15s;
+    }
+    .goal-add-btn:hover { background: #d1fae5; }
+    .goal-progress-bar-wrap {
+      background: #e5e7eb; border-radius: 999px; height: 14px; overflow: hidden; margin: .5rem 0;
+    }
+    .goal-progress-bar {
+      height: 100%; background: linear-gradient(90deg, #059669, #10b981);
+      border-radius: 999px; transition: width .5s ease;
+    }
+    .goal-big-num {
+      font-size: 2.8rem; font-weight: 800; color: #059669; line-height: 1;
+    }
+    .goal-result-card {
+      background: #f0fdf4; border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: .8rem;
+    }
+    .goal-result-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: .8rem;
+    }
+    .goal-stat-box {
+      background: #fff; border-radius: 12px; padding: .8rem; text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .goal-stat-label { font-size: .72rem; color: #6b7280; margin-bottom: .2rem; }
+    .goal-stat-val { font-size: 1.3rem; font-weight: 700; color: #059669; }
+    .goal-stat-unit { font-size: .72rem; color: #6b7280; margin-top: .1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="https://gulicalc.com/" class="nav-logo"><img src="images/logo-nav.png" alt="GULICALC"> <span class="nav-brand">股利計算器<span class="nav-brand-en">GULICALC</span></span></a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="https://gulicalc.com/">首頁</a></li>
+        <li><a href="https://gulicalc.com/articles">文章</a></li>
+        <li><a href="https://gulicalc.com/about">關於我們</a></li>
+        <li><a href="https://gulicalc.com/contact">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="https://gulicalc.com/" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>存股目標追蹤器</span></nav>
+
+    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
+      <h1>存股目標追蹤器 — 設定月領目標追蹤進度</h1>
+      <p style="max-width:500px;margin:0 auto .8rem;">輸入月領目標與持股明細，自動計算當前進度、距離目標差距，以及定期定額估算達標時間。進度自動儲存。</p>
+      <p style="margin:0;"><a href="#goal-tool" style="display:inline-block;padding:.5rem 1.5rem;background:#059669;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始設定</a></p>
+    </section>
+
+    <!-- 工具列 -->
+    <section style="max-width:100%;margin:0 auto 1rem;overflow:hidden;">
+      <h2 style="font-size:1.05rem;text-align:center;margin-bottom:.3rem;color:#1f2937;font-weight:700;padding:0 1rem;">免費試算工具</h2>
+      <p style="text-align:center;font-size:.75rem;color:#9ca3af;margin-bottom:1rem;padding:0 1rem;">所有計算在瀏覽器完成，不收集任何資料</p>
+      <div style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;justify-content:center;" class="tool-carousel-sub">
+        <a href="https://gulicalc.com/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/favicon-32.png" alt="股利計算器" style="width:44px;height:44px;border-radius:10px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">股利計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">殖利率 / 總股利</span>
+        </a>
+        <a href="https://gulicalc.com/compound-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-compound.png" alt="複利計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">複利試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">長期複利成長</span>
+        </a>
+        <a href="https://gulicalc.com/payback-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-payback.png" alt="還本計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">還本試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">幾年靠股利回本</span>
+        </a>
+        <a href="https://gulicalc.com/dca-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-dca.png" alt="定期定額計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">定期定額</strong>
+          <span style="font-size:.7rem;color:#6b7280;">每月定投成果</span>
+        </a>
+        <a href="https://gulicalc.com/salary/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-salary.png" alt="薪資計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">薪資實領</strong>
+          <span style="font-size:.7rem;color:#6b7280;">勞保 / 健保 / 勞退</span>
+        </a>
+        <a href="https://gulicalc.com/tax-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-tax.png" alt="所得稅試算" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">所得稅試算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">報稅 / 股利節稅</span>
+        </a>
+        <a href="https://gulicalc.com/mortgage-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <img src="images/icon-mortgage.png" alt="房貸計算機" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">房貸計算</strong>
+          <span style="font-size:.7rem;color:#6b7280;">新青安 / 月付金</span>
+        </a>
+      </div>
+      <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
+    </section>
+
+    <!-- Goal Tool Card -->
+    <section id="goal-tool" style="max-width:540px;margin:0 auto 2rem;padding:0 1rem;">
+      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#059669,#047857);padding:1.2rem 1.5rem;">
+          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">存股目標追蹤器</h2>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">設定月領目標，追蹤距離自由的距離</p>
+        </div>
+        <div style="padding:1.2rem 1.5rem 1.4rem;">
+
+          <!-- 月領目標 -->
+          <div style="margin-bottom:.9rem;">
+            <label for="goalAmount" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">月領目標（元）</label>
+            <input type="number" id="goalAmount" placeholder="30000" min="0" step="1000"
+              style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;"
+              onfocus="this.style.borderColor='#059669';this.style.background='#fff'"
+              onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+          </div>
+
+          <!-- 持股清單 -->
+          <div style="margin-bottom:.9rem;">
+            <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.5rem;">持股明細</label>
+            <div style="font-size:.7rem;color:#9ca3af;margin-bottom:.5rem;display:grid;grid-template-columns:1fr 100px 36px;gap:.5rem;">
+              <span>股票代號 / 名稱</span><span style="text-align:right;">持股張數</span><span></span>
+            </div>
+            <div id="stockRows"></div>
+            <button class="goal-add-btn" id="addStockBtn" type="button">+ 新增持股</button>
+          </div>
+
+          <!-- 每月定期定額 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.9rem;">
+            <div>
+              <label for="monthlyDca" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">每月定期定額（元）</label>
+              <input type="number" id="monthlyDca" placeholder="20000" min="0" step="1000"
+                style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;"
+                onfocus="this.style.borderColor='#059669';this.style.background='#fff'"
+                onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+            <div>
+              <label for="expectedYield" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">預期年殖利率（%）</label>
+              <input type="number" id="expectedYield" placeholder="5" min="0" max="30" step="0.1" value="5"
+                style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;"
+                onfocus="this.style.borderColor='#059669';this.style.background='#fff'"
+                onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <div id="goalResult" style="display:none;max-width:540px;margin:0 auto 2rem;padding:0 1rem;">
+
+      <!-- Big number current monthly -->
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:.85rem;color:#6b7280;margin-bottom:.3rem;">目前月領股利（估算）</div>
+        <div class="goal-big-num" id="currentMonthly">0</div>
+        <div style="font-size:.85rem;color:#6b7280;">元 / 月</div>
+      </div>
+
+      <!-- Progress bar -->
+      <div style="background:#fff;border-radius:14px;box-shadow:0 1px 8px rgba(0,0,0,.05);padding:1rem 1.2rem;margin-bottom:.8rem;">
+        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#374151;margin-bottom:.4rem;">
+          <span>達標進度</span>
+          <span id="progressPct" style="font-weight:700;color:#059669;">0%</span>
+        </div>
+        <div class="goal-progress-bar-wrap">
+          <div class="goal-progress-bar" id="progressBar" style="width:0%;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.7rem;color:#9ca3af;margin-top:.3rem;">
+          <span>目前：<strong id="progressCurrent" style="color:#059669;">0 元</strong></span>
+          <span>目標：<strong id="progressGoal" style="color:#374151;">0 元</strong></span>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="goal-result-grid">
+        <div class="goal-stat-box">
+          <div class="goal-stat-label">距離目標差距</div>
+          <div class="goal-stat-val" id="gapAmount">0</div>
+          <div class="goal-stat-unit">元 / 月</div>
+        </div>
+        <div class="goal-stat-box">
+          <div class="goal-stat-label">還需投入本金</div>
+          <div class="goal-stat-val" id="gapCapital">0</div>
+          <div class="goal-stat-unit">萬元（以目標殖利率）</div>
+        </div>
+        <div class="goal-stat-box">
+          <div class="goal-stat-label">目前年化股利</div>
+          <div class="goal-stat-val" id="currentAnnual">0</div>
+          <div class="goal-stat-unit">元 / 年</div>
+        </div>
+        <div class="goal-stat-box">
+          <div class="goal-stat-label">預估達標時間</div>
+          <div class="goal-stat-val" id="estimatedTime">—</div>
+          <div class="goal-stat-unit">（定期定額複利）</div>
+        </div>
+      </div>
+
+      <!-- Holdings breakdown -->
+      <div id="holdingsBreakdown" style="background:#fff;border-radius:14px;box-shadow:0 1px 8px rgba(0,0,0,.05);padding:1rem 1.2rem;margin-bottom:.8rem;display:none;">
+        <h3 style="font-size:.95rem;margin:0 0 .7rem;color:#1f2937;">持股貢獻明細</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+          <thead>
+            <tr style="border-bottom:2px solid #e5e7eb;">
+              <th style="text-align:left;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">股票</th>
+              <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">張數</th>
+              <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">年股利</th>
+              <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">月均</th>
+            </tr>
+          </thead>
+          <tbody id="holdingsTable"></tbody>
+        </table>
+      </div>
+
+      <div style="font-size:.68rem;color:#9ca3af;text-align:center;line-height:1.5;margin-top:.4rem;">
+        計算基於持股張數 x 每股年配息（殖利率 x 股價）÷ 12。未持有股票時以預期殖利率估算。預估達標時間以複利方式每月累積，為估算值，實際可能因市場變化而不同。本計算不構成投資建議。
+      </div>
+    </div>
+
+    <div class="ad-slot" data-ad-pos="tool-below-calc"></div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <button class="faq-question">月領 3 萬元股利需要多少本金？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">以殖利率 5% 計算，每月領 3 萬元（年領 36 萬元）需要本金約 720 萬元；殖利率 6% 則需約 600 萬元；殖利率 8% 約需 450 萬元。實際金額依你的持股組合殖利率而定。建議在本工具輸入實際持股代號與張數，系統會根據各股票的真實股利資料精確計算，比粗估更準確。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">定期定額多久能達到存股目標？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">達標時間取決於目前月領金額、每月投入金額與預期殖利率的組合。本工具使用複利模型估算：每月將定期定額買進後，所產生的股利再加計到下個月的基礎資產中，逐月累積直到月領股利超過目標。例如目前月領 5,000 元、目標月領 30,000 元、每月投入 20,000 元、殖利率 5%，大約需要 15~17 年。提高定投金額或找到更高殖利率的標的，都能有效縮短達標時間。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">我的資料會被儲存嗎？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">所有輸入資料（持股明細、月領目標、定期定額設定）只存在您瀏覽器本地的 localStorage，索引鍵為 gulicalc_goal。資料不會傳送至任何伺服器，GULICALC 無法存取您的持股資訊。清除瀏覽器快取、使用無痕模式，或換不同裝置時，資料不會保留。建議定期截圖或手動備份重要數據。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">殖利率怎麼填才準確？</button>
+        <div class="faq-answer"><div class="faq-answer-inner">如果有輸入具體持股，系統會直接使用該股票的近一年實際殖利率計算。「預期年殖利率」欄位主要用於：一、估算還需要多少額外本金；二、計算每月定期定額買進的預期收益。建議填入你整體投資組合的平均殖利率，保守型投資人可填 4~5%，配息型 ETF 約 5~6%，個股可依實際情況調整。如果不確定，用 5% 作為基準是合理的保守估計。</div></div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>存股目標怎麼設定才實際？</h2>
+      <div style="max-width:680px;margin:0 auto;font-size:.92rem;line-height:1.8;color:#374151;padding:0 1rem;">
+        <p>「月領 3 萬」、「月領 5 萬」是許多存股族的夢想，但這個目標需要多少本金、多久才能達到，很多人其實沒有仔細算過。本工具的目的就是讓你把目標數字化，從而知道每個月要投入多少、大概幾年後能實現。</p>
+        <p>設定目標的第一步是決定一個「生活夠用」的月領金額。以台灣的生活水準，月領 2~3 萬能補貼日常生活開銷，月領 5 萬以上則可考慮半退休。接下來，根據你的儲蓄能力設定每月定投金額，系統就會自動算出達標時間。</p>
+        <p>想了解存股複利的長期效果，可以用<a href="https://gulicalc.com/compound-calculator" style="color:#059669;">複利計算器</a>試算。不確定要選哪支股票？試試<a href="https://gulicalc.com/compare" style="color:#059669;">個股比較器</a>，把兩個候選標的的殖利率和本益比一次看清楚。</p>
+      </div>
+    </section>
+
+    <!-- More Tools -->
+    <section class="faq-section" style="margin-top:2rem;">
+      <h2>更多工具</h2>
+      <div class="articles-grid" style="max-width:600px;margin:1rem auto 0;">
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/">股利計算器</a></h3>
+          <p>算殖利率和總股利，存股族必備。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/compare">個股比較器</a></h3>
+          <p>同時比較兩檔股票的殖利率與本益比。</p>
+        </div>
+        <div class="article-card">
+          <h3><a href="https://gulicalc.com/compound-calculator">複利計算器</a></h3>
+          <p>長期存股的複利成長效果試算。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="https://gulicalc.com/privacy">隱私權政策</a></li>
+      <li><a href="https://gulicalc.com/terms">使用條款</a></li>
+    </ul>
+    <div style="font-size:.78rem;color:#856404;margin-bottom:.5rem;">本站內容僅供參考，不構成任何投資建議。投資決策請自行評估風險。</div>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script>
+  (function(){
+    var STORAGE_KEY = 'gulicalc_goal';
+    var allStocks = [];
+    var stockRowData = []; // [{code, name, price, dividend, yield, shares}]
+    var rowIdCounter = 0;
+
+    // Load stock list
+    fetch('/api/stocks')
+      .then(function(r){ return r.json(); })
+      .then(function(data){ allStocks = data; })
+      .catch(function(){ allStocks = []; });
+
+    function fmt(n, decimals) {
+      if (n == null || isNaN(n)) return '0';
+      if (decimals != null) return Number(n).toLocaleString('zh-TW', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+      return Math.round(n).toLocaleString('zh-TW');
+    }
+
+    function fuzzyFilter(query, stocks) {
+      if (!query) return [];
+      var q = query.toLowerCase().trim();
+      var results = stocks.filter(function(s){
+        return s.code.toLowerCase().indexOf(q) === 0 ||
+               s.name.toLowerCase().indexOf(q) >= 0 ||
+               s.code.toLowerCase().indexOf(q) >= 0;
+      });
+      results.sort(function(a, b){
+        var aCode = a.code.toLowerCase().indexOf(q) === 0 ? 0 : 1;
+        var bCode = b.code.toLowerCase().indexOf(q) === 0 ? 0 : 1;
+        return aCode - bCode;
+      });
+      return results.slice(0, 5);
+    }
+
+    function addStockRow(initData) {
+      var id = ++rowIdCounter;
+      var rowData = initData || { code: '', name: '', price: null, dividend: null, yield: null, shares: '' };
+      stockRowData.push({ id: id, data: rowData });
+
+      var container = document.getElementById('stockRows');
+      var rowEl = document.createElement('div');
+      rowEl.className = 'goal-stock-row';
+      rowEl.setAttribute('data-row-id', id);
+
+      var searchVal = rowData.code ? (rowData.code + ' ' + rowData.name) : '';
+      rowEl.innerHTML =
+        '<div class="goal-stock-search-wrap">' +
+          '<input type="text" class="gs-input" placeholder="代號或名稱" autocomplete="off" value="' + escHtml(searchVal) + '" ' +
+            'style="width:100%;padding:.6rem .7rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.9rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;" ' +
+            'onfocus="this.style.borderColor=\'#059669\';this.style.background=\'#fff\'" ' +
+            'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
+          '<div class="goal-stock-dropdown" id="gsd-' + id + '"></div>' +
+        '</div>' +
+        '<input type="number" class="gs-shares" placeholder="張數" min="0" step="0.001" value="' + escHtml(rowData.shares) + '" ' +
+          'style="padding:.6rem .7rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.9rem;color:#1f2937;outline:none;text-align:right;width:100%;box-sizing:border-box;" ' +
+          'onfocus="this.style.borderColor=\'#059669\';this.style.background=\'#fff\'" ' +
+          'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
+        '<button class="goal-del-btn gs-del" type="button" aria-label="刪除">&#10005;</button>';
+
+      container.appendChild(rowEl);
+
+      var inputEl = rowEl.querySelector('.gs-input');
+      var sharesEl = rowEl.querySelector('.gs-shares');
+      var delBtn = rowEl.querySelector('.gs-del');
+      var ddEl = document.getElementById('gsd-' + id);
+      var searchTimer = null;
+
+      inputEl.addEventListener('input', function(){
+        clearTimeout(searchTimer);
+        var q = this.value;
+        // Clear stock data when user types
+        var rd = findRowData(id);
+        if (rd) { rd.data = { code: '', name: '', price: null, dividend: null, yield: null, shares: rd.data.shares }; }
+        searchTimer = setTimeout(function(){
+          var results = fuzzyFilter(q, allStocks);
+          renderRowDropdown(ddEl, results, id);
+        }, 200);
+        calcAndSave();
+      });
+
+      inputEl.addEventListener('blur', function(){
+        setTimeout(function(){ ddEl.classList.remove('open'); }, 150);
+      });
+
+      inputEl.addEventListener('focus', function(){
+        var q = inputEl.value;
+        if (q) {
+          var results = fuzzyFilter(q, allStocks);
+          renderRowDropdown(ddEl, results, id);
+        }
+      });
+
+      sharesEl.addEventListener('input', function(){
+        var rd = findRowData(id);
+        if (rd) rd.data.shares = this.value;
+        calcAndSave();
+      });
+
+      delBtn.addEventListener('click', function(){
+        stockRowData = stockRowData.filter(function(r){ return r.id !== id; });
+        rowEl.remove();
+        calcAndSave();
+      });
+    }
+
+    function renderRowDropdown(ddEl, results, id) {
+      ddEl.innerHTML = '';
+      if (!results.length) { ddEl.classList.remove('open'); return; }
+      results.forEach(function(s){
+        var item = document.createElement('div');
+        item.className = 'goal-dropdown-item';
+        item.innerHTML = '<span class="gdi-code">' + s.code + '</span><span class="gdi-name">' + s.name + '</span>';
+        item.addEventListener('mousedown', function(e){
+          e.preventDefault();
+          var rd = findRowData(id);
+          if (rd) {
+            rd.data = { code: s.code, name: s.name, price: s.price, dividend: s.dividend, yield: s.yield, shares: rd.data.shares };
+          }
+          var rowEl = document.querySelector('[data-row-id="' + id + '"]');
+          if (rowEl) {
+            rowEl.querySelector('.gs-input').value = s.code + ' ' + s.name;
+          }
+          ddEl.classList.remove('open');
+          calcAndSave();
+        });
+        ddEl.appendChild(item);
+      });
+      ddEl.classList.add('open');
+    }
+
+    function findRowData(id) {
+      for (var i = 0; i < stockRowData.length; i++) {
+        if (stockRowData[i].id === id) return stockRowData[i];
+      }
+      return null;
+    }
+
+    function escHtml(s) {
+      return String(s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    document.getElementById('addStockBtn').addEventListener('click', function(){
+      addStockRow(null);
+    });
+
+    // Bind top-level inputs
+    ['goalAmount','monthlyDca','expectedYield'].forEach(function(id){
+      document.getElementById(id).addEventListener('input', calcAndSave);
+    });
+
+    function calcAndSave() {
+      calc();
+      saveState();
+    }
+
+    function calc() {
+      var goal = Math.max(0, parseFloat(document.getElementById('goalAmount').value) || 0);
+      var monthlyDca = Math.max(0, parseFloat(document.getElementById('monthlyDca').value) || 0);
+      var yieldPct = Math.max(0, parseFloat(document.getElementById('expectedYield').value) || 5);
+      var yieldRate = yieldPct / 100;
+
+      // Calculate current annual dividend from holdings
+      var totalAnnualDiv = 0;
+      var holdingsDetail = [];
+      stockRowData.forEach(function(r){
+        var d = r.data;
+        var shares = parseFloat(d.shares) || 0;
+        if (shares <= 0) return;
+        var annualDivPerShare = 0;
+        if (d.dividend != null && !isNaN(d.dividend)) {
+          annualDivPerShare = d.dividend;
+        } else if (d.price && d.yield) {
+          annualDivPerShare = d.price * (d.yield / 100);
+        } else if (d.price) {
+          annualDivPerShare = d.price * yieldRate;
+        }
+        // shares in thousands (1 lot = 1000 shares)
+        var annualDiv = annualDivPerShare * shares * 1000;
+        totalAnnualDiv += annualDiv;
+        holdingsDetail.push({
+          code: d.code || '—',
+          name: d.name || '',
+          shares: shares,
+          annualDiv: annualDiv
+        });
+      });
+
+      var currentMonthly = totalAnnualDiv / 12;
+      var goalMonthly = goal;
+
+      // Show result section
+      var resultEl = document.getElementById('goalResult');
+      if (goal <= 0 && totalAnnualDiv <= 0 && monthlyDca <= 0) {
+        resultEl.style.display = 'none';
+        return;
+      }
+      resultEl.style.display = 'block';
+
+      // Big number
+      document.getElementById('currentMonthly').textContent = fmt(currentMonthly);
+
+      // Progress
+      var pct = goalMonthly > 0 ? Math.min(100, currentMonthly / goalMonthly * 100) : 0;
+      document.getElementById('progressPct').textContent = pct.toFixed(1) + '%';
+      document.getElementById('progressBar').style.width = pct.toFixed(1) + '%';
+      document.getElementById('progressCurrent').textContent = fmt(currentMonthly) + ' 元';
+      document.getElementById('progressGoal').textContent = fmt(goalMonthly) + ' 元';
+
+      // Gap
+      var gapMonthly = Math.max(0, goalMonthly - currentMonthly);
+      document.getElementById('gapAmount').textContent = fmt(gapMonthly);
+
+      // Required additional capital
+      var gapAnnual = gapMonthly * 12;
+      var gapCapital = yieldRate > 0 ? (gapAnnual / yieldRate / 10000) : 0;
+      document.getElementById('gapCapital').textContent = gapCapital.toFixed(1);
+
+      document.getElementById('currentAnnual').textContent = fmt(totalAnnualDiv);
+
+      // Estimated time to reach goal (compound interest monthly)
+      var estText = '—';
+      if (monthlyDca > 0 && goalMonthly > 0 && yieldRate > 0) {
+        // Monthly yield rate
+        var monthlyYield = yieldRate / 12;
+        // Current asset value (reverse calc from current monthly dividend)
+        var currentAsset = yieldRate > 0 ? totalAnnualDiv / yieldRate : 0;
+        var goalAsset = (goalMonthly * 12) / yieldRate;
+        if (currentAsset >= goalAsset) {
+          estText = '已達標';
+        } else {
+          // Simulate month by month with compound interest
+          var asset = currentAsset;
+          var months = 0;
+          var MAX_MONTHS = 600; // 50 years cap
+          while (asset < goalAsset && months < MAX_MONTHS) {
+            asset = asset * (1 + monthlyYield) + monthlyDca;
+            months++;
+          }
+          if (months >= MAX_MONTHS) {
+            estText = '50 年以上';
+          } else {
+            var years = Math.floor(months / 12);
+            var remMonths = months % 12;
+            if (years > 0 && remMonths > 0) estText = years + ' 年 ' + remMonths + ' 個月';
+            else if (years > 0) estText = years + ' 年';
+            else estText = remMonths + ' 個月';
+          }
+        }
+      } else if (goalMonthly > 0 && currentMonthly >= goalMonthly) {
+        estText = '已達標';
+      }
+      document.getElementById('estimatedTime').textContent = estText;
+
+      // Holdings breakdown
+      var breakdownEl = document.getElementById('holdingsBreakdown');
+      var tbodyEl = document.getElementById('holdingsTable');
+      if (holdingsDetail.length > 0) {
+        tbodyEl.innerHTML = '';
+        holdingsDetail.forEach(function(h){
+          var tr = document.createElement('tr');
+          tr.style.borderBottom = '1px solid #f3f4f6';
+          tr.innerHTML =
+            '<td style="padding:.35rem .4rem;"><strong>' + escHtml(h.code) + '</strong> <span style="font-size:.75rem;color:#6b7280;">' + escHtml(h.name) + '</span></td>' +
+            '<td style="padding:.35rem .4rem;text-align:right;">' + fmt(h.shares, 3) + '</td>' +
+            '<td style="padding:.35rem .4rem;text-align:right;color:#059669;font-weight:600;">' + fmt(h.annualDiv) + '</td>' +
+            '<td style="padding:.35rem .4rem;text-align:right;color:#059669;">' + fmt(h.annualDiv / 12) + '</td>';
+          tbodyEl.appendChild(tr);
+        });
+        // Total row
+        var trTotal = document.createElement('tr');
+        trTotal.style.borderTop = '2px solid #e5e7eb';
+        trTotal.innerHTML =
+          '<td style="padding:.4rem .4rem;font-weight:700;font-size:.85rem;" colspan="2">合計</td>' +
+          '<td style="padding:.4rem .4rem;text-align:right;font-weight:700;color:#059669;">' + fmt(totalAnnualDiv) + '</td>' +
+          '<td style="padding:.4rem .4rem;text-align:right;font-weight:700;color:#059669;">' + fmt(currentMonthly) + '</td>';
+        tbodyEl.appendChild(trTotal);
+        breakdownEl.style.display = 'block';
+      } else {
+        breakdownEl.style.display = 'none';
+      }
+    }
+
+    function getState() {
+      var holdings = stockRowData.map(function(r){ return r.data; });
+      return {
+        goal: document.getElementById('goalAmount').value,
+        dca: document.getElementById('monthlyDca').value,
+        yield: document.getElementById('expectedYield').value,
+        holdings: holdings
+      };
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+      } catch(e) {}
+    }
+
+    function loadState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        var state = JSON.parse(raw);
+        if (state.goal) document.getElementById('goalAmount').value = state.goal;
+        if (state.dca) document.getElementById('monthlyDca').value = state.dca;
+        if (state.yield) document.getElementById('expectedYield').value = state.yield;
+        if (state.holdings && state.holdings.length) {
+          state.holdings.forEach(function(h){ addStockRow(h); });
+        }
+        calc();
+      } catch(e) {}
+    }
+
+    // Init: add one empty row, then load state
+    // Only add default row if no saved state
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) addStockRow(null);
+    } catch(e) { addStockRow(null); }
+
+    loadState();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+      btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+    });
+
+    // Nav toggle
+    var navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+      navToggle.addEventListener('click', function(){
+        document.querySelector('.nav-links').classList.toggle('open');
+      });
+    }
+  })();
+  </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="https://gulicalc.com/">
+    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+    <span>首頁</span>
+  </a>
+  <a href="https://gulicalc.com/compound-calculator">
+    <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+    <span>複利</span>
+  </a>
+  <a href="#" onclick="openTools(event)">
+    <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+    <span>工具</span>
+  </a>
+  <a href="https://gulicalc.com/articles">
+    <svg viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+    <span>文章</span>
+  </a>
+</nav>
+
+<!-- Tool Selector Modal -->
+<div class="tool-modal-overlay" id="toolModal" onclick="if(event.target===this)closeTools()">
+  <div class="tool-modal">
+    <h3>選擇工具</h3>
+    <a class="tool-modal-item" href="https://gulicalc.com/">
+      <div class="tool-modal-icon tmi-dividend"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="tool-modal-info"><strong>股利計算器</strong><span>算殖利率和總股利</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/compound-calculator">
+      <div class="tool-modal-icon tmi-compound"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+      <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/payback-calculator">
+      <div class="tool-modal-icon tmi-payback"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/dca-calculator">
+      <div class="tool-modal-icon tmi-dca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div class="tool-modal-info"><strong>定期定額試算器</strong><span>每月定投長期成果</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/salary/">
+      <div class="tool-modal-icon" style="background:#fef2f2;color:#e11d48;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/><circle cx="12" cy="14" r="2"/></svg></div>
+      <div class="tool-modal-info"><strong>薪資計算器</strong><span>勞保 / 健保 / 勞退 / 實領</span></div>
+    </a>
+    <a class="tool-modal-item" href="https://gulicalc.com/tax-calculator">
+      <div class="tool-modal-icon" style="background:#eff6ff;color:#1d4ed8;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14l6-6"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg></div>
+      <div class="tool-modal-info"><strong>所得稅試算器</strong><span>綜所稅 / 股利合併vs分離</span></div>
+    </a>
+    <button class="tool-modal-close" onclick="closeTools()">關閉</button>
+  </div>
+</div>
+<script>
+function openTools(e){e.preventDefault();document.getElementById('toolModal').classList.add('open')}
+function closeTools(){document.getElementById('toolModal').classList.remove('open')}
+</script>
+
+<script src="js/theme.js?v=20260530f"></script>
+</body>
+</html>
