@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-06-10",
+  "lastUpdated": "2026-06-11",
   "stocks": [
     {
       "code": "0050",
       "name": "元大台灣50",
-      "price": 103.5,
+      "price": 100.25,
       "dividend": 4.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -13,7 +13,7 @@
     {
       "code": "0056",
       "name": "元大高股息",
-      "price": 51.25,
+      "price": 49.62,
       "dividend": 2.5,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -22,7 +22,7 @@
     {
       "code": "00713",
       "name": "元大台灣高息低波",
-      "price": 59.5,
+      "price": 58.95,
       "dividend": 4.68,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -31,7 +31,7 @@
     {
       "code": "00878",
       "name": "國泰永續高股息",
-      "price": 32.31,
+      "price": 31.6,
       "dividend": 1.5,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -40,7 +40,7 @@
     {
       "code": "00919",
       "name": "群益台灣精選高息",
-      "price": 30.72,
+      "price": 30.24,
       "dividend": 2.52,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -49,7 +49,7 @@
     {
       "code": "00929",
       "name": "復華台灣科技優息",
-      "price": 29.43,
+      "price": 28.12,
       "dividend": 1.63,
       "dividendYear": "2025",
       "frequency": "月配",
@@ -58,7 +58,7 @@
     {
       "code": "00934",
       "name": "中信成長高股息",
-      "price": 28.23,
+      "price": 27.48,
       "dividend": 0.95,
       "dividendYear": "2025",
       "frequency": "月配",
@@ -67,7 +67,7 @@
     {
       "code": "00936",
       "name": "台新台灣永續高息中小",
-      "price": 20.92,
+      "price": 20.42,
       "dividend": 1.2,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -76,7 +76,7 @@
     {
       "code": "00939",
       "name": "統一台灣高息動能",
-      "price": 21.04,
+      "price": 20.71,
       "dividend": 0.9,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -85,7 +85,7 @@
     {
       "code": "00940",
       "name": "元大台灣價值高息",
-      "price": 12.36,
+      "price": 12.04,
       "dividend": 0.68,
       "dividendYear": "2025",
       "frequency": "月配",
@@ -94,7 +94,7 @@
     {
       "code": "006208",
       "name": "富邦台50",
-      "price": 239.55,
+      "price": 232.05,
       "dividend": 3.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -103,7 +103,7 @@
     {
       "code": "2881",
       "name": "富邦金",
-      "price": 125.0,
+      "price": 122.5,
       "dividend": 4.25,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -112,7 +112,7 @@
     {
       "code": "2882",
       "name": "國泰金",
-      "price": 104.0,
+      "price": 99.9,
       "dividend": 3.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -121,7 +121,7 @@
     {
       "code": "2884",
       "name": "玉山金",
-      "price": 34.2,
+      "price": 33.65,
       "dividend": 1.2,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -130,7 +130,7 @@
     {
       "code": "2886",
       "name": "兆豐金",
-      "price": 43.55,
+      "price": 43.4,
       "dividend": 2.0,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -139,7 +139,7 @@
     {
       "code": "2891",
       "name": "中信金",
-      "price": 69.2,
+      "price": 68.2,
       "dividend": 2.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -148,7 +148,7 @@
     {
       "code": "2892",
       "name": "第一金",
-      "price": 30.5,
+      "price": 30.55,
       "dividend": 1.8,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -157,7 +157,7 @@
     {
       "code": "5880",
       "name": "合庫金",
-      "price": 23.85,
+      "price": 23.8,
       "dividend": 1.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -166,7 +166,7 @@
     {
       "code": "2330",
       "name": "台積電",
-      "price": 2305.0,
+      "price": 2255.0,
       "dividend": 22,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -175,7 +175,7 @@
     {
       "code": "2317",
       "name": "鴻海",
-      "price": 277.5,
+      "price": 263.0,
       "dividend": 5.8,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -184,7 +184,7 @@
     {
       "code": "2382",
       "name": "廣達",
-      "price": 375.0,
+      "price": 380.5,
       "dividend": 8,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -193,7 +193,7 @@
     {
       "code": "2454",
       "name": "聯發科",
-      "price": 4475.0,
+      "price": 4155.0,
       "dividend": 76,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -202,7 +202,7 @@
     {
       "code": "1216",
       "name": "統一",
-      "price": 74.1,
+      "price": 74.4,
       "dividend": 3.5,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -211,7 +211,7 @@
     {
       "code": "1301",
       "name": "台塑",
-      "price": 45.55,
+      "price": 44.4,
       "dividend": 2.0,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -220,7 +220,7 @@
     {
       "code": "2412",
       "name": "中華電",
-      "price": 142.0,
+      "price": 144.0,
       "dividend": 5.4,
       "dividendYear": "2025",
       "frequency": "年配",
@@ -229,7 +229,7 @@
     {
       "code": "00900",
       "name": "富邦特選高股息30",
-      "price": 19.42,
+      "price": 18.81,
       "dividend": 1.18,
       "dividendYear": "2025",
       "frequency": "月配",
@@ -238,7 +238,7 @@
     {
       "code": "00915",
       "name": "凱基優選高股息30",
-      "price": 30.62,
+      "price": 30.0,
       "dividend": 1.35,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -247,7 +247,7 @@
     {
       "code": "00918",
       "name": "大華優利高填息30",
-      "price": 30.88,
+      "price": 30.1,
       "dividend": 2.48,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -256,7 +256,7 @@
     {
       "code": "00932",
       "name": "兆豐永續高息等權",
-      "price": 17.65,
+      "price": 17.43,
       "dividend": 0.58,
       "dividendYear": "2025",
       "frequency": "季配",
@@ -265,7 +265,7 @@
     {
       "code": "00943",
       "name": "兆豐電子高息等權",
-      "price": 21.57,
+      "price": 20.76,
       "dividend": 0.48,
       "dividendYear": "2025",
       "frequency": "月配",
@@ -274,7 +274,7 @@
     {
       "code": "00927",
       "name": "群益半導體收益",
-      "price": 38.46,
+      "price": 36.74,
       "dividend": 2.29,
       "dividendYear": "2025",
       "frequency": "季配",
