@@ -449,6 +449,47 @@
       </div>
     </section>
 
+    <!-- 電子報訂閱 -->
+    <section style="max-width:520px;margin:2rem auto;padding:0 1rem;">
+      <div style="background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:1.5rem;text-align:center;">
+        <h2 style="color:#fff;font-size:1.05rem;margin:0 0 .4rem;font-weight:700;">每週存股精選</h2>
+        <p style="color:#94a3b8;font-size:.82rem;margin:0 0 1rem;line-height:1.5;">每週一封，整理台股配息動態、殖利率變化、存股心得。不賣課、不推銷，純分享。</p>
+        <form id="newsletterForm" style="display:flex;gap:.5rem;max-width:380px;margin:0 auto;" onsubmit="return handleNewsletter(event)">
+          <input type="email" id="newsletterEmail" placeholder="你的 email" required style="flex:1;padding:.6rem .8rem;border:1.5px solid #334155;border-radius:10px;background:#0f172a;color:#e2e8f0;font-size:.9rem;outline:none;font-family:inherit;" onfocus="this.style.borderColor='#0891b2'" onblur="this.style.borderColor='#334155'">
+          <button type="submit" style="padding:.6rem 1.2rem;background:#0891b2;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:.85rem;cursor:pointer;white-space:nowrap;transition:background .2s;" onmouseover="this.style.background='#0e7490'" onmouseout="this.style.background='#0891b2'">訂閱</button>
+        </form>
+        <p id="newsletterMsg" style="display:none;color:#10b981;font-size:.8rem;margin-top:.6rem;"></p>
+        <p style="color:#475569;font-size:.68rem;margin-top:.6rem;">可隨時取消，不會寄垃圾信。</p>
+      </div>
+    </section>
+    <script>
+    function handleNewsletter(e) {
+      e.preventDefault();
+      var email = document.getElementById('newsletterEmail').value;
+      var msg = document.getElementById('newsletterMsg');
+      // Store in localStorage for now (can be replaced with Buttondown/Mailchimp API later)
+      var subs = JSON.parse(localStorage.getItem('gulicalc_newsletter') || '[]');
+      if (subs.includes(email)) {
+        msg.textContent = '你已經訂閱過了！';
+        msg.style.color = '#f59e0b';
+      } else {
+        subs.push(email);
+        localStorage.setItem('gulicalc_newsletter', JSON.stringify(subs));
+        msg.textContent = '訂閱成功！每週會收到存股精選。';
+        msg.style.color = '#10b981';
+        // Send to Formspree (free form backend)
+        fetch('https://formspree.io/f/xyzgkqvw', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email: email, type: 'newsletter', date: new Date().toISOString()})
+        }).catch(function(){});
+      }
+      msg.style.display = 'block';
+      document.getElementById('newsletterEmail').value = '';
+      return false;
+    }
+    </script>
+
     <section class="faq-section">
       <h2>常見問題</h2>
       <div class="faq-item">
