@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GULICALC SEO Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1320;
+    --panel: #171c2e;
+    --border: #1f2840;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --blue: #5b8cff;
+    --green: #2fd07a;
+    --red: #ff5d6c;
+    --amber: #f5a623;
+    --purple: #a855f7;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.3px;
+  }
+  .logo span { color: var(--text); }
+  .period-badge {
+    background: rgba(91,140,255,0.15);
+    color: var(--blue);
+    border: 1px solid rgba(91,140,255,0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .last-updated { color: var(--muted); font-size: 12px; }
+  .print-btn {
+    background: rgba(91,140,255,0.15);
+    color: var(--blue);
+    border: 1px solid rgba(91,140,255,0.3);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .print-btn:hover { background: rgba(91,140,255,0.25); }
+
+  /* Main container */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+
+  /* Panel */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  /* KPI Row */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .kpi-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+  }
+  .kpi-card.blue::before { background: var(--blue); }
+  .kpi-card.green::before { background: var(--green); }
+  .kpi-card.purple::before { background: var(--purple); }
+  .kpi-card.amber::before { background: var(--amber); }
+
+  .kpi-label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .kpi-value {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .kpi-card.blue .kpi-value { color: var(--blue); }
+  .kpi-card.green .kpi-value { color: var(--green); }
+  .kpi-card.purple .kpi-value { color: var(--purple); }
+  .kpi-card.amber .kpi-value { color: var(--amber); }
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Chart row */
+  .chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .chart-container {
+    position: relative;
+    height: 260px;
+  }
+  .chart-container-pie {
+    position: relative;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    padding: 10px 12px;
+    text-align: left;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { color: var(--text); }
+  thead th .sort-icon { margin-left: 4px; opacity: 0.5; }
+  thead th.sort-asc .sort-icon::after { content: ' ▲'; }
+  thead th.sort-desc .sort-icon::after { content: ' ▼'; }
+  thead th:not(.sort-asc):not(.sort-desc) .sort-icon::after { content: ' ⇅'; }
+
+  tbody tr {
+    border-bottom: 1px solid rgba(31,40,64,0.6);
+    transition: background 0.15s;
+  }
+  tbody tr:hover { background: rgba(91,140,255,0.05); }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 10px 12px;
+    color: var(--text);
+  }
+  td.muted { color: var(--muted); }
+  td.num { font-variant-numeric: tabular-nums; }
+  td.url {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Position rank cell */
+  .pos-num {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-green  { background: rgba(47,208,122,0.15); color: var(--green);  border: 1px solid rgba(47,208,122,0.3); }
+  .badge-blue   { background: rgba(91,140,255,0.15); color: var(--blue);   border: 1px solid rgba(91,140,255,0.3); }
+  .badge-amber  { background: rgba(245,166,35,0.15); color: var(--amber);  border: 1px solid rgba(245,166,35,0.3); }
+  .badge-gray   { background: rgba(100,116,139,0.15); color: var(--muted); border: 1px solid rgba(100,116,139,0.3); }
+  .badge-ai     { background: rgba(168,85,247,0.15); color: var(--purple); border: 1px solid rgba(168,85,247,0.3); }
+
+  /* Two-panel rows */
+  .two-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* AI row highlight */
+  tr.ai-row td { background: rgba(168,85,247,0.05); }
+  tr.ai-row:hover td { background: rgba(168,85,247,0.10); }
+
+  /* Diagnostics */
+  .diag-list { display: flex; flex-direction: column; gap: 12px; }
+  .diag-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid;
+  }
+  .diag-item.warn  { background: rgba(245,166,35,0.07);  border-color: rgba(245,166,35,0.25);  }
+  .diag-item.info  { background: rgba(91,140,255,0.07);  border-color: rgba(91,140,255,0.25);  }
+  .diag-item.good  { background: rgba(47,208,122,0.07);  border-color: rgba(47,208,122,0.25);  }
+  .diag-item.ai    { background: rgba(168,85,247,0.07);  border-color: rgba(168,85,247,0.25);  }
+  .diag-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .diag-text { flex: 1; }
+  .diag-title { font-weight: 600; margin-bottom: 2px; }
+  .diag-item.warn  .diag-title { color: var(--amber); }
+  .diag-item.info  .diag-title { color: var(--blue); }
+  .diag-item.good  .diag-title { color: var(--green); }
+  .diag-item.ai    .diag-title { color: var(--purple); }
+  .diag-desc { color: var(--muted); font-size: 13px; }
+
+  /* Scrollable table panels */
+  .scrollable-table { max-height: 380px; overflow-y: auto; }
+  .scrollable-table::-webkit-scrollbar { width: 4px; }
+  .scrollable-table::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .chart-row { grid-template-columns: 1fr; }
+    .two-panel { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 500px) {
+    .kpi-row { grid-template-columns: 1fr; }
+    .container { padding: 12px; }
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; color: #000; }
+    .panel, .kpi-card { background: #f8f9fa; border-color: #dee2e6; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Embedded real data -->
+<script>
+const GA4_DATA = {"fetchedAt":"2026-06-12T23:25:44.493774","period":{"start":"2026-05-15","end":"2026-06-11"},"overview":{"activeUsers":134,"newUsers":134,"sessions":159,"avgDuration":149.6,"eventCount":820,"engagementRate":45.9},"daily":[{"date":"20260531","users":17,"sessions":17},{"date":"20260601","users":11,"sessions":12},{"date":"20260602","users":10,"sessions":11},{"date":"20260603","users":8,"sessions":9},{"date":"20260604","users":11,"sessions":12},{"date":"20260605","users":9,"sessions":13},{"date":"20260606","users":6,"sessions":7},{"date":"20260607","users":10,"sessions":12},{"date":"20260608","users":12,"sessions":12},{"date":"20260609","users":14,"sessions":15},{"date":"20260610","users":17,"sessions":18},{"date":"20260611","users":18,"sessions":22}],"trafficSources":[{"channel":"Organic Search","users":73,"sessions":86},{"channel":"Direct","users":36,"sessions":42},{"channel":"AI Assistant","users":17,"sessions":20},{"channel":"Referral","users":5,"sessions":5},{"channel":"Unassigned","users":4,"sessions":5},{"channel":"Organic Social","users":1,"sessions":1}],"sourceDetail":[{"source":"(direct)","medium":"(none)","users":36},{"source":"tw.search.yahoo.com","medium":"referral","users":33},{"source":"google","medium":"organic","users":23},{"source":"bing","medium":"organic","users":16},{"source":"chatgpt.com","medium":"ai-assistant","users":16},{"source":"chatgpt.com","medium":"(not set)","users":4},{"source":"l.threads.com","medium":"referral","users":3},{"source":"app.neilpatel.com","medium":"referral","users":1},{"source":"copilot.com","medium":"ai-assistant","users":1},{"source":"facebook.com","medium":"referral","users":1},{"source":"github.com","medium":"referral","users":1},{"source":"search.google.com","medium":"referral","users":1},{"source":"yahoo","medium":"organic","users":1}],"topPages":[{"title":"股利計算器｜殖利率計算器 - 免費線上股利試算工具 - GULICALC","path":"/","views":112,"users":73,"avgDuration":60.4},{"title":"2026 台股殖利率排行榜：高殖利率股票與ETF怎麼選 - 股利計算器","path":"/articles/dividend-yield-ranking-2026","views":15,"users":11,"avgDuration":73.9},{"title":"2026 高殖利率 ETF 排名比較：0056、00878、00919、00929、00940 完整評比 - GULICALC","path":"/articles/top-etf-dividend-yield-2026","views":14,"users":14,"avgDuration":177.7},{"title":"台積電股利怎麼算？歷年季配息紀錄與殖利率試算（2026）- 股利計算器","path":"/articles/tsmc-dividend-calculator","views":13,"users":11,"avgDuration":85.8},{"title":"投資教學文章 - 股利計算器","path":"/articles","views":10,"users":6,"avgDuration":163.7},{"title":"定期定額試算器｜免費線上定期定額ETF複利試算工具 - GULICALC","path":"/dca-calculator","views":9,"users":5,"avgDuration":40.9},{"title":"複利計算器｜存股複利試算工具，股利再投入成長計算 - GULICALC","path":"/compound-calculator","views":9,"users":5,"avgDuration":295.0},{"title":"台股配息查詢完整指南 - 股利計算器","path":"/articles/taiwan-stock-dividend-guide","views":7,"users":6,"avgDuration":52.1},{"title":"存股試算：每月存 5000 元，10 年後能領多少股利？完整模擬 - GULICALC","path":"/articles/stock-saving-monthly-simulation","views":6,"users":5,"avgDuration":20.7},{"title":"0050 配息怎麼算？元大台灣50 殖利率與存股試算 - 股利計算器","path":"/articles/0050-dividend-calculator","views":4,"users":4,"avgDuration":30.5},{"title":"中華電（2412）配息怎麼算？股利與殖利率試算 - 股利計算器","path":"/articles/chunghwa-telecom-dividend","views":4,"users":4,"avgDuration":19.5},{"title":"存股回本計算器｜靠股利幾年回本？免費試算工具 - GULICALC","path":"/payback-calculator","views":4,"users":3,"avgDuration":20.4},{"title":"存股月領1萬要多少本金？三種路線實際算給你看 - 股利計算器","path":"/articles/passive-income-monthly-10k","views":4,"users":3,"avgDuration":155.2},{"title":"聯絡我們 - 股利計算器","path":"/contact","views":4,"users":3,"avgDuration":540.7},{"title":"薪資計算器｜實領薪水試算 - 勞健保、勞退、所得稅一次算清楚 - GULICALC","path":"/salary/","views":4,"users":3,"avgDuration":26.4}]};
+
+const GSC_DATA = {"fetchedAt":"2026-06-12T23:22:47.928843","period":{"start":"2026-05-15","end":"2026-06-11"},"overview":{"clicks":32,"impressions":2769,"ctr":1.16,"position":16.7},"daily":[{"date":"2026-05-20","clicks":0,"impressions":0,"ctr":0,"position":0},{"date":"2026-05-21","clicks":0,"impressions":0,"ctr":0,"position":0},{"date":"2026-05-22","clicks":2,"impressions":4,"ctr":50.0,"position":8.2},{"date":"2026-05-23","clicks":0,"impressions":1,"ctr":0,"position":1},{"date":"2026-05-24","clicks":0,"impressions":2,"ctr":0,"position":6},{"date":"2026-05-25","clicks":0,"impressions":10,"ctr":0,"position":21},{"date":"2026-05-26","clicks":0,"impressions":16,"ctr":0,"position":16.1},{"date":"2026-05-27","clicks":0,"impressions":46,"ctr":0,"position":19.1},{"date":"2026-05-28","clicks":1,"impressions":30,"ctr":3.33,"position":10.2},{"date":"2026-05-29","clicks":3,"impressions":36,"ctr":8.33,"position":10.8},{"date":"2026-05-30","clicks":2,"impressions":138,"ctr":1.45,"position":13.7},{"date":"2026-05-31","clicks":1,"impressions":346,"ctr":0.29,"position":21.0},{"date":"2026-06-01","clicks":4,"impressions":291,"ctr":1.37,"position":11.7},{"date":"2026-06-02","clicks":1,"impressions":189,"ctr":0.53,"position":14.8},{"date":"2026-06-03","clicks":0,"impressions":207,"ctr":0,"position":16.2},{"date":"2026-06-04","clicks":3,"impressions":203,"ctr":1.48,"position":13.1},{"date":"2026-06-05","clicks":0,"impressions":165,"ctr":0,"position":18.3},{"date":"2026-06-06","clicks":4,"impressions":178,"ctr":2.25,"position":16.2},{"date":"2026-06-07","clicks":1,"impressions":168,"ctr":0.6,"position":14.2},{"date":"2026-06-08","clicks":5,"impressions":281,"ctr":1.78,"position":25.9},{"date":"2026-06-09","clicks":2,"impressions":223,"ctr":0.9,"position":13.4},{"date":"2026-06-10","clicks":3,"impressions":235,"ctr":1.28,"position":17.8}],"topQueries":[{"query":"台積電配息怎麼算","clicks":4,"impressions":202,"ctr":1.98,"position":11.6},{"query":"0056 與 00919 比較","clicks":1,"impressions":1,"ctr":100,"position":11},{"query":"0056配息計算機","clicks":1,"impressions":1,"ctr":100,"position":15},{"query":"00919vs0056","clicks":1,"impressions":2,"ctr":50.0,"position":15},{"query":"150萬本金存股也能月領3萬","clicks":1,"impressions":5,"ctr":20.0,"position":18.6},{"query":"台積電股利怎麼算","clicks":1,"impressions":46,"ctr":2.17,"position":9.7},{"query":"股息計算器","clicks":1,"impressions":9,"ctr":11.11,"position":22.2},{"query":"鴻海一張配息多少","clicks":1,"impressions":7,"ctr":14.29,"position":12},{"query":"0050 殖利率","clicks":0,"impressions":1,"ctr":0,"position":48},{"query":"0050 股利","clicks":0,"impressions":1,"ctr":0,"position":49},{"query":"0050 股息計算","clicks":0,"impressions":1,"ctr":0,"position":9},{"query":"0050 試算","clicks":0,"impressions":3,"ctr":0,"position":43},{"query":"0050goodinfo","clicks":0,"impressions":11,"ctr":0,"position":5.2},{"query":"0050一張配息多少","clicks":0,"impressions":1,"ctr":0,"position":36},{"query":"0050定期定額計算機","clicks":0,"impressions":1,"ctr":0,"position":37},{"query":"0050定期定額試算","clicks":0,"impressions":2,"ctr":0,"position":45},{"query":"0050年化報酬率計算","clicks":0,"impressions":1,"ctr":0,"position":66},{"query":"0050年化報酬率試算","clicks":0,"impressions":2,"ctr":0,"position":73.5},{"query":"0050殖利率","clicks":0,"impressions":1,"ctr":0,"position":43},{"query":"0050股利怎麼算","clicks":0,"impressions":1,"ctr":0,"position":9},{"query":"0050股息計算器","clicks":0,"impressions":1,"ctr":0,"position":10},{"query":"0050複利計算","clicks":0,"impressions":2,"ctr":0,"position":54},{"query":"0050試算","clicks":0,"impressions":3,"ctr":0,"position":49.3},{"query":"0050配息怎麼算","clicks":0,"impressions":2,"ctr":0,"position":40},{"query":"0050配息計算","clicks":0,"impressions":1,"ctr":0,"position":13},{"query":"0050配息計算機","clicks":0,"impressions":7,"ctr":0,"position":27.3},{"query":"0056","clicks":0,"impressions":2,"ctr":0,"position":60},{"query":"0056 定期定額試算","clicks":0,"impressions":2,"ctr":0,"position":24.5},{"query":"0056 配息計算","clicks":0,"impressions":1,"ctr":0,"position":10},{"query":"0056一張配息多少","clicks":0,"impressions":1,"ctr":0,"position":38}],"topPages":[{"page":"https://gulicalc.com/articles/tsmc-dividend-calculator","clicks":7,"impressions":472,"ctr":1.48,"position":10.4},{"page":"https://gulicalc.com/articles/passive-income-monthly-10k","clicks":3,"impressions":40,"ctr":7.5,"position":8.3},{"page":"https://gulicalc.com/articles/0056-vs-00919","clicks":2,"impressions":5,"ctr":40.0,"position":11.2},{"page":"https://gulicalc.com/articles/chunghwa-telecom-dividend","clicks":2,"impressions":116,"ctr":1.72,"position":10.1},{"page":"https://gulicalc.com/articles/hon-hai-dividend","clicks":2,"impressions":270,"ctr":0.74,"position":8.1},{"page":"https://gulicalc.com/articles/taiwan-coop-dividend","clicks":2,"impressions":99,"ctr":2.02,"position":9.0},{"page":"https://gulicalc.com/","clicks":1,"impressions":129,"ctr":0.78,"position":24.0},{"page":"https://gulicalc.com/about","clicks":1,"impressions":6,"ctr":16.67,"position":2},{"page":"https://gulicalc.com/articles/0050-dividend-calculator","clicks":1,"impressions":94,"ctr":1.06,"position":21.3},{"page":"https://gulicalc.com/articles/0056-dividend-calculator","clicks":1,"impressions":21,"ctr":4.76,"position":23.3},{"page":"https://gulicalc.com/articles/00918-dividend-calculator","clicks":1,"impressions":25,"ctr":4.0,"position":8.2},{"page":"https://gulicalc.com/articles/00939-dividend-calculator","clicks":1,"impressions":23,"ctr":4.35,"position":7.5},{"page":"https://gulicalc.com/articles/annual-income-tax-guide","clicks":1,"impressions":11,"ctr":9.09,"position":41.4},{"page":"https://gulicalc.com/articles/dca-compound-calculator-guide","clicks":1,"impressions":60,"ctr":1.67,"position":59.5},{"page":"https://gulicalc.com/articles/dividend-calculator-app","clicks":1,"impressions":3,"ctr":33.33,"position":12.7}]};
+</script>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo">GULICALC <span>SEO Dashboard</span></div>
+    <span class="period-badge">過去 28 天</span>
+    <span style="color:var(--muted);font-size:12px;">
+      <span style="color:var(--text);font-weight:600;">gulicalc.com</span>
+      &nbsp;·&nbsp; 2026-05-15 → 2026-06-11
+    </span>
+  </div>
+  <div class="header-right">
+    <span class="last-updated" id="lastUpdated"></span>
+    <button class="print-btn" onclick="window.print()">⬇ 匯出列印</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Row 1: KPI Cards -->
+  <div>
+    <div class="section-title">核心指標 — Google Search Console + GA4</div>
+    <div class="kpi-row">
+      <div class="kpi-card purple">
+        <div class="kpi-label">GSC 曝光</div>
+        <div class="kpi-value" id="kpi-impressions">—</div>
+        <div class="kpi-sub">Google 搜尋結果曝光次數</div>
+      </div>
+      <div class="kpi-card blue">
+        <div class="kpi-label">GSC 點擊</div>
+        <div class="kpi-value" id="kpi-clicks">—</div>
+        <div class="kpi-sub" id="kpi-ctr-sub">自然搜尋點擊次數</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-label">平均排名</div>
+        <div class="kpi-value" id="kpi-position">—</div>
+        <div class="kpi-sub">GSC 平均搜尋排名位置</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-label">GA4 活躍使用者</div>
+        <div class="kpi-value" id="kpi-users">—</div>
+        <div class="kpi-sub" id="kpi-sessions-sub">活躍用戶數</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Charts -->
+  <div class="chart-row">
+    <div class="panel">
+      <div class="panel-title">每日趨勢</div>
+      <div class="chart-container">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">流量來源分佈（GA4 Sessions）</div>
+      <div class="chart-container-pie">
+        <canvas id="pieChart" style="max-height:240px;max-width:240px;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Keyword Table -->
+  <div class="panel">
+    <div class="panel-title">關鍵字排名表 — GSC Top 30 查詢詞 <span style="color:var(--muted);font-size:12px;font-weight:400;">（點擊欄位標題排序）</span></div>
+    <div class="table-wrap scrollable-table">
+      <table id="kwTable">
+        <thead>
+          <tr>
+            <th data-col="position" class="sort-asc">排名 <span class="sort-icon"></span></th>
+            <th data-col="query">關鍵字 <span class="sort-icon"></span></th>
+            <th data-col="clicks">點擊 <span class="sort-icon"></span></th>
+            <th data-col="impressions">曝光 <span class="sort-icon"></span></th>
+            <th data-col="ctr">CTR <span class="sort-icon"></span></th>
+            <th>狀態</th>
+          </tr>
+        </thead>
+        <tbody id="kwTbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Row 4: Top Pages -->
+  <div class="two-panel">
+    <div class="panel">
+      <div class="panel-title">GA4 熱門頁面</div>
+      <div class="table-wrap scrollable-table">
+        <table>
+          <thead>
+            <tr>
+              <th>頁面標題</th>
+              <th>瀏覽</th>
+              <th>用戶</th>
+            </tr>
+          </thead>
+          <tbody id="ga4PagesTbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">GSC 熱門頁面</div>
+      <div class="table-wrap scrollable-table">
+        <table>
+          <thead>
+            <tr>
+              <th>URL</th>
+              <th>點擊</th>
+              <th>曝光</th>
+            </tr>
+          </thead>
+          <tbody id="gscPagesTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 5: Source Detail -->
+  <div class="panel">
+    <div class="panel-title">流量來源明細（GA4 Source / Medium）
+      <span class="badge badge-ai" style="margin-left:8px;vertical-align:middle;">AI</span>
+      <span style="color:var(--muted);font-size:12px;font-weight:400;margin-left:6px;">= AI 引流標示</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>來源 Source</th>
+            <th>媒介 Medium</th>
+            <th>用戶數</th>
+            <th>類型</th>
+          </tr>
+        </thead>
+        <tbody id="sourceDetailTbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Row 6: Diagnostics -->
+  <div class="panel">
+    <div class="panel-title">自動診斷</div>
+    <div class="diag-list" id="diagList"></div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+function fmt(n, decimals = 0) {
+  if (n == null) return '—';
+  return n.toLocaleString('zh-TW', { maximumFractionDigits: decimals });
+}
+function fmtPct(n) { return n == null ? '—' : n.toFixed(2) + '%'; }
+
+// ─── Last Updated ─────────────────────────────────────────────────────────────
+document.getElementById('lastUpdated').textContent =
+  '更新時間：' + GSC_DATA.fetchedAt.replace('T', ' ').substring(0, 16);
+
+// ─── KPI Cards ───────────────────────────────────────────────────────────────
+document.getElementById('kpi-impressions').textContent = fmt(GSC_DATA.overview.impressions);
+document.getElementById('kpi-clicks').textContent = fmt(GSC_DATA.overview.clicks);
+document.getElementById('kpi-ctr-sub').textContent = 'CTR：' + fmtPct(GSC_DATA.overview.ctr);
+document.getElementById('kpi-position').textContent = GSC_DATA.overview.position.toFixed(1);
+document.getElementById('kpi-users').textContent = fmt(GA4_DATA.overview.activeUsers);
+document.getElementById('kpi-sessions-sub').textContent =
+  '工作階段：' + fmt(GA4_DATA.overview.sessions) + ' · 互動率：' + GA4_DATA.overview.engagementRate + '%';
+
+// ─── Trend Chart ─────────────────────────────────────────────────────────────
+(function() {
+  const daily = GSC_DATA.daily.filter(d => d.impressions > 0 || d.clicks > 0);
+  const labels = daily.map(d => {
+    const s = d.date; // "2026-05-22"
+    return s.substring(5); // "05-22"
+  });
+  const impressions = daily.map(d => d.impressions);
+  const clicks = daily.map(d => d.clicks);
+
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '曝光',
+          data: impressions,
+          borderColor: '#a855f7',
+          backgroundColor: 'rgba(168,85,247,0.1)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: '#a855f7',
+          fill: true,
+          tension: 0.3,
+          yAxisID: 'y'
+        },
+        {
+          label: '點擊',
+          data: clicks,
+          borderColor: '#5b8cff',
+          backgroundColor: 'rgba(91,140,255,0.1)',
+          borderWidth: 2,
+          pointRadius: 3,
+          pointBackgroundColor: '#5b8cff',
+          fill: true,
+          tension: 0.3,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#94a3b8', font: { size: 12 } }
+        },
+        tooltip: {
+          backgroundColor: '#1e2740',
+          borderColor: '#1f2840',
+          borderWidth: 1,
+          titleColor: '#e2e8f0',
+          bodyColor: '#94a3b8'
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#64748b', font: { size: 11 } },
+          grid: { color: 'rgba(31,40,64,0.8)' }
+        },
+        y: {
+          type: 'linear',
+          position: 'left',
+          title: { display: true, text: '曝光', color: '#a855f7', font: { size: 11 } },
+          ticks: { color: '#64748b', font: { size: 11 } },
+          grid: { color: 'rgba(31,40,64,0.8)' }
+        },
+        y1: {
+          type: 'linear',
+          position: 'right',
+          title: { display: true, text: '點擊', color: '#5b8cff', font: { size: 11 } },
+          ticks: { color: '#64748b', font: { size: 11 } },
+          grid: { drawOnChartArea: false }
+        }
+      }
+    }
+  });
+})();
+
+// ─── Pie Chart ───────────────────────────────────────────────────────────────
+(function() {
+  const sources = GA4_DATA.trafficSources;
+  const labels = sources.map(s => s.channel);
+  const data = sources.map(s => s.sessions);
+  const colors = ['#5b8cff','#2fd07a','#a855f7','#f5a623','#64748b','#ff5d6c'];
+
+  const ctx = document.getElementById('pieChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: colors.map(c => c + 'cc'),
+        borderColor: colors,
+        borderWidth: 2,
+        hoverOffset: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            color: '#94a3b8',
+            font: { size: 12 },
+            padding: 12,
+            boxWidth: 12
+          }
+        },
+        tooltip: {
+          backgroundColor: '#1e2740',
+          borderColor: '#1f2840',
+          borderWidth: 1,
+          titleColor: '#e2e8f0',
+          bodyColor: '#94a3b8',
+          callbacks: {
+            label: ctx => {
+              const total = ctx.dataset.data.reduce((a,b) => a+b, 0);
+              const pct = ((ctx.parsed / total) * 100).toFixed(1);
+              return ` ${ctx.label}: ${ctx.parsed} sessions (${pct}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+
+// ─── Keyword Table ────────────────────────────────────────────────────────────
+let kwData = [...GSC_DATA.topQueries];
+let kwSortCol = 'position';
+let kwSortAsc = true;
+
+function getPosBadge(pos) {
+  if (pos < 10)  return '<span class="badge badge-green">第一頁</span>';
+  if (pos <= 20) return '<span class="badge badge-blue">衝刺中</span>';
+  if (pos <= 50) return '<span class="badge badge-amber">有機會</span>';
+  return '<span class="badge badge-gray">觀察</span>';
+}
+
+function renderKwTable() {
+  const sorted = [...kwData].sort((a, b) => {
+    let av = a[kwSortCol], bv = b[kwSortCol];
+    if (typeof av === 'string') av = av.toLowerCase(), bv = bv.toLowerCase();
+    if (av < bv) return kwSortAsc ? -1 : 1;
+    if (av > bv) return kwSortAsc ? 1 : -1;
+    return 0;
+  });
+
+  const tbody = document.getElementById('kwTbody');
+  tbody.innerHTML = sorted.map((row, i) => `
+    <tr>
+      <td><span class="pos-num" style="color:${row.position < 10 ? 'var(--green)' : row.position <= 20 ? 'var(--blue)' : 'var(--muted)'}">${row.position.toFixed(1)}</span></td>
+      <td style="font-weight:500;">${row.query}</td>
+      <td class="num">${fmt(row.clicks)}</td>
+      <td class="num">${fmt(row.impressions)}</td>
+      <td class="num">${fmtPct(row.ctr)}</td>
+      <td>${getPosBadge(row.position)}</td>
+    </tr>
+  `).join('');
+}
+
+document.querySelectorAll('#kwTable thead th[data-col]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (kwSortCol === col) {
+      kwSortAsc = !kwSortAsc;
+    } else {
+      kwSortCol = col;
+      kwSortAsc = (col === 'position' || col === 'query');
+    }
+    document.querySelectorAll('#kwTable thead th').forEach(t => {
+      t.classList.remove('sort-asc','sort-desc');
+    });
+    th.classList.add(kwSortAsc ? 'sort-asc' : 'sort-desc');
+    renderKwTable();
+  });
+});
+
+renderKwTable();
+
+// ─── GA4 Top Pages ────────────────────────────────────────────────────────────
+(function() {
+  const tbody = document.getElementById('ga4PagesTbody');
+  tbody.innerHTML = GA4_DATA.topPages.map(p => `
+    <tr>
+      <td style="max-width:280px;">
+        <a href="https://gulicalc.com${p.path}" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${p.title}">${p.title}</a>
+        <div style="color:var(--muted);font-size:11px;font-family:monospace;">${p.path}</div>
+      </td>
+      <td class="num" style="color:var(--blue);font-weight:600;">${fmt(p.views)}</td>
+      <td class="num">${fmt(p.users)}</td>
+    </tr>
+  `).join('');
+})();
+
+// ─── GSC Top Pages ────────────────────────────────────────────────────────────
+(function() {
+  const tbody = document.getElementById('gscPagesTbody');
+  tbody.innerHTML = GSC_DATA.topPages.map(p => {
+    const urlPath = p.page.replace('https://gulicalc.com', '') || '/';
+    return `
+      <tr>
+        <td class="url" title="${p.page}"><a href="${p.page}" target="_blank" style="color:var(--blue);text-decoration:none;">${urlPath}</a></td>
+        <td class="num" style="color:var(--blue);font-weight:600;">${fmt(p.clicks)}</td>
+        <td class="num">${fmt(p.impressions)}</td>
+      </tr>
+    `;
+  }).join('');
+})();
+
+// ─── Source Detail ────────────────────────────────────────────────────────────
+(function() {
+  const isAI = s =>
+    s.source.includes('chatgpt') ||
+    s.source.includes('copilot') ||
+    s.medium === 'ai-assistant';
+
+  const tbody = document.getElementById('sourceDetailTbody');
+  tbody.innerHTML = GA4_DATA.sourceDetail.map(s => {
+    const ai = isAI(s);
+    return `
+      <tr class="${ai ? 'ai-row' : ''}">
+        <td style="font-weight:${ai ? '600' : '400'};color:${ai ? 'var(--purple)' : 'var(--text)'};">${s.source}</td>
+        <td class="muted">${s.medium}</td>
+        <td class="num">${fmt(s.users)}</td>
+        <td>${ai ? '<span class="badge badge-ai">AI 引流</span>' : '<span style="color:var(--muted);font-size:12px;">—</span>'}</td>
+      </tr>
+    `;
+  }).join('');
+})();
+
+// ─── Diagnostics ─────────────────────────────────────────────────────────────
+(function() {
+  const diags = [];
+  const ctr = GSC_DATA.overview.ctr;
+  const pos = GSC_DATA.overview.position;
+  const page1Count = GSC_DATA.topQueries.filter(q => q.position < 10).length;
+  const aiUsers = GA4_DATA.trafficSources.find(s => s.channel === 'AI Assistant');
+  const aiUserCount = aiUsers ? aiUsers.users : 0;
+
+  // CTR check
+  if (ctr < 2) {
+    diags.push({
+      type: 'warn',
+      icon: '⚠️',
+      title: 'CTR 偏低（' + fmtPct(ctr) + '）',
+      desc: '整體點擊率低於 2%，考慮優化 Title 和 Meta Description，讓搜尋結果更吸引點擊。建議針對排名 10-20 的關鍵字先做標題改寫。'
+    });
+  } else {
+    diags.push({
+      type: 'good',
+      icon: '✅',
+      title: 'CTR 表現正常（' + fmtPct(ctr) + '）',
+      desc: '點擊率達到健康水準，繼續維持高品質的 Title 和 Meta Description。'
+    });
+  }
+
+  // Position check
+  if (pos > 20) {
+    diags.push({
+      type: 'warn',
+      icon: '📉',
+      title: '平均排名在第 2 頁以外（' + pos.toFixed(1) + '）',
+      desc: '平均排名超過 20，大多數流量集中在少數高排名頁面。需要更多主題深度內容和外鏈建設，特別是現有排名 10-30 的關鍵字有機會推進第一頁。'
+    });
+  } else {
+    diags.push({
+      type: 'info',
+      icon: '📊',
+      title: '平均排名 ' + pos.toFixed(1) + '（第 2 頁邊緣）',
+      desc: '排名正在改善中。重點衝刺目前排名 10-20 的關鍵字，補充更詳細的內容與 FAQ 結構可幫助推進第一頁。'
+    });
+  }
+
+  // AI traffic
+  if (aiUserCount > 0) {
+    diags.push({
+      type: 'ai',
+      icon: '🤖',
+      title: 'AI 引用持續成長中（' + aiUserCount + ' 位用戶）',
+      desc: '來自 ChatGPT、Copilot 等 AI 助理的流量共 ' + aiUserCount + ' 人，佔總用戶約 ' +
+        ((aiUserCount / GA4_DATA.overview.activeUsers) * 100).toFixed(1) +
+        '%。保持 Schema Markup 和 FAQ 結構完整，有助於持續獲得 AI 引用。'
+    });
+  }
+
+  // Page 1 keywords
+  diags.push({
+    type: page1Count >= 3 ? 'good' : 'info',
+    icon: page1Count >= 3 ? '🏆' : '🎯',
+    title: '第一頁關鍵字：' + page1Count + ' 個（排名 < 10）',
+    desc: (() => {
+      const page1kws = GSC_DATA.topQueries.filter(q => q.position < 10).map(q => q.query);
+      if (page1kws.length === 0) return '目前尚無關鍵字進入第一頁，持續優化內容品質。';
+      return '已進入第一頁的關鍵字：' + page1kws.join('、') + '。這些頁面的流量潛力最大，建議強化內部連結和 Schema。';
+    })()
+  });
+
+  // Engagement rate
+  const engRate = GA4_DATA.overview.engagementRate;
+  if (engRate >= 40) {
+    diags.push({
+      type: 'good',
+      icon: '✨',
+      title: '用戶互動率健康（' + engRate + '%）',
+      desc: '超過 40% 的工作階段有實際互動（使用計算器、閱讀文章等），代表內容品質良好，符合用戶搜尋意圖。'
+    });
+  }
+
+  const container = document.getElementById('diagList');
+  container.innerHTML = diags.map(d => `
+    <div class="diag-item ${d.type}">
+      <div class="diag-icon">${d.icon}</div>
+      <div class="diag-text">
+        <div class="diag-title">${d.title}</div>
+        <div class="diag-desc">${d.desc}</div>
+      </div>
+    </div>
+  `).join('');
+})();
+</script>
+</body>
+</html>

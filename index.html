@@ -467,25 +467,30 @@
       e.preventDefault();
       var email = document.getElementById('newsletterEmail').value;
       var msg = document.getElementById('newsletterMsg');
-      // Store in localStorage for now (can be replaced with Buttondown/Mailchimp API later)
-      var subs = JSON.parse(localStorage.getItem('gulicalc_newsletter') || '[]');
-      if (subs.includes(email)) {
-        msg.textContent = '你已經訂閱過了！';
-        msg.style.color = '#f59e0b';
-      } else {
-        subs.push(email);
-        localStorage.setItem('gulicalc_newsletter', JSON.stringify(subs));
-        msg.textContent = '訂閱成功！每週會收到存股精選。';
-        msg.style.color = '#10b981';
-        // Send to Formspree (free form backend)
-        fetch('https://formspree.io/f/xyzgkqvw', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({email: email, type: 'newsletter', date: new Date().toISOString()})
-        }).catch(function(){});
-      }
-      msg.style.display = 'block';
-      document.getElementById('newsletterEmail').value = '';
+      var btn = document.querySelector('#newsletterForm button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = '送出中...';
+      fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        msg.textContent = data.message || data.error || '完成';
+        msg.style.color = data.ok ? '#10b981' : '#f59e0b';
+        msg.style.display = 'block';
+        if (data.ok) document.getElementById('newsletterEmail').value = '';
+      })
+      .catch(function(){
+        msg.textContent = '網路錯誤，請稍後再試';
+        msg.style.color = '#ff5d6c';
+        msg.style.display = 'block';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '訂閱';
+      });
       return false;
     }
     </script>
