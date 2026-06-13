@@ -228,7 +228,7 @@
           <div style="margin-bottom:.9rem;">
             <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.5rem;">持股明細</label>
             <div style="font-size:.7rem;color:#9ca3af;margin-bottom:.5rem;display:grid;grid-template-columns:1fr 80px 80px 36px;gap:.5rem;">
-              <span>股票代號 / 名稱</span><span style="text-align:right;">張數</span><span style="text-align:right;">成本均價</span><span></span>
+              <span>股票代號 / 名稱</span><span style="text-align:right;">股數</span><span style="text-align:right;">成本均價</span><span></span>
             </div>
             <div id="stockRows"></div>
             <button class="goal-add-btn" id="addStockBtn" type="button">+ 新增持股</button>
@@ -312,7 +312,7 @@
           <thead>
             <tr style="border-bottom:2px solid #e5e7eb;">
               <th style="text-align:left;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">股票</th>
-              <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">張數</th>
+              <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">股數</th>
               <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">年股利</th>
               <th style="text-align:right;padding:.35rem .4rem;color:#6b7280;font-weight:600;font-size:.75rem;">月均</th>
             </tr>
@@ -322,7 +322,7 @@
       </div>
 
       <div style="font-size:.68rem;color:#9ca3af;text-align:center;line-height:1.5;margin-top:.4rem;">
-        計算基於持股張數 x 每股年配息（殖利率 x 股價）÷ 12。未持有股票時以預期殖利率估算。預估達標時間以複利方式每月累積，為估算值，實際可能因市場變化而不同。本計算不構成投資建議。
+        計算基於持股股數 x 每股年配息（殖利率 x 股價）÷ 12。未持有股票時以預期殖利率估算。預估達標時間以複利方式每月累積，為估算值，實際可能因市場變化而不同。本計算不構成投資建議。
       </div>
     </div>
 
@@ -333,7 +333,7 @@
       <h2>常見問題</h2>
       <div class="faq-item">
         <button class="faq-question">月領 3 萬元股利需要多少本金？</button>
-        <div class="faq-answer"><div class="faq-answer-inner">以殖利率 5% 計算，每月領 3 萬元（年領 36 萬元）需要本金約 720 萬元；殖利率 6% 則需約 600 萬元；殖利率 8% 約需 450 萬元。實際金額依你的持股組合殖利率而定。建議在本工具輸入實際持股代號與張數，系統會根據各股票的真實股利資料精確計算，比粗估更準確。</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">以殖利率 5% 計算，每月領 3 萬元（年領 36 萬元）需要本金約 720 萬元；殖利率 6% 則需約 600 萬元；殖利率 8% 約需 450 萬元。實際金額依你的持股組合殖利率而定。建議在本工具輸入實際持股代號與股數，系統會根據各股票的真實股利資料精確計算，比粗估更準確。</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">定期定額多久能達到存股目標？</button>
@@ -442,7 +442,7 @@
             'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
           '<div class="goal-stock-dropdown" id="gsd-' + id + '"></div>' +
         '</div>' +
-        '<input type="number" class="gs-shares" placeholder="張數" min="0" step="0.001" value="' + escHtml(rowData.shares) + '" ' +
+        '<input type="number" class="gs-shares" placeholder="股數" min="0" step="0.001" value="' + escHtml(rowData.shares) + '" ' +
           'style="padding:.6rem .7rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.9rem;color:#1f2937;outline:none;text-align:right;width:100%;box-sizing:border-box;" ' +
           'onfocus="this.style.borderColor=\'#059669\';this.style.background=\'#fff\'" ' +
           'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
@@ -577,11 +577,11 @@
           annualDivPerShare = d.price * yieldRate;
         }
         // shares in thousands (1 lot = 1000 shares)
-        var annualDiv = annualDivPerShare * shares * 1000;
+        var annualDiv = annualDivPerShare * shares;
         totalAnnualDiv += annualDiv;
         var costPrice = parseFloat(d.costPrice) || 0;
         var costYield = (costPrice > 0 && annualDivPerShare > 0) ? (annualDivPerShare / costPrice * 100) : null;
-        var totalCost = costPrice > 0 ? costPrice * shares * 1000 : 0;
+        var totalCost = costPrice > 0 ? costPrice * shares : 0;
         holdingsDetail.push({
           code: d.code || '—',
           name: d.name || '',

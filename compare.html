@@ -108,6 +108,21 @@
     .compare-up { color: #dc2626; }
     .compare-down { color: #16a34a; }
     .compare-auto-text { background: #eef2ff; border-radius: 10px; padding: .9rem 1rem; font-size: .88rem; color: #3730a3; line-height: 1.6; margin-top: 1rem; }
+    /* 手機版 dropdown 不被裁切 */
+    @media(max-width:640px) {
+      .compare-dropdown { position: relative; }
+    }
+    /* 深色模式 */
+    [data-theme="dark"] .compare-dropdown { background: #1e293b; border-color: #4f46e5; box-shadow: 0 4px 16px rgba(0,0,0,.4); }
+    [data-theme="dark"] .compare-dropdown-item { color: #e2e8f0; border-bottom-color: #334155; }
+    [data-theme="dark"] .compare-dropdown-item:hover { background: #334155; }
+    [data-theme="dark"] .compare-dropdown-item .di-name { color: #94a3b8; }
+    [data-theme="dark"] .compare-table th { background: #1e293b; color: #94a3b8; border-bottom-color: #334155; }
+    [data-theme="dark"] .compare-table td { color: #e2e8f0; border-bottom-color: #1e293b; }
+    [data-theme="dark"] .compare-win { background: rgba(22,163,74,.15); }
+    [data-theme="dark"] .compare-row-label { color: #e2e8f0; }
+    [data-theme="dark"] .compare-auto-text { background: rgba(99,102,241,.1); color: #a5b4fc; }
+    [data-theme="dark"] .compare-tag-win { background: rgba(22,163,74,.2); }
   </style>
 </head>
 <body>
@@ -179,7 +194,7 @@
 
     <!-- Compare Tool Card -->
     <section id="compare-tool" style="max-width:560px;margin:0 auto 2rem;padding:0 1rem;">
-      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+      <div style="background:var(--bg-white,#fff);border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:visible;">
         <div style="background:linear-gradient(135deg,#4f46e5,#4338ca);padding:1.2rem 1.5rem;">
           <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">個股比較器</h2>
           <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">搜尋兩檔股票，自動比較所有關鍵指標</p>
@@ -407,10 +422,30 @@
       return Number(n).toLocaleString('zh-TW');
     }
 
+    // ETF 配息補充（API 不含 ETF 殖利率）
+    var etfDividends = {
+      '0050':{dividend:4.5,yield:2.3},'0056':{dividend:2.5,yield:6.5},'006208':{dividend:3.5,yield:3.7},
+      '00713':{dividend:4.68,yield:7.8},'00878':{dividend:1.5,yield:6.5},'00919':{dividend:2.52,yield:9.2},
+      '00929':{dividend:1.63,yield:7.8},'00934':{dividend:0.95,yield:7.5},'00936':{dividend:1.2,yield:6.8},
+      '00939':{dividend:0.9,yield:6.5},'00940':{dividend:0.68,yield:6.2},'00882':{dividend:1.1,yield:5.8},
+      '00900':{dividend:0.8,yield:5.5},'00915':{dividend:1.0,yield:6.0},'00918':{dividend:1.2,yield:6.5},
+      '00927':{dividend:0.9,yield:5.0},'00932':{dividend:0.7,yield:5.5},'00943':{dividend:0.5,yield:4.5}
+    };
+    function enrichStock(s) {
+      if (s.dividendYield == null && etfDividends[s.code]) {
+        s.dividendYield = etfDividends[s.code].yield;
+        s.dividend = etfDividends[s.code].dividend;
+      }
+      // normalize field names
+      if (s.yield == null && s.dividendYield != null) s.yield = s.dividendYield;
+      if (s.yield == null && s.dividend && s.price) s.yield = (s.dividend / s.price * 100);
+      return s;
+    }
+
     function tryRenderCompare() {
       if (!selectedStockA || !selectedStockB) return;
-      var a = selectedStockA;
-      var b = selectedStockB;
+      var a = enrichStock(Object.assign({}, selectedStockA));
+      var b = enrichStock(Object.assign({}, selectedStockB));
 
       document.getElementById('thA').textContent = a.code + ' ' + a.name;
       document.getElementById('thB').textContent = b.code + ' ' + b.name;
