@@ -270,6 +270,14 @@
         </a>
       </div>
       <style>#toolCarousel::-webkit-scrollbar{display:none}.tool-slide:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}#toolCarousel{cursor:grab}#toolCarousel.dragging{cursor:grabbing;user-select:none}</style>
+      <div class="scroll-hint" style="display:none;text-align:center;margin-top:.3rem;font-size:.7rem;color:var(--text-muted,#9ca3af);user-select:none;">
+        <span style="display:inline-flex;align-items:center;gap:.3rem;opacity:.6;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l-7 7 7 7"/></svg>
+          左右滑動查看更多工具
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+      <style>@media(min-width:641px){.scroll-hint{display:block!important}}@media(max-width:640px){.scroll-hint{display:none!important}}</style>
       <script>(function(){var el=document.getElementById('toolCarousel'),down=false,sx,sl;el.addEventListener('mousedown',function(e){down=true;el.classList.add('dragging');sx=e.pageX-el.offsetLeft;sl=el.scrollLeft});el.addEventListener('mouseleave',function(){down=false;el.classList.remove('dragging')});el.addEventListener('mouseup',function(){down=false;el.classList.remove('dragging')});el.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)})})();</script>
     </section>
 
