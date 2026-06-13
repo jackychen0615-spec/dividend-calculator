@@ -372,7 +372,22 @@
         document.getElementById('selected' + side).textContent = '';
       });
       inputEl.addEventListener('blur', function(){
-        setTimeout(function(){ ddEl.classList.remove('open'); }, 150);
+        setTimeout(function(){
+          ddEl.classList.remove('open');
+          // Auto-select first match if user typed but didn't pick from dropdown
+          var current = side === 'A' ? selectedStockA : selectedStockB;
+          if (!current && inputEl.value.trim()) {
+            var results = fuzzyFilter(inputEl.value.trim(), allStocks);
+            if (results.length > 0) selectStock(side, results[0]);
+          }
+        }, 200);
+      });
+      inputEl.addEventListener('keydown', function(e){
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          var results = fuzzyFilter(inputEl.value.trim(), allStocks);
+          if (results.length > 0) { selectStock(side, results[0]); inputEl.blur(); }
+        }
       });
       inputEl.addEventListener('focus', function(){
         var q = inputEl.value;
