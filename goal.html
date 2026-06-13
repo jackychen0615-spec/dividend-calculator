@@ -81,7 +81,7 @@
   <style>
     .goal-stock-row {
       display: grid;
-      grid-template-columns: 1fr 100px 36px;
+      grid-template-columns: 1fr 80px 80px 36px;
       gap: .5rem;
       align-items: center;
       margin-bottom: .5rem;
@@ -227,8 +227,8 @@
           <!-- 持股清單 -->
           <div style="margin-bottom:.9rem;">
             <label style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.5rem;">持股明細</label>
-            <div style="font-size:.7rem;color:#9ca3af;margin-bottom:.5rem;display:grid;grid-template-columns:1fr 100px 36px;gap:.5rem;">
-              <span>股票代號 / 名稱</span><span style="text-align:right;">持股張數</span><span></span>
+            <div style="font-size:.7rem;color:#9ca3af;margin-bottom:.5rem;display:grid;grid-template-columns:1fr 80px 80px 36px;gap:.5rem;">
+              <span>股票代號 / 名稱</span><span style="text-align:right;">張數</span><span style="text-align:right;">成本均價</span><span></span>
             </div>
             <div id="stockRows"></div>
             <button class="goal-add-btn" id="addStockBtn" type="button">+ 新增持股</button>
@@ -398,7 +398,7 @@
     // Load stock list
     fetch('/api/stocks')
       .then(function(r){ return r.json(); })
-      .then(function(data){ allStocks = data; })
+      .then(function(data){ allStocks = data.stocks || data || []; })
       .catch(function(){ allStocks = []; });
 
     function fmt(n, decimals) {
@@ -425,7 +425,7 @@
 
     function addStockRow(initData) {
       var id = ++rowIdCounter;
-      var rowData = initData || { code: '', name: '', price: null, dividend: null, yield: null, shares: '' };
+      var rowData = initData || { code: '', name: '', price: null, dividend: null, yield: null, shares: '', costPrice: '' };
       stockRowData.push({ id: id, data: rowData });
 
       var container = document.getElementById('stockRows');
@@ -446,12 +446,17 @@
           'style="padding:.6rem .7rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.9rem;color:#1f2937;outline:none;text-align:right;width:100%;box-sizing:border-box;" ' +
           'onfocus="this.style.borderColor=\'#059669\';this.style.background=\'#fff\'" ' +
           'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
+        '<input type="number" class="gs-cost" placeholder="均價" min="0" step="0.01" value="' + escHtml(rowData.costPrice || '') + '" ' +
+          'style="padding:.6rem .7rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:.9rem;color:#1f2937;outline:none;text-align:right;width:100%;box-sizing:border-box;" ' +
+          'onfocus="this.style.borderColor=\'#059669\';this.style.background=\'#fff\'" ' +
+          'onblur="this.style.borderColor=\'#e5e7eb\';this.style.background=\'#f9fafb\'">' +
         '<button class="goal-del-btn gs-del" type="button" aria-label="刪除">&#10005;</button>';
 
       container.appendChild(rowEl);
 
       var inputEl = rowEl.querySelector('.gs-input');
       var sharesEl = rowEl.querySelector('.gs-shares');
+      var costEl = rowEl.querySelector('.gs-cost');
       var delBtn = rowEl.querySelector('.gs-del');
       var ddEl = document.getElementById('gsd-' + id);
       var searchTimer = null;
@@ -484,6 +489,12 @@
       sharesEl.addEventListener('input', function(){
         var rd = findRowData(id);
         if (rd) rd.data.shares = this.value;
+        calcAndSave();
+      });
+
+      costEl.addEventListener('input', function(){
+        var rd = findRowData(id);
+        if (rd) rd.data.costPrice = this.value;
         calcAndSave();
       });
 
@@ -568,11 +579,17 @@
         // shares in thousands (1 lot = 1000 shares)
         var annualDiv = annualDivPerShare * shares * 1000;
         totalAnnualDiv += annualDiv;
+        var costPrice = parseFloat(d.costPrice) || 0;
+        var costYield = (costPrice > 0 && annualDivPerShare > 0) ? (annualDivPerShare / costPrice * 100) : null;
+        var totalCost = costPrice > 0 ? costPrice * shares * 1000 : 0;
         holdingsDetail.push({
           code: d.code || '—',
           name: d.name || '',
           shares: shares,
-          annualDiv: annualDiv
+          annualDiv: annualDiv,
+          costPrice: costPrice,
+          costYield: costYield,
+          totalCost: totalCost
         });
       });
 
@@ -650,8 +667,9 @@
         holdingsDetail.forEach(function(h){
           var tr = document.createElement('tr');
           tr.style.borderBottom = '1px solid #f3f4f6';
+          var costInfo = h.costPrice > 0 ? '<div style="font-size:.7rem;color:#6b7280;">均價 ' + fmt(h.costPrice,1) + (h.costYield ? ' / 成本殖利率 ' + h.costYield.toFixed(1) + '%' : '') + '</div>' : '';
           tr.innerHTML =
-            '<td style="padding:.35rem .4rem;"><strong>' + escHtml(h.code) + '</strong> <span style="font-size:.75rem;color:#6b7280;">' + escHtml(h.name) + '</span></td>' +
+            '<td style="padding:.35rem .4rem;"><strong>' + escHtml(h.code) + '</strong> <span style="font-size:.75rem;color:#6b7280;">' + escHtml(h.name) + '</span>' + costInfo + '</td>' +
             '<td style="padding:.35rem .4rem;text-align:right;">' + fmt(h.shares, 3) + '</td>' +
             '<td style="padding:.35rem .4rem;text-align:right;color:#059669;font-weight:600;">' + fmt(h.annualDiv) + '</td>' +
             '<td style="padding:.35rem .4rem;text-align:right;color:#059669;">' + fmt(h.annualDiv / 12) + '</td>';

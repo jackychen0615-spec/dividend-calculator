@@ -307,7 +307,7 @@
     // Load stock list
     fetch('/api/stocks')
       .then(function(r){ return r.json(); })
-      .then(function(data){ allStocks = data; })
+      .then(function(data){ allStocks = data.stocks || data || []; })
       .catch(function(){ allStocks = []; });
 
     function fuzzyFilter(query, stocks) {
