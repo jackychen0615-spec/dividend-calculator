@@ -250,6 +250,14 @@
                 style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1rem;color:#1f2937;outline:none;transition:border .2s;box-sizing:border-box;"
                 onfocus="this.style.borderColor='#059669';this.style.background='#fff'"
                 onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <div style="margin-top:.4rem;font-size:.7rem;color:var(--text-muted,#9ca3af);line-height:1.5;">
+                不知道填多少？參考：<br>
+                <span style="display:inline-flex;gap:.3rem;flex-wrap:wrap;margin-top:.2rem;">
+                  <button type="button" onclick="document.getElementById('expectedYield').value='4';document.getElementById('expectedYield').dispatchEvent(new Event('input'))" style="padding:.15rem .5rem;border:1px solid #d1d5db;border-radius:6px;background:transparent;color:var(--text-secondary,#6b7280);font-size:.68rem;cursor:pointer;">保守 4%</button>
+                  <button type="button" onclick="document.getElementById('expectedYield').value='5.5';document.getElementById('expectedYield').dispatchEvent(new Event('input'))" style="padding:.15rem .5rem;border:1px solid #059669;border-radius:6px;background:rgba(5,150,105,.08);color:#059669;font-size:.68rem;cursor:pointer;">一般 5.5%</button>
+                  <button type="button" onclick="document.getElementById('expectedYield').value='7';document.getElementById('expectedYield').dispatchEvent(new Event('input'))" style="padding:.15rem .5rem;border:1px solid #d1d5db;border-radius:6px;background:transparent;color:var(--text-secondary,#6b7280);font-size:.68rem;cursor:pointer;">積極 7%</button>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -323,7 +331,16 @@
       </div>
 
       <div style="font-size:.68rem;color:#9ca3af;text-align:center;line-height:1.5;margin-top:.4rem;">
-        計算基於持股股數 x 每股年配息（殖利率 x 股價）÷ 12。未持有股票時以預期殖利率估算。預估達標時間以複利方式每月累積，為估算值，實際可能因市場變化而不同。本計算不構成投資建議。
+        <details style="cursor:pointer;margin-bottom:.8rem;">
+          <summary style="font-weight:600;color:var(--text-primary,#1f2937);font-size:.85rem;">計算公式說明</summary>
+          <div style="margin-top:.5rem;font-size:.8rem;color:var(--text-secondary,#6b7280);line-height:1.7;">
+            <p><strong>月領股利 =</strong> 各持股的（股數 x 每股年配息）加總 / 12</p>
+            <p><strong>每股年配息 =</strong> 股價 x 殖利率 / 100</p>
+            <p><strong>成本殖利率 =</strong> 每股年配息 / 你的買入均價 x 100%（比用市價算更準確）</p>
+            <p><strong>預估達標時間：</strong>假設每月定期定額投入，買入的股票產生股利，股利再投入下個月的本金中，以複利方式逐月累積，直到年化股利 >= 目標金額 x 12。</p>
+            <p style="color:var(--text-muted,#9ca3af);font-size:.75rem;">注意：實際配息金額每年不同，股價會波動，本計算為估算值，不構成投資建議。</p>
+          </div>
+        </details>
       </div>
     </div>
 
