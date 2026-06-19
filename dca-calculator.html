@@ -133,7 +133,7 @@
           <span style="font-size:.7rem;color:#6b7280;">新青安 / 月付金</span>
         </a>
               <a href="/compare" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#eef2ff;margin:0 auto .6rem;font-size:1.2rem;color:#4f46e5;font-weight:700;">VS</span>
+          <img src="images/icon-compare.png" alt="個股比較器" onerror="this.outerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#eef2ff;margin:0 auto .6rem;font-size:1.2rem;color:#4f46e5;font-weight:700;\'>
           <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">個股比較</strong>
           <span style="font-size:.7rem;color:#6b7280;">兩檔即時比較</span>
         </a>
@@ -144,6 +144,17 @@
         </a>
       </div>
       <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
+      <div class="carousel-nav" style="display:none;justify-content:center;align-items:center;gap:.8rem;margin-top:.5rem;">
+        <button onclick="document.querySelector('.tool-carousel-sub').scrollBy({left:-160,behavior:'smooth'})" style="width:32px;height:32px;border-radius:50%;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);" onmouseover="this.style.borderColor='#0891b2';this.style.color='#0891b2'" onmouseout="this.style.borderColor='#e5e7eb';this.style.color=''" aria-label="上一個">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span style="font-size:.7rem;color:#9ca3af;user-select:none;">9 個工具</span>
+        <button onclick="document.querySelector('.tool-carousel-sub').scrollBy({left:160,behavior:'smooth'})" style="width:32px;height:32px;border-radius:50%;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);" onmouseover="this.style.borderColor='#0891b2';this.style.color='#0891b2'" onmouseout="this.style.borderColor='#e5e7eb';this.style.color=''" aria-label="下一個">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <style>@media(min-width:641px){.carousel-nav{display:flex!important}}@media(max-width:640px){.carousel-nav{display:none!important}}</style>
+      <script>(function(){var el=document.querySelector('.tool-carousel-sub');if(!el)return;var down=false,sx,sl;el.addEventListener('mousedown',function(e){down=true;el.classList.add('dragging');sx=e.pageX-el.offsetLeft;sl=el.scrollLeft});el.addEventListener('mouseleave',function(){down=false});el.addEventListener('mouseup',function(){down=false});el.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)})})();</script>
     </section>
 <section id="calc" style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
       <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
