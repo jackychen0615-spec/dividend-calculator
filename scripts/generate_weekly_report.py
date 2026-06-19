@@ -98,6 +98,7 @@ def generate_article(now, stocks, yields):
   <title>{title} - GULICALC</title>
   <meta name="description" content="{year}年第{week_num}週台股週報：熱門ETF與個股收盤價、殖利率變化、存股族操作建議。每週自動更新。">
   <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{year}年第{week_num}週台股週報：熱門ETF與個股收盤價、殖利率變化、存股族操作建議。每週自動更新。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://gulicalc.com/articles/{slug}">
   <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
