@@ -141,22 +141,24 @@ main {
 
 /* ===== Calculator Section ===== */
 .calculator-hero {
-  text-align: left;
+  text-align: center;
   margin-bottom: 2.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .calculator-hero h1 {
   font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 800;
+  color: #ffd700;
   margin-bottom: 0.5rem;
-  text-shadow: none;
+  text-shadow: 0 2px 12px rgba(0,0,0,.7);
 }
 
 .calculator-hero p {
-  color: var(--text-secondary);
+  color: #ffffff;
   font-size: 1.05rem;
-  text-shadow: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
 }
 
 .calculator-card {
