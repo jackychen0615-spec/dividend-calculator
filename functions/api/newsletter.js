@@ -71,9 +71,32 @@ export async function onRequest(context) {
     }
   }
 
-  // GET: 查看名單（需要 admin key）
+  // GET
   if (request.method === 'GET') {
     const url = new URL(request.url);
+
+    // 退訂：?unsubscribe=email → 設為 inactive，回確認頁
+    const unsub = url.searchParams.get('unsubscribe');
+    if (unsub) {
+      const db = env.DB;
+      if (db) {
+        try {
+          await db.prepare("UPDATE newsletter SET status = 'inactive' WHERE email = ?")
+            .bind(unsub.toLowerCase()).run();
+        } catch (e) { /* 靜默：即使失敗也回確認頁，不洩漏資訊 */ }
+      }
+      const page = `<!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>已取消訂閱</title></head>
+<body style="margin:0;background:#f4f6f5;font-family:-apple-system,'PingFang TC',sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;">
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px 28px;max-width:380px;text-align:center;">
+    <div style="font-size:32px;">&#10003;</div>
+    <h1 style="font-size:18px;color:#14201f;margin:.5rem 0;">已取消訂閱</h1>
+    <p style="font-size:14px;color:#46555a;line-height:1.7;margin:0;">你已成功退訂 GULICALC 電子報，之後不會再收到通知。<br>改變心意？隨時可以到 <a href="https://gulicalc.com/" style="color:#0d8c84;">gulicalc.com</a> 重新訂閱。</p>
+  </div>
+</body></html>`;
+      return new Response(page, { headers: { 'Content-Type': 'text/html; charset=utf-8', ...corsHeaders } });
+    }
+
+    // 查看名單（需要 admin key）
     const key = url.searchParams.get('key');
 
     // 簡單的 admin 驗證（你可以改成更安全的）
