@@ -3,3 +3,4 @@ vercel.json
 .claude/
 .wrangler/
 *.webp
+articles/_drafts/
