@@ -4,3 +4,7 @@ vercel.json
 .wrangler/
 *.webp
 articles/_drafts/
+
+# skills CLI 安裝產物（非網站內容）
+.agents/
+skills-lock.json

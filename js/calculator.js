@@ -56,7 +56,7 @@
 
   function calculate() {
     const price = Math.max(0, parseFloat(stockPrice.value) || 0);
-    const shareCount = Math.max(0, Math.min(parseFloat(shares.value) || 0, 99999999));
+    const shareCount = Math.max(0, Math.min((parseFloat(shares.value) || 0) * (window.__shareUnitFactor || 1), 99999999));
     const div = Math.max(0, parseFloat(dividend.value) || 0);
 
     const totalCost = shareCount * price;
@@ -68,7 +68,7 @@
     const hintEl = document.getElementById('calcHint');
     if (price > 0 && shareCount > 0 && div > 0) {
       if (!resultsShown && resultsEl) {
-        resultsEl.style.maxHeight = '200px';
+        resultsEl.style.maxHeight = (resultsEl.scrollHeight + 24) + 'px';
         resultsEl.style.opacity = '1';
         if (hintEl) hintEl.style.display = 'none';
         resultsShown = true;

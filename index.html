@@ -42,9 +42,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="canonical" href="https://gulicalc.com/">
   <link rel="alternate" type="application/rss+xml" title="股利計算器 RSS" href="https://gulicalc.com/feed.xml">
-  <link rel="preload" href="css/style.css?v=20260530e" as="style">
+  <link rel="preload" href="css/style.css?v=20260620a" as="style">
   <link rel="preload" href="images/logo-nav.png" as="image">
-  <link rel="stylesheet" href="css/style.css?v=20260530e">
+  <link rel="stylesheet" href="css/style.css?v=20260620a">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -212,61 +212,79 @@
 
   <main>
     <!-- Hero 介紹區 -->
-    <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
-      <h1>股利計算器 — 存股族的試算工具</h1>
-      <p style="max-width:500px;margin:0 auto .8rem;">買了幾張、每股配多少、殖利率多少 — 三個數字就算完。不用註冊，不收資料。</p>
-      <p style="margin:0;"><a href="#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始算</a></p>
+    <section class="calculator-hero" style="background:none;padding:3rem 1.5rem 2.2rem;border-radius:0;margin:1rem auto 1.5rem;max-width:960px;text-align:left;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:space-between;">
+      <div style="flex:1 1 360px;min-width:290px;">
+        <span style="display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:500;letter-spacing:.03em;color:var(--accent-hover);background:var(--accent-light);border:1px solid var(--border-color);padding:.35rem .85rem;border-radius:100px;margin-bottom:1.3rem;">免註冊 · 不收資料 · 純瀏覽器運算</span>
+        <h1 style="font-size:clamp(2rem,5.2vw,3.1rem);font-weight:700;line-height:1.12;letter-spacing:-.03em;color:var(--text-primary);max-width:16ch;margin:0;">三個數字，<br>算出你的<span style="color:var(--accent);">存股殖利率</span></h1>
+        <p style="max-width:42ch;margin:1.1rem 0 1.8rem;color:var(--text-secondary);font-size:1.05rem;">買了幾張、每股配多少、股價多少 — 輸入就出結果。台股存股族的免費試算工具。</p>
+        <a href="#calc" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.7rem;background:var(--accent);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;font-size:.98rem;box-shadow:0 10px 28px -12px rgba(8,145,178,.55);transition:transform .18s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">開始試算 &rarr;</a>
+      </div>
+      <div id="heroStat" style="flex:0 0 auto;width:236px;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;padding:1.4rem 1.5rem;box-shadow:14px 18px 44px -24px rgba(13,140,132,.3);">
+        <div id="hsWrap" style="transition:opacity .3s;">
+          <div style="font-size:.72rem;color:var(--text-muted);letter-spacing:.03em;">範例 · <span id="hsName">0056 元大高股息</span></div>
+          <div style="font-family:'Sora',sans-serif;font-variant-numeric:tabular-nums;font-weight:700;font-size:2.7rem;line-height:1.1;letter-spacing:-.03em;color:var(--accent);margin:.35rem 0;"><span id="hsYield">4.73</span><span style="font-size:1.3rem;">%</span></div>
+          <div style="font-size:.74rem;color:var(--text-secondary);">年化殖利率 · 即時試算</div>
+        </div>
+      </div>
     </section>
+    <script>
+    (function(){
+      var ex=[['0056 元大高股息','4.73'],['00878 國泰永續高股息','4.46'],['00919 群益台灣精選高息','8.18'],['2891 中信金','3.48'],['0050 元大台灣50','4.19']];
+      var w=document.getElementById('hsWrap'),n=document.getElementById('hsName'),y=document.getElementById('hsYield');
+      if(!w||!n||!y) return; var i=0;
+      setInterval(function(){ w.style.opacity='0'; setTimeout(function(){ i=(i+1)%ex.length; n.textContent=ex[i][0]; y.textContent=ex[i][1]; w.style.opacity='1'; },300); },3000);
+    })();
+    </script>
 
     <!-- 工具跑馬燈 -->
     <section style="max-width:100%;margin:0 auto 2rem;overflow:hidden;">
       <h2 style="font-size:1.05rem;text-align:center;margin-bottom:.3rem;color:#1f2937;font-weight:700;padding:0 1rem;">免費試算工具</h2>
       <p style="text-align:center;font-size:.75rem;color:#9ca3af;margin-bottom:1rem;padding:0 1rem;">所有計算在瀏覽器完成，不收集任何資料</p>
-      <div id="toolCarousel" style="display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;">
-        <a href="#calc" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/favicon-32.png" alt="股利計算器" style="width:44px;height:44px;border-radius:10px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">股利計算</strong>
-          <span style="font-size:.7rem;color:#6b7280;">殖利率 / 總股利</span>
+      <div id="toolCarousel" style="display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1rem .8rem;scrollbar-width:none;">
+        <a href="#calc" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/favicon-32.png" alt="股利計算" style="width:44px;height:44px;border-radius:11px;background:#0a0e1a;padding:6px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">股利計算</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">殖利率 / 總股利</span>
         </a>
-        <a href="compound-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-compound.png" alt="複利計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">複利試算</strong>
-          <span style="font-size:.7rem;color:#6b7280;">長期複利成長</span>
+        <a href="compound-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-compound.png" alt="複利試算" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">複利試算</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">長期複利成長</span>
         </a>
-        <a href="payback-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-payback.png" alt="還本計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">還本試算</strong>
-          <span style="font-size:.7rem;color:#6b7280;">幾年靠股利回本</span>
+        <a href="payback-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-payback.png" alt="還本試算" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">還本試算</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">幾年靠股利回本</span>
         </a>
-        <a href="dca-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-dca.png" alt="定期定額計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">定期定額</strong>
-          <span style="font-size:.7rem;color:#6b7280;">每月定投成果</span>
+        <a href="dca-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-dca.png" alt="定期定額" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">定期定額</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">每月定投成果</span>
         </a>
-        <a href="salary/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-salary.png" alt="薪資計算器" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">薪資實領</strong>
-          <span style="font-size:.7rem;color:#6b7280;">勞保 / 健保 / 勞退</span>
+        <a href="salary/" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-salary.png" alt="薪資實領" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">薪資實領</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">勞保 / 健保 / 勞退</span>
         </a>
-        <a href="tax-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-tax.png" alt="所得稅試算" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">所得稅試算</strong>
-          <span style="font-size:.7rem;color:#6b7280;">報稅 / 股利節稅</span>
+        <a href="tax-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-tax.png" alt="所得稅試算" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">所得稅試算</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">報稅 / 股利節稅</span>
         </a>
-        <a href="mortgage-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-mortgage.png" alt="房貸計算機" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">房貸計算</strong>
-          <span style="font-size:.7rem;color:#6b7280;">新青安 / 月付金</span>
+        <a href="mortgage-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-mortgage.png" alt="房貸計算" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">房貸計算</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">新青安 / 月付金</span>
         </a>
-        <a href="compare" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-compare.png" alt="個股比較器" onerror="this.outerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:#eef2ff;margin:0 auto .6rem;font-size:1.2rem;color:#4f46e5;font-weight:700;\'>VS</span>'" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">個股比較</strong>
-          <span style="font-size:.7rem;color:#6b7280;">兩檔即時比較</span>
+        <a href="compare" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-compare.png" alt="個股比較" onerror="this.outerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:11px;background:#eef2ff;margin:0 auto .6rem;font-size:1.1rem;color:#4f46e5;font-weight:700;\'>VS</span>'" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">個股比較</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">兩檔即時比較</span>
         </a>
-        <a href="goal" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
-          <img src="images/icon-goal.png" alt="存股目標追蹤" style="width:44px;height:44px;border-radius:10px;display:block;margin:0 auto .6rem;">
-          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">目標追蹤</strong>
-          <span style="font-size:.7rem;color:#6b7280;">月領目標進度</span>
+        <a href="goal" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:160px;text-decoration:none;background:var(--bg-white);border:1px solid var(--border-color);border-radius:14px;padding:1.15rem 1rem;text-align:center;transition:box-shadow .2s,transform .15s,border-color .2s;">
+          <img src="images/icon-goal.png" alt="目標追蹤" style="width:44px;height:44px;border-radius:11px;display:block;margin:0 auto .6rem;">
+          <strong style="font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:.2rem;font-weight:600;letter-spacing:-.01em;">目標追蹤</strong>
+          <span style="font-size:.74rem;color:var(--text-muted);">月領目標進度</span>
         </a>
       </div>
       <style>#toolCarousel::-webkit-scrollbar{display:none}.tool-slide:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}#toolCarousel{cursor:grab}#toolCarousel.dragging{cursor:grabbing;user-select:none}</style>
@@ -285,11 +303,11 @@
 
     <!-- 股利計算器 -->
     <section id="calc" style="max-width:520px;margin:0 auto 2rem;padding:0 1rem;">
-      <div style="background:#fff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,.06);overflow:hidden;">
+      <div style="background:var(--bg-white);border-radius:24px;box-shadow:18px 22px 50px -26px rgba(13,140,132,.28);overflow:hidden;border:1px solid var(--border-color);">
         <!-- 標題列 -->
-        <div style="background:linear-gradient(135deg,#0891b2,#0e7490);padding:1.2rem 1.5rem;">
-          <h2 style="font-size:1.1rem;color:#fff;margin:0;font-weight:700;">股利殖利率試算</h2>
-          <p style="font-size:.75rem;color:rgba(255,255,255,.75);margin:.3rem 0 0;">輸入三個數字，自動幫你算</p>
+        <div style="background:radial-gradient(140% 160% at 100% 0%, #0f3b38 0%, #0a6f69 60%, #0d8c84 100%);padding:1.4rem 1.6rem;">
+          <h2 style="font-size:1.15rem;color:#fff;margin:0;font-weight:600;letter-spacing:-.01em;">股利殖利率試算</h2>
+          <p style="font-size:.78rem;color:rgba(220,255,250,.72);margin:.25rem 0 0;">輸入三個數字，自動幫你算</p>
         </div>
         <!-- 股票搜尋 -->
         <div style="padding:1rem 1.5rem .5rem;position:relative;" id="stockSearchWrap">
@@ -298,24 +316,34 @@
           <ul id="stockDropdown" style="display:none;position:absolute;left:1.5rem;right:1.5rem;top:100%;background:#fff;border:1.5px solid #e5e7eb;border-top:none;border-radius:0 0 10px 10px;list-style:none;margin:0;padding:0;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.08);max-height:240px;overflow-y:auto;"></ul>
           <div id="stockBadge" style="display:none;margin-top:.5rem;padding:.4rem .7rem;background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;font-size:.78rem;color:#0e7490;line-height:1.4;"></div>
         </div>
-        <!-- 輸入區 -->
-        <div style="padding:1.2rem 1.5rem 1rem;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;">
+        <!-- 輸入區（編輯風 + 張/股切換 + 驗證） -->
+        <script>window.__shareUnitFactor=1000;</script>
+        <div style="padding:1.3rem 1.6rem 1rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.95rem;">
             <div>
-              <label for="stockPrice" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">股價（元）</label>
-              <input type="number" id="stockPrice" placeholder="50" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
+              <label for="stockPrice" style="font-size:.78rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.35rem;">股價（元）</label>
+              <input type="number" id="stockPrice" inputmode="decimal" placeholder="50" min="0" step="0.01" oninput="guliValidate(this)" style="width:100%;padding:.75rem .9rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:12px;font-size:1.05rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;transition:border-color .16s,background .16s;">
+              <span class="gerr" id="err-stockPrice" style="display:none;font-size:.72rem;color:#d14a3f;margin-top:.3rem;">股價要大於 0</span>
             </div>
             <div>
-              <label for="shares" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">持有股數</label>
-              <input type="number" id="shares" placeholder="1000" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
-              <span style="font-size:.68rem;color:#9ca3af;margin-top:.15rem;display:block;">1 張 = 1,000 股</span>
+              <label for="dividend" style="font-size:.78rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.35rem;">每股股利（元）</label>
+              <input type="number" id="dividend" inputmode="decimal" placeholder="2" min="0" step="0.01" oninput="guliValidate(this)" style="width:100%;padding:.75rem .9rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:12px;font-size:1.05rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;transition:border-color .16s,background .16s;">
+              <span class="gerr" id="err-dividend" style="display:none;font-size:.72rem;color:#d14a3f;margin-top:.3rem;">股利要大於 0</span>
             </div>
           </div>
           <div>
-            <label for="dividend" style="font-size:.75rem;font-weight:600;color:#6b7280;display:block;margin-bottom:.3rem;">每股股利（元）</label>
-            <input type="number" id="dividend" placeholder="2" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;font-size:1.05rem;color:#1f2937;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0891b2';this.style.background='#fff'" onblur="this.style.borderColor='#e5e7eb';this.style.background='#f9fafb'">
-            <span style="font-size:.68rem;margin-top:.15rem;display:block;"><a href="articles/taiwan-stock-dividend-guide" style="color:#0891b2;text-decoration:none;">去哪查配息資料？</a></span>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+              <label for="shares" style="font-size:.78rem;font-weight:500;color:var(--text-secondary);">持有數量</label>
+              <div id="unitSeg" style="display:inline-flex;background:var(--bg-input);border:1px solid var(--border-color);border-radius:9px;padding:2px;">
+                <button type="button" data-unit="lot" class="unit-on" onclick="guliUnit('lot')" style="border:0;background:var(--accent);color:#fff;font-size:.76rem;font-weight:600;padding:.28rem .8rem;border-radius:7px;cursor:pointer;transition:.15s;">張</button>
+                <button type="button" data-unit="share" onclick="guliUnit('share')" style="border:0;background:none;color:var(--text-secondary);font-size:.76rem;font-weight:600;padding:.28rem .8rem;border-radius:7px;cursor:pointer;transition:.15s;">股</button>
+              </div>
+            </div>
+            <input type="number" id="shares" inputmode="numeric" placeholder="3" min="0" step="1" oninput="guliValidate(this)" style="width:100%;padding:.75rem .9rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:12px;font-size:1.05rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;transition:border-color .16s,background .16s;">
+            <span class="gerr" id="err-shares" style="display:none;font-size:.72rem;color:#d14a3f;margin-top:.3rem;">請輸入大於 0 的數量</span>
+            <span id="unitHint" style="font-size:.7rem;color:var(--text-muted);margin-top:.25rem;display:block;">單位：張（1 張 = 1,000 股）</span>
           </div>
+          <p style="font-size:.7rem;margin:.7rem 0 0;text-align:right;"><a href="articles/taiwan-stock-dividend-guide" style="color:var(--accent);text-decoration:none;">去哪查配息資料？ →</a></p>
         </div>
         <!-- 結果區：預設隱藏，輸入後滑出 -->
         <div id="calcResults" style="max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;opacity:0;">
@@ -330,7 +358,7 @@
           <div style="padding:.6rem 1.5rem 1.2rem;display:flex;justify-content:center;gap:2rem;">
             <div style="text-align:center;">
               <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">投入成本</div>
-              <div style="font-size:1.1rem;font-weight:700;color:#374151;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalCost">0</div>
+              <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalCost">0</div>
               <div style="font-size:.65rem;color:#9ca3af;">元</div>
             </div>
             <div style="width:1px;background:#e5e7eb;"></div>
@@ -339,6 +367,11 @@
               <div style="font-size:1.1rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalDividend">0</div>
               <div style="font-size:.65rem;color:#9ca3af;">元</div>
             </div>
+          </div>
+          <!-- 下一步：回本試算（#5） -->
+          <div id="nextStepPayback" style="display:none;margin:.2rem 1.5rem 1rem;padding:.75rem .95rem;border-radius:12px;background:var(--accent-light);border:1px solid var(--border-color);align-items:center;justify-content:space-between;gap:.6rem;">
+            <span style="font-size:.82rem;color:var(--text-secondary);">照這個殖利率，約 <b id="paybackYears" style="font-variant-numeric:tabular-nums;color:var(--accent-hover);font-weight:600;">0</b> 年靠股利回本</span>
+            <a href="payback-calculator" style="font-size:.8rem;font-weight:600;color:#fff;background:var(--accent);padding:.45rem .9rem;border-radius:9px;text-decoration:none;white-space:nowrap;">回本試算 &rarr;</a>
           </div>
           <!-- 分享結果 -->
           <div style="text-align:center;padding:0 1.5rem 1rem;">
@@ -350,10 +383,47 @@
         </div>
         <!-- 輸入提示 -->
         <div id="calcHint" style="padding:1rem 1.5rem 1.2rem;text-align:center;">
-          <p style="font-size:.82rem;color:#b0b8c4;margin:0;">填完三個欄位，結果馬上出來</p>
+          <p style="font-size:.82rem;color:var(--text-muted);margin:0;">填完三個欄位，結果馬上出來</p>
         </div>
       </div>
     </section>
+    <script>
+      function guliUnit(u){
+        window.__shareUnitFactor = u==='lot'?1000:1;
+        document.querySelectorAll('#unitSeg button').forEach(function(b){
+          var on=b.dataset.unit===u;
+          b.style.background=on?'var(--accent)':'none';
+          b.style.color=on?'#fff':'var(--text-secondary)';
+        });
+        document.getElementById('unitHint').textContent = u==='lot'?'單位：張（1 張 = 1,000 股）':'單位：股';
+        var s=document.getElementById('shares');
+        s.placeholder = u==='lot'?'3':'3000';
+        s.dispatchEvent(new Event('input',{bubbles:true}));
+      }
+      function guliValidate(input){
+        var err=document.getElementById('err-'+input.id);
+        if(!err) return;
+        var v=parseFloat(input.value);
+        var bad = input.value.trim()!=='' && (isNaN(v)||v<=0);
+        err.style.display = bad?'block':'none';
+        input.style.borderColor = bad?'#d14a3f':'';
+      }
+      // #3 防止滑鼠滾輪誤改數值
+      document.querySelectorAll('#calc input[type=number]').forEach(function(i){
+        i.addEventListener('wheel', function(){ this.blur(); }, {passive:true});
+      });
+      // #5 算完殖利率，順勢算「幾年回本」
+      function guliPayback(){
+        var p=parseFloat(document.getElementById('stockPrice').value);
+        var d=parseFloat(document.getElementById('dividend').value);
+        var box=document.getElementById('nextStepPayback');
+        if(p>0 && d>0){ document.getElementById('paybackYears').textContent=(p/d).toFixed(1); box.style.display='flex'; }
+        else { box.style.display='none'; }
+      }
+      ['stockPrice','dividend'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', guliPayback);
+      });
+    </script>
 
     <!-- 最近計算 -->
     <div class="calc-history" id="calcHistory" style="display:none;">
@@ -427,8 +497,7 @@
 
     <div class="ad-slot" data-ad-pos="tool-below-calc"></div>
     <section style="max-width:640px;margin:1.5rem auto;padding:1.2rem 1rem;background:linear-gradient(135deg,#f0f9ff,#ecfeff);border:1px solid #bae6fd;border-radius:14px;">
-      <h2 style="font-size:1rem;color:#0891b2;margin:0 0 .9rem;text-align:center;font-weight:700;">&#9989; 算完了？下一步試試這些</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;">
+      <h2 style="font-size:1rem;color:#0e7490;margin:0 0 .9rem;text-align:center;font-weight:700;">&#9989; 算完了？下一步試試這些</h2>      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;">
         <a href="/compound-calculator" style="display:block;background:#fff;border:1px solid #e0f2fe;border-radius:10px;padding:.8rem;text-decoration:none;text-align:center;transition:.15s;" onmouseover="this.style.borderColor='#0891b2';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e0f2fe';this.style.transform=''">
           <strong style="display:block;color:#0891b2;font-size:.9rem;margin-bottom:.15rem;">存股複利計算器</strong>
           <span style="font-size:.76rem;color:#64748b;">算長期複利滾多少</span>
@@ -593,7 +662,7 @@
   </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <script src="js/calculator.js?v=20260530f"></script>
+  <script src="js/calculator.js?v=20260620a"></script>
   <script src="js/feedback.js?v=20260530f"></script>
   <script src="js/cookie-consent.js?v=20260530f"></script>
 
