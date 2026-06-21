@@ -1,0 +1,59 @@
+name: 新文章上架通知訂閱者
+
+# 當有文章檔案被 push 到 main 時觸發（只通知「新增」的文章，編輯不通知）
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**.html'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout（含前一個 commit 以便比對）
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 偵測新增文章並通知訂閱者
+        env:
+          NOTIFY_ADMIN_KEY: ${{ secrets.NOTIFY_ADMIN_KEY }}
+        run: |
+          set -e
+          if [ -z "$NOTIFY_ADMIN_KEY" ]; then
+            echo "::warning::未設定 NOTIFY_ADMIN_KEY secret，跳過通知"; exit 0
+          fi
+
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE=$(git rev-parse HEAD~1 2>/dev/null || echo "")
+          fi
+          if [ -z "$BEFORE" ]; then echo "無前一版可比對，略過"; exit 0; fi
+
+          # 只取這次 push「新增(A)」的 articles/*.html（編輯 M / 刪除 D 都不通知）
+          ADDED=$(git diff --name-status "$BEFORE" "${{ github.sha }}" -- 'articles/*.html' | awk '$1=="A"{print $2}')
+          if [ -z "$ADDED" ]; then echo "本次沒有新增文章，結束"; exit 0; fi
+
+          echo "新增文章："; echo "$ADDED"
+          # 給 Cloudflare Pages 一點部署時間，避免 email 裡的連結還沒上線
+          sleep 60
+
+          echo "$ADDED" | while read -r f; do
+            [ -f "$f" ] || continue
+            slug=$(basename "$f" .html)
+            # 自動產生的週報/月報不發通知（避免每週洗版），需要的話移除這行
+            case "$slug" in
+              weekly-report-*|monthly-report-*) echo "略過自動報表：$slug"; continue;;
+            esac
+            title=$(grep -oP '(?<=<title>)[^<]*' "$f" | head -1 | sed 's/ *- *股利計算器.*//')
+            summary=$(grep -oP '(?<=name="description" content=")[^"]*' "$f" | head -1)
+            url="https://gulicalc.com/articles/$slug"
+            echo "→ 通知：$title"
+            payload=$(jq -n --arg k "$NOTIFY_ADMIN_KEY" --arg t "$title" --arg u "$url" --arg s "$summary" \
+              '{key:$k, title:$t, url:$u, summary:$s}')
+            resp=$(curl -s -X POST https://gulicalc.com/api/notify-subscribers \
+              -H "Content-Type: application/json" -d "$payload")
+            echo "  回應：$resp"
+          done
+          echo "完成"
