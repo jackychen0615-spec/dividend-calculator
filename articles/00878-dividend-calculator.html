@@ -131,7 +131,61 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-09</span>
         </div>
 
-        <p><strong>00878（國泰永續高股息 ETF）採季配息制度，每年配息 4 次，2024 年年化配息達 2.01 元，殖利率約 6～8%（依買入股價而定）。</strong>持有 1 張（1,000 股），以 2025 年均季配約 0.44 元計算，一年可領約 1,770 元。想精確試算你的配息收入，請使用<a href="/">股利計算器</a>。</p>
+        <p><strong>00878（國泰永續高股息 ETF）採季配息制度，每年配息 4 次，2024 年年化配息達 2.01 元，殖利率約 6～8%（依買入股價而定）。</strong>持有 1 張（1,000 股），以 2025 年均季配約 0.44 元計算，一年可領約 1,770 元。下方計算器已帶入 00878 範例數字，改成你的買入價與張數即可立即試算。</p>
+
+        <!-- 內嵌：00878 配息即時試算器 -->
+        <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);">
+          <div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;">
+            <div style="font-size:1.05rem;color:#fff;margin:0;font-weight:600;">00878 配息試算（改成你的數字）</div>
+            <p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入範例：股價 21、年配息 1.77 元，改數字即時重算</p>
+          </div>
+          <div style="padding:1.1rem 1.25rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;">
+              <div>
+                <label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label>
+                <input type="number" id="gcP" inputmode="decimal" value="21" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+              </div>
+              <div>
+                <label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label>
+                <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+              </div>
+            </div>
+            <div>
+              <label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label>
+              <input type="number" id="gcD" inputmode="decimal" value="1.77" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;">
+            <div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div>
+            <div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">8.43</span>%</div>
+            <div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;">
+              <div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">21,000</span> 元</div></div>
+              <div style="width:1px;background:var(--border-color);"></div>
+              <div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">1,770</span> 元</div></div>
+            </div>
+          </div>
+          <div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);">
+            <a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算季配息／幾年回本？用完整股利計算器 &rarr;</a>
+          </div>
+        </div>
+        <script>
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            document.getElementById('gcY').textContent=(price>0?div/price*100:0).toFixed(2);
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>00878 是什麼？</h2>
         <p>國泰永續高股息 ETF（股票代號：00878）是台灣第一檔結合 ESG 永續概念與高股息策略的 ETF，追蹤「MSCI 台灣 ESG 永續高股息 Select 指數」，從通過 ESG 篩選的台灣上市公司中，選取預測殖利率最高的成分股。</p>
