@@ -42,10 +42,7 @@ jobs:
           echo "$ADDED" | while read -r f; do
             [ -f "$f" ] || continue
             slug=$(basename "$f" .html)
-            # 自動產生的週報/月報不發通知（避免每週洗版），需要的話移除這行
-            case "$slug" in
-              weekly-report-*|monthly-report-*) echo "略過自動報表：$slug"; continue;;
-            esac
+            # 深度週報/月報也發電子報（站長要求）。只有「新增(A)」才會到這，覆寫(M)同篇不會重複發。
             title=$(grep -oP '(?<=<title>)[^<]*' "$f" | head -1 | sed 's/ *- *股利計算器.*//')
             summary=$(grep -oP '(?<=name="description" content=")[^"]*' "$f" | head -1)
             url="https://gulicalc.com/articles/$slug"
