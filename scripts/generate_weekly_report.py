@@ -12,22 +12,33 @@ import urllib.request
 import datetime
 import os
 import ssl
+import sys
+import time
 
 SITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARTICLES_DIR = os.path.join(SITE_DIR, 'articles')
 SITEMAP_PATH = os.path.join(SITE_DIR, 'sitemap.xml')
 
-def fetch_json(url):
+def fetch_json(url, retries=4):
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'})
-    try:
-        resp = urllib.request.urlopen(req, timeout=15, context=ctx)
-        return json.loads(resp.read().decode('utf-8'))
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
+    last_err = None
+    for attempt in range(retries):
+        try:
+            resp = urllib.request.urlopen(req, timeout=20, context=ctx)
+            raw = resp.read().decode('utf-8').strip()
+            if not raw:
+                raise ValueError("empty response body")
+            return json.loads(raw)
+        except Exception as e:
+            last_err = e
+            print(f"Attempt {attempt+1}/{retries} failed: {e}")
+            if attempt < retries - 1:
+                time.sleep(5 * (attempt + 1))  # 5s,10s,15s backoff，避開 TWSE API 暫時性空回應
+    print(f"Error after {retries} attempts: {last_err}")
+    return None
 
 def get_etf_data():
     data = fetch_json('https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL')
@@ -238,8 +249,9 @@ def main():
     print(f"Got {len(yields)} yield records")
 
     if not stocks:
-        print("No data, skipping")
-        return
+        # 不再靜默跳過：明確失敗讓 GitHub Action 顯示紅燈，才不會「假成功」整週空白
+        print("ERROR: 重試後仍抓不到 TWSE 資料，本次週報未生成。請檢查 TWSE API 狀態後手動重跑（workflow_dispatch）。")
+        sys.exit(1)
 
     filename, slug, html = generate_article(now, stocks, yields)
     filepath = os.path.join(ARTICLES_DIR, filename)
