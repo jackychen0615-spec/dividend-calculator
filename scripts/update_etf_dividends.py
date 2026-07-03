@@ -17,6 +17,7 @@
 """
 import json
 import os
+import re
 import ssl
 import urllib.request
 from datetime import datetime, timedelta
@@ -24,6 +25,61 @@ from datetime import datetime, timedelta
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STOCKS = os.path.join(ROOT, "data", "stocks.json")
 HISTORY = os.path.join(ROOT, "data", "etf-div-history.json")
+ARTICLES_DIR = os.path.join(ROOT, "articles")
+
+# 個股文章 → 股票代號（僅這些含內嵌計算器的頁面會被自動校正數字）
+STOCK_ARTICLES = {
+    "2330": "tsmc-dividend-calculator.html",
+    "2317": "hon-hai-dividend.html",
+    "2412": "chunghwa-telecom-dividend.html",
+    "2454": "mediatek-dividend.html",
+    "2308": "delta-electronics-dividend.html",
+    "5880": "taiwan-coop-dividend.html",
+}
+
+
+def _num(x):
+    x = float(x)
+    return int(x) if x == int(x) else round(x, 2)
+
+
+def patch_articles(by_code):
+    """把個股文章內文與計算器預帶值校正到現值。保守：對不上格式就不動。"""
+    changed = 0
+    for code, fn in STOCK_ARTICLES.items():
+        info = by_code.get(code)
+        if not info:
+            continue
+        price, div = info
+        if not price or price <= 0 or not div or div <= 0:
+            continue
+        path = os.path.join(ARTICLES_DIR, fn)
+        try:
+            with open(path, encoding="utf-8") as f:
+                h = orig = f.read()
+        except FileNotFoundError:
+            continue
+        pn, dn = _num(price), _num(div)
+        y = round(div / price * 100, 2)
+        cost = f"{int(round(price * 1000)):,}"
+        tot = f"{int(round(div * 1000)):,}"
+        # 計算器 input 預帶值（JS 會依此重算殖利率/成本/年領）
+        h = re.sub(r'(id="gcP"[^>]*value=")[\d.]+(")', rf"\g<1>{pn}\g<2>", h)
+        h = re.sub(r'(id="gcD"[^>]*value=")[\d.]+(")', rf"\g<1>{dn}\g<2>", h)
+        # 計算器初始顯示（爬蟲看得到的初值）
+        h = re.sub(r'(id="gcY">)[\d.]+(<)', rf"\g<1>{y}\g<2>", h)
+        h = re.sub(r'(id="gcC">)[\d,]+(<)', rf"\g<1>{cost}\g<2>", h)
+        h = re.sub(r'(id="gcT">)[\d,]+(<)', rf"\g<1>{tot}\g<2>", h)
+        # 計算器標頭文字「股價 X、年配息 Y 元」（此措辭只出現在計算器區塊，安全）
+        h = re.sub(r"股價\s*[\d.]+、年配息\s*[\d.]+\s*元", f"股價 {pn}、年配息 {dn} 元", h, count=1)
+        # 注意：不自動改內文敘述（股價約/殖利率約…）。這些 regex 在無人看管下可能
+        # 誤命中 head 的 JSON-LD schema 造成不一致，內文由人工定期校正即可（措辭為「約」漂移慢）。
+        if h != orig:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(h)
+            changed += 1
+            print(f"  校正文章：{fn} → 股價{pn}/配息{dn}/殖利率{round(y, 1)}%")
+    print(f"文章數字校正 {changed} 篇。")
 
 PRICE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
 EXDIV_URL = "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
@@ -124,6 +180,13 @@ def main():
     with open(HISTORY, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
         f.write("\n")
+
+    # 用最新的 stocks.json 現值，順手把個股文章的數字校正到現值（不再手動維護）
+    by_code = {
+        s.get("code"): (float(s.get("price", 0) or 0), float(s.get("dividend", 0) or 0))
+        for s in stocks_data.get("stocks", [])
+    }
+    patch_articles(by_code)
 
     print(f"完成：新增除息事件 {new_events}、更新股價 {price_upd} 檔、更新配息 {div_upd} 檔。")
 
