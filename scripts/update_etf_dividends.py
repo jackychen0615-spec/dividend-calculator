@@ -83,6 +83,8 @@ def patch_articles(by_code):
 
 PRICE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
 EXDIV_URL = "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
+# 個股官方殖利率（近一年現金股利/收盤價）；ETF 不在此表。用來校正個股配息比除息累積可靠。
+BWIBBU_URL = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
 
 
 def fetch(url):
@@ -127,6 +129,11 @@ def main():
     except Exception as e:
         print("TWSE API 取得失敗，略過本次更新：", e)
         return
+    try:
+        bwibbu_rows = fetch(BWIBBU_URL)
+    except Exception as e:
+        print("BWIBBU 取得失敗，個股配息校正略過：", e)
+        bwibbu_rows = []
 
     price_map = {}
     for it in price_rows:
@@ -134,6 +141,14 @@ def main():
         p = it.get("ClosingPrice", "").replace(",", "")
         try:
             price_map[c] = float(p)
+        except (ValueError, TypeError):
+            pass
+
+    # 個股官方殖利率（%）；ETF 不在此表，get 會是 None → 自動跳過
+    yield_map = {}
+    for it in bwibbu_rows:
+        try:
+            yield_map[it.get("Code")] = float(it.get("DividendYield", "0"))
         except (ValueError, TypeError):
             pass
 
@@ -170,6 +185,17 @@ def main():
         if ttm > 0 and ttm >= float(s.get("dividend", 0)) * 0.6:
             if abs(ttm - float(s.get("dividend", 0))) > 0.001:
                 s["dividend"] = ttm
+                div_upd += 1
+        # 3) 個股：用官方殖利率×現價校正配息（比除息累積可靠；ETF 不在 BWIBBU 會自動跳過）
+        yv = yield_map.get(code)
+        cur_price = price_map.get(code) or float(s.get("price", 0))
+        if yv and yv > 0 and cur_price > 0:
+            official = round(cur_price * yv / 100, 2)
+            cur_div = float(s.get("dividend", 0))
+            # 官方配息=殖利率×價=實際年配息（不隨股價變、很穩）。差 >12% 才覆蓋，
+            # 保留乾淨的正確種子值（如台積電 22），只修明顯錯的（聯發科、台塑、合庫金…）。
+            if official > 0 and abs(official - cur_div) > max(0.08, cur_div * 0.12):
+                s["dividend"] = official
                 div_upd += 1
 
     stocks_data["lastUpdated"] = datetime.utcnow().strftime("%Y-%m-%d")

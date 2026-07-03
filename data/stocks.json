@@ -131,7 +131,7 @@
       "code": "2886",
       "name": "兆豐金",
       "price": 46.0,
-      "dividend": 2.0,
+      "dividend": 1.75,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 2.0 元"
@@ -149,7 +149,7 @@
       "code": "2892",
       "name": "第一金",
       "price": 32.1,
-      "dividend": 1.8,
+      "dividend": 1.3,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 1.8 元"
@@ -158,7 +158,7 @@
       "code": "5880",
       "name": "合庫金",
       "price": 24.55,
-      "dividend": 1.5,
+      "dividend": 1.05,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 1.5 元"
@@ -194,7 +194,7 @@
       "code": "2454",
       "name": "聯發科",
       "price": 4345.0,
-      "dividend": 76,
+      "dividend": 53.44,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 76 元"
@@ -203,7 +203,7 @@
       "code": "1216",
       "name": "統一",
       "price": 74.9,
-      "dividend": 3.5,
+      "dividend": 3.0,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 3.5 元"
@@ -212,7 +212,7 @@
       "code": "1301",
       "name": "台塑",
       "price": 59.7,
-      "dividend": 2.0,
+      "dividend": 0.5,
       "dividendYear": "2025",
       "frequency": "年配",
       "note": "2025年配息 2.0 元"
