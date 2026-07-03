@@ -63,6 +63,8 @@
       message: message || "(無留言)",
     });
     navigator.sendBeacon(url, new Blob([payload], { type: "text/plain" }));
+    // 同時送到本站 API → 轉發到站長 Telegram
+    navigator.sendBeacon("/api/feedback", new Blob([payload], { type: "text/plain" }));
 
     // Hide form content, show thanks with close button
     form.querySelectorAll("h3, .feedback-stars, textarea, .feedback-actions").forEach(

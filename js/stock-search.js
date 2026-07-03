@@ -21,7 +21,8 @@
         if (s.price) ex.price = s.price;
         if (s.dividend != null) ex.dividend = s.dividend;
         if (s.dividendYield != null) ex.dividendYield = s.dividendYield;
-      } else if (s.dividend != null) {
+      } else {
+        // 收錄所有股票（含新 ETF 尚無配息者）；沒配息的照樣可搜尋、帶入股價
         map[s.code] = s;
       }
     });
@@ -52,7 +53,8 @@
 
   function selectStock(s) {
     setField(priceSel, s.price);
-    setField(divSel, s.dividend);
+    // 沒配息資料就不覆蓋股利欄，留給使用者自行輸入
+    if (s.dividend != null && s.dividend !== "") setField(divSel, s.dividend);
     input.value = "";
     dropdown.style.display = "none";
   }
@@ -61,14 +63,19 @@
     if (!results.length) { dropdown.style.display = "none"; return; }
     var html = "";
     results.forEach(function (s, i) {
-      var y = s.dividendYield || (s.price > 0 ? (s.dividend / s.price * 100).toFixed(2) : "0");
+      var hasDiv = s.dividend != null && s.dividend !== "";
+      var y = hasDiv ? (s.dividendYield || (s.price > 0 ? (s.dividend / s.price * 100).toFixed(2) : "0")) : null;
       if (typeof y === "number") y = y.toFixed(2);
       var freq = s.frequency ? s.frequency + " | " : "";
+      var right = hasDiv ? '<span style="font-size:.75rem;color:#0891b2;font-weight:600;">殖利率 ' + y + '%</span>'
+                         : '<span style="font-size:.72rem;color:#9ca3af;">配息待更新</span>';
+      var bottom = hasDiv ? (freq + '股價 ' + s.price + ' 元 | 配息 ' + s.dividend + ' 元')
+                          : ('股價 ' + s.price + ' 元 | 配息資料待更新，帶入後請自行輸入');
       html += '<li data-idx="' + i + '" style="padding:.6rem .8rem;cursor:pointer;border-bottom:1px solid #f3f4f6;">'
         + '<div style="display:flex;justify-content:space-between;align-items:center;">'
         + '<div><strong style="color:#1f2937;font-size:.9rem;">' + s.code + '</strong> <span style="color:#6b7280;font-size:.82rem;">' + s.name + '</span></div>'
-        + '<span style="font-size:.75rem;color:#0891b2;font-weight:600;">殖利率 ' + y + '%</span></div>'
-        + '<div style="font-size:.72rem;color:#9ca3af;margin-top:.15rem;">' + freq + '股價 ' + s.price + ' 元 | 配息 ' + s.dividend + ' 元</div></li>';
+        + right + '</div>'
+        + '<div style="font-size:.72rem;color:#9ca3af;margin-top:.15rem;">' + bottom + '</div></li>';
     });
     dropdown.innerHTML = html;
     dropdown.style.display = "block";
