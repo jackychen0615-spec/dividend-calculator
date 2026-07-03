@@ -938,7 +938,8 @@ function closePwa(ok){
         if (s.price) ex.price = s.price;
         if (s.dividend != null) ex.dividend = s.dividend;
         if (s.dividendYield != null) ex.dividendYield = s.dividendYield;
-      } else if (s.dividend != null) {
+      } else {
+        // 收錄所有股票（含新 ETF 尚無配息者）；沒配息的照樣可搜尋、帶入股價
         map[s.code] = s;
       }
     });
@@ -966,16 +967,21 @@ function closePwa(ok){
     }
     var html = '';
     results.forEach(function(s, i) {
-      var yieldPct = s.dividendYield || (s.price > 0 ? (s.dividend / s.price * 100).toFixed(2) : '0');
+      var hasDiv = s.dividend != null && s.dividend !== '';
+      var yieldPct = hasDiv ? (s.dividendYield || (s.price > 0 ? (s.dividend / s.price * 100).toFixed(2) : '0')) : null;
       if (typeof yieldPct === 'number') yieldPct = yieldPct.toFixed(2);
       var freq = s.frequency || '';
       var extra = freq ? freq + ' | ' : '';
+      var rightHtml = hasDiv ? '<span style="font-size:.75rem;color:#0891b2;font-weight:600;">殖利率 ' + yieldPct + '%</span>'
+                             : '<span style="font-size:.72rem;color:#9ca3af;">配息待更新</span>';
+      var bottomHtml = hasDiv ? (extra + '股價 ' + s.price + ' 元 | 配息 ' + s.dividend + ' 元')
+                              : ('股價 ' + s.price + ' 元 | 配息資料待更新，帶入後請自行輸入');
       html += '<li data-idx="' + i + '" style="padding:.6rem .8rem;cursor:pointer;border-bottom:1px solid #f3f4f6;transition:background .15s;" onmouseenter="this.style.background=\'#f0fdfa\'" onmouseleave="this.style.background=\'#fff\'">'
         + '<div style="display:flex;justify-content:space-between;align-items:center;">'
         + '<div><strong style="color:#1f2937;font-size:.9rem;">' + s.code + '</strong> <span style="color:#6b7280;font-size:.82rem;">' + s.name + '</span></div>'
-        + '<span style="font-size:.75rem;color:#0891b2;font-weight:600;">殖利率 ' + yieldPct + '%</span>'
+        + rightHtml
         + '</div>'
-        + '<div style="font-size:.72rem;color:#9ca3af;margin-top:.15rem;">' + extra + '股價 ' + s.price + ' 元 | 配息 ' + s.dividend + ' 元</div>'
+        + '<div style="font-size:.72rem;color:#9ca3af;margin-top:.15rem;">' + bottomHtml + '</div>'
         + '</li>';
     });
     dropdown.innerHTML = html;
@@ -1000,19 +1006,26 @@ function closePwa(ok){
       priceInput.style.borderColor = '#0891b2';
       setTimeout(function(){ priceInput.style.borderColor = '#e5e7eb'; }, 800);
     }
-    if (dividendInput) {
+    var hasDiv = stock.dividend != null && stock.dividend !== '';
+    if (dividendInput && hasDiv) {
+      // 沒配息資料就不覆蓋股利欄，留給使用者自行輸入
       dividendInput.value = stock.dividend;
       dividendInput.style.borderColor = '#0891b2';
       setTimeout(function(){ dividendInput.style.borderColor = '#e5e7eb'; }, 800);
     }
 
     // Show badge
-    var yieldPct = stock.dividendYield || (stock.price > 0 ? (stock.dividend / stock.price * 100).toFixed(2) : '0');
+    var yieldPct = hasDiv ? (stock.dividendYield || (stock.price > 0 ? (stock.dividend / stock.price * 100).toFixed(2) : '0')) : null;
     if (typeof yieldPct === 'number') yieldPct = yieldPct.toFixed(2);
     var freq = stock.frequency ? ' | ' + stock.frequency : '';
     var year = stock.dividendYear ? stock.dividendYear + '年' : '';
-    badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong>' + freq + ' | ' + year + '配息 ' + stock.dividend + ' 元 | 殖利率 ' + yieldPct + '%'
-      + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">資料來源：台灣證券交易所。股價為收盤價，配息以殖利率反算。</span>';
+    if (hasDiv) {
+      badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong>' + freq + ' | ' + year + '配息 ' + stock.dividend + ' 元 | 殖利率 ' + yieldPct + '%'
+        + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">資料來源：台灣證券交易所。股價為收盤價，配息以殖利率反算。</span>';
+    } else {
+      badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong> | 已帶入股價 ' + stock.price + ' 元'
+        + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">此標的尚無官方配息資料，請自行輸入每股股利。</span>';
+    }
     badge.style.display = 'block';
 
     // Clear search
