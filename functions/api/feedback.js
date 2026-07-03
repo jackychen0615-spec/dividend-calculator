@@ -1,9 +1,12 @@
 /**
  * 使用者回饋 → Telegram 通知站長。
  * 前端 feedback.js 以 sendBeacon POST { rating, page, message }（text/plain）。
- * 需在 Cloudflare Pages 環境變數（Secret）設定：TG_BOT_TOKEN、TG_CHAT_ID。
+ * 需在 Cloudflare Pages（Production）環境變數設定：TG_BOT_TOKEN、TG_CHAT_ID。
+ * 加 ?debug=1 可回傳診斷（不外洩金鑰本身）。
  */
 export async function onRequestPost({ request, env }) {
+  const debug = new URL(request.url).searchParams.get("debug") === "1";
+
   let data = {};
   try {
     data = JSON.parse(await request.text());
@@ -19,6 +22,8 @@ export async function onRequestPost({ request, env }) {
   const token = env.TG_BOT_TOKEN;
   const chat = env.TG_CHAT_ID;
 
+  let tgStatus = "skipped-no-env";
+  let tgBody = "";
   if (token && chat) {
     const text =
       "💬 gulicalc 有新回饋\n\n" +
@@ -26,17 +31,32 @@ export async function onRequestPost({ request, env }) {
       "頁面：" + page + "\n" +
       "留言：" + message;
     try {
-      await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
+      const resp = await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chat_id: chat, text: text, disable_web_page_preview: true }),
       });
+      tgStatus = "http-" + resp.status;
+      tgBody = (await resp.text()).slice(0, 300);
     } catch (e) {
-      // 通知失敗不影響前端；回饋前端只需 200
+      tgStatus = "fetch-error";
+      tgBody = String(e).slice(0, 200);
     }
   }
 
-  return new Response(JSON.stringify({ ok: true }), {
+  const out = { ok: true };
+  if (debug) {
+    out.debug = {
+      hasToken: !!token,
+      tokenLen: token ? token.length : 0,
+      hasChat: !!chat,
+      chatValue: chat || null,
+      tgStatus: tgStatus,
+      tgBody: tgBody,
+    };
+  }
+
+  return new Response(JSON.stringify(out), {
     headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
   });
 }
