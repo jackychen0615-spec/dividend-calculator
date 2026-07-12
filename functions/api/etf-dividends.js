@@ -16,7 +16,7 @@ const ETF_DIV = {
   "00713":  { name: "元大台灣高息低波", dividend: 4.68, freq: "季配" },
   "00929":  { name: "復華台灣科技優息", dividend: 1.63, freq: "月配" },
   "00939":  { name: "統一台灣高息動能", dividend: 0.9,  freq: "季配" },
-  "00940":  { name: "元大台灣價值高息", dividend: 0.68, freq: "月配" },
+  "00940":  { name: "元大台灣價值高息", dividend: 0.43, freq: "月配" },
   "00918":  { name: "大華優利高填息30", dividend: 2.48, freq: "季配" },
   "006208": { name: "富邦台50",         dividend: 3.5,  freq: "年配" },
 };
