@@ -5,19 +5,19 @@
       "code": "0050",
       "name": "元大台灣50",
       "price": 105.8,
-      "dividend": 4.5,
+      "dividend": 3.0,
       "dividendYear": "2025",
-      "frequency": "年配",
-      "note": "2025年配息 4.5 元"
+      "frequency": "季配",
+      "note": "2025年1拆4分割後改季配，全年約 3 元（過渡期）"
     },
     {
       "code": "0056",
       "name": "元大高股息",
       "price": 52.65,
-      "dividend": 2.5,
+      "dividend": 3.87,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，全年合計約 2.5 元"
+      "note": "每季配息，2025全年合計約 3.87 元"
     },
     {
       "code": "00713",
@@ -32,10 +32,10 @@
       "code": "00878",
       "name": "國泰永續高股息",
       "price": 33.19,
-      "dividend": 1.5,
+      "dividend": 1.77,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，全年合計約 1.5 元"
+      "note": "每季配息，2025全年合計約 1.77 元"
     },
     {
       "code": "00919",
