@@ -1,0 +1,6 @@
+# Cloudflare Pages 轉址規則
+# 修 GSC「找不到網頁(404)」：舊的 /articles/ 計算器路徑 → 正確的根目錄頁
+/articles/dca-calculator            /dca-calculator            301
+/articles/dca-calculator.html       /dca-calculator            301
+/articles/compound-calculator       /compound-calculator       301
+/articles/compound-calculator.html  /compound-calculator       301
