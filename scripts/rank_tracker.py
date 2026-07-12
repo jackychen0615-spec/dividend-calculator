@@ -19,7 +19,7 @@ HISTORY = os.path.join(os.path.dirname(__file__), "..", "data", "rank_history.js
 TG_TOKEN = os.environ.get("TG_BOT_TOKEN")
 TG_CHAT = os.environ.get("TG_CHAT_ID", "8365775688")
 
-# 觀察清單：目前主推、卡第 2 頁待爬的關鍵字
+# 觀察清單（關鍵字）：目前主推、卡第 2 頁待爬
 WATCH = [
     "台積電配息怎麼算",
     "鴻海配息怎麼算",
@@ -30,8 +30,18 @@ WATCH = [
     "股利計算機app",
 ]
 
+# 觀察清單（頁面）：affiliate 借貸叢集，追整頁導流成效（曝光/點擊/排名）
+WATCH_PAGES = [
+    ("/articles/borrow-invest-financial-checkup", "借貸投資健檢(支柱)"),
+    ("/articles/refinance-lower-interest", "房貸轉貸降息"),
+    ("/articles/bank-loan-rate-negotiation", "貸款利率談判"),
+    ("/articles/how-to-build-credit-score", "養信用分數"),
+    ("/articles/xin-qing-an-loan-guide", "新青安貸款"),
+]
 
-def gsc_positions():
+
+def gsc_data(dimension):
+    """回傳 {key: {pos,imp,clk}}, span。dimension 為 'query' 或 'page'。"""
     from google.oauth2 import service_account
     from googleapiclient.discovery import build
     cred = service_account.Credentials.from_service_account_file(
@@ -43,18 +53,19 @@ def gsc_positions():
     body = {
         "startDate": start.isoformat(),
         "endDate": end.isoformat(),
-        "dimensions": ["query"],
+        "dimensions": [dimension],
         "rowLimit": 1000,
     }
     rows = svc.searchanalytics().query(siteUrl=SITE, body=body).execute().get("rows", [])
-    return {
+    data = {
         r["keys"][0]: {
             "pos": round(r["position"], 1),
             "imp": int(r["impressions"]),
             "clk": int(r["clicks"]),
         }
         for r in rows
-    }, f"{start.isoformat()}~{end.isoformat()}"
+    }
+    return data, f"{start.isoformat()}~{end.isoformat()}"
 
 
 def fmt_delta(prev_pos, cur_pos):
@@ -70,7 +81,8 @@ def fmt_delta(prev_pos, cur_pos):
 
 def main():
     try:
-        cur, span = gsc_positions()
+        q_cur, span = gsc_data("query")
+        p_cur, _ = gsc_data("page")
     except Exception as e:
         print("[GSC 失敗]", e)
         sys.exit(1)
@@ -79,23 +91,44 @@ def main():
         hist = json.load(open(HISTORY, encoding="utf-8"))
     except Exception:
         hist = {}
-    prev = hist.get("last", {})
+    last = hist.get("last", {})
+    prev_q = last.get("queries", {})
+    prev_p = last.get("pages", {})
 
-    lines = []
+    # 關鍵字區
+    q_lines = []
     for q in WATCH:
-        c = cur.get(q)
+        c = q_cur.get(q)
         if not c:
-            lines.append(f"• {q}：（近28天無曝光）")
+            q_lines.append(f"• {q}：（近28天無曝光）")
             continue
-        delta = fmt_delta(prev.get(q, {}).get("pos"), c["pos"])
-        lines.append(f"• {q}：第 {c['pos']} 名 {delta}（{c['imp']}曝/{c['clk']}點）")
+        delta = fmt_delta(prev_q.get(q, {}).get("pos"), c["pos"])
+        q_lines.append(f"• {q}：第 {c['pos']} 名 {delta}（{c['imp']}曝/{c['clk']}點）")
 
-    report = f"📊 gulicalc 排名追蹤（{span}）\n主推「配息怎麼算」叢集 + 主要詞：\n\n" + "\n".join(lines)
-    report += "\n\n↑=進步 ↓=退步 →=持平 —=無前次資料"
+    # 頁面區（affiliate 借貸叢集）
+    p_lines = []
+    for path, label in WATCH_PAGES:
+        c = p_cur.get(SITE.rstrip("/") + path)
+        if not c:
+            p_lines.append(f"• {label}：（近28天無曝光）")
+            continue
+        delta = fmt_delta(prev_p.get(path, {}).get("pos"), c["pos"])
+        p_lines.append(f"• {label}：第 {c['pos']} 名 {delta}（{c['imp']}曝/{c['clk']}點）")
+
+    report = (
+        f"📊 gulicalc 排名追蹤（{span}）\n"
+        f"【主推｜配息怎麼算叢集＋主要詞】\n" + "\n".join(q_lines) +
+        f"\n\n【affiliate｜借貸頁導流】\n" + "\n".join(p_lines) +
+        "\n\n↑=進步 ↓=退步 →=持平 —=無前次資料"
+    )
 
     # 存快照（保留上一版供之後回溯）
-    hist["prev"] = hist.get("last", {})
-    hist["last"] = {q: cur[q] for q in WATCH if q in cur}
+    hist["prev"] = last
+    hist["last"] = {
+        "queries": {q: q_cur[q] for q in WATCH if q in q_cur},
+        "pages": {path: p_cur[SITE.rstrip("/") + path]
+                  for path, _ in WATCH_PAGES if SITE.rstrip("/") + path in p_cur},
+    }
     hist["span"] = span
     os.makedirs(os.path.dirname(HISTORY), exist_ok=True)
     json.dump(hist, open(HISTORY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
