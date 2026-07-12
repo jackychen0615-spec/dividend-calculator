@@ -24,18 +24,13 @@ const ETF_DIV = {
 const TWSE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL";
 const TTL = 21600; // 6 小時
 
-export async function onRequest(context) {
-  const { request } = context;
-  const cache = caches.default;
-  // 用固定 key 快取（忽略查詢字串）
-  const cacheKey = new Request(new URL("/api/etf-dividends", request.url).toString(), { method: "GET" });
-
-  const cached = await cache.match(cacheKey);
-  if (cached) return cached;
-
+export async function onRequest() {
+  // 不用 caches.default 手動快取（跨部署不會清、會卡住舊配息）。
+  // 改為：TWSE 股價用 cf.cacheTtl 邊緣快取 6h（不狂打上游），我們的回應每次現算，
+  // 配息設定一改（部署後）立即生效；回應本身用 Cache-Control 讓 CDN 短快取 30 分。
   let prices = {};
   try {
-    const rows = await fetch(TWSE_URL, { cf: { cacheTtl: TTL } }).then((r) => r.json());
+    const rows = await fetch(TWSE_URL, { cf: { cacheTtl: TTL, cacheEverything: true } }).then((r) => r.json());
     for (const r of rows) {
       const c = r.Code;
       if (ETF_DIV[c]) {
@@ -60,13 +55,11 @@ export async function onRequest(context) {
     data,
   });
 
-  const resp = new Response(body, {
+  return new Response(body, {
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": `public, max-age=${TTL}`,
+      "cache-control": "public, max-age=1800",
       "access-control-allow-origin": "*",
     },
   });
-  context.waitUntil(cache.put(cacheKey, resp.clone()));
-  return resp;
 }
