@@ -140,6 +140,12 @@
 
         <p><strong>006208（富邦台50）是追蹤臺灣50指數的市值型 ETF，與 0050 同類但費用更低。</strong>以 2025 年配息約 3.5 元、股價約 95 元計算，持有 1 張（1,000 股）一年約可領 3,500 元，殖利率約 3.7%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
 
+      <div class="etf-live-box" style="margin:1.2rem 0;padding:.85rem 1.1rem;background:var(--bg-input,#f5f7fa);border:1px solid var(--border-color,#e3e8ef);border-radius:12px;font-size:.92rem;line-height:1.9;">
+        <strong>📊 即時行情</strong> <span style="font-size:.78rem;color:var(--text-muted,#888);">（TWSE 官方收盤價，每 6 小時更新）</span><br>
+        股價 <strong data-etf="price">—</strong> 元　·　年配息 <strong data-etf="dividend">—</strong> 元　·　現價殖利率 <strong data-etf="yield">—</strong>%　
+        <a href="/" style="color:var(--accent,#0891b2);font-weight:600;">→ 用完整股利計算器試算</a>
+      </div>
+
         <h2>006208 是什麼？</h2>
         <p>富邦台50 ETF（股票代號：006208）由富邦投信發行，與 0050 同樣追蹤「臺灣50指數」，持有台股市值最大的 50 家公司。因經理費較低、單價也較 0050 親民，近年成為市值型 ETF 的熱門選擇。</p>
         <ul>
@@ -291,5 +297,7 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 </script>
 
 <script src="../js/theme.js?v=20260530f"></script>
+<script>window.ETF_CODE="006208";</script>
+<script src="../js/etf-live.js?v=20260712a"></script>
 </body>
 </html>
