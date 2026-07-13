@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>免費股利計算器嵌入碼｜歡迎放到你的網站或部落格 - GULICALC</title>
+  <meta name="description" content="免費把台股股利／殖利率計算器嵌入你的網站、部落格或文章。一行程式碼、自動更新、對讀者有用。GULICALC 提供，歡迎自由使用。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://gulicalc.com/embed-calculator">
+  <meta property="og:title" content="免費股利計算器嵌入碼｜放到你的網站">
+  <meta property="og:description" content="一行程式碼，把免費台股股利／殖利率計算器嵌入你的網站或部落格，自動更新、對讀者有用。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gulicalc.com/embed-calculator">
+  <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="stylesheet" href="css/style.css?v=20260620b">
+  <script>try{if(localStorage.getItem("gulicalc_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+  <style>
+    .embed-wrap{max-width:820px;margin:0 auto;padding:1.5rem 1.1rem 3rem;}
+    .embed-hero{text-align:center;padding:1.5rem 0 1rem;}
+    .embed-hero h1{font-size:1.7rem;line-height:1.35;margin:0 0 .6rem;}
+    .embed-hero p{color:var(--text-secondary,#555);font-size:1.02rem;max-width:600px;margin:0 auto;}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin:1.8rem 0;}
+    .why-card{background:var(--bg-input,#f7fafc);border:1px solid var(--border-color,#e5e7eb);border-radius:12px;padding:1rem 1.1rem;}
+    .why-card strong{display:block;color:var(--accent,#0891b2);margin-bottom:.3rem;font-size:.98rem;}
+    .why-card span{font-size:.88rem;color:var(--text-secondary,#555);line-height:1.6;}
+    .preview-box{border:1px solid var(--border-color,#e5e7eb);border-radius:16px;padding:1.2rem;background:var(--bg-white,#fff);margin:1.5rem 0;text-align:center;}
+    .code-block{position:relative;background:#0f172a;border-radius:12px;padding:1.1rem 1.1rem 1rem;margin:.8rem 0;text-align:left;}
+    .code-block textarea{width:100%;height:96px;background:transparent;border:0;color:#a5f3fc;font-family:monospace;font-size:.78rem;line-height:1.6;resize:vertical;outline:none;}
+    .copy-btn{background:var(--accent,#0891b2);color:#fff;border:0;border-radius:9px;padding:.6rem 1.4rem;font-size:.9rem;font-weight:700;cursor:pointer;font-family:inherit;}
+    .steps{counter-reset:s;list-style:none;padding:0;margin:1.5rem 0;}
+    .steps li{position:relative;padding:.6rem 0 .6rem 2.6rem;color:var(--text-secondary,#444);line-height:1.7;}
+    .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:.55rem;width:1.7rem;height:1.7rem;background:var(--accent,#0891b2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;}
+    .note{background:linear-gradient(135deg,#f0f9ff,#ecfeff);border:1px solid #bae6fd;border-radius:12px;padding:1rem 1.1rem;font-size:.9rem;color:#0e7490;line-height:1.7;margin:1.5rem 0;}
+    @media(prefers-color-scheme:dark){.note{background:#0e2a33;border-color:#164e63;color:#7dd3fc;}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo"><img src="images/logo-nav.png" alt="股利計算器"> <span class="nav-brand">股利計算器<span class="nav-brand-en">GULICALC</span></span></a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">首頁</a></li>
+        <li><a href="articles">文章</a></li>
+        <li><a href="about">關於我們</a></li>
+        <li><a href="contact">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="embed-wrap">
+    <div class="embed-hero">
+      <h1>把免費股利計算器<br>放到你的網站或部落格</h1>
+      <p>複製一行程式碼，就能在你的財經文章、部落格或網站嵌入這個台股股利／殖利率計算器。<strong>完全免費、自由使用。</strong></p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card"><strong>&#128176; 對讀者有用</strong><span>讀者不用離開你的頁面，就能算股利與殖利率，提升停留時間。</span></div>
+      <div class="why-card"><strong>&#128260; 自動更新</strong><span>計算邏輯與資料由我們維護，你不用管，永遠是新的。</span></div>
+      <div class="why-card"><strong>&#9889; 一行搞定</strong><span>貼上 iframe 程式碼即可，支援手機自適應，不影響你的網站速度。</span></div>
+      <div class="why-card"><strong>&#127873; 完全免費</strong><span>不用註冊、不用付費，只保留一行來源標註即可自由使用。</span></div>
+    </div>
+
+    <h2>預覽</h2>
+    <div class="preview-box">
+      <iframe src="https://gulicalc.com/embed/" width="100%" height="460" style="border:0;max-width:440px;display:block;margin:0 auto;" title="股利殖利率計算器" loading="lazy"></iframe>
+    </div>
+
+    <h2>複製嵌入碼</h2>
+    <p style="color:var(--text-secondary,#555);font-size:.92rem;">貼到你網站文章的 HTML 即可：</p>
+    <div class="code-block">
+      <textarea id="embedCode" readonly onclick="this.select()">&lt;iframe src="https://gulicalc.com/embed/" width="100%" height="460" style="border:0;max-width:440px;display:block;margin:0 auto;" title="股利殖利率計算器" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:13px;text-align:center;color:#666;"&gt;免費&lt;a href="https://gulicalc.com/" target="_blank" rel="noopener"&gt;股利計算器&lt;/a&gt;由 GULICALC 提供&lt;/p&gt;</textarea>
+      <button class="copy-btn" id="copyBtn" onclick="copyEmbed()" style="margin-top:.6rem;">複製程式碼</button>
+    </div>
+
+    <h2>三步驟安裝</h2>
+    <ol class="steps">
+      <li>複製上方嵌入碼。</li>
+      <li>貼到你的網站文章 HTML（WordPress 用「自訂 HTML」區塊、痞客邦／方格子用 HTML 編輯模式）。</li>
+      <li>發佈！計算器就會出現在你的頁面上，手機電腦都自適應。</li>
+    </ol>
+
+    <div class="note">
+      <strong>為什麼免費提供？</strong><br>
+      我們希望更多台股投資人能方便地算股利。你只要保留那一行「由 GULICALC 提供」的來源標註，就能自由使用——這對雙方都好：你的讀者有好工具，我們獲得一個來源連結。歡迎財經部落客、理財網站、社群自由嵌入。
+    </div>
+
+    <p style="text-align:center;margin-top:2rem;"><a href="/" style="color:var(--accent,#0891b2);font-weight:600;">&larr; 回到完整股利計算器</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="privacy">隱私權政策</a></li>
+      <li><a href="terms">使用條款</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 股利計算器. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function copyEmbed(){var t=document.getElementById('embedCode'),b=document.getElementById('copyBtn');var done=function(){b.textContent='已複製！';setTimeout(function(){b.textContent='複製程式碼';},1800);};try{if(navigator.clipboard){navigator.clipboard.writeText(t.value).then(done,function(){t.select();document.execCommand('copy');done();});}else{t.select();document.execCommand('copy');done();}}catch(e){t.select();document.execCommand('copy');done();}}
+  </script>
+  <script src="js/theme.js?v=20260530f"></script>
+</body>
+</html>
