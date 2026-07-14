@@ -28,16 +28,9 @@ export async function onRequest(context) {
     cacheTTL = 3600; // 盤前/盤後：1 小時
   }
 
-  const cacheVersion = isMarketHours ? 'realtime' : 'close';
-  const cache = caches.default;
-  const cacheKey = new Request(`https://gulicalc.com/api/stocks?v=3&m=${cacheVersion}`, context.request);
-
-  // 先查快取
-  let cached = await cache.match(cacheKey);
-  if (cached) {
-    return cached;
-  }
-
+  // 注意：不用 caches.default 手動快取（固定 key 忽略查詢字串，會讓部署後的新程式碼
+  // 被舊快取回應卡住長達 cacheTTL 時間，缺陷曾在 etf-dividends.js 出現過同樣問題）。
+  // 改用 Cache-Control header 交給標準 CDN 快取語意處理。
   try {
     let stocks = [];
     const headers = { 'Accept': 'application/json', 'User-Agent': 'GULICALC/1.0' };
@@ -240,16 +233,13 @@ export async function onRequest(context) {
       stocks: stocks
     };
 
-    const response = new Response(JSON.stringify(result), {
+    return new Response(JSON.stringify(result), {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Cache-Control': `public, max-age=${cacheTTL}`
       }
     });
-
-    context.waitUntil(cache.put(cacheKey, response.clone()));
-    return response;
 
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
