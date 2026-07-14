@@ -89,6 +89,7 @@ export async function onRequest(context) {
                 const price = parseFloat(item.z) || parseFloat(item.y) || 0; // z=成交價, y=昨收
                 const prevClose = parseFloat(item.y) || 0;
                 const change = price > 0 && prevClose > 0 ? Math.round((price - prevClose) * 100) / 100 : 0;
+                const changePercent = prevClose > 0 ? Math.round((change / prevClose * 100) * 100) / 100 : 0;
                 const volume = parseInt(item.v) || 0;
 
                 const yi = yieldMap[code] || {};
@@ -106,6 +107,7 @@ export async function onRequest(context) {
                   pb: yi.pb || null,
                   volume: volume,
                   change: change,
+                  changePercent: changePercent,
                   realtime: true
                 });
               }
@@ -128,6 +130,10 @@ export async function onRequest(context) {
             const dividendYield = yi.dividendYield || 0;
             const dividend = price > 0 && dividendYield > 0
               ? Math.round(price * dividendYield / 100 * 100) / 100 : 0;
+            // TWSE 的 Change 是「絕對點數」不是百分比；換算成真正的漲跌幅 %
+            const change = parseFloat(item.Change) || 0;
+            const prevClose = price - change;
+            const changePercent = prevClose > 0 ? Math.round((change / prevClose * 100) * 100) / 100 : 0;
 
             stocks.push({
               code: item.Code,
@@ -138,7 +144,8 @@ export async function onRequest(context) {
               pe: yi.pe || null,
               pb: yi.pb || null,
               volume: parseInt(item.TradeVolume) || 0,
-              change: parseFloat(item.Change) || 0,
+              change: change,
+              changePercent: changePercent,
               realtime: false
             });
           }
@@ -159,11 +166,16 @@ export async function onRequest(context) {
       const priceMap = {};
       for (const item of priceData) {
         if (item.Code && item.ClosingPrice) {
+          // TWSE 的 Change 是「絕對點數」不是百分比；換算成真正的漲跌幅 %
+          const pPrice = parseFloat(item.ClosingPrice) || 0;
+          const pChange = parseFloat(item.Change) || 0;
+          const pPrevClose = pPrice - pChange;
           priceMap[item.Code] = {
             name: (item.Name || '').trim(),
-            price: parseFloat(item.ClosingPrice) || 0,
+            price: pPrice,
             volume: parseInt(item.TradeVolume) || 0,
-            change: parseFloat(item.Change) || 0
+            change: pChange,
+            changePercent: pPrevClose > 0 ? Math.round((pChange / pPrevClose * 100) * 100) / 100 : 0
           };
         }
       }
@@ -188,6 +200,7 @@ export async function onRequest(context) {
           pb: yi.pb,
           volume: pi.volume || 0,
           change: pi.change || 0,
+          changePercent: pi.changePercent || 0,
           realtime: false
         });
         addedCodes.add(code);
@@ -200,6 +213,9 @@ export async function onRequest(context) {
         if (!/^00\d{2,4}$/.test(code)) continue;
         const price = parseFloat(item.ClosingPrice) || 0;
         if (price <= 0) continue;
+        // TWSE 的 Change 是「絕對點數」不是百分比；換算成真正的漲跌幅 %
+        const etfChange = parseFloat(item.Change) || 0;
+        const etfPrevClose = price - etfChange;
         stocks.push({
           code: code,
           name: (item.Name || '').trim(),
@@ -209,7 +225,8 @@ export async function onRequest(context) {
           pe: null,
           pb: null,
           volume: parseInt(item.TradeVolume) || 0,
-          change: parseFloat(item.Change) || 0,
+          change: etfChange,
+          changePercent: etfPrevClose > 0 ? Math.round((etfChange / etfPrevClose * 100) * 100) / 100 : 0,
           realtime: false
         });
       }

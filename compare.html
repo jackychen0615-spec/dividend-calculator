@@ -479,7 +479,7 @@
         { label: '年配息', unitLabel: '元/股', keyA: 'dividend', keyB: 'dividend', lowerIsBetter: false, fmt: function(v){ return fmt(v, 2); } },
         { label: '本益比', unitLabel: '倍', keyA: 'pe', keyB: 'pe', lowerIsBetter: true, fmt: function(v){ return v ? fmt(v, 1) : '—'; } },
         { label: '成交量', unitLabel: '千股', keyA: 'volume', keyB: 'volume', lowerIsBetter: false, fmt: function(v){ return v ? fmt(Math.round(v/1000)) : '—'; } },
-        { label: '漲跌幅', unitLabel: '%', keyA: 'change', keyB: 'change', lowerIsBetter: false, fmt: function(v){
+        { label: '漲跌幅', unitLabel: '%', keyA: 'changePercent', keyB: 'changePercent', lowerIsBetter: false, fmt: function(v){
             if (v == null || isNaN(v)) return '—';
             var prefix = v > 0 ? '+' : '';
             return prefix + fmt(v, 2);
