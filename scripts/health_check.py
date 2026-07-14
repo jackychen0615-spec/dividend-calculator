@@ -78,18 +78,62 @@ def main():
         if status != 200:
             fails.append(f"❌ 資產 {a} → HTTP {status}")
 
-    # 3) /api/stocks（帶入功能靠它）
+    # 3) /api/stocks（帶入功能靠它）+ 資料合理性檢查
+    # 緣由：2026/7 曾發生 change 欄位(絕對點數)被前端當百分比顯示，95 檔股票
+    # 出現「大立光 +395%」這種超過台股單日 ±10% 上限的不可能數字，修好後補這道防線。
     status, body = fetch(BASE + "/api/stocks")
     if status != 200:
         fails.append(f"❌ /api/stocks → HTTP {status}")
     else:
         try:
             data = json.loads(body)
-            n = len(data.get("stocks", []))
+            stocks = data.get("stocks", [])
+            n = len(stocks)
             if n < 100:
                 fails.append(f"⚠️ /api/stocks → 只回 {n} 檔（疑異常，應上千）")
+
+            no_field = sum(1 for s in stocks if "changePercent" not in s)
+            if no_field > n * 0.5:
+                fails.append(f"❌ /api/stocks → {no_field}/{n} 檔缺少 changePercent 欄位（疑似欄位被移除或快取卡住舊版）")
+
+            impossible = [
+                s for s in stocks
+                if s.get("changePercent") is not None and abs(s.get("changePercent") or 0) > 15
+            ]
+            if len(impossible) > 3:
+                examples = ", ".join(f"{s.get('code')}{s.get('name')}={s.get('changePercent')}%" for s in impossible[:5])
+                fails.append(
+                    f"❌ /api/stocks → {len(impossible)} 檔漲跌幅超過±15%（台股單日上限±10%，疑似單位算錯）：{examples}"
+                )
+
+            bad_yield = [
+                s for s in stocks
+                if s.get("dividendYield") is not None and (s.get("dividendYield") or 0) > 30
+            ]
+            if len(bad_yield) > 3:
+                examples = ", ".join(f"{s.get('code')}{s.get('name')}={s.get('dividendYield')}%" for s in bad_yield[:5])
+                fails.append(f"⚠️ /api/stocks → {len(bad_yield)} 檔殖利率超過30%（疑似資料異常）：{examples}")
         except Exception:
             fails.append("❌ /api/stocks → 回傳非合法 JSON")
+
+    # 4) /api/etf-dividends 資料合理性
+    status, body = fetch(BASE + "/api/etf-dividends")
+    if status != 200:
+        fails.append(f"❌ /api/etf-dividends → HTTP {status}")
+    else:
+        try:
+            data = json.loads(body)
+            etfs = data.get("data", {})
+            if len(etfs) < 5:
+                fails.append(f"⚠️ /api/etf-dividends → 只回 {len(etfs)} 檔（疑異常）")
+            bad = [
+                (code, v.get("yield")) for code, v in etfs.items()
+                if v.get("yield") is not None and (v.get("yield") > 20 or v.get("yield") < 0)
+            ]
+            if bad:
+                fails.append(f"⚠️ /api/etf-dividends → 殖利率異常：{bad}")
+        except Exception:
+            fails.append("❌ /api/etf-dividends → 回傳非合法 JSON")
 
     # 結果
     if not fails:
