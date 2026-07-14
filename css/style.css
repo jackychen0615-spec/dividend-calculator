@@ -1355,19 +1355,33 @@ main {
   color: #f1f5f9 !important;
 }
 
-/* Dark mode: 工具頁「算完了？下一步」CTA 區塊（原本寫死淺色，深色下會變刺眼亮塊） */
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section {
+/* Dark mode: 首頁「算完了？下一步」CTA 區塊（class 綁定，不受 DOM 相鄰順序影響） */
+[data-theme="dark"] .next-steps-cta {
   background: linear-gradient(135deg, #11263a, #0e2c31) !important;
   border-color: #1e4a52 !important;
 }
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section h2 { color: #38bdf8 !important; }
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section a {
+[data-theme="dark"] .next-steps-cta h2 { color: #38bdf8 !important; }
+[data-theme="dark"] .next-steps-cta a {
   background: #1e293b !important;
   border-color: #334155 !important;
 }
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section strong { color: #38bdf8 !important; }
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section span,
-[data-theme="dark"] [data-ad-pos="tool-below-calc"] + section p { color: #94a3b8 !important; }
+[data-theme="dark"] .next-steps-cta strong { color: #38bdf8 !important; }
+[data-theme="dark"] .next-steps-cta span,
+[data-theme="dark"] .next-steps-cta p { color: #94a3b8 !important; }
+
+/* Dark mode: LINE Bank 開戶推廣 CTA 區塊（保留品牌綠、深色底可讀） */
+[data-theme="dark"] .line-bank-cta {
+  background: linear-gradient(135deg, #0e2419, #0a2e1e) !important;
+  border-color: #1f4d33 !important;
+}
+[data-theme="dark"] .line-bank-cta h2 { color: #4ade80 !important; }
+[data-theme="dark"] .line-bank-cta p { color: #a3b3c2 !important; }
+[data-theme="dark"] .line-bank-cta strong { color: #6ee7b7 !important; }
+[data-theme="dark"] .line-bank-cta a[href*="linebank"] {
+  background: #06c755 !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .line-bank-cta p:last-child { color: #64748b !important; }
 
 [data-theme="dark"] .tool-slide,
 [data-theme="dark"] #toolCarousel > a {
