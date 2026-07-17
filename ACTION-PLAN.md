@@ -16,9 +16,9 @@
   - 共新增 70 條站內連結，重新掃描確認 35 篇孤兒頁全部歸零
   - 所有 67 個改動檔案已跑過 HTML 標籤平衡驗證，無結構性錯誤
 
-## ⚠️ 新發現（處理內鏈時順便發現，尚未修）
+## ⚠️ 新發現（處理內鏈時順便發現）
 
-- [ ] **`sitemap.xml` 缺少約 30 篇文章**：內鏈修復過程中發現本機 `articles/` 資料夾實際有 120 個檔案，但 `sitemap.xml` 只登記了約 90 篇。缺漏的多半是「vs比較頁」（如 `0050-vs-006208`）與週報/月報系列（`weekly-report-2026-w24` 等）。這些頁面 Google 可能還沒發現，建議之後批次補進 sitemap。
+- [x] **`sitemap.xml` 缺少 28 篇文章**（2026-07-17 已修）：本機 `articles/` 資料夾實際有 120 個檔案，`sitemap.xml` 原本只登記 92 篇。缺漏的是「vs比較頁」（如 `0050-vs-006208`）與週報/月報系列（`weekly-report-2026-w24` 等）。已補上全部 28 篇，`lastmod` 取自各文章頁面顯示的更新日期，`priority` 統一 0.8（跟同類文章一致）。XML 驗證通過，現在 120 篇文章 100% 都在 sitemap 裡。
 - [ ] **6 篇文章完全沒有「延伸閱讀」outbound 區塊**：`dividend-calculation-examples`、`dividend-yield-explained`、`ex-dividend-date-guide`、`high-dividend-yield-stocks`、`how-much-dividend-per-share`、`taiwan-stock-dividend-guide`。這批多數本身 inbound 已經很多（是熱門引用目標），非緊急，但補上對讀者體驗與站內權重擴散仍有幫助。
 
 ## 補選填（低優先，錦上添花）
