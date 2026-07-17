@@ -16,18 +16,18 @@
   - 共新增 70 條站內連結，重新掃描確認 35 篇孤兒頁全部歸零
   - 所有 67 個改動檔案已跑過 HTML 標籤平衡驗證，無結構性錯誤
 
-## ⚠️ 新發現（處理內鏈時順便發現）
+## ⚠️ 新發現（處理內鏈時順便發現，已全部處理）
 
 - [x] **`sitemap.xml` 缺少 28 篇文章**（2026-07-17 已修）：本機 `articles/` 資料夾實際有 120 個檔案，`sitemap.xml` 原本只登記 92 篇。缺漏的是「vs比較頁」（如 `0050-vs-006208`）與週報/月報系列（`weekly-report-2026-w24` 等）。已補上全部 28 篇，`lastmod` 取自各文章頁面顯示的更新日期，`priority` 統一 0.8（跟同類文章一致）。XML 驗證通過，現在 120 篇文章 100% 都在 sitemap 裡。
-- [ ] **6 篇文章完全沒有「延伸閱讀」outbound 區塊**：`dividend-calculation-examples`、`dividend-yield-explained`、`ex-dividend-date-guide`、`high-dividend-yield-stocks`、`how-much-dividend-per-share`、`taiwan-stock-dividend-guide`。這批多數本身 inbound 已經很多（是熱門引用目標），非緊急，但補上對讀者體驗與站內權重擴散仍有幫助。
+- [x] **6 篇文章補上「延伸閱讀」outbound 區塊**（2026-07-18 已修）：`dividend-calculation-examples`、`dividend-yield-explained`、`ex-dividend-date-guide`、`high-dividend-yield-stocks`、`how-much-dividend-per-share`、`taiwan-stock-dividend-guide` 各補 4 條主題相關連結，格式與其他文章一致（`<h3>延伸閱讀</h3>` + `<ul>`），位置放在資料來源/免責聲明段落之後、`</article>` 之前。結構驗證通過。
 
 ## 補選填（低優先，錦上添花）
 
-- [ ] **補 Twitter Card 選填欄位**：加 `<meta name="twitter:site" content="@你的帳號">`（如果有經營 Twitter/X 帳號的話，沒有就跳過這項）
+- [x] ~~補 Twitter Card 選填欄位~~：站長確認沒有經營 X/Twitter 帳號，跳過此項（不影響 SEO）
 
-## ℹ️ 需要額外資源才能驗證（非本次可完成）
+## ℹ️ 環境限制（已嘗試修復，暫時卡住，非站點問題）
 
-- [ ] **重跑 Core Web Vitals 檢測**：申請免費 PageSpeed Insights API key，或手動用 https://pagespeed.web.dev/ 測首頁、`/ex-dividend-calculator`、任一篇文章頁，補齊本次因限流而缺少的 LCP/INP/CLS 數據
+- [ ] **Core Web Vitals 檢測持續失敗**：API 路徑（`pagespeed.py`）與網頁版（pagespeed.web.dev）都試過，兩者皆卡在限流/無回應超過 1 分鐘，非本站問題。建議之後手動申請免費 PageSpeed Insights API key（Google Cloud Console）再重跑，或等一段時間後直接用 https://pagespeed.web.dev/ 重試。
 
 ## ✅ 不用做（已驗證沒問題，避免過度優化）
 
