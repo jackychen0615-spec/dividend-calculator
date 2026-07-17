@@ -213,13 +213,18 @@
           <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">目標追蹤</strong>
           <span style="font-size:.7rem;color:#6b7280;">月領目標進度</span>
         </a>
+        <a href="ex-dividend-calculator" class="tool-slide" style="scroll-snap-align:start;flex:0 0 auto;width:140px;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.1rem .8rem;text-align:center;transition:box-shadow .2s,transform .15s;">
+          <span style="width:44px;height:44px;border-radius:10px;background:#f5f3ff;color:#7c3aed;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5-5-5 5"/><path d="M7 17l5 5 5-5"/></svg></span>
+          <strong style="font-size:.88rem;color:#1f2937;display:block;margin-bottom:.2rem;">除權息參考價</strong>
+          <span style="font-size:.7rem;color:#6b7280;">除息後股價 / 填息</span>
+        </a>
       </div>
       <style>.tool-carousel-sub::-webkit-scrollbar{display:none}@media(max-width:640px){.tool-carousel-sub{justify-content:flex-start!important;}}</style>
       <div class="carousel-nav" style="display:none;justify-content:center;align-items:center;gap:.8rem;margin-top:.5rem;">
         <button onclick="document.querySelector('.tool-carousel-sub').scrollBy({left:-160,behavior:'smooth'})" style="width:32px;height:32px;border-radius:50%;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);" onmouseover="this.style.borderColor='#0891b2';this.style.color='#0891b2'" onmouseout="this.style.borderColor='#e5e7eb';this.style.color=''" aria-label="上一個">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <span style="font-size:.7rem;color:#9ca3af;user-select:none;">9 個工具</span>
+        <span style="font-size:.7rem;color:#9ca3af;user-select:none;">10 個工具</span>
         <button onclick="document.querySelector('.tool-carousel-sub').scrollBy({left:160,behavior:'smooth'})" style="width:32px;height:32px;border-radius:50%;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,.06);" onmouseover="this.style.borderColor='#0891b2';this.style.color='#0891b2'" onmouseout="this.style.borderColor='#e5e7eb';this.style.color=''" aria-label="下一個">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
         </button>
@@ -855,6 +860,10 @@
     <a class="tool-modal-item" href="/goal">
       <div class="tool-modal-icon" style="background:#ecfdf5;color:#059669;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
       <div class="tool-modal-info"><strong>存股目標追蹤</strong><span>月領目標進度追蹤</span></div>
+    </a>
+    <a class="tool-modal-item" href="/ex-dividend-calculator">
+      <div class="tool-modal-icon" style="background:#f5f3ff;color:#7c3aed;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5-5-5 5"/><path d="M7 17l5 5 5-5"/></svg></div>
+      <div class="tool-modal-info"><strong>除權息參考價</strong><span>除息後股價 / 填息教學</span></div>
     </a>
     <button class="tool-modal-close" onclick="closeTools()">關閉</button>
   </div>
