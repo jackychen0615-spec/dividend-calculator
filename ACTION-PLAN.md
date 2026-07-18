@@ -25,9 +25,15 @@
 
 - [x] ~~補 Twitter Card 選填欄位~~：站長確認沒有經營 X/Twitter 帳號，跳過此項（不影響 SEO）
 
-## ℹ️ 環境限制（已嘗試修復，暫時卡住，非站點問題）
+## ✅ Core Web Vitals（2026-07-18，已用真實 API key 完整重測）
 
-- [ ] **Core Web Vitals 檢測持續失敗**：API 路徑（`pagespeed.py`）與網頁版（pagespeed.web.dev）都試過，兩者皆卡在限流/無回應超過 1 分鐘，非本站問題。建議之後手動申請免費 PageSpeed Insights API key（Google Cloud Console）再重跑，或等一段時間後直接用 https://pagespeed.web.dev/ 重試。
+站長申請了免費 Google PageSpeed Insights API key，重新完整測試：
+
+- **首頁**：mobile 95/100、LCP 2.4s（第一次測到 64分/7.8s 是異常值，重跑 3 次穩定在 95分，已排除）
+- **除權息計算機頁**：mobile 67/100、LCP 6.4s（重現 2 次，確認是真實現象，非異常值）
+- [x] **已修**：LCP 元素是 `.calculator-hero` 區塊的 CSS 背景圖（`hero-bg.jpg`），瀏覽器對 CSS 背景圖的載入優先權天生比 `<img>` 標籤低。加了 `<link rel="preload" as="image" fetchpriority="high">`，套用到全站 11 個共用此 hero 樣式的頁面（`compare`、`compound/dca/payback/mortgage/tax-calculator`、`ex-dividend-calculator`、`etf-guide`、`financial-tools-guide`、`goal`、`stock-dividend-guide`）。純新增不動版面，零風險。
+- **重測結果**：加了 preload 後分數沒變（還是 67分/6.4s）——追查後發現關鍵事實：**gulicalc.com 目前在 Google 的 CrUX 真實使用者資料庫裡完全沒有資料**（首頁與除權息頁的 field data 皆為空）。Google 的 Core Web Vitals 排名訊號是採用 CrUX 真實使用者數據，不是 Lighthouse 實驗室分數；沒有 CrUX 資料代表 **CWV 目前不會影響本站排名**，那個 67 分是 Lighthouse 模擬「慢速4G」網路跑出來的實驗室數字，不代表真實使用者的實際體驗。
+- **結論**：preload 修正保留（零成本，等流量成長、CrUX 開始收集資料後會有幫助），但不需要為了衝這個實驗室分數做更多優化——目前對排名/AdSense審核沒有實質影響，優先權可以放低。等網站流量成長到 Google 開始收集 CrUX 資料後，值得回頭再測一次。
 
 ## ✅ 不用做（已驗證沒問題，避免過度優化）
 
