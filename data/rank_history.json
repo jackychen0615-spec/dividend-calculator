@@ -63,45 +63,50 @@
   "last": {
     "queries": {
       "台積電配息怎麼算": {
-        "pos": 11.2,
-        "imp": 282,
+        "pos": 10.9,
+        "imp": 238,
         "clk": 0
       },
       "鴻海配息怎麼算": {
-        "pos": 8.6,
-        "imp": 69,
+        "pos": 9.6,
+        "imp": 31,
         "clk": 0
       },
       "聯發科配息怎麼算": {
-        "pos": 7.5,
-        "imp": 96,
+        "pos": 7.7,
+        "imp": 92,
         "clk": 0
       },
       "中華電信配息怎麼算": {
-        "pos": 10,
-        "imp": 20,
+        "pos": 9.9,
+        "imp": 15,
         "clk": 1
       },
       "股利計算機": {
-        "pos": 18.7,
-        "imp": 11,
-        "clk": 4
+        "pos": 9.6,
+        "imp": 38,
+        "clk": 10
+      },
+      "股利計算器": {
+        "pos": 25,
+        "imp": 6,
+        "clk": 0
       },
       "殖利率計算": {
-        "pos": 60,
-        "imp": 18,
+        "pos": 63,
+        "imp": 21,
         "clk": 1
       },
       "股利計算機app": {
         "pos": 5.6,
-        "imp": 24,
-        "clk": 2
+        "imp": 25,
+        "clk": 1
       }
     },
     "pages": {
       "/articles/borrow-invest-financial-checkup": {
-        "pos": 86,
-        "imp": 1,
+        "pos": 45.5,
+        "imp": 2,
         "clk": 0
       },
       "/articles/refinance-lower-interest": {
@@ -110,8 +115,8 @@
         "clk": 0
       },
       "/articles/bank-loan-rate-negotiation": {
-        "pos": 20.1,
-        "imp": 7,
+        "pos": 16.9,
+        "imp": 15,
         "clk": 1
       },
       "/articles/how-to-build-credit-score": {
@@ -121,5 +126,5 @@
       }
     }
   },
-  "span": "2026-06-12~2026-07-09"
+  "span": "2026-06-18~2026-07-15"
 }
