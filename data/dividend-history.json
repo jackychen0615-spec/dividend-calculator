@@ -1,0 +1,229 @@
+{
+  "2308": {
+    "name": "台達電",
+    "slug": "delta-electronics-dividend",
+    "annual_dividend": {
+      "2020": 5.5,
+      "2021": 5.0,
+      "2022": 5.0,
+      "2023": 5.5,
+      "2024": 8.0,
+      "2025": 11.6
+    },
+    "source": "table_direct"
+  },
+  "2330": {
+    "name": "台積電",
+    "slug": "tsmc-dividend-calculator",
+    "annual_dividend": {
+      "2020": 10.0,
+      "2021": 11.0,
+      "2022": 11.0,
+      "2023": 13.0,
+      "2024": 17.0,
+      "2025": 22.0
+    },
+    "source": "table_direct"
+  },
+  "0056": {
+    "name": "元大高股息",
+    "slug": "0056-dividend-calculator",
+    "annual_dividend": {
+      "2024": 3.63,
+      "2025": 3.872
+    },
+    "source": "quarterly_summed"
+  },
+  "00878": {
+    "name": "國泰永續高股息",
+    "slug": "00878-dividend-calculator",
+    "annual_dividend": {
+      "2021": 0.98,
+      "2022": 1.18,
+      "2023": 1.24,
+      "2024": 2.01,
+      "2025": 1.77
+    },
+    "source": "quarterly_summed"
+  },
+  "00713": {
+    "name": "元大台灣高息低波",
+    "slug": "00713-dividend-calculator",
+    "annual_dividend": {
+      "2020": 0.93,
+      "2021": 1.25,
+      "2022": 2.0,
+      "2023": 2.4,
+      "2025": 4.68
+    },
+    "source": "table_direct"
+  },
+  "00919": {
+    "name": "群益台灣精選高息",
+    "slug": "00919-dividend-calculator",
+    "annual_dividend": {
+      "2023": 1.4,
+      "2024": 1.6
+    },
+    "source": "table_direct"
+  },
+  "3711": {
+    "name": "日月光投控",
+    "slug": "ase-dividend",
+    "annual_dividend": {
+      "2020": 2.5,
+      "2021": 3.5,
+      "2022": 4.0,
+      "2023": 4.0,
+      "2024": 4.0
+    },
+    "source": "table_direct"
+  },
+  "2002": {
+    "name": "中鋼",
+    "slug": "china-steel-dividend",
+    "annual_dividend": {
+      "2020": 1.0,
+      "2021": 2.5,
+      "2022": 2.5,
+      "2023": 0.5,
+      "2024": 0.5
+    },
+    "source": "table_direct"
+  },
+  "2891": {
+    "name": "中信金",
+    "slug": "ctbc-financial-dividend",
+    "annual_dividend": {
+      "2019": 1.05,
+      "2020": 1.25,
+      "2021": 1.0,
+      "2022": 1.8,
+      "2023": 2.3
+    },
+    "source": "table_direct"
+  },
+  "2884": {
+    "name": "玉山金",
+    "slug": "e-sun-financial-dividend",
+    "annual_dividend": {
+      "2020": 0.8,
+      "2021": 0.61,
+      "2022": 0.67,
+      "2023": 0.38,
+      "2024": 0.2
+    },
+    "source": "table_direct"
+  },
+  "2603": {
+    "name": "長榮",
+    "slug": "evergreen-marine-dividend",
+    "annual_dividend": {
+      "2020": 1.0,
+      "2021": 18.0,
+      "2022": 70.0,
+      "2023": 20.0,
+      "2024": 4.0,
+      "2025": 5.0
+    },
+    "source": "table_direct"
+  },
+  "4904": {
+    "name": "遠傳",
+    "slug": "fareastone-dividend",
+    "annual_dividend": {
+      "2020": 3.75,
+      "2021": 3.75,
+      "2022": 3.75,
+      "2023": 3.75,
+      "2024": 3.75
+    },
+    "source": "table_direct"
+  },
+  "2881": {
+    "name": "富邦金",
+    "slug": "fubon-financial-dividend",
+    "annual_dividend": {
+      "2020": 3.0,
+      "2021": 3.5,
+      "2022": 1.5,
+      "2023": 2.5
+    },
+    "source": "table_direct"
+  },
+  "2883": {
+    "name": "凱基金",
+    "slug": "kai-fa-financial-dividend",
+    "annual_dividend": {
+      "2020": 0.5,
+      "2021": 0.8,
+      "2023": 0.2,
+      "2024": 0.3,
+      "2025": 0.55
+    },
+    "source": "table_direct"
+  },
+  "1303": {
+    "name": "南亞",
+    "slug": "nanya-plastics-dividend",
+    "annual_dividend": {
+      "2020": 3.2,
+      "2021": 4.5,
+      "2022": 4.0,
+      "2023": 1.5,
+      "2024": 1.5
+    },
+    "source": "table_direct"
+  },
+  "2880": {
+    "name": "華南金",
+    "slug": "hua-nan-financial-dividend",
+    "annual_dividend": {
+      "2020": 0.8,
+      "2021": 0.8,
+      "2022": 0.79,
+      "2023": 0.8,
+      "2024": 0.92,
+      "2025": 1.06
+    },
+    "source": "table_direct"
+  },
+  "3045": {
+    "name": "台灣大",
+    "slug": "taiwan-mobile-dividend",
+    "annual_dividend": {
+      "2020": 3.4,
+      "2021": 3.4,
+      "2022": 3.45,
+      "2023": 3.45,
+      "2024": 3.45
+    },
+    "source": "table_direct"
+  },
+  "2886": {
+    "name": "兆豐金",
+    "slug": "mega-financial-dividend",
+    "annual_dividend": {
+      "2020": 1.58,
+      "2021": 1.4,
+      "2022": 1.24,
+      "2023": 1.5,
+      "2024": 1.6
+    },
+    "source": "table_direct"
+  },
+  "2317": {
+    "name": "鴻海",
+    "slug": "hon-hai-dividend",
+    "annual_dividend": {
+      "2020": 4.2,
+      "2021": 4.0,
+      "2022": 5.2,
+      "2023": 5.3,
+      "2024": 5.4,
+      "2025": 5.8,
+      "2026": 7.2
+    },
+    "source": "table_direct"
+  }
+}
