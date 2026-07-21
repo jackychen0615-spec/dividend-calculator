@@ -11,11 +11,11 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>存股回本計算器｜靠股利幾年回本？免費試算工具 - GULICALC</title>
-  <meta name="description" content="免費回本計算器：輸入買入股價、股利與持有年數，計算股息回本年限與累計殖利率，輕鬆評估台股存股的投資回本時間。">
+  <title>回本年數計算器｜靠股利幾年回本？免費試算工具 - GULICALC</title>
+  <meta name="description" content="免費回本年數計算器：輸入買入股價、股利與持有年數，計算股息回本年限與累計殖利率。跟複利計算器、定期定額試算器不同——這裡只算「幾年能回本」。">
   <link rel="canonical" href="https://gulicalc.com/payback-calculator">
-  <meta property="og:title" content="存股回本計算器 - 股利計算器">
-  <meta property="og:description" content="免費回本計算器：輸入買入股價、股利與持有年數，計算股息回本年限與累計殖利率，輕鬆評估台股存股的投資回本時間。">
+  <meta property="og:title" content="回本年數計算器 - 股利計算器">
+  <meta property="og:description" content="免費回本年數計算器：輸入買入股價、股利與持有年數，計算股息回本年限與累計殖利率，輕鬆評估台股存股的投資回本時間。">
   <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
   <meta property="og:url" content="https://gulicalc.com/payback-calculator">
   <meta property="og:type" content="website">
@@ -24,8 +24,8 @@
   <meta property="og:locale" content="zh_TW">
   <meta property="og:site_name" content="股利計算器">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="存股回本計算器 - 股利計算器">
-  <meta name="twitter:description" content="免費存股回本計算器，輸入買入股價、持有股數與每股股利，立即算出幾年可以靠股利回本。">
+  <meta name="twitter:title" content="回本年數計算器 - 股利計算器">
+  <meta name="twitter:description" content="免費回本年數計算器，輸入買入股價、持有股數與每股股利，立即算出幾年可以靠股利回本。">
   <meta name="twitter:image" content="https://gulicalc.com/images/og-image.png">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -40,8 +40,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "存股回本計算器",
-    "description": "免費存股回本計算器，輸入買入股價、持有股數與每股股利，立即算出幾年可以靠股利回本。",
+    "name": "回本年數計算器",
+    "description": "免費回本年數計算器，輸入買入股價、持有股數與每股股利，立即算出幾年可以靠股利回本。",
     "url": "https://gulicalc.com/payback-calculator",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
@@ -86,10 +86,11 @@
   </header>
 
   <main>
-            <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="/" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>存股回本計算器</span></nav>
+            <nav class="breadcrumb" style="font-size:.82rem;color:#888;padding:.5rem 0;margin-bottom:.5rem;"><a href="/" style="color:#0891b2;">首頁</a> <span style="margin:0 .3rem;">›</span> <span>回本年數計算器</span></nav>
         <section class="calculator-hero" style="background:linear-gradient(rgba(10,14,26,.4),rgba(10,14,26,.35)),url('images/hero-bg.jpg') center/cover no-repeat;padding:3.5rem 1rem 2.5rem;border-radius:12px;margin-bottom:1.5rem;">
-      <h1>存股回本計算器 — 靠股利幾年回本</h1>
+      <h1>回本年數計算器 — 靠股利幾年回本</h1>
       <p style="max-width:500px;margin:0 auto .8rem;">輸入買入股價、持有股數與每股股利，算出靠股利幾年能把成本賺回來。免註冊、不收資料。</p>
+      <p style="max-width:500px;margin:0 auto .6rem;font-size:.78rem;color:rgba(255,255,255,.75);">這個工具只算「幾年能回本」。想看複利長期成長曲線，用<a href="/compound-calculator" style="color:#7dd3fc;font-weight:600;">複利計算器</a>；想看每月定期定額的長期成果，用<a href="/dca-calculator" style="color:#7dd3fc;font-weight:600;">定期定額試算器</a>。</p>
       <p style="margin:0;"><a href="#calc" style="display:inline-block;padding:.5rem 1.5rem;background:#0891b2;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;">開始算</a></p>
     </section>
 
@@ -405,7 +406,7 @@
           <span class="article-tag">股利試算</span>
         </div>
         <div class="article-card">
-          <h3><a href="compound-calculator">存股複利計算器</a></h3>
+          <h3><a href="compound-calculator">複利計算器</a></h3>
           <p>計算長期存股的複利成長效果，看見時間的力量。</p>
           <span class="article-tag">複利試算</span>
         </div>
@@ -464,11 +465,11 @@
     </a>
     <a class="tool-modal-item" href="compound-calculator">
       <div class="tool-modal-icon tmi-compound"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
-      <div class="tool-modal-info"><strong>存股複利計算器</strong><span>長期複利成長效果</span></div>
+      <div class="tool-modal-info"><strong>複利計算器</strong><span>長期複利成長效果</span></div>
     </a>
     <a class="tool-modal-item" href="payback-calculator">
       <div class="tool-modal-icon tmi-payback"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-      <div class="tool-modal-info"><strong>存股回本計算器</strong><span>幾年靠股利回本</span></div>
+      <div class="tool-modal-info"><strong>回本年數計算器</strong><span>幾年靠股利回本</span></div>
     </a>
     <a class="tool-modal-item" href="dca-calculator">
       <div class="tool-modal-icon tmi-dca"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
