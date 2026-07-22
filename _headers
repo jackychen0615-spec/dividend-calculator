@@ -8,8 +8,11 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-src https:; font-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
 
 # 可嵌入版計算器：允許被其他網站 iframe 嵌入
+# 注意：Cloudflare Pages 對符合多條規則的請求會「疊加」所有標頭，同名標頭會被逗號接在一起送出
+# （並非路徑越明確優先權越高），所以這裡必須先用 "! " 移除 /* 規則設的值，否則會跟 DENY / frame-ancestors 'none' 衝突而被瀏覽器擋下
 /embed/*
-  X-Frame-Options: ALLOWALL
+  ! X-Frame-Options
+  ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors *
 
 /*.html
