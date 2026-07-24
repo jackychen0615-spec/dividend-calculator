@@ -550,7 +550,12 @@
         msg.textContent = data.message || data.error || '完成';
         msg.style.color = data.ok ? '#10b981' : '#f59e0b';
         msg.style.display = 'block';
-        if (data.ok) document.getElementById('newsletterEmail').value = '';
+        if (data.ok) {
+          document.getElementById('newsletterEmail').value = '';
+          if (typeof gtag === 'function') {
+            gtag('event', 'newsletter_signup', { method: 'homepage_form' });
+          }
+        }
       })
       .catch(function(){
         msg.textContent = '網路錯誤，請稍後再試';
