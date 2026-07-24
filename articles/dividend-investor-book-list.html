@@ -218,5 +218,18 @@
 
   <script src="../js/cookie-consent.js?v=20260530f"></script>
   <script src="../js/theme.js?v=20260530f"></script>
+  <script>
+  document.querySelectorAll('.book-btn').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (typeof gtag === 'function') {
+        var title = a.closest('.book-card').querySelector('.book-title');
+        gtag('event', 'book_affiliate_click', {
+          book_title: title ? title.textContent.trim() : '',
+          destination: 'books.com.tw'
+        });
+      }
+    });
+  });
+  </script>
 </body>
 </html>
