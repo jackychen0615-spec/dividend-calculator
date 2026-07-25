@@ -2,67 +2,6 @@
   "prev": {
     "queries": {
       "台積電配息怎麼算": {
-        "pos": 11.2,
-        "imp": 282,
-        "clk": 0
-      },
-      "鴻海配息怎麼算": {
-        "pos": 8.6,
-        "imp": 69,
-        "clk": 0
-      },
-      "聯發科配息怎麼算": {
-        "pos": 7.5,
-        "imp": 96,
-        "clk": 0
-      },
-      "中華電信配息怎麼算": {
-        "pos": 10,
-        "imp": 20,
-        "clk": 1
-      },
-      "股利計算機": {
-        "pos": 18.7,
-        "imp": 11,
-        "clk": 4
-      },
-      "殖利率計算": {
-        "pos": 60,
-        "imp": 18,
-        "clk": 1
-      },
-      "股利計算機app": {
-        "pos": 5.6,
-        "imp": 24,
-        "clk": 2
-      }
-    },
-    "pages": {
-      "/articles/borrow-invest-financial-checkup": {
-        "pos": 86,
-        "imp": 1,
-        "clk": 0
-      },
-      "/articles/refinance-lower-interest": {
-        "pos": 87.5,
-        "imp": 2,
-        "clk": 0
-      },
-      "/articles/bank-loan-rate-negotiation": {
-        "pos": 20.1,
-        "imp": 7,
-        "clk": 1
-      },
-      "/articles/how-to-build-credit-score": {
-        "pos": 97,
-        "imp": 1,
-        "clk": 0
-      }
-    }
-  },
-  "last": {
-    "queries": {
-      "台積電配息怎麼算": {
         "pos": 10.9,
         "imp": 238,
         "clk": 0
@@ -126,5 +65,71 @@
       }
     }
   },
-  "span": "2026-06-18~2026-07-15"
+  "last": {
+    "queries": {
+      "台積電配息怎麼算": {
+        "pos": 10.7,
+        "imp": 234,
+        "clk": 0
+      },
+      "鴻海配息怎麼算": {
+        "pos": 11.2,
+        "imp": 21,
+        "clk": 0
+      },
+      "聯發科配息怎麼算": {
+        "pos": 7.6,
+        "imp": 88,
+        "clk": 0
+      },
+      "中華電信配息怎麼算": {
+        "pos": 9.7,
+        "imp": 19,
+        "clk": 1
+      },
+      "股利計算機": {
+        "pos": 6.2,
+        "imp": 92,
+        "clk": 22
+      },
+      "股利計算器": {
+        "pos": 10.9,
+        "imp": 13,
+        "clk": 2
+      },
+      "殖利率計算": {
+        "pos": 57.6,
+        "imp": 21,
+        "clk": 0
+      },
+      "股利計算機app": {
+        "pos": 5.2,
+        "imp": 20,
+        "clk": 0
+      }
+    },
+    "pages": {
+      "/articles/borrow-invest-financial-checkup": {
+        "pos": 32.3,
+        "imp": 3,
+        "clk": 0
+      },
+      "/articles/refinance-lower-interest": {
+        "pos": 61.3,
+        "imp": 3,
+        "clk": 0
+      },
+      "/articles/bank-loan-rate-negotiation": {
+        "pos": 15.2,
+        "imp": 20,
+        "clk": 1
+      },
+      "/articles/how-to-build-credit-score": {
+        "pos": 97,
+        "imp": 1,
+        "clk": 0
+      }
+    }
+  },
+  "span": "2026-06-25~2026-07-22"
 }

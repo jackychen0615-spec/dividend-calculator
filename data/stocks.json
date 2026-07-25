@@ -76,20 +76,20 @@
     {
       "code": "00939",
       "name": "統一台灣高息動能",
-      "price": 21.67,
-      "dividend": 0.9,
-      "dividendYear": "2025",
-      "frequency": "季配",
-      "note": "每季配息，全年合計約 0.9 元"
+      "price": 21.78,
+      "dividend": 0.966,
+      "dividendYear": "近一年",
+      "frequency": "月配",
+      "note": "月配息，近一年（2025/09～2026/07 共 12 次）合計約 0.966 元"
     },
     {
       "code": "00940",
       "name": "元大台灣價值高息",
-      "price": 12.27,
-      "dividend": 0.43,
-      "dividendYear": "2025",
+      "price": 12.2,
+      "dividend": 0.53,
+      "dividendYear": "近一年",
       "frequency": "月配",
-      "note": "每月配息，2025全年合計約 0.43 元"
+      "note": "月配息，近一年（2025/08～2026/07 共 12 次）合計約 0.53 元"
     },
     {
       "code": "006208",
