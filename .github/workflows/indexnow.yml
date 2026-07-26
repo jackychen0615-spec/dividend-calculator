@@ -1,0 +1,80 @@
+name: IndexNow
+
+# 每次 push 到 main 之後，把這次異動到的頁面主動通知 Bing / Yahoo。
+# Google 不支援 IndexNow，那半邊仍靠 sitemap + 自然爬取。
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: '手動指定要送的網址（用空白分隔），留空則送首頁'
+        required: false
+
+env:
+  SITE_HOST: gulicalc.com
+  INDEXNOW_KEY: 20ecd41af18b44cd9ef8b214e958723a
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # 需要前一個 commit 才能算出差異
+
+      - name: 找出這次異動的頁面並送出
+        run: |
+          set -euo pipefail
+
+          if [ -n "${{ github.event.inputs.urls || '' }}" ]; then
+            URLS="${{ github.event.inputs.urls }}"
+          else
+            # 這次 push 異動到的 .html（含新增與修改，排除刪除）
+            CHANGED=$(git diff --name-only --diff-filter=AM HEAD^ HEAD -- '*.html' || true)
+            URLS=""
+            for f in $CHANGED; do
+              # 站上網址是無副檔名的：index.html -> /，其餘去掉 .html
+              case "$f" in
+                index.html)  p="" ;;
+                404.html)    continue ;;
+                */index.html) p="${f%/index.html}/" ;;
+                *)           p="${f%.html}" ;;
+              esac
+              URLS="$URLS https://${SITE_HOST}/${p}"
+            done
+          fi
+
+          URLS=$(echo $URLS | tr ' ' '\n' | grep -v '^$' | sort -u || true)
+          if [ -z "$URLS" ]; then
+            echo "沒有異動到頁面，跳過。"
+            exit 0
+          fi
+
+          echo "本次送出："
+          echo "$URLS" | sed 's/^/  /'
+
+          # 組 JSON（IndexNow 單次上限 10000 筆，遠超過我們的量）
+          LIST=$(echo "$URLS" | python3 -c "import sys,json; print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))")
+          cat > payload.json <<EOF
+          {
+            "host": "${SITE_HOST}",
+            "key": "${INDEXNOW_KEY}",
+            "keyLocation": "https://${SITE_HOST}/${INDEXNOW_KEY}.txt",
+            "urlList": ${LIST}
+          }
+          EOF
+
+          CODE=$(curl -s -o resp.txt -w '%{http_code}' -X POST 'https://api.indexnow.org/IndexNow' \
+                   -H 'Content-Type: application/json; charset=utf-8' \
+                   --data @payload.json)
+          echo "IndexNow 回應: HTTP $CODE"
+          cat resp.txt || true
+
+          # 200/202 都算成功受理；其他狀態要讓 workflow 紅燈，才不會默默失效
+          case "$CODE" in
+            200|202) echo "已受理" ;;
+            *) echo "IndexNow 拒絕（HTTP $CODE），請檢查金鑰檔是否仍可公開存取"; exit 1 ;;
+          esac
