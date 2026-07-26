@@ -31,6 +31,9 @@ jobs:
 
           if [ -n "${{ github.event.inputs.urls || '' }}" ]; then
             URLS="${{ github.event.inputs.urls }}"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # 手動執行又沒指定網址：送首頁，當作「這站還活著」的通知
+            URLS="https://${SITE_HOST}/"
           else
             # 這次 push 異動到的 .html（含新增與修改，排除刪除）
             CHANGED=$(git diff --name-only --diff-filter=AM HEAD^ HEAD -- '*.html' || true)
