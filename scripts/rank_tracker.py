@@ -13,7 +13,7 @@ import json
 import urllib.request
 from datetime import date, timedelta
 
-SA_FILE = os.environ.get("GSC_SA_FILE", "/Users/jackychen/Desktop/gulicalc-service-account.json")
+SA_FILE = os.environ.get("GSC_SA_FILE", "/Users/jackychen/Desktop/憑證/gulicalc-service-account.json")
 SITE = "https://gulicalc.com/"
 HISTORY = os.path.join(os.path.dirname(__file__), "..", "data", "rank_history.json")
 TG_TOKEN = os.environ.get("TG_BOT_TOKEN")
