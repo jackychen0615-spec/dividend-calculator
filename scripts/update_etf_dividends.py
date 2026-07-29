@@ -15,6 +15,7 @@
 
 由 GitHub Actions 每日排程執行，無需手動維護。
 """
+import glob
 import json
 import os
 import re
@@ -108,6 +109,110 @@ def patch_holding_table(html, price, dividend):
     return LOT_ROW.sub(rewrite_row, html)
 
 
+def report_stale_figures(by_code):
+    """列出全站與現值不符的殖利率敘述。只報告，不動檔案。
+
+    這些句子散落在比較文與 FAQ 裡，而且常常在講「別檔」的殖利率
+    （「0056 約 5-6%、00878 約 4-5%」），沒有可靠的方式判斷該用哪一檔的
+    數字去覆蓋。硬改的風險遠大於留著，所以交給人看過再決定。
+    """
+    codes = sorted(by_code, key=len, reverse=True)
+    pattern = re.compile(
+        r"(" + "|".join(re.escape(c) for c in codes) + r")"
+        r"[^%<>]{0,20}?殖利率約\s*([\d.]+)(?:\s*[-~～]\s*([\d.]+))?\s*%"
+    )
+    findings = []
+    for path in sorted(glob.glob(os.path.join(ARTICLES_DIR, "*.html"))):
+        try:
+            html = open(path, encoding="utf-8").read()
+        except OSError:
+            continue
+        for match in pattern.finditer(html):
+            code = match.group(1)
+            price, div = by_code.get(code, (0, 0))
+            if not price or not div:
+                continue
+            actual = round(div / price * 100, 1)
+            low = float(match.group(2))
+            high = float(match.group(3)) if match.group(3) else low
+            if low - 0.1 <= actual <= high + 0.1:
+                continue
+            findings.append(
+                (os.path.basename(path), code, match.group(0).strip(), actual)
+            )
+    if not findings:
+        print("殖利率敘述一致性檢查：全部相符。")
+        return findings
+    print(f"殖利率敘述與現值不符 {len(findings)} 處（未自動修改，請人工確認）：")
+    for name, code, text, actual in findings:
+        print(f"  {name} [{code}] 「{text}」→ 實際 {actual}%")
+    return findings
+
+
+SELF_CONTAINED_SUM = re.compile(
+    # 「以配息 X 元、股價約 Y 元計算，殖利率約 Z%」這種自帶算式的句子。
+    # 不可跨越「；」與「。」：比較句常把兩檔並列，跨過去就會把甲的配息配上乙的股價。
+    r"配息\s*([\d.]+)\s*元[^。；<>]{0,30}股價約?\s*([\d.]+)\s*元[^。；<>]{0,20}"
+    r"殖利率約\s*([\d.]+)\s*%"
+)
+
+
+def report_broken_arithmetic():
+    """找出自己算不通的句子：把前提和結論擺在一起卻對不上的。
+
+    只改結論不改前提（或反過來）就會產生這種句子。看起來像是更新過，實際上
+    比完全沒更新更難發現，因為兩個數字各自都很合理。
+    """
+    findings = []
+    for path in sorted(glob.glob(os.path.join(ARTICLES_DIR, "*.html"))):
+        try:
+            html = open(path, encoding="utf-8").read()
+        except OSError:
+            continue
+        for match in SELF_CONTAINED_SUM.finditer(html):
+            div, price, stated = (float(g) for g in match.groups())
+            if not price:
+                continue
+            actual = round(div / price * 100, 1)
+            if abs(actual - stated) <= 0.15:
+                continue
+            findings.append((os.path.basename(path), div, price, stated, actual))
+    if not findings:
+        print("句內算式檢查：全部算得通。")
+        return findings
+    print(f"句子自身算不通 {len(findings)} 處：")
+    for name, div, price, stated, actual in findings:
+        print(f"  {name} 配息 {div} ÷ 股價 {price} = {actual}%，但寫 {stated}%")
+    return findings
+
+
+def patch_present_tense_figures(html, price, dividend):
+    """只更新「現在是多少」的敘述：股價與殖利率。
+
+    刻意不碰配息金額。頁面上的配息幾乎都帶著年份（「2025 全年配息 22 元」），
+    那是歷史事實，用滾動 12 個月的數字蓋掉會讓頁面宣稱一個從未發生過的年度
+    數據 —— 那比數字過期更糟。配息由 patch_holding_table 在表格內處理，
+    表格講的是「現在買會領多少」，沒有年度語意。
+
+    只改 head。內文會拿別檔比較（0050 頁裡就有一句在講 0056 的殖利率），
+    整頁替換會把那些跨檔數字換成本頁這一檔的，看起來對、其實全錯。head 的
+    description 一律在講本頁這一檔，範圍明確。內文由每日一致性檢查列出來，
+    交給人判斷。
+    """
+    head, sep, rest = html.partition("</head>")
+    if not sep:
+        return html
+    pn = _num(price)
+    yield_pct = round(dividend / price * 100, 1)
+    head = re.sub(r"股價約\s*[\d.]+\s*元", f"股價約 {pn} 元", head)
+    # 區間寫法（「殖利率約 5-6%」）要先處理，否則會被單值那條先咬掉前半。
+    head = re.sub(
+        r"殖利率約\s*[\d.]+\s*[-~～]\s*[\d.]+\s*%", f"殖利率約 {yield_pct}%", head
+    )
+    head = re.sub(r"殖利率約\s*[\d.]+\s*%", f"殖利率約 {yield_pct}%", head)
+    return head + sep + rest
+
+
 def patch_articles(by_code):
     """把個股文章內文與計算器預帶值校正到現值。保守：對不上格式就不動。"""
     changed = 0
@@ -149,8 +254,7 @@ def patch_articles(by_code):
             h,
             count=1,
         )
-        # 注意：不自動改內文敘述（股價約/殖利率約…）。這些 regex 在無人看管下可能
-        # 誤命中 head 的 JSON-LD schema 造成不一致，內文由人工定期校正即可（措辭為「約」漂移慢）。
+        h = patch_present_tense_figures(h, price, div)
         if h != orig:
             with open(path, "w", encoding="utf-8") as f:
                 f.write(h)
@@ -336,6 +440,8 @@ def main():
         for s in stocks_data.get("stocks", [])
     }
     patch_articles(by_code)
+    report_stale_figures(by_code)
+    report_broken_arithmetic()
 
     print(f"完成：新增除息事件 {new_events}、更新股價 {price_upd} 檔、更新配息 {div_upd} 檔。")
 
