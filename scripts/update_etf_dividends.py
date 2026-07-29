@@ -37,16 +37,81 @@ STOCK_ARTICLES = {
     "5880": "taiwan-coop-dividend.html",
 }
 
+# ETF 文章。這些頁面的「持有不同張數每年領多少？」表格原本是手寫的，
+# 沒有任何流程會更新它，於是股價一漂移就和同頁正文對不起來
+# （2026-07-29 稽核在 0056／0050／006208／00878 四頁都抓到這個矛盾）。
+ETF_ARTICLES = {
+    "0050": "0050-dividend-calculator.html",
+    "0056": "0056-dividend-calculator.html",
+    "006208": "006208-dividend-calculator.html",
+    "00878": "00878-dividend-calculator.html",
+}
+
 
 def _num(x):
     x = float(x)
     return int(x) if x == int(x) else round(x, 2)
 
 
+LOT_ROW = re.compile(
+    r"<tr[^>]*>(?:(?!</tr>).)*?(\d+) 張（[\d,]+ 股）(?:(?!</tr>).)*?</tr>", re.S
+)
+CELL = re.compile(r"<td[^>]*>.*?</td>", re.S)
+
+
+def _money(value):
+    return f"{int(round(value)):,}"
+
+
+def patch_holding_table(html, price, dividend):
+    """校正「持有不同張數每年領多少？」表格。
+
+    兩種欄位排列都要支援：
+      4 欄 → 張數｜投入成本｜年度總配息｜殖利率
+      5 欄 → 張數｜投入成本｜每季配息｜年度總配息｜殖利率
+    只換數字，不動 style、<strong> 或背景色。欄數對不上就整列不碰。
+    """
+    yield_pct = round(dividend / price * 100, 1)
+
+    def rewrite_row(match):
+        row = match.group(0)
+        lots = int(match.group(1))
+        shares = lots * 1000
+        cells = list(CELL.finditer(row))
+        if len(cells) == 5:
+            values = [
+                f"{_money(price * shares)} 元",
+                f"{_money(dividend * shares / 4)} 元",
+                f"{_money(dividend * shares)} 元",
+                f"{yield_pct}%",
+            ]
+        elif len(cells) == 4:
+            values = [
+                f"{_money(price * shares)} 元",
+                f"{_money(dividend * shares)} 元",
+                f"{yield_pct}%",
+            ]
+        else:
+            return row
+        out, cursor = [], 0
+        for cell, value in zip(cells[1:], values):
+            out.append(row[cursor:cell.start()])
+            # 只替換儲存格裡的數字本身，包住它的 <strong> 等標籤原樣保留。
+            body = re.sub(r"[\d,.]+\s*元", value, cell.group(0), count=1)
+            if body == cell.group(0):
+                body = re.sub(r"[\d.]+\s*%", value, cell.group(0), count=1)
+            out.append(body)
+            cursor = cell.end()
+        out.append(row[cursor:])
+        return "".join(out)
+
+    return LOT_ROW.sub(rewrite_row, html)
+
+
 def patch_articles(by_code):
     """把個股文章內文與計算器預帶值校正到現值。保守：對不上格式就不動。"""
     changed = 0
-    for code, fn in STOCK_ARTICLES.items():
+    for code, fn in {**STOCK_ARTICLES, **ETF_ARTICLES}.items():
         info = by_code.get(code)
         if not info:
             continue
@@ -72,6 +137,15 @@ def patch_articles(by_code):
         h = re.sub(r'(id="gcT">)[\d,]+(<)', rf"\g<1>{tot}\g<2>", h)
         # 計算器標頭文字「股價 X、年配息 Y 元」（此措辭只出現在計算器區塊，安全）
         h = re.sub(r"股價\s*[\d.]+、年配息\s*[\d.]+\s*元", f"股價 {pn}、年配息 {dn} 元", h, count=1)
+        # 「持有不同張數每年領多少？」表格，以及它正上方那句舉例的基準。
+        # 表格若停在舊股價，同一頁的正文和表格就會互相矛盾。
+        h = patch_holding_table(h, price, div)
+        h = re.sub(
+            r"(以\s*\d{4}\s*年全年配息\s*)[\d.]+(\s*元（每季[均約]*約?\s*)[\d.]+(\s*元）、買入股價\s*)[\d.]+",
+            rf"\g<1>{dn}\g<2>{_num(round(div / 4, 2))}\g<3>{pn}",
+            h,
+            count=1,
+        )
         # 注意：不自動改內文敘述（股價約/殖利率約…）。這些 regex 在無人看管下可能
         # 誤命中 head 的 JSON-LD schema 造成不一致，內文由人工定期校正即可（措辭為「約」漂移慢）。
         if h != orig:
@@ -85,6 +159,37 @@ PRICE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
 EXDIV_URL = "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
 # 個股官方殖利率（近一年現金股利/收盤價）；ETF 不在此表。用來校正個股配息比除息累積可靠。
 BWIBBU_URL = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
+# 歷史除權息表，可帶日期區間。EXDIV_URL 只有「當天」除息，所以這個檔案是逐日長出來的，
+# 一開始根本湊不滿一年，近一年配息會嚴重低估（2026-07-29 稽核抓到的 ETF 數字全錯就是這樣來的）。
+# 開頭先用這支把區間補齊，之後每天再由 EXDIV_URL 續接。
+BACKFILL_URL = "https://www.twse.com.tw/rwd/zh/exRight/TWT49U?startDate={start}&endDate={end}&response=json"
+
+
+def backfill_history(history, start, end):
+    """把 start~end 之間的現金除息事件補進歷史檔。已存在的日期不動。"""
+    try:
+        rows = fetch(BACKFILL_URL.format(start=start, end=end)).get("data") or []
+    except Exception as e:
+        print("歷史除權息回補失敗，略過：", e)
+        return 0
+    added = 0
+    for r in rows:
+        if len(r) < 7 or r[6] != "息":
+            continue  # 只要純現金股息；除權或權息合併的權值不是現金
+        code = r[1]
+        try:
+            iso = roc_to_iso(r[0].replace("年", "").replace("月", "").replace("日", ""))
+            amount = float(r[5])
+        except (ValueError, TypeError, AttributeError):
+            continue
+        if not iso or amount <= 0:
+            continue
+        history.setdefault(code, {})
+        if iso not in history[code]:
+            history[code][iso] = round(amount, 4)
+            added += 1
+    print(f"歷史回補：新增 {added} 筆除息事件。")
+    return added
 
 
 def fetch(url):
@@ -171,6 +276,18 @@ def main():
 
     cutoff = (datetime.utcnow() - timedelta(days=365)).strftime("%Y-%m-%d")
 
+    # 只要有任何一檔 ETF 的紀錄沒有涵蓋到 TTM 視窗開始之前，就代表歷史還有缺口，
+    # 這時候算出來的「近一年配息」會低估。先補齊再算。
+    if any(
+        not history.get(code) or min(history[code]) >= cutoff
+        for code in ETF_ARTICLES
+    ):
+        backfill_history(
+            history,
+            (datetime.utcnow() - timedelta(days=400)).strftime("%Y%m%d"),
+            datetime.utcnow().strftime("%Y%m%d"),
+        )
+
     price_upd = div_upd = 0
     for s in stocks_data.get("stocks", []):
         code = s.get("code")
@@ -182,7 +299,10 @@ def main():
         # 2) 配息：近 365 天累積（僅在累積到合理值時覆蓋，避免初期低估）
         evs = history.get(code, {})
         ttm = round(sum(a for d, a in evs.items() if d >= cutoff), 2)
-        if ttm > 0 and ttm >= float(s.get("dividend", 0)) * 0.6:
+        # 有 TTM 視窗開始「之前」的紀錄，代表這一年沒有漏掉任何一次除息，TTM 可以直接信。
+        # 沒有的話歷史仍不完整，維持原本保守門檻，寧可不動也不要寫進低估的數字。
+        covered = bool(evs) and min(evs) < cutoff
+        if ttm > 0 and (covered or ttm >= float(s.get("dividend", 0)) * 0.6):
             if abs(ttm - float(s.get("dividend", 0))) > 0.001:
                 s["dividend"] = ttm
                 div_upd += 1
