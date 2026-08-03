@@ -203,7 +203,7 @@ export async function onRequest(context) {
       for (const item of priceData) {
         const code = item.Code;
         if (!code || addedCodes.has(code)) continue;
-        if (!/^00\d{2,4}$/.test(code)) continue;
+        if (!/^00\d{2,4}L?$/.test(code)) continue;
         const price = parseFloat(item.ClosingPrice) || 0;
         if (price <= 0) continue;
         // TWSE 的 Change 是「絕對點數」不是百分比；換算成真正的漲跌幅 %
