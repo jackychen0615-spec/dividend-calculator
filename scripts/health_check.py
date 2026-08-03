@@ -96,9 +96,17 @@ def main():
             if no_field > n * 0.5:
                 fails.append(f"❌ /api/stocks → {no_field}/{n} 檔缺少 changePercent 欄位（疑似欄位被移除或快取卡住舊版）")
 
+            def change_threshold(code: str) -> float:
+                # 2x 槓桿 ETF（代碼帶 L 字尾）追蹤標的的兩倍單日變動——大盤打到
+                # 台股 ±10% 漲跌停時，正2 ETF 本來就會落在 ~20% 左右，不是算錯。
+                # 25% 給一點緩衝空間，同時仍抓得到真正的單位換算 bug（那種是
+                # 3 位數 % 起跳，不會卡在門檻邊緣）。
+                return 25.0 if str(code or "").endswith("L") else 15.0
+
             impossible = [
                 s for s in stocks
-                if s.get("changePercent") is not None and abs(s.get("changePercent") or 0) > 15
+                if s.get("changePercent") is not None
+                and abs(s.get("changePercent") or 0) > change_threshold(s.get("code"))
             ]
             if len(impossible) > 3:
                 examples = ", ".join(f"{s.get('code')}{s.get('name')}={s.get('changePercent')}%" for s in impossible[:5])
