@@ -41,7 +41,7 @@
       "code": "00919",
       "name": "群益台灣精選高息",
       "price": 29.57,
-      "dividend": 2.86,
+      "dividend": 2.52,
       "dividendYear": "2025",
       "frequency": "季配",
       "note": "每季配息，全年合計約 2.52 元"
@@ -59,19 +59,19 @@
       "code": "00934",
       "name": "中信成長高股息",
       "price": 27.01,
-      "dividend": 1.88,
+      "dividend": 0.76,
       "dividendYear": "2025",
       "frequency": "月配",
-      "note": "每月配息，全年合計約 0.95 元"
+      "note": "每月配息，全年合計約 0.76 元"
     },
     {
       "code": "00936",
       "name": "台新台灣永續高息中小",
       "price": 20.56,
-      "dividend": 0.96,
+      "dividend": 0.49,
       "dividendYear": "2025",
-      "frequency": "季配",
-      "note": "每季配息，全年合計約 1.2 元"
+      "frequency": "月配",
+      "note": "每月配息，全年合計約 0.49 元"
     },
     {
       "code": "00939",
@@ -230,7 +230,7 @@
       "code": "00900",
       "name": "富邦特選高股息30",
       "price": 18.24,
-      "dividend": 1.0,
+      "dividend": 1.18,
       "dividendYear": "2025",
       "frequency": "月配",
       "note": "每月配息，全年合計約 1.18 元"
@@ -239,7 +239,7 @@
       "code": "00915",
       "name": "凱基優選高股息30",
       "price": 31.65,
-      "dividend": 1.47,
+      "dividend": 1.35,
       "dividendYear": "2025",
       "frequency": "季配",
       "note": "每季配息，全年合計約 1.35 元"
@@ -257,7 +257,7 @@
       "code": "00932",
       "name": "兆豐永續高息等權",
       "price": 16.98,
-      "dividend": 0.82,
+      "dividend": 0.58,
       "dividendYear": "2025",
       "frequency": "季配",
       "note": "每季配息，全年合計約 0.58 元"
@@ -266,16 +266,16 @@
       "code": "00943",
       "name": "兆豐電子高息等權",
       "price": 20.74,
-      "dividend": 0.94,
-      "dividendYear": "2025",
+      "dividend": 0.61,
+      "dividendYear": "2026年至今",
       "frequency": "月配",
-      "note": "電子成長型，每月配息，近一年約 0.48 元"
+      "note": "電子成長型，每月配息，2026年至今（第7次除息）累計約 0.61 元，非全年數字"
     },
     {
       "code": "00927",
       "name": "群益半導體收益",
       "price": 34.49,
-      "dividend": 3.95,
+      "dividend": 2.29,
       "dividendYear": "2025",
       "frequency": "季配",
       "note": "半導體主題，配息含資本利得、波動大，近一年約 2.29 元"
