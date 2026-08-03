@@ -4,6 +4,9 @@
 
 **網站：** https://dividend-calculator1.pages.dev/
 
+> ⚠️ **多裝置在維護這個 repo**：改動股價/配息/殖利率相關資料前，先看
+> [`docs/DATA-CONSISTENCY.md`](docs/DATA-CONSISTENCY.md) —— 裡面有目前已知的資料落差跟協作規則。
+
 ---
 
 ## 計算工具
