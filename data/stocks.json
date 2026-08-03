@@ -7,8 +7,8 @@
       "price": 102.85,
       "dividend": 1.6,
       "dividendYear": "2025",
-      "frequency": "季配",
-      "note": "2025年1拆4分割後改季配，全年約 3 元（過渡期）"
+      "frequency": "半年配",
+      "note": "2025年1拆4分割後為半年配，近一年合計約 1.6 元"
     },
     {
       "code": "0056",
@@ -17,16 +17,16 @@
       "dividend": 4.08,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，2025全年合計約 3.87 元"
+      "note": "每季配息，近一年合計約 4.08 元"
     },
     {
       "code": "00713",
       "name": "元大台灣高息低波",
       "price": 61.2,
-      "dividend": 3.34,
+      "dividend": 4.06,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，全年合計約 4.68 元"
+      "note": "每季配息，全年合計約 4.06 元"
     },
     {
       "code": "00878",
@@ -35,7 +35,7 @@
       "dividend": 1.88,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，2025全年合計約 1.77 元"
+      "note": "每季配息，近一年合計約 1.88 元"
     },
     {
       "code": "00919",
@@ -77,10 +77,10 @@
       "code": "00939",
       "name": "統一台灣高息動能",
       "price": 22.27,
-      "dividend": 0.97,
+      "dividend": 0.66,
       "dividendYear": "近一年",
       "frequency": "月配",
-      "note": "月配息，近一年（2025/09～2026/07 共 12 次）合計約 0.966 元"
+      "note": "月配息，近一年合計約 0.66 元"
     },
     {
       "code": "00940",
@@ -248,7 +248,7 @@
       "code": "00918",
       "name": "大華優利高填息30",
       "price": 32.73,
-      "dividend": 2.96,
+      "dividend": 2.48,
       "dividendYear": "2025",
       "frequency": "季配",
       "note": "每季配息，全年合計約 2.48 元"

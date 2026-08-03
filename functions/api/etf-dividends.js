@@ -10,12 +10,12 @@
 
 // 年度配息設定（元/受益權單位）。新配息公告時更新此表即可。
 const ETF_DIV = {
-  "0050":   { name: "元大台灣50",       dividend: 3.0,  freq: "季配" },
-  "0056":   { name: "元大高股息",       dividend: 3.87, freq: "季配" },
-  "00878":  { name: "國泰永續高股息",   dividend: 1.77, freq: "季配" },
-  "00713":  { name: "元大台灣高息低波", dividend: 4.68, freq: "季配" },
+  "0050":   { name: "元大台灣50",       dividend: 1.6,  freq: "半年配" },
+  "0056":   { name: "元大高股息",       dividend: 4.08, freq: "季配" },
+  "00878":  { name: "國泰永續高股息",   dividend: 1.88, freq: "季配" },
+  "00713":  { name: "元大台灣高息低波", dividend: 4.06, freq: "季配" },
   "00929":  { name: "復華台灣科技優息", dividend: 1.63, freq: "月配" },
-  "00939":  { name: "統一台灣高息動能", dividend: 0.966, freq: "月配" },
+  "00939":  { name: "統一台灣高息動能", dividend: 0.66, freq: "月配" },
   "00940":  { name: "元大台灣價值高息", dividend: 0.53, freq: "月配" },
   "00918":  { name: "大華優利高填息30", dividend: 2.48, freq: "季配" },
   "006208": { name: "富邦台50",         dividend: 8.2,  freq: "半年配" },
