@@ -65,8 +65,8 @@ python3 <site-ops-bundle路徑>/scheduled-tasks/gulicalc_data_consistency.py --r
 
 | 項目 | 現況 | 誰標記的 |
 |---|---|---|
-| `006208` 配息數字 | API：4.44元／1.9%　vs　頁面表格：8.2元／3.8%，兩邊仍不一致 | Claude（本機）2026-08-03 發現，Codex 裝置同日嘗試修正但未對齊 |
-| `functions/api/etf-dividends.js` 整體 | 至少 7 檔 ETF 跟自己主頁數字有落差，尚未系統性修過，目前用人工逐檔比對 | Claude（本機）2026-07-31 |
+| ~~`006208` 配息數字~~ | **已解決（2026-08-03）**：以 `articles/006208-dividend-calculator.html` 表格「年度總配息 8,200 元」為權威值，`functions/api/etf-dividends.js` 與 `data/stocks.json` 的 `dividend`/`frequency`/`note` 都改成 8.2 元／半年配對齊頁面（原本兩邊各自寫 4.44 元／3.5 元，都跟頁面不符）。用 `scripts/gulicalc_data_consistency.py` 確認過修正前 API 回報 4.44 元跟頁面 8.2 元不一致；push 後需再跑一次確認 006208 從落差清單消失 | Claude（本機）2026-08-03 修正並對齊 |
+| `functions/api/etf-dividends.js` 整體 | 至少 7 檔 ETF 跟自己主頁數字有落差（0050/0056/00878/00713/00939/00918，006208 已解決），尚未系統性修過，目前用人工逐檔比對 | Claude（本機）2026-07-31 標記，2026-08-03 確認落差仍在（006208 除外） |
 | `compare.html` 是否仍有寫死的舊清單 | 上次規劃要讓它改讀 API、砍掉寫死清單，狀態未知，需要重新確認 | 待查 |
 
 發現新的資料落差，請在這裡加一列，不要只記在自己機器的私人筆記裡（那樣對方永遠看不到）。

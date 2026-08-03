@@ -18,7 +18,7 @@ const ETF_DIV = {
   "00939":  { name: "統一台灣高息動能", dividend: 0.966, freq: "月配" },
   "00940":  { name: "元大台灣價值高息", dividend: 0.53, freq: "月配" },
   "00918":  { name: "大華優利高填息30", dividend: 2.48, freq: "季配" },
-  "006208": { name: "富邦台50",         dividend: 4.44, freq: "年配" },
+  "006208": { name: "富邦台50",         dividend: 8.2,  freq: "半年配" },
 };
 
 const TWSE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL";
