@@ -38,15 +38,18 @@ STOCK_ARTICLES = {
     "5880": "taiwan-coop-dividend.html",
 }
 
-# ETF 文章。這些頁面的「持有不同張數每年領多少？」表格原本是手寫的，
-# 沒有任何流程會更新它，於是股價一漂移就和同頁正文對不起來
-# （2026-07-29 稽核在 0056／0050／006208／00878 四頁都抓到這個矛盾）。
-ETF_ARTICLES = {
-    "0050": "0050-dividend-calculator.html",
-    "0056": "0056-dividend-calculator.html",
-    "006208": "006208-dividend-calculator.html",
-    "00878": "00878-dividend-calculator.html",
-}
+# 曾經放在這裡的 0050／0056／006208／00878 已於 2026-08-05 移除。
+# 這 4 檔各自有專屬頁面，頁面表格是 docs/DATA-CONSISTENCY.md 規則 1 的權威值
+# 來源——人工查證日曆年度數字、附來源網址與查核時間；這支腳本算的是滾動
+# TTM（近 365 天累積），兩套口徑對同一頁打架時，每天自動跑的這支必贏，人工
+# 查證撐不過一次覆寫（2026-08-04 006208／0056／00878 就這樣被腳本蓋掉一次，
+# 隔天才發現）。改成排除：這 4 檔的 dividend 欄位與文章頁面不再由這支腳本碰，
+# 只由人工／Liz 審核流程維護；股價仍會照常自動更新，不受影響。見
+# MANUALLY_VERIFIED_CODES。
+ETF_ARTICLES = {}
+
+# main() 的 TTM 覆寫迴圈與 patch_articles() 都要跳過這幾檔——見上方註解。
+MANUALLY_VERIFIED_CODES = {"0050", "0056", "006208", "00878"}
 
 
 def _num(x):
@@ -416,11 +419,16 @@ def main():
 
     cutoff = (datetime.utcnow() - timedelta(days=365)).strftime("%Y-%m-%d")
 
-    # 只要有任何一檔 ETF 的紀錄沒有涵蓋到 TTM 視窗開始之前，就代表歷史還有缺口，
-    # 這時候算出來的「近一年配息」會低估。先補齊再算。
+    # 只要有任何一檔「仍由這支腳本算 TTM」的標的紀錄沒有涵蓋到 TTM 視窗開始
+    # 之前，就代表歷史還有缺口，這時候算出來的「近一年配息」會低估。先補齊再算。
+    # MANUALLY_VERIFIED_CODES 交給人工查證維護，不需要這支腳本幫它們補歷史。
+    ttm_codes = [
+        s.get("code") for s in stocks_data.get("stocks", [])
+        if s.get("code") not in MANUALLY_VERIFIED_CODES
+    ]
     if any(
         not history.get(code) or min(history[code]) >= cutoff
-        for code in ETF_ARTICLES
+        for code in ttm_codes
     ):
         backfill_history(
             history,
@@ -431,11 +439,13 @@ def main():
     price_upd = div_upd = 0
     for s in stocks_data.get("stocks", []):
         code = s.get("code")
-        # 1) 股價：一律更新為最新收盤價
+        # 1) 股價：一律更新為最新收盤價（含人工查證的 4 檔，股價不受規則1限制）
         lp = price_map.get(code)
         if lp and lp > 0 and abs(lp - float(s.get("price", 0))) > 0.001:
             s["price"] = lp
             price_upd += 1
+        if code in MANUALLY_VERIFIED_CODES:
+            continue  # dividend/note 交給人工／Liz 審核流程維護，不用滾動 TTM 覆寫
         # 2) 配息：近 365 天累積（僅在累積到合理值時覆蓋，避免初期低估）
         evs = history.get(code, {})
         ttm = round(sum(a for d, a in evs.items() if d >= cutoff), 2)
