@@ -54,6 +54,30 @@ def _num(x):
     return int(x) if x == int(x) else round(x, 2)
 
 
+NOTE_YEAR = re.compile(r"\d{4}\s*年配息")
+NOTE_AMOUNT = re.compile(r"配息\s*[\d.]+\s*元")
+
+
+def sync_note(note, new_dividend):
+    """讓 note 文字跟被腳本改掉的 dividend 欄位保持一致。
+
+    這裡的 dividend 是用「近365天累積」或「TWSE 官方殖利率×現價」算出來的
+    滾動 TTM 數字，不是固定日曆年的配息總額。note 原本常寫「2025年配息 X 元」
+    這種措辭，數字被腳本改掉但年份沒改，就會造成欄位與敘述互相矛盾——這正是
+    docs/DATA-CONSISTENCY.md 記錄過的反覆事故（0050、8檔無主頁個股）的根本原因。
+    所以這裡連年份措辭一起改掉，改成不隱含特定日曆年的「近一年配息」。
+    """
+    dn = _num(new_dividend)
+    if not note:
+        return f"近一年配息 {dn} 元"
+    note = NOTE_YEAR.sub("近一年配息", note)
+    if NOTE_AMOUNT.search(note):
+        note = NOTE_AMOUNT.sub(f"配息 {dn} 元", note, count=1)
+    else:
+        note = f"{note}（近一年配息 {dn} 元）"
+    return note
+
+
 LOT_ROW = re.compile(
     r"<tr[^>]*>(?:(?!</tr>).)*?(\d+) 張（[\d,]+ 股）(?:(?!</tr>).)*?</tr>", re.S
 )
@@ -412,6 +436,7 @@ def main():
         if ttm > 0 and (covered or ttm >= float(s.get("dividend", 0)) * 0.6):
             if abs(ttm - float(s.get("dividend", 0))) > 0.001:
                 s["dividend"] = ttm
+                s["note"] = sync_note(s.get("note", ""), ttm)
                 div_upd += 1
         # 3) 個股：用官方殖利率×現價校正配息（比除息累積可靠；ETF 不在 BWIBBU 會自動跳過）
         yv = yield_map.get(code)
@@ -423,6 +448,7 @@ def main():
             # 保留乾淨的正確種子值（如台積電 22），只修明顯錯的（聯發科、台塑、合庫金…）。
             if official > 0 and abs(official - cur_div) > max(0.08, cur_div * 0.12):
                 s["dividend"] = official
+                s["note"] = sync_note(s.get("note", ""), official)
                 div_upd += 1
 
     stocks_data["lastUpdated"] = datetime.utcnow().strftime("%Y-%m-%d")
