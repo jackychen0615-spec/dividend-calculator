@@ -54,8 +54,8 @@ def _num(x):
     return int(x) if x == int(x) else round(x, 2)
 
 
-NOTE_YEAR = re.compile(r"\d{4}\s*年配息")
-NOTE_AMOUNT = re.compile(r"配息\s*[\d.]+\s*元")
+NOTE_YEAR = re.compile(r"\d{4}\s*年(?=配息|全年|度)")
+NOTE_YUAN_NUMBER = re.compile(r"[\d.]+(?=\s*元)")
 
 
 def sync_note(note, new_dividend):
@@ -63,19 +63,28 @@ def sync_note(note, new_dividend):
 
     這裡的 dividend 是用「近365天累積」或「TWSE 官方殖利率×現價」算出來的
     滾動 TTM 數字，不是固定日曆年的配息總額。note 原本常寫「2025年配息 X 元」
-    這種措辭，數字被腳本改掉但年份沒改，就會造成欄位與敘述互相矛盾——這正是
+    這種措辭，數字被腳本改掉但文字沒改，就會造成欄位與敘述互相矛盾——這正是
     docs/DATA-CONSISTENCY.md 記錄過的反覆事故（0050、8檔無主頁個股）的根本原因。
-    所以這裡連年份措辭一起改掉，改成不隱含特定日曆年的「近一年配息」。
+
+    只在 note 裡「唯一一個帶元的數字」時才動手替換那個數字——這種情況下
+    改哪個數字沒有疑義。如果 note 裡有 0 個或 2 個以上帶元的數字（例如
+    006208 那種「總額（拆解成兩次除息明細）」的寫法，或 2330 的「每季X元，
+    全年Y元」），代表哪個才是要被覆蓋的「總額」需要人判斷，這裡選擇保守
+    不動，寧可留著一次性的舊落差讓人工複查，也不要用位置猜測寫出一句自相
+    矛盾（同一句話裡兩個不同數字）的話。
     """
     dn = _num(new_dividend)
     if not note:
         return f"近一年配息 {dn} 元"
-    note = NOTE_YEAR.sub("近一年配息", note)
-    if NOTE_AMOUNT.search(note):
-        note = NOTE_AMOUNT.sub(f"配息 {dn} 元", note, count=1)
-    else:
-        note = f"{note}（近一年配息 {dn} 元）"
-    return note
+    matches = list(NOTE_YUAN_NUMBER.finditer(note))
+    if len(matches) != 1:
+        return note
+    m = matches[0]
+    new_note = note[: m.start()] + str(dn) + note[m.end() :]
+    new_note = NOTE_YEAR.sub("近一年", new_note)
+    # 避免「XXXX年全年」被換成「近一年全年」這種疊字
+    new_note = new_note.replace("近一年全年", "近一年").replace("近一年年度", "近一年")
+    return new_note
 
 
 LOT_ROW = re.compile(
