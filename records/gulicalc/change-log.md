@@ -1,5 +1,36 @@
 # Change Log
 
+## 2026-08-10 — 依每週GEO/AEO輕量稽核建議，為借貸/信用文章補上speakable結構化資料（實際掃描結果與稽核報告的篇數不同，已重新核對）
+
+**背景**：稽核報告建議為 how-to-build-credit-score、refinance-lower-interest、bank-loan-rate-negotiation、borrow-invest-financial-checkup、xin-qing-an-loan-guide 等約7篇借貸/信用文章補上 speakable schema。依指示未直接採信稽核報告篇目，改以 `grep -L "speakable" articles/*.html` 重新掃描全站 128 篇文章：實際缺少 speakable schema 的共 15 篇，其中主題屬於借貸/信用者僅 4 篇；xin-qing-an-loan-guide.html 等稽核報告提及的其他篇目經逐一檢查已具備 speakable schema，不需要重複補上。
+
+**改動頁面**（4篇，皆為新增 speakable schema，無其他內容變動）：
+- `articles/how-to-build-credit-score.html`
+- `articles/bank-loan-rate-negotiation.html`
+- `articles/refinance-lower-interest.html`
+- `articles/borrow-invest-financial-checkup.html`
+
+**做法**：比照全站其他 113 篇已使用 speakable schema 的文章（如 xin-qing-an-loan-guide.html、mortgage-guide-2026.html）之寫法，在既有 Article/BreadcrumbList JSON-LD 區塊的 `</script>` 之後、`<meta name="google-adsense-account">` 之前，逐字插入相同的 WebPage speakable schema 區塊：
+
+```html
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","speakable":{"@type":"SpeakableSpecification","cssSelector":["article h1","article > p:first-of-type",".article-faq-item h3",".article-faq-item p"]}}
+</script>
+```
+
+僅新增這 3 行，未更動文章標題、內文、既有 Article/BreadcrumbList schema 或其他任何內容。本次為純技術性結構化資料補充，不涉及財務數字、日期或法規內容，未查證第一手來源。
+
+**驗證**：
+- `git diff --stat` 確認 4 個檔案各僅新增 3 行（共 12 行新增、0 刪除），無其他變動
+- 以 Python `json.loads()` 逐一驗證每個頁面所有 `<script type="application/ld+json">` 區塊語法，4 個頁面各 2 個 JSON-LD 區塊皆合法（原有 Article/BreadcrumbList 區塊 + 新增的 speakable 區塊）
+- 於 worktree 內以 `python3 -m http.server` 起本機靜態伺服器，逐頁 HTTP GET 確認回應 200，並比對 `<header>`／`<main>`／`<article>`／`<footer>`／`<script>` 等標籤開合數量與改動前一致，`<h1>`、`.article-faq-item`、`.site-header` 等關鍵版面元素均存在，未被破壞
+- 受限於沙盒環境未安装瀏覽器自動化工具（chromium-cli／playwright 皆不可用），無法取得實際渲染截圖，以上述 HTTP 回應 + HTML 結構標籤平衡檢查作為替代驗證
+- 未修改 `.git`、`.env`、`credentials`、`secrets`、`.github/workflows` 或任何 worktree 外檔案；未執行 commit/push/部署
+
+**待留意風險**：
+- 本次結構化資料補充未經肉眼瀏覽器渲染確認，建議下次有瀏覽器環境時以 Google Rich Results Test 或實機瀏覽器再次確認 4 個頁面版面與 speakable schema 皆正常
+- 稽核報告提及的 7 篇篇目與本次實際掃描出的 4 篇借貸/信用文章有落差，其餘篇目（含 xin-qing-an-loan-guide.html）經檢查已具備 speakable schema；若稽核報告本身列表有誤，建議下次稽核時一併校正
+
 ## 2026-08-09 — 修復每日數據正確性稽核抓到的 5 項問題頁面（00929/00878/00940/鴻海/聯發科），重試（前次因 NEXUS 自身 git push 競態被中斷回復，與資料內容無關）
 
 **查核時間**：2026-08-09（台北時間），逐項以 TWSE 官方 API（STOCK_DAY／BWIBBU_d）與多家第三方財經站交叉查證。
