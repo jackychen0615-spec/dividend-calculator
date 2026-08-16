@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15",
+  "lastUpdated": "2026-08-16",
   "stocks": [
     {
       "code": "0050",
@@ -68,10 +68,10 @@
       "code": "00936",
       "name": "台新台灣永續高息中小",
       "price": 21.47,
-      "dividend": 1.08,
+      "dividend": 1.04,
       "dividendYear": "2025",
       "frequency": "月配",
-      "note": "每月配息，全年合計約 1.08 元"
+      "note": "每月配息，全年合計約 1.04 元"
     },
     {
       "code": "00939",
