@@ -98,9 +98,12 @@ export async function onRequest(context) {
 
     // 查看名單（需要 admin key）
     const key = url.searchParams.get('key');
+    const adminKey = env.ADMIN_KEY;
 
-    // 簡單的 admin 驗證（你可以改成更安全的）
-    if (key !== 'gulicalc2026admin') {
+    // ADMIN_KEY 必須在 Cloudflare Pages（Production）環境變數設定，
+    // 不可寫死在原始碼——這個 repo 是 public，寫死等於直接公開金鑰。
+    // 2026-09-15 資安稽核發現舊版寫死 'gulicalc2026admin' 已曝光且可被外部利用，已移除。
+    if (!adminKey || key !== adminKey) {
       return new Response(JSON.stringify({ error: '需要授權' }), {
         status: 401,
         headers: { 'Content-Type': 'application/json', ...corsHeaders }
