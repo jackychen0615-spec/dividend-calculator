@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19",
+  "lastUpdated": "2026-09-20",
   "stocks": [
     {
       "code": "0050",
@@ -23,10 +23,10 @@
       "code": "00713",
       "name": "元大台灣高息低波",
       "price": 65.1,
-      "dividend": 4.59,
+      "dividend": 3.81,
       "dividendYear": "2025",
       "frequency": "季配",
-      "note": "每季配息，全年合計約 4.59 元"
+      "note": "每季配息，全年合計約 3.81 元"
     },
     {
       "code": "00878",
