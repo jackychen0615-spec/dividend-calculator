@@ -106,15 +106,17 @@
               <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
             </div>
 
-            <!-- Quick Answer：00878 已知資料（股價/年度配息/頻率/殖利率），跟下面計算器同一份資料來源 -->
+            <!-- Quick Answer：00878 已知資料（股價/年度配息/頻率/殖利率），跟下面計算器同一份資料來源。
+                 Phase 3 補充規則 1：股價一律標「最新參考股價」，不因 API 成功就標「即時」
+                 （API 可能是 cache／盤後收盤價，backend 無法精準判斷時採保守 wording）。 -->
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">近期股價</div><div class="v" id="qaPrice">32.81 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k" id="qaPriceLabel">最新參考股價</div><div class="v" id="qaPrice">32.81 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">1.77 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">殖利率</div><div class="v green" id="qaYield">5.39%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k" id="qaYieldLabel">參考殖利率</div><div class="v green" id="qaYield">5.39%</div></div>
               </div>
-              <p class="etf-proto-qa-source">資料日期 2026-08-07・資料來源：台灣證券交易所＋國泰投信公告（非即時，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-08-07・資料來源：台灣證券交易所＋國泰投信公告（非即時，實際配息以官方最新公告為準）</p>
             </div>
 
             <!-- Progressive Input：主要只問持有數量 -->
@@ -139,13 +141,14 @@
               </div>
             </details>
 
-            <!-- 個人化結果 -->
+            <!-- 個人化結果。gcCLabel 固定「參考市值」，因為它是由「最新參考股價」算出來的，
+                 不應該比它的來源數字標得更肯定（避免「股價是參考、市值卻叫目前」的矛盾）。 -->
             <div class="etf-proto-result">
-              <div class="yield-label">殖利率</div>
+              <div class="yield-label" id="gcYLabel">參考殖利率</div>
               <div class="yield-value"><span id="gcY">5.39</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
-                  <div class="k">目前市值</div>
+                  <div class="k" id="gcCLabel">參考市值</div>
                   <div class="v" id="gcC">32,810</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
@@ -155,7 +158,7 @@
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 1.77 元估算（非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 1.77 元估算的參考殖利率（非保證未來配息）</p>
             </div>
           </div>
 
@@ -185,20 +188,53 @@
           </div>
         </div>
         <script>
+        // Page Data Contract：這個物件是本頁 Quick Answer 與 Calculator「唯一共用」的
+        // 資料來源（不是兩邊各自硬編碼）。
+        // Phase 3 補充規則 1：priceDate/sourceStatus 改名為 priceAsOf/priceStatus，
+        // priceStatus 預留 "realtime"|"delayed"|"close"|"fallback" 給未來版本用，
+        // 但 v1 不管 priceStatus 是什麼，畫面文字一律固定顯示「最新參考股價」——
+        // 因為目前 API 可能回傳 cache 或盤後收盤價，backend 還無法精準分辨，
+        // 貿然標「即時」會誤導使用者。只有 priceAsOf（資料時間）跟實際數字會變動。
+        window.GULICALC_PAGE_DATA = {
+          symbol: "00878",
+          name: "國泰永續高股息",
+          price: 32.81,
+          priceAsOf: "2026-08-07",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          annualDividend: 1.77,
+          dividendYear: "2025",
+          frequency: "季配",
+          yield: 5.39,
+          source: "台灣證券交易所＋國泰投信公告"
+        };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
           if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
           function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+
+          function renderFreshness(){
+            var qaSource = document.getElementById('qaSource');
+            // 標籤固定不隨 priceStatus 切換（v1 保守 wording，見上方註解）。
+            // 只有資料時間跟著 PD.priceAsOf 更新。
+            if (qaSource) {
+              qaSource.textContent = '資料時間 ' + PD.priceAsOf + '・資料來源：' + PD.source + '（非即時，實際配息以官方最新公告為準）';
+            }
+          }
+
           function calc(){
             var price=Math.max(0,parseFloat(p.value)||0);
             var lots=Math.max(0,parseFloat(s.value)||0);
             var div=Math.max(0,parseFloat(d.value)||0);
             var shares=lots*1000;
             var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price = price;
+            PD.annualDividend = div;
+            PD.yield = parseFloat(yieldPct);
             document.getElementById('gcY').textContent=yieldPct;
             document.getElementById('gcC').textContent=fmt(shares*price);
             document.getElementById('gcT').textContent=fmt(shares*div);
-            // Quick Answer 跟計算器吃同一份資料，不再另外硬編碼一份數字，
+            // Quick Answer 跟計算器讀同一個 PD 物件，不再另外硬編碼一份數字，
             // 避免同頁出現兩組不一致的股價/配息/殖利率。
             var qaPrice=document.getElementById('qaPrice');
             var qaDiv=document.getElementById('qaDiv');
@@ -207,9 +243,22 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 2025 年度配息 '+div.toFixed(2)+' 元估算（非保證未來配息）';
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+
+          // 訂閱 etf-live.js 廣播的資料更新事件。priceStatus 存 'close'（保守假設：
+          // /api/etf-dividends 目前回的多半是收盤價，不是真正 tick-level 即時報價）；
+          // 這個值目前不驅動任何文字切換，純資料層預留給未來版本用。
+          document.addEventListener('gulicalc:live-price-updated', function(ev){
+            if (!ev.detail || ev.detail.code !== PD.symbol) return;
+            PD.priceStatus = 'close';
+            PD.priceAsOf = new Date().toISOString().slice(0,10);
+            renderFreshness();
+            calc();
+          });
+
+          renderFreshness();
           calc();
         })();
         </script>

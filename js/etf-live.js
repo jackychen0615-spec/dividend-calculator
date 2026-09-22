@@ -28,6 +28,13 @@
       document.querySelectorAll('[data-etf="price"]').forEach(function (el) { el.textContent = d.price; });
       document.querySelectorAll('[data-etf="yield"]').forEach(function (el) { el.textContent = d.yield; });
       document.querySelectorAll('[data-etf="dividend"]').forEach(function (el) { el.textContent = d.dividend; });
+
+      // Phase 2.5：廣播「這次是真的即時資料」的訊號，給有實作 Page Data
+      // Contract／資料新鮮度標示的頁面訂閱（目前沒有頁面在聽這個事件，
+      // 純附加、不影響既有 9 個頁面的既有行為）。
+      document.dispatchEvent(new CustomEvent("gulicalc:live-price-updated", {
+        detail: { code: code, price: d.price, dividend: d.dividend, yield: d.yield }
+      }));
     })
     .catch(function () { /* 靜默：沿用靜態值 */ });
 })();
