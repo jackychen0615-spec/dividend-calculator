@@ -1,0 +1,138 @@
+/* ============================================================
+   GULICALC Phase 2 — 00878 Reference Template Prototype
+   Scoped under .etf-proto so no other article page (which only
+   loads style.css) is affected. Reuses the same teal/cyan tokens
+   and component language established in the Phase 1 homepage
+   prototype (css/proto-v1.css) for visual consistency, but is a
+   separate file since article pages have a narrower content column
+   (~480-600px) than the homepage (1200px).
+   ============================================================ */
+
+.etf-proto {
+  max-width: 560px;
+  margin: 1.5rem auto;
+}
+
+.etf-proto-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 14px 18px 40px -24px rgba(13,140,132,.28);
+}
+.etf-proto-card .head {
+  background: radial-gradient(140% 160% at 100% 0%, #0f3b38 0%, #0a6f69 60%, #0d8c84 100%);
+  padding: 1.1rem 1.25rem;
+}
+.etf-proto-card .head .title { font-size: 1.05rem; color: #fff; font-weight: 600; margin: 0; }
+.etf-proto-card .head .sub { font-size: .76rem; color: rgba(220,255,250,.78); margin: .2rem 0 0; }
+
+/* ---------- Quick Answer (already-known data, no search needed) ---------- */
+.etf-proto-qa { padding: 1.1rem 1.25rem 0; }
+.etf-proto-qa-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+}
+.etf-proto-qa-cell {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: .7rem .5rem;
+  text-align: center;
+}
+.etf-proto-qa-cell .k { font-size: .66rem; color: var(--text-muted); font-weight: 600; }
+.etf-proto-qa-cell .v { font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-top: .2rem; font-variant-numeric: tabular-nums; }
+.etf-proto-qa-cell .v.accent { color: var(--accent); }
+.etf-proto-qa-cell .v.green { color: var(--accent-green); }
+.etf-proto-qa-source { font-size: .68rem; color: var(--text-muted); margin: .55rem 0 0; line-height: 1.5; }
+
+/* ---------- Primary input: 持有數量 only ---------- */
+.etf-proto-primary { padding: 1.1rem 1.25rem 0; }
+.etf-proto-primary label { font-size: .85rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: .4rem; }
+.etf-proto-primary input {
+  width: 100%;
+  padding: .8rem .9rem;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  outline: none;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+}
+.etf-proto-primary .hint { font-size: .7rem; color: var(--text-muted); margin-top: .3rem; display: block; }
+
+/* ---------- Advanced (collapsed): 股價/每股股利 ---------- */
+.etf-proto-advanced { padding: .9rem 1.25rem 1.1rem; }
+.etf-proto-advanced summary {
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  user-select: none;
+}
+.etf-proto-advanced summary::-webkit-details-marker { display: none; }
+.etf-proto-advanced summary::before { content: "▸"; font-size: .68rem; transition: transform .15s; }
+.etf-proto-advanced[open] summary::before { transform: rotate(90deg); }
+.etf-proto-advanced .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: .8rem; }
+.etf-proto-advanced .grid label { font-size: .74rem; font-weight: 500; color: var(--text-secondary); display: block; margin-bottom: .3rem; }
+.etf-proto-advanced .grid input {
+  width: 100%;
+  padding: .65rem .8rem;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  outline: none;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+}
+
+/* ---------- Personal result ---------- */
+.etf-proto-result { border-top: 1px solid var(--border-color); padding: 1.1rem 1.25rem 1.2rem; text-align: center; }
+.etf-proto-result .yield-label { font-size: .7rem; color: var(--text-muted); font-weight: 600; letter-spacing: .04em; }
+.etf-proto-result .yield-value { font-size: 2.1rem; font-weight: 800; color: var(--accent); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.etf-proto-result-grid { display: flex; justify-content: center; gap: 1.8rem; margin-top: .7rem; }
+.etf-proto-result-cell .k { font-size: .66rem; color: var(--text-muted); font-weight: 600; }
+.etf-proto-result-cell .v { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-top: .15rem; font-variant-numeric: tabular-nums; }
+.etf-proto-result-cell .v.green { color: var(--accent-green); }
+.etf-proto-result-cell .note { font-size: .62rem; color: var(--text-muted); margin-top: .2rem; max-width: 12ch; }
+.etf-proto-basis { font-size: .68rem; color: var(--text-muted); margin-top: .6rem; }
+
+/* ---------- Next Intent ---------- */
+.etf-proto-intent-head { font-size: .95rem; font-weight: 800; color: var(--text-primary); margin: 1.6rem 0 .8rem; }
+.etf-proto-intent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .6rem; }
+.etf-proto-intent-card {
+  display: flex; align-items: center; gap: .55rem;
+  background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 12px;
+  padding: .8rem .9rem; text-decoration: none; transition: .15s;
+}
+.etf-proto-intent-card:hover { border-color: var(--accent); box-shadow: 0 8px 20px rgba(8,145,178,.1); transform: translateY(-1px); }
+.etf-proto-intent-card .icon { width: 30px; height: 30px; flex: 0 0 auto; border-radius: 8px; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.etf-proto-intent-card .txt { font-size: .82rem; font-weight: 600; color: var(--text-primary); line-height: 1.35; }
+
+/* ---------- Secondary tool relabel (Calc #2: 歷史累積試算, kept & restyled) ---------- */
+.etf-proto-secondary-label {
+  display: inline-block;
+  font-size: .68rem; font-weight: 700; color: var(--accent);
+  background: var(--accent-light); padding: .2rem .6rem; border-radius: 6px;
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 640px) {
+  .etf-proto-qa-grid { grid-template-columns: repeat(2, 1fr); }
+  .etf-proto-result-grid { gap: 1.4rem; }
+}
+
+[data-theme="dark"] .etf-proto-qa-cell,
+[data-theme="dark"] .etf-proto-intent-card {
+  background: var(--bg-white);
+  border-color: var(--border-color);
+}
