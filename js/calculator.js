@@ -109,9 +109,15 @@
     renderDividendChart(price > 0 && shareCount > 0 && div > 0 ? totalDividend : 0);
   }
 
-  [stockPrice, shares, dividend].forEach((input) => {
-    input.addEventListener("input", calculate);
-  });
+  // Phase 2.5 fix: 這支 script 被幾乎全站每個頁面載入（包含沒有股利計算器
+  // 的文章頁），但 stockPrice/shares/dividend 只存在於首頁。加 null guard
+  // 避免在其他頁面對 null 呼叫 addEventListener 而整支 script 中斷執行——
+  // 中斷點之後的 FAQ 手風琴／手機選單綁定就永遠不會執行到。
+  if (stockPrice && shares && dividend && totalCostEl && totalDividendEl && yieldRateEl) {
+    [stockPrice, shares, dividend].forEach((input) => {
+      input.addEventListener("input", calculate);
+    });
+  }
 
   // FAQ accordion
   document.querySelectorAll(".faq-question").forEach((btn) => {
