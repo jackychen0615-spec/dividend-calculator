@@ -150,7 +150,7 @@
         <!-- 標題列 -->
         <div style="background:radial-gradient(140% 160% at 100% 0%, #0f3b38 0%, #0a6f69 60%, #0d8c84 100%);padding:1.4rem 1.6rem;">
           <h2 style="font-size:1.15rem;color:#fff;margin:0;font-weight:600;letter-spacing:-.01em;">股利殖利率試算</h2>
-          <p style="font-size:.78rem;color:rgba(220,255,250,.72);margin:.25rem 0 0;">輸入三個數字，自動幫你算</p>
+          <p style="font-size:.78rem;color:rgba(220,255,250,.72);margin:.25rem 0 0;">選擇 ETF／股票 → 輸入持有數量 → 立即試算</p>
         </div>
         <!-- 股票搜尋：全首頁唯一搜尋入口 -->
         <div style="padding:1.4rem 1.5rem .5rem;position:relative;" id="stockSearchWrap">
@@ -195,9 +195,9 @@
                 <button type="button" data-unit="share" onclick="guliUnit('share')" style="border:0;background:none;color:var(--text-secondary);font-size:.76rem;font-weight:600;padding:.28rem .8rem;border-radius:7px;cursor:pointer;transition:.15s;">股</button>
               </div>
             </div>
-            <input type="number" id="shares" inputmode="numeric" placeholder="3" min="0" step="1" oninput="guliValidate(this)" style="width:100%;padding:.8rem .9rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:12px;font-size:1.15rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;transition:border-color .16s,background .16s;">
+            <input type="number" id="shares" inputmode="numeric" placeholder="3" min="0" step="1" oninput="guliValidate(this)" disabled style="width:100%;padding:.8rem .9rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:12px;font-size:1.15rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;transition:border-color .16s,background .16s,opacity .16s;opacity:.55;cursor:not-allowed;">
             <span class="gerr" id="err-shares" style="display:none;font-size:.72rem;color:#d14a3f;margin-top:.3rem;">請輸入大於 0 的數量</span>
-            <span id="unitHint" style="font-size:.7rem;color:var(--text-muted);margin-top:.25rem;display:block;">單位：張（1 張 = 1,000 股）</span>
+            <span id="unitHint" style="font-size:.7rem;color:var(--accent-hover);font-weight:600;margin-top:.25rem;display:block;">請先在上方選擇 ETF 或股票</span>
           </div>
 
           <!-- 進階設定：股價／每股股利手動調整，預設收合（Progressive Input 第二階段） -->
@@ -227,24 +227,25 @@
             <div style="font-size:2.2rem;font-weight:800;color:#0891b2;font-variant-numeric:tabular-nums;line-height:1.2;" id="yieldRate">0</div>
             <div style="font-size:.75rem;color:#9ca3af;">%</div>
           </div>
-          <!-- 投入成本 + 總股利 並排 -->
-          <div style="padding:.6rem 1.5rem 1.2rem;display:flex;justify-content:center;gap:2rem;">
+          <!-- 目前市值 + 年度股利試算 並排（v2.1：欄位名稱精準化，見修訂 #2 #3） -->
+          <div style="padding:.6rem 1.5rem 0;display:flex;justify-content:center;gap:2rem;">
             <div style="text-align:center;">
-              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">投入成本</div>
+              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">目前市值</div>
               <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalCost">0</div>
-              <div style="font-size:.65rem;color:#9ca3af;">元</div>
+              <div style="font-size:.65rem;color:#9ca3af;">元（=目前股價 × 持有數量，非實際投入成本）</div>
             </div>
             <div style="width:1px;background:#e5e7eb;"></div>
             <div style="text-align:center;">
-              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">你能領到的股利</div>
+              <div style="font-size:.68rem;color:#9ca3af;font-weight:600;">年度股利試算</div>
               <div style="font-size:1.1rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.15rem;" id="totalDividend">0</div>
               <div style="font-size:.65rem;color:#9ca3af;">元</div>
             </div>
           </div>
-          <!-- 下一步：回本試算（#5） -->
+          <p id="protoDivBasis" style="font-size:.68rem;color:#9ca3af;text-align:center;margin:.5rem 1.5rem 1.2rem;line-height:1.4;">依你輸入的每股股利估算</p>
+          <!-- 下一步：回本試算（#5，v2.1 修訂 #4：不宣稱是使用者個人回本年數，因為目前市值≠實際投入成本 -->
           <div id="nextStepPayback" style="display:none;margin:.2rem 1.5rem 1rem;padding:.75rem .95rem;border-radius:12px;background:var(--accent-light);border:1px solid var(--border-color);align-items:center;justify-content:space-between;gap:.6rem;">
-            <span style="font-size:.82rem;color:var(--text-secondary);">照這個殖利率，約 <b id="paybackYears" style="font-variant-numeric:tabular-nums;color:var(--accent-hover);font-weight:600;">0</b> 年靠股利回本</span>
-            <a href="payback-calculator" style="font-size:.8rem;font-weight:600;color:#fff;background:var(--accent);padding:.45rem .9rem;border-radius:9px;text-decoration:none;white-space:nowrap;">回本試算 &rarr;</a>
+            <span style="font-size:.82rem;color:var(--text-secondary);">以目前參考股價與此年度配息假設估算，約 <b id="paybackYears" style="font-variant-numeric:tabular-nums;color:var(--accent-hover);font-weight:600;">0</b> 年累積股利等同參考股價（非你的實際回本年數，需輸入平均成本才能精算）</span>
+            <a href="payback-calculator" style="font-size:.8rem;font-weight:600;color:#fff;background:var(--accent);padding:.45rem .9rem;border-radius:9px;text-decoration:none;white-space:nowrap;">輸入成本精算 &rarr;</a>
           </div>
           <!-- 分享結果 -->
           <div style="text-align:center;padding:0 1.5rem 1rem;">
@@ -256,7 +257,7 @@
         </div>
         <!-- 輸入提示 -->
         <div id="calcHint" style="padding:1rem 1.5rem 1.2rem;text-align:center;">
-          <p style="font-size:.82rem;color:var(--text-muted);margin:0;">填完三個欄位，結果馬上出來</p>
+          <p style="font-size:.82rem;color:var(--text-muted);margin:0;">選擇 ETF／股票 → 輸入持有數量 → 立即試算</p>
         </div>
       </div>
     </section>
@@ -268,8 +269,10 @@
           b.style.background=on?'var(--accent)':'none';
           b.style.color=on?'#fff':'var(--text-secondary)';
         });
-        document.getElementById('unitHint').textContent = u==='lot'?'單位：張（1 張 = 1,000 股）':'單位：股';
         var s=document.getElementById('shares');
+        if (!s.disabled) {
+          document.getElementById('unitHint').textContent = u==='lot'?'單位：張（1 張 = 1,000 股）':'單位：股';
+        }
         s.placeholder = u==='lot'?'3':'3000';
         s.dispatchEvent(new Event('input',{bubbles:true}));
       }
@@ -994,18 +997,12 @@ function closePwa(ok){
       setTimeout(function(){ dividendInput.style.borderColor = '#e5e7eb'; }, 800);
     }
 
-    // Show badge
-    var yieldPct = hasDiv ? (stock.dividendYield || (stock.price > 0 ? (stock.dividend / stock.price * 100).toFixed(2) : '0')) : null;
-    if (typeof yieldPct === 'number') yieldPct = yieldPct.toFixed(2);
-    var freq = stock.frequency ? ' | ' + stock.frequency : '';
-    var year = stock.dividendYear ? stock.dividendYear + '年' : '';
-    if (hasDiv) {
-      badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong>' + freq + ' | ' + year + '配息 ' + stock.dividend + ' 元 | 殖利率 ' + yieldPct + '%'
-        + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">資料來源：台灣證券交易所。股價為收盤價，配息以殖利率反算。</span>';
-    } else {
-      badge.innerHTML = '<strong>' + stock.code + ' ' + stock.name + '</strong> | 已帶入股價 ' + stock.price + ' 元'
-        + '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">此標的尚無官方配息資料，請自行輸入每股股利。</span>';
-    }
+    // Show badge — 精簡為只顯示「已選定：代號 名稱」，避免跟下面的 Quick Answer
+    // 重複同一組資訊（v2.1 修訂 #5）。完整的配息/頻率/殖利率/資料來源都交給
+    // Quick Answer 當唯一的主要資訊層。
+    var hasDivForBadge = stock.dividend != null && stock.dividend !== '';
+    badge.innerHTML = '已選定：<strong>' + stock.code + ' ' + stock.name + '</strong>'
+      + (hasDivForBadge ? '' : '<span style="font-size:.68rem;color:#9ca3af;display:block;margin-top:.15rem;">此標的尚無官方配息資料，請自行輸入每股股利。</span>');
     badge.style.display = 'block';
 
     // Clear search
@@ -1086,6 +1083,25 @@ function closePwa(ok){
 
   function fmt(n){ return (n==null || isNaN(n)) ? '—' : Number(n).toLocaleString('zh-TW', {maximumFractionDigits:2}); }
 
+  // v2.1 修訂 #6：選定標的前，「持有數量」欄位維持 disabled／muted，
+  // 選定後才啟用，並把提示文字換回正常的單位說明。
+  window.enableProtoShares = function(){
+    var s = document.getElementById('shares');
+    var hint = document.getElementById('unitHint');
+    if (s && s.disabled) {
+      s.disabled = false;
+      s.style.opacity = '1';
+      s.style.cursor = '';
+      if (hint) hint.style.color = 'var(--text-muted)';
+      if (hint) hint.style.fontWeight = '400';
+      if (hint) hint.textContent = (window.__shareUnitFactor === 1) ? '單位：股' : '單位：張（1 張 = 1,000 股）';
+      // 選股當下 calculator.js 的 calculate() 可能已經在 shares 還是 disabled
+      // 時被觸發過一次而略過（disabled 欄位的值不會被拿來算）。這裡重新拋一次
+      // input 事件，確保啟用後立刻用現有的值重算一次，不用使用者自己再點一下。
+      if (s.value) s.dispatchEvent(new Event('input', {bubbles:true}));
+    }
+  };
+
   window.updateProtoQuickAnswer = function(stock){
     var hasDiv = stock.dividend != null && stock.dividend !== '';
     document.getElementById('protoQaName').textContent = stock.code + ' ' + stock.name;
@@ -1097,6 +1113,15 @@ function closePwa(ok){
     document.getElementById('protoQaYield').textContent = (y!=null) ? (Number(y).toFixed(1) + '%') : '—';
     qa.classList.add('show');
     if (sharesRow) sharesRow.classList.add('show');
+    window.enableProtoShares();
+
+    // v2.1 修訂 #3：年度股利試算要顯示試算依據（哪一年度、每股股利多少）
+    var basisEl = document.getElementById('protoDivBasis');
+    if (basisEl) {
+      basisEl.textContent = hasDiv
+        ? ('依 ' + (stock.dividendYear || '近期') + ' 年度配息 ' + fmt(stock.dividend) + ' 元估算（非保證未來配息）')
+        : '此標的尚無官方配息資料，依你輸入的每股股利估算';
+    }
   };
 
   // Wrap the existing selector so picking a stock also populates the quick-answer bar.
@@ -1246,14 +1271,18 @@ function closePwa(ok){
         document.getElementById('stockPrice').dispatchEvent(new Event('input', { bubbles: true }));
         document.getElementById('shares').dispatchEvent(new Event('input', { bubbles: true }));
         document.getElementById('dividend').dispatchEvent(new Event('input', { bubbles: true }));
-        // Update badge if stock data
+        // Update badge if stock data（精簡格式，同選股流程，見 v2.1 修訂 #5）
         if (item.code && item.name) {
           var badge = document.getElementById('stockBadge');
           if (badge) {
-            badge.innerHTML = '<strong>' + item.code + ' ' + item.name + '</strong> | 配息 ' + item.dividend + ' 元 | 殖利率 ' + item.yield + '%';
+            badge.innerHTML = '已選定：<strong>' + item.code + ' ' + item.name + '</strong>';
             badge.style.display = 'block';
           }
+          if (typeof window.updateProtoQuickAnswer === 'function') {
+            window.updateProtoQuickAnswer({code:item.code, name:item.name, price:item.price, dividend:item.dividend, dividendYield:item.yield});
+          }
         }
+        if (typeof window.enableProtoShares === 'function') window.enableProtoShares();
       });
     });
   }
