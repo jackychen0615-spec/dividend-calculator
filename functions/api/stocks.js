@@ -16,7 +16,7 @@ export async function onRequest(context) {
   const isMarketHours = isWeekday && twHour >= 9 && twHour < 14;
   const isAfterClose = isWeekday && twHour >= 14 && twHour < 15;
 
-  // 快取策略
+  // 快取策略（Client-facing Cache-Control，維持原本邏輯不變）
   let cacheTTL;
   if (isMarketHours) {
     cacheTTL = 300; // 盤中：5 分鐘
@@ -28,9 +28,25 @@ export async function onRequest(context) {
     cacheTTL = 3600; // 盤前/盤後：1 小時
   }
 
-  // 注意：不用 caches.default 手動快取（固定 key 忽略查詢字串，會讓部署後的新程式碼
-  // 被舊快取回應卡住長達 cacheTTL 時間，缺陷曾在 etf-dividends.js 出現過同樣問題）。
-  // 改用 Cache-Control header 交給標準 CDN 快取語意處理。
+  // Phase 5A｜Edge Cache（2026-09-24 補上）：42 個 article page 都會打這支
+  // Function，Phase 5A 前只有首頁 search 會呼叫，量級不同。實測發現這支
+  // Function 完全沒有任何快取層——每次請求（含 ?code= 單一symbol查詢）都會
+  // 重新對 TWSE 打 2~4 個 upstream request，cf-cache-status 也證實不是
+  // DYNAMIC（Cloudflare 沒有自動幫忙 edge cache）。
+  //
+  // 這裡補一層極短 TTL（60~300 秒）的 caches.default 手動快取，用「含
+  // querystring 的完整 URL」當 cache key——不是上面舊註解擔心的「固定 key
+  // 忽略查詢字串」那種寫法：?code=2330、?code=2454、無參數的全量查詢，
+  // 三者是三個不同的 cache key，各自獨立過期，不會互相污染。TTL 刻意設得
+  // 很短（120 秒，落在需求的 60~300 秒區間），遠短於舊註解提到那次事故的
+  // 情境（cacheTTL 可能長達 6 小時），部署後最多 120 秒內舊回應就會自然過期，
+  // 不會重演「新程式碼被舊快取卡住」的問題。
+  const EDGE_CACHE_TTL = 120;
+  const cache = caches.default;
+  const cacheKey = new Request(context.request.url, context.request);
+  const cachedResponse = await cache.match(cacheKey);
+  if (cachedResponse) return cachedResponse;
+
   try {
     let stocks = [];
     const headers = { 'Accept': 'application/json', 'User-Agent': 'GULICALC/1.0' };
@@ -244,7 +260,21 @@ export async function onRequest(context) {
       stocks: responseStocks
     };
 
-    return new Response(JSON.stringify(result), {
+    // Client-facing Cache-Control 維持原本的 cacheTTL（不改變既有語意）；
+    // edge cache 另外用短很多的 EDGE_CACHE_TTL 存一份獨立的 Response 物件
+    // （兩者都從同一個 JSON 字串建構，不共用/不 clone body stream），靠
+    // 它自己的 Cache-Control 標頭控制在 caches.default 裡的存活時間。
+    const body = JSON.stringify(result);
+
+    context.waitUntil(cache.put(cacheKey, new Response(body, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': `public, max-age=${EDGE_CACHE_TTL}`
+      }
+    })));
+
+    return new Response(body, {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
