@@ -115,9 +115,10 @@
              ×100≈4.57%。全文intro、公式範例、持有不同張數表、FAQ皆已對齊。
              (3) UI 用詞——依站內政策使用「參考股價」而非「目前/最新/即時股價」，
              並明確標示資料時間，避免讀者誤認為即時報價。
-             (4) Schema備註——window.GULICALC_PAGE_DATA 新增 dividendBasis:
-             "FISCAL_YEAR" 欄位（新的全站規則：不再假設所有 annualDividend
-             都代表同一種年度基準），同時保留 annualDividend 供計算器JS沿用。 -->
+             (4) Schema v2.1——window.GULICALC_PAGE_DATA 統一改用 dividendAmount
+             ＋dividendBasis:"FISCAL_YEAR"＋earningsYear:2025＋distributionYear:2026
+             ＋exDate:"2026-07-16"，不再使用語意模糊的 annualDividend／dividendYear
+             欄位（新的全站規則：不再假設所有配息數字都代表同一種年度基準）。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -206,11 +207,12 @@
           priceAsOf: "2026-09-23",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 15.6,
           dividendAmount: 15.6,
           dividendBasis: "FISCAL_YEAR",
+          earningsYear: 2025,
+          distributionYear: 2026,
+          exDate: "2026-07-16",
           stockDividendParValuePerShare: 0,
-          dividendYear: "2025",
           frequency: "年配",
           yield: 4.57,
           source: "台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告"
@@ -226,7 +228,7 @@
             var div=Math.max(0,parseFloat(d.value)||0);
             var shares=lots*1000;
             var yieldPct=(price>0?div/price*100:0).toFixed(2);
-            PD.price=price; PD.annualDividend=div; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
             document.getElementById('gcY').textContent=yieldPct;
             document.getElementById('gcC').textContent=fmt(shares*price);
             document.getElementById('gcT').textContent=fmt(shares*div);
@@ -235,7 +237,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+            if(basisEl) basisEl.textContent='依 '+PD.earningsYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();

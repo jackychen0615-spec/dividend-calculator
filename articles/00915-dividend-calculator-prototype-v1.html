@@ -228,9 +228,10 @@
           priceAsOf: "2026-09-23",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 1.78, // TTM sum of 4 quarterly distributions (2025/12/16+2026/03/17+2026/06/16+2026/09/16)
+          dividendAmount: 1.78, // TTM sum of 4 quarterly distributions (2025/12/16+2026/03/17+2026/06/16+2026/09/16)
           dividendBasis: "TTM", // 近12個月，絕對不可標示為「2025年配息」，期間橫跨2025與2026兩個曆年
-          dividendYear: "近12個月(2025/09/24-2026/09/23)",
+          periodStart: "2025-09-24",
+          periodEnd: "2026-09-23",
           frequency: "季配",
           yield: 5.36, // = 1.78/33.20*100
           stockDividendParValuePerShare: null, // 00915為純現金分配ETF，無股票股利，不適用，未臆造數字
@@ -247,7 +248,7 @@
             var div=Math.max(0,parseFloat(d.value)||0);
             var shares=lots*1000;
             var yieldPct=(price>0?div/price*100:0).toFixed(2);
-            PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
             document.getElementById('gcY').textContent=yieldPct;
             document.getElementById('gcC').textContent=fmt(shares*price);
             document.getElementById('gcT').textContent=fmt(shares*div);
