@@ -1,12 +1,30 @@
-name: 自動更新 ETF 股價與配息
+name: 自動更新 ETF 股價與配息（Dividend Automation v2）
+
+# v2：不再每天 09:00 排程直接 push main（DEPLOY BLOCKER, 2026-09-23 發現：
+# 舊版腳本用 regex 直接改寫 articles/*.html，不理解網站的 Data Contract
+# v2.1 schema，會覆寫人工核准的 GULICALC_PAGE_DATA / TTM / 現金股票股利
+# 分離 / corporate split 語意）。
+#
+# 在 scripts/update_etf_dividends.py 完成 v2 改造並通過驗證前，schedule
+# trigger 保持移除（只留 workflow_dispatch 供人工測試），且即使手動觸發，
+# 也只會開 PR 供人工/CI 審查後再 merge，不直接寫 main。
+#
+# 要重新啟用每日排程，把下面這段加回 `on:` 區塊即可：
+#   schedule:
+#     - cron: '0 1 * * *'   # 每天 01:00 UTC（台灣 09:00）
 
 on:
-  schedule:
-    - cron: '0 1 * * *'   # 每天 01:00 UTC（台灣 09:00）
-  workflow_dispatch: {}    # 也可手動於 Actions 頁面按下執行
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只顯示會做的變更，不寫檔、不開 PR（true/false）'
+        required: false
+        default: 'true'
+        type: boolean
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: update-dividends
@@ -24,19 +42,35 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 更新股價與配息
+      - name: 更新股價與配息（dry-run）
+        if: ${{ inputs.dry_run == 'true' || inputs.dry_run == true }}
+        run: python scripts/update_etf_dividends.py --dry-run
+
+      - name: 更新股價與配息（實際寫入）
+        if: ${{ inputs.dry_run == 'false' || inputs.dry_run == false }}
         run: python scripts/update_etf_dividends.py
 
-      - name: Commit 變更（若有）
+      # 只更新 data/stocks.json 與 data/etf-div-history.json（v2 不再碰
+      # articles/*.html）。開分支 + PR，不直接 push main，交給人工／CI
+      # 審查後再合併。
+      - name: 開 PR（若有變更且非 dry-run）
+        if: ${{ inputs.dry_run == 'false' || inputs.dry_run == false }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # articles/ 一定要包含在內：腳本的 patch_articles 會把文章裡的數字
-          # 校正到現值，漏掉這個路徑的話那些修改每天都被 CI 丟掉，等於沒跑。
-          git add data/stocks.json data/etf-div-history.json articles/
+          git add data/stocks.json data/etf-div-history.json
           if git diff --staged --quiet; then
-            echo "無變更，略過 commit。"
-          else
-            git commit -m "chore: 自動更新 ETF 股價與配息 [skip ci]"
-            git push
+            echo "無變更，略過。"
+            exit 0
           fi
+          BRANCH="bot/dividend-update-$(date -u +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: 自動更新 ETF 股價與配息（stocks.json + etf-div-history.json only）"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: 自動更新 ETF 股價與配息 ($(date -u +%Y-%m-%d))" \
+            --body "由 Dividend Automation v2 產生。只變更 data/stocks.json 與 data/etf-div-history.json，未觸碰 articles/*.html。請人工複核 dividendBasis 相關欄位後再合併。" \
+            --base main \
+            --head "$BRANCH"

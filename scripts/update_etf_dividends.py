@@ -1,319 +1,165 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-自動更新 ETF/個股的「即時股價」與「近一年配息」到 data/stocks.json。
+Dividend Automation v2 — 自動更新 data/stocks.json 與 data/etf-div-history.json。
 
-資料來源（TWSE 公開 API）：
-  - STOCK_DAY_ALL：當日收盤價（含 ETF）
-  - TWT48U_ALL：除權除息預告表（含 ETF 的現金股利 CashDividend）
+v2 與舊版（v1）最根本的差異：**這支腳本再也不碰 articles/*.html**。
 
-機制：
-  - 除息表只列「近期」事件，故將每天看到的除息事件累積到
-    data/etf-div-history.json，再以「近 365 天加總」算出近一年配息。
-  - 股價：每次都用最新收盤價更新（即時、立即準）。
-  - 配息：歷史累積足夠後才覆蓋（避免初期資料不全而低估）。
+v1 曾經直接用 regex 改寫文章內的計算器預帶值（id="gcP"/"gcD"/"gcY"）、
+「股價約 X 元」「殖利率約 X%」等現在式敘述、持股試算表格。這套邏輯完全不
+理解網站後來建立的 Data Contract v2.1（window.GULICALC_PAGE_DATA，含
+dividendBasis / TTM / FISCAL_YEAR / DISTRIBUTION_YEAR / distributionEvents /
+corporateSplit / 現金與股票股利分離）。文章裡帶著日期、年度、口徑、分割
+事件的語意，靠扁平 regex 自動推定必然出錯——這正是 2026-09 那次
+Production Merge 前發現的 DEPLOY BLOCKER 的根本原因。
 
-由 GitHub Actions 每日排程執行，無需手動維護。
+v2 把腳本的職責收斂成「更新 Structured Data」：
+  - data/etf-div-history.json：純粹的除息事件帳本（symbol → {exDate: amount}），
+    只 append/update 有明確日期來源的事件，不推估、不改寫。
+  - data/stocks.json：定位為「全站 fallback + 搜尋 metadata」，不是文章的
+    canonical source（canonical 是各文章自己人工核准的 GULICALC_PAGE_DATA）。
+    更新 dividend 欄位前，必須先知道該 symbol 的 dividendBasis（見
+    SYMBOL_POLICIES），口徑不明一律 SKIP + LOG，不用同一套邏輯套用在所有
+    標的上。
+
+文章 HTML 一律不寫。frequency / dividendYear 一律保留原值，不自動推導。
 """
-import glob
+import argparse
 import json
 import os
-import re
 import ssl
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STOCKS = os.path.join(ROOT, "data", "stocks.json")
 HISTORY = os.path.join(ROOT, "data", "etf-div-history.json")
-ARTICLES_DIR = os.path.join(ROOT, "articles")
 
-# 個股文章 → 股票代號（僅這些含內嵌計算器的頁面會被自動校正數字）
-STOCK_ARTICLES = {
-    "2330": "tsmc-dividend-calculator.html",
-    "2317": "hon-hai-dividend.html",
-    "2412": "chunghwa-telecom-dividend.html",
-    "2454": "mediatek-dividend.html",
-    "2308": "delta-electronics-dividend.html",
-    "5880": "taiwan-coop-dividend.html",
+# ---------------------------------------------------------------------------
+# Data Contract compatibility layer（Step 6）
+#
+# 每個 symbol 對應它在自己文章頁 window.GULICALC_PAGE_DATA 裡人工核准的
+# dividendBasis。這份表是從 42 頁「已核准」production 文章逐頁萃取出來的
+# 快照（2026-09-23），不是腳本自己猜的。
+#
+#   dividendBasis:
+#     "TTM"               近12個月逐筆加總（00915/00943）。腳本可以用
+#                          etf-div-history.json 的逐日事件機械式重算，因為
+#                          這是純加總，沒有詮釋空間。
+#     "FISCAL_YEAR"        以官方公告的（某）會計年度配息總額為準。這需要
+#                          知道「今年公告的是哪一年度的決議」，光看除息事件
+#                          時間序列無法可靠判斷——腳本不自動更新 dividend，
+#                          只更新 price。
+#     "DISTRIBUTION_YEAR"  以官方公告的（某次）分派為準，常見於金控股的
+#                          現金＋股票股利分次決議。同樣不自動更新 dividend。
+#     "UNKNOWN"            文章頁尚未採用 v2.1 schema（仍是舊的
+#                          annualDividend/dividendYear 欄位），沒有明確口徑
+#                          可以依循。SKIP + LOG，dividend 不動；price 仍可
+#                          正常更新（股價是客觀市場數據，不需要詮釋）。
+#
+#   cashOnly: True 代表該 symbol 文章頁的 dividendAmount 欄位定義為「僅現金
+#     股利」（v2.1 全站規則）。目前歸類為 TTM/FISCAL_YEAR/DISTRIBUTION_YEAR
+#     的 symbol 皆為 cashOnly=True；UNKNOWN 的則未知，不假設。
+# ---------------------------------------------------------------------------
+
+SYMBOL_POLICIES = {
+    "0050": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "0056": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00713": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00878": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00919": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00929": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00934": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00936": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00939": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00940": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "006208": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2881": {"dividendBasis": "FISCAL_YEAR", "cashOnly": True},
+    "2882": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2884": {"dividendBasis": "DISTRIBUTION_YEAR", "cashOnly": True},
+    "2886": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2891": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2892": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "5880": {"dividendBasis": "DISTRIBUTION_YEAR", "cashOnly": True},
+    "2330": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2317": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2382": {"dividendBasis": "FISCAL_YEAR", "cashOnly": True},
+    "2454": {"dividendBasis": "FISCAL_YEAR", "cashOnly": True},
+    "1216": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "1301": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2412": {"dividendBasis": "FISCAL_YEAR", "cashOnly": True},
+    "00900": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00915": {"dividendBasis": "TTM", "cashOnly": True},
+    "00918": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00932": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "00943": {"dividendBasis": "TTM", "cashOnly": True},
+    "00927": {"dividendBasis": "UNKNOWN", "cashOnly": False},
+    "2308": {"dividendBasis": "FISCAL_YEAR", "cashOnly": True},
 }
 
-# 曾經放在這裡的 0050／0056／006208／00878 已於 2026-08-05 移除。
-# 這 4 檔各自有專屬頁面，頁面表格是 docs/DATA-CONSISTENCY.md 規則 1 的權威值
-# 來源——人工查證日曆年度數字、附來源網址與查核時間；這支腳本算的是滾動
-# TTM（近 365 天累積），兩套口徑對同一頁打架時，每天自動跑的這支必贏，人工
-# 查證撐不過一次覆寫（2026-08-04 006208／0056／00878 就這樣被腳本蓋掉一次，
-# 隔天才發現）。改成排除：這 4 檔的 dividend 欄位與文章頁面不再由這支腳本碰，
-# 只由人工／Liz 審核流程維護；股價仍會照常自動更新，不受影響。見
-# MANUALLY_VERIFIED_CODES。
-ETF_ARTICLES = {}
+TTM_MIN_COVERAGE_DAYS = 330  # 少於這個天數視為「資料不足12個月」，SKIP
 
-# main() 的 TTM 覆寫迴圈與 patch_articles() 都要跳過這幾檔——見上方註解。
-MANUALLY_VERIFIED_CODES = {"0050", "0056", "006208", "00878"}
+
+def policy_for(code):
+    return SYMBOL_POLICIES.get(code, {"dividendBasis": "UNKNOWN", "cashOnly": False})
 
 
 def _num(x):
     x = float(x)
-    return int(x) if x == int(x) else round(x, 2)
+    return int(x) if x == int(x) else round(x, 4)
 
 
-NOTE_YEAR = re.compile(r"\d{4}\s*年(?=配息|全年|度)")
-NOTE_YUAN_NUMBER = re.compile(r"[\d.]+(?=\s*元)")
-
-
-def sync_note(note, new_dividend):
-    """讓 note 文字跟被腳本改掉的 dividend 欄位保持一致。
-
-    這裡的 dividend 是用「近365天累積」或「TWSE 官方殖利率×現價」算出來的
-    滾動 TTM 數字，不是固定日曆年的配息總額。note 原本常寫「2025年配息 X 元」
-    這種措辭，數字被腳本改掉但文字沒改，就會造成欄位與敘述互相矛盾——這正是
-    docs/DATA-CONSISTENCY.md 記錄過的反覆事故（0050、8檔無主頁個股）的根本原因。
-
-    只在 note 裡「唯一一個帶元的數字」時才動手替換那個數字——這種情況下
-    改哪個數字沒有疑義。如果 note 裡有 0 個或 2 個以上帶元的數字（例如
-    006208 那種「總額（拆解成兩次除息明細）」的寫法，或 2330 的「每季X元，
-    全年Y元」），代表哪個才是要被覆蓋的「總額」需要人判斷，這裡選擇保守
-    不動，寧可留著一次性的舊落差讓人工複查，也不要用位置猜測寫出一句自相
-    矛盾（同一句話裡兩個不同數字）的話。
-    """
-    dn = _num(new_dividend)
-    if not note:
-        return f"近一年配息 {dn} 元"
-    matches = list(NOTE_YUAN_NUMBER.finditer(note))
-    if len(matches) != 1:
-        return note
-    m = matches[0]
-    new_note = note[: m.start()] + str(dn) + note[m.end() :]
-    new_note = NOTE_YEAR.sub("近一年", new_note)
-    # 避免「XXXX年全年」被換成「近一年全年」這種疊字
-    new_note = new_note.replace("近一年全年", "近一年").replace("近一年年度", "近一年")
-    return new_note
-
-
-LOT_ROW = re.compile(
-    r"<tr[^>]*>(?:(?!</tr>).)*?(\d+) 張（[\d,]+ 股）(?:(?!</tr>).)*?</tr>", re.S
-)
-CELL = re.compile(r"<td[^>]*>.*?</td>", re.S)
-
-
-def _money(value):
-    return f"{int(round(value)):,}"
-
-
-def patch_holding_table(html, price, dividend):
-    """校正「持有不同張數每年領多少？」表格。
-
-    兩種欄位排列都要支援：
-      4 欄 → 張數｜投入成本｜年度總配息｜殖利率
-      5 欄 → 張數｜投入成本｜每季配息｜年度總配息｜殖利率
-    只換數字，不動 style、<strong> 或背景色。欄數對不上就整列不碰。
-    """
-    yield_pct = round(dividend / price * 100, 1)
-
-    def rewrite_row(match):
-        row = match.group(0)
-        lots = int(match.group(1))
-        shares = lots * 1000
-        cells = list(CELL.finditer(row))
-        if len(cells) == 5:
-            values = [
-                f"{_money(price * shares)} 元",
-                f"{_money(dividend * shares / 4)} 元",
-                f"{_money(dividend * shares)} 元",
-                f"{yield_pct}%",
-            ]
-        elif len(cells) == 4:
-            values = [
-                f"{_money(price * shares)} 元",
-                f"{_money(dividend * shares)} 元",
-                f"{yield_pct}%",
-            ]
-        else:
-            return row
-        out, cursor = [], 0
-        for cell, value in zip(cells[1:], values):
-            out.append(row[cursor:cell.start()])
-            # 只替換儲存格裡的數字本身，包住它的 <strong> 等標籤原樣保留。
-            body = re.sub(r"[\d,.]+\s*元", value, cell.group(0), count=1)
-            if body == cell.group(0):
-                body = re.sub(r"[\d.]+\s*%", value, cell.group(0), count=1)
-            out.append(body)
-            cursor = cell.end()
-        out.append(row[cursor:])
-        return "".join(out)
-
-    return LOT_ROW.sub(rewrite_row, html)
-
-
-def report_stale_figures(by_code):
-    """列出全站與現值不符的殖利率敘述。只報告，不動檔案。
-
-    這些句子散落在比較文與 FAQ 裡，而且常常在講「別檔」的殖利率
-    （「0056 約 5-6%、00878 約 4-5%」），沒有可靠的方式判斷該用哪一檔的
-    數字去覆蓋。硬改的風險遠大於留著，所以交給人看過再決定。
-    """
-    codes = sorted(by_code, key=len, reverse=True)
-    pattern = re.compile(
-        r"(" + "|".join(re.escape(c) for c in codes) + r")"
-        r"[^%<>]{0,20}?殖利率約\s*([\d.]+)(?:\s*[-~～]\s*([\d.]+))?\s*%"
-    )
-    findings = []
-    for path in sorted(glob.glob(os.path.join(ARTICLES_DIR, "*.html"))):
-        try:
-            html = open(path, encoding="utf-8").read()
-        except OSError:
-            continue
-        for match in pattern.finditer(html):
-            code = match.group(1)
-            price, div = by_code.get(code, (0, 0))
-            if not price or not div:
-                continue
-            actual = round(div / price * 100, 1)
-            low = float(match.group(2))
-            high = float(match.group(3)) if match.group(3) else low
-            if low - 0.1 <= actual <= high + 0.1:
-                continue
-            findings.append(
-                (os.path.basename(path), code, match.group(0).strip(), actual)
-            )
-    if not findings:
-        print("殖利率敘述一致性檢查：全部相符。")
-        return findings
-    print(f"殖利率敘述與現值不符 {len(findings)} 處（未自動修改，請人工確認）：")
-    for name, code, text, actual in findings:
-        print(f"  {name} [{code}] 「{text}」→ 實際 {actual}%")
-    return findings
-
-
-SELF_CONTAINED_SUM = re.compile(
-    # 「以配息 X 元、股價約 Y 元計算，殖利率約 Z%」這種自帶算式的句子。
-    # 不可跨越「；」與「。」：比較句常把兩檔並列，跨過去就會把甲的配息配上乙的股價。
-    r"配息\s*([\d.]+)\s*元[^。；<>]{0,30}股價約?\s*([\d.]+)\s*元[^。；<>]{0,20}"
-    r"殖利率約\s*([\d.]+)\s*%"
-)
-
-
-def report_broken_arithmetic():
-    """找出自己算不通的句子：把前提和結論擺在一起卻對不上的。
-
-    只改結論不改前提（或反過來）就會產生這種句子。看起來像是更新過，實際上
-    比完全沒更新更難發現，因為兩個數字各自都很合理。
-    """
-    findings = []
-    for path in sorted(glob.glob(os.path.join(ARTICLES_DIR, "*.html"))):
-        try:
-            html = open(path, encoding="utf-8").read()
-        except OSError:
-            continue
-        for match in SELF_CONTAINED_SUM.finditer(html):
-            div, price, stated = (float(g) for g in match.groups())
-            if not price:
-                continue
-            actual = round(div / price * 100, 1)
-            if abs(actual - stated) <= 0.15:
-                continue
-            findings.append((os.path.basename(path), div, price, stated, actual))
-    if not findings:
-        print("句內算式檢查：全部算得通。")
-        return findings
-    print(f"句子自身算不通 {len(findings)} 處：")
-    for name, div, price, stated, actual in findings:
-        print(f"  {name} 配息 {div} ÷ 股價 {price} = {actual}%，但寫 {stated}%")
-    return findings
-
-
-def patch_present_tense_figures(html, price, dividend):
-    """只更新「現在是多少」的敘述：股價與殖利率。
-
-    刻意不碰配息金額。頁面上的配息幾乎都帶著年份（「2025 全年配息 22 元」），
-    那是歷史事實，用滾動 12 個月的數字蓋掉會讓頁面宣稱一個從未發生過的年度
-    數據 —— 那比數字過期更糟。配息由 patch_holding_table 在表格內處理，
-    表格講的是「現在買會領多少」，沒有年度語意。
-
-    只改 head。內文會拿別檔比較（0050 頁裡就有一句在講 0056 的殖利率），
-    整頁替換會把那些跨檔數字換成本頁這一檔的，看起來對、其實全錯。head 的
-    description 一律在講本頁這一檔，範圍明確。內文由每日一致性檢查列出來，
-    交給人判斷。
-    """
-    head, sep, rest = html.partition("</head>")
-    if not sep:
-        return html
-    pn = _num(price)
-    yield_pct = round(dividend / price * 100, 1)
-    head = re.sub(r"股價約\s*[\d.]+\s*元", f"股價約 {pn} 元", head)
-    # 區間寫法（「殖利率約 5-6%」）要先處理，否則會被單值那條先咬掉前半。
-    head = re.sub(
-        r"殖利率約\s*[\d.]+\s*[-~～]\s*[\d.]+\s*%", f"殖利率約 {yield_pct}%", head
-    )
-    head = re.sub(r"殖利率約\s*[\d.]+\s*%", f"殖利率約 {yield_pct}%", head)
-    return head + sep + rest
-
-
-def patch_articles(by_code):
-    """把個股文章內文與計算器預帶值校正到現值。保守：對不上格式就不動。"""
-    changed = 0
-    for code, fn in {**STOCK_ARTICLES, **ETF_ARTICLES}.items():
-        info = by_code.get(code)
-        if not info:
-            continue
-        price, div = info
-        if not price or price <= 0 or not div or div <= 0:
-            continue
-        path = os.path.join(ARTICLES_DIR, fn)
-        try:
-            with open(path, encoding="utf-8") as f:
-                h = orig = f.read()
-        except FileNotFoundError:
-            continue
-        pn, dn = _num(price), _num(div)
-        y = round(div / price * 100, 2)
-        cost = f"{int(round(price * 1000)):,}"
-        tot = f"{int(round(div * 1000)):,}"
-        # 計算器 input 預帶值（JS 會依此重算殖利率/成本/年領）
-        h = re.sub(r'(id="gcP"[^>]*value=")[\d.]+(")', rf"\g<1>{pn}\g<2>", h)
-        h = re.sub(r'(id="gcD"[^>]*value=")[\d.]+(")', rf"\g<1>{dn}\g<2>", h)
-        # 計算器初始顯示（爬蟲看得到的初值）
-        h = re.sub(r'(id="gcY">)[\d.]+(<)', rf"\g<1>{y}\g<2>", h)
-        h = re.sub(r'(id="gcC">)[\d,]+(<)', rf"\g<1>{cost}\g<2>", h)
-        h = re.sub(r'(id="gcT">)[\d,]+(<)', rf"\g<1>{tot}\g<2>", h)
-        # 計算器標頭文字「股價 X、年配息 Y 元」（此措辭只出現在計算器區塊，安全）
-        h = re.sub(r"股價\s*[\d.]+、年配息\s*[\d.]+\s*元", f"股價 {pn}、年配息 {dn} 元", h, count=1)
-        # 「持有不同張數每年領多少？」表格，以及它正上方那句舉例的基準。
-        # 表格若停在舊股價，同一頁的正文和表格就會互相矛盾。
-        h = patch_holding_table(h, price, div)
-        # 寫進去的是「近一年」滾動配息，不是某個日曆年度的總額。原本的措辭是
-        # 「以 2025 年全年配息…」，數字換掉但年份留著就成了假的年度數據，所以
-        # 連同措辭一起改成不會過期的說法。
-        h = re.sub(
-            r"以\s*(?:\d{4}\s*年全年|近一年)配息\s*[\d.]+\s*元（每季[均約]*約?\s*[\d.]+\s*元）、買入股價\s*[\d.]+",
-            f"以近一年配息 {dn} 元（每季均約 {_num(round(div / 4, 2))} 元）、買入股價 {pn}",
-            h,
-            count=1,
-        )
-        h = patch_present_tense_figures(h, price, div)
-        if h != orig:
-            with open(path, "w", encoding="utf-8") as f:
-                f.write(h)
-            changed += 1
-            print(f"  校正文章：{fn} → 股價{pn}/配息{dn}/殖利率{round(y, 1)}%")
-    print(f"文章數字校正 {changed} 篇。")
-
+# ---------------------------------------------------------------------------
+# TWSE 官方來源
+# ---------------------------------------------------------------------------
 PRICE_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
 EXDIV_URL = "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL"
-# 個股官方殖利率（近一年現金股利/收盤價）；ETF 不在此表。用來校正個股配息比除息累積可靠。
-BWIBBU_URL = "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL"
-# 歷史除權息表，可帶日期區間。EXDIV_URL 只有「當天」除息，所以這個檔案是逐日長出來的，
-# 一開始根本湊不滿一年，近一年配息會嚴重低估（2026-07-29 稽核抓到的 ETF 數字全錯就是這樣來的）。
-# 開頭先用這支把區間補齊，之後每天再由 EXDIV_URL 續接。
 BACKFILL_URL = "https://www.twse.com.tw/rwd/zh/exRight/TWT49U?startDate={start}&endDate={end}&response=json"
 
 
-def backfill_history(history, start, end):
-    """把 start~end 之間的現金除息事件補進歷史檔。已存在的日期不動。"""
+def fetch(url):
+    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "gulicalc-bot-v2"})
+    try:
+        with urllib.request.urlopen(req, timeout=40) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except urllib.error.URLError as e:
+        if "CERTIFICATE_VERIFY_FAILED" not in str(e):
+            raise
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        with urllib.request.urlopen(req, timeout=40, context=ctx) as r:
+            return json.loads(r.read().decode("utf-8"))
+
+
+def roc_to_iso(d):
+    d = str(d).strip()
+    if len(d) == 7:
+        return f"{int(d[:3]) + 1911:04d}-{d[3:5]}-{d[5:7]}"
+    return None
+
+
+def load_json(path, default):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+# ---------------------------------------------------------------------------
+# Step 4 — etf-div-history.json：純粹的除息事件帳本
+# 只 append 有明確日期＋來源的事件；不推估、不年化、不改文章。
+# 這部分邏輯沿用 v1（原本就是機械式逐日累積，符合「只記錄有日期的事實」的
+# 要求，不需要重寫），唯一差異是 v2 明確標註每筆事件的 source。
+# ---------------------------------------------------------------------------
+
+def backfill_history(history, start, end, dry_run, log):
     try:
         rows = fetch(BACKFILL_URL.format(start=start, end=end)).get("data") or []
     except Exception as e:
-        print("歷史除權息回補失敗，略過：", e)
+        log(f"歷史除權息回補失敗，略過：{e}")
         return 0
     added = 0
     for r in rows:
@@ -329,78 +175,14 @@ def backfill_history(history, start, end):
             continue
         history.setdefault(code, {})
         if iso not in history[code]:
-            history[code][iso] = round(amount, 4)
+            if not dry_run:
+                history[code][iso] = round(amount, 4)
             added += 1
-    print(f"歷史回補：新增 {added} 筆除息事件。")
+    log(f"歷史回補：{'將新增' if dry_run else '新增'} {added} 筆除息事件（來源：TWSE TWT49U）。")
     return added
 
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "gulicalc-bot"})
-    try:
-        with urllib.request.urlopen(req, timeout=40) as r:
-            return json.loads(r.read().decode("utf-8"))
-    except urllib.error.URLError as e:
-        # 部分環境(如本機 macOS)憑證鏈驗證失敗，對公開唯讀 API 做後備
-        if "CERTIFICATE_VERIFY_FAILED" not in str(e):
-            raise
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        with urllib.request.urlopen(req, timeout=40, context=ctx) as r:
-            return json.loads(r.read().decode("utf-8"))
-
-
-def roc_to_iso(d):
-    # 民國日期 1150602 -> 2026-06-02
-    d = str(d).strip()
-    if len(d) == 7:
-        return f"{int(d[:3]) + 1911:04d}-{d[3:5]}-{d[5:7]}"
-    return None
-
-
-def load_json(path, default):
-    try:
-        with open(path, encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return default
-
-
-def main():
-    stocks_data = load_json(STOCKS, {"stocks": []})
-    history = load_json(HISTORY, {})  # { code: { "YYYY-MM-DD": amount } }
-
-    try:
-        price_rows = fetch(PRICE_URL)
-        exdiv_rows = fetch(EXDIV_URL)
-    except Exception as e:
-        print("TWSE API 取得失敗，略過本次更新：", e)
-        return
-    try:
-        bwibbu_rows = fetch(BWIBBU_URL)
-    except Exception as e:
-        print("BWIBBU 取得失敗，個股配息校正略過：", e)
-        bwibbu_rows = []
-
-    price_map = {}
-    for it in price_rows:
-        c = it.get("Code")
-        p = it.get("ClosingPrice", "").replace(",", "")
-        try:
-            price_map[c] = float(p)
-        except (ValueError, TypeError):
-            pass
-
-    # 個股官方殖利率（%）；ETF 不在此表，get 會是 None → 自動跳過
-    yield_map = {}
-    for it in bwibbu_rows:
-        try:
-            yield_map[it.get("Code")] = float(it.get("DividendYield", "0"))
-        except (ValueError, TypeError):
-            pass
-
-    # 累積除息事件（去重）
+def append_daily_events(history, exdiv_rows, dry_run, log):
     new_events = 0
     for it in exdiv_rows:
         c = it.get("Code")
@@ -414,61 +196,184 @@ def main():
             continue
         history.setdefault(c, {})
         if iso not in history[c]:
-            history[c][iso] = round(amt, 4)
+            if not dry_run:
+                history[c][iso] = round(amt, 4)
             new_events += 1
+    log(f"當日除息事件：{'將新增' if dry_run else '新增'} {new_events} 筆（來源：TWSE TWT48U_ALL）。")
+    return new_events
+
+
+# ---------------------------------------------------------------------------
+# Step 5/8 — stocks.json：dividendBasis-aware 更新 + safety guards
+# ---------------------------------------------------------------------------
+
+def compute_ttm(history, code, cutoff_date):
+    """TTM 是純粹的逐日事件加總，機械式、無詮釋空間，可以安全自動算。
+    回傳 (ttm_value, coverage_ok, reason_if_not_ok)。
+    """
+    evs = history.get(code, {})
+    if not evs:
+        return None, False, "無歷史除息事件"
+    span_days = (datetime.utcnow().date() - datetime.strptime(min(evs), "%Y-%m-%d").date()).days
+    if span_days < TTM_MIN_COVERAGE_DAYS:
+        return None, False, f"TTM資料不足12個月（現有回溯 {span_days} 天，需≥{TTM_MIN_COVERAGE_DAYS}天）"
+    ttm = round(sum(a for d, a in evs.items() if d >= cutoff_date), 4)
+    if ttm <= 0:
+        return None, False, "TTM視窗內加總為0"
+    return ttm, True, None
+
+
+def update_stocks(stocks_data, price_map, history, cutoff_date, dry_run, log):
+    """依 dividendBasis 逐檔更新 price / dividend / dividendYield。
+    frequency / dividendYear 一律不動（保留原值，不自行猜測）。
+    """
+    changes = []  # for dry-run report: dict(code, field, old, new, source, basis, reason)
+    price_upd = div_upd = skipped = 0
+
+    for s in stocks_data.get("stocks", []):
+        code = s.get("code")
+        pol = policy_for(code)
+        basis = pol["dividendBasis"]
+
+        # --- Price: 客觀市場數據，任何 basis 都可以更新，不需要詮釋 ---
+        lp = price_map.get(code)
+        old_price = float(s.get("price", 0) or 0)
+        if lp and lp > 0 and abs(lp - old_price) > 0.001:
+            changes.append({
+                "code": code, "field": "price", "old": old_price, "new": lp,
+                "source": "TWSE STOCK_DAY_ALL", "basis": basis, "reason": "最新收盤價",
+            })
+            if not dry_run:
+                s["price"] = lp
+            price_upd += 1
+            new_price = lp
+        else:
+            new_price = old_price
+
+        # --- Dividend: 依 basis 決定是否自動更新 ---
+        old_div = float(s.get("dividend", 0) or 0)
+
+        if basis == "TTM":
+            ttm, ok, reason = compute_ttm(history, code, cutoff_date)
+            if not ok:
+                log(f"SKIP {code}（TTM）：{reason}")
+                skipped += 1
+            elif abs(ttm - old_div) > 0.0005:
+                changes.append({
+                    "code": code, "field": "dividend", "old": old_div, "new": ttm,
+                    "source": "etf-div-history.json 近12個月逐筆加總", "basis": basis,
+                    "reason": f"TTM機械式重算（視窗 {cutoff_date} 至今）",
+                })
+                if not dry_run:
+                    s["dividend"] = ttm
+                div_upd += 1
+                new_div = ttm
+            else:
+                new_div = old_div
+        elif basis in ("FISCAL_YEAR", "DISTRIBUTION_YEAR"):
+            # 這兩種口徑需要知道「官方公告的是哪一次／哪一年度決議」，光看
+            # TWSE 除息事件時間序列無法可靠判斷是哪個年度的決議，不猜。
+            log(f"SKIP {code}（{basis}）：僅逐日除息事件無法可靠判定官方公告年度/分派期別，dividend 不自動更新，維持人工核准值。")
+            skipped += 1
+            new_div = old_div
+        else:  # UNKNOWN
+            log(f"SKIP {code}（dividendBasis unknown）：文章頁尚未採用 Data Contract v2.1 schema，口徑不明，dividend 不自動更新。")
+            skipped += 1
+            new_div = old_div
+
+        # --- dividendYield：純衍生值（dividend÷price×100），用當下的 dividend
+        # （不論是否剛更新）與 price 重算，這不是詮釋性判斷，只是維持內部一致 ---
+        if new_price > 0 and new_div > 0:
+            new_yield = round(new_div / new_price * 100, 2)
+            old_yield = s.get("dividendYield")
+            if old_yield is None or abs(old_yield - new_yield) > 0.005:
+                changes.append({
+                    "code": code, "field": "dividendYield", "old": old_yield, "new": new_yield,
+                    "source": "derived: dividend/price*100", "basis": basis,
+                    "reason": "維持與 price/dividend 內部一致（衍生值，非獨立判斷）",
+                })
+                if not dry_run:
+                    s["dividendYield"] = new_yield
+
+        # frequency / dividendYear：一律不動。
+        # （Step 5 明確要求：如果無法可靠推導，保留原值，不自行猜測；
+        #  這兩個欄位需要理解配息週期語意，這支腳本不做。）
+
+    return changes, price_upd, div_upd, skipped
+
+
+# ---------------------------------------------------------------------------
+# main
+# ---------------------------------------------------------------------------
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true", help="只顯示會做的變更，不寫檔、不 commit、不 push")
+    args = ap.parse_args()
+    dry_run = args.dry_run
+
+    logs = []
+    def log(msg):
+        logs.append(msg)
+        print(msg)
+
+    log(f"=== Dividend Automation v2 {'(DRY RUN)' if dry_run else ''} ===")
+    log("本腳本只更新 data/stocks.json 與 data/etf-div-history.json，不寫入 articles/*.html。")
+
+    stocks_data = load_json(STOCKS, {"stocks": []})
+    history = load_json(HISTORY, {})
+
+    try:
+        price_rows = fetch(PRICE_URL)
+        exdiv_rows = fetch(EXDIV_URL)
+    except Exception as e:
+        log(f"TWSE API 取得失敗，略過本次更新：{e}")
+        return
+
+    price_map = {}
+    for it in price_rows:
+        c = it.get("Code")
+        p = (it.get("ClosingPrice") or "").replace(",", "")
+        try:
+            price_map[c] = float(p)
+        except (ValueError, TypeError):
+            pass
+
+    new_events = append_daily_events(history, exdiv_rows, dry_run, log)
 
     cutoff = (datetime.utcnow() - timedelta(days=365)).strftime("%Y-%m-%d")
 
-    # 只要有任何一檔「仍由這支腳本算 TTM」的標的紀錄沒有涵蓋到 TTM 視窗開始
-    # 之前，就代表歷史還有缺口，這時候算出來的「近一年配息」會低估。先補齊再算。
-    # MANUALLY_VERIFIED_CODES 交給人工查證維護，不需要這支腳本幫它們補歷史。
-    ttm_codes = [
-        s.get("code") for s in stocks_data.get("stocks", [])
-        if s.get("code") not in MANUALLY_VERIFIED_CODES
-    ]
-    if any(
-        not history.get(code) or min(history[code]) >= cutoff
-        for code in ttm_codes
-    ):
+    # 只有 TTM basis 的 symbol 需要確保歷史涵蓋足夠——其餘 basis 不靠這份
+    # 歷史檔自動算 dividend，回補與否不影響它們。
+    ttm_codes = [c for c, p in SYMBOL_POLICIES.items() if p["dividendBasis"] == "TTM"]
+    if any(not history.get(code) or min(history[code]) >= cutoff for code in ttm_codes):
         backfill_history(
             history,
             (datetime.utcnow() - timedelta(days=400)).strftime("%Y%m%d"),
             datetime.utcnow().strftime("%Y%m%d"),
+            dry_run, log,
         )
 
-    price_upd = div_upd = 0
-    for s in stocks_data.get("stocks", []):
-        code = s.get("code")
-        # 1) 股價：一律更新為最新收盤價（含人工查證的 4 檔，股價不受規則1限制）
-        lp = price_map.get(code)
-        if lp and lp > 0 and abs(lp - float(s.get("price", 0))) > 0.001:
-            s["price"] = lp
-            price_upd += 1
-        if code in MANUALLY_VERIFIED_CODES:
-            continue  # dividend/note 交給人工／Liz 審核流程維護，不用滾動 TTM 覆寫
-        # 2) 配息：近 365 天累積（僅在累積到合理值時覆蓋，避免初期低估）
-        evs = history.get(code, {})
-        ttm = round(sum(a for d, a in evs.items() if d >= cutoff), 2)
-        # 有 TTM 視窗開始「之前」的紀錄，代表這一年沒有漏掉任何一次除息，TTM 可以直接信。
-        # 沒有的話歷史仍不完整，維持原本保守門檻，寧可不動也不要寫進低估的數字。
-        covered = bool(evs) and min(evs) < cutoff
-        if ttm > 0 and (covered or ttm >= float(s.get("dividend", 0)) * 0.6):
-            if abs(ttm - float(s.get("dividend", 0))) > 0.001:
-                s["dividend"] = ttm
-                s["note"] = sync_note(s.get("note", ""), ttm)
-                div_upd += 1
-        # 3) 個股：用官方殖利率×現價校正配息（比除息累積可靠；ETF 不在 BWIBBU 會自動跳過）
-        yv = yield_map.get(code)
-        cur_price = price_map.get(code) or float(s.get("price", 0))
-        if yv and yv > 0 and cur_price > 0:
-            official = round(cur_price * yv / 100, 2)
-            cur_div = float(s.get("dividend", 0))
-            # 官方配息=殖利率×價=實際年配息（不隨股價變、很穩）。差 >12% 才覆蓋，
-            # 保留乾淨的正確種子值（如台積電 22），只修明顯錯的（聯發科、台塑、合庫金…）。
-            if official > 0 and abs(official - cur_div) > max(0.08, cur_div * 0.12):
-                s["dividend"] = official
-                s["note"] = sync_note(s.get("note", ""), official)
-                div_upd += 1
+    changes, price_upd, div_upd, skipped = update_stocks(stocks_data, price_map, history, cutoff, dry_run, log)
+
+    if dry_run:
+        log("")
+        log("=== Dry-run 變更清單 ===")
+        if not changes:
+            log("（無任何變更）")
+        for c in changes:
+            log(
+                f"  [{c['code']}] {c['field']}: {c['old']!r} -> {c['new']!r}"
+                f" | basis={c['basis']} | source={c['source']} | reason={c['reason']}"
+            )
+        log("")
+        log("受影響檔案（dry-run 不會真的寫入）：")
+        log("  data/stocks.json" if any(c["field"] in ("price", "dividend", "dividendYield") for c in changes) else "  （stocks.json 無變更）")
+        log("  data/etf-div-history.json" if new_events else "  （etf-div-history.json 無變更）")
+        log("  articles/*.html: 0（v2 不再寫入文章）")
+        log("")
+        log(f"完成（dry-run）：股價 {price_upd} 檔、配息 {div_upd} 檔、略過 {skipped} 檔。")
+        return
 
     stocks_data["lastUpdated"] = datetime.utcnow().strftime("%Y-%m-%d")
 
@@ -479,16 +384,7 @@ def main():
         json.dump(history, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
-    # 用最新的 stocks.json 現值，順手把個股文章的數字校正到現值（不再手動維護）
-    by_code = {
-        s.get("code"): (float(s.get("price", 0) or 0), float(s.get("dividend", 0) or 0))
-        for s in stocks_data.get("stocks", [])
-    }
-    patch_articles(by_code)
-    report_stale_figures(by_code)
-    report_broken_arithmetic()
-
-    print(f"完成：新增除息事件 {new_events}、更新股價 {price_upd} 檔、更新配息 {div_upd} 檔。")
+    log(f"完成：新增除息事件 {new_events}、更新股價 {price_upd} 檔、更新配息 {div_upd} 檔、略過 {skipped} 檔（口徑不明或需人工判斷）。")
 
 
 if __name__ == "__main__":
