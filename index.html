@@ -928,7 +928,11 @@ function closePwa(ok){
     });
     return Object.keys(map).map(function(k){ return map[k]; });
   }
-  Promise.all([
+  // Phase 4F.1：單一、共用、memoized 的資料載入 Promise，讓搜尋框與下方的
+  // 熱門 chip 按鈕（見 ensureChipData）都走同一套 /api/stocks live > stocks.json
+  // fallback 邏輯，不再各自獨立 fetch、不再有 chip 專用的「只讀 stocks.json」
+  // 資料平面。API 失敗時 mergeStocks(live=[], stat) 會直接退回 stocks.json 全部內容。
+  window._gulicalcStocksPromise = Promise.all([
     fetch('/api/stocks').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     fetch('data/stocks.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(res){
@@ -936,6 +940,7 @@ function closePwa(ok){
     var stat = (res[1] && res[1].stocks) ? res[1].stocks : [];
     stocksData = mergeStocks(live, stat);
     console.log('Stocks loaded:', stocksData.length, '(live ' + live.length + ' + static ' + stat.length + ')');
+    return stocksData;
   });
 
   function fuzzyMatch(query, stock) {
@@ -1133,15 +1138,18 @@ function closePwa(ok){
     };
   }
 
-  // Preset chips: fetch the same static stock list the calculator already uses,
-  // then reuse the exact same selection path (no separate calc logic).
-  var chipData = null;
+  // Preset chips: Phase 4F.1 — 改為重用上方 #stockSearch 用的同一份
+  // window._gulicalcStocksPromise（/api/stocks live > stocks.json fallback，
+  // 由 mergeStocks() 合併），不再單獨只讀 stocks.json。同一個 symbol，
+  // 點 chip 或在搜尋框打字查詢，在同一次 API 回應下會拿到完全相同的
+  // price/dividend/dividendYield。API 失敗時 window._gulicalcStocksPromise
+  // 本身已經 fallback 回 stocks.json 全部內容，這裡不需要另外處理。
   function ensureChipData(cb){
-    if (chipData) return cb(chipData);
-    fetch('/data/stocks.json').then(function(r){ return r.json(); }).then(function(j){
-      chipData = (j && j.stocks) || [];
-      cb(chipData);
-    }).catch(function(){ cb([]); });
+    if (window._gulicalcStocksPromise) {
+      window._gulicalcStocksPromise.then(function(list){ cb(list || []); }).catch(function(){ cb([]); });
+    } else {
+      cb([]);
+    }
   }
   document.querySelectorAll('.proto-chip[data-code]').forEach(function(chip){
     chip.addEventListener('click', function(){
