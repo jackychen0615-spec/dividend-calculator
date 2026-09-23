@@ -107,7 +107,10 @@
              但頁面自己的歷月配息表最新只揭露到2026年4月（5月標示「尚未公告」），
              無法驗證涵蓋到2026/07的0.53元從何而來。改為誠實地用「表格實際揭露的
              最新12個月」逐筆加總：2025/05~2026/04＝0.037+0.036+0.037+0.036+0.037
-             +0.036+0.037+0.039+0.040+0.041+0.042+0.043＝0.461，四捨五入0.46元。
+             +0.036+0.037+0.039+0.040+0.041+0.042+0.043＝0.461（raw value）。
+             全站計算原則：raw value（0.461）用於所有計算（殖利率、試算結果），
+             rounded value（0.46元）只用於文字敘述/UI顯示。因此殖利率＝
+             0.461÷13.18×100≈3.50%（非0.46÷13.18＝3.49%）。
              股價依你提供的TWSE官方參考13.18元（2026-09-22）建立。
              「持有不同張數」表原本用0.044元/月、約12.79元/股為基準（無日期），
              已對齊新的dated reference（13.18元／0.46元）重新計算。
@@ -128,7 +131,7 @@
                 <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">13.18 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">0.46 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">月配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.49%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.50%</div></div>
               </div>
               <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-22・資料來源：台灣證券交易所（股價）＋元大投信歷月配息公告（配息，逐筆加總2025/05–2026/04）。非即時，實際配息與股價請以官方最新公告為準。</p>
             </div>
@@ -148,14 +151,14 @@
                 </div>
                 <div>
                   <label for="gcD">近12個月配息合計（元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="0.46" min="0" step="0.01">
+                  <input type="number" id="gcD" inputmode="decimal" value="0.461" min="0" step="0.001">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">3.49</span>%</div>
+              <div class="yield-value"><span id="gcY">3.50</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
@@ -164,7 +167,7 @@
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">12個月股利試算</div>
-                  <div class="v green" id="gcT">460</div>
+                  <div class="v green" id="gcT">461</div>
                   <div class="note">元</div>
                 </div>
               </div>
@@ -204,10 +207,10 @@
           priceAsOf: "2026-09-22",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 0.46,
+          annualDividend: 0.461, // raw TTM sum; UI display rounds to 0.46元, calculations use raw precision
           dividendYear: "近12個月(2025/05-2026/04)",
           frequency: "月配",
-          yield: 3.49,
+          yield: 3.50, // = 0.461/13.18*100，以raw annualDividend計算
           source: "台灣證券交易所＋元大投信歷月配息公告"
         };
         (function(){
@@ -302,11 +305,11 @@
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息（元）</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">13,180 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 38 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>460 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">65,900 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 192 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2,300 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">131,800 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 383 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,600 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">659,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 1,917 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>23,000 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,318,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 3,833 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>46,000 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">13,180 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 38 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>461 元</strong></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">65,900 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 192 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2,305 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">131,800 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 384 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,610 元</strong></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">659,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 1,921 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>23,050 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,318,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 3,842 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>46,100 元</strong></td></tr>
           </tbody>
         </table></div>
         <p>想計算你的實際買入成本對應的殖利率與配息，請使用 <a href="/">免費股利計算器</a>。</p>
@@ -375,15 +378,15 @@
       </div>
       <div class="article-faq-item">
         <h3>00940殖利率是多少？</h3>
-        <p>以近12個月配息合計0.46元、參考股價13.18元（2026-09-22，台灣證券交易所）計算，00940參考殖利率約 3.49%。實際殖利率依你的買入價格而定，建議用股利計算器輸入自己的成本試算。</p>
+        <p>以近12個月配息合計0.461元（顯示為0.46元）、參考股價13.18元（2026-09-22，台灣證券交易所）計算，00940參考殖利率約 3.50%。實際殖利率依你的買入價格而定，建議用股利計算器輸入自己的成本試算。</p>
       </div>
       <div class="article-faq-item">
         <h3>00940和00929哪個比較好？</h3>
-        <p>兩者定位不同。00929復華台灣科技優息以科技股為主，殖利率較高（以2026/08/07收盤價計算約5.7%）；00940元大台灣價值高息採價值投資邏輯選股，以2026-09-22較新參考股價計算殖利率約 3.49%（跟00929非同一計算基準日，僅供概略參考），波動相對較低。追求高配息選00929，追求穩健價值型選00940。</p>
+        <p>兩者定位不同。00929復華台灣科技優息以科技股為主，殖利率較高（以2026/08/07收盤價計算約5.7%）；00940元大台灣價值高息採價值投資邏輯選股，以2026-09-22較新參考股價計算殖利率約 3.50%（跟00929非同一計算基準日，僅供概略參考），波動相對較低。追求高配息選00929，追求穩健價值型選00940。</p>
       </div>
       <div class="article-faq-item">
         <h3>00940月領1萬需要幾張？</h3>
-        <p>以近12個月配息合計0.46元計算，月領1萬元（年領12萬）需要約261張，以參考股價13.18元（2026-09-22）計算，投入本金約344萬元。可用股利計算器輸入自己的買入價格取得更精確估算。</p>
+        <p>以近12個月配息合計0.461元（顯示為0.46元）計算，月領1萬元（年領12萬）需要約261張，以參考股價13.18元（2026-09-22）計算，投入本金約344萬元。可用股利計算器輸入自己的買入價格取得更精確估算。</p>
       </div>
     </div>
   </section>
