@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/chunghwa-telecom-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -98,10 +99,145 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
         </div>
 
-        <p><strong>中華電（2412）配息怎麼算？公式是「現金股利 ＝ 每股配息 × 持有股數」；中華電採年配息、一年配 1 次。</strong>以 2025 年配息 5.2 元計算，持有 1 張（1,000 股）一年約可領 <strong>5,200 元</strong>；股價約 141 元、殖利率約 3.7%，是典型的「定存股」代表。下方計算器已帶入中華電數字，改成你的買入價即可試算。</p>
+        <p><strong>中華電（2412）配息怎麼算？公式是「現金股利 ＝ 每股配息 × 持有股數」；中華電採年配息、一年配 1 次。</strong>以 2025 年配息 5.2 元計算，持有 1 張（1,000 股）一年約可領 <strong>5,200 元</strong>；股價約 145.50 元、殖利率約 3.57%，是典型的「定存股」代表。下方計算器已帶入中華電數字，改成你的買入價即可試算。</p>
         <p style="font-size:.82rem;color:#888;margin:.3rem 0 1.2rem;">資料來源：<a href="https://mopsov.twse.com.tw/mops/web/t05st09_2" target="_blank" rel="noopener" style="color:#f0c040;">公開資訊觀測站－股利分派情形查詢</a>（輸入股票代號 2412 查詢）</p>
-        <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);"><div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;"><div style="font-size:1.05rem;color:#fff;font-weight:600;">中華電信配息試算（改成你的數字）</div><p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入近期股價 145、年配息 5.2 元（以官方為準）；改成你的買入價即時重算</p></div><div style="padding:1.1rem 1.25rem;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;"><div><label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label><input type="number" id="gcP" inputmode="decimal" value="145" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div><div><label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label><input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div><label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label><input type="number" id="gcD" inputmode="decimal" value="5.2" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;"><div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div><div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">3.59</span>%</div><div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;"><div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">145,000</span> 元</div></div><div style="width:1px;background:var(--border-color);"></div><div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">5,200</span> 元</div></div></div></div><div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);"><a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算回本年數／比較多檔？用完整股利計算器 &rarr;</a></div></div><script>(function(){var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');if(!p||!s||!d)return;function fmt(n){return Math.round(n).toLocaleString('zh-TW');}function calc(){var pr=Math.max(0,parseFloat(p.value)||0),lo=Math.max(0,parseFloat(s.value)||0),dv=Math.max(0,parseFloat(d.value)||0),sh=lo*1000;document.getElementById('gcY').textContent=(pr>0?dv/pr*100:0).toFixed(2);document.getElementById('gcC').textContent=fmt(sh*pr);document.getElementById('gcT').textContent=fmt(sh*dv);}[p,s,d].forEach(function(e){e.addEventListener('input',calc);});calc();})();</script>
 
+        <!-- Phase 3D.2 Core Template consolidation note:
+             production 原本同時存在兩套「計算器」——
+             (1) 真正有 JS 綁定、可互動的 Quick calculator（gcP/gcS/gcD → gcY/gcC/gcT），
+             (2) 一張純 HTML 靜態表格「持有不同張數每年領多少」，沒有任何 JS，
+                 數字是手key的，且已經自相矛盾：段落文字說股價 145 元／殖利率 3.6~3.7%，
+                 但同一頁的計算器 placeholder 卻帶 141 元，兩者互相打架，且與本頁其他段落
+                 （FAQ 3.7%、定存股段落 3.5~4%）也不一致。
+             Phase 3D.2 決策：只保留「一套」Core Template 互動計算器（本區塊），
+             用新核准的canonical數字 145.50 / 5.2 / 3.57% 建立單一事實來源；
+             舊的靜態「持有不同張數」表格整個移除——互動計算器本來就能滿足
+             「輸入不同張數看結果」的用途，不需要再維護第二份手key的數字。
+             同時把全文所有 141/145 元、3.6%/3.7% 的敘述統一改成 145.50 元／3.57%。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">中華電信配息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">145.50 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">5.20 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配息（一年配息1次）</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.57%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-23・資料來源：台灣證券交易所STOCK_DAY API（2026-09-23）＋MOPS股利分派情形查詢（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="145.50" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="5.2" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">3.57</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">145,500</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">5,200</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 5.20 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買中華電信會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/tsmc-dividend-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟其他定存股比較</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "2412",
+          name: "中華電信",
+          price: 145.50,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 5.2,
+          dividendBasis: "FISCAL_YEAR",
+          earningsYear: 2025,
+          distributionYear: 2026,
+          exDate: "2026-07-09",
+          stockDividendParValuePerShare: 0,
+          frequency: "年配息（一年配息1次）",
+          yield: 3.57,
+          source: "台灣證券交易所STOCK_DAY API（2026-09-23）＋MOPS股利分派情形查詢"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.earningsYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>中華電（2412）是什麼？</h2>
         <p>中華電信（股票代號：2412）是台灣最大的電信業者，提供行動通訊、寬頻網路、企業數據等服務。因獲利與現金流極度穩定，長年是台股「定存股」的代表，也是許多退休族與保守型存股族的核心持股。</p>
@@ -117,27 +253,15 @@
           <strong>年度總配息 = 每股現金股利 × 持有股數</strong><br><br>
           <strong>殖利率 = 每股現金股利 ÷ 買入股價 × 100%</strong>
         </div>
-
-        <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年配息 5.2 元、買入股價 141 元為例（殖利率約 3.7%）：</p>
-        <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
-          <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th>
-            <th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th>
-            <th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th>
-            <th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
-          </tr></thead>
-          <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">145,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,200 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.6%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">725,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>26,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.6%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,450,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>52,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.6%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7,250,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>260,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.6%</td></tr>
-          </tbody>
-        </table></div>
+        <p>以 2025 年為例：每股配息 5.2 元，買入股價 145.50 元</p>
+        <ul>
+          <li>1 張（1,000 股）：5.2 × 1,000 = <strong>5,200 元</strong></li>
+          <li>殖利率：5.2 ÷ 145.50 × 100% = <strong>約 3.57%</strong></li>
+        </ul>
         <p>想用你的實際買入價格試算，請使用 <svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg> <a href="/">免費股利計算器</a></p>
 
         <h2>中華電為什麼是「定存股」代表？</h2>
-        <p>中華電的獲利來自全台用戶的電信費，現金流非常穩定，景氣循環影響小。它的股價波動度低、配息穩定，殖利率長年維持在 3.5~4% 上下，適合：</p>
+        <p>中華電的獲利來自全台用戶的電信費，現金流非常穩定，景氣循環影響小。它的股價波動度低、配息穩定，殖利率參考值約 3.57%，適合：</p>
         <ul>
           <li>追求穩定現金流、不想看盤的存股族</li>
           <li>退休族、保守型投資人</li>
@@ -160,7 +284,7 @@
         <p>中華電是「單一個股」，波動低但缺乏分散；高股息 ETF 一次持有數十檔，風險較分散但仍有市場波動。保守者常以中華電打底，再搭配 <a href="/articles/high-dividend-yield-stocks">高股息 ETF</a> 提高整體殖利率。</p>
 
         <h2>資料來源與免責</h2>
-        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2412" target="_blank" rel="noopener">Goodinfo（2412）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>        <h2>延伸閱讀</h2>
+        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）STOCK_DAY API 資料，配息紀錄整理自 <a href="https://mopsov.twse.com.tw/mops/web/t05st09_2" target="_blank" rel="noopener">公開資訊觀測站（MOPS）股利分派情形查詢</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>        <h2>延伸閱讀</h2>
         <ul>
             <li><a href="/articles/tsmc-dividend-calculator">台積電配息怎麼算？</a></li>
             <li><a href="/articles/hon-hai-dividend">鴻海配息怎麼算？</a></li>
@@ -168,7 +292,7 @@
             <li><a href="/articles/stock-vs-deposit">存股 vs 定存哪個好</a></li>
             <li><a href="/articles/dividend-yield-explained">殖利率是什麼？怎麼算</a></li>
             <li><a href="/articles/retirement-stock-saving">退休存股完整規劃</a></li>
-        
+
             <li><a href="/articles/china-steel-dividend" >中鋼（2002）配息怎麼算？一張領多少？2026 股利試算</a></li>
 </ul>
 
@@ -180,7 +304,7 @@
     <div>
       <div class="article-faq-item">
         <h3>中華電一張一年配息多少？</h3>
-        <p>以 2025 年配息約 5.2 元、股價約 141 元計算，持有 1 張（1,000 股）一年約可領 5,200 元，殖利率約 3.7%。實際配息以中華電股東會決議與公司公告為準。</p>
+        <p>以 2025 年配息約 5.2 元、股價約 145.50 元計算，持有 1 張（1,000 股）一年約可領 5,200 元，殖利率約 3.57%。實際配息以中華電股東會決議與公司公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>中華電信一年配息幾次？多久配息一次？</h3>
@@ -188,7 +312,7 @@
       </div>
       <div class="article-faq-item">
         <h3>中華電適合存股嗎？</h3>
-        <p>中華電是台灣電信龍頭，獲利穩定、配息穩定，是典型的「定存股」代表，適合追求穩定現金流、低波動的存股族。但成長性有限，殖利率約 3.7% 左右。</p>
+        <p>中華電是台灣電信龍頭，獲利穩定、配息穩定，是典型的「定存股」代表，適合追求穩定現金流、低波動的存股族。但成長性有限，殖利率約 3.57% 左右。</p>
       </div>
         <div class="article-faq-item">
           <h3>中華電近年配息穩定嗎？有下降風險嗎？</h3>

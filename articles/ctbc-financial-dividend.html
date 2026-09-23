@@ -31,6 +31,7 @@
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="canonical" href="https://gulicalc.com/articles/ctbc-financial-dividend">
   <link rel="stylesheet" href="../css/style.css?v=20260714a">
+  <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -90,7 +91,134 @@
         <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-09</span>
       </div>
 
-      <p><strong>中信金（2891）配息怎麼算？公式是「現金股利 ＝ 每股現金股利 × 持有股數」；中信金採年配息、近年全數配發現金（不配股）。</strong>2025 年度現金股利 2.5 元，以股價約 70 元計算、殖利率約 3.6%；持有 1 張（1,000 股）一年約可領 <strong>2,500 元</strong>、10 張約 25,000 元。中信金以銀行＋壽險（台灣人壽）雙引擎，配息近年穩定成長。想用你的買入價試算，請用<a href="/">股利計算器</a>。</p>
+      <p><strong>中信金（2891）配息怎麼算？公式是「現金股利 ＝ 每股現金股利 × 持有股數」；中信金採年配息、近年全數配發現金（不配股）。</strong>2025 年度現金股利 2.5 元，以股價約 52 元計算、殖利率約 4.8%；持有 1 張（1,000 股）一年約可領 <strong>2,500 元</strong>、10 張約 25,000 元。中信金以銀行＋壽險（台灣人壽）雙引擎，配息近年穩定成長。想用你的買入價試算，請用<a href="/">股利計算器</a>。</p>
+
+      <!-- 2891 Phase 3 Batch 3 Template：從「完全沒有計算器」到 Core Template 的
+           驗證案例。金控股有「盈餘年度」跟「除息年度」差一年的特性（下面歷年表
+           也是這樣呈現），Quick Answer 的年度標示沿用這個講法，不簡化成單一年份
+           以免誤導。原本文章開頭誤用 70 元／3.6% 殖利率（跟頁面其他地方的
+           52元／4.8%不一致，已在上面 intro 段落修正），這裡的 Page Data Contract
+           直接採用跟 FAQ 一致的 52元／4.8%。 -->
+      <div class="etf-proto">
+        <div class="etf-proto-card">
+          <div class="head">
+            <div class="title">中信金股息試算</div>
+            <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+          </div>
+
+          <div class="etf-proto-qa">
+            <div class="etf-proto-qa-grid">
+              <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">52.00 元</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">盈餘年度配息</div><div class="v" id="qaDiv">2.50 元</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">4.81%</div></div>
+            </div>
+            <p class="etf-proto-qa-source" id="qaSource">2024 年盈餘配息，實際除息年度較晚（金控股「盈餘年度」與「除息年度」差一年）・資料來源：公開資訊觀測站＋中信金控公告，實際配息與股價請以官方最新公告為準。</p>
+          </div>
+
+          <div class="etf-proto-primary">
+            <label for="gcS">你持有幾張？</label>
+            <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+            <span class="hint">單位：張（1 張 = 1,000 股）</span>
+          </div>
+
+          <details class="etf-proto-advanced">
+            <summary>進階設定／手動調整股價與股利</summary>
+            <div class="grid">
+              <div>
+                <label for="gcP">股價（元）</label>
+                <input type="number" id="gcP" inputmode="decimal" value="52" min="0" step="0.01">
+              </div>
+              <div>
+                <label for="gcD">每股股利（全年，元）</label>
+                <input type="number" id="gcD" inputmode="decimal" value="2.50" min="0" step="0.01">
+              </div>
+            </div>
+          </details>
+
+          <div class="etf-proto-result">
+            <div class="yield-label">參考殖利率</div>
+            <div class="yield-value"><span id="gcY">4.81</span>%</div>
+            <div class="etf-proto-result-grid">
+              <div class="etf-proto-result-cell">
+                <div class="k">參考市值</div>
+                <div class="v" id="gcC">52,000</div>
+                <div class="note">元（=股價×張數，非實際投入成本）</div>
+              </div>
+              <div class="etf-proto-result-cell">
+                <div class="k">年度股利試算</div>
+                <div class="v green" id="gcT">2,500</div>
+                <div class="note">元</div>
+              </div>
+            </div>
+            <p class="etf-proto-basis" id="gcBasis">依 2024 年盈餘配息 2.50 元估算的參考殖利率（非保證未來配息）</p>
+          </div>
+        </div>
+
+        <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+        <div class="etf-proto-intent-grid">
+          <a href="/compound-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+            <span class="txt">長期持有 10 年後可能有多少？</span>
+          </a>
+          <a href="/dca-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+            <span class="txt">每月定期定額買中信金會怎樣？</span>
+          </a>
+          <a href="/payback-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <span class="txt">輸入我的成本，精算回本年數</span>
+          </a>
+          <a href="/goal" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+            <span class="txt">距離我的月領目標還有多久？</span>
+          </a>
+          <a href="/articles/tsmc-dividend-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+            <span class="txt">跟其他個股比較</span>
+          </a>
+        </div>
+      </div>
+      <script>
+      window.GULICALC_PAGE_DATA = {
+        symbol: "2891",
+        name: "中信金",
+        price: 52.00,
+        priceAsOf: "2026-05-09",
+        priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+        sourceCapability: "static_only",
+        annualDividend: 2.50,
+        dividendYear: "2024（盈餘年度）",
+        frequency: "年配",
+        yield: 4.81,
+        source: "公開資訊觀測站＋中信金控公告"
+      };
+      (function(){
+        var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+        if(!p||!s||!d)return;
+        var PD = window.GULICALC_PAGE_DATA;
+        function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+        function calc(){
+          var price=Math.max(0,parseFloat(p.value)||0);
+          var lots=Math.max(0,parseFloat(s.value)||0);
+          var div=Math.max(0,parseFloat(d.value)||0);
+          var shares=lots*1000;
+          var yieldPct=(price>0?div/price*100:0).toFixed(2);
+          PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+          document.getElementById('gcY').textContent=yieldPct;
+          document.getElementById('gcC').textContent=fmt(shares*price);
+          document.getElementById('gcT').textContent=fmt(shares*div);
+          var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+          if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+          if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+          if(qaYield) qaYield.textContent=yieldPct+'%';
+          var basisEl=document.getElementById('gcBasis');
+          if(basisEl) basisEl.textContent='依 2024 年盈餘配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+        }
+        [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+        calc();
+      })();
+      </script>
 
       <h2>中信金融控股簡介</h2>
       <p>中信金融控股（2891）旗下包含中國信託商業銀行、台灣人壽、中信證券、中信保險等子公司，業務涵蓋銀行、壽險、證券、保險，是台灣資產規模最大的民營金控之一。</p>

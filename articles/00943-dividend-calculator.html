@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/00943-dividend-calculator">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -43,7 +44,7 @@
         "description": "00943兆豐電子高息等權配息計算：月配息、殖利率試算、持有幾張每月領多少。電子成長高息ETF，附即時試算工具。",
         "url": "https://gulicalc.com/articles/00943-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-07-22",
+        "dateModified": "2026-09-23",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00943配息,00943殖利率,兆豐電子高息等權配息,00943月配息,00943配息計算器",
         "mainEntityOfPage": {
@@ -95,44 +96,216 @@
         <h1>00943（兆豐電子高息等權）配息怎麼算？月配息殖利率試算</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-09-23</span>
         </div>
 
-        <p><strong>00943（兆豐台灣電子成長高息等權重）是月配息、聚焦電子成長股的 ETF，殖利率較傳統高股息低。</strong>2026年至今（第7次除息）累計配息約 0.61 元、近期股價約 22.4 元計算，持有 1 張（1,000 股）約可領 610 元，殖利率約 2.7%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00943（兆豐台灣電子成長高息等權重）是月配息、聚焦電子成長股的 ETF。</strong>以本站逐筆配息紀錄（etf-div-history.json）加總，近12個月（TTM，2025-10-20至2026-09-16）配息合計 1.18 元（精確值 1.183 元）；參考股價 20.95 元（2026-09-23，台灣證券交易所收盤價）。持有 1 張（1,000 股）近12個月約可領 1,183 元，參考殖利率約 5.65%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+
+        <!-- 00943 Phase 3D.2 Core Template rollout：取代原本的靜態 Quick Answer 段落。
+             核准的 canonical 資料如下（TWSE股價2026-09-23收盤 ＋ TWSE ETFortune ＋ 本站
+             etf-div-history.json 逐筆配息紀錄加總，已經站長審核核准）：
+
+               ● 主要（Primary）數字 —— 近12個月 TTM：
+                 期間：2025-10-20 至 2026-09-16
+                 逐筆加總 = 1.183 元（精確值；UI顯示可四捨五入為「1.18元」，
+                 但 GULICALC_PAGE_DATA.dividendAmount 與試算機底層變數一律用 1.183，不可用 1.18 或 0.98）
+                 股價：20.95 元（2026-09-23 TWSE收盤）
+                 殖利率 = 1.183 ÷ 20.95 × 100 = 5.65%（= yield 欄位核准值）
+
+               ● 次要（Secondary，YTD，未年化）——不可與上面的TTM混用、不可年化推算全年：
+                 期間：2026-01-19 至 2026-09-16
+                 累計 = 0.978 元
+                 這是「2026年至今已發生的實際除息加總」，只代表已經發生的部份，
+                 不是完整12個月的配息水準，因此不放進 Quick Answer 的殖利率計算，
+                 只作為歷史／YTD情境的參考區塊呈現。
+
+             ★ 重要：舊版production頁的「2026年至今（第7次除息）累計配息0.61元」已經過期
+             （早於本次核准資料的查證時點，也不是完整TTM或完整YTD口徑），
+             一律用新的TTM 1.183（顯示1.18）取代，全文（intro／試算機預設值／FAQ）不再出現0.61這個數字。
+             0.978（YTD）只出現在明確標示為「歷史／YTD，未年化」的獨立區塊，不進Quick Answer，
+             也絕對不做年化（不可寫成「換算全年約為 X 元」之類的推算句）。
+
+             舊版「持有不同張數」表格（40元/月、480元/年、2.2%殖利率）與新資料（1.183元、20.95元、
+             5.65%）完全對不上、且找不到任何佐證來源，已整表刪除重算：新表格只用核准的
+             dividendAmount=1.183 與 price=20.95 現場算出（每月平均 = 1.183÷12×股數，
+             近12個月總配息 = 1.183×股數，殖利率固定 5.65%），不再手打舊數字。
+
+             FAQ「00943的配息特色是什麼？適合存股嗎？」原本貼錯內容，描述的是
+             00713（元大台灣高息低波，元大投信）而不是00943（兆豐台灣電子成長高息等權重，
+             兆豐投信），已依本頁其他正確段落（電子成長股、等權重、月配息）重寫為00943的
+             真實內容。
+
+             stocks.json 同步：00943的dividend欄位由1.18（0.61的粗略換算或先前近似值）
+             更新為精確值1.183；price欄位由20.83更新為20.95。只動00943這一筆entry。
+        -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">00943 股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">20.95 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">1.18 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">月配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">5.65%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-23・資料來源：台灣證券交易所（股價，2026-09-23收盤）＋TWSE ETFortune＋本站etf-div-history.json逐筆TTM加總（2025-10-20–2026-09-16）。非即時，實際配息與股價請以官方最新公告為準。</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="20.95" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">近12個月配息合計（元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.183" min="0" step="0.001">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">5.65</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">20,950</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">12個月股利試算</div>
+                  <div class="v green" id="gcT">1,183</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依近12個月（2025/10/20–2026/09/16）配息合計 1.183 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+
+            <div class="etf-proto-secondary" style="margin-top:1.25rem;padding:1rem 1.25rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;">
+              <div style="font-weight:700;font-size:.92rem;color:#92400e;margin-bottom:.35rem;">2026年至今累計（YTD，未年化）— 歷史對照參考，非Quick Answer數字</div>
+              <p style="margin:0;font-size:.88rem;color:#78350f;">2026/01/19–2026/09/16 期間，已實際發生的除息累計為 <strong>0.978 元</strong>。這只是「今年至今已發生」的部份，涵蓋的月份不到一整年，<strong>不可</strong>直接乘12個月或年化換算成全年配息估計；請勿與上方「近12個月 TTM 1.18元（精確值1.183元）」的Quick Answer數字混用。</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買 00943 會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/00934-dividend-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟 00934 比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "00943",
+          name: "兆豐台灣電子成長高息等權重",
+          price: 20.95,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 1.183, // 精確TTM值，UI可顯示為「1.18元」但此底層數值不可四捨五入
+          dividendBasis: "TTM", // 近12個月，2025-10-20至2026-09-16逐筆加總
+          periodStart: "2025-10-20",
+          periodEnd: "2026-09-16",
+          frequency: "月配息（每年12次）",
+          yield: 5.65, // = 1.183/20.95*100
+          stockDividendParValuePerShare: 0,
+          secondaryMetric: {
+            label: "2026年至今累計（YTD，未年化）",
+            dividendAmount: 0.978,
+            periodStart: "2026-01-19",
+            periodEnd: "2026-09-16"
+          },
+          source: "台灣證券交易所（股價，2026-09-23）＋TWSE ETFortune＋本站etf-div-history.json逐筆TTM加總"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依近12個月（2025/10/20–2026/09/16）配息合計 '+div.toFixed(3)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>00943 是什麼？</h2>
-        <p>兆豐電子高息等權 ETF（股票代號：00943，全名兆豐台灣電子成長高息等權重）由兆豐投信發行，追蹤臺灣電子成長高息等權重指數，鎖定電子產業中兼具成長與配息的個股，採等權重與月配息。因偏成長，殖利率通常低於傳統高股息 ETF。</p>
+        <p>兆豐電子高息等權 ETF（股票代號：00943，全名兆豐台灣電子成長高息等權重）由兆豐投信發行，追蹤臺灣電子成長高息等權重指數，鎖定電子產業中兼具成長與配息的個股，採等權重與月配息。因偏成長，配息水準會隨電子股獲利與市況波動。</p>
         <ul>
           <li><strong>發行：</strong>兆豐投信</li>
           <li><strong>類型：</strong>電子成長 + 高息等權重</li>
           <li><strong>配息頻率：</strong>月配息（每年 12 次）</li>
-          <li><strong>特性：</strong>聚焦電子成長股、殖利率較低、波動較大</li>
+          <li><strong>特性：</strong>聚焦電子成長股、等權重配置、波動較大</li>
         </ul>
 
         <h2>00943 配息計算公式</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>單月領息金額 = 每股單月配息 × 持有股數</strong><br><br>
-          <strong>年度總配息 = 全年配息加總 × 持有股數</strong><br><br>
-          <strong>殖利率 = 年度每股配息 ÷ 買入股價 × 100%</strong>
+          <strong>近12個月總配息 = 近12次配息加總 × 持有股數</strong><br><br>
+          <strong>殖利率 = 近12個月每股配息 ÷ 買入股價 × 100%</strong>
         </div>
 
-        <h2>持有不同張數每年領多少？</h2>
-        <p>以 2026 年至今累計配息 0.61 元、買入股價 22.4 元為例（殖利率約 2.7%）：</p>
+        <h2>持有不同張數近12個月能領多少？</h2>
+        <p>以近12個月（TTM，2025-10-20至2026-09-16）配息合計 1.183 元、參考股價 20.95 元（2026-09-23）為基準，現場依核准資料重新計算（每月平均＝1.183÷12×股數）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每月配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本（約）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每月平均配息（元）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">近12個月總配息（元）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">參考殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">21,690.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">40 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>480 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.2%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">216,900.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">400 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,800 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.2%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,084,500.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>24,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.2%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,169,000.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>48,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.2%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">20,950 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 99 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,183 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.65%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">104,750 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 493 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,915 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.65%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">209,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 986 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>11,830 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.65%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,047,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 4,929 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>59,150 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.65%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
 
         <h2>00943 是高股息還是成長型？</h2>
-        <p>00943 名稱有「高息」，但成分聚焦電子成長股、採等權重，殖利率（約 2～3%）明顯低於 0056、00878 這類傳統高股息 ETF，報酬較依賴電子股的股價成長。若你要的是高現金流，它不是典型選擇；若想用月配方式參與電子成長，才較適合。</p>
+        <p>00943 名稱有「高息」，但成分聚焦電子成長股、採等權重，配息水準會隨電子股獲利與市況明顯波動（以本次核准的近12個月數字計算，參考殖利率約 5.65%），報酬也較依賴電子股的股價成長。若你要的是穩定且波動小的高現金流，建議搭配官方最新配息公告再評估；若想用月配方式參與電子成長，才較適合。</p>
 
         <h2>00943 稅後配息怎麼算？</h2>
         <ul>
@@ -142,19 +315,19 @@
         <p>詳細稅務計算請參考<a href="/articles/dividend-tax-calculator">稅後股利計算完整指南</a>。</p>
 
         <h2>常見問題</h2>
-        <h3>00943 一張一年配息多少？</h3>
-        <p>以2026年至今累計配息約 0.61 元、近期股價約 22.4 元計算，持有 1 張約可領 610 元，殖利率約 2.7%。實際配息以兆豐投信公告為準。</p>
+        <h3>00943 一張近12個月配息多少？</h3>
+        <p>以近12個月（TTM，2025-10-20至2026-09-16）配息合計 1.18 元（精確值 1.183 元）、參考股價 20.95 元（2026-09-23，台灣證券交易所收盤價）計算，持有 1 張近12個月約可領 1,183 元，參考殖利率約 5.65%。實際配息以兆豐投信公告為準。</p>
         <h3>00943 多久配息一次？</h3>
         <p>00943 採月配息，每年配息 12 次。</p>
         <h2>資料來源與免責</h2>
-        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=00943" target="_blank" rel="noopener">Goodinfo（00943）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
+        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）2026-09-23收盤價，配息紀錄整理自 TWSE ETFortune 與本站 etf-div-history.json 逐筆配息紀錄加總。文中數字為參考值，實際配息、除息日與股價請以兆豐投信官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
         <h2>延伸閱讀</h2>
         <ul>
             <li><a href="/articles/monthly-dividend-etf">月配息 ETF 完整攻略</a></li>
             <li><a href="/articles/quanta-dividend">廣達（2382）配息計算</a></li>
             <li><a href="/articles/high-yield-stock-trap">高殖利率股票的陷阱</a></li>
             <li><a href="/articles/etf-dividend-yield-comparison">ETF 殖利率完整比較</a></li>
-        
+
             <li><a href="/articles/00934-dividend-calculator" >00934（中信成長高股息）配息怎麼算？月配息殖利率試算</a></li>
 </ul>
 
@@ -165,20 +338,20 @@
     <h2>常見問題 FAQ</h2>
     <div>
       <div class="article-faq-item">
-        <h3>00943 一張一年配息多少？</h3>
-        <p>以2026年至今累計配息約 0.61 元、近期股價約 22.4 元計算，持有 1 張約可領 610 元，殖利率約 2.7%。實際配息以兆豐投信公告為準。</p>
+        <h3>00943 一張近12個月配息多少？</h3>
+        <p>以近12個月（TTM，2025-10-20至2026-09-16）配息合計 1.18 元（精確值 1.183 元）、參考股價 20.95 元（2026-09-23，台灣證券交易所收盤價）計算，持有 1 張近12個月約可領 1,183 元，參考殖利率約 5.65%。實際配息以兆豐投信公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00943 多久配息一次？</h3>
         <p>00943 採月配息，每年配息 12 次。</p>
       </div>
       <div class="article-faq-item">
-        <h3>00943 殖利率為什麼比較低？</h3>
-        <p>因為它聚焦電子成長股，報酬偏向股價成長而非配息，殖利率（約 2～3%）低於傳統高股息 ETF，屬性較接近成長型。</p>
+        <h3>00943 殖利率為什麼跟其他高股息 ETF 不一樣？</h3>
+        <p>因為它聚焦電子成長股，報酬會較依賴股價成長，配息水準也隨電子股獲利與市況明顯波動。以本次核准資料計算，近12個月參考殖利率約 5.65%；2026年至今（YTD，未年化）累計則為 0.978 元，兩者口徑不同，請勿混用或直接年化推算。</p>
       </div>
         <div class="article-faq-item">
           <h3>00943 的配息特色是什麼？適合存股嗎？</h3>
-          <p>00943（元大台灣高息低波 ETF）主打低波動高股息，選股時同時篩選殖利率高且股價波動較低的標的，適合風險承受度較低、追求穩定配息的保守型投資人。建議搭配<a href='/'>股利計算器</a>試算。</p>
+          <p>00943（兆豐台灣電子成長高息等權重 ETF）由兆豐投信發行，鎖定電子產業中兼具成長與配息的個股，採等權重配置、月配息（每年12次）。因偏電子成長股，配息金額會隨成分股獲利與市況明顯波動，報酬也較依賴股價成長，不是傳統「低波動高現金流」型的高股息 ETF。適合想用月配方式參與電子成長、且能接受配息與股價波動較大的投資人；建議以官方最新配息公告為準，並搭配<a href='/'>股利計算器</a>輸入你的買入成本試算後再決定是否存股。</p>
         </div>
     </div>
   </section>
@@ -254,5 +427,7 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 </script>
 
 <script src="../js/theme.js?v=20260530f"></script>
+<script>window.ETF_CODE="00943";</script>
+<script src="../js/etf-live.js?v=20260712a"></script>
 </body>
 </html>

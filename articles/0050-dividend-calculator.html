@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/0050-dividend-calculator">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -98,13 +99,142 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
         </div>
 
-        <p><strong>0050（元大台灣50）是台灣首檔 ETF，屬「市值型」而非高股息。</strong>0050 於 2025 年完成 1 拆 4 分割，配息為半年配（一年 2 次），分割後每單位配息與股價同步縮小；近一年合計配息約 1.60 元，持有 1 張（1,000 股）一年約可領約 1,600 元。現價與現價殖利率請見頁面即時行情或用計算器試算。0050 的價值在於長期跟著台股大盤成長，而非高配息。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>0050（元大台灣50）是台灣首檔 ETF，屬「市值型」而非高股息。</strong>0050 於 2025 年完成 1 拆 4 分割，配息為半年配（一年 2 次），分割後每單位配息與股價同步縮小；近一年合計配息約 1.60 元，持有 1 張（1,000 股）一年約可領約 1,600 元。最新參考股價與參考殖利率請見下方試算資訊。0050 的價值在於長期跟著台股大盤成長，而非高配息。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
 
-      <div class="etf-live-box" style="margin:1.2rem 0;padding:.85rem 1.1rem;background:var(--bg-input,#f5f7fa);border:1px solid var(--border-color,#e3e8ef);border-radius:12px;font-size:.92rem;line-height:1.9;">
-        <strong>📊 即時行情</strong> <span style="font-size:.78rem;color:var(--text-muted,#888);">（TWSE 官方收盤價，每 6 小時更新）</span><br>
-        股價 <strong data-etf="price">—</strong> 元　·　年配息 <strong data-etf="dividend">—</strong> 元　·　現價殖利率 <strong data-etf="yield">—</strong>%　
-        <a href="/" style="color:var(--accent,#0891b2);font-weight:600;">→ 用完整股利計算器試算</a>
-      </div>
+        <!-- 0050 Phase 3 Batch 1 Template：Core module only（Quick Answer → Progressive
+             Input → 個人化結果 → Next Intent）。這頁原本沒有 gcP/gcS/gcD 互動計算器，
+             只有 .etf-live-box 靜態占位；改用跟 00878 Reference Template 同一套
+             .etf-proto 結構＋Page Data Contract，取代原本的 live-box。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">0050 股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">102.85 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">1.60 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">半年配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">1.56%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-07-22・資料來源：台灣證券交易所＋元大投信公告（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="102.85" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.60" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">1.56</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">102,850</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">1,600</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 1.60 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買 0050 會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/0050-vs-006208" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟 006208 比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        // Page Data Contract（同 00878 Reference Template）。priceStatus 預留給未來，
+        // v1 畫面文字固定用保守 wording，不因 API 成功就標「即時」。
+        window.GULICALC_PAGE_DATA = {
+          symbol: "0050",
+          name: "元大台灣50",
+          price: 102.85,
+          priceAsOf: "2026-07-22",
+          priceStatus: "fallback",
+          annualDividend: 1.60,
+          dividendYear: "2025",
+          frequency: "半年配",
+          yield: 1.56,
+          source: "台灣證券交易所＋元大投信公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function renderFreshness(){
+            var qaSource=document.getElementById('qaSource');
+            if(qaSource) qaSource.textContent='資料時間 '+PD.priceAsOf+'・資料來源：'+PD.source+'（非即時，實際配息以官方最新公告為準）';
+          }
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          document.addEventListener('gulicalc:live-price-updated', function(ev){
+            if(!ev.detail||ev.detail.code!==PD.symbol) return;
+            PD.priceStatus='close'; PD.priceAsOf=new Date().toISOString().slice(0,10);
+            renderFreshness(); calc();
+          });
+          renderFreshness(); calc();
+        })();
+        </script>
 
         <h2>0050 是什麼？</h2>
         <p>元大台灣卓越50 ETF（股票代號：0050）成立於 2003 年 6 月，是台灣第一檔在證交所掛牌的 ETF，追蹤「臺灣50指數」，持有台股市值最大的 50 家上市公司（如台積電、鴻海、聯發科、台達電等）。</p>
@@ -124,7 +254,7 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以下為示意試算（實際股價與殖利率依現價，見上方即時行情或用計算器）：</p>
+        <p>以下為示意試算，以約 102 元／股概算（與上方「最新參考股價」102.85 元為同一資料基準，僅取整數方便對照）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th>
@@ -186,11 +316,11 @@
     <div>
       <div class="article-faq-item">
         <h3>0050 一張一年配息多少？</h3>
-        <p>0050 於 2025 年完成 1 拆 4 分割，配息為半年配（一年 2 次），分割後每單位配息與股價同步縮小；近一年合計配息約 1.60 元，持有 1 張（1,000 股）一年約可領約 1,600 元。現價與現價殖利率請見頁面即時行情或用計算器試算。實際配息以元大投信官網公告為準。</p>
+        <p>0050 於 2025 年完成 1 拆 4 分割，配息為半年配（一年 2 次），分割後每單位配息與股價同步縮小；近一年合計配息約 1.60 元，持有 1 張（1,000 股）一年約可領約 1,600 元。最新參考股價與參考殖利率請見上方試算資訊。實際配息以元大投信官網公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>0050 是高股息 ETF 嗎？</h3>
-        <p>不是。0050 是「市值型」ETF，追蹤臺灣 50 指數，持有台股市值最大的 50 家公司，殖利率通常偏低（2025 年當年殖利率約 2.1%），低於高股息 ETF。它的特色是長期資本增值，而非高配息。</p>
+        <p>不是。0050 是「市值型」ETF，追蹤臺灣 50 指數，持有台股市值最大的 50 家公司，殖利率通常偏低（以近期參考股價 102.85 元與 2025 年度配息 1.60 元估算，參考殖利率約 1.6%），低於高股息 ETF。它的特色是長期資本增值，而非高配息。</p>
       </div>
       <div class="article-faq-item">
         <h3>0050 和 0056 差在哪？</h3>

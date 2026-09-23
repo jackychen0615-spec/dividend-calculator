@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/00939-dividend-calculator">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -98,13 +99,150 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
         </div>
 
-        <p><strong>00939（統一台灣高息動能 ETF）是 2024 年上市的高股息 ETF，採月配息。</strong>2025 年全年配息約 0.66 元，持有 1 張（1,000 股）一年約可領 660 元；現價與現價殖利率請見頁面即時行情或用計算器試算。想試算你的持股每年能領多少，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00939（統一台灣高息動能 ETF）是 2024 年上市的高股息 ETF，採月配息。</strong>2025 年全年配息約 0.66 元，持有 1 張（1,000 股）一年約可領 660 元；最新參考股價與參考殖利率請見下方試算資訊。想試算你的持股每年能領多少，可直接用<a href="/">股利計算器</a>。</p>
 
-      <div class="etf-live-box" style="margin:1.2rem 0;padding:.85rem 1.1rem;background:var(--bg-input,#f5f7fa);border:1px solid var(--border-color,#e3e8ef);border-radius:12px;font-size:.92rem;line-height:1.9;">
-        <strong>📊 即時行情</strong> <span style="font-size:.78rem;color:var(--text-muted,#888);">（TWSE 官方收盤價，每 6 小時更新）</span><br>
-        股價 <strong data-etf="price">—</strong> 元　·　年配息 <strong data-etf="dividend">—</strong> 元　·　現價殖利率 <strong data-etf="yield">—</strong>%　
-        <a href="/" style="color:var(--accent,#0891b2);font-weight:600;">→ 用完整股利計算器試算</a>
-      </div>
+        <!-- 00939 Phase 3 Batch 2 Template：Core module only，取代原本的 .etf-live-box。
+             資料缺口誠實揭露：原頁面「持有不同張數」示意表用 22 元／股當假設價格，
+             跟「發行價 15 元」是兩回事（IPO 價 vs 這裡的示意參考價），但這個 22 元
+             本身沒有標示資料日期／來源，這裡如實沿用同時揭露這個限制，不假造日期。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">00939 股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">22.00 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">0.66 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">月配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.00%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">⚠️ 22.00 元為頁面既有示意參考價，<strong>未標示實際資料日期</strong>（不是 15 元發行價，那是掛牌時的價格），僅供試算參考；資料來源：台灣證券交易所＋統一投信公告，實際配息與股價請以官方最新公告為準。</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="22.00" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="0.66" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">3.00</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">22,000</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">660</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 0.66 元估算的參考殖利率（非保證未來配息，股價資料日期不明）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買 00939 會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/00929-vs-00940" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟其他月配 ETF 比較</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        // Page Data Contract。sourceCapability="live_supported" 代表這頁架構上
+        // 有接 etf-live.js；但目前頁面自己都沒有標示過股價資料日期，所以
+        // fallback 起始值的 priceAsOf 設為 null，如實反映「不知道這個 22 元
+        // 是哪天的」。priceStatus 只用確定拿得到的值（fallback/close），
+        // backend 目前無法分辨 realtime/delayed，不猜測。
+        window.GULICALC_PAGE_DATA = {
+          symbol: "00939",
+          name: "統一台灣高息動能",
+          price: 22.00,
+          priceAsOf: null,
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "live_supported", // "live_supported" | "static_only"
+          annualDividend: 0.66,
+          dividendYear: "2025",
+          frequency: "月配",
+          yield: 3.00,
+          source: "台灣證券交易所＋統一投信公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function renderFreshness(){
+            var qaSource=document.getElementById('qaSource');
+            if(qaSource){
+              qaSource.textContent = PD.priceAsOf
+                ? ('資料時間 '+PD.priceAsOf+'・資料來源：'+PD.source+'（非即時，實際配息以官方最新公告為準）')
+                : ('⚠️ '+PD.price.toFixed(2)+' 元為頁面既有示意參考價，未標示實際資料日期，僅供試算參考；資料來源：'+PD.source+'，實際配息與股價請以官方最新公告為準。');
+            }
+          }
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息'+(PD.priceAsOf?'':'，股價資料日期不明')+'）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          document.addEventListener('gulicalc:live-price-updated', function(ev){
+            if(!ev.detail||ev.detail.code!==PD.symbol) return;
+            PD.priceStatus='close'; PD.priceAsOf=new Date().toISOString().slice(0,10);
+            renderFreshness(); calc();
+          });
+          renderFreshness(); calc();
+        })();
+        </script>
 
         <h2>00939 是什麼？</h2>
         <p>統一台灣高息動能 ETF（股票代號：00939）於 2024 年 3 月掛牌，是近年熱門的高股息 ETF 之一，結合「高股息」與「動能」因子選股，鎖定兼具配息與股價成長動能的個股。</p>
@@ -123,7 +261,7 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以下為示意試算（實際股價與殖利率依現價，見上方即時行情或用計算器）：</p>
+        <p>以下為示意試算，以約 22 元／股概算（與上方「參考股價」22.00 元為同一資料基準，該價格未標示實際資料日期，僅供參考）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th>
@@ -178,7 +316,7 @@
     <div>
       <div class="article-faq-item">
         <h3>00939 一張一年配息多少？</h3>
-        <p>2025 年全年配息約 0.66 元，持有 1 張（1,000 股）一年約可領 660 元；現價與現價殖利率請見頁面即時行情或用計算器試算。實際配息以統一投信官網公告為準。</p>
+        <p>2025 年全年配息約 0.66 元，持有 1 張（1,000 股）一年約可領 660 元；最新參考股價與參考殖利率請見上方試算資訊。實際配息以統一投信官網公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00939 多久配息一次？</h3>
@@ -186,7 +324,7 @@
       </div>
       <div class="article-faq-item">
         <h3>00939 的殖利率是多少？</h3>
-        <p>2025 年全年配息約 0.66 元；現價殖利率請見頁面即時行情。殖利率會依買入價格不同而異，建議以自己的買入價格試算。</p>
+        <p>2025 年全年配息約 0.66 元；參考殖利率請見上方試算資訊。殖利率會依買入價格不同而異，建議以自己的買入價格試算。</p>
       </div>
         <div class="article-faq-item">
           <h3>00939 和 00929 有什麼差別？</h3>

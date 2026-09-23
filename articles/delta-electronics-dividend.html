@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/delta-electronics-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -98,9 +99,154 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
         </div>
 
-        <p><strong>台達電（2308）多久配息一次？採年配息、一年配 1 次。</strong>2025 年度現金股利每股 11.6 元，以近期股價約 1,700 元計算，殖利率約 0.68%；持有 1 張（1,000 股）一年約可領 <strong>11,600 元</strong>。台達電是電源供應器龍頭，這幾年因 AI 伺服器電源需求大爆發，配息也跟著水漲船高，但殖利率偏低讓不少人猶豫。下方計算器已帶入台達電數字，改成你的買入價即可試算。</p>
-        <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);"><div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;"><div style="font-size:1.05rem;color:#fff;font-weight:600;">台達電配息試算（改成你的數字）</div><p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入近期股價 1685、年配息 11.6 元（以官方為準）；改成你的買入價即時重算</p></div><div style="padding:1.1rem 1.25rem;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;"><div><label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label><input type="number" id="gcP" inputmode="decimal" value="1685" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div><div><label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label><input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div><label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label><input type="number" id="gcD" inputmode="decimal" value="11.6" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;"><div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div><div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">0.69</span>%</div><div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;"><div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">1,685,000</span> 元</div></div><div style="width:1px;background:var(--border-color);"></div><div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">11,600</span> 元</div></div></div></div><div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);"><a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算回本年數／比較多檔？用完整股利計算器 &rarr;</a></div></div><script>(function(){var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');if(!p||!s||!d)return;function fmt(n){return Math.round(n).toLocaleString('zh-TW');}function calc(){var pr=Math.max(0,parseFloat(p.value)||0),lo=Math.max(0,parseFloat(s.value)||0),dv=Math.max(0,parseFloat(d.value)||0),sh=lo*1000;document.getElementById('gcY').textContent=(pr>0?dv/pr*100:0).toFixed(2);document.getElementById('gcC').textContent=fmt(sh*pr);document.getElementById('gcT').textContent=fmt(sh*dv);}[p,s,d].forEach(function(e){e.addEventListener('input',calc);});calc();})();</script>
+        <p><strong>台達電（2308）多久配息一次？採年配息、一年配 1 次。</strong>2025 年度現金股利每股 11.6 元，以 2026-09-23 收盤股價 1,900 元計算，殖利率約 0.61%；持有 1 張（1,000 股）一年約可領 <strong>11,600 元</strong>。台達電是電源供應器龍頭，這幾年因 AI 伺服器電源需求大爆發，配息也跟著水漲船高，但殖利率偏低讓不少人猶豫。下方計算器已帶入台達電數字，改成你的買入價即可試算。</p>
 
+        <!-- Phase 3C.2 數字修正紀錄（production→prototype，本頁不動 production）：
+             1) 歷年配息表 2020-2024 重新查證後修正（皆為盈餘年度現金股利，元）：
+                2020: 5.5（不變，原本就正確）
+                2021: 5.0 → 5.50（修正）
+                2022: 5.0 → 9.84（修正，非離群值：FY2022 為台達電獲利創新高年度，
+                     EPS 12.58 元創歷史新高、配發率約78%，受AI/資料中心電源需求驅動，
+                     打破前7年5-5.5元的配息區間，屬真實的一次性大跳升）
+                2023: 5.5 → 6.43（修正）
+                2024: 8.0 → 7.00（修正）
+                2025: 11.6（不變，即本頁採用之最新年度數字）
+                來源：Yahoo股市個股股利政策表、wantgoo.com 除權息日程表、
+                台達電2023年股東會股利分派決議新聞報導（交叉比對，高信心度）。
+             2) 原production頁內部股價前後不一致：計算器與持有張數表用 1685，
+                前言／殖利率公式框／個股比較表用 1700，兩者皆為未標註日期的舊數字。
+                本頁統一為官方核准之canonical股價 1,900.00，並標註 priceAsOf 2026-09-23。
+             3) 殖利率提及處（原0.68%/0.69%/0.7%，源自兩個不同舊股價的四捨五入不一致）
+                全數改為新canonical殖利率 0.61%（= 11.6 / 1900.00 x 100%）。
+             4) 「殖利率偏低（約2-3%）」一句在「台達電是什麼」與「台達電適合存股嗎」
+                兩處重複出現，且與頁面自身算式差3-4倍，從未核對過——已改為
+                「殖利率偏低（約0.6%）」，保留「低殖利率、高成長」的定性論述，
+                只修正數字本身。
+        -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">台達電配息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">1900.00 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">11.60 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">0.61%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-23・資料來源：台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="1900.00" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="11.6" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">0.61</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">1,900,000</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">11,600</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 11.60 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買台達電會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/hon-hai-dividend" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟其他電子股比較</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "2308",
+          name: "台達電",
+          price: 1900.00,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 11.6,
+          dividendBasis: "FISCAL_YEAR",
+          earningsYear: 2025,
+          distributionYear: 2026,
+          exDate: "2026-06-17",
+          stockDividendParValuePerShare: 0,
+          frequency: "年配",
+          yield: 0.61,
+          source: "台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.earningsYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>台達電是什麼？</h2>
         <p>台達電（股票代號：2308）是全球最大的電源供應器廠商，產品涵蓋交換式電源、UPS、散熱系統、電動車充電樁等。近年積極布局 AI 伺服器電源和電動車相關零組件，是台股中兼具穩定配息和成長題材的指標股。</p>
@@ -108,42 +254,43 @@
           <li><strong>產業：</strong>電源供應器、電力電子（全球龍頭）</li>
           <li><strong>題材：</strong>AI 伺服器電源、電動車充電、儲能系統</li>
           <li><strong>配息頻率：</strong>年配息（每年一次）</li>
-          <li><strong>特性：</strong>獲利穩定成長、殖利率偏低（約 2-3%）</li>
+          <li><strong>特性：</strong>獲利穩定成長、殖利率偏低（約0.6%）</li>
         </ul>
 
-        <h2>台達電歷年配息紀錄（2020-2025）</h2>
+        <h2>台達電歷年配息紀錄（2020-2025，盈餘年度）</h2>
+        <p style="font-size:.88rem;color:#888;">下表年度為<strong>盈餘年度</strong>（該筆股利對應的獲利年度），非實際配發年度；台達電股利通常在盈餘年度隔年股東會後才實際發放（例如 2022 年度盈餘的股利於 2023 年配發）。</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">合計</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">盈餘年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">合計</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">11.6 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>11.6 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">8.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>8.0 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.5 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.5 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.0 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.0 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.5 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.5 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">11.60 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>11.60 元</strong></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.00 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>7.00 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.43 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>6.43 元</strong></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9.84 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>9.84 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.50 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.50 元</strong></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.50 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>5.50 元</strong></td></tr>
           </tbody>
         </table></div>
-        <p>台達電的配息很穩定，近兩年因為 AI 伺服器需求帶動獲利成長，配息也明顯提升。從 5 元區間一路拉到 11.6 元，成長幅度不小。</p>
+        <p>台達電的配息大致呈成長趨勢，但 2022 年度是明顯的例外：受 AI／資料中心電源需求爆發帶動，該年度每股盈餘（EPS）達 12.58 元、創歷史新高，配發率約 78%，因此現金股利從長年 5-5.5 元區間一口氣跳升至 9.84 元，打破了先前 7 年的穩定區間，並非資料錯誤或離群值。2023、2024 年度配息略為回落，2025 年度再度成長至 11.6 元。</p>
 
         <h2>殖利率計算</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>殖利率 = 每股現金股利 / 買入股價 x 100%</strong><br><br>
-          以 2025 年度配息 11.6 元、近期股價約 1,700 元計算：<br>
-          <strong>殖利率 = 11.6 / 1700 x 100% = 0.68%</strong>
+          以 2025 年度配息 11.6 元、2026-09-23 收盤股價 1,900.00 元計算：<br>
+          <strong>殖利率 = 11.6 / 1900.00 x 100% = 0.61%</strong>
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年度配息 11.6 元、買入股價 1,700 元為例（殖利率約 0.68%）：</p>
+        <p>以 2025 年度配息 11.6 元、股價 1,900.00 元（2026-09-23 收盤）為例（殖利率約 0.61%）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,685,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>11,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.7%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">8,425,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>58,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.7%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">16,850,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>116,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.7%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,900,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>11,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.61%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9,500,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>58,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.61%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">19,000,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>116,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.61%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
@@ -152,7 +299,7 @@
         <p>這個問題我覺得要看你追求的是什麼：</p>
         <ul>
           <li><strong>優點：</strong>獲利穩定成長、配息逐年提升、AI 伺服器電源和電動車充電都是長期趨勢、公司治理良好</li>
-          <li><strong>缺點：</strong>殖利率偏低（約 2-3%），不如金融股或高股息 ETF；股價偏高（一張要 38 萬），小資族門檻高</li>
+          <li><strong>缺點：</strong>殖利率偏低（約0.6%），不如金融股或高股息 ETF；股價偏高（一張要190萬元），小資族門檻高</li>
         </ul>
         <p>如果你追求的是「穩定領股利」，台達電的殖利率可能不夠吸引人。但如果你看的是「配息成長 + 股價成長」的複合報酬，台達電其實是很好的選擇。</p>
 
@@ -162,7 +309,7 @@
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">個股</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">2025 配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">約略股價</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">台達電（2308）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">11.6 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,700 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.68%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">台達電（2308）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">11.6 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,900 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.61%</td></tr>
             <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">鴻海（2317）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.17 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">237 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.0%</td></tr>
             <tr><td style="padding:8px;border:1px solid #ddd;">廣達（2382）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">310 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.3%</td></tr>
           </tbody>
@@ -171,16 +318,16 @@
 
         <h2>常見問題</h2>
         <h3>台達電每年配多少股利？</h3>
-        <p>台達電為年配息、一年配 1 次，近年配息穩定成長，2025 年度配發現金股利每股 11.6 元，從 2020 年的 5.5 元逐步成長。</p>
+        <p>台達電為年配息、一年配 1 次，近年配息大致成長，2025 年度配發現金股利每股 11.6 元。2022 年度因 AI／資料中心需求帶動獲利創新高，配息曾跳升至 9.84 元，是歷年紀錄中特別突出的一年。</p>
         <h3>台達電殖利率算高嗎？</h3>
-        <p>以近期股價約 1,700 元、配息 11.6 元計算，殖利率約 0.68%，在電子股中偏低，但台達電的優勢在成長性。</p>
+        <p>以 2026-09-23 收盤股價 1,900.00 元、配息 11.6 元計算，殖利率約 0.61%，在電子股中偏低，但台達電的優勢在成長性。</p>
         <h3>台達電適合存股嗎？</h3>
-        <p>適合追求穩定成長的投資人。殖利率雖低，但配息逐年成長加上 AI 和電動車題材，長期複合報酬值得期待。</p>
+        <p>適合追求穩定成長的投資人。殖利率雖低，但配息長期成長加上 AI 和電動車題材，長期複合報酬值得期待。</p>
         <h3>台達電什麼時候除息？</h3>
         <p>台達電為年配息、一年配 1 次，通常在每年 6-7 月間股東會後除息，實際日期以公司公告為準。</p>
 
         <h2>資料來源與免責</h2>
-        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2308" target="_blank" rel="noopener">Goodinfo（2308）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
+        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）2026-09-23 收盤公開資訊，配息紀錄整理並交叉比對自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2308" target="_blank" rel="noopener">Goodinfo（2308）</a>、Yahoo股市個股股利政策表、wantgoo.com 除權息日程表等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
 
         <h2>延伸閱讀</h2>
         <ul>
@@ -198,15 +345,15 @@
     <div>
       <div class="article-faq-item">
         <h3>台達電每年配多少股利？</h3>
-        <p>台達電為年配息、一年配 1 次，近年配息穩定成長，2025 年度配發現金股利每股 11.6 元，從 2020 年的 5.5 元逐步成長。</p>
+        <p>台達電為年配息、一年配 1 次，近年配息大致成長，2025 年度配發現金股利每股 11.6 元。2022 年度因 AI／資料中心需求帶動獲利創新高，配息曾跳升至 9.84 元，是歷年紀錄中特別突出的一年。</p>
       </div>
       <div class="article-faq-item">
         <h3>台達電殖利率算高嗎？</h3>
-        <p>以近期股價約 1,700 元、配息 11.6 元計算，殖利率約 0.68%，在電子股中偏低，但台達電的優勢在成長性。</p>
+        <p>以 2026-09-23 收盤股價 1,900.00 元、配息 11.6 元計算，殖利率約 0.61%，在電子股中偏低，但台達電的優勢在成長性。</p>
       </div>
       <div class="article-faq-item">
         <h3>台達電適合存股嗎？</h3>
-        <p>適合追求穩定成長的投資人。殖利率雖低，但配息逐年成長加上 AI 和電動車題材，長期複合報酬值得期待。</p>
+        <p>適合追求穩定成長的投資人。殖利率雖低，但配息長期成長加上 AI 和電動車題材，長期複合報酬值得期待。</p>
       </div>
       <div class="article-faq-item">
         <h3>台達電什麼時候除息？</h3>

@@ -12,9 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>玉山金（2884）股利歷年紀錄與殖利率計算（2026）- 股利計算器</title>
-    <meta name="description" content="玉山金（2884）股利完整教學：歷年現金股利與股票股利紀錄、2024配息1.20元、2025預估1.40元、持有幾張每年領多少詳細試算。">
+    <meta name="description" content="玉山金（2884）股利完整教學：歷年現金股利與股票股利紀錄、2025年度配息現金1.20元＋股票0.10015129元、2026年度配息現金1.40元（不含股票股利）、持有幾張每年領多少詳細試算。">
     <meta property="og:title" content="玉山金（2884）股利歷年紀錄與殖利率計算（2026）- 股利計算器">
-    <meta property="og:description" content="玉山金（2884）股利完整教學：歷年現金股利與股票股利紀錄、2024配息1.20元、2025預估1.40元、持有幾張每年領多少詳細試算。">
+    <meta property="og:description" content="玉山金（2884）股利完整教學：歷年現金股利與股票股利紀錄、2025年度現金1.20元＋股票0.10015129元、2026年度現金1.40元（不含股票股利）、持有幾張每年領多少詳細試算。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://gulicalc.com/articles/e-sun-financial-dividend">
     <meta property="og:image" content="https://gulicalc.com/images/og-image.png">
@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/e-sun-financial-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -90,7 +91,148 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-09</span>
         </div>
 
-        <p><strong>玉山金（2884）配息怎麼算？公式是「現金股利 ＝ 每股現金股利 × 持有股數」；玉山金採年配息，是少數「現金＋股票股利」並配的金控。</strong>2024 年度配現金 1.2 元＋股票 0.2 元，2025 年度現金股利提高至約 1.4 元、創近年新高（殖利率約 4%、股價約 35 元）。持有 1 張（1,000 股）現金約領 1,400 元，另配約 20 股新股。想用你的買入價試算，請用<a href="/">股利計算器</a>。</p>
+        <p><strong>玉山金（2884）配息怎麼算？公式是「現金股利 ＝ 每股現金股利 × 持有股數」；玉山金過去長期是「現金＋股票股利」並配的金控，但2026年度配息起已停止配發股票股利。</strong>2025 年度配現金 1.20 元＋股票股利 0.10015129 元（除息日 2025/07/22）；2026 年度現金股利提高至 1.40 元、且本次不再配發股票股利（除息日 2026/07/01，股價 45.60 元，現金殖利率約 3.07%）。持有 1 張（1,000 股）2026 年度現金約領 1,400 元。想用你的買入價試算，請用<a href="/">股利計算器</a>。</p>
+
+        <!-- Phase 3C.2 數據修正紀錄（玉山金 2884）：
+             1. 年度標籤錯置修正：生產版「2025」列原本寫的是「現金1.40元（擬配）/股票股利待公告」，
+                但1.40元實際上是「2026年度」配息（除息日2026-07-01），並非2025年度數字，兩個年度的
+                數字被誤植成同一列。已拆成：2025年度＝現金1.20元＋股票股利0.10015129元（除息日
+                2025-07-22，已實際發生，非擬配）；2026年度＝現金1.40元＋股票股利0（本次無股票股利，
+                除息日2026-07-01，即本頁Quick Answer/計算機採用的目前最新數字）。
+             2. 刪除杜撰數字：原文intro段「另配約20股新股」查無對應來源（無論對2025或2026年度皆非
+                查證數字），已整句刪除，不以任何約略值替代。
+             3.「持有玉山金可以領多少？試算範例」小節原本以「現金1.05元＋股票0.5元」為試算基準，
+                此組合全站查無來源；已改用查證通過的2026年度現金1.40元（無股票股利）重新試算。
+             4. 現金殖利率計算機只用現金股利（1.40元，2026年度），不混入股票股利面額換算，
+                比照第一金（first-financial-dividend）現金/股票分離的作法。
+             5. 已在「存股優點」段落補充2026年度起停止配發股票股利的政策轉變說明，避免與舊有
+                「每年固定配發現金股利與股票股利」敘述矛盾。
+             6. 舊股價 35元（無資料時間）已更新為 45.60元（priceAsOf 2026-09-23）。
+        -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">玉山金股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">45.60 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">2026年度現金股利</div><div class="v" id="qaDiv">1.40 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配，2026年度起停止配發股票股利</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.07%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">此為2026年度現金股利部分；本次配息無股票股利。股價資料時間 2026-09-23・資料來源：台灣證券交易所（股價）＋玉山金控股利分派決議公告（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="45.60" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股現金股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.40" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">3.07</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">45,600</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">現金股利試算</div>
+                  <div class="v green" id="gcT">1,400</div>
+                  <div class="note">元（2026年度僅現金股利，本次無股票股利）</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依2026年度現金股利 1.40 元估算的參考殖利率（本次無股票股利，非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買玉山金會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/mega-financial-dividend" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟兆豐金比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "2884",
+          name: "玉山金",
+          price: 45.60,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 1.40,
+          dividendBasis: "DISTRIBUTION_YEAR",
+          earningsYear: 2025,
+          distributionYear: 2026,
+          exDate: "2026-07-01",
+          stockDividendParValuePerShare: 0, // 2026年度配息：確認無股票股利
+          frequency: "年配，2026年度起停止配發股票股利",
+          yield: 3.07,
+          source: "台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依2026年度現金股利 '+div.toFixed(2)+' 元估算的參考殖利率（本次無股票股利，非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>玉山金（2884）基本資料</h2>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
@@ -99,13 +241,13 @@
             <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>股票代號</strong></td><td style="padding:8px;border:1px solid #ddd;">2884</td></tr>
             <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>產業類別</strong></td><td style="padding:8px;border:1px solid #ddd;">金融業（金控）</td></tr>
             <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>核心子公司</strong></td><td style="padding:8px;border:1px solid #ddd;">玉山商業銀行</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>配息頻率</strong></td><td style="padding:8px;border:1px solid #ddd;">年配（現金 + 股票股利）</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>近期股價區間</strong></td><td style="padding:8px;border:1px solid #ddd;">約 25～35 元</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>配息頻率</strong></td><td style="padding:8px;border:1px solid #ddd;">年配，2026年度起停止配發股票股利（此前為現金＋股票股利並配）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;background:#f9f9f9;"><strong>參考股價</strong></td><td style="padding:8px;border:1px solid #ddd;">45.60 元（2026-09-23 收盤，資料來源：台灣證券交易所）</td></tr>
           </tbody>
         </table></div>
 
-        <h2>玉山金歷年股利紀錄（2020～2025）</h2>
-        <p>玉山金長期採「現金股利 + 股票股利」雙配策略，以下為近年完整股利紀錄：</p>
+        <h2>玉山金歷年股利紀錄（2020～2026）</h2>
+        <p>玉山金過去長期採「現金股利 + 股票股利」雙配策略，但2026年度配息起已停止配發股票股利，以下為完整股利紀錄：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;">配息年度</th>
@@ -120,34 +262,35 @@
             <tr><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2022/07/28</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.67</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.67</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">~2.3%</td></tr>
             <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2023/07/27</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:#c0392b;">0.19</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:#c0392b;">0.38</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:#c0392b;">~0.7%（低迷年）</td></tr>
             <tr><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2024/07/25</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1.20</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.20</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">~4.0%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2025/07（預計）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1.40（擬配）</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">待公告</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">~4.7%（估）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2025/07/22</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1.20</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.10015129</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">－（無對應基準股價，不臆測）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2026/07/01</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1.40</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無，本次起停止配發股票股利）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">~3.07%（以股價45.60元計算）</td></tr>
           </tbody>
         </table></div>
-        <p style="font-size:.88rem;color:#888;">資料來源：<a href="https://tw.stock.yahoo.com/quote/2884.TW/dividend" target="_blank" rel="noopener">Yahoo股市</a>、<a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2884" target="_blank" rel="noopener">Goodinfo 台灣股市資訊網</a>。<svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21L12 2l11 19H1zm11-3h2v2h-2v-2zm0-7h2v5h-2V11z"/></svg> 2023 年股利偏低因 2022 年度銀行業受債券市場波動影響，獲利縮水。實際股利以玉山金控官方公告為準。</p>
+        <p style="font-size:.88rem;color:#888;">資料來源：<a href="https://tw.stock.yahoo.com/quote/2884.TW/dividend" target="_blank" rel="noopener">Yahoo股市</a>、<a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2884" target="_blank" rel="noopener">Goodinfo 台灣股市資訊網</a>、公司股利分派決議公告。<svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21L12 2l11 19H1zm11-3h2v2h-2v-2zm0-7h2v5h-2V11z"/></svg> 2023 年股利偏低因 2022 年度銀行業受債券市場波動影響，獲利縮水；2026 年度起玉山金停止配發股票股利，僅配發現金股利。實際股利以玉山金控官方公告為準。</p>
 
         <h2>玉山金股票股利是什麼？</h2>
-        <p>玉山金配發<strong>股票股利</strong>（又稱股份股利），意思是用「股票」替代部分現金來發放股利。例如每股配 0.5 元股票股利，代表持有 1,000 股者，額外獲得 50 股新股（1,000 × 0.5 ÷ 10 = 50 股）。</p>
+        <p>玉山金過去（2020～2025年度）配發<strong>股票股利</strong>（又稱股份股利），意思是用「股票」替代部分現金來發放股利。例如每股配 0.5 元股票股利，代表持有 1,000 股者，額外獲得 50 股新股（1,000 × 0.5 ÷ 10 = 50 股）。<strong>但2026年度配息起，玉山金已停止配發股票股利，改為僅配發現金股利。</strong></p>
         <p>股票股利的好處：<strong>不需要現金流出，股數持續累積，長期複利效果顯著</strong>。缺點是若需要現金，必須自行賣出新股，且股票除權後股價會下調。</p>
 
         <h2>持有玉山金可以領多少？試算範例</h2>
-        <p>以 2025 年股利（現金 1.05 元 + 股票 0.5 元）為基準試算：</p>
+        <p>以 2026 年度股利（現金 1.40 元，本次無股票股利）為基準試算：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;">持有張數</th>
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">持有股數</th>
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利（元）</th>
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">新增股數（股）</th>
-            
+
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,050</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">50 股</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,250</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">250 股</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10,500</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">500 股</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">30 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">30,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">31,500</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,500 股</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">100 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">100,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">105,000</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,000 股</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,400</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7,000</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">14,000</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">30 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">30,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">42,000</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">100 張</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">100,000 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">140,000</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0（無）</td></tr>
           </tbody>
         </table></div>
-        <p style="font-size:.88rem;color:#888;">以上為稅前現金股利。實際入帳金額：所得稅併入年度綜合所得稅結算（可選合併計稅 8.5% 抵減或 28% 分開計稅，無法在發放當下算出固定稅後數字）；二代健保補充保費則是同一次配息<strong>達 2 萬元</strong>時，就該筆<strong>全額</strong>扣 2.11%——以此表為例，持有 30 張以上（現金股利達 20,000 元以上）才會觸發，10 張以下不會被扣。</p>
+        <p style="font-size:.88rem;color:#888;">以上為稅前現金股利，2026 年度配息不含股票股利。實際入帳金額：所得稅併入年度綜合所得稅結算（可選合併計稅 8.5% 抵減或 28% 分開計稅，無法在發放當下算出固定稅後數字）；二代健保補充保費則是同一次配息<strong>達 2 萬元</strong>時，就該筆<strong>全額</strong>扣 2.11%——以此表為例，持有 30 張以上（現金股利達 20,000 元以上）才會觸發，10 張以下不會被扣。</p>
         <p>想要精確計算你的配息金額，可使用 <a href="/">股利計算器</a> 自行輸入股利金額與持股數試算。</p>
 
         <h2>玉山金配息時間</h2>
@@ -156,14 +299,14 @@
           <li><strong>股東會</strong>：約 5～6 月召開，決議股利分配方案</li>
           <li><strong>除息日</strong>：通常落在 7～8 月間</li>
           <li><strong>現金股利入帳</strong>：除息後約 1～2 個月（8～9 月間）</li>
-          <li><strong>股票股利增加股數</strong>：除權後約 1 個月內，新股計入集保帳戶</li>
+          <li><strong>股票股利增加股數</strong>：除權後約 1 個月內，新股計入集保帳戶（2026年度起停止配發股票股利，此流程不再適用於2026年度配息）</li>
         </ul>
         <p><svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21L12 2l11 19H1zm11-3h2v2h-2v-2zm0-7h2v5h-2V11z"/></svg> 實際日期以玉山金控投資人關係頁面公告為準，每年略有差異。</p>
 
         <h2>玉山金存股優缺點分析</h2>
         <h3>存股優點</h3>
         <ul>
-          <li><strong>現金 + 股票雙配：</strong>每年固定配發現金股利與股票股利，股數逐年增加，長期複利效果顯著</li>
+          <li><strong>現金穩定成長：</strong>2020～2025年度採現金＋股票雙配，股數逐年增加、長期複利效果顯著；<strong>但2026年度配息起已停止配發股票股利，改為僅配發現金股利</strong>，「每年固定配發現金股利與股票股利」的說法自2026年度起不再成立，投資人需留意此政策轉變</li>
           <li><strong>連續配息超過 20 年：</strong>玉山金自成立以來幾乎每年配息，配息連續性在金控股中名列前茅</li>
           <li><strong>獲利能力穩健：</strong>玉山銀行深耕財富管理、信用卡業務，EPS 長期穩定成長，股利也跟著水漲船高</li>
           <li><strong>ESG 評級優秀：</strong>玉山金長期入選 MSCI ESG 評等，在永續投資族群中受到青睞</li>
@@ -172,8 +315,8 @@
 
         <h3>存股缺點</h3>
         <ul>
-          <li><strong>殖利率中等：</strong>整體殖利率（含股票股利換算）約 4～5%，不如<a href="/articles/mega-financial-dividend">兆豐金（2886）</a>或<a href="/articles/ctbc-financial-dividend">中信金（2891）</a>等高配現金的金控</li>
-          <li><strong>現金股利比重較低：</strong>部分股利以股票形式配發，若需要現金收入，實際到手現金偏低</li>
+          <li><strong>殖利率中等：</strong>2026年度現金殖利率約3.07%（股票股利已停發），不如<a href="/articles/mega-financial-dividend">兆豐金（2886）</a>或<a href="/articles/ctbc-financial-dividend">中信金（2891）</a>等高配現金的金控</li>
+          <li><strong>股票股利已停發：</strong>2026年度起不再配發股票股利，過去靠股票股利累積股數的效果已消失，需求現金收入的投資人仍可直接參考現金股利</li>
           <li><strong>股價成長空間受限：</strong>金控股本業成長通常低於科技股，長期資本利得有限</li>
           <li><strong>利率敏感：</strong>銀行獲利受利率環境影響，若進入低利率時代，獲利可能受壓縮</li>
         </ul>
@@ -186,26 +329,35 @@
             <th style="padding:10px;border:1px solid #ddd;text-align:center;">兆豐金（2886）</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">配息方式</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">現金 + 股票股利</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">幾乎全現金股利</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">近年殖利率</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">4%～5%</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">5%～6%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">股利成長性</td><td style="padding:8px;border:1px solid #ddd;text-align:center;color:green;"><strong>逐年成長明顯</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:center;">較穩定，成長幅度有限</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">配息方式</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">現金股利為主（2026年度起停止配發股票股利）</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">幾乎全現金股利</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">近年殖利率</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">約3.07%（2026年度，現金）</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">5%～6%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">股利成長性</td><td style="padding:8px;border:1px solid #ddd;text-align:center;color:green;"><strong>現金股利逐年成長明顯</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:center;">較穩定，成長幅度有限</td></tr>
             <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">股本規模</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">較小（成長空間大）</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">較大（政府持股）</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">適合對象</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">重視長期股數累積</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">重視每年現金流</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">適合對象</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">重視現金股利成長</td><td style="padding:8px;border:1px solid #ddd;text-align:center;">重視每年現金流</td></tr>
           </tbody>
         </table></div>
 
         <h2>常見問題</h2>
-        <h3>玉山金的股票股利要怎麼領？</h3>
-        <p>股票股利不需要額外操作，除權基準日確認後，集保會自動將新股計入你的持股帳戶。你可以選擇繼續持有，或者於市場開盤時自行賣出換成現金。</p>
+        <h3>玉山金2026年度配息多少？</h3>
+        <p>玉山金（2884）2026年度配息為現金股利1.40元，本次不再配發股票股利，以股價45.60元計算現金殖利率約3.07%。2025年度配息則為現金1.20元＋股票股利0.10015129元。</p>
+
+        <h3>玉山金2023年配息為何這麼少？</h3>
+        <p>玉山金2023年現金股利僅0.19元，主要原因是2022年台灣銀行業受到債券市場虧損衝擊，導致獲利下滑。2024年已回升至1.20元現金股利，2026年度現金股利再提高至1.40元。</p>
+
+        <h3>持有玉山金10張每年領多少股息？</h3>
+        <p>以2026年度現金股利1.40元計算，持有10張（10,000股）可領14,000元現金（扣稅前），本次無股票股利。</p>
+
+        <h3>玉山金為什麼2026年度不配股票股利了？</h3>
+        <p>玉山金2026年度配息起改為僅配發現金股利，不再配發股票股利，這是公司股利政策的轉變。實際原因與後續是否恢復股票股利，請以玉山金控官方公告為準，本頁不做臆測。</p>
+
+        <h3>玉山金和國泰金、富邦金相比，哪個配息較好？</h3>
+        <p>三者都是大型金控，各有優劣。富邦金規模最大、獲利能力強；國泰金配息歷史穩定；玉山金近年轉型數位金融，成長潛力較強，2026年度起改為僅配發現金股利。建議用<a href='/compare'>個股比較器</a>對照殖利率後依個人偏好選擇。</p>
 
         <h3>玉山金除息日前要先買嗎？</h3>
         <p>必須在除息日「前一個交易日」收盤前持有股票，才具備當期領息資格。除息日當天或之後買入者，無法領取該次股利。</p>
 
-        <h3>持有玉山金 10 年，股數會增加多少？</h3>
-        <p>假設每年平均配 0.5 元股票股利（約 5%），以複利計算，10 年後每 1,000 股約增加至 1,629 股（即增加約 63%）。長期而言，股票股利的複利累積效果相當可觀。</p>
-
-        <h3>玉山金適合小資族嗎？</h3>
-        <p>玉山金股價約 35 元，1 張（1,000 股）約 3.5 萬元，對小資族而言門檻尚可接受。但若每月預算只有數千元，建議搭配低股價的 ETF（如 <a href="/articles/00878-dividend-calculator">00878</a>）定期定額，累積到一定資金後再買整張玉山金，效率更高。</p>
+        <h3>持有玉山金適合小資族嗎？</h3>
+        <p>玉山金股價約 45.60 元（2026-09-23），1 張（1,000 股）約 4.56 萬元，對小資族而言門檻尚可接受。但若每月預算只有數千元，建議搭配低股價的 ETF（如 <a href="/articles/00878-dividend-calculator">00878</a>）定期定額，累積到一定資金後再買整張玉山金，效率更高。</p>
 
         <h2>延伸閱讀</h2>
         <ul>
@@ -213,7 +365,7 @@
             <li><a href="/articles/dividend-tax-calculator">股利稅後怎麼算？完整試算教學</a></li>
             <li><a href="/articles/00878-dividend-calculator">00878 配息計算完整攻略</a></li>
             <li><a href="/articles/stock-saving-strategy">存股策略完整指南</a></li>
-        
+
             <li><a href="/articles/evergreen-marine-dividend" style="color:#0891b2;">長榮（2603）股利歷年紀錄與殖利率計算</a></li>
 
             <li><a href="/articles/hua-nan-financial-dividend" >華南金（2880）股利歷年紀錄與殖利率計算</a></li>
@@ -227,20 +379,20 @@
     <h2>常見問題 FAQ</h2>
     <div>
       <div class="article-faq-item">
-        <h3>玉山金2024年配息多少？</h3>
-        <p>玉山金（2884）2024年合計配息1.20元現金股利加0.20元股票股利。2025年預估現金股利約1.40元，創近年新高。</p>
+        <h3>玉山金2026年度配息多少？</h3>
+        <p>玉山金（2884）2026年度配息為現金股利1.40元，本次不再配發股票股利，以股價45.60元計算現金殖利率約3.07%。2025年度配息則為現金1.20元＋股票股利0.10015129元（除息日2025-07-22）。</p>
       </div>
       <div class="article-faq-item">
         <h3>玉山金2023年配息為何這麼少？</h3>
-        <p>玉山金2023年現金股利僅0.19元，主要原因是2022年台灣銀行業受到債券市場虧損衝擊，導致獲利下滑。2024年已大幅回升至1.20元現金股利。</p>
+        <p>玉山金2023年現金股利僅0.19元，主要原因是2022年台灣銀行業受到債券市場虧損衝擊，導致獲利下滑。2024年已大幅回升至1.20元現金股利，2026年度現金股利再提高至1.40元。</p>
       </div>
       <div class="article-faq-item">
         <h3>持有玉山金10張每年領多少股息？</h3>
-        <p>以2024年現金股利1.20元計算，持有10張（10,000股）可領12,000元現金（扣稅前）。另有股票股利0.20元，每千股可額外獲配20股新股。</p>
+        <p>以2026年度現金股利1.40元計算，持有10張（10,000股）可領14,000元現金（扣稅前），本次無股票股利。2025年度則為現金1.20元＋股票股利0.10015129元。</p>
       </div>
         <div class="article-faq-item">
           <h3>玉山金和國泰金、富邦金相比，哪個配息較好？</h3>
-          <p>三者都是大型金控，各有優劣。富邦金規模最大、獲利能力強；國泰金配息歷史穩定；玉山金近年轉型數位金融，成長潛力較強但配息率相對偏低。建議用<a href='/compare'>個股比較器</a>對照殖利率後依個人偏好選擇。</p>
+          <p>三者都是大型金控，各有優劣。富邦金規模最大、獲利能力強；國泰金配息歷史穩定；玉山金近年轉型數位金融，成長潛力較強，但2026年度起改為僅配發現金股利。建議用<a href='/compare'>個股比較器</a>對照殖利率後依個人偏好選擇。</p>
         </div>
     </div>
   </section>

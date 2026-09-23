@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/quanta-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -95,18 +96,161 @@
         <h1>廣達（2382）配息怎麼算？股利與殖利率試算</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-09-23</span>
         </div>
 
-        <p><strong>廣達（2382）是筆電代工大廠，也是 AI 伺服器主要受惠股，採年配息。</strong>以 2025 年配息約 15.6 元、股價約 366 元計算，持有 1 張（1,000 股）一年約可領 15,600 元，殖利率約 4.3%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>廣達（2382）是筆電代工大廠，也是 AI 伺服器主要受惠股，採年配息。</strong>以 2025 年度配息 15.6 元、參考股價 341.50 元（2026-09-23）計算，持有 1 張（1,000 股）一年約可領 15,600 元，參考殖利率約 4.57%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+
+        <!-- 2382 Phase 3C.2：Core module rollout，取代原本 .etf-live-box。
+             Exception Resolution 已核准的數字清理：
+             (1) 確認錯誤——「殖利率約 2～3%」在原production頁面出現兩次
+             （「廣達是什麼」條列 + FAQ「廣達殖利率為什麼偏低」），且與頁面
+             自己的算式（15.6÷366≈4.3%）及其他所有殖利率標示互相矛盾，
+             判定為誤植/殘留文字，非合法歷史數字，已全部刪除、不保留於任何地方。
+             (2) 股價與殖利率更新——原production頁面股價366元／殖利率4.3%
+             本身方向正確但已過時（股價已變動至341.50元），且從未標示股價
+             日期。本頁全面改用已核准的canonical數字：參考股價341.50元
+             （2026-09-23收盤，台灣證券交易所），年度配息15.6元（2025年度，
+             FISCAL_YEAR basis，公司股利分派決議公告），殖利率＝15.6÷341.50
+             ×100≈4.57%。全文intro、公式範例、持有不同張數表、FAQ皆已對齊。
+             (3) UI 用詞——依站內政策使用「參考股價」而非「目前/最新/即時股價」，
+             並明確標示資料時間，避免讀者誤認為即時報價。
+             (4) Schema v2.1——window.GULICALC_PAGE_DATA 統一改用 dividendAmount
+             ＋dividendBasis:"FISCAL_YEAR"＋earningsYear:2025＋distributionYear:2026
+             ＋exDate:"2026-07-16"，不再使用語意模糊的 annualDividend／dividendYear
+             欄位（新的全站規則：不再假設所有配息數字都代表同一種年度基準）。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">廣達股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">341.50 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">15.60 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">4.57%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-23・資料來源：台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="341.50" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="15.6" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">4.57</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">341,500</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">15,600</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 15.60 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買廣達會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/tsmc-dividend-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟其他半導體／電子股比較</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "2382",
+          name: "廣達",
+          price: 341.50,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 15.6,
+          dividendBasis: "FISCAL_YEAR",
+          earningsYear: 2025,
+          distributionYear: 2026,
+          exDate: "2026-07-16",
+          stockDividendParValuePerShare: 0,
+          frequency: "年配",
+          yield: 4.57,
+          source: "台灣證券交易所（股價，2026-09-23收盤）＋公司股利分派決議公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.earningsYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>廣達 是什麼？</h2>
-        <p>廣達電腦（股票代號：2382）是全球最大的筆記型電腦代工廠之一，近年因 AI 伺服器需求大增成為市場焦點。股價隨 AI 題材上揚，配息穩定但殖利率因股價走高而偏低。</p>
+        <p>廣達電腦（股票代號：2382）是全球最大的筆記型電腦代工廠之一，近年因 AI 伺服器需求大增成為市場焦點。股價隨 AI 題材上揚，配息穩定成長，以 2026-09-23 參考股價 341.50 元計算，參考殖利率約 4.57%。</p>
         <ul>
           <li><strong>產業：</strong>電子代工（筆電、AI 伺服器）</li>
           <li><strong>題材：</strong>AI 伺服器主要供應商</li>
           <li><strong>配息頻率：</strong>年配息（每年一次）</li>
-          <li><strong>特性：</strong>成長題材強、殖利率約 2～3%</li>
+          <li><strong>特性：</strong>成長題材強、參考殖利率約 4.57%（2026-09-23）</li>
         </ul>
 
         <h2>廣達 配息計算公式</h2>
@@ -116,22 +260,22 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年配息 15.6 元、買入股價 366 元為例（殖利率約 4.3%）：</p>
+        <p>以 2025 年度配息 15.6 元、參考股價 341.50 元（2026-09-23）為例（參考殖利率約 4.57%）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">366,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>15,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,830,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>78,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,660,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>156,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">18,300,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>780,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">341,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>15,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.57%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,707,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>78,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.57%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,415,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>156,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.57%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">17,075,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>780,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.57%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
 
         <h2>廣達適合存股還是賺價差？</h2>
-        <p>廣達近年的報酬主要來自 AI 題材帶動的股價成長，配息也隨獲利大幅成長至 2025 年每股 15.6 元。若你看重成長題材，廣達偏向「成長股」；殖利率已不算低，但股價波動仍高於傳統定存股，需自行權衡。</p>
+        <p>廣達近年的報酬主要來自 AI 題材帶動的股價成長，配息也隨獲利大幅成長至 2025 年度每股 15.6 元。若你看重成長題材，廣達偏向「成長股」；參考殖利率約 4.57%（2026-09-23）已不算低，但股價波動仍高於傳統定存股，需自行權衡。</p>
 
         <h2>廣達 稅後配息怎麼算？</h2>
         <ul>
@@ -142,18 +286,18 @@
 
         <h2>常見問題</h2>
         <h3>廣達一張一年配息多少？</h3>
-        <p>以 2025 年配息約 15.6 元、股價約 366 元計算，持有 1 張一年約可領 15,600 元，殖利率約 4.3%。實際配息以廣達股東會決議為準。</p>
+        <p>以 2025 年度配息 15.6 元、參考股價 341.50 元（2026-09-23）計算，持有 1 張一年約可領 15,600 元，參考殖利率約 4.57%。實際配息以廣達股東會決議為準。</p>
         <h3>廣達多久配息一次？</h3>
         <p>廣達（2382）為年配息，每年配發一次現金股利。</p>
         <h2>資料來源與免責</h2>
-        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2382" target="_blank" rel="noopener">Goodinfo（2382）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
+        <p style="font-size:.88rem;color:#888;">本頁參考股價為台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）2026-09-23 收盤公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2382" target="_blank" rel="noopener">Goodinfo（2382）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
         <h2>延伸閱讀</h2>
         <ul>
             <li><a href="/articles/hon-hai-dividend">鴻海（2317）配息計算</a></li>
             <li><a href="/articles/tsmc-dividend-calculator">台積電（2330）配息計算</a></li>
             <li><a href="/articles/dividend-yield-explained">殖利率是什麼？怎麼算</a></li>
             <li><a href="/articles/high-yield-stock-trap">高殖利率股票的陷阱</a></li>
-        
+
             <li><a href="/articles/ase-dividend" style="color:#0891b2;">日月光投控（3711）配息怎麼算？一張領多少？2026 股利試算</a></li>
 
             <li><a href="/articles/cathay-financial-dividend" >國泰金（2882）配息怎麼算？股利與殖利率試算</a></li>
@@ -168,19 +312,19 @@
     <div>
       <div class="article-faq-item">
         <h3>廣達一張一年配息多少？</h3>
-        <p>以 2025 年配息約 15.6 元、股價約 366 元計算，持有 1 張一年約可領 15,600 元，殖利率約 4.3%。實際配息以廣達股東會決議為準。</p>
+        <p>以 2025 年度配息 15.6 元、參考股價 341.50 元（2026-09-23）計算，持有 1 張一年約可領 15,600 元，參考殖利率約 4.57%。實際配息以廣達股東會決議為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>廣達多久配息一次？</h3>
         <p>廣達（2382）為年配息，每年配發一次現金股利。</p>
       </div>
       <div class="article-faq-item">
-        <h3>廣達殖利率為什麼偏低？</h3>
-        <p>因為股價受 AI 題材推升而走高，配息 ÷ 股價後殖利率被壓低到約 2～3%，它的報酬主要來自股價成長而非配息。</p>
+        <h3>廣達殖利率大概多少？</h3>
+        <p>以 2025 年度配息 15.6 元、參考股價 341.50 元（2026-09-23）計算，參考殖利率約為 4.57%。股價受 AI 題材推升時，同樣的配息金額除以較高股價會讓殖利率相對走低，廣達的報酬因此有相當比例來自股價成長，而非單靠配息。</p>
       </div>
         <div class="article-faq-item">
-          <h3>廣達殖利率低，還適合存股嗎？</h3>
-          <p>廣達（2382）是台灣 AI 伺服器重要供應商，近年受惠 AI 熱潮獲利大幅成長，但股價也大漲導致殖利率下降。若看重現金股息，傳統高股息 ETF 更合適；若看好 AI 成長趨勢，廣達的資本利得潛力較強。</p>
+          <h3>廣達殖利率不算高，還適合存股嗎？</h3>
+          <p>廣達（2382）是台灣 AI 伺服器重要供應商，近年受惠 AI 熱潮獲利大幅成長，配息也隨之成長，但股價漲幅更快，使殖利率相對受壓抑。若看重現金股息比例，傳統高股息 ETF 可能更合適；若看好 AI 成長趨勢，廣達的資本利得潛力較強。</p>
         </div>
     </div>
   </section>

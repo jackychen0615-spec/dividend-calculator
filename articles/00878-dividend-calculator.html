@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/00878-dividend-calculator">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -91,58 +92,173 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-08-09</span>
         </div>
 
-        <p><strong>00878（國泰永續高股息 ETF）股息計算器：配息怎麼算？</strong>採季配息、一年配 4 次。2025年配息合計 1.77 元，以近期股價約 32.81 元（2026/08/07 TWSE收盤）計算、殖利率約 5.4%；持有 1 張（1,000 股）一年約可領 <strong>1,770 元</strong>（每季均約 0.44 元）。下方計算器已帶入 00878 數字，改成你的買入價與張數即可立即試算。</p>
+        <p><strong>00878（國泰永續高股息 ETF）股息計算器：配息怎麼算？</strong>採季配息、一年配 4 次。2025年配息合計 1.77 元，以近期股價約 32.81 元（2026/08/07 TWSE收盤）計算、殖利率約 5.4%；持有 1 張（1,000 股）一年約可領 <strong>1,770 元</strong>（每季均約 0.44 元）。下方已依此為你試算，輸入你的持有張數即可立即看到結果，股價與股利也可以手動調整。</p>
 
-        <!-- 內嵌：00878 配息即時試算器 -->
-        <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);">
-          <div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;">
-            <div style="font-size:1.05rem;color:#fff;margin:0;font-weight:600;">00878 股息計算器（改成你的數字）</div>
-            <p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入近期股價 32.81、年配息 1.77 元，改數字即時重算</p>
-          </div>
-          <div style="padding:1.1rem 1.25rem;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;">
-              <div>
-                <label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label>
-                <input type="number" id="gcP" inputmode="decimal" value="32.81" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+        <!-- 00878 Reference Template Prototype（Phase 2）：
+             Quick Answer → Progressive Input（只問持有數量）→ 個人化結果 → Next Intent
+             沿用 Phase 1 首頁核准的 UX 原則。gcP/gcS/gcD/gcY/gcC/gcT 這幾個 id 完全不變，
+             etf-live.js 的即時同步機制原封不動——只是把外層視覺重新組織，
+             並讓 Quick Answer 直接讀同一份 calc() 算出來的資料，不再另外打一份數字。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">00878 股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <!-- Quick Answer：00878 已知資料（股價/年度配息/頻率/殖利率），跟下面計算器同一份資料來源。
+                 Phase 3 補充規則 1：股價一律標「最新參考股價」，不因 API 成功就標「即時」
+                 （API 可能是 cache／盤後收盤價，backend 無法精準判斷時採保守 wording）。 -->
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k" id="qaPriceLabel">最新參考股價</div><div class="v" id="qaPrice">32.81 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">1.77 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k" id="qaYieldLabel">參考殖利率</div><div class="v green" id="qaYield">5.39%</div></div>
               </div>
-              <div>
-                <label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label>
-                <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-08-07・資料來源：台灣證券交易所＋國泰投信公告（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <!-- Progressive Input：主要只問持有數量 -->
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <!-- 進階設定：股價／每股股利手動調整，預設收合 -->
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="32.81" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.77" min="0" step="0.01">
+                </div>
               </div>
-            </div>
-            <div>
-              <label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label>
-              <input type="number" id="gcD" inputmode="decimal" value="1.77" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+            </details>
+
+            <!-- 個人化結果。gcCLabel 固定「參考市值」，因為它是由「最新參考股價」算出來的，
+                 不應該比它的來源數字標得更肯定（避免「股價是參考、市值卻叫目前」的矛盾）。 -->
+            <div class="etf-proto-result">
+              <div class="yield-label" id="gcYLabel">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">5.39</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k" id="gcCLabel">參考市值</div>
+                  <div class="v" id="gcC">32,810</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">1,770</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 1.77 元估算的參考殖利率（非保證未來配息）</p>
             </div>
           </div>
-          <div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;">
-            <div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div>
-            <div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">5.39</span>%</div>
-            <div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;">
-              <div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">32,810</span> 元</div></div>
-              <div style="width:1px;background:var(--border-color);"></div>
-              <div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">1,770</span> 元</div></div>
-            </div>
-          </div>
-          <div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);">
-            <a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算季配息／幾年回本？用完整股利計算器 &rarr;</a>
+
+          <!-- Next Intent：問題導向，不列工具名稱 -->
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買 00878 會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/0056-vs-00878" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟 0056 比較，哪個更適合我？</span>
+            </a>
           </div>
         </div>
         <script>
+        // Page Data Contract：這個物件是本頁 Quick Answer 與 Calculator「唯一共用」的
+        // 資料來源（不是兩邊各自硬編碼）。
+        // Phase 3 補充規則 1：priceDate/sourceStatus 改名為 priceAsOf/priceStatus，
+        // priceStatus 預留 "realtime"|"delayed"|"close"|"fallback" 給未來版本用，
+        // 但 v1 不管 priceStatus 是什麼，畫面文字一律固定顯示「最新參考股價」——
+        // 因為目前 API 可能回傳 cache 或盤後收盤價，backend 還無法精準分辨，
+        // 貿然標「即時」會誤導使用者。只有 priceAsOf（資料時間）跟實際數字會變動。
+        window.GULICALC_PAGE_DATA = {
+          symbol: "00878",
+          name: "國泰永續高股息",
+          price: 32.81,
+          priceAsOf: "2026-08-07",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          annualDividend: 1.77,
+          dividendYear: "2025",
+          frequency: "季配",
+          yield: 5.39,
+          source: "台灣證券交易所＋國泰投信公告"
+        };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
           if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
           function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+
+          function renderFreshness(){
+            var qaSource = document.getElementById('qaSource');
+            // 標籤固定不隨 priceStatus 切換（v1 保守 wording，見上方註解）。
+            // 只有資料時間跟著 PD.priceAsOf 更新。
+            if (qaSource) {
+              qaSource.textContent = '資料時間 ' + PD.priceAsOf + '・資料來源：' + PD.source + '（非即時，實際配息以官方最新公告為準）';
+            }
+          }
+
           function calc(){
             var price=Math.max(0,parseFloat(p.value)||0);
             var lots=Math.max(0,parseFloat(s.value)||0);
             var div=Math.max(0,parseFloat(d.value)||0);
             var shares=lots*1000;
-            document.getElementById('gcY').textContent=(price>0?div/price*100:0).toFixed(2);
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price = price;
+            PD.annualDividend = div;
+            PD.yield = parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
             document.getElementById('gcC').textContent=fmt(shares*price);
             document.getElementById('gcT').textContent=fmt(shares*div);
+            // Quick Answer 跟計算器讀同一個 PD 物件，不再另外硬編碼一份數字，
+            // 避免同頁出現兩組不一致的股價/配息/殖利率。
+            var qaPrice=document.getElementById('qaPrice');
+            var qaDiv=document.getElementById('qaDiv');
+            var qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+
+          // 訂閱 etf-live.js 廣播的資料更新事件。priceStatus 存 'close'（保守假設：
+          // /api/etf-dividends 目前回的多半是收盤價，不是真正 tick-level 即時報價）；
+          // 這個值目前不驅動任何文字切換，純資料層預留給未來版本用。
+          document.addEventListener('gulicalc:live-price-updated', function(ev){
+            if (!ev.detail || ev.detail.code !== PD.symbol) return;
+            PD.priceStatus = 'close';
+            PD.priceAsOf = new Date().toISOString().slice(0,10);
+            renderFreshness();
+            calc();
+          });
+
+          renderFreshness();
           calc();
         })();
         </script>
@@ -183,7 +299,8 @@
         <p style="font-size:.88rem;color:#888;">資料來源：<a href="https://tw.stock.yahoo.com/quote/00878.TW/dividend" target="_blank" rel="noopener">Yahoo股市</a>、<a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=00878" target="_blank" rel="noopener">Goodinfo 台灣股市資訊網</a>。<svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21L12 2l11 19H1zm11-3h2v2h-2v-2zm0-7h2v5h-2V11z"/></svg> 每季實際配息請以<a href="https://www.cathaysite.com.tw/ETF/detail/ECN" target="_blank" rel="noopener">國泰投信官網</a>公告為準。</p>
 
         <h2>00878 股息累積試算：早買早知道賺多少</h2>
-        <p>用上面「歷年配息紀錄」的實際數字，算出如果你從某一年就開始持有，這幾年<strong>實際累積收到多少股息</strong>——只算股息，不含股價漲跌，跟股價無關。</p>
+        <p><span class="etf-proto-secondary-label">換個問題</span></p>
+        <p>用上面「歷年配息紀錄」的實際數字，算出如果你從某一年就開始持有，這幾年<strong>實際累積收到多少股息</strong>——只算股息，不含股價漲跌，跟股價無關。跟上面的試算器是兩個不同問題：上面算「現在買，一年能領多少」，這裡算「當初買了，到現在總共領了多少」。</p>
         <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);">
           <div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;">
             <div style="font-size:1.05rem;color:#fff;font-weight:600;">00878 股息累積試算</div>

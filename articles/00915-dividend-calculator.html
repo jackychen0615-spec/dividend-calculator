@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/00915-dividend-calculator">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -43,7 +44,7 @@
         "description": "00915凱基優選高股息30配息計算：2025年季配息、殖利率試算、持有幾張每年領多少，附即時試算工具。",
         "url": "https://gulicalc.com/articles/00915-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-07-22",
+        "dateModified": "2026-09-23",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00915配息,00915殖利率,凱基優選高股息30配息,00915季配息,00915配息計算器",
         "mainEntityOfPage": {
@@ -95,13 +96,176 @@
         <h1>00915（凱基優選高股息30）配息怎麼算？殖利率試算</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-07-22</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-09-23</span>
         </div>
 
-        <p><strong>00915（凱基優選高股息30）是季配息高股息 ETF。</strong>以 2025 年配息約 1.35 元、近期股價約 31.6 元計算，持有 1 張（1,000 股）一年約可領 1,350 元，殖利率約 4.3%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00915（凱基優選高股息30）是季配息高股息 ETF。</strong>以官方逐筆配息公告加總，近12個月（2025-09-24至2026-09-23）配息合計 1.78 元；參考股價 33.20 元（2026-09-23，台灣證券交易所收盤價）。持有 1 張（1,000 股）近12個月約可領 1,780 元，參考殖利率約 5.36%。以下整理完整配息紀錄、持有不同張數能領多少、稅務與常見問題。</p>
+
+        <!-- 00915 Phase 3C.2 Core Template rollout：取代原本的靜態 Quick Answer 段落。
+             核准的 canonical 資料如下（近12個月＝TTM，逐筆核對凱基投信 kgifund.com.tw 官方公告，
+             交叉比對台灣證交所ETF專區已實現配息紀錄表）：
+               2025/12/16 除息：0.350元（期後公告確認之實際配息金額）
+               2026/03/17 除息：0.380元（官方預告估計值；已與TWSE ETF專區已實現配息紀錄表交叉驗證，
+                                          顯示按預告金額實際發放）
+               2026/06/16 除息：0.450元（同上，官方預告估計值，已與TWSE ETF專區交叉驗證）
+               2026/09/16 除息：0.600元（確認金額，見凱基投信官網即時配息紀錄表）
+               合計：0.350+0.380+0.450+0.600 = 1.78元（TTM，近12個月，期間橫跨2025與2026兩個曆年）
+
+             ★ 重要：這個1.78元「絕對不可」被稱為「2025年配息」或「FY2025年度配息」——
+             它是橫跨2025/09/24～2026/09/23的近12個月逐筆加總，不是單一曆年度數字。
+             凡是Quick Answer／試算機預設值／殖利率計算，一律使用這個近12個月1.78元，
+             並明確標示「近12個月配息」。
+
+             原production頁的「2025年配息1.35元」是2025整個曆年度（2025/01-12）的配息合計，
+             予以保留，但移到下方「歷史配息紀錄」區塊，並明確重新標示為
+             「2025年度（已結束）配息合計 1.35元」，與上方近12個月現值的Quick Answer區隔開。
+
+             股價31.6元（無日期）更新為核准的33.20元，並附上明確日期2026-09-23
+             （台灣證券交易所收盤價，非基金淨值NAV——ETF市價與NAV是兩回事，本站一律採市價）。
+
+             殖利率：1.78÷33.20×100 = 5.36%（現值，TTM基準）。
+             若需引用2025整年度基準作歷史對照，1.35÷33.20≈4.07%——已在歷史區塊清楚標示為
+             「以2025年度配息基準計算的歷史對照殖利率」，不與上方5.36%的Quick Answer混用。
+
+             刪除項目（無佐證來源，予以移除，不再使用）：
+               - 原「00915適合存股嗎」段落中的「殖利率約4～6%」（無計算依據、與頁面任何算式都對不上）
+               - 原FAQ「00915殖利率是多少？」段落中的「近年平均約5～6%」（同樣無佐證來源）
+             以上兩處已刪除，改用有明確來源、有算式依據的5.36%（TTM）數字替代。
+
+             「近年配息穩定」敘述之修正：官方逐筆配息加總顯示2023/2024/2025三個曆年度配息分別為
+             1.69／3.01／1.35元，波動幅度超過2倍（2024年為2023年的1.78倍，2025年僅為2024年的
+             44.9%），與原文「近年配息穩定」直接矛盾。已改寫為誠實揭露此波動區間，並補充說明
+             TTM已回升至1.78元的現況，不再使用「穩定」字樣描述配息趨勢。
+
+             stockDividendParValuePerShare：00915為純現金分配ETF，無股票股利，此欄位不適用，
+             未於GULICALC_PAGE_DATA中臆造數字，予以省略。
+        -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">00915 股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">33.20 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">1.78 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">5.36%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-09-23・資料來源：台灣證券交易所（股價，2026-09-23收盤，非基金淨值NAV）＋凱基投信官方收益分配公告（逐筆加總，2025/09/24–2026/09/23近12個月）。非即時，實際配息與股價請以官方最新公告為準。</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="33.20" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">近12個月配息合計（元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.78" min="0" step="0.001">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">5.36</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">33,200</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">12個月股利試算</div>
+                  <div class="v green" id="gcT">1,780</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依近12個月（2025/09/24–2026/09/23）配息合計 1.78 元估算的參考殖利率（非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每季定期定額買 00915 會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的季領目標還有多久？</span>
+            </a>
+            <a href="/articles/00878-dividend-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟 00878 比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "00915",
+          name: "凱基台灣優選高股息30",
+          price: 33.20,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 1.78, // TTM sum of 4 quarterly distributions (2025/12/16+2026/03/17+2026/06/16+2026/09/16)
+          dividendBasis: "TTM", // 近12個月，絕對不可標示為「2025年配息」，期間橫跨2025與2026兩個曆年
+          periodStart: "2025-09-24",
+          periodEnd: "2026-09-23",
+          frequency: "季配",
+          yield: 5.36, // = 1.78/33.20*100
+          stockDividendParValuePerShare: null, // 00915為純現金分配ETF，無股票股利，不適用，未臆造數字
+          source: "台灣證券交易所（股價，2026-09-23收盤，非基金淨值NAV）＋凱基投信官方收益分配公告（逐筆加總）"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依近12個月（2025/09/24–2026/09/23）配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
         <h2>00915 是什麼？</h2>
-        <p>凱基優選高股息30 ETF（股票代號：00915）由凱基投信發行，採季配息，鎖定兼具高殖利率與獲利品質的 30 檔個股。近年配息穩定，是中價位高股息 ETF 的選擇之一。</p>
+        <p>凱基優選高股息30 ETF（股票代號：00915）由凱基投信發行，採季配息，鎖定兼具高殖利率與獲利品質的 30 檔個股。官方逐筆配息公告顯示，00915 的配息金額會隨市況與成分股獲利表現而季度間波動（詳見下方歷史配息紀錄），是中價位高股息 ETF 的選擇之一。</p>
         <ul>
           <li><strong>發行：</strong>凱基投信</li>
           <li><strong>類型：</strong>高股息</li>
@@ -112,27 +276,62 @@
         <h2>00915 配息計算公式</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>單季領息金額 = 每股單季配息 × 持有股數</strong><br><br>
-          <strong>年度總配息 = 全年配息加總 × 持有股數</strong><br><br>
-          <strong>殖利率 = 年度每股配息 ÷ 買入股價 × 100%</strong>
+          <strong>近12個月總配息 = 近4季配息加總 × 持有股數</strong><br><br>
+          <strong>殖利率 = 近12個月每股配息 ÷ 買入股價 × 100%</strong>
         </div>
 
-        <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年配息 1.35 元、買入股價 31.6 元為例（殖利率約 4.3%）：</p>
+        <h2>00915 近12個月配息紀錄（TTM）</h2>
+        <p>以下為官方逐筆公告的近12個月（2025-09-24至2026-09-23）4次季配息明細，經交叉比對凱基投信官網與台灣證交所ETF專區已實現配息紀錄：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每季配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">除息日</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:right;">每股配息（元）</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:right;">備註</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">31,600.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">338 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,350 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">158,000.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,688 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>6,750 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">316,000.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,375 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>13,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,580,000.0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">16,875 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>67,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">4.3%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2025-12-16</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.350</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">期後公告確認之實際金額</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2026-03-17</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.380</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">官方預告估計值，已與TWSE交叉驗證</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026-06-16</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.450</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">官方預告估計值，已與TWSE交叉驗證</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2026-09-16</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.600</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">確認金額（凱基投信官網即時配息紀錄）</td></tr>
+            <tr style="background:#eef7ee;"><td style="padding:8px;border:1px solid #ddd;"><strong>近12個月合計</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1.78</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">= 0.350+0.380+0.450+0.600</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:.88rem;color:#888;">配息金額以凱基投信官網公告為準，本表為整理參考。此為「近12個月」逐筆加總（橫跨2025與2026兩個曆年），並非單一曆年度的配息總額。</p>
+
+        <h2>歷史配息紀錄（按曆年度）</h2>
+        <p>若想參考00915過去每個完整曆年度的配息總額（與上方近12個月現值口徑不同，僅供歷史趨勢參考）：</p>
+        <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+          <thead><tr style="background:#f5f5f5;">
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">年度</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:right;">全年配息合計（元）</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:right;">備註</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2023年度</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.69</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"></td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2024年度</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.01</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">較2023年成長約78%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2025年度（已結束）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.35</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">較2024年下滑約55%</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>2025年度（已結束）配息合計 1.35元</strong>是單一曆年度（2025/01–12）的配息總額，與本頁上方Quick Answer所用的「近12個月1.78元」是不同口徑（近12個月涵蓋2025/09/24至2026/09/23，包含跨入2026年的兩次配息），請勿混用。若以2025年度基準計算歷史對照殖利率，約為 1.35÷33.20≈4.07%（歷史對照用，非現值）。</p>
+        <p style="font-size:.88rem;color:#888;">2023/2024/2025三個曆年度配息波動超過2倍（2024年為2023年的1.78倍，2025年僅為2024年的44.9%），顯示00915的配息金額會隨成分股獲利與市況明顯波動，並非逐年穩定成長或持平。近12個月（TTM）已回升至1.78元，優於2025整年度的1.35元，但仍建議以官方最新公告為準，不宜假設未來配息會維持固定水準。</p>
+
+        <h2>持有不同張數近12個月能領多少？</h2>
+        <p>以近12個月配息合計 1.78 元、參考股價 33.20 元（2026-09-23）為基準：</p>
+        <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
+          <thead><tr style="background:#f5f5f5;">
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本（約）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每季平均配息（元）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">近12個月總配息（元）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">參考殖利率</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">33,200 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 445 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,780 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.36%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">166,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 2,225 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>8,900 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.36%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">332,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 4,450 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>17,800 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.36%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,660,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 22,250 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>89,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.36%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
 
         <h2>00915 適合存股嗎？</h2>
-        <p>00915 季配息、殖利率約 4～6%，配息來源可能含收益平準金。它的選股納入獲利品質，相對偏穩健，適合想要季配現金流的存股族。建議與其他高股息 ETF 比較成分股重疊度再決定配置。</p>
+        <p>00915 季配息、以近12個月配息計算參考殖利率約 5.36%（配息來源可能含收益平準金）。它的選股納入獲利品質，但官方歷史數據顯示配息金額季度間、年度間波動幅度不小（2023-2025三個曆年度合計在1.35~3.01元之間變動），並非固定不變。適合想要季配現金流、且能接受配息金額隨市況波動的存股族。建議與其他高股息 ETF 比較成分股重疊度，並以官方最新公告的配息金額為準再決定配置。</p>
 
         <h2>00915 稅後配息怎麼算？</h2>
         <ul>
@@ -142,45 +341,46 @@
         <p>詳細稅務計算請參考<a href="/articles/dividend-tax-calculator">稅後股利計算完整指南</a>。</p>
 
         <h2>常見問題</h2>
-        <h3>00915 一張一年配息多少？</h3>
-        <p>以 2025 年配息約 1.35 元、近期股價約 31.6 元計算，持有 1 張一年約可領 1,350 元，殖利率約 4.3%。實際配息以凱基投信公告為準。</p>
+        <h3>00915 一張近12個月配息多少？</h3>
+        <p>以近12個月（2025-09-24至2026-09-23）配息合計 1.78 元、參考股價 33.20 元（2026-09-23，台灣證券交易所收盤價）計算，持有 1 張近12個月約可領 1,780 元，參考殖利率約 5.36%。實際配息以凱基投信公告為準。</p>
         <h3>00915 多久配息一次？</h3>
         <p>00915 採季配息，每年配息 4 次。</p>
         <h2>資料來源與免責</h2>
-        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=00915" target="_blank" rel="noopener">Goodinfo（00915）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
+        <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）2026-09-23收盤價（非基金淨值NAV），配息紀錄整理自凱基投信官方收益分配公告，逐筆核對並交叉比對台灣證交所ETF專區已實現配息紀錄表。文中數字為參考值，實際配息、除息日與股價請以凱基投信官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
         <h2>延伸閱讀</h2>
         <ul>
             <li><a href="/articles/0056-dividend-calculator">0056 配息計算</a></li>
             <li><a href="/articles/00878-dividend-calculator">00878 配息計算</a></li>
             <li><a href="/articles/etf-dividend-yield-comparison">ETF 殖利率完整比較</a></li>
             <li><a href="/articles/high-dividend-yield-stocks">高股息股票完整解析</a></li>
-        
+
             <li><a href="/articles/00927-dividend-calculator" style="color:#0891b2;">00927（群益半導體收益）配息怎麼算？殖利率與風險試算</a></li>
 
             <li><a href="/articles/00918-dividend-calculator" >00918（大華優利高填息30）配息怎麼算？殖利率試算</a></li>
 </ul>
 
         <p>立即使用 <a href="/">股利計算器</a>，輸入你的00915買入價格與持股數量，精確試算配息金額！</p>
-    </article>
+    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid #e5e7eb;font-size:.82rem;color:#6b7280;"><p><strong>資料來源：</strong>台灣證券交易所、公開資訊觀測站、凱基投信官方公告。</p><p>本文僅供參考，不構成任何投資建議。投資有風險，請自行評估。</p></div>
+</article>
     <div class="ad-slot" data-ad-pos="article-end"></div>
       <section class="article-faq">
     <h2>常見問題 FAQ</h2>
     <div>
       <div class="article-faq-item">
-        <h3>00915 一張一年配息多少？</h3>
-        <p>以 2025 年配息約 1.35 元、近期股價約 31.6 元計算，持有 1 張一年約可領 1,350 元，殖利率約 4.3%。實際配息以凱基投信公告為準。</p>
+        <h3>00915 一張近12個月配息多少？</h3>
+        <p>以近12個月（2025-09-24至2026-09-23）配息合計 1.78 元、參考股價 33.20 元（2026-09-23，台灣證券交易所收盤價）計算，持有 1 張近12個月約可領 1,780 元，參考殖利率約 5.36%。實際配息以凱基投信公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00915 多久配息一次？</h3>
         <p>00915 採季配息，每年配息 4 次。</p>
       </div>
       <div class="article-faq-item">
-        <h3>00915 殖利率多少？</h3>
-        <p>以 2025 年配息約 1.35 元、近期股價約 31.6 元計算，殖利率約 4.3%；近年平均約 5～6%，會依買入價格而異。</p>
+        <h3>00915 殖利率是多少？</h3>
+        <p>以近12個月配息合計1.78元、參考股價33.20元（2026-09-23，台灣證券交易所收盤價）計算，00915參考殖利率約 5.36%。若以已結束的2025整年度配息1.35元為基準，歷史對照殖利率約4.07%（僅供歷史對照，非現值）。實際殖利率依你的買入價格而定，建議用股利計算器輸入自己的成本試算。</p>
       </div>
         <div class="article-faq-item">
           <h3>00915 的配息穩定嗎？適合存股嗎？</h3>
-          <p>00915（凱基優選高股息 30 ETF）採季配息，殖利率相對較高。建議查看近幾季的實際配息紀錄，並用<a href='/'>股利計算器</a>輸入你的買入成本確認合理殖利率，再做存股決定。</p>
+          <p>00915（凱基優選高股息 30 ETF）採季配息。官方逐筆配息公告顯示2023/2024/2025三個曆年度配息分別為1.69／3.01／1.35元，波動幅度超過2倍，並非「穩定」，而是會隨成分股獲利與市況明顯變動；近12個月已回升至1.78元。建議查看近幾季的實際配息紀錄，並用<a href='/'>股利計算器</a>輸入你的買入成本確認合理殖利率，再做存股決定。</p>
         </div>
     </div>
   </section>
@@ -256,5 +456,7 @@ function closeTools(){document.getElementById('toolModal').classList.remove('ope
 </script>
 
 <script src="../js/theme.js?v=20260530f"></script>
+<script>window.ETF_CODE="00915";</script>
+<script src="../js/etf-live.js?v=20260712a"></script>
 </body>
 </html>

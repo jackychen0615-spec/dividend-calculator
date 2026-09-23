@@ -31,6 +31,7 @@
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="canonical" href="https://gulicalc.com/articles/tsmc-dividend-calculator">
   <link rel="stylesheet" href="../css/style.css?v=20260714a">
+  <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -93,54 +94,128 @@
 
       <p><strong>台積電（2330）配息怎麼算？公式是「現金股利 ＝ 每股配息 × 持有股數」。</strong>台積電採季配息、<strong>一年配 4 次，分別在 3、6、9、12 月辦理除息</strong>（股息約於隔月的 4、7、10 月及隔年 1 月匯入帳戶）。2025 年全年配息合計 22 元；以持有 1 張（1,000 股）為例，全年可領 22 × 1,000 ＝ <strong>22,000 元</strong>，單季約 5,000～6,000 元。下方計算器已帶入台積電數字，輸入你的股價與張數，即可算出實領金額與殖利率。</p>
 
-      <!-- 內嵌：台積電股利即時試算器（預帶 2025 全年配息 22 元）-->
-      <div id="tsmcCalc" style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);">
-        <div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;">
-          <div style="font-size:1.05rem;color:#fff;margin:0;font-weight:600;">台積電配息試算（改成你的數字）</div>
-          <p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入 2025 全年配息 22 元，改股價／張數即時重算</p>
-        </div>
-        <div style="padding:1.1rem 1.25rem;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;">
-            <div>
-              <label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label>
-              <input type="number" id="gcP" inputmode="decimal" value="2425" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+      <!-- 2330 Phase 3 Batch 3 Template：Core module only（Calc#1 現在買一張領多少）。
+           修正一個原本就存在的 production 錯誤：這個計算器的說明文字寫「已帶入
+           2025 全年配息 22 元」，但 gcD 的 value 其實是 24、gcP 是 2425——
+           跟文章其他地方（歷年配息表、FAQ、meta description）用的 22元／2,395元
+           對不起來。新的 Page Data Contract 用 22／2,395，跟頁面主要敘述一致。
+           下面的 Calc#2（股息累積試算，dhLots/dhYear）維持不變——它是 Optional
+           module，本來就有自己的一組真實歷史資料，不用跟著改，也不合併進 Calc#1。 -->
+      <div class="etf-proto">
+        <div class="etf-proto-card">
+          <div class="head">
+            <div class="title">台積電股息試算</div>
+            <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+          </div>
+
+          <div class="etf-proto-qa">
+            <div class="etf-proto-qa-grid">
+              <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">2,395.00 元</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">22.00 元</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
+              <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">0.92%</div></div>
             </div>
-            <div>
-              <label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label>
-              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+            <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-08-12・資料來源：台灣證券交易所＋台積電公告（非即時，實際配息以官方最新公告為準）</p>
+          </div>
+
+          <div class="etf-proto-primary">
+            <label for="gcS">你持有幾張？</label>
+            <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+            <span class="hint">單位：張（1 張 = 1,000 股）</span>
+          </div>
+
+          <details class="etf-proto-advanced">
+            <summary>進階設定／手動調整股價與股利</summary>
+            <div class="grid">
+              <div>
+                <label for="gcP">股價（元）</label>
+                <input type="number" id="gcP" inputmode="decimal" value="2395" min="0" step="0.01">
+              </div>
+              <div>
+                <label for="gcD">每股股利（全年，元）</label>
+                <input type="number" id="gcD" inputmode="decimal" value="22" min="0" step="0.01">
+              </div>
             </div>
-          </div>
-          <div>
-            <label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label>
-            <input type="number" id="gcD" inputmode="decimal" value="24" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;">
+          </details>
+
+          <div class="etf-proto-result">
+            <div class="yield-label">參考殖利率</div>
+            <div class="yield-value"><span id="gcY">0.92</span>%</div>
+            <div class="etf-proto-result-grid">
+              <div class="etf-proto-result-cell">
+                <div class="k">參考市值</div>
+                <div class="v" id="gcC">2,395,000</div>
+                <div class="note">元（=股價×張數，非實際投入成本）</div>
+              </div>
+              <div class="etf-proto-result-cell">
+                <div class="k">年度股利試算</div>
+                <div class="v green" id="gcT">22,000</div>
+                <div class="note">元</div>
+              </div>
+            </div>
+            <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 22.00 元估算的參考殖利率（非保證未來配息）</p>
           </div>
         </div>
-        <div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;">
-          <div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div>
-          <div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">0.99</span>%</div>
-          <div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;">
-            <div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">2,425,000</span> 元</div></div>
-            <div style="width:1px;background:var(--border-color);"></div>
-            <div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">24,000</span> 元</div></div>
-          </div>
-        </div>
-        <div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);">
-          <a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算季配息／幾年回本？用完整股利計算器 &rarr;</a>
+
+        <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+        <div class="etf-proto-intent-grid">
+          <a href="/compound-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+            <span class="txt">長期持有 10 年後可能有多少？</span>
+          </a>
+          <a href="/dca-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+            <span class="txt">每月定期定額買台積電會怎樣？</span>
+          </a>
+          <a href="/payback-calculator" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <span class="txt">輸入我的成本，精算回本年數</span>
+          </a>
+          <a href="/goal" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+            <span class="txt">距離我的月領目標還有多久？</span>
+          </a>
+          <a href="/articles/hon-hai-dividend" class="etf-proto-intent-card">
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+            <span class="txt">跟鴻海比較，哪個更適合我？</span>
+          </a>
         </div>
       </div>
       <script>
+      window.GULICALC_PAGE_DATA = {
+        symbol: "2330",
+        name: "台積電",
+        price: 2395.00,
+        priceAsOf: "2026-08-12",
+        priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+        sourceCapability: "static_only", // 本頁沒有接即時報價來源
+        annualDividend: 22.00,
+        dividendYear: "2025",
+        frequency: "季配",
+        yield: 0.92,
+        source: "台灣證券交易所＋台積電公告"
+      };
       (function(){
         var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
         if(!p||!s||!d)return;
+        var PD = window.GULICALC_PAGE_DATA;
         function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
         function calc(){
           var price=Math.max(0,parseFloat(p.value)||0);
           var lots=Math.max(0,parseFloat(s.value)||0);
           var div=Math.max(0,parseFloat(d.value)||0);
           var shares=lots*1000;
-          document.getElementById('gcY').textContent=(price>0?div/price*100:0).toFixed(2);
+          var yieldPct=(price>0?div/price*100:0).toFixed(2);
+          PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+          document.getElementById('gcY').textContent=yieldPct;
           document.getElementById('gcC').textContent=fmt(shares*price);
           document.getElementById('gcT').textContent=fmt(shares*div);
+          var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+          if(qaPrice) qaPrice.textContent=price.toLocaleString('zh-TW',{minimumFractionDigits:2})+' 元';
+          if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+          if(qaYield) qaYield.textContent=yieldPct+'%';
+          var basisEl=document.getElementById('gcBasis');
+          if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
         }
         [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
         calc();
@@ -275,10 +350,10 @@
           <th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
         </tr></thead>
         <tbody>
-          <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,425,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>24,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.0%</td></tr>
-          <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">3 張（3,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7,275,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>72,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.0%</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">12,125,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>120,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.0%</td></tr>
-          <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">24,250,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>240,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.0%</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,395,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>22,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.9%</td></tr>
+          <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">3 張（3,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7,185,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>66,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.9%</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">11,975,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>110,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.9%</td></tr>
+          <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">23,950,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>220,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.9%</td></tr>
         </tbody>
       </table></div>
       <p>輸入你的實際買入價格試算 <svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg> <a href="/">免費股利計算器</a></p>

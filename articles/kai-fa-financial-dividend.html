@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/kai-fa-financial-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -100,6 +101,133 @@
 
         <p><strong>開發金是金融股中股價最便宜的之一，一張才一萬多塊，很多新手的第一檔金融股就是它。</strong>但開發金的配息穩定度跟官股金控差很多，2022 年甚至直接不配息。這篇完整整理開發金的歷年配息資料，也講講為什麼它的風險比較高，讓你存股前看清楚再決定。</p>
 
+        <!-- 2883 Phase 3B Batch 6：Core module only，從零建立（原頁面 CTA-only）。
+             Numeric Duplicate Map已查證：0.55元／15元／3.7%在殖利率計算、持有不同
+             張數表全部一致，無衝突。「6年平均約2.5%」是明確標示不同統計口徑（含
+             2022不配息年度的平均值），合法差異，未動。歷年表(含2022年0元不配息)是
+             Core內容,原樣保留,不刪除這個重要的風險資訊。原頁「目前股價」已改為
+             「參考股價」（無確認日期）。 -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">開發金股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">15.00 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度現金股利</div><div class="v" id="qaDiv">0.55 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.67%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">股價資料日期不明（頁面未標示，僅「最後更新2026-06-04」為文章更新日）・資料來源：台灣證券交易所＋開發金控股東會決議公告。配息波動極大（2022年曾不配息），僅供試算參考，實際配息與股價請以官方最新公告為準。</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="15" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股現金股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="0.55" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率</div>
+              <div class="yield-value"><span id="gcY">3.67</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">15,000</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">年度股利試算</div>
+                  <div class="v green" id="gcT">550</div>
+                  <div class="note">元</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度現金股利 0.55 元估算的參考殖利率（配息不穩定，2022年曾為0元，非保證未來配息，股價資料日期不明）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買開發金會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/mega-financial-dividend" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟兆豐金比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "2883",
+          name: "開發金",
+          price: 15.00,
+          priceAsOf: null,
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          annualDividend: 0.55,
+          dividendYear: "2025",
+          frequency: "年配",
+          yield: 3.67,
+          source: "台灣證券交易所＋開發金控股東會決議公告"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.annualDividend=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度現金股利 '+div.toFixed(2)+' 元估算的參考殖利率（配息不穩定，2022年曾為0元，非保證未來配息，股價資料日期不明）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
+
         <h2>開發金是什麼？</h2>
         <p>開發金控（股票代號：2883）旗下主要子公司包括中國人壽（壽險）、凱基證券（證券）、凱基銀行（銀行）。跟其他金控不同的是，開發金的獲利來源有很大一部分來自壽險的投資損益，這讓它的獲利波動比銀行型金控大很多。</p>
         <ul>
@@ -132,7 +260,7 @@
         <h2>殖利率計算</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>殖利率 = 每股現金股利 / 買入股價 x 100%</strong><br><br>
-          以 2025 年配息 0.55 元、目前股價約 15 元計算：<br>
+          以 2025 年配息 0.55 元、參考股價約 15 元計算：<br>
           <strong>殖利率 = 0.55 / 15 x 100% = 3.7%</strong>
         </div>
         <p>3.7% 的殖利率看起來還可以，但問題是這個數字不穩定。如果用 6 年平均（含不配息的 2022 年）來看，平均殖利率大概只有 2.5% 左右，就不太好看了。</p>

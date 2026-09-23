@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel="canonical" href="https://gulicalc.com/articles/taiwan-coop-dividend">
     <link rel="stylesheet" href="../css/style.css?v=20260714a">
+    <link rel="stylesheet" href="../css/etf-template-proto.css?v=1">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
@@ -98,9 +99,149 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-30</span>
         </div>
 
-        <p><strong>合庫金（5880）配息怎麼算？公式是「現金股利 ＝ 每股配息 × 持有股數」；合庫金為官股金控、採年配息。</strong>近一年現金股利約 1.05 元（114 年度改為全數配發現金），持有 1 張（1,000 股）一年約可領 <strong>1,050 元</strong>；以股價約 24.9 元計算，殖利率約 4.2%（依 TWSE 官方）。下方計算器已帶入合庫金數字，改成你的買入價即可試算。</p>
+        <p><strong>合庫金（5880）配息怎麼算？公式是「現金股利 ＝ 每股現金股利 × 持有股數」；合庫金為官股金控、採年配息，屬「現金＋股票」並配。</strong>114 年度（2026）董事會決議配發現金股利 0.80 元＋股票股利 0.25 元，現金＋股票合計 1.05 元。持有 1 張（1,000 股）現金約可領 <strong>800 元</strong>，另配約 25 股股票股利；以股價 26.75 元（2026-09-23 收盤）計算，現金殖利率約 2.99%（依 TWSE 官方，僅計現金部分）。下方計算器已帶入合庫金數字，改成你的持有張數即可試算。</p>
         <p style="font-size:.82rem;color:#888;margin:.3rem 0 1.2rem;">資料來源：<a href="https://mopsov.twse.com.tw/mops/web/t05st09_2" target="_blank" rel="noopener" style="color:#f0c040;">公開資訊觀測站－股利分派情形查詢</a>（輸入股票代號 5880 查詢）</p>
-        <div style="max-width:480px;margin:1.5rem auto;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;overflow:hidden;box-shadow:14px 18px 40px -24px rgba(13,140,132,.28);"><div style="background:radial-gradient(140% 160% at 100% 0%,#0f3b38 0%,#0a6f69 60%,#0d8c84 100%);padding:1rem 1.25rem;"><div style="font-size:1.05rem;color:#fff;font-weight:600;">合庫金配息試算（改成你的數字）</div><p style="font-size:.74rem;color:rgba(220,255,250,.78);margin:.2rem 0 0;">已帶入近期股價 27.55、年配息 1.05 元（以官方為準）；改成你的買入價即時重算</p></div><div style="padding:1.1rem 1.25rem;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem;"><div><label for="gcP" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">股價（元）</label><input type="number" id="gcP" inputmode="decimal" value="27.55" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div><div><label for="gcS" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">持有張數</label><input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div><label for="gcD" style="font-size:.76rem;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:.3rem;">每股股利（全年，元）</label><input type="number" id="gcD" inputmode="decimal" value="1.05" min="0" step="0.01" style="width:100%;padding:.65rem .8rem;background:var(--bg-input);border:1.5px solid var(--border-color);border-radius:10px;font-size:1rem;color:var(--text-primary);outline:none;font-variant-numeric:tabular-nums;"></div></div><div style="border-top:1px solid var(--border-color);padding:1rem 1.25rem 1.1rem;text-align:center;"><div style="font-size:.7rem;color:var(--text-muted);font-weight:600;">殖利率</div><div style="font-size:2rem;font-weight:800;color:#0891b2;line-height:1.15;font-variant-numeric:tabular-nums;"><span id="gcY">3.81</span>%</div><div style="display:flex;justify-content:center;gap:1.8rem;margin-top:.6rem;"><div><div style="font-size:.66rem;color:var(--text-muted);">投入成本</div><div style="font-size:1.05rem;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcC">27,550</span> 元</div></div><div style="width:1px;background:var(--border-color);"></div><div><div style="font-size:.66rem;color:var(--text-muted);">全年可領股利</div><div style="font-size:1.05rem;font-weight:700;color:#10b981;font-variant-numeric:tabular-nums;margin-top:.1rem;"><span id="gcT">1,050</span> 元</div></div></div></div><div style="text-align:center;padding:.6rem;border-top:1px solid var(--border-color);"><a href="/" style="font-size:.78rem;color:#0891b2;text-decoration:none;font-weight:600;">想算回本年數／比較多檔？用完整股利計算器 &rarr;</a></div></div><script>(function(){var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');if(!p||!s||!d)return;function fmt(n){return Math.round(n).toLocaleString('zh-TW');}function calc(){var pr=Math.max(0,parseFloat(p.value)||0),lo=Math.max(0,parseFloat(s.value)||0),dv=Math.max(0,parseFloat(d.value)||0),sh=lo*1000;document.getElementById('gcY').textContent=(pr>0?dv/pr*100:0).toFixed(2);document.getElementById('gcC').textContent=fmt(sh*pr);document.getElementById('gcT').textContent=fmt(sh*dv);}[p,s,d].forEach(function(e){e.addEventListener('input',calc);});calc();})();</script>
+
+        <!-- ============================================================
+             Phase 3C.2 已確認修正（Exception Resolution）：
+             production（taiwan-coop-dividend.html）原文寫「114 年度起合庫金
+             改為全數配發現金」，此為錯誤敘述。官方事實（合庫金控董事會決議
+             2026-03-23、股東會決議 2026-06-18）為：114 年度（2026）仍維持
+             現金＋股票混合配息，現金股利 0.80 元＋股票股利 0.25 元（面額），
+             合計 1.05 元，延續過去慣例（如 113 年度現金 0.70 元＋股票 0.30 元）。
+             本頁已將「全數配發現金」的錯誤敘述改為正確的現金＋股票拆分；
+             並將「1.05 元」統一標示為「現金＋股票股利合計」，不得再標示為
+             單一「現金股利」。Core Template 的殖利率／現金試算只使用現金
+             股利 0.80 元計算，股票股利 0.25 元（面額）僅作為單獨揭露的事實
+             （比照 first-financial-dividend 的現金/股票
+             拆分寫法），不併入現金殖利率或現金收入試算。
+             來源：台灣證券交易所（股價，2026-09-23 收盤）＋合庫金控董事會
+             決議公告（2026-03-23）／股東會決議（2026-06-18）。
+        ============================================================ -->
+        <div class="etf-proto">
+          <div class="etf-proto-card">
+            <div class="head">
+              <div class="title">合庫金股息試算</div>
+              <div class="sub">已知資料不用重填，直接輸入你的持有數量</div>
+            </div>
+
+            <div class="etf-proto-qa">
+              <div class="etf-proto-qa-grid">
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">26.75 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">114年度現金股利</div><div class="v" id="qaDiv">0.80 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配（現金＋股票）</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率（現金）</div><div class="v green" id="qaYield">2.99%</div></div>
+              </div>
+              <p class="etf-proto-qa-source" id="qaSource">此為現金股利部分；114年度另配股票股利 0.25 元（面額，約每張配 25 股），未計入本殖利率與現金收入試算。股價時間 2026-09-23・資料來源：台灣證券交易所（股價）＋合庫金控董事會決議公告 2026-03-23（非即時，實際配息以官方最新公告為準）</p>
+            </div>
+
+            <div class="etf-proto-primary">
+              <label for="gcS">你持有幾張？</label>
+              <input type="number" id="gcS" inputmode="numeric" value="1" min="0" step="1">
+              <span class="hint">單位：張（1 張 = 1,000 股）</span>
+            </div>
+
+            <details class="etf-proto-advanced">
+              <summary>進階設定／手動調整股價與現金股利</summary>
+              <div class="grid">
+                <div>
+                  <label for="gcP">股價（元）</label>
+                  <input type="number" id="gcP" inputmode="decimal" value="26.75" min="0" step="0.01">
+                </div>
+                <div>
+                  <label for="gcD">每股現金股利（全年，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="0.80" min="0" step="0.01">
+                </div>
+              </div>
+            </details>
+
+            <div class="etf-proto-result">
+              <div class="yield-label">參考殖利率（現金）</div>
+              <div class="yield-value"><span id="gcY">2.99</span>%</div>
+              <div class="etf-proto-result-grid">
+                <div class="etf-proto-result-cell">
+                  <div class="k">參考市值</div>
+                  <div class="v" id="gcC">26,750</div>
+                  <div class="note">元（=股價×張數，非實際投入成本）</div>
+                </div>
+                <div class="etf-proto-result-cell">
+                  <div class="k">現金股利試算</div>
+                  <div class="v green" id="gcT">800</div>
+                  <div class="note">元（另配股票股利未計入，每張約另配 25 股）</div>
+                </div>
+              </div>
+              <p class="etf-proto-basis" id="gcBasis">依114年度現金股利 0.80 元估算的參考殖利率（不含股票股利，非保證未來配息）</p>
+            </div>
+          </div>
+
+          <div class="etf-proto-intent-head">接下來你想知道什麼？</div>
+          <div class="etf-proto-intent-grid">
+            <a href="/compound-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-6 3 3 5-8"/></svg></span>
+              <span class="txt">長期持有 10 年後可能有多少？</span>
+            </a>
+            <a href="/dca-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="17" y="3" width="4" height="17"/></svg></span>
+              <span class="txt">每月定期定額買合庫金會怎樣？</span>
+            </a>
+            <a href="/payback-calculator" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <span class="txt">輸入我的成本，精算回本年數</span>
+            </a>
+            <a href="/goal" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+              <span class="txt">距離我的月領目標還有多久？</span>
+            </a>
+            <a href="/articles/first-financial-dividend" class="etf-proto-intent-card">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v18M16 3v18M4 8h4M16 8h4M4 16h4M16 16h4"/></svg></span>
+              <span class="txt">跟第一金比較，哪個更適合我？</span>
+            </a>
+          </div>
+        </div>
+        <script>
+        window.GULICALC_PAGE_DATA = {
+          symbol: "5880",
+          name: "合庫金",
+          price: 26.75,
+          priceAsOf: "2026-09-23",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only",
+          dividendAmount: 0.80, // 現金股利 only；殖利率／現金收入試算一律只用這個
+          dividendBasis: "DISTRIBUTION_YEAR",
+          earningsYear: 2025,
+          earningsYearROC: 114, // 民國114年（盈餘年度），保留民國年供頁面文案沿用
+          distributionYear: 2026,
+          stockDividendParValuePerShare: 0.25, // 114年度股票股利（面額），單獨揭露，不計入現金殖利率/收入
+          frequency: "年配（現金＋股票股利，股票部分未計入本計算）",
+          yield: 2.99,
+          source: "台灣證券交易所（股價，2026-09-23收盤）＋合庫金控董事會決議公告（2026-03-23）"
+        };
+        (function(){
+          var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
+          if(!p||!s||!d)return;
+          var PD = window.GULICALC_PAGE_DATA;
+          function fmt(n){return Math.round(n).toLocaleString('zh-TW');}
+          function calc(){
+            var price=Math.max(0,parseFloat(p.value)||0);
+            var lots=Math.max(0,parseFloat(s.value)||0);
+            var div=Math.max(0,parseFloat(d.value)||0);
+            var shares=lots*1000;
+            var yieldPct=(price>0?div/price*100:0).toFixed(2);
+            PD.price=price; PD.dividendAmount=div; PD.yield=parseFloat(yieldPct);
+            document.getElementById('gcY').textContent=yieldPct;
+            document.getElementById('gcC').textContent=fmt(shares*price);
+            document.getElementById('gcT').textContent=fmt(shares*div);
+            var qaPrice=document.getElementById('qaPrice'), qaDiv=document.getElementById('qaDiv'), qaYield=document.getElementById('qaYield');
+            if(qaPrice) qaPrice.textContent=price.toFixed(2)+' 元';
+            if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
+            if(qaYield) qaYield.textContent=yieldPct+'%';
+            var basisEl=document.getElementById('gcBasis');
+            if(basisEl) basisEl.textContent='依114年度現金股利 '+div.toFixed(2)+' 元估算的參考殖利率（不含股票股利，非保證未來配息）';
+          }
+          [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
+          calc();
+        })();
+        </script>
 
 
         <h2>合庫金 是什麼？</h2>
@@ -119,22 +260,22 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以近一年現金股利 1.05 元、買入股價 24.9 元為例（殖利率約 4.2%）：</p>
+        <p>以 114 年度現金股利 0.80 元、股價 26.75 元為例（現金殖利率約 2.99%；另配股票股利 0.25 元未計入下表）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">參考市值</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利試算</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">27,550 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,050 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.8%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">137,750 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,250 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.8%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">275,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>10,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.8%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,377,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>52,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.8%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">26,750 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>800 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.99%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">133,750 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.99%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">267,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>8,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.99%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,337,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>40,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.99%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
 
         <h2>合庫金的股票股利要注意什麼？</h2>
-        <p>合庫金過去採「現金＋股票」雙配（例如 113 年度為現金 0.7 元＋股票 0.3 元），股票股利會使持股張數增加、但每股淨值被稀釋。<strong>114 年度起合庫金改為全數配發現金</strong>，現金股利提高至約 1.05 元。計算過去年度報酬時，要把現金與股票一起看；想了解雙配運作可看<a href="/articles/e-sun-financial-dividend">玉山金現金＋股票雙配攻略</a>。</p>
+        <p>合庫金採「現金＋股票」雙配（例如 113 年度為現金 0.7 元＋股票 0.3 元，114 年度為現金 0.80 元＋股票 0.25 元），股票股利會使持股張數增加、但每股淨值被稀釋。114 年度（2026）合庫金控董事會決議（2026-03-23）配發現金股利 0.80 元＋股票股利 0.25 元，現金＋股票股利合計 1.05 元；計算全年報酬時，要把現金與股票一起看，但本頁殖利率／現金收入計算器只計現金部分。想了解雙配運作可看<a href="/articles/e-sun-financial-dividend">玉山金現金＋股票雙配攻略</a>。</p>
 
         <h2>合庫金 稅後配息怎麼算？</h2>
         <ul>
@@ -145,9 +286,9 @@
 
         <h2>常見問題</h2>
         <h3>合庫金一張一年配息多少？</h3>
-        <p>以近一年現金股利約 1.05 元、股價約 24.9 元計算，持有 1 張一年約可領 1,050 元，殖利率約 4.2%。實際配息以合庫金股東會決議為準。</p>
+        <p>以 114 年度現金股利 0.80 元、股價 26.75 元計算，持有 1 張一年現金約可領 800 元，現金殖利率約 2.99%；另配股票股利 0.25 元（約每張 25 股，未計入現金殖利率）。實際配息以合庫金股東會決議為準。</p>
         <h3>合庫金多久配息一次？</h3>
-        <p>合庫金（5880）為年配息，每年配發一次股利，常包含現金與股票股利。</p>
+        <p>合庫金（5880）為年配息，每年配發一次股利，114 年度為現金 0.80 元＋股票 0.25 元（現金＋股票股利合計 1.05 元）。</p>
         <h2>資料來源與免責</h2>
         <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=5880" target="_blank" rel="noopener">Goodinfo（5880）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
         <h2>延伸閱讀</h2>
@@ -166,11 +307,11 @@
     <div>
       <div class="article-faq-item">
         <h3>合庫金一張一年配息多少？</h3>
-        <p>以近一年現金股利約 1.05 元、股價約 24.9 元計算，持有 1 張一年約可領 1,050 元，殖利率約 4.2%。實際配息以合庫金股東會決議為準。</p>
+        <p>以 114 年度現金股利 0.80 元、股價 26.75 元計算，持有 1 張一年現金約可領 800 元，現金殖利率約 2.99%；另配股票股利 0.25 元（約每張 25 股，未計入現金殖利率）。實際配息以合庫金股東會決議為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>合庫金多久配息一次？</h3>
-        <p>合庫金（5880）為年配息，每年配發一次股利，常包含現金與股票股利。</p>
+        <p>合庫金（5880）為年配息，每年配發一次股利，114 年度為現金 0.80 元＋股票 0.25 元（現金＋股票股利合計 1.05 元）。</p>
       </div>
       <div class="article-faq-item">
         <h3>合庫金適合存股嗎？</h3>
@@ -178,7 +319,7 @@
       </div>
         <div class="article-faq-item">
           <h3>合庫金近年配息有成長嗎？</h3>
-          <p>合庫金（5880）是公股銀行，配息相對穩定但成長幅度有限，近幾年總股利約配 1.0 元上下（現金＋配股）。在利率上升環境下，銀行獲利有所改善，配息略有增加。適合保守型存股族搭配其他高股息 ETF 分散持有。</p>
+          <p>合庫金（5880）是公股銀行，配息相對穩定但成長幅度有限，長年維持現金＋股票混合配息（如 113 年度現金 0.70 元＋股票 0.30 元、114 年度現金 0.80 元＋股票 0.25 元，現金＋股票合計約 1.0～1.05 元上下）。在利率上升環境下，銀行獲利有所改善，現金股利略有增加。適合保守型存股族搭配其他高股息 ETF 分散持有。</p>
         </div>
     </div>
   </section>
