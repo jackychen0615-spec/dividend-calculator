@@ -181,14 +181,16 @@
           </div>
         </div>
         <script>
-        // Page Data Contract。特別狀況：00919 沒有 etf-live.js，priceStatus
-        // 永遠是 fallback，不訂閱 gulicalc:live-price-updated（沒有廣播來源）。
+        // Page Data Contract。sourceCapability="static_only"：這頁架構上沒有
+        // 接 etf-live.js，priceStatus 永遠是 fallback，不訂閱
+        // gulicalc:live-price-updated（沒有廣播來源）。
         window.GULICALC_PAGE_DATA = {
           symbol: "00919",
           name: "群益台灣精選高息",
           price: 29.70,
           priceAsOf: null, // 頁面原本就沒有標示這個價格的資料日期
-          priceStatus: "fallback",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "static_only", // "live_supported" | "static_only"
           annualDividend: 2.52,
           dividendYear: "2025",
           frequency: "季配",

@@ -186,16 +186,18 @@
           </div>
         </div>
         <script>
-        // Page Data Contract。00939 有 etf-live.js 接線（sourceStatus="live"），
-        // 但目前頁面自己都沒有標示過股價資料日期，所以 fallback 起始值的
-        // priceAsOf 設為 null，如實反映「不知道這個 22 元是哪天的」。
+        // Page Data Contract。sourceCapability="live_supported" 代表這頁架構上
+        // 有接 etf-live.js；但目前頁面自己都沒有標示過股價資料日期，所以
+        // fallback 起始值的 priceAsOf 設為 null，如實反映「不知道這個 22 元
+        // 是哪天的」。priceStatus 只用確定拿得到的值（fallback/close），
+        // backend 目前無法分辨 realtime/delayed，不猜測。
         window.GULICALC_PAGE_DATA = {
           symbol: "00939",
           name: "統一台灣高息動能",
           price: 22.00,
           priceAsOf: null,
-          priceStatus: "fallback",
-          sourceStatus: "live",
+          priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+          sourceCapability: "live_supported", // "live_supported" | "static_only"
           annualDividend: 0.66,
           dividendYear: "2025",
           frequency: "月配",

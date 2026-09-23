@@ -178,16 +178,18 @@
         </div>
       </div>
       <script>
-      // Page Data Contract。00929 有真的 etf-live.js 接線，sourceStatus 標記
-      // 為架構層級的 "live"（有接即時來源），跟 priceStatus（這一刻是否真的
-      // 拿到新資料）分開——沒收到廣播前 priceStatus 仍是 fallback。
+      // Page Data Contract。sourceCapability 是架構層級欄位（這頁有沒有接
+      // etf-live.js 這種即時來源），跟 priceStatus（這一刻拿到的價格狀態）
+      // 分開，兩者不會混淆。目前 backend 還無法分辨 realtime/delayed/close，
+      // 所以 priceStatus 只用確定拿得到的值：沒收到廣播前是 fallback，
+      // 收到後改用 close（保守假設：API 目前回的多半是收盤價）。
       window.GULICALC_PAGE_DATA = {
         symbol: "00929",
         name: "復華台灣科技優息",
         price: 28.59,
         priceAsOf: "2026-08-07",
-        priceStatus: "fallback",
-        sourceStatus: "live",
+        priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
+        sourceCapability: "live_supported", // "live_supported" | "static_only"
         annualDividend: 1.63,
         dividendYear: "近12個月(2025/08-2026/07)",
         frequency: "月配",
