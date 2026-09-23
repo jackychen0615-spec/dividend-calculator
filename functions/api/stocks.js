@@ -225,12 +225,23 @@ export async function onRequest(context) {
       }
     }
 
+    // Phase 5A — 選用的 symbol-scoped query：/api/stocks?code=2330 只回單一
+    // 標的，給 42 個 article page 的 live-price-layer 用，避免每頁都下載
+    // 整包 ~1200+ 檔（gzip 後約 39KB）。伺服器端工作量不變（TWSE 上游仍是
+    // 抓全市場），只有回應給 client 的 JSON 縮小——純 backward-compatible
+    // 擴充：不帶 code 時行為與之前完全一樣（if 判斷式外的所有邏輯都不變）。
+    const url = new URL(context.request.url);
+    const codeParam = url.searchParams.get('code');
+    const responseStocks = codeParam
+      ? stocks.filter((s) => s.code === codeParam)
+      : stocks;
+
     const result = {
       lastUpdated: new Date().toISOString(),
       mode: isMarketHours ? 'realtime' : 'closing',
       cacheTTL: cacheTTL,
-      count: stocks.length,
-      stocks: stocks
+      count: responseStocks.length,
+      stocks: responseStocks
     };
 
     return new Response(JSON.stringify(result), {
