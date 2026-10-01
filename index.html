@@ -1121,6 +1121,26 @@ function closePwa(ok){
     if (sharesRow) sharesRow.classList.add('show');
     window.enableProtoShares();
 
+    // 沒有配息資料（如新上市的主動型 ETF）：每股股利欄原本藏在收合的「進階設定」
+    // 裡、又沒有值，使用者輸入張數後完全沒結果，看起來像壞掉。這裡自動展開進階
+    // 設定並提示輸入；同時清掉上一檔殘留的股利值，避免拿 A 的配息算 B 的殖利率。
+    var hint = document.getElementById('unitHint');
+    var dvInput = document.getElementById('dividend');
+    if (!hasDiv) {
+      var adv = document.getElementById('protoAdvanced');
+      if (adv) adv.open = true;
+      if (dvInput) { dvInput.value = ''; dvInput.dispatchEvent(new Event('input', { bubbles: true })); }
+      if (hint) {
+        hint.textContent = '這檔目前沒有配息資料，請在下方「每股股利」填入預估值才能試算';
+        hint.style.color = 'var(--accent-hover)';
+        hint.style.fontWeight = '600';
+      }
+    } else if (hint) {
+      hint.textContent = (window.__shareUnitFactor === 1) ? '單位：股' : '單位：張（1 張 = 1,000 股）';
+      hint.style.color = 'var(--text-muted)';
+      hint.style.fontWeight = '400';
+    }
+
     // v2.1 修訂 #3：年度股利試算要顯示試算依據（哪一年度、每股股利多少）
     var basisEl = document.getElementById('protoDivBasis');
     if (basisEl) {
