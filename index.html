@@ -165,6 +165,7 @@
             <button type="button" class="proto-chip" data-code="00919">00919</button>
             <button type="button" class="proto-chip" data-code="006208">006208</button>
             <button type="button" class="proto-chip" data-code="0050">0050</button>
+            <button type="button" class="proto-chip" data-code="00981A">00981A 主動型</button>
           </div>
         </div>
 
@@ -1160,6 +1161,15 @@ function closePwa(ok){
           window._gulicalcSelectStock(s);
           var calcEl = document.getElementById('calc');
           if (calcEl) calcEl.scrollIntoView({behavior:'smooth', block:'start'});
+        } else {
+          // 查無資料（例如即時 API 暫時失敗，而 stocks.json 備援清單沒有這檔）時，
+          // 改把代號填進搜尋框，避免按鈕按了完全沒反應。
+          var searchEl = document.getElementById('stockSearch');
+          if (searchEl) {
+            searchEl.value = code;
+            searchEl.dispatchEvent(new Event('input', { bubbles: true }));
+            searchEl.focus();
+          }
         }
       });
     });
