@@ -241,7 +241,9 @@ export async function onRequest(context) {
         for (const item of priceData) {
           const code = item.Code;
           if (!code || addedCodes.has(code)) continue;
-          if (!/^00\d{2,4}L?$/.test(code)) continue;
+          // 含主動式 ETF（A 結尾，如 00981A）與其他後綴（L/R/U/B…）；舊版只認 L，
+          // 導致盤後／週末主動式 ETF 從搜尋清單消失（只有盤中靠 STOCK_DAY_ALL 補漏才會出現）。
+          if (!/^00\d{2,4}[A-Z]?$/.test(code)) continue;
           const price = parseFloat(item.ClosingPrice) || 0;
           if (price <= 0) continue;
           // TWSE 的 Change 是「絕對點數」不是百分比；換算成真正的漲跌幅 %
