@@ -44,7 +44,7 @@
         "description": "00934中信成長高股息ETF配息計算：2025年月配息、殖利率試算、持有幾張每月領多少。低價月配ETF，附即時試算工具。",
         "url": "https://gulicalc.com/articles/00934-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-07-22",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00934配息,00934殖利率,中信成長高股息配息,00934月配息,00934配息計算器",
         "mainEntityOfPage": {
@@ -96,14 +96,12 @@
         <h1>00934（中信成長高股息）配息怎麼算？月配息殖利率試算</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-10-10</span>
         </div>
 
-        <p><strong>00934（中信成長高股息 ETF）是月配息 ETF，結合成長與高股息因子。</strong>以 2025 年配息約 0.76 元、股價約 28 元計算，持有 1 張（1,000 股）一年約可領 760 元，殖利率約 2.7%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00934（中信成長高股息 ETF）是月配息 ETF，結合成長與高股息因子。</strong>以近12個月（2025/10–2026/10）配息合計 2.345 元、2026-10-08 收盤價 30.00 元計算，持有 1 張（1,000 股）一年約可領 2,345 元，殖利率約 7.8%；單月配息已從 2025/10 的 0.098 元調升到 2026/9 的 0.33 元。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
 
-        <!-- 00934 Phase 3B Batch 4：Core module only，從零建立（原頁面 CTA-only）。
-             Numeric Duplicate Map已查證：0.76元／28元／2.7%在intro、持有不同張數表、
-             FAQ全部一致，無衝突。 -->
+        <!-- 2026-10-10 依證交所更正：股價 30.00（2026-10-08 收盤）、近12個月配息 2.345（12 筆，2025/10/20–2026/9/16）、殖利率 7.82%。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -113,12 +111,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">28.00 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">0.76 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">30.00 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">2.345 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">月配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">2.71%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">7.82%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-07-22・資料來源：台灣證券交易所＋中國信託投信公告（非即時，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）（非即時，實際配息以官方最新公告為準）</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -132,31 +130,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="28" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="30.00" min="0" step="0.01">
                 </div>
                 <div>
                   <label for="gcD">每股股利（全年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="0.76" min="0" step="0.01">
+                  <input type="number" id="gcD" inputmode="decimal" value="2.345" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">2.71</span>%</div>
+              <div class="yield-value"><span id="gcY">7.82</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">28,000</div>
+                  <div class="v" id="gcC">30,000</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">年度股利試算</div>
-                  <div class="v green" id="gcT">760</div>
+                  <div class="v green" id="gcT">2,345</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 0.76 元估算的參考殖利率（非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依 近12個月（2025/10–2026/10） 配息 2.345 元估算的參考殖利率（非保證未來配息）</p>
             </div>
           </div>
 
@@ -188,15 +186,15 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "00934",
           name: "中信成長高股息",
-          price: 28.00,
-          priceAsOf: "2026-07-22",
+          price: 30.00,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 0.76,
-          dividendYear: "2025",
+          annualDividend: 2.345,
+          dividendYear: "近12個月（2025/10–2026/10）",
           frequency: "月配",
-          yield: 2.71,
-          source: "台灣證券交易所＋中國信託投信公告"
+          yield: 7.82,
+          source: "台灣證券交易所（收盤價、除權息紀錄）"
         };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
@@ -218,7 +216,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();
@@ -242,22 +240,22 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年配息 0.76 元、買入股價 28 元為例（殖利率約 2.7%）：</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 2.345 元、買入股價 30.00 元（2026-10-08 收盤）為例（殖利率約 7.8%；每月配息為近12個月平均，最新一次 2026/9/16 為每股 0.33 元，即每張 330 元）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每月配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">平均每月配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">28,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">63 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>760 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">280,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">633 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>7,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,400,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,167 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>38,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,800,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6,333 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>76,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">30,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">195 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2,345 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.8%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">300,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,954 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>23,450 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.8%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,500,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9,771 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>117,250 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.8%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,000,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">19,542 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>234,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.8%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
 
         <h2>00934 適合月月領息嗎？</h2>
-        <p>00934 本身就是月配息 ETF，單一檔即可月月領息，不需另外搭配。但要注意：配息金額會隨基金收益調整，月配不代表每月固定金額。想看更多月配選擇，可參考<a href="/articles/monthly-dividend-etf">月配息 ETF 攻略</a>。</p>
+        <p>00934 本身就是月配息 ETF，單一檔即可月月領息，不需另外搭配。但要注意：配息金額會隨基金收益調整，月配不代表每月固定金額。以證交所除息紀錄為例，2025 年上半年單月僅配 0.026–0.028 元，近12個月則從 0.098 元（2025/10/20）一路調升到 0.33 元（2026/9/16）。想看更多月配選擇，可參考<a href="/articles/monthly-dividend-etf">月配息 ETF 攻略</a>。</p>
 
         <h2>00934 稅後配息怎麼算？</h2>
         <ul>
@@ -268,7 +266,7 @@
 
         <h2>常見問題</h2>
         <h3>00934 一張一年配息多少？</h3>
-        <p>以 2025 年配息約 0.76 元、股價約 28 元計算，持有 1 張一年約可領 760 元，殖利率約 2.7%。實際配息以中國信託投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 2.345 元、2026-10-08 收盤價 30.00 元計算，持有 1 張一年約可領 2,345 元，殖利率約 7.8%。近一年配息大幅調升，實際配息以中國信託投信公告為準。</p>
         <h3>00934 多久配息一次？</h3>
         <p>00934 採月配息，每年配息 12 次，單一檔即可達成月月領息。</p>
         <h2>資料來源與免責</h2>
@@ -291,7 +289,7 @@
     <div>
       <div class="article-faq-item">
         <h3>00934 一張一年配息多少？</h3>
-        <p>以 2025 年配息約 0.76 元、股價約 28 元計算，持有 1 張一年約可領 760 元，殖利率約 2.7%。實際配息以中國信託投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 2.345 元、2026-10-08 收盤價 30.00 元計算，持有 1 張一年約可領 2,345 元，殖利率約 7.8%。近一年配息大幅調升，實際配息以中國信託投信公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00934 多久配息一次？</h3>
@@ -299,11 +297,11 @@
       </div>
       <div class="article-faq-item">
         <h3>00934 殖利率有多高？</h3>
-        <p>以 2025 年配息約 0.76 元、股價約 28 元計算，殖利率約 2.7%，配息會隨基金收益變動。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 2.345 元、2026-10-08 收盤價 30.00 元計算，殖利率約 7.8%。這段期間單月配息從 0.098 元調升到 0.33 元，配息會隨基金收益變動，過去的調升不代表未來會維持。</p>
       </div>
         <div class="article-faq-item">
           <h3>00934 的配息和填息表現如何？</h3>
-          <p>00934（中信成長高股息 ETF）強調兼顧股息與成長性，選股時同時考量殖利率與獲利成長潛力。配息與填息表現需查看近幾季實際紀錄，建議搭配<a href='/'>股利計算器</a>試算你的實際年化報酬。</p>
+          <p>00934（中信成長高股息 ETF）強調兼顧股息與成長性，選股時同時考量殖利率與獲利成長潛力。依證交所除息紀錄，單月配息在 2025 年上半年約 0.026–0.028 元，2025 年下半年起逐步調升，2026/9/16 已達 0.33 元，近一年配息變動幅度大；填息表現需查看各次除息後的實際股價，建議搭配<a href='/'>股利計算器</a>試算你的實際年化報酬。</p>
         </div>
     </div>
   </section>

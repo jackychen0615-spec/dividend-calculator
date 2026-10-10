@@ -44,7 +44,7 @@
         "description": "00882中信中國高股息配息完整攻略：半年配紀錄、殖利率計算、與台股高股息ETF差異分析，適合什麼人？附即時計算工具。",
         "url": "https://gulicalc.com/articles/00882-dividend-calculator",
         "datePublished": "2026-06-04",
-        "dateModified": "2026-07-22",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00882配息,00882殖利率,中信中國高股息,恒生中國高股息",
         "mainEntityOfPage": {
@@ -96,16 +96,12 @@
         <h1>00882（中信中國高股息）配息完整攻略</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22 更新</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-10-10 更新</span>
         </div>
 
         <p><strong>00882 中信中國高股息，追蹤的是港股中的中國高股息企業，跟多數台股高股息 ETF不是同一個市場。</strong>成分股以在香港掛牌的中國地產、金融、工業、能源類股為主，採半年配息制度，一年配發 2 次。這篇整理 00882 的基本資料、配息與殖利率試算，並提醒跟台股高股息 ETF最大的差異在於——它承擔的是中國/港股市場的風險，不是台股風險。</p>
 
-        <!-- 00882 Phase 3B Batch 6：Core module only，從零建立（原頁面 CTA-only）。
-             Numeric Duplicate Map已查證：1.08元／15.8元／6.8%在殖利率計算、持有不同
-             張數表、FAQ全部一致，無衝突。原頁多處用「目前股價」但實際沒有明確資料
-             日期，已依Data Freshness Rule全部改成「參考股價」（含此處新增的Quick
-             Answer）。 -->
+        <!-- 2026-10-10 依證交所更正：參考股價改 2026-10-08 收盤 14.95 元；配息改近12個月（2025/10–2026/10）除息合計 1.00 元（2026-01-19 0.45＋2026-07-16 0.55）；殖利率 6.69%。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -115,12 +111,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">15.80 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">近一年配息</div><div class="v" id="qaDiv">1.08 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">14.95 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">1.00 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">半年配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">6.84%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">6.69%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">股價資料日期不明（頁面未標示，僅「最後更新2026-07-22」為文章更新日，非股價日期）・資料來源：台灣證券交易所＋中國信託投信公告，僅供試算參考，實際配息與股價請以官方最新公告為準。</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08（證交所收盤價）・資料來源：台灣證券交易所（收盤價、除權息紀錄），僅供試算參考，實際配息與股價請以官方最新公告為準。</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -134,31 +130,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="15.8" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="14.95" min="0" step="0.01">
                 </div>
                 <div>
-                  <label for="gcD">每股股利（近一年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="1.08" min="0" step="0.01">
+                  <label for="gcD">每股股利（近12個月，元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="1.00" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">6.84</span>%</div>
+              <div class="yield-value"><span id="gcY">6.69</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">15,800</div>
+                  <div class="v" id="gcC">14,950</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">年度股利試算</div>
-                  <div class="v green" id="gcT">1,080</div>
+                  <div class="v green" id="gcT">1,000</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依近一年配息合計 1.08 元估算的參考殖利率（非保證未來配息，股價資料日期不明）</p>
+              <p class="etf-proto-basis" id="gcBasis">依近12個月（2025/10–2026/10）配息合計 1.00 元估算的參考殖利率（非保證未來配息，股價為 2026-10-08 收盤價）</p>
             </div>
           </div>
 
@@ -190,15 +186,15 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "00882",
           name: "中信中國高股息",
-          price: 15.80,
-          priceAsOf: null,
+          price: 14.95,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 1.08,
-          dividendYear: "近一年",
+          annualDividend: 1.00,
+          dividendYear: "近12個月（2025/10–2026/10）",
           frequency: "半年配",
-          yield: 6.84,
-          source: "台灣證券交易所＋中國信託投信公告"
+          yield: 6.69,
+          source: "台灣證券交易所（收盤價、除權息紀錄）"
         };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
@@ -220,7 +216,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依近一年配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息，股價資料日期不明）';
+            if(basisEl) basisEl.textContent='依近12個月（2025/10–2026/10）配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息，股價為 2026-10-08 收盤價）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();
@@ -234,20 +230,20 @@
           <li><strong>追蹤指數：</strong>恒生中國高股息率指數（Hang Seng China High Dividend Yield Index）</li>
           <li><strong>配息頻率：</strong>半年配（每年 6、12 月最後一個曆日為評價日，評價日後 45 個營業日內分配）</li>
           <li><strong>成分股特色：</strong>港股中國企業，以地產、金融、工業、能源為主</li>
-          <li><strong>參考股價：</strong>約 15.8 元</li>
+          <li><strong>參考股價：</strong>14.95 元（2026-10-08 證交所收盤價）</li>
         </ul>
 
         <h2>殖利率計算</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
-          <strong>殖利率 = 近一年配息合計 / 買入股價 x 100%</strong><br><br>
-          以近一年配息合計約 1.08 元、參考股價約 15.8 元計算：<br>
-          <strong>殖利率 = 1.08 / 15.8 x 100% = 6.8%</strong>
+          <strong>殖利率 = 近12個月配息合計 / 買入股價 x 100%</strong><br><br>
+          以近12個月（2025/10–2026/10）配息合計 1.00 元、2026-10-08 收盤價 14.95 元計算：<br>
+          <strong>殖利率 = 1.00 / 14.95 x 100% = 6.7%</strong>
         </div>
-        <p>00882 最近一次除息在 2026 年 1 月 19 日，發放現金股利 0.45 元；半年配下另一次配息落在年中。近五年平均殖利率約 6～7% 區間，實際配息會隨成分股表現與港股市場波動調整，詳細歷史配息請以<a href="https://www.ctbcinvestments.com/Etf/88134187" target="_blank" rel="noopener">中信投信官網</a>公告為準。</p>
+        <p>依證交所除息紀錄，00882 近12個月共除息 2 次：2026 年 1 月 19 日 0.45 元、2026 年 7 月 16 日 0.55 元，合計 1.00 元（最近一次為 2026 年 7 月 16 日的 0.55 元）。近五年平均殖利率約 6～7% 區間，實際配息會隨成分股表現與港股市場波動調整，詳細歷史配息請以<a href="https://www.ctbcinvestments.com/Etf/88134187" target="_blank" rel="noopener">中信投信官網</a>公告為準。</p>
         <p style="font-size:.82rem;color:#888;margin:.3rem 0 1.2rem;">資料來源：<a href="https://mopsov.twse.com.tw/mops/web/t05st09_2" target="_blank" rel="noopener" style="color:#f0c040;">公開資訊觀測站－股利分派情形查詢</a>（輸入股票代號 00882 查詢）</p>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以近一年配息合計 1.08 元、買入股價 15.8 元為例：</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 1.00 元、買入股價 14.95 元（2026-10-08 收盤價）為例：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th>
@@ -257,12 +253,12 @@
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">15,800 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">540 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,080 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.8%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">79,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,700 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,400 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.8%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">158,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,400 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>10,800 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.8%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">14,950 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.7%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">74,750 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.7%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">149,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>10,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6.7%</td></tr>
           </tbody>
         </table></div>
-        <p style="font-size:.85rem;color:#888;">以上為近一年配息水準估算，實際金額隨每期配息公告調整，想用你的買入價試算，請使用<a href="/">股利計算器</a>。</p>
+        <p style="font-size:.85rem;color:#888;">以上為近12個月配息水準估算，實際金額隨每期配息公告調整，想用你的買入價試算，請使用<a href="/">股利計算器</a>。</p>
 
         <h2>00882 跟台股高股息 ETF 差在哪？</h2>
         <p>很多人容易把 00882 跟 0056、00878 這類台股高股息 ETF 搞混，但本質完全不同：0056、00878 的成分股是台股上市公司，00882 的成分股是<strong>在香港掛牌的中國企業</strong>。買 00882 等於間接承擔中國/港股市場的政策、匯率與景氣循環風險，不是台股風險。想單純參與台股高股息，建議直接看<a href="/articles/0056-dividend-calculator">0056</a>或<a href="/articles/00878-dividend-calculator">00878</a>；想額外配置中國/港股高股息曝險再考慮 00882。</p>
@@ -277,7 +273,7 @@
         <h3>00882 多久配息一次？</h3>
         <p>00882 採半年配，一年配發 2 次，評價日在每年 6 月與 12 月最後一個曆日，評價日後 45 個營業日內分配。</p>
         <h3>00882 殖利率算高嗎？</h3>
-        <p>以參考股價約 15.8 元、近一年配息約 1.08 元計算，殖利率約 6.8%，近五年平均約 6～7%，在高股息 ETF 中不算低，但要留意這是港股中國企業的殖利率，波動可能大於台股高股息 ETF。</p>
+        <p>以 2026-10-08 收盤價 14.95 元、近12個月（2025/10–2026/10）配息 1.00 元計算，殖利率約 6.7%，近五年平均約 6～7%，在高股息 ETF 中不算低，但要留意這是港股中國企業的殖利率，波動可能大於台股高股息 ETF。</p>
         <h3>00882 跟 0056 有什麼差別？</h3>
         <p>最大差別是投資市場：00882 成分股是港股中國企業，0056 是台股企業，兩者承擔的市場風險完全不同，不是單純的「選股邏輯」差異。</p>
 
@@ -304,7 +300,7 @@
       </div>
       <div class="article-faq-item">
         <h3>00882 殖利率算高嗎？</h3>
-        <p>以參考股價約 15.8 元、近一年配息約 1.08 元計算，殖利率約 6.8%，在高股息 ETF 中不算低，但要留意波動可能大於台股高股息 ETF。</p>
+        <p>以 2026-10-08 收盤價 14.95 元、近12個月（2025/10–2026/10）配息 1.00 元計算，殖利率約 6.7%，在高股息 ETF 中不算低，但要留意波動可能大於台股高股息 ETF。</p>
       </div>
       <div class="article-faq-item">
         <h3>00882 跟 0056 有什麼差別？</h3>

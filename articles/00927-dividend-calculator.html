@@ -44,7 +44,7 @@
         "description": "00927 群益半導體收益 ETF 配息計算：近一年季配息紀錄、殖利率試算與配息波動風險。",
         "url": "https://gulicalc.com/articles/00927-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-05-30",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00927配息,00927殖利率,群益半導體收益配息,00927季配息,00927可以買嗎",
         "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gulicalc.com/articles/00927-dividend-calculator"},
@@ -91,12 +91,13 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-30</span>
         </div>
 
-        <p><strong>00927（群益半導體收益）是半導體主題的季配 ETF，配息波動大、不是傳統的穩定高股息。</strong>以近四季配息合計約 2.29 元、近期股價約 41 元計算，持有 1 張（1,000 股）近一年約可領 2,290 元，TTM 殖利率約 5.6%。但近一年配息暴增主要來自半導體大漲的資本利得，並非經常性股息。想試算，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00927（群益半導體收益）是半導體主題的季配 ETF，配息波動大、不是傳統的穩定高股息。</strong>以近12個月（2025/10–2026/10）配息合計 3.95 元、2026-10-08 收盤價 40.27 元計算，持有 1 張（1,000 股）近一年約可領 3,950 元，參考殖利率約 9.8%；單季配息從 0.22 元跳到 1.88 元，波動極大。但近一年配息暴增主要來自半導體大漲的資本利得，並非經常性股息。想試算，可直接用<a href="/">股利計算器</a>。</p>
 
         <!-- 00927 Phase 3B Batch 4：Core module only，從零建立（原頁面 CTA-only，
-             沒有任何計算器）。Numeric Duplicate Map已查證：2.29元／41元／5.6%在
-             intro、持有不同張數表、FAQ全部一致，無衝突。⚠️波動警示是Core內容，
+             沒有任何計算器）。Numeric Duplicate Map：intro、持有不同張數表、FAQ
+             使用同一組數字。⚠️波動警示是Core內容，
              緊接在Quick Answer後面維持顯眼位置，未刪減任何文字。 -->
+        <!-- 2026-10-10 依台灣證券交易所更正：參考股價 40.27（2026-10-08 收盤）；近12個月配息 3.95 元＝2025-10-20 0.22＋2026-01-19 0.91＋2026-04-20 0.94＋2026-07-16 1.88；殖利率 3.95/40.27＝9.81%；2025 年 1、4 月除息 0.37 元（非 0.22）。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -106,12 +107,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">41.00 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">近四季配息</div><div class="v" id="qaDiv">2.29 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">40.27 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">3.95 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">5.59%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">9.81%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-05-30・資料來源：台灣證券交易所＋群益投信公告（非即時，且此殖利率含資本利得分配，非傳統股息，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）（非即時，且此殖利率含資本利得分配，非傳統股息，實際配息以官方最新公告為準）</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -125,31 +126,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="41" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="40.27" min="0" step="0.01">
                 </div>
                 <div>
-                  <label for="gcD">近四季配息合計（元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="2.29" min="0" step="0.01">
+                  <label for="gcD">近12個月配息合計（元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="3.95" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">5.59</span>%</div>
+              <div class="yield-value"><span id="gcY">9.81</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">41,000</div>
+                  <div class="v" id="gcC">40,270</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">近一年股利試算</div>
-                  <div class="v green" id="gcT">2,290</div>
+                  <div class="v green" id="gcT">3,950</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依近四季配息合計 2.29 元估算的參考殖利率（含資本利得分配，波動大，非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依近12個月（2025/10–2026/10）配息合計 3.95 元估算的參考殖利率（含資本利得分配，波動大，非保證未來配息）</p>
             </div>
           </div>
 
@@ -181,15 +182,17 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "00927",
           name: "群益半導體收益",
-          price: 41.00,
-          priceAsOf: "2026-05-30",
+          price: 40.27,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 2.29,
-          dividendYear: "近四季(TTM)",
+          annualDividend: 3.95,
+          dividendBasis: "TTM", // 近12個月：2025-10-20 0.22＋2026-01-19 0.91＋2026-04-20 0.94＋2026-07-16 1.88
+          periodStart: "2025-10-09",
+          periodEnd: "2026-10-08",
           frequency: "季配",
-          yield: 5.59,
-          source: "台灣證券交易所＋群益投信公告"
+          yield: 9.81,
+          source: "台灣證券交易所（收盤價、除權息紀錄）"
         };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
@@ -211,7 +214,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依近四季配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（含資本利得分配，波動大，非保證未來配息）';
+            if(basisEl) basisEl.textContent='依近12個月（2025/10–2026/10）配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（含資本利得分配，波動大，非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();
@@ -232,24 +235,24 @@
         </ul>
 
         <h2>00927 近一年配息紀錄</h2>
-        <p>00927 近一年各季配息差異極大，2025 下半年起明顯跳升：</p>
+        <p>00927 近一年各季配息差異極大，2026 年起明顯跳升（依證交所除息紀錄）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">配息季度（除息日）</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">除息日</th>
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">每股配息（元）</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025 Q2（2025/07/16）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.22</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2025 Q3（2025/10/20）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.22</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025 Q4（2026/01/19）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.91</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2026 Q1（2026/04/20）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.94</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;"><strong>近四季合計</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2.29</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2025/10/20</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.22</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2026/01/19</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.91</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026/04/20</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.94</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2026/07/16</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.88</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;"><strong>近12個月合計</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>3.95</strong></td></tr>
           </tbody>
         </table></div>
-        <p style="font-size:.88rem;color:#888;">可以看到 2025 上半年每季僅約 0.22 元，下半年起跳升至 0.9 元以上——這正是半導體大漲、基金分配資本利得的結果，並非股息本身變多。</p>
+        <p style="font-size:.88rem;color:#888;">可以看到 2025 年 7 月、10 月每季僅 0.22 元（更早的 2025 年 1、4 月為 0.37 元），2026 年起跳升至 0.9 元以上、7 月更達 1.88 元——這正是半導體大漲、基金分配資本利得的結果，並非股息本身變多。</p>
 
         <h2>持有不同張數，近一年領多少？</h2>
-        <p>以近一年配息 2.29 元、近期股價 41 元為例（TTM 殖利率約 5.6%）：</p>
+        <p>以近12個月（2025/10–2026/10）配息 3.95 元、2026-10-08 收盤價 40.27 元為例（參考殖利率約 9.8%）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th>
@@ -258,10 +261,10 @@
             <th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">41,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2,290 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.6%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">205,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>11,450 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.6%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">410,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>22,900 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.6%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,050,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>114,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.6%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">40,270 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>3,950 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9.8%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">201,350 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>19,750 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9.8%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">402,700 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>39,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9.8%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,013,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>197,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">9.8%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <svg style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg> <a href="/">免費股利計算器</a></p>
@@ -279,7 +282,7 @@
         <p>不穩定。近一年配息暴增主要來自半導體大漲後分配的資本利得，並非經常性股息。一旦行情反轉，配息可能大幅縮水，不能視為穩定的存股現金流。</p>
 
         <h3>00927 配息為什麼忽高忽低？</h3>
-        <p>00927 採季配，2025 上半年每季僅約 0.22 元，下半年起跳升到 0.91、0.94 元，因為基金把半導體股大漲的資本利得分配出來。配息隨成分股漲跌與已實現損益變動，波動明顯。</p>
+        <p>00927 採季配，依證交所除息紀錄，2025 年 1、4 月每季 0.37 元，7、10 月降到 0.22 元，2026 年起跳升到 0.91、0.94 元，2026 年 7 月再升到 1.88 元，因為基金把半導體股大漲的資本利得分配出來。配息隨成分股漲跌與已實現損益變動，波動明顯。</p>
 
         <h2>延伸閱讀</h2>
         <ul>
@@ -300,7 +303,7 @@
     <div>
       <div class="article-faq-item">
         <h3>00927 一張一年配息多少？</h3>
-        <p>以近四季配息合計約 2.29 元、近期股價約 41 元計算，持有 1 張（1,000 股）近一年約可領 2,290 元，TTM 殖利率約 5.6%。但 00927 配息波動大，此為近一年數字、非未來保證。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 3.95 元、2026-10-08 收盤價 40.27 元計算，持有 1 張（1,000 股）近一年約可領 3,950 元，參考殖利率約 9.8%。但 00927 配息波動大，此為近一年數字、非未來保證。</p>
       </div>
       <div class="article-faq-item">
         <h3>00927 殖利率穩定嗎？</h3>
@@ -308,7 +311,7 @@
       </div>
       <div class="article-faq-item">
         <h3>00927 配息為什麼忽高忽低？</h3>
-        <p>00927 採季配，2025 上半年每季僅約 0.22 元，2025 Q4 起跳升到 0.91、0.94 元，因為基金把半導體股大漲的資本利得分配出來。配息隨成分股漲跌與已實現損益變動，波動明顯。</p>
+        <p>00927 採季配，依證交所除息紀錄，2025 年 1、4 月每季 0.37 元，7、10 月降到 0.22 元，2026 年起跳升到 0.91、0.94 元，2026 年 7 月再升到 1.88 元，因為基金把半導體股大漲的資本利得分配出來。配息隨成分股漲跌與已實現損益變動，波動明顯。</p>
       </div>
         <div class="article-faq-item">
           <h3>00927 和其他高股息 ETF 相比有什麼特色？</h3>

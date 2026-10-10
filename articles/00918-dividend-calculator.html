@@ -44,7 +44,7 @@
         "description": "00918大華優利高填息30配息計算：2025年季配息、殖利率試算、持有幾張每年領多少。高填息率選股，附即時試算工具。",
         "url": "https://gulicalc.com/articles/00918-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-09-13",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00918配息,00918殖利率,大華優利高填息30配息,00918季配息,00918配息計算器",
         "mainEntityOfPage": {
@@ -99,11 +99,11 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-05-30</span>
         </div>
 
-        <p><strong>00918（大華優利高填息30）以「高填息率」為選股特色，季配息、殖利率亮眼。</strong>2025 年配息約 2.48 元，持有 1 張（1,000 股）一年約可領 2,480 元；最新參考股價與參考殖利率請見下方試算資訊。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00918（大華優利高填息30）以「高填息率」為選股特色，季配息、殖利率亮眼。</strong>近12個月（2025/10–2026/10）配息合計 4.195 元，持有 1 張（1,000 股）一年約可領 4,195 元；以 2026-10-08 收盤價 33.97 元計算，參考殖利率約 12.3%。單季配息從 0.565 元調升到 1.75 元，近12個月金額明顯拉高。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
 
         <!-- 00918 Phase 3B Batch 4：Core module only，取代 .etf-live-box。Numeric Duplicate
-             Map已查證：2.48元／35.34元／7.0%在intro、持有不同張數表、FAQ全部一致，無衝突。
-             本頁沒有獨立「資料日期」標示，priceAsOf沿用文章本身最後更新日期2026-05-30。 -->
+             Map：intro、持有不同張數表、FAQ 使用同一組數字。 -->
+        <!-- 2026-10-10 依台灣證券交易所更正：參考股價 33.97（2026-10-08 收盤）；近12個月配息 4.195 元＝2025-12-18 0.565＋2026-03-19 0.62＋2026-06-18 1.26＋2026-09-18 1.75；殖利率 4.195/33.97＝12.35%。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -113,12 +113,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">35.34 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">2.48 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">最新參考股價</div><div class="v" id="qaPrice">33.97 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">4.20 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">季配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">7.02%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">12.35%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-05-30・資料來源：台灣證券交易所＋大華銀投信公告（非即時，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）（非即時，實際配息以官方最新公告為準）</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -132,31 +132,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="35.34" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="33.97" min="0" step="0.01">
                 </div>
                 <div>
-                  <label for="gcD">每股股利（全年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="2.48" min="0" step="0.01">
+                  <label for="gcD">近12個月配息合計（元）</label>
+                  <input type="number" id="gcD" inputmode="decimal" value="4.195" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">7.02</span>%</div>
+              <div class="yield-value"><span id="gcY">12.35</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">35,340</div>
+                  <div class="v" id="gcC">33,970</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">年度股利試算</div>
-                  <div class="v green" id="gcT">2,480</div>
+                  <div class="v green" id="gcT">4,195</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 2.48 元估算的參考殖利率（非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依近12個月（2025/10–2026/10）配息合計 4.20 元估算的參考殖利率（非保證未來配息）</p>
             </div>
           </div>
 
@@ -188,15 +188,17 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "00918",
           name: "大華優利高填息30",
-          price: 35.34,
-          priceAsOf: "2026-05-30",
+          price: 33.97,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "live_supported",
-          annualDividend: 2.48,
-          dividendYear: "2025",
+          annualDividend: 4.195,
+          dividendBasis: "TTM", // 近12個月：2025-12-18 0.565＋2026-03-19 0.62＋2026-06-18 1.26＋2026-09-18 1.75
+          periodStart: "2025-10-09",
+          periodEnd: "2026-10-08",
           frequency: "季配",
-          yield: 7.02,
-          source: "台灣證券交易所＋大華銀投信公告"
+          yield: 12.35,
+          source: "台灣證券交易所（收盤價、除權息紀錄）"
         };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
@@ -222,7 +224,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+            if(basisEl) basisEl.textContent='依近12個月（2025/10–2026/10）配息合計 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           document.addEventListener('gulicalc:live-price-updated', function(ev){
@@ -239,7 +241,7 @@
         <ul>
           <li><strong>發行：</strong>大華銀投信</li>
           <li><strong>類型：</strong>高股息（重視填息率）</li>
-          <li><strong>配息頻率：</strong>季配息（評價月 2/5/8/11）</li>
+          <li><strong>配息頻率：</strong>季配息（評價月 2/5/8/11；近年除息月 3/6/9/12）</li>
           <li><strong>特性：</strong>選股強調歷史填息率高</li>
         </ul>
 
@@ -251,16 +253,16 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以下為示意試算，以約 35.34 元／股概算（與上方「最新參考股價」為同一資料基準）：</p>
+        <p>以下為示意試算，以 2026-10-08 證交所收盤價 33.97 元／股與近12個月配息 4.195 元（各季 0.565、0.62、1.26、1.75 元，平均每季約 1.05 元）計算：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每季配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">每季平均配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">近12個月總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">35,340 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">620 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>2,480 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.0%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">176,700 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,100 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>12,400 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.0%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">353,400 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">6,200 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>24,800 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.0%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,767,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">31,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>124,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">7.0%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">33,970 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 1,049 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,195 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">12.3%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">5 張（5,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">169,850 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 5,244 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>20,975 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">12.3%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">339,700 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 10,488 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>41,950 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">12.3%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,698,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 52,438 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>209,750 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">12.3%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
@@ -277,9 +279,9 @@
 
         <h2>常見問題</h2>
         <h3>00918 一張一年配息多少？</h3>
-        <p>持有 1 張一年約可領約 2,480 元（最新參考殖利率請見上方試算資訊）。實際配息以大華銀投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 4.195 元計算，持有 1 張一年約可領 4,195 元；以 2026-10-08 收盤價 33.97 元計，參考殖利率約 12.3%。實際配息以大華銀投信公告為準。</p>
         <h3>00918 多久配息一次？</h3>
-        <p>00918 採季配息，評價月份為每年 2、5、8、11 月。</p>
+        <p>00918 採季配息，指數評價月份為每年 2、5、8、11 月；依證交所除息紀錄，近年除息月為 3、6、9、12 月。</p>
         <h2>資料來源與免責</h2>
         <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=00918" target="_blank" rel="noopener">Goodinfo（00918）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以各投信／公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
         <h2>延伸閱讀</h2>
@@ -302,11 +304,11 @@
     <div>
       <div class="article-faq-item">
         <h3>00918 一張一年配息多少？</h3>
-        <p>持有 1 張一年約可領約 2,480 元（最新參考殖利率請見上方試算資訊）。實際配息以大華銀投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 4.195 元計算，持有 1 張一年約可領 4,195 元；以 2026-10-08 收盤價 33.97 元計，參考殖利率約 12.3%。實際配息以大華銀投信公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00918 多久配息一次？</h3>
-        <p>00918 採季配息，評價月份為每年 2、5、8、11 月。</p>
+        <p>00918 採季配息，指數評價月份為每年 2、5、8、11 月；依證交所除息紀錄，近年除息月為 3、6、9、12 月。</p>
       </div>
       <div class="article-faq-item">
         <h3>00918 的「高填息」是什麼意思？</h3>
@@ -314,7 +316,7 @@
       </div>
         <div class="article-faq-item">
           <h3>00918 的配息穩定嗎？適合存股嗎？</h3>
-          <p>00918（大華優利高填息 30 ETF）採季配息，注重填息表現。填息率高代表除息後股價較快回補，對存股族有利。建議搭配<a href='/'>股利計算器</a>計算你的實際殖利率，並關注近三季配息趨勢。</p>
+          <p>00918（大華優利高填息 30 ETF）採季配息，注重填息表現。配息金額並不穩定：依證交所除息紀錄，單季配息 2025 年 9 月曾降到 0.52 元，之後調升為 0.565、0.62、1.26、1.75 元，近兩季大幅拉高，近12個月約 12.3% 的參考殖利率不代表未來能維持。建議搭配<a href='/'>股利計算器</a>計算你的實際殖利率，並關注最新配息趨勢。</p>
         </div>
     </div>
   </section>

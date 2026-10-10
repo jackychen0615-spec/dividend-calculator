@@ -44,7 +44,7 @@
         "description": "00936台新台灣永續高息中小ETF配息計算：2025年月配息、殖利率試算、持有幾張每年領多少，附即時試算工具。",
         "url": "https://gulicalc.com/articles/00936-dividend-calculator",
         "datePublished": "2026-05-30",
-        "dateModified": "2026-07-22",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "00936配息,00936殖利率,台新永續高息中小配息,00936月配息,00936配息計算器",
         "mainEntityOfPage": {
@@ -96,14 +96,12 @@
         <h1>00936（台新永續高息中小）配息怎麼算？殖利率試算</h1>
         <div class="article-meta" style="color:#888;font-size:.88rem;margin:.5rem 0 1.5rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center;">
           <span>&#9998; Jacky Chen</span>
-          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-07-22</span>
+          <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 最後更新：2026-10-10</span>
         </div>
 
-        <p><strong>00936（台新台灣永續高息中小 ETF）鎖定中小型高股息且符合 ESG 永續的個股，採月配息。</strong>以 2025 年全年配息約 0.49 元、股價約 20 元計算，持有 1 張一年約可領 490 元，殖利率約 2.5%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
+        <p><strong>00936（台新台灣永續高息中小 ETF）鎖定中小型高股息且符合 ESG 永續的個股，採月配息。</strong>以近12個月（2025/10–2026/10）配息合計 1.145 元、2026-10-08 收盤價 21.59 元計算，持有 1 張一年約可領 1,145 元，殖利率約 5.3%。想試算你的持股，可直接用<a href="/">股利計算器</a>。</p>
 
-        <!-- 00936 Phase 3B Batch 5：Core module only，從零建立（原頁面 CTA-only）。
-             Numeric Duplicate Map已查證：0.49元／20元／2.5%在intro、持有不同張數表、
-             FAQ全部一致，無衝突。 -->
+        <!-- 2026-10-10 依證交所更正：股價 21.59（2026-10-08 收盤）、近12個月配息 1.145（12 筆，2025/10/17–2026/9/15）、殖利率 5.30%。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -113,12 +111,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">20.00 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">年度配息</div><div class="v" id="qaDiv">0.49 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">21.59 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">近12個月配息</div><div class="v" id="qaDiv">1.145 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">月配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">2.45%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">5.30%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-07-22・資料來源：台灣證券交易所＋台新投信公告（非即時，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）（非即時，實際配息以官方最新公告為準）</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -132,31 +130,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="20" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="21.59" min="0" step="0.01">
                 </div>
                 <div>
                   <label for="gcD">每股股利（全年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="0.49" min="0" step="0.01">
+                  <input type="number" id="gcD" inputmode="decimal" value="1.145" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">2.45</span>%</div>
+              <div class="yield-value"><span id="gcY">5.30</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">20,000</div>
+                  <div class="v" id="gcC">21,590</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">年度股利試算</div>
-                  <div class="v green" id="gcT">490</div>
+                  <div class="v green" id="gcT">1,145</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度配息 0.49 元估算的參考殖利率（非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依 近12個月（2025/10–2026/10） 配息 1.145 元估算的參考殖利率（非保證未來配息）</p>
             </div>
           </div>
 
@@ -188,15 +186,15 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "00936",
           name: "台新永續高息中小",
-          price: 20.00,
-          priceAsOf: "2026-07-22",
+          price: 21.59,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 0.49,
-          dividendYear: "2025",
+          annualDividend: 1.145,
+          dividendYear: "近12個月（2025/10–2026/10）",
           frequency: "月配",
-          yield: 2.45,
-          source: "台灣證券交易所＋台新投信公告"
+          yield: 5.30,
+          source: "台灣證券交易所（收盤價、除權息紀錄）"
         };
         (function(){
           var p=document.getElementById('gcP'),s=document.getElementById('gcS'),d=document.getElementById('gcD');
@@ -218,7 +216,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 配息 '+div.toFixed(2)+' 元估算的參考殖利率（非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();
@@ -242,16 +240,16 @@
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年全年配息 0.49 元、買入股價 20 元為例（殖利率約 2.5%）：</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 1.145 元、買入股價 21.59 元（2026-10-08 收盤）為例（殖利率約 5.3%；月均配息為近12個月平均，最新一次 2026/9/15 為每股 0.16 元，即每張 160 元）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">月均配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度總配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">20,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 41 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>490 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.5%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">200,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 408 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>4,900 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.5%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,000,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 2,042 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>24,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.5%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,000,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 4,083 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>49,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.5%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">21,590 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 95 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>1,145 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.3%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">215,900 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 954 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>11,450 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.3%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,079,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 4,771 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>57,250 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.3%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,159,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 9,542 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>114,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">5.3%</td></tr>
           </tbody>
         </table></div>
         <p>想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a></p>
@@ -268,7 +266,7 @@
 
         <h2>常見問題</h2>
         <h3>00936 一張一年配息多少？</h3>
-        <p>以 2025 年全年配息約 0.49 元、股價約 20 元計算，持有 1 張一年約可領 490 元，殖利率約 2.5%。實際配息以台新投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 1.145 元、2026-10-08 收盤價 21.59 元計算，持有 1 張一年約可領 1,145 元，殖利率約 5.3%。實際配息以台新投信公告為準。</p>
         <h3>00936 多久配息一次？</h3>
         <p>00936 採月配息，每年配息 12 次。</p>
         <h2>資料來源與免責</h2>
@@ -289,7 +287,7 @@
     <div>
       <div class="article-faq-item">
         <h3>00936 一張一年配息多少？</h3>
-        <p>以 2025 年全年配息約 0.49 元、股價約 20 元計算，持有 1 張一年約可領 490 元，殖利率約 2.5%。實際配息以台新投信公告為準。</p>
+        <p>以近12個月（2025/10–2026/10）配息合計 1.145 元、2026-10-08 收盤價 21.59 元計算，持有 1 張一年約可領 1,145 元，殖利率約 5.3%。實際配息以台新投信公告為準。</p>
       </div>
       <div class="article-faq-item">
         <h3>00936 多久配息一次？</h3>
@@ -301,7 +299,7 @@
       </div>
         <div class="article-faq-item">
           <h3>00936 的選股邏輯和配息穩定性如何？</h3>
-          <p>00936（台新臺灣永續高息中小 ETF）專注中小型股，相較大型股波動較高但潛在殖利率也高。適合可接受較高波動、追求高現金流的投資人。建議用<a href='/'>股利計算器</a>評估合理買入區間。</p>
+          <p>00936（台新臺灣永續高息中小 ETF）專注中小型股，相較大型股波動較高。配息金額也不固定：依證交所除息紀錄，2024 年單月最高配 0.25 元（2024/6/18），2025 年 2–7 月降到 0.03 元，之後逐步調升，2026/9/15 為 0.16 元。適合可接受股價與配息波動的投資人。建議用<a href='/'>股利計算器</a>評估合理買入區間。</p>
         </div>
     </div>
   </section>
