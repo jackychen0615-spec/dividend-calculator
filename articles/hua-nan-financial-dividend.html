@@ -44,7 +44,7 @@
         "description": "華南金2880配息歷年紀錄：2020-2025現金股利、殖利率計算、持有張數試算。官股金控存股分析，與兆豐金比較，附即時計算工具。",
         "url": "https://gulicalc.com/articles/hua-nan-financial-dividend",
         "datePublished": "2026-06-04",
-        "dateModified": "2026-06-04",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "華南金配息,華南金股利,2880配息",
         "mainEntityOfPage": {
@@ -99,13 +99,10 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-06-04</span>
         </div>
 
-        <p><strong>華南金是官股金控中的老牌子，股價親民、配息穩定，很多小資族存股的首選之一。</strong>不過華南金的配息成長性比不上兆豐金，殖利率也不算特別高。這篇整理華南金的歷年配息資料，也跟兆豐金做個比較，讓你自己判斷適不適合存。</p>
+        <p><strong>華南金（2880）一年配息 1 次，通常 8 月除權息，現金＋股票股利並配。</strong>2025 年度配發現金股利 1.35 元、另每千股配 10 股（2026/8/13 除權息），持有 1 張一年可領 1,350 元現金；以 2026-10-08 收盤 45.80 元計算，現金殖利率約 2.9%。這篇整理華南金的歷年配息資料，也跟兆豐金做個比較，讓你自己判斷適不適合存。</p>
 
-        <!-- 2880 Phase 3B Batch 5：Core module only，從零建立（原頁面 CTA-only）。
-             金控股語意保留（rule 3）：歷年表本身就把現金股利跟股票股利分開列，
-             2025現金0.86元+股票0.2元=合計1.06元，頁面自己已經正確區分，
-             公式/持有不同張數表/vs比較表/FAQ全部一致只用「現金股利0.86元」
-             （沒有混用合計數），Quick Answer 跟著只算現金股利，不混入股票股利。 -->
+        <!-- 2880 2026-10-10 依證交所 TWT49U 除權息紀錄全面更正：原頁現金股利 0.86 元、股價 27 元、歷年表皆與官方不符。
+             現值：2025 年度現金 1.35 元＋每千股 10 股（2026/8/13），股價 2026-10-08 收盤 45.80 元。只算現金股利。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -115,12 +112,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">27.00 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">年度現金股利</div><div class="v" id="qaDiv">0.86 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">45.80 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度現金股利</div><div class="v" id="qaDiv">1.35 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.19%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">2.95%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">此為現金股利部分；2025 年另配股票股利約 0.2 元／股（合計約 1.06 元）未計入。資料時間 2026-06-04・資料來源：台灣證券交易所＋華南金控股東會決議公告（非即時，實際配息以官方最新公告為準）</p>
+              <p class="etf-proto-qa-source" id="qaSource">此為現金股利部分；2025 年度另配每千股 10 股股票股利未計入。資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）。實際配息以官方最新公告為準。</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -134,31 +131,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="27" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="45.8" min="0" step="0.01">
                 </div>
                 <div>
                   <label for="gcD">每股現金股利（全年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="0.86" min="0" step="0.01">
+                  <input type="number" id="gcD" inputmode="decimal" value="1.35" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">3.19</span>%</div>
+              <div class="yield-value"><span id="gcY">2.95</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">27,000</div>
+                  <div class="v" id="gcC">45,800</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">現金股利試算</div>
-                  <div class="v green" id="gcT">860</div>
+                  <div class="v green" id="gcT">1,350</div>
                   <div class="note">元（另配股票股利未計入）</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度現金股利 0.86 元估算的參考殖利率（不含股票股利，非保證未來配息）</p>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度現金股利 1.35 元估算的參考殖利率（不含股票股利，非保證未來配息）</p>
             </div>
           </div>
 
@@ -190,14 +187,14 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "2880",
           name: "華南金",
-          price: 27.00,
-          priceAsOf: "2026-06-04",
+          price: 45.80,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 0.86,
+          annualDividend: 1.35,
           dividendYear: "2025",
           frequency: "年配（另配股票股利，未計入本計算）",
-          yield: 3.19,
+          yield: 2.95,
           source: "台灣證券交易所＋華南金控股東會決議公告"
         };
         (function(){
@@ -232,79 +229,82 @@
         <ul>
           <li><strong>產業：</strong>金融控股（官股金控）</li>
           <li><strong>主要業務：</strong>銀行（放款、財富管理）、證券、保險</li>
-          <li><strong>配息頻率：</strong>年配息（每年一次）</li>
-          <li><strong>特性：</strong>股價低（20 多元）、配息穩定、波動小</li>
+          <li><strong>配息頻率：</strong>年配息（每年一次，通常 8 月除權息）</li>
+          <li><strong>特性：</strong>現金＋股票股利並配、配息穩定、波動小</li>
         </ul>
 
-        <h2>華南金歷年配息紀錄（2020-2025）</h2>
+        <h2>華南金歷年配息紀錄（除息年 2020-2026）</h2>
+        <p>以下依台灣證券交易所除權息紀錄整理。金控股「盈餘年度」與「除息年度」差一年；股票股利以「每 1,000 股配幾股」表示，括號內為依面額 10 元換算的每股金額。</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">合計</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">除息年</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">盈餘年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利（每千股）</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.86 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.2 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1.06 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.72 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.2 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.92 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.62 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.18 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.80 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.56 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.23 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.79 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.52 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.28 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.80 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.50 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.30 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.80 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.35 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10 股（約 0.10 元）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.25 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10 股（約 0.10 元）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.20 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">10 股（約 0.10 元）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.59 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.78 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">34 股（約 0.34 元）</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.265 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">26.4 股（約 0.26 元）</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2019</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.56 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">56 股（約 0.56 元）</td></tr>
           </tbody>
         </table></div>
-        <p>華南金的配息很穩定，幾乎每年都有配，而且會搭配現金+股票股利。近兩年現金股利有明顯提升，從 0.5 元區間拉到 0.86 元，但整體幅度不算大。另外華南金一直有配股票股利的習慣，這會讓股本膨脹，長期可能稀釋每股獲利。</p>
+        <p>華南金幾乎每年都配，而且常搭配股票股利。現金股利從 2023 年的 0.59 元，拉高到 2024～2026 年的 1.20 → 1.25 → 1.35 元，成長明顯；股票股利則從早年每千股 30～56 股，降到近三年每千股 10 股。配股會讓股本膨脹，長期可能稀釋每股獲利。</p>
 
         <h2>殖利率計算</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>殖利率 = 每股現金股利 / 買入股價 x 100%</strong><br><br>
-          以 2025 年現金股利 0.86 元、目前股價約 27 元計算：<br>
-          <strong>現金殖利率 = 0.86 / 27 x 100% = 3.2%</strong>
+          以 2025 年度現金股利 1.35 元（2026/8/13 除息）、2026-10-08 收盤 45.80 元計算：<br>
+          <strong>現金殖利率 = 1.35 / 45.80 x 100% ≈ 2.9%</strong>（另配每千股 10 股，約再多 1%）
         </div>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年現金股利 0.86 元、買入股價 27 元為例：</p>
+        <p>以 2025 年度現金股利 1.35 元、買入股價 45.80 元為例（不含股票股利）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度現金配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度現金配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">27,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>860 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.2%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">270,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>8,600 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.2%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,350,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>43,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.2%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">45,800 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1,350 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.9%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">458,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>13,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.9%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">50 張（50,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2,290,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>67,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.9%</td></tr>
           </tbody>
         </table></div>
-        <p>華南金的優勢是股價低，一張才 2.7 萬，小資族比較容易入手。但單張配息金額也相對少，要累積到有感的被動收入需要比較多張數。想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a>。</p>
+        <p>每 1,000 股另外會配到 10 股股票，持有 10 張一年約多 100 股。想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a>。</p>
 
         <h2>華南金 vs 兆豐金比較</h2>
-        <p>這兩檔是官股金控存股族最常拿來比較的，直接看數字：</p>
+        <p>這兩檔是官股金控存股族最常拿來比較的，直接看數字（股利依證交所除權息紀錄，股價為 2026-10-08 收盤）：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">項目</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">華南金（2880）</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">兆豐金（2886）</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025 現金股利</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.86 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.0 元</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">約略股價</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">27 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">42 元</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">一張成本</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">27,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">42,000 元</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">配息成長性</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">普通</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">較好</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026 年除息現金股利</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.35 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.75 元</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">股票股利</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">每千股 10 股</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">無</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">股價</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">45.80 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">49.30 元</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">現金殖利率</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 2.9%</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">約 3.5%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">近三年現金股利（除息年 2024→2026）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.20 → 1.25 → 1.35 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.50 → 1.60 → 1.75 元</td></tr>
           </tbody>
         </table></div>
-        <p>老實說，純粹看數字的話兆豐金幾乎全面勝出。殖利率更高、配息成長更明顯、獲利能力更強。華南金唯一的優勢就是股價低，每張省 1.5 萬，對小資族來說門檻低一些。但如果你的目標是長期累積被動收入，兆豐金的效率確實比較好。</p>
+        <p>只看現金，兆豐金的殖利率比較高；但華南金每年還多配每千股 10 股，把配股價值算進去（約 1%），兩者實際差距不大。兩檔股價也很接近，一張只差約 3,500 元。近三年兩檔的現金股利都在成長、幅度相當。偏好全部領現金、不想股本膨脹選兆豐金；不介意配股、想讓持股張數慢慢變多可以考慮華南金。</p>
 
         <h2>華南金適合存股嗎？</h2>
         <p>我覺得華南金是一檔「不會出大錯」的存股標的：</p>
         <ul>
-          <li><strong>優點：</strong>官股金控倒閉風險極低、股價親民門檻低、配息穩定不會斷、波動小睡得著</li>
-          <li><strong>缺點：</strong>殖利率不高（約 3%）、配息成長慢、常配股票股利造成股本膨脹、獲利成長有限</li>
+          <li><strong>優點：</strong>官股金控倒閉風險極低、配息穩定不會斷、近三年現金股利逐年成長、波動小睡得著</li>
+          <li><strong>缺點：</strong>現金殖利率不高（約 3%）、常配股票股利造成股本膨脹、獲利成長有限</li>
         </ul>
-        <p>如果你是存股新手，手上資金不多，華南金是個安全的起點。但如果你已經有一定資金，想要更好的殖利率和成長性，兆豐金或高股息 ETF 可能更適合你。</p>
+        <p>如果你想要穩定、低波動的金融股，華南金是安全的選擇；如果你更在意現金殖利率，兆豐金或高股息 ETF 可能更適合你。</p>
 
         <h2>常見問題</h2>
         <h3>華南金每年配多少股利？</h3>
-        <p>華南金近年配息穩定，2025 年配發現金股利約 0.86 元加股票股利 0.2 元，合計約 1.06 元。歷年配息大約在 0.5-1.0 元之間。</p>
+        <p>依證交所除權息紀錄，華南金 2025 年度盈餘配發現金股利 1.35 元，加上每千股配 10 股股票股利，於 2026 年 8 月 13 日除權息。近三年（除息年 2024～2026）現金股利為 1.20、1.25、1.35 元。</p>
         <h3>華南金殖利率多少？</h3>
-        <p>以目前股價約 27 元、現金股利 0.86 元計算，現金殖利率約 3.2%。在官股金控中屬於中等水準。</p>
+        <p>以 2026-10-08 收盤 45.80 元、現金股利 1.35 元計算，現金殖利率約 2.9%；加計每千股 10 股的股票股利約再多 1%。</p>
         <h3>華南金適合存股嗎？</h3>
-        <p>華南金是官股金控，經營穩健、倒閉風險極低，適合保守型投資人。但配息成長性不如兆豐金，股價波動雖小但漲幅也有限。</p>
+        <p>華南金是官股金控，經營穩健、倒閉風險極低，適合保守型投資人。現金殖利率不算高，而且常配股票股利，股本會慢慢膨脹。</p>
         <h3>華南金跟兆豐金哪個比較好？</h3>
-        <p>兆豐金獲利能力和配息成長性稍優，殖利率也較高。華南金的優勢是股價較低、門檻低。資金充裕選兆豐金，小資族可考慮華南金。</p>
+        <p>只看現金殖利率，兆豐金較高（約 3.5% vs 2.9%）；華南金另有配股，加計後差距不大，兩檔股價也接近。想全部領現金選兆豐金，不介意配股可考慮華南金。</p>
 
         <h2>資料來源與免責</h2>
         <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2880" target="_blank" rel="noopener">Goodinfo（2880）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
@@ -325,19 +325,19 @@
     <div>
       <div class="article-faq-item">
         <h3>華南金每年配多少股利？</h3>
-        <p>華南金近年配息穩定，2025 年配發現金股利約 0.86 元加股票股利 0.2 元，合計約 1.06 元。歷年配息大約在 0.5-1.0 元之間。</p>
+        <p>依證交所除權息紀錄，華南金 2025 年度盈餘配發現金股利 1.35 元，加上每千股配 10 股股票股利，於 2026 年 8 月 13 日除權息。近三年（除息年 2024～2026）現金股利為 1.20、1.25、1.35 元。</p>
       </div>
       <div class="article-faq-item">
         <h3>華南金殖利率多少？</h3>
-        <p>以目前股價約 27 元、現金股利 0.86 元計算，現金殖利率約 3.2%。在官股金控中屬於中等水準。</p>
+        <p>以 2026-10-08 收盤 45.80 元、現金股利 1.35 元計算，現金殖利率約 2.9%；加計每千股 10 股的股票股利約再多 1%。</p>
       </div>
       <div class="article-faq-item">
         <h3>華南金適合存股嗎？</h3>
-        <p>華南金是官股金控，經營穩健、倒閉風險極低，適合保守型投資人。但配息成長性不如兆豐金，股價波動雖小但漲幅也有限。</p>
+        <p>華南金是官股金控，經營穩健、倒閉風險極低，適合保守型投資人。現金殖利率不算高，而且常配股票股利，股本會慢慢膨脹。</p>
       </div>
       <div class="article-faq-item">
         <h3>華南金跟兆豐金哪個比較好？</h3>
-        <p>兆豐金獲利能力和配息成長性稍優，殖利率也較高。華南金的優勢是股價較低、門檻低。資金充裕選兆豐金，小資族可考慮華南金。</p>
+        <p>只看現金殖利率，兆豐金較高（約 3.5% vs 2.9%）；華南金另有配股，加計後差距不大，兩檔股價也接近。想全部領現金選兆豐金，不介意配股可考慮華南金。</p>
       </div>
     </div>
   </section>

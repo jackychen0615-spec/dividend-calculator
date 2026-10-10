@@ -44,7 +44,7 @@
         "description": "開發金2883配息歷年紀錄：2020-2025現金股利、殖利率計算、2022年不配息教訓。壽險+證券金控存股分析，波動大適不適合存？附即時計算工具。",
         "url": "https://gulicalc.com/articles/kai-fa-financial-dividend",
         "datePublished": "2026-06-04",
-        "dateModified": "2026-06-04",
+        "dateModified": "2026-10-10",
         "image": "https://gulicalc.com/images/og-image.png",
         "keywords": "開發金配息,開發金股利,2883配息",
         "mainEntityOfPage": {
@@ -99,14 +99,10 @@
           <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2026-06-04</span>
         </div>
 
-        <p><strong>開發金是金融股中股價最便宜的之一，一張才一萬多塊，很多新手的第一檔金融股就是它。</strong>但開發金的配息穩定度跟官股金控差很多，2022 年甚至直接不配息。這篇完整整理開發金的歷年配息資料，也講講為什麼它的風險比較高，讓你存股前看清楚再決定。</p>
+        <p><strong>開發金（2883）一年配息 1 次，近年約 6 月底除息；2025 年度配發現金股利 1.00 元（2026/6/30 除息），持有 1 張可領 1,000 元。</strong>以 2026-10-08 收盤 37.55 元計算，殖利率約 2.7%。但開發金的配息穩定度跟官股金控差很多，2022 年度甚至直接不配息。這篇完整整理開發金的歷年配息資料，也講講為什麼它的風險比較高，讓你存股前看清楚再決定。</p>
 
-        <!-- 2883 Phase 3B Batch 6：Core module only，從零建立（原頁面 CTA-only）。
-             Numeric Duplicate Map已查證：0.55元／15元／3.7%在殖利率計算、持有不同
-             張數表全部一致，無衝突。「6年平均約2.5%」是明確標示不同統計口徑（含
-             2022不配息年度的平均值），合法差異，未動。歷年表(含2022年0元不配息)是
-             Core內容,原樣保留,不刪除這個重要的風險資訊。原頁「目前股價」已改為
-             「參考股價」（無確認日期）。 -->
+        <!-- 2883 2026-10-10 依證交所 TWT49U 除權息紀錄全面更正：原頁 0.55 元／15 元／歷年表皆與官方不符。
+             現值：2025 年度現金 1.00 元（2026/6/30），股價 2026-10-08 收盤 37.55 元。 -->
         <div class="etf-proto">
           <div class="etf-proto-card">
             <div class="head">
@@ -116,12 +112,12 @@
 
             <div class="etf-proto-qa">
               <div class="etf-proto-qa-grid">
-                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">15.00 元</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">年度現金股利</div><div class="v" id="qaDiv">0.55 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考股價</div><div class="v" id="qaPrice">37.55 元</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">年度現金股利</div><div class="v" id="qaDiv">1.00 元</div></div>
                 <div class="etf-proto-qa-cell"><div class="k">配息頻率</div><div class="v">年配</div></div>
-                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">3.67%</div></div>
+                <div class="etf-proto-qa-cell"><div class="k">參考殖利率</div><div class="v green" id="qaYield">2.66%</div></div>
               </div>
-              <p class="etf-proto-qa-source" id="qaSource">股價資料日期不明（頁面未標示，僅「最後更新2026-06-04」為文章更新日）・資料來源：台灣證券交易所＋開發金控股東會決議公告。配息波動極大（2022年曾不配息），僅供試算參考，實際配息與股價請以官方最新公告為準。</p>
+              <p class="etf-proto-qa-source" id="qaSource">資料時間 2026-10-08・資料來源：台灣證券交易所（收盤價、除權息紀錄）。配息波動極大（2022 年度曾不配息），僅供試算參考，實際配息以官方最新公告為準。</p>
             </div>
 
             <div class="etf-proto-primary">
@@ -135,31 +131,31 @@
               <div class="grid">
                 <div>
                   <label for="gcP">股價（元）</label>
-                  <input type="number" id="gcP" inputmode="decimal" value="15" min="0" step="0.01">
+                  <input type="number" id="gcP" inputmode="decimal" value="37.55" min="0" step="0.01">
                 </div>
                 <div>
                   <label for="gcD">每股現金股利（全年，元）</label>
-                  <input type="number" id="gcD" inputmode="decimal" value="0.55" min="0" step="0.01">
+                  <input type="number" id="gcD" inputmode="decimal" value="1" min="0" step="0.01">
                 </div>
               </div>
             </details>
 
             <div class="etf-proto-result">
               <div class="yield-label">參考殖利率</div>
-              <div class="yield-value"><span id="gcY">3.67</span>%</div>
+              <div class="yield-value"><span id="gcY">2.66</span>%</div>
               <div class="etf-proto-result-grid">
                 <div class="etf-proto-result-cell">
                   <div class="k">參考市值</div>
-                  <div class="v" id="gcC">15,000</div>
+                  <div class="v" id="gcC">37,550</div>
                   <div class="note">元（=股價×張數，非實際投入成本）</div>
                 </div>
                 <div class="etf-proto-result-cell">
                   <div class="k">年度股利試算</div>
-                  <div class="v green" id="gcT">550</div>
+                  <div class="v green" id="gcT">1,000</div>
                   <div class="note">元</div>
                 </div>
               </div>
-              <p class="etf-proto-basis" id="gcBasis">依 2025 年度現金股利 0.55 元估算的參考殖利率（配息不穩定，2022年曾為0元，非保證未來配息，股價資料日期不明）</p>
+              <p class="etf-proto-basis" id="gcBasis">依 2025 年度現金股利 1.00 元估算的參考殖利率（配息不穩定，2022 年度曾為 0 元，非保證未來配息）</p>
             </div>
           </div>
 
@@ -191,14 +187,14 @@
         window.GULICALC_PAGE_DATA = {
           symbol: "2883",
           name: "開發金",
-          price: 15.00,
-          priceAsOf: null,
+          price: 37.55,
+          priceAsOf: "2026-10-08",
           priceStatus: "fallback", // "realtime" | "delayed" | "close" | "fallback"
           sourceCapability: "static_only",
-          annualDividend: 0.55,
+          annualDividend: 1.00,
           dividendYear: "2025",
           frequency: "年配",
-          yield: 3.67,
+          yield: 2.66,
           source: "台灣證券交易所＋開發金控股東會決議公告"
         };
         (function(){
@@ -221,7 +217,7 @@
             if(qaDiv) qaDiv.textContent=div.toFixed(2)+' 元';
             if(qaYield) qaYield.textContent=yieldPct+'%';
             var basisEl=document.getElementById('gcBasis');
-            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度現金股利 '+div.toFixed(2)+' 元估算的參考殖利率（配息不穩定，2022年曾為0元，非保證未來配息，股價資料日期不明）';
+            if(basisEl) basisEl.textContent='依 '+PD.dividendYear+' 年度現金股利 '+div.toFixed(2)+' 元估算的參考殖利率（配息不穩定，2022 年度曾為 0 元，非保證未來配息）';
           }
           [p,s,d].forEach(function(el){el.addEventListener('input',calc);});
           calc();
@@ -233,69 +229,71 @@
         <ul>
           <li><strong>產業：</strong>金融控股（壽險+證券為主）</li>
           <li><strong>主要業務：</strong>壽險（中國人壽）、證券（凱基證券）、銀行（凱基銀行）</li>
-          <li><strong>配息頻率：</strong>年配息（每年一次）</li>
-          <li><strong>特性：</strong>股價極低（15 元左右）、獲利波動大、配息不穩定</li>
+          <li><strong>配息頻率：</strong>年配息（每年一次，近年約 6 月底除息）</li>
+          <li><strong>特性：</strong>獲利波動大、配息不穩定</li>
         </ul>
 
-        <h2>開發金歷年配息紀錄（2020-2025）</h2>
+        <h2>開發金歷年配息紀錄（除息年 2020-2026）</h2>
+        <p>以下依台灣證券交易所除權息紀錄整理。金控股「盈餘年度」與「除息年度」差一年。</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
-            <th style="padding:10px;border:1px solid #ddd;text-align:left;">年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">合計</th>
+            <th style="padding:10px;border:1px solid #ddd;text-align:left;">除息年</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">盈餘年度</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">現金股利</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">股票股利</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.55 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.55 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.30 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.30 元</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.20 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.20 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:red;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:red;">0 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:red;"><strong>0 元（不配息）</strong></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.50 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.30 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.80 元</strong></td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.30 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.20 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0.50 元</strong></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2026</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.00 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2025</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.85 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">每千股 10 股</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2024</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.50 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2023</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>0 元（不配息）</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2022</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1.00 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">2021</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.55 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">2020</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2019</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">0.60 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">—</td></tr>
           </tbody>
         </table></div>
-        <p>從表格可以很明顯看出，開發金的配息像坐雲霄飛車。2021 年配了 0.8 元，隔年直接歸零不配息，然後再慢慢爬回來。這就是壽險型金控的特性，獲利跟著金融市場大幅波動。</p>
+        <p>從表格可以很明顯看出，開發金的配息像坐雲霄飛車：2021 年度配了 1.00 元，隔年（2022 年度）直接歸零不配息，之後再從 0.50 元慢慢爬回 1.00 元。這就是壽險型金控的特性，獲利跟著金融市場大幅波動。</p>
 
         <h2>2022 年不配息的教訓</h2>
         <p>2022 年是開發金存股族的惡夢。那一年因為全球升息，債券價格大跌，旗下中國人壽的投資組合出現鉅額未實現虧損，整個金控幾乎沒有可分配盈餘，最終決定不配發任何股利。</p>
-        <p>這件事給了一個很重要的教訓：<strong>股價便宜不等於風險低。</strong>開發金一張才一萬多，看起來門檻很低，但壽險的投資損益是一把雙面刃，賺的時候配息很大方，虧的時候連一毛都沒有。如果你存股的目的是穩定領息，這種不確定性會很難受。</p>
+        <p>這件事給了一個很重要的教訓：<strong>單一年度配得多，不代表每年都配得到。</strong>壽險的投資損益是一把雙面刃，賺的時候配息很大方，虧的時候連一毛都沒有。如果你存股的目的是穩定領息，這種不確定性會很難受。</p>
 
         <h2>殖利率計算</h2>
         <div style="background:#f9f9f9;border-left:4px solid #4caf50;padding:1rem 1.25rem;margin:1rem 0;border-radius:0 4px 4px 0;">
           <strong>殖利率 = 每股現金股利 / 買入股價 x 100%</strong><br><br>
-          以 2025 年配息 0.55 元、參考股價約 15 元計算：<br>
-          <strong>殖利率 = 0.55 / 15 x 100% = 3.7%</strong>
+          以 2025 年度配息 1.00 元（2026/6/30 除息）、2026-10-08 收盤 37.55 元計算：<br>
+          <strong>殖利率 = 1.00 / 37.55 x 100% ≈ 2.7%</strong>
         </div>
-        <p>3.7% 的殖利率看起來還可以，但問題是這個數字不穩定。如果用 6 年平均（含不配息的 2022 年）來看，平均殖利率大概只有 2.5% 左右，就不太好看了。</p>
+        <p>2.7% 的殖利率本來就不高，而且這個數字不穩定。近 6 個盈餘年度（2020～2025）平均每年現金股利約 0.65 元（含 2022 年度不配息），以目前股價換算平均殖利率不到 2%。</p>
 
         <h2>持有不同張數每年領多少？</h2>
-        <p>以 2025 年配息 0.55 元、買入股價 15 元為例：</p>
+        <p>以 2025 年度配息 1.00 元、買入股價 37.55 元為例：</p>
         <div class="table-wrap"><table style="width:100%;border-collapse:collapse;margin:1rem 0;">
           <thead><tr style="background:#f5f5f5;">
             <th style="padding:10px;border:1px solid #ddd;text-align:left;">持有張數</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">投入成本</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">年度現金配息</th><th style="padding:10px;border:1px solid #ddd;text-align:right;">殖利率</th>
           </tr></thead>
           <tbody>
-            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">15,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>550 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.7%</td></tr>
-            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">150,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>5,500 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.7%</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">1,500,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;color:green;"><strong>55,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3.7%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">1 張（1,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">37,550 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>1,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
+            <tr style="background:#fafafa;"><td style="padding:8px;border:1px solid #ddd;">10 張（10,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">375,500 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>10,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;">100 張（100,000 股）</td><td style="padding:8px;border:1px solid #ddd;text-align:right;">3,755,000 元</td><td style="padding:8px;border:1px solid #ddd;text-align:right;"><strong>100,000 元</strong></td><td style="padding:8px;border:1px solid #ddd;text-align:right;">2.7%</td></tr>
           </tbody>
         </table></div>
-        <p>開發金一張很便宜，所以很容易就能買到很多張。但要記得 2022 年那種不配息的情況隨時可能再發生。想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a>。</p>
+        <p>要記得 2022 年度那種不配息的情況隨時可能再發生。想用你的實際買入價格試算，請使用 <a href="/">免費股利計算器</a>。</p>
 
         <h2>開發金適合存股嗎？</h2>
         <p>我自己的看法是：開發金不太適合當「存股」標的，比較適合當「價差」標的。原因如下：</p>
         <ul>
-          <li><strong>不適合存股的理由：</strong>配息不穩定、壽險投資損益波動大、有不配息的風險、股本持續膨脹</li>
-          <li><strong>可以考慮的理由：</strong>股價極低門檻最低、壽險子公司若遇到好年份獲利爆發力強、股價低點佈局等反彈的空間大</li>
+          <li><strong>不適合存股的理由：</strong>配息不穩定、壽險投資損益波動大、有不配息的風險、殖利率不高（約 2.7%）</li>
+          <li><strong>可以考慮的理由：</strong>壽險子公司若遇到好年份獲利爆發力強、近三年配息持續回升（0.50 → 0.85 → 1.00 元）</li>
         </ul>
-        <p>如果你的存股目標是「每年穩定領息」，建議選官股金控（兆豐金、華南金）或高股息 ETF。如果你能接受「有些年份不配息，但股價便宜可以慢慢撿」的思維，開發金也不是不能碰，但心態要對。</p>
+        <p>如果你的存股目標是「每年穩定領息」，建議選官股金控（兆豐金、華南金）或高股息 ETF。如果你能接受「有些年份不配息」，開發金也不是不能碰，但心態要對。</p>
 
         <h2>常見問題</h2>
         <h3>開發金每年配多少股利？</h3>
-        <p>開發金配息不太穩定，好的年份可以配 0.5-0.8 元，但 2022 年因壽險虧損直接不配息。2025 年恢復配發現金股利約 0.55 元。</p>
+        <p>開發金配息不穩定。依證交所除權息紀錄，2025 年度配發現金股利 1.00 元（2026/6/30 除息），2024 年度 0.85 元加每千股 10 股，2023 年度 0.50 元，2022 年度則因壽險虧損不配息。</p>
         <h3>開發金為什麼 2022 年不配息？</h3>
-        <p>2022 年升息環境導致債券價格大跌，旗下中國人壽出現鉅額未實現虧損，金控獲利大幅衰退，因此決定不配發股利。</p>
+        <p>2022 年升息環境導致債券價格大跌，旗下中國人壽出現鉅額未實現虧損，金控獲利大幅衰退，因此 2022 年度盈餘沒有配發股利（2023 年沒有除息）。</p>
         <h3>開發金適合存股嗎？</h3>
-        <p>開發金股價便宜但配息穩定度不如官股金控。壽險子公司的投資損益波動大，可能造成配息中斷。不適合追求穩定領息的保守型投資人。</p>
+        <p>開發金的配息穩定度不如官股金控。壽險子公司的投資損益波動大，可能造成配息中斷。不適合追求穩定領息的保守型投資人。</p>
         <h3>開發金殖利率多少？</h3>
-        <p>以 2025 年配息 0.55 元、股價約 15 元計算，殖利率約 3.7%。但這個數字不穩定，遇到壽險虧損年份可能直接歸零。</p>
+        <p>以 2025 年度配息 1.00 元、2026-10-08 收盤 37.55 元計算，殖利率約 2.7%。但這個數字不穩定，遇到壽險虧損年份可能直接歸零。</p>
 
         <h2>資料來源與免責</h2>
         <p style="font-size:.88rem;color:#888;">本頁股價參考台灣證券交易所（<a href="https://www.twse.com.tw/" target="_blank" rel="noopener">TWSE</a>）公開資訊，配息紀錄整理自 <a href="https://goodinfo.tw/tw/StockDividendPolicy.asp?STOCK_ID=2883" target="_blank" rel="noopener">Goodinfo（2883）</a> 等公開資料。文中數字為參考值，實際配息、除息日與股價請以公司官方公告及證交所資料為準，本頁不構成投資建議。 <a href="mailto:yuqi051285@gmail.com?subject=%E7%B6%B2%E7%AB%99%E6%95%B8%E5%AD%97%E5%8B%98%E8%AA%A4%E5%9B%9E%E5%A0%B1" style="color:#0891b2;">發現數字有誤？回報給我們</a></p>
@@ -318,19 +316,19 @@
     <div>
       <div class="article-faq-item">
         <h3>開發金每年配多少股利？</h3>
-        <p>開發金配息不太穩定，好的年份可以配 0.5-0.8 元，但 2022 年因壽險虧損直接不配息。2025 年恢復配發現金股利約 0.55 元。</p>
+        <p>開發金配息不穩定。依證交所除權息紀錄，2025 年度配發現金股利 1.00 元（2026/6/30 除息），2024 年度 0.85 元加每千股 10 股，2023 年度 0.50 元，2022 年度則因壽險虧損不配息。</p>
       </div>
       <div class="article-faq-item">
         <h3>開發金為什麼 2022 年不配息？</h3>
-        <p>2022 年升息環境導致債券價格大跌，旗下中國人壽出現鉅額未實現虧損，金控獲利大幅衰退，因此決定不配發股利。</p>
+        <p>2022 年升息環境導致債券價格大跌，旗下中國人壽出現鉅額未實現虧損，金控獲利大幅衰退，因此 2022 年度盈餘沒有配發股利（2023 年沒有除息）。</p>
       </div>
       <div class="article-faq-item">
         <h3>開發金適合存股嗎？</h3>
-        <p>開發金股價便宜但配息穩定度不如官股金控。壽險子公司的投資損益波動大，可能造成配息中斷。不適合追求穩定領息的保守型投資人。</p>
+        <p>開發金的配息穩定度不如官股金控。壽險子公司的投資損益波動大，可能造成配息中斷。不適合追求穩定領息的保守型投資人。</p>
       </div>
       <div class="article-faq-item">
         <h3>開發金殖利率多少？</h3>
-        <p>以 2025 年配息 0.55 元、股價約 15 元計算，殖利率約 3.7%。但這個數字不穩定，遇到壽險虧損年份可能直接歸零。</p>
+        <p>以 2025 年度配息 1.00 元、2026-10-08 收盤 37.55 元計算，殖利率約 2.7%。但這個數字不穩定，遇到壽險虧損年份可能直接歸零。</p>
       </div>
     </div>
   </section>
