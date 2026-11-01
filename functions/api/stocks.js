@@ -7,6 +7,46 @@
  *   用 STOCK_DAY_ALL 收盤價 + BWIBBU 殖利率，快取 1-6 小時
  */
 
+// TWSE openapi 從 Cloudflare 出口呼叫時，有時會回 CSV（"日期,證券代號,..."）而不是 JSON，
+// 直接 res.json() 會丟錯讓整支 API 回 500。兩種格式都解析成同樣的欄位名稱。
+const TWSE_CSV_FIELDS = {
+  '日期': 'Date', '證券代號': 'Code', '股票代號': 'Code', '證券名稱': 'Name', '股票名稱': 'Name',
+  '成交股數': 'TradeVolume', '成交金額': 'TradeValue', '開盤價': 'OpeningPrice', '最高價': 'HighestPrice',
+  '最低價': 'LowestPrice', '收盤價': 'ClosingPrice', '漲跌價差': 'Change', '成交筆數': 'Transaction',
+  '本益比': 'PEratio', '殖利率(%)': 'DividendYield', '股價淨值比': 'PBratio'
+};
+
+function parseCsvLine(line) {
+  const out = [];
+  let cur = '', quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (quoted) {
+      if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+      else if (ch === '"') quoted = false;
+      else cur += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ',') { out.push(cur); cur = ''; }
+    else cur += ch;
+  }
+  out.push(cur);
+  return out;
+}
+
+async function readTwseRows(res) {
+  const text = (await res.text()).replace(/^\uFEFF/, '').trim();
+  if (text.startsWith('[')) return JSON.parse(text);
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+  if (lines.length === 0) return [];
+  const head = parseCsvLine(lines[0]).map(h => TWSE_CSV_FIELDS[h.trim()] || h.trim());
+  return lines.slice(1).map(l => {
+    const v = parseCsvLine(l);
+    const row = {};
+    head.forEach((k, i) => { row[k] = (v[i] ?? '').trim(); });
+    return row;
+  });
+}
+
 export async function onRequest(context) {
   // 判斷台灣時間
   const now = new Date();
@@ -77,7 +117,7 @@ export async function onRequest(context) {
       try {
         const yieldRes = await fetch('https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL', { headers });
         if (yieldRes.ok) {
-          const yieldData = await yieldRes.json();
+          const yieldData = await readTwseRows(yieldRes);
           for (const item of yieldData) {
             if (item.Code) {
               yieldMap[item.Code] = {
@@ -150,7 +190,7 @@ export async function onRequest(context) {
         try {
           const priceRes = await fetch('https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL', { headers });
           if (priceRes.ok) {
-            const priceData = await priceRes.json();
+            const priceData = await readTwseRows(priceRes);
             const existCodes = new Set(stocks.map(s => s.code));
             for (const item of priceData) {
               if (!item.Code || existCodes.has(item.Code)) continue;
@@ -193,7 +233,7 @@ export async function onRequest(context) {
           });
         }
 
-        const priceData = await priceRes.json();
+        const priceData = await readTwseRows(priceRes);
         const priceMap = {};
         for (const item of priceData) {
           if (item.Code && item.ClosingPrice) {
