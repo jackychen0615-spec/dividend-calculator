@@ -1,0 +1,3206 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//gulicalc.com//dividend calendar//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:熱門存股除息提醒｜GULICALC
+X-WR-TIMEZONE:Asia/Taipei
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:buy-00940-2026-05-07@gulicalc.com
+DTSTAMP:20260506T000000Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:00940 最後買進日（5/7 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 5/7 除息（0.045 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（5/7 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-05-07@gulicalc.com
+DTSTAMP:20260507T000000Z
+DTSTART;VALUE=DATE:20260507
+DTEND;VALUE=DATE:20260508
+SUMMARY:00940 元大台灣價值高息 除息（0.045 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-06-01@gulicalc.com
+DTSTAMP:20260601T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:00940 元大台灣價值高息 股利發放（0.045 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-05-18@gulicalc.com
+DTSTAMP:20260515T000000Z
+DTSTART;VALUE=DATE:20260515
+DTEND;VALUE=DATE:20260516
+SUMMARY:00936 最後買進日（5/18 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 5/18 除息（0.1 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（5/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-05-18@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00936 台新永續高息中小 除息（0.1 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-06-05@gulicalc.com
+DTSTAMP:20260605T000000Z
+DTSTART;VALUE=DATE:20260605
+DTEND;VALUE=DATE:20260606
+SUMMARY:00936 台新永續高息中小 股利發放（0.1 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00878-2026-05-19@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00878 最後買進日（5/19 除息）
+DESCRIPTION:00878 國泰永續高股息 將在 5/19 除息（0.66 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00878-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00878 最後買進日（5/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00878-2026-05-19@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00878 國泰永續高股息 除息（0.66 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00878-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00878-2026-06-12@gulicalc.com
+DTSTAMP:20260612T000000Z
+DTSTART;VALUE=DATE:20260612
+DTEND;VALUE=DATE:20260613
+SUMMARY:00878 國泰永續高股息 股利發放（0.66 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00878-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-05-19@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00900 最後買進日（5/19 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 5/19 除息（0.075 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（5/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-05-19@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-06-11@gulicalc.com
+DTSTAMP:20260611T000000Z
+DTSTART;VALUE=DATE:20260611
+DTEND;VALUE=DATE:20260612
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00932-2026-05-19@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00932 最後買進日（5/19 除息）
+DESCRIPTION:00932 兆豐永續高息等權 將在 5/19 除息（0.22 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00932-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00932 最後買進日（5/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00932-2026-05-19@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00932 兆豐永續高息等權 除息（0.22 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00932-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00932-2026-06-05@gulicalc.com
+DTSTAMP:20260605T000000Z
+DTSTART;VALUE=DATE:20260605
+DTEND;VALUE=DATE:20260606
+SUMMARY:00932 兆豐永續高息等權 股利發放（0.22 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00932-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-05-19@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00934 最後買進日（5/19 除息）
+DESCRIPTION:00934 中信成長高股息 將在 5/19 除息（0.25 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（5/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-05-19@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00934 中信成長高股息 除息（0.25 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-06-12@gulicalc.com
+DTSTAMP:20260612T000000Z
+DTSTART;VALUE=DATE:20260612
+DTEND;VALUE=DATE:20260613
+SUMMARY:00934 中信成長高股息 股利發放（0.25 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-05-19@gulicalc.com
+DTSTAMP:20260518T000000Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:00943 最後買進日（5/19 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 5/19 除息（0.09 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（5/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-05-19@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00943 兆豐電子高息等權 除息（0.09 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-06-05@gulicalc.com
+DTSTAMP:20260605T000000Z
+DTSTART;VALUE=DATE:20260605
+DTEND;VALUE=DATE:20260606
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.09 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-05-20@gulicalc.com
+DTSTAMP:20260519T000000Z
+DTSTART;VALUE=DATE:20260519
+DTEND;VALUE=DATE:20260520
+SUMMARY:00929 最後買進日（5/20 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 5/20 除息（0.13 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（5/20 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-05-20@gulicalc.com
+DTSTAMP:20260520T000000Z
+DTSTART;VALUE=DATE:20260520
+DTEND;VALUE=DATE:20260521
+SUMMARY:00929 復華台灣科技優息 除息（0.13 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-06-15@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00929 復華台灣科技優息 股利發放（0.13 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-06-02@gulicalc.com
+DTSTAMP:20260601T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:00939 最後買進日（6/2 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 6/2 除息（0.072 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（6/2 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-06-02@gulicalc.com
+DTSTAMP:20260602T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:00939 統一台灣高息動能 除息（0.072 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-06-25@gulicalc.com
+DTSTAMP:20260625T000000Z
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260626
+SUMMARY:00939 統一台灣高息動能 股利發放（0.072 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-06-09@gulicalc.com
+DTSTAMP:20260608T000000Z
+DTSTART;VALUE=DATE:20260608
+DTEND;VALUE=DATE:20260609
+SUMMARY:00940 最後買進日（6/9 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 6/9 除息（0.05 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（6/9 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-06-09@gulicalc.com
+DTSTAMP:20260609T000000Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:00940 元大台灣價值高息 除息（0.05 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-07-01@gulicalc.com
+DTSTAMP:20260701T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:00940 元大台灣價值高息 股利發放（0.05 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2330-2026-06-11@gulicalc.com
+DTSTAMP:20260610T000000Z
+DTSTART;VALUE=DATE:20260610
+DTEND;VALUE=DATE:20260611
+SUMMARY:2330 最後買進日（6/11 除息）
+DESCRIPTION:2330 台積電 將在 6/11 除息（6 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/tsmc-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2330 最後買進日（6/11 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2330-2026-06-11@gulicalc.com
+DTSTAMP:20260611T000000Z
+DTSTART;VALUE=DATE:20260611
+DTEND;VALUE=DATE:20260612
+SUMMARY:2330 台積電 除息（6 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/tsmc-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2330-2026-07-09@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:2330 台積電 股利發放（6 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/tsmc-divi
+ dend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-06-15@gulicalc.com
+DTSTAMP:20260612T000000Z
+DTSTART;VALUE=DATE:20260612
+DTEND;VALUE=DATE:20260613
+SUMMARY:00936 最後買進日（6/15 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 6/15 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（6/15 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-06-15@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00936 台新永續高息中小 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-07-06@gulicalc.com
+DTSTAMP:20260706T000000Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:00936 台新永續高息中小 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-06-16@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00900 最後買進日（6/16 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 6/16 除息（0.075 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（6/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-06-16@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-07-09@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00915-2026-06-16@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00915 最後買進日（6/16 除息）
+DESCRIPTION:00915 凱基優選高股息30 將在 6/16 除息（0.45 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00915-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00915 最後買進日（6/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00915-2026-06-16@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00915 凱基優選高股息30 除息（0.45 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00915-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00915-2026-07-10@gulicalc.com
+DTSTAMP:20260710T000000Z
+DTSTART;VALUE=DATE:20260710
+DTEND;VALUE=DATE:20260711
+SUMMARY:00915 凱基優選高股息30 股利發放（0.45 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00915-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00919-2026-06-16@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00919 最後買進日（6/16 除息）
+DESCRIPTION:00919 群益台灣精選高息 將在 6/16 除息（1 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00919-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00919 最後買進日（6/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00919-2026-06-16@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00919 群益台灣精選高息 除息（1 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00919-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00919-2026-07-14@gulicalc.com
+DTSTAMP:20260714T000000Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:00919 群益台灣精選高息 股利發放（1 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00919-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-06-16@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00934 最後買進日（6/16 除息）
+DESCRIPTION:00934 中信成長高股息 將在 6/16 除息（0.25 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（6/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-06-16@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00934 中信成長高股息 除息（0.25 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-07-13@gulicalc.com
+DTSTAMP:20260713T000000Z
+DTSTART;VALUE=DATE:20260713
+DTEND;VALUE=DATE:20260714
+SUMMARY:00934 中信成長高股息 股利發放（0.25 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-06-16@gulicalc.com
+DTSTAMP:20260615T000000Z
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:00943 最後買進日（6/16 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 6/16 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（6/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-06-16@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00943 兆豐電子高息等權 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-07-06@gulicalc.com
+DTSTAMP:20260706T000000Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-06-17@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:00929 最後買進日（6/17 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 6/17 除息（0.26 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（6/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-06-17@gulicalc.com
+DTSTAMP:20260617T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:00929 復華台灣科技優息 除息（0.26 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-07-14@gulicalc.com
+DTSTAMP:20260714T000000Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:00929 復華台灣科技優息 股利發放（0.26 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2308-2026-06-17@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:2308 最後買進日（6/17 除息）
+DESCRIPTION:2308 台達電 將在 6/17 除息（11.6 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/delta-electronics-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2308 最後買進日（6/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2308-2026-06-17@gulicalc.com
+DTSTAMP:20260617T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:2308 台達電 除息（11.6 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/delta-electronics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2308-2026-07-22@gulicalc.com
+DTSTAMP:20260722T000000Z
+DTSTART;VALUE=DATE:20260722
+DTEND;VALUE=DATE:20260723
+SUMMARY:2308 台達電 股利發放（11.6 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/delta-ele
+ ctronics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2603-2026-06-17@gulicalc.com
+DTSTAMP:20260616T000000Z
+DTSTART;VALUE=DATE:20260616
+DTEND;VALUE=DATE:20260617
+SUMMARY:2603 最後買進日（6/17 除息）
+DESCRIPTION:2603 長榮 將在 6/17 除息（16 元）。今天收盤時持
+ 有，才領得到這次配息。\n試算：https://gulicalc.com/articles/
+ evergreen-marine-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2603 最後買進日（6/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2603-2026-06-17@gulicalc.com
+DTSTAMP:20260617T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:2603 長榮 除息（16 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/evergreen-marine-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2603-2026-07-17@gulicalc.com
+DTSTAMP:20260717T000000Z
+DTSTART;VALUE=DATE:20260717
+DTEND;VALUE=DATE:20260718
+SUMMARY:2603 長榮 股利發放（16 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/evergreen
+ -marine-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00918-2026-06-18@gulicalc.com
+DTSTAMP:20260617T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:00918 最後買進日（6/18 除息）
+DESCRIPTION:00918 大華優利高填息30 將在 6/18 除息（1.26 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00918-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00918 最後買進日（6/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00918-2026-06-18@gulicalc.com
+DTSTAMP:20260618T000000Z
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:00918 大華優利高填息30 除息（1.26 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00918-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00918-2026-07-14@gulicalc.com
+DTSTAMP:20260714T000000Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:00918 大華優利高填息30 股利發放（1.26 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00918-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00713-2026-06-22@gulicalc.com
+DTSTAMP:20260618T000000Z
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:00713 最後買進日（6/22 除息）
+DESCRIPTION:00713 元大台灣高息低波 將在 6/22 除息（1 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00713-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00713 最後買進日（6/22 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00713-2026-06-22@gulicalc.com
+DTSTAMP:20260622T000000Z
+DTSTART;VALUE=DATE:20260622
+DTEND;VALUE=DATE:20260623
+SUMMARY:00713 元大台灣高息低波 除息（1 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00713-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00713-2026-07-10@gulicalc.com
+DTSTAMP:20260710T000000Z
+DTSTART;VALUE=DATE:20260710
+DTEND;VALUE=DATE:20260711
+SUMMARY:00713 元大台灣高息低波 股利發放（1 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00713-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-1301-2026-06-30@gulicalc.com
+DTSTAMP:20260629T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:1301 最後買進日（6/30 除息）
+DESCRIPTION:1301 台塑 將在 6/30 除息（0.5 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/formosa-plastics-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1301 最後買進日（6/30 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-1301-2026-06-30@gulicalc.com
+DTSTAMP:20260630T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:1301 台塑 除息（0.5 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/formosa-plastics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-1301-2026-08-04@gulicalc.com
+DTSTAMP:20260804T000000Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:1301 台塑 股利發放（0.5 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/formosa-p
+ lastics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2882-2026-06-30@gulicalc.com
+DTSTAMP:20260629T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:2882 最後買進日（6/30 除息）
+DESCRIPTION:2882 國泰金 將在 6/30 除息（3.5 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/cathay-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2882 最後買進日（6/30 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2882-2026-06-30@gulicalc.com
+DTSTAMP:20260630T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:2882 國泰金 除息（3.5 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/cathay-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2882-2026-07-28@gulicalc.com
+DTSTAMP:20260728T000000Z
+DTSTART;VALUE=DATE:20260728
+DTEND;VALUE=DATE:20260729
+SUMMARY:2882 國泰金 股利發放（3.5 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/cathay-fi
+ nancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2883-2026-06-30@gulicalc.com
+DTSTAMP:20260629T000000Z
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:2883 最後買進日（6/30 除息）
+DESCRIPTION:2883 凱基金 將在 6/30 除息（1 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/kai-fa-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2883 最後買進日（6/30 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2883-2026-06-30@gulicalc.com
+DTSTAMP:20260630T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:2883 凱基金 除息（1 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/kai-fa-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2883-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:2883 凱基金 股利發放（1 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/kai-fa-fi
+ nancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2881-2026-07-01@gulicalc.com
+DTSTAMP:20260630T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:2881 最後買進日（7/1 除息）
+DESCRIPTION:2881 富邦金 將在 7/1 除息（4.25 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/fubon-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2881 最後買進日（7/1 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2881-2026-07-01@gulicalc.com
+DTSTAMP:20260701T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:2881 富邦金 除息（4.25 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/fubon-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2881-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:2881 富邦金 股利發放（4.25 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/fubon-fin
+ ancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2884-2026-07-01@gulicalc.com
+DTSTAMP:20260630T000000Z
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:2884 最後買進日（7/1 除息）
+DESCRIPTION:2884 玉山金 將在 7/1 除息（1.4 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/e-sun-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2884 最後買進日（7/1 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2884-2026-07-01@gulicalc.com
+DTSTAMP:20260701T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:2884 玉山金 除息（1.4 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/e-sun-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2884-2026-07-27@gulicalc.com
+DTSTAMP:20260727T000000Z
+DTSTART;VALUE=DATE:20260727
+DTEND;VALUE=DATE:20260728
+SUMMARY:2884 玉山金 股利發放（1.4 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/e-sun-fin
+ ancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-07-02@gulicalc.com
+DTSTAMP:20260701T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:00939 最後買進日（7/2 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 7/2 除息（0.125 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（7/2 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-07-02@gulicalc.com
+DTSTAMP:20260702T000000Z
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260703
+SUMMARY:00939 統一台灣高息動能 除息（0.125 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-07-24@gulicalc.com
+DTSTAMP:20260724T000000Z
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260725
+SUMMARY:00939 統一台灣高息動能 股利發放（0.125 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2317-2026-07-02@gulicalc.com
+DTSTAMP:20260701T000000Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:2317 最後買進日（7/2 除息）
+DESCRIPTION:2317 鴻海 將在 7/2 除息（7.1718 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/hon-hai-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2317 最後買進日（7/2 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2317-2026-07-02@gulicalc.com
+DTSTAMP:20260702T000000Z
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260703
+SUMMARY:2317 鴻海 除息（7.1718 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/hon-hai-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2317-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:2317 鴻海 股利發放（7.1718 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/hon-hai-d
+ ividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-3711-2026-07-03@gulicalc.com
+DTSTAMP:20260702T000000Z
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260703
+SUMMARY:3711 最後買進日（7/3 除息）
+DESCRIPTION:3711 日月光投控 將在 7/3 除息（6.5848 元）。今天
+ 收盤時持有，才領得到這次配息。\n試算：https://gulicalc.c
+ om/articles/ase-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:3711 最後買進日（7/3 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-3711-2026-07-03@gulicalc.com
+DTSTAMP:20260703T000000Z
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260704
+SUMMARY:3711 日月光投控 除息（6.5848 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/ase-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-3711-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:3711 日月光投控 股利發放（6.5848 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/ase-divid
+ end
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2454-2026-07-07@gulicalc.com
+DTSTAMP:20260706T000000Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:2454 最後買進日（7/7 除息）
+DESCRIPTION:2454 聯發科 將在 7/7 除息（24.5002 元）。今天收
+ 盤時持有，才領得到這次配息。\n試算：https://gulicalc.com/
+ articles/mediatek-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2454 最後買進日（7/7 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2454-2026-07-07@gulicalc.com
+DTSTAMP:20260707T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:2454 聯發科 除息（24.5002 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/mediatek-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2454-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:2454 聯發科 股利發放（24.5002 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/mediatek-
+ dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-1303-2026-07-08@gulicalc.com
+DTSTAMP:20260707T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:1303 最後買進日（7/8 除息）
+DESCRIPTION:1303 南亞 將在 7/8 除息（0.8 元）。今天收盤時持
+ 有，才領得到這次配息。\n試算：https://gulicalc.com/articles/
+ nanya-plastics-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1303 最後買進日（7/8 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-1303-2026-07-08@gulicalc.com
+DTSTAMP:20260708T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260709
+SUMMARY:1303 南亞 除息（0.8 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/nanya-plastics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-1303-2026-08-07@gulicalc.com
+DTSTAMP:20260807T000000Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+SUMMARY:1303 南亞 股利發放（0.8 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/nanya-pla
+ stics-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-4904-2026-07-08@gulicalc.com
+DTSTAMP:20260707T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:4904 最後買進日（7/8 除息）
+DESCRIPTION:4904 遠傳 將在 7/8 除息（3.8093 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/fareastone-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:4904 最後買進日（7/8 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-4904-2026-07-08@gulicalc.com
+DTSTAMP:20260708T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260709
+SUMMARY:4904 遠傳 除息（3.8093 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/fareastone-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-4904-2026-08-05@gulicalc.com
+DTSTAMP:20260805T000000Z
+DTSTART;VALUE=DATE:20260805
+DTEND;VALUE=DATE:20260806
+SUMMARY:4904 遠傳 股利發放（3.8093 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/fareaston
+ e-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-07-09@gulicalc.com
+DTSTAMP:20260708T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260709
+SUMMARY:00940 最後買進日（7/9 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 7/9 除息（0.05 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（7/9 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-07-09@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:00940 元大台灣價值高息 除息（0.05 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-08-03@gulicalc.com
+DTSTAMP:20260803T000000Z
+DTSTART;VALUE=DATE:20260803
+DTEND;VALUE=DATE:20260804
+SUMMARY:00940 元大台灣價值高息 股利發放（0.05 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2412-2026-07-09@gulicalc.com
+DTSTAMP:20260708T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260709
+SUMMARY:2412 最後買進日（7/9 除息）
+DESCRIPTION:2412 中華電 將在 7/9 除息（5.2 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/chunghwa-telecom-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2412 最後買進日（7/9 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2412-2026-07-09@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:2412 中華電 除息（5.2 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/chunghwa-telecom-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2412-2026-08-07@gulicalc.com
+DTSTAMP:20260807T000000Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+SUMMARY:2412 中華電 股利發放（5.2 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/chunghwa-
+ telecom-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-3045-2026-07-09@gulicalc.com
+DTSTAMP:20260708T000000Z
+DTSTART;VALUE=DATE:20260708
+DTEND;VALUE=DATE:20260709
+SUMMARY:3045 最後買進日（7/9 除息）
+DESCRIPTION:3045 台灣大 將在 7/9 除息（4.7443 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/taiwan-mobile-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:3045 最後買進日（7/9 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-3045-2026-07-09@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:3045 台灣大 除息（4.7443 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/taiwan-mobile-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-3045-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:3045 台灣大 股利發放（4.7443 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/taiwan-mo
+ bile-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2891-2026-07-10@gulicalc.com
+DTSTAMP:20260709T000000Z
+DTSTART;VALUE=DATE:20260709
+DTEND;VALUE=DATE:20260710
+SUMMARY:2891 最後買進日（7/10 除息）
+DESCRIPTION:2891 中信金 將在 7/10 除息（2.5002 元）。今天收
+ 盤時持有，才領得到這次配息。\n試算：https://gulicalc.com/
+ articles/ctbc-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2891 最後買進日（7/10 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2891-2026-07-10@gulicalc.com
+DTSTAMP:20260710T000000Z
+DTSTART;VALUE=DATE:20260710
+DTEND;VALUE=DATE:20260711
+SUMMARY:2891 中信金 除息（2.5002 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/ctbc-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2891-2026-08-07@gulicalc.com
+DTSTAMP:20260807T000000Z
+DTSTART;VALUE=DATE:20260807
+DTEND;VALUE=DATE:20260808
+SUMMARY:2891 中信金 股利發放（2.5002 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/ctbc-fina
+ ncial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-07-15@gulicalc.com
+DTSTAMP:20260714T000000Z
+DTSTART;VALUE=DATE:20260714
+DTEND;VALUE=DATE:20260715
+SUMMARY:00936 最後買進日（7/15 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 7/15 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（7/15 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-07-15@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00936 台新永續高息中小 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-08-04@gulicalc.com
+DTSTAMP:20260804T000000Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:00936 台新永續高息中小 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-006208-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:006208 最後買進日（7/16 除息）
+DESCRIPTION:006208 富邦台50 將在 7/16 除息（4.75 元）。今天收
+ 盤時持有，才領得到這次配息。\n試算：https://gulicalc.com/
+ articles/006208-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:006208 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-006208-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:006208 富邦台50 除息（4.75 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/006208-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-006208-2026-08-10@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:006208 富邦台50 股利發放（4.75 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/006208-di
+ vidend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00882-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00882 最後買進日（7/16 除息）
+DESCRIPTION:00882 中信中國高股息 將在 7/16 除息（0.55 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00882-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00882 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00882-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:00882 中信中國高股息 除息（0.55 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00882-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00882-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:00882 中信中國高股息 股利發放（0.55 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00882-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00900 最後買進日（7/16 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 7/16 除息（0.075 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-08-10@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00927-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00927 最後買進日（7/16 除息）
+DESCRIPTION:00927 群益半導體收益 將在 7/16 除息（1.88 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00927-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00927 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00927-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:00927 群益半導體收益 除息（1.88 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00927-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00927-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:00927 群益半導體收益 股利發放（1.88 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00927-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00934 最後買進日（7/16 除息）
+DESCRIPTION:00934 中信成長高股息 將在 7/16 除息（0.3 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:00934 中信成長高股息 除息（0.3 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:00934 中信成長高股息 股利發放（0.3 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:00943 最後買進日（7/16 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 7/16 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:00943 兆豐電子高息等權 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-08-04@gulicalc.com
+DTSTAMP:20260804T000000Z
+DTSTART;VALUE=DATE:20260804
+DTEND;VALUE=DATE:20260805
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2382-2026-07-16@gulicalc.com
+DTSTAMP:20260715T000000Z
+DTSTART;VALUE=DATE:20260715
+DTEND;VALUE=DATE:20260716
+SUMMARY:2382 最後買進日（7/16 除息）
+DESCRIPTION:2382 廣達 將在 7/16 除息（15.6 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/quanta-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2382 最後買進日（7/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2382-2026-07-16@gulicalc.com
+DTSTAMP:20260716T000000Z
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:2382 廣達 除息（15.6 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/quanta-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2382-2026-08-28@gulicalc.com
+DTSTAMP:20260828T000000Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:2382 廣達 股利發放（15.6 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/quanta-di
+ vidend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-0050-2026-07-21@gulicalc.com
+DTSTAMP:20260720T000000Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260721
+SUMMARY:0050 最後買進日（7/21 除息）
+DESCRIPTION:0050 元大台灣50 將在 7/21 除息（0.6 元）。今天收
+ 盤時持有，才領得到這次配息。\n試算：https://gulicalc.com/
+ articles/0050-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:0050 最後買進日（7/21 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-0050-2026-07-21@gulicalc.com
+DTSTAMP:20260721T000000Z
+DTSTART;VALUE=DATE:20260721
+DTEND;VALUE=DATE:20260722
+SUMMARY:0050 元大台灣50 除息（0.6 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/0050-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-0050-2026-08-10@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:0050 元大台灣50 股利發放（0.6 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/0050-divi
+ dend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-0056-2026-07-21@gulicalc.com
+DTSTAMP:20260720T000000Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260721
+SUMMARY:0056 最後買進日（7/21 除息）
+DESCRIPTION:0056 元大高股息 將在 7/21 除息（1.35 元）。今天
+ 收盤時持有，才領得到這次配息。\n試算：https://gulicalc.c
+ om/articles/0056-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:0056 最後買進日（7/21 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-0056-2026-07-21@gulicalc.com
+DTSTAMP:20260721T000000Z
+DTSTART;VALUE=DATE:20260721
+DTEND;VALUE=DATE:20260722
+SUMMARY:0056 元大高股息 除息（1.35 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/0056-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-0056-2026-08-10@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:0056 元大高股息 股利發放（1.35 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/0056-divi
+ dend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-07-21@gulicalc.com
+DTSTAMP:20260720T000000Z
+DTSTART;VALUE=DATE:20260720
+DTEND;VALUE=DATE:20260721
+SUMMARY:00929 最後買進日（7/21 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 7/21 除息（0.38 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（7/21 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-07-21@gulicalc.com
+DTSTAMP:20260721T000000Z
+DTSTART;VALUE=DATE:20260721
+DTEND;VALUE=DATE:20260722
+SUMMARY:00929 復華台灣科技優息 除息（0.38 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-08-14@gulicalc.com
+DTSTAMP:20260814T000000Z
+DTSTART;VALUE=DATE:20260814
+DTEND;VALUE=DATE:20260815
+SUMMARY:00929 復華台灣科技優息 股利發放（0.38 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2002-2026-07-24@gulicalc.com
+DTSTAMP:20260723T000000Z
+DTSTART;VALUE=DATE:20260723
+DTEND;VALUE=DATE:20260724
+SUMMARY:2002 最後買進日（7/24 除息）
+DESCRIPTION:2002 中鋼 將在 7/24 除息（0.15 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/china-steel-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2002 最後買進日（7/24 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2002-2026-07-24@gulicalc.com
+DTSTAMP:20260724T000000Z
+DTSTART;VALUE=DATE:20260724
+DTEND;VALUE=DATE:20260725
+SUMMARY:2002 中鋼 除息（0.15 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/china-steel-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2002-2026-08-26@gulicalc.com
+DTSTAMP:20260826T000000Z
+DTSTART;VALUE=DATE:20260826
+DTEND;VALUE=DATE:20260827
+SUMMARY:2002 中鋼 股利發放（0.15 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/china-ste
+ el-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-1216-2026-07-30@gulicalc.com
+DTSTAMP:20260729T000000Z
+DTSTART;VALUE=DATE:20260729
+DTEND;VALUE=DATE:20260730
+SUMMARY:1216 最後買進日（7/30 除息）
+DESCRIPTION:1216 統一 將在 7/30 除息（3 元）。今天收盤時持
+ 有，才領得到這次配息。\n試算：https://gulicalc.com/articles/
+ uni-president-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1216 最後買進日（7/30 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-1216-2026-07-30@gulicalc.com
+DTSTAMP:20260730T000000Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:1216 統一 除息（3 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/uni-president-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-1216-2026-09-04@gulicalc.com
+DTSTAMP:20260904T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:1216 統一 股利發放（3 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/uni-presi
+ dent-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-07-31@gulicalc.com
+DTSTAMP:20260730T000000Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:00939 最後買進日（7/31 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 7/31 除息（0.125 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（7/31 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-07-31@gulicalc.com
+DTSTAMP:20260731T000000Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:00939 統一台灣高息動能 除息（0.125 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-08-24@gulicalc.com
+DTSTAMP:20260824T000000Z
+DTSTART;VALUE=DATE:20260824
+DTEND;VALUE=DATE:20260825
+SUMMARY:00939 統一台灣高息動能 股利發放（0.125 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-08-11@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:00940 最後買進日（8/11 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 8/11 除息（0.05 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（8/11 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:00940 元大台灣價值高息 除息（0.05 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-09-01@gulicalc.com
+DTSTAMP:20260901T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:00940 元大台灣價值高息 股利發放（0.05 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2892-2026-08-11@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:2892 最後買進日（8/11 除息）
+DESCRIPTION:2892 第一金 將在 8/11 除息（1.3 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/first-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2892 最後買進日（8/11 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2892-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:2892 第一金 除息（1.3 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/first-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2892-2026-08-28@gulicalc.com
+DTSTAMP:20260828T000000Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:2892 第一金 股利發放（1.3 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/first-fin
+ ancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-5880-2026-08-11@gulicalc.com
+DTSTAMP:20260810T000000Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:5880 最後買進日（8/11 除息）
+DESCRIPTION:5880 合庫金 將在 8/11 除息（0.8 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/taiwan-coop-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:5880 最後買進日（8/11 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-5880-2026-08-11@gulicalc.com
+DTSTAMP:20260811T000000Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260812
+SUMMARY:5880 合庫金 除息（0.8 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/taiwan-coop-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-5880-2026-09-11@gulicalc.com
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:5880 合庫金 股利發放（0.8 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/taiwan-co
+ op-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2880-2026-08-13@gulicalc.com
+DTSTAMP:20260812T000000Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:2880 最後買進日（8/13 除息）
+DESCRIPTION:2880 華南金 將在 8/13 除息（1.35 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/hua-nan-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2880 最後買進日（8/13 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2880-2026-08-13@gulicalc.com
+DTSTAMP:20260813T000000Z
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260814
+SUMMARY:2880 華南金 除息（1.35 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/hua-nan-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2880-2026-08-28@gulicalc.com
+DTSTAMP:20260828T000000Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:2880 華南金 股利發放（1.35 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/hua-nan-f
+ inancial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2886-2026-08-13@gulicalc.com
+DTSTAMP:20260812T000000Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:2886 最後買進日（8/13 除息）
+DESCRIPTION:2886 兆豐金 將在 8/13 除息（1.75 元）。今天收盤
+ 時持有，才領得到這次配息。\n試算：https://gulicalc.com/art
+ icles/mega-financial-dividend
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2886 最後買進日（8/13 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2886-2026-08-13@gulicalc.com
+DTSTAMP:20260813T000000Z
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260814
+SUMMARY:2886 兆豐金 除息（1.75 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/mega-financial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2886-2026-09-04@gulicalc.com
+DTSTAMP:20260904T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:2886 兆豐金 股利發放（1.75 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/mega-fina
+ ncial-dividend
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-08-17@gulicalc.com
+DTSTAMP:20260814T000000Z
+DTSTART;VALUE=DATE:20260814
+DTEND;VALUE=DATE:20260815
+SUMMARY:00936 最後買進日（8/17 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 8/17 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（8/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-08-17@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00936 台新永續高息中小 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-09-04@gulicalc.com
+DTSTAMP:20260904T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:00936 台新永續高息中小 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00878-2026-08-18@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00878 最後買進日（8/18 除息）
+DESCRIPTION:00878 國泰永續高股息 將在 8/18 除息（1.01 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00878-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00878 最後買進日（8/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00878-2026-08-18@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00878 國泰永續高股息 除息（1.01 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00878-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00878-2026-09-11@gulicalc.com
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:00878 國泰永續高股息 股利發放（1.01 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00878-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-08-18@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00900 最後買進日（8/18 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 8/18 除息（0.075 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（8/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-08-18@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-09-10@gulicalc.com
+DTSTAMP:20260910T000000Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20260911
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00932-2026-08-18@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00932 最後買進日（8/18 除息）
+DESCRIPTION:00932 兆豐永續高息等權 將在 8/18 除息（0.23 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00932-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00932 最後買進日（8/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00932-2026-08-18@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00932 兆豐永續高息等權 除息（0.23 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00932-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00932-2026-09-04@gulicalc.com
+DTSTAMP:20260904T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:00932 兆豐永續高息等權 股利發放（0.23 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00932-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-08-18@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00934 最後買進日（8/18 除息）
+DESCRIPTION:00934 中信成長高股息 將在 8/18 除息（0.3 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（8/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-08-18@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00934 中信成長高股息 除息（0.3 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-09-11@gulicalc.com
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:00934 中信成長高股息 股利發放（0.3 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-08-18@gulicalc.com
+DTSTAMP:20260817T000000Z
+DTSTART;VALUE=DATE:20260817
+DTEND;VALUE=DATE:20260818
+SUMMARY:00943 最後買進日（8/18 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 8/18 除息（0.12 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（8/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-08-18@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00943 兆豐電子高息等權 除息（0.12 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-09-04@gulicalc.com
+DTSTAMP:20260904T000000Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260905
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.12 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-08-19@gulicalc.com
+DTSTAMP:20260818T000000Z
+DTSTART;VALUE=DATE:20260818
+DTEND;VALUE=DATE:20260819
+SUMMARY:00929 最後買進日（8/19 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 8/19 除息（0.38 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（8/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-08-19@gulicalc.com
+DTSTAMP:20260819T000000Z
+DTSTART;VALUE=DATE:20260819
+DTEND;VALUE=DATE:20260820
+SUMMARY:00929 復華台灣科技優息 除息（0.38 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-09-14@gulicalc.com
+DTSTAMP:20260914T000000Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:00929 復華台灣科技優息 股利發放（0.38 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-09-01@gulicalc.com
+DTSTAMP:20260831T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:00939 最後買進日（9/1 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 9/1 除息（0.125 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（9/1 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-09-01@gulicalc.com
+DTSTAMP:20260901T000000Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260902
+SUMMARY:00939 統一台灣高息動能 除息（0.125 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-09-23@gulicalc.com
+DTSTAMP:20260923T000000Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:00939 統一台灣高息動能 股利發放（0.125 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-09-08@gulicalc.com
+DTSTAMP:20260907T000000Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:00940 最後買進日（9/8 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 9/8 除息（0.055 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（9/8 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-09-08@gulicalc.com
+DTSTAMP:20260908T000000Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260909
+SUMMARY:00940 元大台灣價值高息 除息（0.055 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-10-01@gulicalc.com
+DTSTAMP:20261001T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:00940 元大台灣價值高息 股利發放（0.055 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-09-15@gulicalc.com
+DTSTAMP:20260914T000000Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260915
+SUMMARY:00936 最後買進日（9/15 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 9/15 除息（0.16 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（9/15 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-09-15@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00936 台新永續高息中小 除息（0.16 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-10-07@gulicalc.com
+DTSTAMP:20261007T000000Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:00936 台新永續高息中小 股利發放（0.16 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00900 最後買進日（9/16 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 9/16 除息（0.075 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-10-14@gulicalc.com
+DTSTAMP:20261014T000000Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261015
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00915-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00915 最後買進日（9/16 除息）
+DESCRIPTION:00915 凱基優選高股息30 將在 9/16 除息（0.6 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00915-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00915 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00915-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00915 凱基優選高股息30 除息（0.6 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00915-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00915-2026-10-15@gulicalc.com
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:00915 凱基優選高股息30 股利發放（0.6 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00915-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00919-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00919 最後買進日（9/16 除息）
+DESCRIPTION:00919 群益台灣精選高息 將在 9/16 除息（1.1 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00919-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00919 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00919-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00919 群益台灣精選高息 除息（1.1 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00919-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00919-2026-10-15@gulicalc.com
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:00919 群益台灣精選高息 股利發放（1.1 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00919-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00934 最後買進日（9/16 除息）
+DESCRIPTION:00934 中信成長高股息 將在 9/16 除息（0.33 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00934 中信成長高股息 除息（0.33 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-10-15@gulicalc.com
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:00934 中信成長高股息 股利發放（0.33 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:00943 最後買進日（9/16 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 9/16 除息（0.25 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00943 兆豐電子高息等權 除息（0.25 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-10-07@gulicalc.com
+DTSTAMP:20261007T000000Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.25 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-2330-2026-09-16@gulicalc.com
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:2330 最後買進日（9/16 除息）
+DESCRIPTION:2330 台積電 將在 9/16 除息（7 元）。今天收盤時
+ 持有，才領得到這次配息。\n試算：https://gulicalc.com/articl
+ es/tsmc-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2330 最後買進日（9/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-2330-2026-09-16@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:2330 台積電 除息（7 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/tsmc-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-2330-2026-10-08@gulicalc.com
+DTSTAMP:20261008T000000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261009
+SUMMARY:2330 台積電 股利發放（7 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/tsmc-divi
+ dend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-09-17@gulicalc.com
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:00929 最後買進日（9/17 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 9/17 除息（0.38 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（9/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-09-17@gulicalc.com
+DTSTAMP:20260917T000000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:00929 復華台灣科技優息 除息（0.38 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-10-16@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00929 復華台灣科技優息 股利發放（0.38 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00918-2026-09-18@gulicalc.com
+DTSTAMP:20260917T000000Z
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260918
+SUMMARY:00918 最後買進日（9/18 除息）
+DESCRIPTION:00918 大華優利高填息30 將在 9/18 除息（1.75 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00918-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00918 最後買進日（9/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00918-2026-09-18@gulicalc.com
+DTSTAMP:20260918T000000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:00918 大華優利高填息30 除息（1.75 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00918-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00918-2026-10-15@gulicalc.com
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:00918 大華優利高填息30 股利發放（1.75 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00918-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00713-2026-09-21@gulicalc.com
+DTSTAMP:20260918T000000Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:00713 最後買進日（9/21 除息）
+DESCRIPTION:00713 元大台灣高息低波 將在 9/21 除息（1.25 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00713-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00713 最後買進日（9/21 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00713-2026-09-21@gulicalc.com
+DTSTAMP:20260921T000000Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260922
+SUMMARY:00713 元大台灣高息低波 除息（1.25 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00713-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00713-2026-10-13@gulicalc.com
+DTSTAMP:20261013T000000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:00713 元大台灣高息低波 股利發放（1.25 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00713-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-10-05@gulicalc.com
+DTSTAMP:20261002T000000Z
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261003
+SUMMARY:00939 最後買進日（10/5 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 10/5 除息（0.125 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（10/5 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-10-05@gulicalc.com
+DTSTAMP:20261005T000000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:00939 統一台灣高息動能 除息（0.125 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-10-29@gulicalc.com
+DTSTAMP:20261029T000000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:00939 統一台灣高息動能 股利發放（0.125 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-10-07@gulicalc.com
+DTSTAMP:20261006T000000Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+SUMMARY:00940 最後買進日（10/7 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 10/7 除息（0.055 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（10/7 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-10-07@gulicalc.com
+DTSTAMP:20261007T000000Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:00940 元大台灣價值高息 除息（0.055 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-11-02@gulicalc.com
+DTSTAMP:20261102T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:00940 元大台灣價值高息 股利發放（0.055 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-10-16@gulicalc.com
+DTSTAMP:20261015T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:00936 最後買進日（10/16 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 10/16 除息（0.16 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（10/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-10-16@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00936 台新永續高息中小 除息（0.16 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-11-06@gulicalc.com
+DTSTAMP:20261106T000000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:00936 台新永續高息中小 股利發放（0.16 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-10-19@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00900 最後買進日（10/19 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 10/19 除息（0.075 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（10/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-10-19@gulicalc.com
+DTSTAMP:20261019T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:00900 富邦特選高股息30 除息（0.075 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-11-12@gulicalc.com
+DTSTAMP:20261112T000000Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:00900 富邦特選高股息30 股利發放（0.075 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00927-2026-10-19@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00927 最後買進日（10/19 除息）
+DESCRIPTION:00927 群益半導體收益 將在 10/19 除息（2 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00927-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00927 最後買進日（10/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00927-2026-10-19@gulicalc.com
+DTSTAMP:20261019T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:00927 群益半導體收益 除息（2 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00927-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00927-2026-11-13@gulicalc.com
+DTSTAMP:20261113T000000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:00927 群益半導體收益 股利發放（2 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00927-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-10-19@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00934 最後買進日（10/19 除息）
+DESCRIPTION:00934 中信成長高股息 將在 10/19 除息（0.5 元）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（10/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-10-19@gulicalc.com
+DTSTAMP:20261019T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:00934 中信成長高股息 除息（0.5 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-11-13@gulicalc.com
+DTSTAMP:20261113T000000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:00934 中信成長高股息 股利發放（0.5 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-10-19@gulicalc.com
+DTSTAMP:20261016T000000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:00943 最後買進日（10/19 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 10/19 除息（0.36 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（10/19 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-10-19@gulicalc.com
+DTSTAMP:20261019T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:00943 兆豐電子高息等權 除息（0.36 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-11-06@gulicalc.com
+DTSTAMP:20261106T000000Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:00943 兆豐電子高息等權 股利發放（0.36 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-10-21@gulicalc.com
+DTSTAMP:20261020T000000Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+SUMMARY:00929 最後買進日（10/21 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 10/21 除息（0.38 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（10/21 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-10-21@gulicalc.com
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:00929 復華台灣科技優息 除息（0.38 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-11-16@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00929 復華台灣科技優息 股利發放（0.38 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-0056-2026-10-22@gulicalc.com
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:0056 最後買進日（10/22 除息）
+DESCRIPTION:0056 元大高股息 將在 10/22 除息（1.72 元）。今天
+ 收盤時持有，才領得到這次配息。\n試算：https://gulicalc.c
+ om/articles/0056-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:0056 最後買進日（10/22 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-0056-2026-10-22@gulicalc.com
+DTSTAMP:20261022T000000Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:0056 元大高股息 除息（1.72 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/0056-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-0056-2026-11-11@gulicalc.com
+DTSTAMP:20261111T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:0056 元大高股息 股利發放（1.72 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/0056-divi
+ dend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-11-03@gulicalc.com
+DTSTAMP:20261102T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:00939 最後買進日（11/3 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 11/3 除息（0.15 元）
+ 。今天收盤時持有，才領得到這次配息。\n試算：https://g
+ ulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（11/3 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-11-03@gulicalc.com
+DTSTAMP:20261103T000000Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:00939 統一台灣高息動能 除息（0.15 元）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-11-25@gulicalc.com
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:00939 統一台灣高息動能 股利發放（0.15 元）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-11-10@gulicalc.com
+DTSTAMP:20261109T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:00940 最後買進日（11/10 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 11/10 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（11/10 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-11-10@gulicalc.com
+DTSTAMP:20261110T000000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:00940 元大台灣價值高息 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2026-12-01@gulicalc.com
+DTSTAMP:20261201T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:00940 元大台灣價值高息 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00936-2026-11-16@gulicalc.com
+DTSTAMP:20261113T000000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:00936 最後買進日（11/16 除息）
+DESCRIPTION:00936 台新永續高息中小 將在 11/16 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00936-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00936 最後買進日（11/16 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00936-2026-11-16@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00936 台新永續高息中小 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00936-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00936-2026-12-04@gulicalc.com
+DTSTAMP:20261204T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:00936 台新永續高息中小 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00936-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-006208-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:006208 最後買進日（11/17 除息）
+DESCRIPTION:006208 富邦台50 將在 11/17 除息（金額待公告）。
+ 今天收盤時持有，才領得到這次配息。\n試算：https://guli
+ calc.com/articles/006208-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:006208 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-006208-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:006208 富邦台50 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/006208-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-006208-2026-12-10@gulicalc.com
+DTSTAMP:20261210T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:006208 富邦台50 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/006208-di
+ vidend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00878-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00878 最後買進日（11/17 除息）
+DESCRIPTION:00878 國泰永續高股息 將在 11/17 除息（金額待公
+ 告）。今天收盤時持有，才領得到這次配息。\n試算：htt
+ ps://gulicalc.com/articles/00878-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00878 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00878-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00878 國泰永續高股息 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00878-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00878-2026-12-11@gulicalc.com
+DTSTAMP:20261211T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:00878 國泰永續高股息 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00878-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00900-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00900 最後買進日（11/17 除息）
+DESCRIPTION:00900 富邦特選高股息30 將在 11/17 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00900-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00900 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00900-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00900 富邦特選高股息30 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00900-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00900-2026-12-10@gulicalc.com
+DTSTAMP:20261210T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:00900 富邦特選高股息30 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00900-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00932-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00932 最後買進日（11/17 除息）
+DESCRIPTION:00932 兆豐永續高息等權 將在 11/17 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00932-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00932 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00932-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00932 兆豐永續高息等權 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00932-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00932-2026-12-04@gulicalc.com
+DTSTAMP:20261204T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:00932 兆豐永續高息等權 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00932-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00934-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00934 最後買進日（11/17 除息）
+DESCRIPTION:00934 中信成長高股息 將在 11/17 除息（金額待公
+ 告）。今天收盤時持有，才領得到這次配息。\n試算：htt
+ ps://gulicalc.com/articles/00934-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00934 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00934-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00934 中信成長高股息 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00934-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00934-2026-12-11@gulicalc.com
+DTSTAMP:20261211T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:00934 中信成長高股息 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00934-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00943-2026-11-17@gulicalc.com
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:00943 最後買進日（11/17 除息）
+DESCRIPTION:00943 兆豐電子高息等權 將在 11/17 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00943-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00943 最後買進日（11/17 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00943-2026-11-17@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00943 兆豐電子高息等權 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00943-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00943-2026-12-04@gulicalc.com
+DTSTAMP:20261204T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:00943 兆豐電子高息等權 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00943-div
+ idend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:buy-00929-2026-11-18@gulicalc.com
+DTSTAMP:20261117T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:00929 最後買進日（11/18 除息）
+DESCRIPTION:00929 復華台灣科技優息 將在 11/18 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00929-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00929 最後買進日（11/18 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00929-2026-11-18@gulicalc.com
+DTSTAMP:20261118T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:00929 復華台灣科技優息 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00929-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00929-2026-12-14@gulicalc.com
+DTSTAMP:20261214T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:00929 復華台灣科技優息 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00929-div
+ idend-calculator
+END:VEVENT
+END:VCALENDAR

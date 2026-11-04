@@ -1,0 +1,11692 @@
+[
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-05-06",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-05-29",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-05-06",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-05-29",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-05-06",
+  "cash": 0.048,
+  "stock_rate": null,
+  "pay": "2026-05-29",
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-05-07",
+  "cash": 0.045,
+  "stock_rate": null,
+  "pay": "2026-06-01",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "01001T",
+  "name": "土銀富邦R1",
+  "kind": "息",
+  "ex": "2026-05-08",
+  "cash": 0.430233,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01002T",
+  "name": "土銀國泰R1",
+  "kind": "息",
+  "ex": "2026-05-14",
+  "cash": 0.457505,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01007T",
+  "name": "兆豐國泰R2",
+  "kind": "息",
+  "ex": "2026-05-14",
+  "cash": 0.216853,
+  "stock_rate": null,
+  "pay": "2026-06-22",
+  "slug": null
+ },
+ {
+  "code": "8033",
+  "name": "雷虎",
+  "kind": "權",
+  "ex": "2026-05-14",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00775B",
+  "name": "台新投等債15+",
+  "kind": "息",
+  "ex": "2026-05-18",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-05-18",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-05-18",
+  "cash": 0.05,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": null
+ },
+ {
+  "code": "00690",
+  "name": "兆豐藍籌30",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-06-11",
+  "slug": null
+ },
+ {
+  "code": "00878",
+  "name": "國泰永續高股息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.66,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": "00878-dividend-calculator"
+ },
+ {
+  "code": "00891",
+  "name": "中信關鍵半導體",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00894",
+  "name": "中信小資高價30",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-06-11",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00932",
+  "name": "兆豐永續高息等權",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.22,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": "00932-dividend-calculator"
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00938",
+  "name": "凱基優選30",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.22,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.09,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.054,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.087,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.108,
+  "stock_rate": null,
+  "pay": "2026-06-11",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.086,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "009808",
+  "name": "華南永昌優選50",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.57,
+  "stock_rate": null,
+  "pay": "2026-06-05",
+  "slug": null
+ },
+ {
+  "code": "00980A",
+  "name": "主動野村臺灣優選",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.48,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.065,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00982A",
+  "name": "主動群益台灣強棒",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.64,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-06-11",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-05-19",
+  "cash": 0.06,
+  "stock_rate": null,
+  "pay": "2026-06-11",
+  "slug": null
+ },
+ {
+  "code": "00731",
+  "name": "復華富時高息低波",
+  "kind": "息",
+  "ex": "2026-05-20",
+  "cash": 0.752,
+  "stock_rate": null,
+  "pay": "2026-06-15",
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-05-20",
+  "cash": 0.13,
+  "stock_rate": null,
+  "pay": "2026-06-15",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "00771",
+  "name": "元大US高息特別股",
+  "kind": "息",
+  "ex": "2026-05-22",
+  "cash": 0.21,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "00850",
+  "name": "元大臺灣ESG永續",
+  "kind": "息",
+  "ex": "2026-05-22",
+  "cash": 0.85,
+  "stock_rate": null,
+  "pay": "2026-06-12",
+  "slug": null
+ },
+ {
+  "code": "3257",
+  "name": "虹冠電",
+  "kind": "息",
+  "ex": "2026-05-22",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2426",
+  "name": "鼎元",
+  "kind": "息",
+  "ex": "2026-05-25",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2486",
+  "name": "一詮",
+  "kind": "息",
+  "ex": "2026-05-25",
+  "cash": 0.49846,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00930",
+  "name": "永豐ESG低碳高息",
+  "kind": "息",
+  "ex": "2026-05-26",
+  "cash": 0.31,
+  "stock_rate": null,
+  "pay": "2026-06-18",
+  "slug": null
+ },
+ {
+  "code": "1215",
+  "name": "卜蜂",
+  "kind": "息",
+  "ex": "2026-05-27",
+  "cash": 7.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1568",
+  "name": "倉佑",
+  "kind": "息",
+  "ex": "2026-05-27",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3413",
+  "name": "京鼎",
+  "kind": "息",
+  "ex": "2026-05-27",
+  "cash": 10.983792,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1459",
+  "name": "聯發",
+  "kind": "息",
+  "ex": "2026-05-28",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1702",
+  "name": "南僑",
+  "kind": "息",
+  "ex": "2026-05-28",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1708",
+  "name": "東鹼",
+  "kind": "息",
+  "ex": "2026-05-28",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3717",
+  "name": "聯嘉投控",
+  "kind": "權",
+  "ex": "2026-05-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4585",
+  "name": "達明",
+  "kind": "息",
+  "ex": "2026-05-28",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2612",
+  "name": "中航",
+  "kind": "息",
+  "ex": "2026-06-01",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6176",
+  "name": "瑞儀",
+  "kind": "息",
+  "ex": "2026-06-01",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6909",
+  "name": "創控",
+  "kind": "息",
+  "ex": "2026-06-01",
+  "cash": 1.000142,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.072,
+  "stock_rate": null,
+  "pay": "2026-06-25",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-06-29",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-06-29",
+  "slug": null
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-06-25",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.048,
+  "stock_rate": null,
+  "pay": "2026-06-29",
+  "slug": null
+ },
+ {
+  "code": "1323",
+  "name": "永裕",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2313",
+  "name": "華通",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2548",
+  "name": "華固",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 8.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4555",
+  "name": "氣立",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4912",
+  "name": "聯德控股-KY",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8487",
+  "name": "愛爾達-創",
+  "kind": "息",
+  "ex": "2026-06-02",
+  "cash": 4.806,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2642",
+  "name": "宅配通",
+  "kind": "息",
+  "ex": "2026-06-03",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3356",
+  "name": "奇偶",
+  "kind": "息",
+  "ex": "2026-06-04",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6525",
+  "name": "捷敏-KY",
+  "kind": "息",
+  "ex": "2026-06-05",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01010T",
+  "name": "京城樂富R1",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 0.098474,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1219",
+  "name": "福壽",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3036",
+  "name": "文曄",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 7.795026,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3406",
+  "name": "玉晶光",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 17.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3443",
+  "name": "創意",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 20.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4958",
+  "name": "臻鼎-KY",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 3.421698,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6658",
+  "name": "聯策",
+  "kind": "息",
+  "ex": "2026-06-08",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 0.05,
+  "stock_rate": null,
+  "pay": "2026-07-01",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "1416",
+  "name": "廣豐",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 0.57,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1733",
+  "name": "五鼎",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2114",
+  "name": "鑫永銓",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2731",
+  "name": "雄獅",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 12.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4994",
+  "name": "傳奇",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6412",
+  "name": "群電",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 3.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6936",
+  "name": "永鴻生技",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 1.51,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7791",
+  "name": "皇家可口",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 3.81,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9924",
+  "name": "福興",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9940",
+  "name": "信義",
+  "kind": "息",
+  "ex": "2026-06-09",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1473",
+  "name": "台南",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1515",
+  "name": "力山",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2421",
+  "name": "建準",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 5.24042,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2637",
+  "name": "慧洋-KY",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6271",
+  "name": "同欣電",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "910322",
+  "name": "康師傅-DR",
+  "kind": "息",
+  "ex": "2026-06-10",
+  "cash": 1.840312,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1312",
+  "name": "國喬",
+  "kind": "權",
+  "ex": "2026-06-11",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1312A",
+  "name": "國喬特",
+  "kind": "權",
+  "ex": "2026-06-11",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1605",
+  "name": "華新",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1760",
+  "name": "寶齡富錦",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2030",
+  "name": "彰源",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2329",
+  "name": "華泰",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 1.000042,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2330",
+  "name": "台積電",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 6.000035,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": "tsmc-dividend-calculator"
+ },
+ {
+  "code": "3030",
+  "name": "德律",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 7.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3481",
+  "name": "群創",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6834",
+  "name": "天二科技",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6951",
+  "name": "青新-創",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8454",
+  "name": "富邦媒",
+  "kind": "息",
+  "ex": "2026-06-11",
+  "cash": 10.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1218",
+  "name": "泰山",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 1.32,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1776",
+  "name": "展宇",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1810",
+  "name": "和成",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2207",
+  "name": "和泰車",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 20.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2327",
+  "name": "國巨*",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 5.998525,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3679",
+  "name": "新至陞",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 9.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8028",
+  "name": "昇陽半導體",
+  "kind": "息",
+  "ex": "2026-06-12",
+  "cash": 2.701988,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-07-06",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 0.08,
+  "stock_rate": null,
+  "pay": "2026-07-06",
+  "slug": null
+ },
+ {
+  "code": "009803",
+  "name": "玉山市值動能50",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1232",
+  "name": "大統益",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 7.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2031",
+  "name": "新光鋼",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2107",
+  "name": "厚生",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2385",
+  "name": "群光",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 7.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2608",
+  "name": "嘉里大榮",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 1.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2832",
+  "name": "台產",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4938",
+  "name": "和碩",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 4.009436,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6272",
+  "name": "驊陞",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 2.015579,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6861",
+  "name": "睿生光電",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7722",
+  "name": "LINEPAY",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8016",
+  "name": "矽創",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 11.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9910",
+  "name": "豐泰",
+  "kind": "息",
+  "ex": "2026-06-15",
+  "cash": 4.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": null
+ },
+ {
+  "code": "00896",
+  "name": "中信綠能及電動車",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00915",
+  "name": "凱基優選高股息30",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.45,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": "00915-dividend-calculator"
+ },
+ {
+  "code": "00916",
+  "name": "國泰全球品牌50",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.92,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00919",
+  "name": "群益台灣精選高息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": "2026-07-14",
+  "slug": "00919-dividend-calculator"
+ },
+ {
+  "code": "00921",
+  "name": "兆豐龍頭等權重",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.32,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-07-13",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-07-06",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.054,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.087,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.09,
+  "stock_rate": null,
+  "pay": "2026-07-13",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.106,
+  "stock_rate": null,
+  "pay": "2026-07-13",
+  "slug": null
+ },
+ {
+  "code": "00972",
+  "name": "野村日本動能高息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.22,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "009802",
+  "name": "富邦旗艦50",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.198,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "009809",
+  "name": "富邦淨零ESG50",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00981A",
+  "name": "主動統一台股增長",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.63,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.071,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.06,
+  "stock_rate": null,
+  "pay": "2026-07-09",
+  "slug": null
+ },
+ {
+  "code": "1582",
+  "name": "信錦",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2069",
+  "name": "運錩",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2459",
+  "name": "敦吉",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 4.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2480",
+  "name": "敦陽科",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 7.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2606",
+  "name": "裕民",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2816",
+  "name": "旺旺保",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2850",
+  "name": "新產",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 7.27,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2908",
+  "name": "特力",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.55,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3015",
+  "name": "全漢",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3035",
+  "name": "智原",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3042",
+  "name": "晶技",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 4.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4133",
+  "name": "亞諾法",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 0.112,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6414",
+  "name": "樺漢",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 13.784207,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6722",
+  "name": "輝創",
+  "kind": "息",
+  "ex": "2026-06-16",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00710B",
+  "name": "復華彭博非投等債",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.31,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00711B",
+  "name": "復華彭博新興債",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00712",
+  "name": "復華富時不動產",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.235,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.26,
+  "stock_rate": null,
+  "pay": "2026-07-14",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "1476",
+  "name": "儒鴻",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 15.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1504",
+  "name": "東元",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1707",
+  "name": "葡萄王",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 3.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1773",
+  "name": "勝一",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2105",
+  "name": "正新",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2115",
+  "name": "六暉-KY",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2308",
+  "name": "台達電",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 11.6,
+  "stock_rate": null,
+  "pay": "2026-07-22",
+  "slug": "delta-electronics-dividend"
+ },
+ {
+  "code": "2353",
+  "name": "宏碁",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2360",
+  "name": "致茂",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 19.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2450",
+  "name": "神腦",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.55,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2504",
+  "name": "國產",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 2.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2603",
+  "name": "長榮",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 16.0,
+  "stock_rate": null,
+  "pay": "2026-07-17",
+  "slug": "evergreen-marine-dividend"
+ },
+ {
+  "code": "2852",
+  "name": "第一保",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.66,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3028",
+  "name": "增你強",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3168",
+  "name": "眾福科",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3450",
+  "name": "聯鈞",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3543",
+  "name": "州巧",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6438",
+  "name": "迅得",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6579",
+  "name": "研揚",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 3.75,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6606",
+  "name": "建德工業",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.03,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6792",
+  "name": "詠業",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6923",
+  "name": "中台",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 3.034796,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8011",
+  "name": "台通",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8070",
+  "name": "長華*",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.999999,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8162",
+  "name": "微矽電子-創",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8163",
+  "name": "達方",
+  "kind": "息",
+  "ex": "2026-06-17",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00728",
+  "name": "第一金工業30",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 0.66,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00918",
+  "name": "大華優利高填息30",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 1.26,
+  "stock_rate": null,
+  "pay": "2026-07-14",
+  "slug": "00918-dividend-calculator"
+ },
+ {
+  "code": "00994A",
+  "name": "主動第一金台股優",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 0.462,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1423",
+  "name": "利華",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 3.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2467",
+  "name": "志聖",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 5.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2597",
+  "name": "潤弘",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 9.67,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7765",
+  "name": "中華資安",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 9.666295,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8462",
+  "name": "柏文",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 7.277777,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8463",
+  "name": "潤泰材",
+  "kind": "息",
+  "ex": "2026-06-18",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00713",
+  "name": "元大台灣高息低波",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": "2026-07-10",
+  "slug": "00713-dividend-calculator"
+ },
+ {
+  "code": "1313",
+  "name": "聯成",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1319",
+  "name": "東陽",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1735",
+  "name": "日勝化",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1904",
+  "name": "正隆",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.45,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2106",
+  "name": "建大",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2313",
+  "name": "華通",
+  "kind": "權",
+  "ex": "2026-06-22",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2388",
+  "name": "威盛",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.05,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2498",
+  "name": "宏達電",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3026",
+  "name": "禾伸堂",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 5.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3094",
+  "name": "聯傑",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3447",
+  "name": "展達",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 1.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4739",
+  "name": "康普",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.999983,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4906",
+  "name": "正文",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.473163,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6120",
+  "name": "達運",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6531",
+  "name": "愛普*",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 6.985647,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6669",
+  "name": "緯穎",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 144.391544,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6965",
+  "name": "中傑-KY",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7780",
+  "name": "大研生醫*",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 0.893401,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9907",
+  "name": "統一實",
+  "kind": "息",
+  "ex": "2026-06-22",
+  "cash": 1.18,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1341",
+  "name": "富林-KY",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1432",
+  "name": "大魯閣",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1609",
+  "name": "大亞",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2312",
+  "name": "金寶",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 0.599867,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2368",
+  "name": "金像電",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 9.803012,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2534",
+  "name": "宏盛",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2855",
+  "name": "統一證",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 2.11,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3010",
+  "name": "華立",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 5.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4766",
+  "name": "南寶",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 18.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6214",
+  "name": "精誠",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6449",
+  "name": "鈺邦",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 4.200947,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6505",
+  "name": "台塑化",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7760",
+  "name": "享溫馨",
+  "kind": "息",
+  "ex": "2026-06-23",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00907",
+  "name": "永豐優息存股",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 0.205,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1104",
+  "name": "環泥",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 1.85,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1326",
+  "name": "台化",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2103",
+  "name": "台橡",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 0.27,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2423",
+  "name": "固緯",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3019",
+  "name": "亞光",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 4.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3530",
+  "name": "晶相光",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3705",
+  "name": "永信",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4557",
+  "name": "永新-KY",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4571",
+  "name": "鈞興-KY",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 5.271732,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4952",
+  "name": "凌通",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6184",
+  "name": "大豐電",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6196",
+  "name": "帆宣",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 6.448786,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6670",
+  "name": "復盛應用",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 16.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8249",
+  "name": "菱光",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 2.078778,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9917",
+  "name": "中保科",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 5.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9930",
+  "name": "中聯資源",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9934",
+  "name": "成霖",
+  "kind": "息",
+  "ex": "2026-06-24",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1525",
+  "name": "江申",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2362",
+  "name": "藍天",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2432",
+  "name": "倚天酷碁-創",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2451",
+  "name": "創見",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 11.782382,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2489",
+  "name": "瑞軒",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3046",
+  "name": "建碁",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3338",
+  "name": "泰碩",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4935",
+  "name": "茂林-KY",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5285",
+  "name": "界霖",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5515",
+  "name": "建國",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 3.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5521",
+  "name": "工信",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5522",
+  "name": "遠雄",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 5.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6189",
+  "name": "豐藝",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 2.699525,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6205",
+  "name": "詮欣",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6585",
+  "name": "鼎基",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6771",
+  "name": "平和環保-創",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 3.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6776",
+  "name": "展碁國際",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6908",
+  "name": "宏碁遊戲-創",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 1.24,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8046",
+  "name": "南電",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8114",
+  "name": "振樺電",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 11.467,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8210",
+  "name": "勤誠",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 14.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9944",
+  "name": "新麗",
+  "kind": "息",
+  "ex": "2026-06-25",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2455",
+  "name": "全新",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 2.620556,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3054",
+  "name": "立萬利",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3669",
+  "name": "圓展",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3708",
+  "name": "上緯投控",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 6.49582,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5244",
+  "name": "弘凱",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6768",
+  "name": "志強-KY",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 5.155125,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6789",
+  "name": "采鈺",
+  "kind": "息",
+  "ex": "2026-06-26",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1234",
+  "name": "黑松",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 1.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1472",
+  "name": "三洋實業",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1717",
+  "name": "長興",
+  "kind": "權",
+  "ex": "2026-06-29",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2851",
+  "name": "中再保",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3016",
+  "name": "嘉晶",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 0.496874,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3563",
+  "name": "牧德",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 12.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4164",
+  "name": "承業醫",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 1.107736,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4915",
+  "name": "致伸",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 4.569244,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4989",
+  "name": "榮科",
+  "kind": "權",
+  "ex": "2026-06-29",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5306",
+  "name": "桂盟",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 0.834859,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5706",
+  "name": "鳳凰",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 4.538839,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7631",
+  "name": "聚賢研發-創",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8045",
+  "name": "達運光電",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 0.999821,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8150",
+  "name": "南茂",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 1.23,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8341",
+  "name": "日友",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8422",
+  "name": "可寧衛*",
+  "kind": "息",
+  "ex": "2026-06-29",
+  "cash": 1.198132,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1301",
+  "name": "台塑",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": "2026-08-04",
+  "slug": "formosa-plastics-dividend"
+ },
+ {
+  "code": "1410",
+  "name": "南染",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1521",
+  "name": "大億",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.75,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1598",
+  "name": "岱宇",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1727",
+  "name": "中華化",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1731",
+  "name": "美吾華",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.22,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1817",
+  "name": "凱撒衛",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2328",
+  "name": "廣宇",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2397",
+  "name": "友通",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 2.45,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2436",
+  "name": "偉詮電",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.956716,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2605",
+  "name": "新興",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2882",
+  "name": "國泰金",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": "2026-07-28",
+  "slug": "cathay-financial-dividend"
+ },
+ {
+  "code": "2882A",
+  "name": "國泰特",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 2.526,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2882B",
+  "name": "國泰金乙特",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 2.280657,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2883",
+  "name": "凱基金",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "kai-fa-financial-dividend"
+ },
+ {
+  "code": "2883B",
+  "name": "凱基金乙特",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.355,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3416",
+  "name": "融程電",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 5.095945,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3714",
+  "name": "富采",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4722",
+  "name": "國精化",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.184076,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6592",
+  "name": "和潤企業",
+  "kind": "權息",
+  "ex": "2026-06-30",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6592A",
+  "name": "和潤企業甲特",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 4.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6592B",
+  "name": "和潤企業乙特",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6835",
+  "name": "圓裕",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.006755,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7711",
+  "name": "永擎",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 8.987093,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8039",
+  "name": "台虹",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.993351,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9931",
+  "name": "欣高",
+  "kind": "息",
+  "ex": "2026-06-30",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1101",
+  "name": "台泥",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1101B",
+  "name": "台泥乙特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 2.02625,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1470",
+  "name": "大統新創",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1725",
+  "name": "元禎",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.07,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2302",
+  "name": "麗正",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2357",
+  "name": "華碩",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 42.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2881",
+  "name": "富邦金",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 4.25,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "fubon-financial-dividend"
+ },
+ {
+  "code": "2881A",
+  "name": "富邦特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 2.74875,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2881B",
+  "name": "富邦金乙特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 2.572356,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2881C",
+  "name": "富邦金丙特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2884",
+  "name": "玉山金",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": "2026-07-27",
+  "slug": "e-sun-financial-dividend"
+ },
+ {
+  "code": "2887E",
+  "name": "台新新光戊特一",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 2.43625,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887F",
+  "name": "台新新光戊特二",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.933601,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887G",
+  "name": "台新新光庚特一",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.71,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887H",
+  "name": "台新新光庚特二",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887I",
+  "name": "台新新光辛特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.073442,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887Z1",
+  "name": "台新新光己特",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.65305,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2903",
+  "name": "遠百",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3515",
+  "name": "華擎",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 11.001795,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3607",
+  "name": "谷崧",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4119",
+  "name": "旭富",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 0.75,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4755",
+  "name": "三福化",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 3.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4961",
+  "name": "天鈺",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 7.72,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6285",
+  "name": "啟碁",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 4.301769,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6655",
+  "name": "科定",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 4.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8271",
+  "name": "宇瞻",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 4.448443,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8482",
+  "name": "商億-KY",
+  "kind": "息",
+  "ex": "2026-07-01",
+  "cash": 1.96,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.125,
+  "stock_rate": null,
+  "pay": "2026-07-24",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-07-24",
+  "slug": null
+ },
+ {
+  "code": "1452",
+  "name": "宏益",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1612",
+  "name": "宏泰",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1752",
+  "name": "南光",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1789",
+  "name": "神隆",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.29,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2010",
+  "name": "春源",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2317",
+  "name": "鴻海",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 7.171792,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "hon-hai-dividend"
+ },
+ {
+  "code": "2354",
+  "name": "鴻準",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2433",
+  "name": "互盛電",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2462",
+  "name": "良得電",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2607",
+  "name": "榮運",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2753",
+  "name": "八方雲集",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 7.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2820",
+  "name": "華票",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3006",
+  "name": "晶豪科",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3090",
+  "name": "日電貿",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 4.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3189",
+  "name": "景碩",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.517564,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3311",
+  "name": "閎暉",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3592",
+  "name": "瑞鼎",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 14.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3703",
+  "name": "欣陸",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.05,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3715",
+  "name": "定穎投控",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.08,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4137",
+  "name": "麗豐-KY",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 10.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6136",
+  "name": "富爾特",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.16,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6197",
+  "name": "佳必琪",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 6.923259,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6213",
+  "name": "聯茂",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.998927,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6715",
+  "name": "嘉基",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.943104,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8081",
+  "name": "致新",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 16.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8926",
+  "name": "台汽電",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 2.119737,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9904",
+  "name": "寶成",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9939",
+  "name": "宏全",
+  "kind": "息",
+  "ex": "2026-07-02",
+  "cash": 6.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1455",
+  "name": "集盛",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 0.16,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1730",
+  "name": "花仙子",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2013",
+  "name": "中鋼構",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 2.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2425",
+  "name": "承啟",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2838A",
+  "name": "聯邦銀甲特",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 2.630625,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2945",
+  "name": "三商家購",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3711",
+  "name": "日月光投控",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 6.584838,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "ase-dividend"
+ },
+ {
+  "code": "910861",
+  "name": "神州-DR",
+  "kind": "息",
+  "ex": "2026-07-03",
+  "cash": 0.072018,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-07-30",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-07-30",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.048,
+  "stock_rate": null,
+  "pay": "2026-07-30",
+  "slug": null
+ },
+ {
+  "code": "00997A",
+  "name": "主動群益美國增長",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.37,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1307",
+  "name": "三芳",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2373",
+  "name": "震旦行",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 3.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2474",
+  "name": "可成",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 7.113868,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2615",
+  "name": "萬海",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2904",
+  "name": "匯僑",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3037",
+  "name": "欣興",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 1.980153,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3557",
+  "name": "嘉威",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3704",
+  "name": "合勤控",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5538",
+  "name": "東明-KY",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6155",
+  "name": "鈞寶",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6754",
+  "name": "匯僑設計",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7705",
+  "name": "三商餐飲",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8072",
+  "name": "陞泰",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8112",
+  "name": "至上",
+  "kind": "權息",
+  "ex": "2026-07-06",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8112A",
+  "name": "至上甲特",
+  "kind": "權息",
+  "ex": "2026-07-06",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8476",
+  "name": "台境*",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9935",
+  "name": "慶豐富",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9943",
+  "name": "好樂迪",
+  "kind": "息",
+  "ex": "2026-07-06",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2408",
+  "name": "南亞科",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 1.347149,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2417",
+  "name": "圓剛",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 0.250119,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2454",
+  "name": "聯發科",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 24.500215,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "mediatek-dividend"
+ },
+ {
+  "code": "2536",
+  "name": "宏普",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3048",
+  "name": "益登",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6257",
+  "name": "矽格",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 4.249688,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6526",
+  "name": "達發",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 13.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6591",
+  "name": "動力-KY",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6862",
+  "name": "三集瑞-KY",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9945",
+  "name": "潤泰新",
+  "kind": "息",
+  "ex": "2026-07-07",
+  "cash": 1.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1229",
+  "name": "聯華",
+  "kind": "權息",
+  "ex": "2026-07-08",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1303",
+  "name": "南亞",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": "2026-08-07",
+  "slug": "nanya-plastics-dividend"
+ },
+ {
+  "code": "2028",
+  "name": "威致",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2049",
+  "name": "上銀",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2303",
+  "name": "聯電",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 2.608082,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2405",
+  "name": "輔信",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2545",
+  "name": "皇翔",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2618",
+  "name": "長榮航",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2634",
+  "name": "漢翔",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.778,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3231",
+  "name": "緯創",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 5.500622,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4148",
+  "name": "全宇生技-KY",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4576",
+  "name": "大銀微系統",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4904",
+  "name": "遠傳",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 3.809281,
+  "stock_rate": null,
+  "pay": "2026-08-05",
+  "slug": "fareastone-dividend"
+ },
+ {
+  "code": "6641",
+  "name": "基士德-KY",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6924",
+  "name": "榮惠-KY創",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6937",
+  "name": "天虹",
+  "kind": "息",
+  "ex": "2026-07-08",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00400A",
+  "name": "主動國泰動能高息",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.05,
+  "stock_rate": null,
+  "pay": "2026-08-03",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "1110",
+  "name": "東泥",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1236",
+  "name": "宏亞",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1256",
+  "name": "鮮活果汁-KY",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 6.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1338",
+  "name": "廣華-KY",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.311445,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1446",
+  "name": "宏和",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1513",
+  "name": "中興電",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1616",
+  "name": "億泰",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.3584,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1723",
+  "name": "中碳",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.85,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2412",
+  "name": "中華電",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 5.2,
+  "stock_rate": null,
+  "pay": "2026-08-07",
+  "slug": "chunghwa-telecom-dividend"
+ },
+ {
+  "code": "2453",
+  "name": "凌群",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2478",
+  "name": "大毅",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2488",
+  "name": "漢平",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2492",
+  "name": "華新科",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.503091,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2493",
+  "name": "揚博",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2739",
+  "name": "寒舍",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.58,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3014",
+  "name": "聯陽",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 8.50169,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3024",
+  "name": "憶聲",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.22,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3044",
+  "name": "健鼎",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 12.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3045",
+  "name": "台灣大",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 4.74428,
+  "stock_rate": null,
+  "pay": "2026-07-31",
+  "slug": "taiwan-mobile-dividend"
+ },
+ {
+  "code": "3060",
+  "name": "銘異",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3167",
+  "name": "大量",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 3.914761,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3588",
+  "name": "通嘉",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.498574,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4590",
+  "name": "富田-創",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4720",
+  "name": "德淵",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5215",
+  "name": "科嘉-KY",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5284",
+  "name": "jpp-KY",
+  "kind": "權息",
+  "ex": "2026-07-09",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5292",
+  "name": "華懋",
+  "kind": "權息",
+  "ex": "2026-07-09",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5469",
+  "name": "瀚宇博",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.521177,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5533",
+  "name": "皇鼎",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6115",
+  "name": "鎰勝",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6166",
+  "name": "凌華",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.198986,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6191",
+  "name": "精成科",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 2.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6278",
+  "name": "台表科",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 5.564956,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6446",
+  "name": "藥華藥",
+  "kind": "權息",
+  "ex": "2026-07-09",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6605",
+  "name": "帝寶",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 6.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6781",
+  "name": "AES-KY",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 19.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8110",
+  "name": "華東",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.494171,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8261",
+  "name": "富鼎",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8374",
+  "name": "羅昇",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8499",
+  "name": "鼎炫-KY",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 8.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9905",
+  "name": "大華",
+  "kind": "息",
+  "ex": "2026-07-09",
+  "cash": 1.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2008",
+  "name": "高興昌",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2610",
+  "name": "華航",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 0.814457,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2891",
+  "name": "中信金",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 2.500239,
+  "stock_rate": null,
+  "pay": "2026-08-07",
+  "slug": "ctbc-financial-dividend"
+ },
+ {
+  "code": "2891B",
+  "name": "中信金乙特",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 2.796,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2891C",
+  "name": "中信金丙特",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 1.92,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3034",
+  "name": "聯詠",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 23.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3055",
+  "name": "蔚華科",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4968",
+  "name": "立積",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5519",
+  "name": "隆大",
+  "kind": "權息",
+  "ex": "2026-07-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6477",
+  "name": "安集",
+  "kind": "息",
+  "ex": "2026-07-10",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1907",
+  "name": "永豐餘",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2248",
+  "name": "華勝-KY",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 3.1055,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2316",
+  "name": "楠梓電",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2347",
+  "name": "聯強",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 4.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2359",
+  "name": "所羅門",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2645",
+  "name": "長榮航太",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4306",
+  "name": "炎洲",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4999",
+  "name": "鑫禾",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6790",
+  "name": "永豐實",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 2.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6890",
+  "name": "來億-KY",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 8.967789,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6951",
+  "name": "青新-創",
+  "kind": "權",
+  "ex": "2026-07-13",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7610",
+  "name": "聯友金屬-創",
+  "kind": "權息",
+  "ex": "2026-07-13",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8103",
+  "name": "瀚荃",
+  "kind": "息",
+  "ex": "2026-07-13",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1402",
+  "name": "遠東新",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1603",
+  "name": "華電",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2027",
+  "name": "大成鋼",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2029",
+  "name": "盛餘",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2501",
+  "name": "國建",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2609",
+  "name": "陽明",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2633",
+  "name": "台灣高鐵",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2836A",
+  "name": "高雄銀甲特",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.775,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2849",
+  "name": "安泰銀",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.51,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3013",
+  "name": "晟銘電",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3130",
+  "name": "一零四",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 14.70435,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3150",
+  "name": "鈺寶-創",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3532",
+  "name": "台勝科",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3645",
+  "name": "達邁",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3717",
+  "name": "聯嘉投控",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.197058,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4588",
+  "name": "玖鼎電力",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5471",
+  "name": "松翰",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6698",
+  "name": "旭暉應材",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6906",
+  "name": "現觀科",
+  "kind": "息",
+  "ex": "2026-07-14",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00904",
+  "name": "台新臺灣半導體30",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 0.68,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-08-04",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00947",
+  "name": "台新臺灣IC設計",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 0.08,
+  "stock_rate": null,
+  "pay": "2026-08-04",
+  "slug": null
+ },
+ {
+  "code": "009805",
+  "name": "台新美國電力基建",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1563",
+  "name": "巧新",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2228",
+  "name": "劍麟",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2356",
+  "name": "英業達",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2617",
+  "name": "台航",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2636",
+  "name": "台驊控股",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2838",
+  "name": "聯邦銀",
+  "kind": "權息",
+  "ex": "2026-07-15",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3305",
+  "name": "昇貿",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 2.283304,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3652",
+  "name": "精聯",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.195417,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3665",
+  "name": "貿聯-KY",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 15.184938,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6215",
+  "name": "和椿",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6442",
+  "name": "光聖",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 11.258666,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6614",
+  "name": "資拓宏宇",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6933",
+  "name": "AMAX-KY",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 2.498033,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8021",
+  "name": "尖點",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.972185,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8131",
+  "name": "福懋科",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8438",
+  "name": "昶昕",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9908",
+  "name": "大台北",
+  "kind": "息",
+  "ex": "2026-07-15",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "006208",
+  "name": "富邦台50",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 4.75,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": "006208-dividend-calculator"
+ },
+ {
+  "code": "00692",
+  "name": "富邦公司治理",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.92,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": null
+ },
+ {
+  "code": "00702",
+  "name": "國泰標普低波高息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.68,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00714",
+  "name": "群益道瓊美國地產",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.123,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00717",
+  "name": "富邦美國特別股",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.141,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": null
+ },
+ {
+  "code": "00735",
+  "name": "國泰臺韓科技",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00736",
+  "name": "國泰新興市場",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00882",
+  "name": "中信中國高股息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.55,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": "00882-dividend-calculator"
+ },
+ {
+  "code": "00892",
+  "name": "富邦台灣半導體",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 2.46,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00905",
+  "name": "FT臺灣Smart",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.058,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00908",
+  "name": "富邦入息REITs+",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.142,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00911",
+  "name": "兆豐洲際半導體",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00912",
+  "name": "中信臺灣智慧50",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00927",
+  "name": "群益半導體收益",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.88,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": "00927-dividend-calculator"
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-08-04",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.109,
+  "stock_rate": null,
+  "pay": "2026-08-13",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.09,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": null
+ },
+ {
+  "code": "00956",
+  "name": "中信日經高股息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00960",
+  "name": "野村全球航運龍頭",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.225,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.19,
+  "stock_rate": null,
+  "pay": "2026-08-12",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.095,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": null
+ },
+ {
+  "code": "009804",
+  "name": "聯邦台精彩50",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.53,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.082,
+  "stock_rate": null,
+  "pay": "2026-08-11",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.06,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": null
+ },
+ {
+  "code": "00984A",
+  "name": "主動安聯台灣高息",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.415,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00992A",
+  "name": "主動群益科技創新",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.47,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1102",
+  "name": "亞泥",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 2.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1108",
+  "name": "幸福",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1109",
+  "name": "信大",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1220",
+  "name": "台榮",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1434",
+  "name": "福懋",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1440",
+  "name": "南紡",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1522",
+  "name": "堤維西",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1522A",
+  "name": "堤維西甲特",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1560",
+  "name": "中砂",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 4.942056,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1614",
+  "name": "三洋電",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.967772,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2034",
+  "name": "允強",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2247",
+  "name": "汎德永業",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 7.999782,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2365",
+  "name": "昆盈",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2382",
+  "name": "廣達",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 15.6,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": "quanta-dividend"
+ },
+ {
+  "code": "2404",
+  "name": "漢唐",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 40.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2506",
+  "name": "太設",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2515",
+  "name": "中工",
+  "kind": "權",
+  "ex": "2026-07-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2727",
+  "name": "王品",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 16.117149,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3380",
+  "name": "明泰",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3673",
+  "name": "TPK-KY",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4439",
+  "name": "冠星-KY",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 4.052853,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4536",
+  "name": "拓凱",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 8.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4572",
+  "name": "駐龍",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 4.997666,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5434",
+  "name": "崇越",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 13.418095,
+  "stock_rate": null,
+  "pay": "2026-08-12",
+  "slug": null
+ },
+ {
+  "code": "6112",
+  "name": "邁達特",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.65,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7721",
+  "name": "微程式",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7749",
+  "name": "意騰-KY",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 9.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8222",
+  "name": "寶一",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9937",
+  "name": "全國",
+  "kind": "息",
+  "ex": "2026-07-16",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2395",
+  "name": "研華",
+  "kind": "息",
+  "ex": "2026-07-17",
+  "cash": 11.158556,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2547",
+  "name": "日勝生",
+  "kind": "息",
+  "ex": "2026-07-17",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2915",
+  "name": "潤泰全",
+  "kind": "息",
+  "ex": "2026-07-17",
+  "cash": 1.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3028",
+  "name": "增你強",
+  "kind": "權",
+  "ex": "2026-07-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3149",
+  "name": "正達",
+  "kind": "權",
+  "ex": "2026-07-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6464",
+  "name": "台數科",
+  "kind": "權息",
+  "ex": "2026-07-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6515",
+  "name": "穎崴",
+  "kind": "息",
+  "ex": "2026-07-17",
+  "cash": 49.43752,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1464",
+  "name": "得力",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2211",
+  "name": "長榮鋼",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 6.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2392",
+  "name": "正崴",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3031",
+  "name": "佰鴻",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4169",
+  "name": "泰宗",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 0.31999,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4560",
+  "name": "強信-KY",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6277",
+  "name": "宏正",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6887",
+  "name": "寶綠特-KY",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 2.420931,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8213",
+  "name": "志超",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 1.14,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8481",
+  "name": "政伸",
+  "kind": "息",
+  "ex": "2026-07-20",
+  "cash": 2.75,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "0050",
+  "name": "元大台灣50",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": "0050-dividend-calculator"
+ },
+ {
+  "code": "0056",
+  "name": "元大高股息",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 1.35,
+  "stock_rate": null,
+  "pay": "2026-08-10",
+  "slug": "0056-dividend-calculator"
+ },
+ {
+  "code": "006203",
+  "name": "元大MSCI台灣",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.38,
+  "stock_rate": null,
+  "pay": "2026-08-14",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "00991A",
+  "name": "主動復華未來50",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.77,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1233",
+  "name": "天仁",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1529",
+  "name": "樂事綠能",
+  "kind": "權息",
+  "ex": "2026-07-21",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1535",
+  "name": "中宇",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1615",
+  "name": "大山",
+  "kind": "權息",
+  "ex": "2026-07-21",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1726",
+  "name": "永記",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 3.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2355",
+  "name": "敬鵬",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 1.000377,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2704",
+  "name": "國賓",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2885",
+  "name": "元大金",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2887",
+  "name": "台新新光金",
+  "kind": "權息",
+  "ex": "2026-07-21",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5269",
+  "name": "祥碩",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 45.376699,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6719",
+  "name": "力智",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 4.598343,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8215",
+  "name": "明基材",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9926",
+  "name": "新海",
+  "kind": "息",
+  "ex": "2026-07-21",
+  "cash": 2.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1608",
+  "name": "華榮",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2206",
+  "name": "三陽工業",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 3.058256,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2471",
+  "name": "資通",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 3.311836,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2548",
+  "name": "華固",
+  "kind": "權",
+  "ex": "2026-07-22",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2906",
+  "name": "高林",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3138",
+  "name": "耀登",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 1.546282,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3266",
+  "name": "昇陽",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3617",
+  "name": "碩天",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 9.937105,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3653",
+  "name": "健策",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 21.720712,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4977",
+  "name": "眾達-KY",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 2.181974,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6206",
+  "name": "飛捷",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 5.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6782",
+  "name": "視陽",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 8.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8411",
+  "name": "福貞-KY",
+  "kind": "息",
+  "ex": "2026-07-22",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1103",
+  "name": "嘉泥",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.521797,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1201",
+  "name": "味全",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.21,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1227",
+  "name": "佳格",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 1.34,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1304",
+  "name": "台聚",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1305",
+  "name": "華夏",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1308",
+  "name": "亞聚",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1309",
+  "name": "台達化",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1417",
+  "name": "嘉裕",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1436",
+  "name": "華友聯",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 5.047596,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1503",
+  "name": "士電",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1558",
+  "name": "伸興",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1590",
+  "name": "亞德客-KY",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 29.1078,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1720",
+  "name": "生達",
+  "kind": "權息",
+  "ex": "2026-07-23",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1806",
+  "name": "冠軍",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1809",
+  "name": "中釉",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2204",
+  "name": "中華",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 3.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2352",
+  "name": "佳世達",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2414",
+  "name": "精技",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": "2026-08-14",
+  "slug": null
+ },
+ {
+  "code": "2890",
+  "name": "永豐金",
+  "kind": "權息",
+  "ex": "2026-07-23",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2897",
+  "name": "王道銀行",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.52,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2897B",
+  "name": "王道銀乙特",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.54,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3056",
+  "name": "富華新",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.616413,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3716",
+  "name": "中化控股",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 1.00373,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4545",
+  "name": "銘鈺",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 0.13,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6409",
+  "name": "旭隼",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 36.770247,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6671",
+  "name": "三能-KY",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6944",
+  "name": "兆聯實業",
+  "kind": "權息",
+  "ex": "2026-07-23",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7722",
+  "name": "LINEPAY",
+  "kind": "權",
+  "ex": "2026-07-23",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7768",
+  "name": "頌勝科技",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 3.50049,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9918",
+  "name": "欣天然",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9958",
+  "name": "世紀鋼",
+  "kind": "息",
+  "ex": "2026-07-23",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1617",
+  "name": "榮星",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1734",
+  "name": "杏輝",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2002",
+  "name": "中鋼",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": "2026-08-26",
+  "slug": "china-steel-dividend"
+ },
+ {
+  "code": "2002A",
+  "name": "中鋼特",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2495",
+  "name": "普安",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3694",
+  "name": "海華",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 2.300571,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4764",
+  "name": "雙鍵",
+  "kind": "權",
+  "ex": "2026-07-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4771",
+  "name": "望隼",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 6.972245,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6796",
+  "name": "晉弘",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6863",
+  "name": "永道-KY",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7740",
+  "name": "熙特爾-創",
+  "kind": "權息",
+  "ex": "2026-07-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7788",
+  "name": "松川精密",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9925",
+  "name": "新保",
+  "kind": "息",
+  "ex": "2026-07-24",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00930",
+  "name": "永豐ESG低碳高息",
+  "kind": "息",
+  "ex": "2026-07-27",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-08-20",
+  "slug": null
+ },
+ {
+  "code": "1530",
+  "name": "亞崴",
+  "kind": "權息",
+  "ex": "2026-07-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3002",
+  "name": "歐格",
+  "kind": "息",
+  "ex": "2026-07-27",
+  "cash": 0.329867,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5546",
+  "name": "永固-KY",
+  "kind": "息",
+  "ex": "2026-07-27",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6451",
+  "name": "訊芯-KY",
+  "kind": "息",
+  "ex": "2026-07-27",
+  "cash": 0.217665,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6931",
+  "name": "青松健康",
+  "kind": "息",
+  "ex": "2026-07-27",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2449",
+  "name": "京元電子",
+  "kind": "權息",
+  "ex": "2026-07-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2497",
+  "name": "怡利電",
+  "kind": "息",
+  "ex": "2026-07-28",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2528",
+  "name": "皇普",
+  "kind": "權",
+  "ex": "2026-07-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5876",
+  "name": "上海商銀",
+  "kind": "權息",
+  "ex": "2026-07-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6416",
+  "name": "瑞祺電通",
+  "kind": "息",
+  "ex": "2026-07-28",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6757",
+  "name": "台灣虎航",
+  "kind": "息",
+  "ex": "2026-07-28",
+  "cash": 2.42027,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7786",
+  "name": "東方風能",
+  "kind": "息",
+  "ex": "2026-07-28",
+  "cash": 5.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1540",
+  "name": "喬福",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2009",
+  "name": "第一銅",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2402",
+  "name": "毅嘉",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2482",
+  "name": "連宇",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2836",
+  "name": "高雄銀",
+  "kind": "權息",
+  "ex": "2026-07-29",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4942",
+  "name": "嘉彰",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5871",
+  "name": "中租-KY",
+  "kind": "權息",
+  "ex": "2026-07-29",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5871A",
+  "name": "中租-KY甲特",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 4.179463,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6689",
+  "name": "伊雲谷",
+  "kind": "息",
+  "ex": "2026-07-29",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6715",
+  "name": "嘉基",
+  "kind": "權",
+  "ex": "2026-07-29",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1216",
+  "name": "統一",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": "uni-president-dividend"
+ },
+ {
+  "code": "1231",
+  "name": "聯華食",
+  "kind": "權息",
+  "ex": "2026-07-30",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1514",
+  "name": "亞力",
+  "kind": "權息",
+  "ex": "2026-07-30",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2233",
+  "name": "宇隆",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 3.999946,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2345",
+  "name": "智邦",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 15.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2409",
+  "name": "友達",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2511",
+  "name": "太子",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2538",
+  "name": "基泰",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2748",
+  "name": "雲品",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 1.75,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2912",
+  "name": "統一超",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 9.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3583",
+  "name": "辛耘",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 5.747619,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4106",
+  "name": "雃博",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4526",
+  "name": "東台",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4551",
+  "name": "智伸科",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 4.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4916",
+  "name": "事欣科",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 0.498505,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5607",
+  "name": "遠雄港",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6239",
+  "name": "力成",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6962",
+  "name": "奕力-KY",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7769",
+  "name": "鴻勁",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 64.990246,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9942",
+  "name": "茂順",
+  "kind": "息",
+  "ex": "2026-07-30",
+  "cash": 7.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9955",
+  "name": "佳龍",
+  "kind": "權",
+  "ex": "2026-07-30",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00406A",
+  "name": "主動中信台灣收益",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 0.128,
+  "stock_rate": null,
+  "pay": "2026-08-26",
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 0.125,
+  "stock_rate": null,
+  "pay": "2026-08-24",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-08-25",
+  "slug": null
+ },
+ {
+  "code": "1532",
+  "name": "勤美",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2616",
+  "name": "山隆",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6024",
+  "name": "群益期",
+  "kind": "權息",
+  "ex": "2026-07-31",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6472",
+  "name": "保瑞",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 10.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8467",
+  "name": "波力-KY",
+  "kind": "息",
+  "ex": "2026-07-31",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": "2026-09-29",
+  "slug": null
+ },
+ {
+  "code": "1465",
+  "name": "偉全",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1527",
+  "name": "鑽全",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2367",
+  "name": "燿華",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2376",
+  "name": "技嘉",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 12.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3051",
+  "name": "力特",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3501",
+  "name": "維熹",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6957",
+  "name": "裕慶-KY",
+  "kind": "息",
+  "ex": "2026-08-03",
+  "cash": 9.104411,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.053,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": null
+ },
+ {
+  "code": "1474",
+  "name": "弘裕",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1736",
+  "name": "喬山",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2348",
+  "name": "海悅",
+  "kind": "權息",
+  "ex": "2026-08-04",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2348A",
+  "name": "海悅甲特",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2351",
+  "name": "順德",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 1.028839,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2393",
+  "name": "億光",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 4.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2543",
+  "name": "皇昌",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 1.027678,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2812",
+  "name": "台中銀",
+  "kind": "權息",
+  "ex": "2026-08-04",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2834",
+  "name": "臺企銀",
+  "kind": "權息",
+  "ex": "2026-08-04",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3533",
+  "name": "嘉澤",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 34.93436,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3545",
+  "name": "敦泰",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.81494,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4190",
+  "name": "佐登-KY",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.499953,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6209",
+  "name": "今國光",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.495687,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6743",
+  "name": "安普新",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8404",
+  "name": "百和興業-KY",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9938",
+  "name": "百和",
+  "kind": "息",
+  "ex": "2026-08-04",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00400A",
+  "name": "主動國泰動能高息",
+  "kind": "息",
+  "ex": "2026-08-05",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-08-31",
+  "slug": null
+ },
+ {
+  "code": "1437",
+  "name": "勤益控",
+  "kind": "息",
+  "ex": "2026-08-05",
+  "cash": 0.481191,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1519",
+  "name": "華城",
+  "kind": "權息",
+  "ex": "2026-08-05",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2427",
+  "name": "三商電",
+  "kind": "息",
+  "ex": "2026-08-05",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2801",
+  "name": "彰銀",
+  "kind": "權息",
+  "ex": "2026-08-05",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6201",
+  "name": "亞弘電",
+  "kind": "息",
+  "ex": "2026-08-05",
+  "cash": 3.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1419",
+  "name": "新紡",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1439",
+  "name": "雋揚",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1713",
+  "name": "國化",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 3.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2375",
+  "name": "凱美",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2762",
+  "name": "世界健身-KY",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 3.636991,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3003",
+  "name": "健和興",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3033",
+  "name": "威健",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 1.919856,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3376",
+  "name": "新日興",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 3.999665,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5288",
+  "name": "豐祥-KY",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 6.502918,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5525",
+  "name": "順天",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 1.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9914",
+  "name": "美利達",
+  "kind": "息",
+  "ex": "2026-08-06",
+  "cash": 2.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1210",
+  "name": "大成",
+  "kind": "息",
+  "ex": "2026-08-07",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6491",
+  "name": "晶碩",
+  "kind": "息",
+  "ex": "2026-08-07",
+  "cash": 10.00513,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2520",
+  "name": "冠德",
+  "kind": "息",
+  "ex": "2026-08-10",
+  "cash": 1.615933,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2540",
+  "name": "愛山林",
+  "kind": "息",
+  "ex": "2026-08-10",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2546",
+  "name": "根基",
+  "kind": "權息",
+  "ex": "2026-08-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3023",
+  "name": "信邦",
+  "kind": "息",
+  "ex": "2026-08-10",
+  "cash": 10.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6869",
+  "name": "雲豹能源",
+  "kind": "息",
+  "ex": "2026-08-10",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8478",
+  "name": "東哥遊艇",
+  "kind": "息",
+  "ex": "2026-08-10",
+  "cash": 6.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-08-11",
+  "cash": 0.05,
+  "stock_rate": null,
+  "pay": "2026-09-01",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "2892",
+  "name": "第一金",
+  "kind": "息",
+  "ex": "2026-08-11",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": "first-financial-dividend"
+ },
+ {
+  "code": "5880",
+  "name": "合庫金",
+  "kind": "權息",
+  "ex": "2026-08-11",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": "taiwan-coop-dividend"
+ },
+ {
+  "code": "6005",
+  "name": "群益證",
+  "kind": "權息",
+  "ex": "2026-08-11",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6958",
+  "name": "日盛台駿",
+  "kind": "權",
+  "ex": "2026-08-11",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3605",
+  "name": "宏致",
+  "kind": "息",
+  "ex": "2026-08-12",
+  "cash": 1.572032,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4569",
+  "name": "六方科-KY",
+  "kind": "息",
+  "ex": "2026-08-12",
+  "cash": 3.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4581",
+  "name": "光隆精密-KY",
+  "kind": "息",
+  "ex": "2026-08-12",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5203",
+  "name": "訊連",
+  "kind": "息",
+  "ex": "2026-08-12",
+  "cash": 3.693092,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2476",
+  "name": "鉅祥",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 2.973128,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2880",
+  "name": "華南金",
+  "kind": "權息",
+  "ex": "2026-08-13",
+  "cash": 1.35,
+  "stock_rate": null,
+  "pay": "2026-08-28",
+  "slug": "hua-nan-financial-dividend"
+ },
+ {
+  "code": "2886",
+  "name": "兆豐金",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 1.75,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": "mega-financial-dividend"
+ },
+ {
+  "code": "3008",
+  "name": "大立光",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 41.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3050",
+  "name": "鈺德",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6117",
+  "name": "迎廣",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 1.999441,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6202",
+  "name": "盛群",
+  "kind": "息",
+  "ex": "2026-08-13",
+  "cash": 0.68,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00401A",
+  "name": "主動摩根台灣鑫收",
+  "kind": "息",
+  "ex": "2026-08-14",
+  "cash": 0.121,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": null
+ },
+ {
+  "code": "00775B",
+  "name": "台新投等債15+",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 0.16,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": null
+ },
+ {
+  "code": "1477",
+  "name": "聚陽",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1618",
+  "name": "合機",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 1.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2231",
+  "name": "為升",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4967",
+  "name": "十銓",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 8.619904,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6282",
+  "name": "康舒",
+  "kind": "息",
+  "ex": "2026-08-17",
+  "cash": 0.799933,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6698",
+  "name": "旭暉應材",
+  "kind": "權",
+  "ex": "2026-08-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00690",
+  "name": "兆豐藍籌30",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 2.19,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": null
+ },
+ {
+  "code": "00701",
+  "name": "國泰股利精選30",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 1.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-09-10",
+  "slug": null
+ },
+ {
+  "code": "00878",
+  "name": "國泰永續高股息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 1.01,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": "00878-dividend-calculator"
+ },
+ {
+  "code": "00881",
+  "name": "國泰台灣科技龍頭",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 4.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00891",
+  "name": "中信關鍵半導體",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 1.55,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00894",
+  "name": "中信小資高價30",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 2.05,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-09-10",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00913",
+  "name": "兆豐台灣晶圓製造",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 1.78,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00923",
+  "name": "群益台ESG低碳50",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 3.05,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00932",
+  "name": "兆豐永續高息等權",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.23,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": "00932-dividend-calculator"
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00938",
+  "name": "凱基優選30",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.32,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.109,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.09,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.19,
+  "stock_rate": null,
+  "pay": "2026-09-10",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "009801",
+  "name": "中信美國創新科技",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "009808",
+  "name": "華南永昌優選50",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.57,
+  "stock_rate": null,
+  "pay": "2026-09-04",
+  "slug": null
+ },
+ {
+  "code": "00980A",
+  "name": "主動野村臺灣優選",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.638,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.082,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00982A",
+  "name": "主動群益台灣強棒",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.64,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-09-10",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 0.06,
+  "stock_rate": null,
+  "pay": "2026-09-10",
+  "slug": null
+ },
+ {
+  "code": "2885",
+  "name": "元大金",
+  "kind": "權",
+  "ex": "2026-08-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3022",
+  "name": "威強電",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6225",
+  "name": "天瀚",
+  "kind": "權",
+  "ex": "2026-08-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6799",
+  "name": "來頡",
+  "kind": "息",
+  "ex": "2026-08-18",
+  "cash": 2.501141,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00731",
+  "name": "復華富時高息低波",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 1.458,
+  "stock_rate": null,
+  "pay": "2026-09-14",
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 0.38,
+  "stock_rate": null,
+  "pay": "2026-09-14",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "1537",
+  "name": "廣隆",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 7.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2301",
+  "name": "光寶科",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2363",
+  "name": "矽統",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 0.605882,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2374",
+  "name": "佳能",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 1.991664,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2496",
+  "name": "卓越",
+  "kind": "權息",
+  "ex": "2026-08-19",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3017",
+  "name": "奇鋐",
+  "kind": "息",
+  "ex": "2026-08-19",
+  "cash": 20.881604,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1597",
+  "name": "直得",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1714",
+  "name": "和桐",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 0.18,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2377",
+  "name": "微星",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 4.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2472",
+  "name": "立隆電",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2505",
+  "name": "國揚",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2539",
+  "name": "櫻花建",
+  "kind": "權息",
+  "ex": "2026-08-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4441",
+  "name": "振大環球",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 10.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4764",
+  "name": "雙鍵",
+  "kind": "權",
+  "ex": "2026-08-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5222",
+  "name": "全訊",
+  "kind": "權",
+  "ex": "2026-08-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6177",
+  "name": "達麗",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6666",
+  "name": "羅麗芬-KY",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6691",
+  "name": "洋基工程",
+  "kind": "權息",
+  "ex": "2026-08-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6805",
+  "name": "富世達",
+  "kind": "息",
+  "ex": "2026-08-20",
+  "cash": 12.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00771",
+  "name": "元大US高息特別股",
+  "kind": "息",
+  "ex": "2026-08-21",
+  "cash": 0.21,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "00850",
+  "name": "元大臺灣ESG永續",
+  "kind": "息",
+  "ex": "2026-08-21",
+  "cash": 0.85,
+  "stock_rate": null,
+  "pay": "2026-09-11",
+  "slug": null
+ },
+ {
+  "code": "2458",
+  "name": "義隆",
+  "kind": "息",
+  "ex": "2026-08-21",
+  "cash": 4.426,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1454",
+  "name": "台富",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1737",
+  "name": "臺鹽",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 1.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2413",
+  "name": "環科",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2468",
+  "name": "華經",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2484",
+  "name": "希華",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 0.7,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2527",
+  "name": "宏璟",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4746",
+  "name": "台耀",
+  "kind": "息",
+  "ex": "2026-08-24",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9958",
+  "name": "世紀鋼",
+  "kind": "權",
+  "ex": "2026-08-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00907",
+  "name": "永豐優息存股",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 0.24,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1722",
+  "name": "台肥",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2012",
+  "name": "春雨",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2201",
+  "name": "裕隆",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 0.56,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5284",
+  "name": "jpp-KY",
+  "kind": "權",
+  "ex": "2026-08-25",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5534",
+  "name": "長虹",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 5.063943,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6873",
+  "name": "泓德能源",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 2.537729,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9921",
+  "name": "巨大",
+  "kind": "息",
+  "ex": "2026-08-25",
+  "cash": 1.818553,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1583",
+  "name": "程泰",
+  "kind": "權息",
+  "ex": "2026-08-26",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2227",
+  "name": "裕日車",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 0.84,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2420",
+  "name": "新巨",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2753",
+  "name": "八方雲集",
+  "kind": "權",
+  "ex": "2026-08-26",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4582",
+  "name": "聚恆-創",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 0.794117,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6216",
+  "name": "居易",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 1.03002,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6914",
+  "name": "阜爾運通",
+  "kind": "權息",
+  "ex": "2026-08-26",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6955",
+  "name": "邦睿生技-創",
+  "kind": "權",
+  "ex": "2026-08-26",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7818",
+  "name": "溢泰實業",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 2.036375,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8442",
+  "name": "威宏-KY",
+  "kind": "息",
+  "ex": "2026-08-26",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1315",
+  "name": "達新",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1339",
+  "name": "昭輝",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1409",
+  "name": "新纖",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1734",
+  "name": "杏輝",
+  "kind": "權",
+  "ex": "2026-08-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2059",
+  "name": "川湖",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 51.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2415",
+  "name": "錩新",
+  "kind": "權息",
+  "ex": "2026-08-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2428",
+  "name": "興勤",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 5.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2439",
+  "name": "美律",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 4.084236,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2441",
+  "name": "超豐",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 3.009077,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2901",
+  "name": "欣欣",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 0.37317,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3016",
+  "name": "嘉晶",
+  "kind": "權",
+  "ex": "2026-08-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3025",
+  "name": "星通",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 3.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3528",
+  "name": "安馳",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 1.38,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3702",
+  "name": "大聯大",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 3.643236,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4736",
+  "name": "泰博",
+  "kind": "權息",
+  "ex": "2026-08-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6770",
+  "name": "力積電",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 0.23,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9946",
+  "name": "三發地產",
+  "kind": "息",
+  "ex": "2026-08-27",
+  "cash": 1.383888,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1453",
+  "name": "大將",
+  "kind": "權",
+  "ex": "2026-08-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1709",
+  "name": "和益",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2072",
+  "name": "世紀能源",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2101",
+  "name": "南港",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2250",
+  "name": "IKKA-KY",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2364",
+  "name": "倫飛",
+  "kind": "權息",
+  "ex": "2026-08-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2383",
+  "name": "台光電",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 25.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5283",
+  "name": "禾聯碩",
+  "kind": "權息",
+  "ex": "2026-08-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6183",
+  "name": "關貿",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 3.55,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7730",
+  "name": "暉盛-創",
+  "kind": "權息",
+  "ex": "2026-08-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7822",
+  "name": "倍利科",
+  "kind": "息",
+  "ex": "2026-08-28",
+  "cash": 6.385436,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1531",
+  "name": "高林股",
+  "kind": "息",
+  "ex": "2026-08-31",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1795",
+  "name": "美時",
+  "kind": "權息",
+  "ex": "2026-08-31",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2905",
+  "name": "三商",
+  "kind": "息",
+  "ex": "2026-08-31",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3209",
+  "name": "全科",
+  "kind": "權息",
+  "ex": "2026-08-31",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9105",
+  "name": "泰金寶-DR",
+  "kind": "息",
+  "ex": "2026-08-31",
+  "cash": 0.067011,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9917",
+  "name": "中保科",
+  "kind": "權",
+  "ex": "2026-08-31",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 0.125,
+  "stock_rate": null,
+  "pay": "2026-09-23",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-09-23",
+  "slug": null
+ },
+ {
+  "code": "1732",
+  "name": "毛寶",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1783",
+  "name": "和康生",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 1.999598,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2701",
+  "name": "萬企",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 0.28,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2889",
+  "name": "國票金",
+  "kind": "權息",
+  "ex": "2026-09-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3052",
+  "name": "夆典",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3135",
+  "name": "凌航",
+  "kind": "權息",
+  "ex": "2026-09-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3416",
+  "name": "融程電",
+  "kind": "權",
+  "ex": "2026-09-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4977",
+  "name": "眾達-KY",
+  "kind": "權",
+  "ex": "2026-09-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6534",
+  "name": "正瀚-創",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 1.008501,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9941",
+  "name": "裕融",
+  "kind": "權息",
+  "ex": "2026-09-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9941A",
+  "name": "裕融甲特",
+  "kind": "息",
+  "ex": "2026-09-01",
+  "cash": 2.339375,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00406A",
+  "name": "主動中信台灣收益",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.138,
+  "stock_rate": null,
+  "pay": "2026-09-30",
+  "slug": null
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-09-30",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.067,
+  "stock_rate": null,
+  "pay": "2026-09-30",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.053,
+  "stock_rate": null,
+  "pay": "2026-09-30",
+  "slug": null
+ },
+ {
+  "code": "2464",
+  "name": "盟立",
+  "kind": "權息",
+  "ex": "2026-09-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2845",
+  "name": "遠東銀",
+  "kind": "權息",
+  "ex": "2026-09-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2923",
+  "name": "鼎固-KY",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3013",
+  "name": "晟銘電",
+  "kind": "權",
+  "ex": "2026-09-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3346",
+  "name": "麗清",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4438",
+  "name": "廣越",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 2.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6139",
+  "name": "亞翔",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 22.996187,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6426",
+  "name": "統新",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6669",
+  "name": "緯穎",
+  "kind": "權",
+  "ex": "2026-09-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6753",
+  "name": "龍德造船",
+  "kind": "息",
+  "ex": "2026-09-02",
+  "cash": 1.249351,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1203",
+  "name": "味王",
+  "kind": "息",
+  "ex": "2026-09-03",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3661",
+  "name": "世芯-KY",
+  "kind": "息",
+  "ex": "2026-09-03",
+  "cash": 32.551656,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7780",
+  "name": "大研生醫*",
+  "kind": "息",
+  "ex": "2026-09-03",
+  "cash": 0.116588,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8466",
+  "name": "美吉吉-KY",
+  "kind": "息",
+  "ex": "2026-09-03",
+  "cash": 0.301938,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00400A",
+  "name": "主動國泰動能高息",
+  "kind": "息",
+  "ex": "2026-09-07",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-10-05",
+  "slug": null
+ },
+ {
+  "code": "01010T",
+  "name": "京城樂富R1",
+  "kind": "息",
+  "ex": "2026-09-07",
+  "cash": 0.09872,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1466",
+  "name": "聚隆",
+  "kind": "息",
+  "ex": "2026-09-07",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6533",
+  "name": "晶心科",
+  "kind": "權",
+  "ex": "2026-09-07",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-09-08",
+  "cash": 0.055,
+  "stock_rate": null,
+  "pay": "2026-10-01",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "2379",
+  "name": "瑞昱",
+  "kind": "息",
+  "ex": "2026-09-08",
+  "cash": 25.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2442",
+  "name": "新美齊",
+  "kind": "權息",
+  "ex": "2026-09-08",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2706",
+  "name": "第一店",
+  "kind": "息",
+  "ex": "2026-09-08",
+  "cash": 0.35,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3312",
+  "name": "弘憶股",
+  "kind": "息",
+  "ex": "2026-09-08",
+  "cash": 1.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3622",
+  "name": "洋華",
+  "kind": "息",
+  "ex": "2026-09-08",
+  "cash": 3.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8473",
+  "name": "山林水",
+  "kind": "權息",
+  "ex": "2026-09-08",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9933",
+  "name": "中鼎",
+  "kind": "權息",
+  "ex": "2026-09-08",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1438",
+  "name": "三地開發",
+  "kind": "權息",
+  "ex": "2026-09-09",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3059",
+  "name": "華晶科",
+  "kind": "息",
+  "ex": "2026-09-09",
+  "cash": 0.998614,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3706",
+  "name": "神達",
+  "kind": "權息",
+  "ex": "2026-09-09",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6133",
+  "name": "金橋",
+  "kind": "息",
+  "ex": "2026-09-09",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2062",
+  "name": "橋椿",
+  "kind": "息",
+  "ex": "2026-09-10",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4912",
+  "name": "聯德控股-KY",
+  "kind": "息",
+  "ex": "2026-09-10",
+  "cash": 0.800477,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5906",
+  "name": "台南-KY",
+  "kind": "權息",
+  "ex": "2026-09-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6504",
+  "name": "南六",
+  "kind": "息",
+  "ex": "2026-09-10",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9802",
+  "name": "鈺齊-KY",
+  "kind": "息",
+  "ex": "2026-09-10",
+  "cash": 3.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9906",
+  "name": "欣巴巴",
+  "kind": "權",
+  "ex": "2026-09-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00401A",
+  "name": "主動摩根台灣鑫收",
+  "kind": "息",
+  "ex": "2026-09-14",
+  "cash": 0.125,
+  "stock_rate": null,
+  "pay": "2026-10-06",
+  "slug": null
+ },
+ {
+  "code": "2530",
+  "name": "華建",
+  "kind": "息",
+  "ex": "2026-09-14",
+  "cash": 0.46,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5243",
+  "name": "乙盛-KY",
+  "kind": "息",
+  "ex": "2026-09-14",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-09-15",
+  "cash": 0.16,
+  "stock_rate": null,
+  "pay": "2026-10-07",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-09-15",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-10-07",
+  "slug": null
+ },
+ {
+  "code": "009803",
+  "name": "玉山市值動能50",
+  "kind": "息",
+  "ex": "2026-09-15",
+  "cash": 0.9,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01009T",
+  "name": "王道圓滿R1",
+  "kind": "息",
+  "ex": "2026-09-15",
+  "cash": 0.130476,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6924",
+  "name": "榮惠-KY創",
+  "kind": "息",
+  "ex": "2026-09-15",
+  "cash": 3.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00404A",
+  "name": "主動聯博動能50",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.36,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-10-14",
+  "slug": null
+ },
+ {
+  "code": "00770",
+  "name": "國泰北美科技",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 6.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00896",
+  "name": "中信綠能及電動車",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 1.45,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-10-14",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00915",
+  "name": "凱基優選高股息30",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": "00915-dividend-calculator"
+ },
+ {
+  "code": "00919",
+  "name": "群益台灣精選高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 1.1,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": "00919-dividend-calculator"
+ },
+ {
+  "code": "00921",
+  "name": "兆豐龍頭等權重",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.33,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00935",
+  "name": "野村臺灣新科技50",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 1.83,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-10-07",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.109,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.097,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.19,
+  "stock_rate": null,
+  "pay": "2026-10-14",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00972",
+  "name": "野村日本動能高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.22,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "009802",
+  "name": "富邦旗艦50",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.189,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "009809",
+  "name": "富邦淨零ESG50",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.215,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00981A",
+  "name": "主動統一台股增長",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.63,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.082,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-10-14",
+  "slug": null
+ },
+ {
+  "code": "00982T",
+  "name": "平衡兆豐台美動能",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-10-14",
+  "slug": null
+ },
+ {
+  "code": "00999A",
+  "name": "主動野村臺灣高息",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.29,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1517",
+  "name": "利奇",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2330",
+  "name": "台積電",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 7.000001,
+  "stock_rate": null,
+  "pay": "2026-10-08",
+  "slug": "tsmc-dividend-calculator"
+ },
+ {
+  "code": "4763",
+  "name": "材料*-KY",
+  "kind": "息",
+  "ex": "2026-09-16",
+  "cash": 3.05,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6830",
+  "name": "汎銓",
+  "kind": "權",
+  "ex": "2026-09-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00710B",
+  "name": "復華彭博非投等債",
+  "kind": "息",
+  "ex": "2026-09-17",
+  "cash": 0.39,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00711B",
+  "name": "復華彭博新興債",
+  "kind": "息",
+  "ex": "2026-09-17",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00712",
+  "name": "復華富時不動產",
+  "kind": "息",
+  "ex": "2026-09-17",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-09-17",
+  "cash": 0.38,
+  "stock_rate": null,
+  "pay": "2026-10-16",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "5306",
+  "name": "桂盟",
+  "kind": "息",
+  "ex": "2026-09-17",
+  "cash": 1.074628,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00728",
+  "name": "第一金工業30",
+  "kind": "息",
+  "ex": "2026-09-18",
+  "cash": 0.77,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00918",
+  "name": "大華優利高填息30",
+  "kind": "息",
+  "ex": "2026-09-18",
+  "cash": 1.75,
+  "stock_rate": null,
+  "pay": "2026-10-15",
+  "slug": "00918-dividend-calculator"
+ },
+ {
+  "code": "00994A",
+  "name": "主動第一金台股優",
+  "kind": "息",
+  "ex": "2026-09-18",
+  "cash": 0.257,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00713",
+  "name": "元大台灣高息低波",
+  "kind": "息",
+  "ex": "2026-09-21",
+  "cash": 1.25,
+  "stock_rate": null,
+  "pay": "2026-10-13",
+  "slug": "00713-dividend-calculator"
+ },
+ {
+  "code": "00930",
+  "name": "永豐ESG低碳高息",
+  "kind": "息",
+  "ex": "2026-09-23",
+  "cash": 0.815,
+  "stock_rate": null,
+  "pay": "2026-10-20",
+  "slug": null
+ },
+ {
+  "code": "1442",
+  "name": "名軒",
+  "kind": "息",
+  "ex": "2026-09-23",
+  "cash": 2.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1808",
+  "name": "潤隆",
+  "kind": "息",
+  "ex": "2026-09-23",
+  "cash": 1.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2542",
+  "name": "興富發",
+  "kind": "息",
+  "ex": "2026-09-23",
+  "cash": 4.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5258",
+  "name": "虹堡",
+  "kind": "息",
+  "ex": "2026-09-23",
+  "cash": 1.007326,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1235",
+  "name": "興泰",
+  "kind": "權息",
+  "ex": "2026-09-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2109",
+  "name": "華豐",
+  "kind": "息",
+  "ex": "2026-09-29",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7631",
+  "name": "聚賢研發-創",
+  "kind": "息",
+  "ex": "2026-09-29",
+  "cash": 0.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01004T",
+  "name": "土銀富邦R2",
+  "kind": "息",
+  "ex": "2026-09-30",
+  "cash": 0.221074,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "9927",
+  "name": "泰銘",
+  "kind": "息",
+  "ex": "2026-10-01",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6834",
+  "name": "天二科技",
+  "kind": "權",
+  "ex": "2026-10-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00406A",
+  "name": "主動中信台灣收益",
+  "kind": "息",
+  "ex": "2026-10-05",
+  "cash": 0.138,
+  "stock_rate": null,
+  "pay": "2026-11-02",
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-10-05",
+  "cash": 0.125,
+  "stock_rate": null,
+  "pay": "2026-10-29",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-10-05",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-10-28",
+  "slug": null
+ },
+ {
+  "code": "2614",
+  "name": "東森",
+  "kind": "權息",
+  "ex": "2026-10-06",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8021",
+  "name": "尖點",
+  "kind": "權",
+  "ex": "2026-10-06",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 0.055,
+  "stock_rate": null,
+  "pay": "2026-11-02",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-10-30",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 0.067,
+  "stock_rate": null,
+  "pay": "2026-10-30",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 0.053,
+  "stock_rate": null,
+  "pay": "2026-10-30",
+  "slug": null
+ },
+ {
+  "code": "2890",
+  "name": "永豐金",
+  "kind": "權",
+  "ex": "2026-10-07",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6108",
+  "name": "競國",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6947",
+  "name": "台鎔科技",
+  "kind": "息",
+  "ex": "2026-10-07",
+  "cash": 0.533326,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00400A",
+  "name": "主動國泰動能高息",
+  "kind": "息",
+  "ex": "2026-10-08",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-11-05",
+  "slug": null
+ },
+ {
+  "code": "1449",
+  "name": "佳和",
+  "kind": "權",
+  "ex": "2026-10-12",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1727",
+  "name": "中華化",
+  "kind": "權",
+  "ex": "2026-10-13",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00401A",
+  "name": "主動摩根台灣鑫收",
+  "kind": "息",
+  "ex": "2026-10-15",
+  "cash": 0.131,
+  "stock_rate": null,
+  "pay": "2026-11-05",
+  "slug": null
+ },
+ {
+  "code": "1463",
+  "name": "強盛新",
+  "kind": "息",
+  "ex": "2026-10-15",
+  "cash": 0.1273,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00851",
+  "name": "台新全球AI",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 2.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00904",
+  "name": "台新臺灣半導體30",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 2.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 0.16,
+  "stock_rate": null,
+  "pay": "2026-11-06",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00947",
+  "name": "台新臺灣IC設計",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 0.25,
+  "stock_rate": null,
+  "pay": "2026-11-06",
+  "slug": null
+ },
+ {
+  "code": "009805",
+  "name": "台新美國電力基建",
+  "kind": "息",
+  "ex": "2026-10-16",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00714",
+  "name": "群益道瓊美國地產",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.123,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00717",
+  "name": "富邦美國特別股",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.141,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.11,
+  "stock_rate": null,
+  "pay": "2026-11-12",
+  "slug": null
+ },
+ {
+  "code": "00733",
+  "name": "富邦臺灣中小",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 1.487,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.075,
+  "stock_rate": null,
+  "pay": "2026-11-12",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00905",
+  "name": "FT臺灣Smart",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00908",
+  "name": "富邦入息REITs+",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.145,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00912",
+  "name": "中信臺灣智慧50",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 1.8,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00922",
+  "name": "國泰台灣領袖50",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 2.1,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00927",
+  "name": "群益半導體收益",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": "00927-dividend-calculator"
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.36,
+  "stock_rate": null,
+  "pay": "2026-11-06",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.109,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.097,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00956",
+  "name": "中信日經高股息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00960",
+  "name": "野村全球航運龍頭",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.28,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.09,
+  "stock_rate": null,
+  "pay": "2026-11-12",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.1,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.082,
+  "stock_rate": null,
+  "pay": "2026-11-13",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.052,
+  "stock_rate": null,
+  "pay": "2026-11-12",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.061,
+  "stock_rate": null,
+  "pay": "2026-11-12",
+  "slug": null
+ },
+ {
+  "code": "00984A",
+  "name": "主動安聯台灣高息",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.473,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00985A",
+  "name": "主動野村台灣50",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 2.15,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00992A",
+  "name": "主動群益科技創新",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.85,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00995A",
+  "name": "主動中信台灣卓越",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00996A",
+  "name": "主動兆豐台灣豐收",
+  "kind": "息",
+  "ex": "2026-10-19",
+  "cash": 0.73,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00991B",
+  "name": "貝萊德A級公司債",
+  "kind": "息",
+  "ex": "2026-10-20",
+  "cash": 0.067,
+  "stock_rate": null,
+  "pay": "2026-11-16",
+  "slug": null
+ },
+ {
+  "code": "1711",
+  "name": "永光",
+  "kind": "權",
+  "ex": "2026-10-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4155",
+  "name": "訊映",
+  "kind": "息",
+  "ex": "2026-10-20",
+  "cash": 0.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00408A",
+  "name": "主動第一金優股息",
+  "kind": "息",
+  "ex": "2026-10-21",
+  "cash": 0.21,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-10-21",
+  "cash": 0.38,
+  "stock_rate": null,
+  "pay": "2026-11-16",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "0056",
+  "name": "元大高股息",
+  "kind": "息",
+  "ex": "2026-10-22",
+  "cash": 1.72,
+  "stock_rate": null,
+  "pay": "2026-11-11",
+  "slug": "0056-dividend-calculator"
+ },
+ {
+  "code": "2028",
+  "name": "威致",
+  "kind": "息",
+  "ex": "2026-10-23",
+  "cash": 0.2,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6931",
+  "name": "青松健康",
+  "kind": "息",
+  "ex": "2026-10-23",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00907",
+  "name": "永豐優息存股",
+  "kind": "息",
+  "ex": "2026-10-27",
+  "cash": 0.268,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2025",
+  "name": "千興",
+  "kind": "權",
+  "ex": "2026-10-28",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "4552",
+  "name": "力達-KY",
+  "kind": "息",
+  "ex": "2026-10-28",
+  "cash": 0.6,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2762",
+  "name": "世界健身-KY",
+  "kind": "息",
+  "ex": "2026-10-29",
+  "cash": 1.807197,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3563",
+  "name": "牧德",
+  "kind": "息",
+  "ex": "2026-10-29",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "5522",
+  "name": "遠雄",
+  "kind": "息",
+  "ex": "2026-10-29",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6165",
+  "name": "浪凡",
+  "kind": "息",
+  "ex": "2026-11-02",
+  "cash": 5.0,
+  "stock_rate": null,
+  "pay": "2026-12-08",
+  "slug": null
+ },
+ {
+  "code": "00406A",
+  "name": "主動中信台灣收益",
+  "kind": "息",
+  "ex": "2026-11-03",
+  "cash": 0.138,
+  "stock_rate": null,
+  "pay": "2026-11-27",
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-11-03",
+  "cash": 0.15,
+  "stock_rate": null,
+  "pay": "2026-11-25",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-11-03",
+  "cash": 0.085,
+  "stock_rate": null,
+  "pay": "2026-11-25",
+  "slug": null
+ },
+ {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-11-04",
+  "cash": 0.058,
+  "stock_rate": null,
+  "pay": "2026-11-30",
+  "slug": null
+ },
+ {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-11-04",
+  "cash": 0.067,
+  "stock_rate": null,
+  "pay": "2026-11-30",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-11-04",
+  "cash": 0.053,
+  "stock_rate": null,
+  "pay": "2026-11-30",
+  "slug": null
+ },
+ {
+  "code": "020036",
+  "name": "元大金融配息N",
+  "kind": "息",
+  "ex": "2026-11-04",
+  "cash": 0.4,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "8467",
+  "name": "波力-KY",
+  "kind": "息",
+  "ex": "2026-11-04",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": "2026-11-27",
+  "slug": null
+ },
+ {
+  "code": "00400A",
+  "name": "主動國泰動能高息",
+  "kind": "息",
+  "ex": "2026-11-06",
+  "cash": 0.12,
+  "stock_rate": null,
+  "pay": "2026-12-02",
+  "slug": null
+ },
+ {
+  "code": "2414",
+  "name": "精技",
+  "kind": "權",
+  "ex": "2026-11-06",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-11-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-01",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "00401A",
+  "name": "主動摩根台灣鑫收",
+  "kind": "息",
+  "ex": "2026-11-13",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "00775B",
+  "name": "台新投等債15+",
+  "kind": "息",
+  "ex": "2026-11-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "00936",
+  "name": "台新永續高息中小",
+  "kind": "息",
+  "ex": "2026-11-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": "00936-dividend-calculator"
+ },
+ {
+  "code": "00951",
+  "name": "台新日本半導體",
+  "kind": "息",
+  "ex": "2026-11-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "00962",
+  "name": "台新AI優息動能",
+  "kind": "息",
+  "ex": "2026-11-16",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "006208",
+  "name": "富邦台50",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": "006208-dividend-calculator"
+ },
+ {
+  "code": "00690",
+  "name": "兆豐藍籌30",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "00692",
+  "name": "富邦公司治理",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00730",
+  "name": "富邦臺灣優質高息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00878",
+  "name": "國泰永續高股息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": "00878-dividend-calculator"
+ },
+ {
+  "code": "00891",
+  "name": "中信關鍵半導體",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00892",
+  "name": "富邦台灣半導體",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00894",
+  "name": "中信小資高價30",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00900",
+  "name": "富邦特選高股息30",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": "00900-dividend-calculator"
+ },
+ {
+  "code": "00932",
+  "name": "兆豐永續高息等權",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": "00932-dividend-calculator"
+ },
+ {
+  "code": "00934",
+  "name": "中信成長高股息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": "00934-dividend-calculator"
+ },
+ {
+  "code": "00938",
+  "name": "凱基優選30",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00943",
+  "name": "兆豐電子高息等權",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": "00943-dividend-calculator"
+ },
+ {
+  "code": "00944",
+  "name": "野村趨勢動能高息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00945B",
+  "name": "凱基美國非投等債",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00952",
+  "name": "凱基台灣AI50",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00961",
+  "name": "FT臺灣永續高息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00963",
+  "name": "中信全球高股息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00964",
+  "name": "中信亞太高股息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "009808",
+  "name": "華南永昌優選50",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-04",
+  "slug": null
+ },
+ {
+  "code": "00980A",
+  "name": "主動野村臺灣優選",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00981T",
+  "name": "平衡凱基雙核收息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00982A",
+  "name": "主動群益台灣強棒",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00982D",
+  "name": "主動富邦動態入息",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00983D",
+  "name": "主動富邦複合收益",
+  "kind": "息",
+  "ex": "2026-11-17",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-10",
+  "slug": null
+ },
+ {
+  "code": "00731",
+  "name": "復華富時高息低波",
+  "kind": "息",
+  "ex": "2026-11-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-14",
+  "slug": null
+ },
+ {
+  "code": "00929",
+  "name": "復華台灣科技優息",
+  "kind": "息",
+  "ex": "2026-11-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-14",
+  "slug": "00929-dividend-calculator"
+ },
+ {
+  "code": "00949",
+  "name": "復華日本龍頭",
+  "kind": "息",
+  "ex": "2026-11-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-14",
+  "slug": null
+ },
+ {
+  "code": "00991B",
+  "name": "貝萊德A級公司債",
+  "kind": "息",
+  "ex": "2026-11-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-15",
+  "slug": null
+ },
+ {
+  "code": "2344",
+  "name": "華邦電",
+  "kind": "息",
+  "ex": "2026-11-18",
+  "cash": 2.0,
+  "stock_rate": null,
+  "pay": "2026-12-17",
+  "slug": null
+ },
+ {
+  "code": "5434",
+  "name": "崇越",
+  "kind": "權",
+  "ex": "2026-11-18",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01007T",
+  "name": "兆豐國泰R2",
+  "kind": "息",
+  "ex": "2026-11-19",
+  "cash": 0.215313,
+  "stock_rate": null,
+  "pay": "2026-12-21",
+  "slug": null
+ },
+ {
+  "code": "0051",
+  "name": "元大中型100",
+  "kind": "息",
+  "ex": "2026-11-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "0055",
+  "name": "元大MSCI金融",
+  "kind": "息",
+  "ex": "2026-11-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00771",
+  "name": "元大US高息特別股",
+  "kind": "息",
+  "ex": "2026-11-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00850",
+  "name": "元大臺灣ESG永續",
+  "kind": "息",
+  "ex": "2026-11-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "00901",
+  "name": "永豐智能車供應鏈",
+  "kind": "息",
+  "ex": "2026-11-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-18",
+  "slug": null
+ },
+ {
+  "code": "00930",
+  "name": "永豐ESG低碳高息",
+  "kind": "息",
+  "ex": "2026-11-24",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-18",
+  "slug": null
+ }
+]

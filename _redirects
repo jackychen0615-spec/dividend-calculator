@@ -4,3 +4,6 @@
 /articles/dca-calculator.html       /dca-calculator            301
 /articles/compound-calculator       /compound-calculator       301
 /articles/compound-calculator.html  /compound-calculator       301
+
+# 「本月除息」固定入口：每月更新指向當月頁（302，暫時轉址）
+/articles/ex-dividend-this-month  /articles/ex-dividend-2026-11  302
