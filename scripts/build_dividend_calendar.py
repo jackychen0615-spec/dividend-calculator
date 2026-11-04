@@ -169,7 +169,8 @@ def fmt(v):
 def render_rows(events, pages):
     def row(e, i):
         bg = ' style="background:#fafafa;"' if i % 2 else ""
-        S = "padding:8px;border:1px solid #ddd;"
+        S = "padding:6px;border:1px solid #ddd;"
+        N = S + "white-space:normal;"  # 手機版讓名稱換行，發放日欄才不會被擠出畫面
         name = "%s %s" % (e["code"], html.escape(e["name"]))
         if e["code"] in pages:
             name = '<a href="/articles/%s">%s</a>' % (pages[e["code"]], name)
@@ -177,9 +178,12 @@ def render_rows(events, pages):
             cash = "配股（除權）"
         else:
             cash = "%s 元" % fmt(e["cash"]) if e["cash"] else "待公告"
-        pay = e["pay"].strftime("%Y/%-m/%-d") if e.get("pay") else ("—" if e["kind"] == "權" else "待公告")
+        if e.get("pay"):  # 同年只寫月/日，跨年才補年份（手機版欄寬）
+            pay = e["pay"].strftime("%-m/%-d" if e["pay"].year == e["ex"].year else "%Y/%-m/%-d")
+        else:
+            pay = "—" if e["kind"] == "權" else "待公告"
         return ('            <tr%s><td style="%s">%s</td><td style="%s">%s</td><td style="%stext-align:right;">%s</td>'
-                '<td style="%s">%s</td></tr>') % (bg, S, e["ex"].strftime("%-m/%-d"), S, name, S, cash, S, pay)
+                '<td style="%s">%s</td></tr>') % (bg, S, e["ex"].strftime("%-m/%-d"), N, name, S, cash, S, pay)
     return "\n".join(row(e, i) for i, e in enumerate(events))
 
 
