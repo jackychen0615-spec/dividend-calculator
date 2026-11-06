@@ -1,35 +1,5 @@
 [
  {
-  "code": "00946",
-  "name": "群益科技高息成長",
-  "kind": "息",
-  "ex": "2026-05-06",
-  "cash": 0.058,
-  "stock_rate": null,
-  "pay": "2026-05-29",
-  "slug": null
- },
- {
-  "code": "00953B",
-  "name": "群益優選非投等債",
-  "kind": "息",
-  "ex": "2026-05-06",
-  "cash": 0.061,
-  "stock_rate": null,
-  "pay": "2026-05-29",
-  "slug": null
- },
- {
-  "code": "00985B",
-  "name": "群益ESG投等債0-5",
-  "kind": "息",
-  "ex": "2026-05-06",
-  "cash": 0.048,
-  "stock_rate": null,
-  "pay": "2026-05-29",
-  "slug": null
- },
- {
   "code": "00940",
   "name": "元大台灣價值高息",
   "kind": "息",
@@ -11677,6 +11647,16 @@
   "cash": null,
   "stock_rate": null,
   "pay": "2026-12-11",
+  "slug": null
+ },
+ {
+  "code": "4562",
+  "name": "穎漢",
+  "kind": "權",
+  "ex": "2026-11-20",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
   "slug": null
  },
  {
