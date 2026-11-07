@@ -1,15 +1,5 @@
 [
  {
-  "code": "00940",
-  "name": "元大台灣價值高息",
-  "kind": "息",
-  "ex": "2026-05-07",
-  "cash": 0.045,
-  "stock_rate": null,
-  "pay": "2026-06-01",
-  "slug": "00940-dividend-calculator"
- },
- {
   "code": "01001T",
   "name": "土銀富邦R1",
   "kind": "息",
@@ -11224,7 +11214,7 @@
   "name": "元大台灣價值高息",
   "kind": "息",
   "ex": "2026-11-10",
-  "cash": null,
+  "cash": 0.06,
   "stock_rate": null,
   "pay": "2026-12-01",
   "slug": "00940-dividend-calculator"

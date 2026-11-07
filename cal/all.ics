@@ -8,40 +8,6 @@ X-WR-TIMEZONE:Asia/Taipei
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:buy-00940-2026-05-07@gulicalc.com
-DTSTAMP:20260506T000000Z
-DTSTART;VALUE=DATE:20260506
-DTEND;VALUE=DATE:20260507
-SUMMARY:00940 最後買進日（5/7 除息）
-DESCRIPTION:00940 元大台灣價值高息 將在 5/7 除息（0.045 元）
- 。今天收盤時持有，才領得到這次配息。\n試算：https://g
- ulicalc.com/articles/00940-dividend-calculator
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:00940 最後買進日（5/7 除息）
-TRIGGER:PT9H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:ex-00940-2026-05-07@gulicalc.com
-DTSTAMP:20260507T000000Z
-DTSTART;VALUE=DATE:20260507
-DTEND;VALUE=DATE:20260508
-SUMMARY:00940 元大台灣價值高息 除息（0.045 元）
-DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
- ttps://gulicalc.com/articles/00940-dividend-calculator
-END:VEVENT
-BEGIN:VEVENT
-UID:pay-00940-2026-06-01@gulicalc.com
-DTSTAMP:20260601T000000Z
-DTSTART;VALUE=DATE:20260601
-DTEND;VALUE=DATE:20260602
-SUMMARY:00940 元大台灣價值高息 股利發放（0.045 元）
-DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
- 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
- idend-calculator
-END:VEVENT
-BEGIN:VEVENT
 UID:buy-00936-2026-05-18@gulicalc.com
 DTSTAMP:20260515T000000Z
 DTSTART;VALUE=DATE:20260515
@@ -2903,9 +2869,9 @@ DTSTAMP:20261109T000000Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:00940 最後買進日（11/10 除息）
-DESCRIPTION:00940 元大台灣價值高息 將在 11/10 除息（金額待
- 公告）。今天收盤時持有，才領得到這次配息。\n試算：
- https://gulicalc.com/articles/00940-dividend-calculator
+DESCRIPTION:00940 元大台灣價值高息 將在 11/10 除息（0.06 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00940-dividend-calculator
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:00940 最後買進日（11/10 除息）
@@ -2917,7 +2883,7 @@ UID:ex-00940-2026-11-10@gulicalc.com
 DTSTAMP:20261110T000000Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261111
-SUMMARY:00940 元大台灣價值高息 除息（金額待公告）
+SUMMARY:00940 元大台灣價值高息 除息（0.06 元）
 DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
  ttps://gulicalc.com/articles/00940-dividend-calculator
 END:VEVENT
@@ -2926,7 +2892,7 @@ UID:pay-00940-2026-12-01@gulicalc.com
 DTSTAMP:20261201T000000Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
-SUMMARY:00940 元大台灣價值高息 股利發放（金額待公告）
+SUMMARY:00940 元大台灣價值高息 股利發放（0.06 元）
 DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
  二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
  idend-calculator
