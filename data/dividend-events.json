@@ -1,15 +1,5 @@
 [
  {
-  "code": "01001T",
-  "name": "土銀富邦R1",
-  "kind": "息",
-  "ex": "2026-05-08",
-  "cash": 0.430233,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "01002T",
   "name": "土銀國泰R1",
   "kind": "息",
