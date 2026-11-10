@@ -3406,7 +3406,7 @@
   "ex": "2026-07-01",
   "cash": 4.8,
   "stock_rate": null,
-  "pay": null,
+  "pay": "2026-07-24",
   "slug": null
  },
  {
@@ -11657,6 +11657,26 @@
   "cash": null,
   "stock_rate": null,
   "pay": "2026-12-18",
+  "slug": null
+ },
+ {
+  "code": "6655",
+  "name": "科定",
+  "kind": "息",
+  "ex": "2026-11-24",
+  "cash": 2.6,
+  "stock_rate": null,
+  "pay": "2026-12-17",
+  "slug": null
+ },
+ {
+  "code": "1707",
+  "name": "葡萄王",
+  "kind": "息",
+  "ex": "2026-12-30",
+  "cash": 1.9,
+  "stock_rate": null,
+  "pay": null,
   "slug": null
  }
 ]
