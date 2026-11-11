@@ -11274,7 +11274,7 @@
   "name": "兆豐藍籌30",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 2.0,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11354,7 +11354,7 @@
   "name": "兆豐永續高息等權",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.23,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": "00932-dividend-calculator"
@@ -11384,7 +11384,7 @@
   "name": "兆豐電子高息等權",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.35,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": "00943-dividend-calculator"
@@ -11667,6 +11667,26 @@
   "cash": 2.6,
   "stock_rate": null,
   "pay": "2026-12-17",
+  "slug": null
+ },
+ {
+  "code": "1437",
+  "name": "勤益控",
+  "kind": "息",
+  "ex": "2026-12-03",
+  "cash": 0.624652,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2646",
+  "name": "星宇航空",
+  "kind": "權",
+  "ex": "2026-12-07",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
   "slug": null
  },
  {

@@ -81,9 +81,9 @@ DTSTAMP:20261116T000000Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:00932 最後買進日（11/17 除息）
-DESCRIPTION:00932 兆豐永續高息等權 將在 11/17 除息（金額待
- 公告）。今天收盤時持有，才領得到這次配息。\n試算：
- https://gulicalc.com/articles/00932-dividend-calculator
+DESCRIPTION:00932 兆豐永續高息等權 將在 11/17 除息（0.23 元
+ ）。今天收盤時持有，才領得到這次配息。\n試算：https:
+ //gulicalc.com/articles/00932-dividend-calculator
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:00932 最後買進日（11/17 除息）
@@ -95,7 +95,7 @@ UID:ex-00932-2026-11-17@gulicalc.com
 DTSTAMP:20261117T000000Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
-SUMMARY:00932 兆豐永續高息等權 除息（金額待公告）
+SUMMARY:00932 兆豐永續高息等權 除息（0.23 元）
 DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
  ttps://gulicalc.com/articles/00932-dividend-calculator
 END:VEVENT
@@ -104,7 +104,7 @@ UID:pay-00932-2026-12-04@gulicalc.com
 DTSTAMP:20261204T000000Z
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
-SUMMARY:00932 兆豐永續高息等權 股利發放（金額待公告）
+SUMMARY:00932 兆豐永續高息等權 股利發放（0.23 元）
 DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
  二代健保補充保費後）。\nhttps://gulicalc.com/articles/00932-div
  idend-calculator
