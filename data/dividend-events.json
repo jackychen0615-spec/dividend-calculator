@@ -4276,7 +4276,7 @@
   "ex": "2026-07-08",
   "cash": 5.0,
   "stock_rate": null,
-  "pay": "2026-07-31",
+  "pay": null,
   "slug": null
  },
  {
@@ -9784,9 +9784,9 @@
   "name": "神達",
   "kind": "權息",
   "ex": "2026-09-09",
-  "cash": null,
+  "cash": 3.0,
   "stock_rate": null,
-  "pay": null,
+  "pay": "2026-10-08",
   "slug": null
  },
  {
@@ -9936,7 +9936,7 @@
   "ex": "2026-09-15",
   "cash": 3.5,
   "stock_rate": null,
-  "pay": "2026-10-13",
+  "pay": null,
   "slug": null
  },
  {
@@ -11214,7 +11214,7 @@
   "name": "主動摩根台灣鑫收",
   "kind": "息",
   "ex": "2026-11-13",
-  "cash": null,
+  "cash": 0.138,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11224,7 +11224,7 @@
   "name": "台新投等債15+",
   "kind": "息",
   "ex": "2026-11-16",
-  "cash": null,
+  "cash": 0.35,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11234,7 +11234,7 @@
   "name": "台新永續高息中小",
   "kind": "息",
   "ex": "2026-11-16",
-  "cash": null,
+  "cash": 0.16,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": "00936-dividend-calculator"
@@ -11244,7 +11244,7 @@
   "name": "台新日本半導體",
   "kind": "息",
   "ex": "2026-11-16",
-  "cash": null,
+  "cash": 2.0,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11254,7 +11254,7 @@
   "name": "台新AI優息動能",
   "kind": "息",
   "ex": "2026-11-16",
-  "cash": null,
+  "cash": 0.08,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11580,16 +11580,6 @@
   "slug": null
  },
  {
-  "code": "6924",
-  "name": "榮惠-KY創",
-  "kind": "權",
-  "ex": "2026-11-19",
-  "cash": null,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "0051",
   "name": "元大中型100",
   "kind": "息",
@@ -11670,11 +11660,41 @@
   "slug": null
  },
  {
+  "code": "009817",
+  "name": "國泰日本不動產",
+  "kind": "息",
+  "ex": "2026-11-26",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-22",
+  "slug": null
+ },
+ {
+  "code": "3706",
+  "name": "神達",
+  "kind": "權",
+  "ex": "2026-11-27",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
   "code": "1437",
   "name": "勤益控",
   "kind": "息",
   "ex": "2026-12-03",
   "cash": 0.624652,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "7780",
+  "name": "大研生醫*",
+  "kind": "息",
+  "ex": "2026-12-04",
+  "cash": 0.141372,
   "stock_rate": null,
   "pay": null,
   "slug": null
