@@ -4276,7 +4276,7 @@
   "ex": "2026-07-08",
   "cash": 5.0,
   "stock_rate": null,
-  "pay": null,
+  "pay": "2026-07-31",
   "slug": null
  },
  {
@@ -9936,7 +9936,7 @@
   "ex": "2026-09-15",
   "cash": 3.5,
   "stock_rate": null,
-  "pay": null,
+  "pay": "2026-10-13",
   "slug": null
  },
  {
@@ -11304,7 +11304,7 @@
   "name": "國泰永續高股息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 1.25,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": "00878-dividend-calculator"
@@ -11577,6 +11577,16 @@
   "cash": 0.215313,
   "stock_rate": null,
   "pay": "2026-12-21",
+  "slug": null
+ },
+ {
+  "code": "6924",
+  "name": "榮惠-KY創",
+  "kind": "權",
+  "ex": "2026-11-19",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
   "slug": null
  },
  {
