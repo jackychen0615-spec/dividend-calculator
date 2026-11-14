@@ -1,35 +1,5 @@
 [
  {
-  "code": "01002T",
-  "name": "土銀國泰R1",
-  "kind": "息",
-  "ex": "2026-05-14",
-  "cash": 0.457505,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "01007T",
-  "name": "兆豐國泰R2",
-  "kind": "息",
-  "ex": "2026-05-14",
-  "cash": 0.216853,
-  "stock_rate": null,
-  "pay": "2026-06-22",
-  "slug": null
- },
- {
-  "code": "8033",
-  "name": "雷虎",
-  "kind": "權",
-  "ex": "2026-05-14",
-  "cash": null,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "00775B",
   "name": "台新投等債15+",
   "kind": "息",
@@ -7576,7 +7546,7 @@
   "ex": "2026-08-04",
   "cash": 1.027678,
   "stock_rate": null,
-  "pay": null,
+  "pay": "2026-08-28",
   "slug": null
  },
  {
@@ -11264,7 +11234,7 @@
   "name": "富邦台50",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 3.88,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": "006208-dividend-calculator"
@@ -11284,7 +11254,7 @@
   "name": "富邦公司治理",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 1.721,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11294,7 +11264,7 @@
   "name": "富邦臺灣優質高息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.11,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11314,7 +11284,7 @@
   "name": "中信關鍵半導體",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 1.55,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11324,7 +11294,7 @@
   "name": "富邦台灣半導體",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 4.0,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11334,7 +11304,7 @@
   "name": "中信小資高價30",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 1.0,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11344,7 +11314,7 @@
   "name": "富邦特選高股息30",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.075,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": "00900-dividend-calculator"
@@ -11364,7 +11334,7 @@
   "name": "中信成長高股息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.5,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": "00934-dividend-calculator"
@@ -11374,7 +11344,7 @@
   "name": "凱基優選30",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.35,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11394,7 +11364,7 @@
   "name": "野村趨勢動能高息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.109,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11404,7 +11374,7 @@
   "name": "凱基美國非投等債",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.097,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11414,7 +11384,7 @@
   "name": "凱基台灣AI50",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.12,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11424,7 +11394,7 @@
   "name": "FT臺灣永續高息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.09,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11434,7 +11404,7 @@
   "name": "中信全球高股息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.1,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11444,7 +11414,7 @@
   "name": "中信亞太高股息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.2,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11454,7 +11424,7 @@
   "name": "華南永昌優選50",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.76,
   "stock_rate": null,
   "pay": "2026-12-04",
   "slug": null
@@ -11464,7 +11434,7 @@
   "name": "主動野村臺灣優選",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.688,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11474,7 +11444,7 @@
   "name": "平衡凱基雙核收息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.082,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11484,7 +11454,7 @@
   "name": "主動群益台灣強棒",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.78,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11494,7 +11464,7 @@
   "name": "主動富邦動態入息",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.052,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11504,7 +11474,7 @@
   "name": "主動富邦複合收益",
   "kind": "息",
   "ex": "2026-11-17",
-  "cash": null,
+  "cash": 0.061,
   "stock_rate": null,
   "pay": "2026-12-10",
   "slug": null
@@ -11687,6 +11657,16 @@
   "cash": null,
   "stock_rate": null,
   "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2543",
+  "name": "皇昌",
+  "kind": "息",
+  "ex": "2026-11-30",
+  "cash": 0.5,
+  "stock_rate": null,
+  "pay": "2026-12-28",
   "slug": null
  },
  {

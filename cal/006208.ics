@@ -47,9 +47,9 @@ DTSTAMP:20261116T000000Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:006208 最後買進日（11/17 除息）
-DESCRIPTION:006208 富邦台50 將在 11/17 除息（金額待公告）。
- 今天收盤時持有，才領得到這次配息。\n試算：https://guli
- calc.com/articles/006208-dividend-calculator
+DESCRIPTION:006208 富邦台50 將在 11/17 除息（3.88 元）。今天
+ 收盤時持有，才領得到這次配息。\n試算：https://gulicalc.c
+ om/articles/006208-dividend-calculator
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:006208 最後買進日（11/17 除息）
@@ -61,7 +61,7 @@ UID:ex-006208-2026-11-17@gulicalc.com
 DTSTAMP:20261117T000000Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
-SUMMARY:006208 富邦台50 除息（金額待公告）
+SUMMARY:006208 富邦台50 除息（3.88 元）
 DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
  ttps://gulicalc.com/articles/006208-dividend-calculator
 END:VEVENT
@@ -70,7 +70,7 @@ UID:pay-006208-2026-12-10@gulicalc.com
 DTSTAMP:20261210T000000Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
-SUMMARY:006208 富邦台50 股利發放（金額待公告）
+SUMMARY:006208 富邦台50 股利發放（3.88 元）
 DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
  二代健保補充保費後）。\nhttps://gulicalc.com/articles/006208-di
  vidend-calculator
