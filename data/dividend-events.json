@@ -11484,7 +11484,7 @@
   "name": "復華富時高息低波",
   "kind": "息",
   "ex": "2026-11-18",
-  "cash": null,
+  "cash": 1.828,
   "stock_rate": null,
   "pay": "2026-12-14",
   "slug": null
@@ -11494,7 +11494,7 @@
   "name": "復華台灣科技優息",
   "kind": "息",
   "ex": "2026-11-18",
-  "cash": null,
+  "cash": 0.38,
   "stock_rate": null,
   "pay": "2026-12-14",
   "slug": "00929-dividend-calculator"
@@ -11504,7 +11504,7 @@
   "name": "復華日本龍頭",
   "kind": "息",
   "ex": "2026-11-18",
-  "cash": null,
+  "cash": 3.02,
   "stock_rate": null,
   "pay": "2026-12-14",
   "slug": null
@@ -11514,7 +11514,7 @@
   "name": "貝萊德A級公司債",
   "kind": "息",
   "ex": "2026-11-18",
-  "cash": null,
+  "cash": 0.073,
   "stock_rate": null,
   "pay": "2026-12-15",
   "slug": null
@@ -11667,6 +11667,46 @@
   "cash": 0.5,
   "stock_rate": null,
   "pay": "2026-12-28",
+  "slug": null
+ },
+ {
+  "code": "00939",
+  "name": "統一台灣高息動能",
+  "kind": "息",
+  "ex": "2026-12-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-23",
+  "slug": "00939-dividend-calculator"
+ },
+ {
+  "code": "00984D",
+  "name": "主動聯博全球非投",
+  "kind": "息",
+  "ex": "2026-12-01",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-23",
+  "slug": null
+ },
+ {
+  "code": "00406A",
+  "name": "主動中信台灣收益",
+  "kind": "息",
+  "ex": "2026-12-02",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-29",
+  "slug": null
+ },
+ {
+  "code": "020038",
+  "name": "元大ESG配息N",
+  "kind": "息",
+  "ex": "2026-12-03",
+  "cash": 0.491,
+  "stock_rate": null,
+  "pay": null,
   "slug": null
  },
  {

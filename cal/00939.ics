@@ -211,4 +211,38 @@ DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
  二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
  idend-calculator
 END:VEVENT
+BEGIN:VEVENT
+UID:buy-00939-2026-12-01@gulicalc.com
+DTSTAMP:20261130T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:00939 最後買進日（12/1 除息）
+DESCRIPTION:00939 統一台灣高息動能 將在 12/1 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00939-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00939 最後買進日（12/1 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00939-2026-12-01@gulicalc.com
+DTSTAMP:20261201T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:00939 統一台灣高息動能 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00939-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00939-2026-12-23@gulicalc.com
+DTSTAMP:20261223T000000Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+SUMMARY:00939 統一台灣高息動能 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00939-div
+ idend-calculator
+END:VEVENT
 END:VCALENDAR
