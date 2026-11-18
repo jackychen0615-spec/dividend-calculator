@@ -1,35 +1,5 @@
 [
  {
-  "code": "00775B",
-  "name": "台新投等債15+",
-  "kind": "息",
-  "ex": "2026-05-18",
-  "cash": 0.35,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": null
- },
- {
-  "code": "00936",
-  "name": "台新永續高息中小",
-  "kind": "息",
-  "ex": "2026-05-18",
-  "cash": 0.1,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": "00936-dividend-calculator"
- },
- {
-  "code": "00962",
-  "name": "台新AI優息動能",
-  "kind": "息",
-  "ex": "2026-05-18",
-  "cash": 0.05,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": null
- },
- {
   "code": "00690",
   "name": "兆豐藍籌30",
   "kind": "息",
@@ -11700,6 +11670,16 @@
   "slug": null
  },
  {
+  "code": "00946",
+  "name": "群益科技高息成長",
+  "kind": "息",
+  "ex": "2026-12-03",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-30",
+  "slug": null
+ },
+ {
   "code": "020038",
   "name": "元大ESG配息N",
   "kind": "息",
@@ -11735,6 +11715,16 @@
   "kind": "權",
   "ex": "2026-12-07",
   "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "1817",
+  "name": "凱撒衛",
+  "kind": "息",
+  "ex": "2026-12-21",
+  "cash": 1.8,
   "stock_rate": null,
   "pay": null,
   "slug": null
