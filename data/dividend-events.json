@@ -1,225 +1,5 @@
 [
  {
-  "code": "00690",
-  "name": "兆豐藍籌30",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 1.4,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": null
- },
- {
-  "code": "00730",
-  "name": "富邦臺灣優質高息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.11,
-  "stock_rate": null,
-  "pay": "2026-06-11",
-  "slug": null
- },
- {
-  "code": "00878",
-  "name": "國泰永續高股息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.66,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": "00878-dividend-calculator"
- },
- {
-  "code": "00891",
-  "name": "中信關鍵半導體",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 1.25,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00894",
-  "name": "中信小資高價30",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.6,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00900",
-  "name": "富邦特選高股息30",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.075,
-  "stock_rate": null,
-  "pay": "2026-06-11",
-  "slug": "00900-dividend-calculator"
- },
- {
-  "code": "00932",
-  "name": "兆豐永續高息等權",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.22,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": "00932-dividend-calculator"
- },
- {
-  "code": "00934",
-  "name": "中信成長高股息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.25,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": "00934-dividend-calculator"
- },
- {
-  "code": "00938",
-  "name": "凱基優選30",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.22,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00943",
-  "name": "兆豐電子高息等權",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.09,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": "00943-dividend-calculator"
- },
- {
-  "code": "00944",
-  "name": "野村趨勢動能高息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.054,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00945B",
-  "name": "凱基美國非投等債",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.087,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00952",
-  "name": "凱基台灣AI50",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.1,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00961",
-  "name": "FT臺灣永續高息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.108,
-  "stock_rate": null,
-  "pay": "2026-06-11",
-  "slug": null
- },
- {
-  "code": "00963",
-  "name": "中信全球高股息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.086,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00964",
-  "name": "中信亞太高股息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.1,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "009808",
-  "name": "華南永昌優選50",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.57,
-  "stock_rate": null,
-  "pay": "2026-06-05",
-  "slug": null
- },
- {
-  "code": "00980A",
-  "name": "主動野村臺灣優選",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.48,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00981T",
-  "name": "平衡凱基雙核收息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.065,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00982A",
-  "name": "主動群益台灣強棒",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.64,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00982D",
-  "name": "主動富邦動態入息",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.052,
-  "stock_rate": null,
-  "pay": "2026-06-11",
-  "slug": null
- },
- {
-  "code": "00983D",
-  "name": "主動富邦複合收益",
-  "kind": "息",
-  "ex": "2026-05-19",
-  "cash": 0.06,
-  "stock_rate": null,
-  "pay": "2026-06-11",
-  "slug": null
- },
- {
   "code": "00731",
   "name": "復華富時高息低波",
   "kind": "息",
@@ -11534,7 +11314,7 @@
   "name": "元大中型100",
   "kind": "息",
   "ex": "2026-11-20",
-  "cash": null,
+  "cash": 4.5,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11544,7 +11324,7 @@
   "name": "元大MSCI金融",
   "kind": "息",
   "ex": "2026-11-20",
-  "cash": null,
+  "cash": 2.7,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11554,7 +11334,7 @@
   "name": "元大US高息特別股",
   "kind": "息",
   "ex": "2026-11-20",
-  "cash": null,
+  "cash": 0.21,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11564,7 +11344,7 @@
   "name": "元大臺灣ESG永續",
   "kind": "息",
   "ex": "2026-11-20",
-  "cash": null,
+  "cash": 1.0,
   "stock_rate": null,
   "pay": "2026-12-11",
   "slug": null
@@ -11680,6 +11460,26 @@
   "slug": null
  },
  {
+  "code": "00953B",
+  "name": "群益優選非投等債",
+  "kind": "息",
+  "ex": "2026-12-03",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-30",
+  "slug": null
+ },
+ {
+  "code": "00985B",
+  "name": "群益ESG投等債0-5",
+  "kind": "息",
+  "ex": "2026-12-03",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2026-12-30",
+  "slug": null
+ },
+ {
   "code": "020038",
   "name": "元大ESG配息N",
   "kind": "息",
@@ -11695,6 +11495,16 @@
   "kind": "息",
   "ex": "2026-12-03",
   "cash": 0.624652,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "3701",
+  "name": "大眾控",
+  "kind": "息",
+  "ex": "2026-12-04",
+  "cash": 0.199892,
   "stock_rate": null,
   "pay": null,
   "slug": null
