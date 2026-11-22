@@ -1,35 +1,5 @@
 [
  {
-  "code": "00771",
-  "name": "元大US高息特別股",
-  "kind": "息",
-  "ex": "2026-05-22",
-  "cash": 0.21,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "00850",
-  "name": "元大臺灣ESG永續",
-  "kind": "息",
-  "ex": "2026-05-22",
-  "cash": 0.85,
-  "stock_rate": null,
-  "pay": "2026-06-12",
-  "slug": null
- },
- {
-  "code": "3257",
-  "name": "虹冠電",
-  "kind": "息",
-  "ex": "2026-05-22",
-  "cash": 2.8,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "2426",
   "name": "鼎元",
   "kind": "息",
