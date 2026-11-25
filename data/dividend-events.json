@@ -1,25 +1,5 @@
 [
  {
-  "code": "2426",
-  "name": "鼎元",
-  "kind": "息",
-  "ex": "2026-05-25",
-  "cash": 0.1,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "2486",
-  "name": "一詮",
-  "kind": "息",
-  "ex": "2026-05-25",
-  "cash": 0.49846,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "00930",
   "name": "永豐ESG低碳高息",
   "kind": "息",
@@ -11515,6 +11495,16 @@
   "kind": "息",
   "ex": "2026-12-08",
   "cash": 2.3,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6438",
+  "name": "迅得",
+  "kind": "息",
+  "ex": "2026-12-10",
+  "cash": 3.0,
   "stock_rate": null,
   "pay": null,
   "slug": null
