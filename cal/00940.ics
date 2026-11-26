@@ -211,4 +211,38 @@ DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
  二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
  idend-calculator
 END:VEVENT
+BEGIN:VEVENT
+UID:buy-00940-2026-12-10@gulicalc.com
+DTSTAMP:20261209T000000Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:00940 最後買進日（12/10 除息）
+DESCRIPTION:00940 元大台灣價值高息 將在 12/10 除息（金額待
+ 公告）。今天收盤時持有，才領得到這次配息。\n試算：
+ https://gulicalc.com/articles/00940-dividend-calculator
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:00940 最後買進日（12/10 除息）
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ex-00940-2026-12-10@gulicalc.com
+DTSTAMP:20261210T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:00940 元大台灣價值高息 除息（金額待公告）
+DESCRIPTION:今天是除息交易日，開盤參考價會扣除配息。\nh
+ ttps://gulicalc.com/articles/00940-dividend-calculator
+END:VEVENT
+BEGIN:VEVENT
+UID:pay-00940-2027-01-04@gulicalc.com
+DTSTAMP:20270104T000000Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:00940 元大台灣價值高息 股利發放（金額待公告）
+DESCRIPTION:現金股利預計今天匯入交割銀行帳戶（扣匯費與
+ 二代健保補充保費後）。\nhttps://gulicalc.com/articles/00940-div
+ idend-calculator
+END:VEVENT
 END:VCALENDAR

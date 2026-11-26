@@ -1,15 +1,5 @@
 [
  {
-  "code": "00930",
-  "name": "永豐ESG低碳高息",
-  "kind": "息",
-  "ex": "2026-05-26",
-  "cash": 0.31,
-  "stock_rate": null,
-  "pay": "2026-06-18",
-  "slug": null
- },
- {
   "code": "1215",
   "name": "卜蜂",
   "kind": "息",
@@ -11490,6 +11480,16 @@
   "slug": null
  },
  {
+  "code": "4912",
+  "name": "聯德控股-KY",
+  "kind": "息",
+  "ex": "2026-12-08",
+  "cash": 1.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
   "code": "6277",
   "name": "宏正",
   "kind": "息",
@@ -11500,11 +11500,41 @@
   "slug": null
  },
  {
+  "code": "00940",
+  "name": "元大台灣價值高息",
+  "kind": "息",
+  "ex": "2026-12-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": "2027-01-04",
+  "slug": "00940-dividend-calculator"
+ },
+ {
+  "code": "2330",
+  "name": "台積電",
+  "kind": "息",
+  "ex": "2026-12-10",
+  "cash": 7.000001,
+  "stock_rate": null,
+  "pay": "2027-01-07",
+  "slug": "tsmc-dividend-calculator"
+ },
+ {
   "code": "6438",
   "name": "迅得",
   "kind": "息",
   "ex": "2026-12-10",
   "cash": 3.0,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "6994",
+  "name": "富威電力",
+  "kind": "息",
+  "ex": "2026-12-11",
+  "cash": 0.6067,
   "stock_rate": null,
   "pay": null,
   "slug": null
