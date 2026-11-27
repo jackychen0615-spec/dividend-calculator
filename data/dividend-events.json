@@ -1,35 +1,5 @@
 [
  {
-  "code": "1215",
-  "name": "卜蜂",
-  "kind": "息",
-  "ex": "2026-05-27",
-  "cash": 7.0,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "1568",
-  "name": "倉佑",
-  "kind": "息",
-  "ex": "2026-05-27",
-  "cash": 1.0,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "3413",
-  "name": "京鼎",
-  "kind": "息",
-  "ex": "2026-05-27",
-  "cash": 10.983792,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "1459",
   "name": "聯發",
   "kind": "息",
@@ -11344,7 +11314,7 @@
   "name": "統一台灣高息動能",
   "kind": "息",
   "ex": "2026-12-01",
-  "cash": null,
+  "cash": 0.15,
   "stock_rate": null,
   "pay": "2026-12-23",
   "slug": "00939-dividend-calculator"
@@ -11354,7 +11324,7 @@
   "name": "主動聯博全球非投",
   "kind": "息",
   "ex": "2026-12-01",
-  "cash": null,
+  "cash": 0.085,
   "stock_rate": null,
   "pay": "2026-12-23",
   "slug": null
@@ -11530,11 +11500,41 @@
   "slug": null
  },
  {
+  "code": "6657",
+  "name": "華安",
+  "kind": "權",
+  "ex": "2026-12-10",
+  "cash": null,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "2236",
+  "name": "百達-KY",
+  "kind": "權息",
+  "ex": "2026-12-11",
+  "cash": 0.386678,
+  "stock_rate": 0.02416742,
+  "pay": null,
+  "slug": null
+ },
+ {
   "code": "6994",
   "name": "富威電力",
   "kind": "息",
   "ex": "2026-12-11",
   "cash": 0.6067,
+  "stock_rate": null,
+  "pay": null,
+  "slug": null
+ },
+ {
+  "code": "01010T",
+  "name": "京城樂富R1",
+  "kind": "息",
+  "ex": "2026-12-17",
+  "cash": 0.090146,
   "stock_rate": null,
   "pay": null,
   "slug": null
