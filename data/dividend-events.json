@@ -1,55 +1,5 @@
 [
  {
-  "code": "1459",
-  "name": "聯發",
-  "kind": "息",
-  "ex": "2026-05-28",
-  "cash": 0.2,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "1702",
-  "name": "南僑",
-  "kind": "息",
-  "ex": "2026-05-28",
-  "cash": 1.6,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "1708",
-  "name": "東鹼",
-  "kind": "息",
-  "ex": "2026-05-28",
-  "cash": 1.6,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "3717",
-  "name": "聯嘉投控",
-  "kind": "權",
-  "ex": "2026-05-28",
-  "cash": null,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
-  "code": "4585",
-  "name": "達明",
-  "kind": "息",
-  "ex": "2026-05-28",
-  "cash": 1.0,
-  "stock_rate": null,
-  "pay": null,
-  "slug": null
- },
- {
   "code": "2612",
   "name": "中航",
   "kind": "息",
